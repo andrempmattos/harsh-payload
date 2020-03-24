@@ -1,0 +1,1285 @@
+# Reading C:/Microsemi/Libero_SoC_v11.8/Modelsim/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do run.do
+# 
+# AMBA BFM Compiler (Version 3.0.0 Mar 2014) 
+# 
+# @I: BFM101 : Reading input BFM file "test.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "user.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "subsystem.bfm".
+# 
+# @I: BFM107 : Checking procedure calls.
+# 
+# @I: BFM103 : Writing vectors output file "test.vec".
+# 
+# @I: BFM104 : 12 commands are generated in the output vectors output file.
+# 
+# @I: BFM105 : 29 vectors are generated in the output vectors output file.
+# 
+# @I: BFM106 : Output vectors files CheckSum 0e47e36c
+# 
+# 
+# @I: BFM Compiler Completed Successfully.
+# 
+# 
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap presynth presynth 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap SmartFusion2 C:/Microsemi/Libero_SoC_v11.8/Designer/lib/modelsim/precompiled/vlog/SmartFusion2 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap COREAHBLITE_LIB ../component/Actel/DirectCore/CoreAHBLite/5.4.102/mti/user_vlog/COREAHBLITE_LIB 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vcom 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:01 on Mar 24,2020
+# vcom -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Skipping module BFM_AHBL
+# -- Skipping module BFM_AHBSLAVE
+# -- Skipping module BFM_AHBSLAVEEXT
+# -- Skipping module BFM_MAIN
+# End time: 11:09:01 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:03 on Mar 24,2020
+# vlog -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Refreshing module BFM_AHBL
+# -- Refreshing module BFM_AHBSLAVE
+# -- Refreshing module BFM_AHBSLAVEEXT
+# -- Refreshing module BFM_MAIN
+# End time: 11:09:04 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v 
+# -- Compiling module PLL_2X
+# -- Compiling module PLL_2X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_2X
+# End time: 11:09:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v 
+# -- Compiling module PLL_4X
+# -- Compiling module PLL_4X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_4X
+# End time: 11:09:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v 
+# -- Compiling module sdr_openbank
+# 
+# Top level modules:
+# 	sdr_openbank
+# End time: 11:09:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v 
+# -- Compiling module sdr_fastsdram
+# 
+# Top level modules:
+# 	sdr_fastsdram
+# End time: 11:09:06 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v 
+# -- Compiling module sdr_fastinit
+# 
+# Top level modules:
+# 	sdr_fastinit
+# End time: 11:09:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v 
+# -- Compiling module sdr_CORESDR
+# 
+# Top level modules:
+# 	sdr_CORESDR
+# End time: 11:09:07 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v 
+# -- Compiling module fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# 
+# Top level modules:
+# 	fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# End time: 11:09:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v 
+# -- Compiling module fpga_soc_FCCC_100MHz_FCCC
+# 
+# Top level modules:
+# 	fpga_soc_FCCC_100MHz_FCCC
+# End time: 11:09:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v 
+# -- Compiling module fpga_soc_MSS
+# 
+# Top level modules:
+# 	fpga_soc_MSS
+# End time: 11:09:08 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v 
+# -- Compiling module fpga_soc_OSC_50MHz_OSC
+# 
+# Top level modules:
+# 	fpga_soc_OSC_50MHz_OSC
+# End time: 11:09:08 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_addrdec.v 
+# -- Compiling module COREAHBLITE_ADDRDEC
+# 
+# Top level modules:
+# 	COREAHBLITE_ADDRDEC
+# End time: 11:09:08 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_defaultslavesm.v 
+# -- Compiling module COREAHBLITE_DEFAULTSLAVESM
+# 
+# Top level modules:
+# 	COREAHBLITE_DEFAULTSLAVESM
+# End time: 11:09:09 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_masterstage.v 
+# -- Compiling module COREAHBLITE_MASTERSTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_MASTERSTAGE
+# End time: 11:09:09 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavearbiter.v 
+# -- Compiling module COREAHBLITE_SLAVEARBITER
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVEARBITER
+# End time: 11:09:09 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavestage.v 
+# -- Compiling module COREAHBLITE_SLAVESTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVESTAGE
+# End time: 11:09:09 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_matrix4x16.v 
+# -- Compiling module COREAHBLITE_MATRIX4X16
+# 
+# Top level modules:
+# 	COREAHBLITE_MATRIX4X16
+# End time: 11:09:10 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:10 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/rtl/vlog/core/coreahblite.v 
+# -- Compiling module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# 
+# Top level modules:
+# 	fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:09:10 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:10 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v 
+# -- Compiling module fpga_soc
+# 
+# Top level modules:
+# 	fpga_soc
+# End time: 11:09:11 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:11 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog" "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 11:09:11 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:09:11 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v 
+# -- Compiling module mt48lc16m16a2
+# 
+# Top level modules:
+# 	mt48lc16m16a2
+# End time: 11:09:11 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L SmartFusion2 -L presynth -L COREAHBLITE_LIB -t 1fs presynth.testbench 
+# Start time: 11:09:17 on Mar 24,2020
+# //  ModelSim Microsemi 10.5c Jul 21 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim Microsemi and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading presynth.testbench
+# Loading presynth.fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# Loading presynth.sdr_CORESDR
+# Loading presynth.sdr_fastinit
+# Loading presynth.sdr_fastsdram
+# Loading presynth.sdr_openbank
+# Loading COREAHBLITE_LIB.BFM_AHBL
+# Loading SmartFusion2.BFM_MAIN
+# Loading presynth.mt48lc16m16a2
+#  
+###########################################################################
+# AMBA BFM Model
+# Version 2.1 22Dec08
+#  
+# Opening BFM Script file master.vec
+# Read 66 Vectors - Compiler Version 22.25
+# BFM:Filenames referenced in Vectors
+#   master.bfm
+################################################################
+# BFM:CoreAhbSDR Master Test Harness
+# BFM:47: DEBUG 1
+do run.do
+# 
+# AMBA BFM Compiler (Version 3.0.0 Mar 2014) 
+# 
+# @I: BFM101 : Reading input BFM file "test.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "user.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "subsystem.bfm".
+# 
+# @I: BFM107 : Checking procedure calls.
+# 
+# @I: BFM103 : Writing vectors output file "test.vec".
+# 
+# @I: BFM104 : 12 commands are generated in the output vectors output file.
+# 
+# @I: BFM105 : 29 vectors are generated in the output vectors output file.
+# 
+# @I: BFM106 : Output vectors files CheckSum 0e47e36c
+# 
+# 
+# @I: BFM Compiler Completed Successfully.
+# 
+# 
+# --- Using Windows Actel DirectCore AMBA BFM compiler
+# --- Compiling Actel DirectCore AMBA BFM source files ...
+# 
+# AMBA BFM Compiler (BETA Version 2.1.107 04Feb09) 
+#   Reading
+#    Processing ./coreahblite_usertb_ahb_master0.bfm
+#    Processing coreahblite_usertb_include.bfm
+#   Enumerating
+#   Assigning
+#   Checking
+#    Checking Complete
+#    162 Global  localconstants Defined
+#    92 Global  localvariables Defined
+#   Writing Vectors ./coreahblite_usertb_ahb_master0.vec
+#    Commands Generated 893
+#    Vectors Generated 3754
+#    Vector CheckSum 6e869d88
+# 
+# BFM Compiler Completed Okay
+# 
+# AMBA BFM Compiler (BETA Version 2.1.107 04Feb09) 
+#   Reading
+#    Processing ./coreahblite_usertb_ahb_master1.bfm
+#    Processing coreahblite_usertb_include.bfm
+#   Enumerating
+#   Assigning
+#   Checking
+#    Checking Complete
+#    44 Global  localconstants Defined
+#    92 Global  localvariables Defined
+#   Writing Vectors ./coreahblite_usertb_ahb_master1.vec
+#    Commands Generated 439
+#    Vectors Generated 1740
+#    Vector CheckSum e561b2ad
+# 
+# BFM Compiler Completed Okay
+# --- Done Compiling Actel DirectCore AMBA BFM source files.
+# INFO: Simulation library presynth already exists
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap presynth presynth 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap SmartFusion2 C:/Microsemi/Libero_SoC_v11.8/Designer/lib/modelsim/precompiled/vlog/SmartFusion2 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap COREAHBLITE_LIB ../component/Actel/DirectCore/CoreAHBLite/5.4.102/mti/user_vlog/COREAHBLITE_LIB 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vcom 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:03 on Mar 24,2020
+# vcom -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Skipping module BFM_AHBL
+# -- Skipping module BFM_AHBSLAVE
+# -- Skipping module BFM_AHBSLAVEEXT
+# -- Skipping module BFM_MAIN
+# -- Skipping module COREAHBLITE_ADDRDEC
+# -- Skipping module COREAHBLITE_DEFAULTSLAVESM
+# -- Skipping module COREAHBLITE_MASTERSTAGE
+# -- Skipping module COREAHBLITE_MATRIX4X16
+# -- Skipping module COREAHBLITE_SLAVEARBITER
+# -- Skipping module COREAHBLITE_SLAVESTAGE
+# -- Skipping module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:11:03 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:04 on Mar 24,2020
+# vlog -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Refreshing module BFM_AHBL
+# -- Refreshing module BFM_AHBSLAVE
+# -- Refreshing module BFM_AHBSLAVEEXT
+# -- Refreshing module BFM_MAIN
+# -- Refreshing module COREAHBLITE_ADDRDEC
+# -- Refreshing module COREAHBLITE_DEFAULTSLAVESM
+# -- Refreshing module COREAHBLITE_MASTERSTAGE
+# -- Refreshing module COREAHBLITE_MATRIX4X16
+# -- Refreshing module COREAHBLITE_SLAVEARBITER
+# -- Refreshing module COREAHBLITE_SLAVESTAGE
+# -- Refreshing module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:11:04 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v 
+# -- Compiling module PLL_2X
+# -- Compiling module PLL_2X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_2X
+# End time: 11:11:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v 
+# -- Compiling module PLL_4X
+# -- Compiling module PLL_4X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_4X
+# End time: 11:11:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v 
+# -- Compiling module sdr_openbank
+# 
+# Top level modules:
+# 	sdr_openbank
+# End time: 11:11:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v 
+# -- Compiling module sdr_fastsdram
+# 
+# Top level modules:
+# 	sdr_fastsdram
+# End time: 11:11:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v 
+# -- Compiling module sdr_fastinit
+# 
+# Top level modules:
+# 	sdr_fastinit
+# End time: 11:11:06 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v 
+# -- Compiling module sdr_CORESDR
+# 
+# Top level modules:
+# 	sdr_CORESDR
+# End time: 11:11:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v 
+# -- Compiling module fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# 
+# Top level modules:
+# 	fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# End time: 11:11:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v 
+# -- Compiling module fpga_soc_FCCC_100MHz_FCCC
+# 
+# Top level modules:
+# 	fpga_soc_FCCC_100MHz_FCCC
+# End time: 11:11:07 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v 
+# -- Compiling module fpga_soc_MSS
+# 
+# Top level modules:
+# 	fpga_soc_MSS
+# End time: 11:11:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v 
+# -- Compiling module fpga_soc_OSC_50MHz_OSC
+# 
+# Top level modules:
+# 	fpga_soc_OSC_50MHz_OSC
+# End time: 11:11:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_addrdec.v 
+# -- Compiling module COREAHBLITE_ADDRDEC
+# 
+# Top level modules:
+# 	COREAHBLITE_ADDRDEC
+# End time: 11:11:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_defaultslavesm.v 
+# -- Compiling module COREAHBLITE_DEFAULTSLAVESM
+# 
+# Top level modules:
+# 	COREAHBLITE_DEFAULTSLAVESM
+# End time: 11:11:08 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_masterstage.v 
+# -- Compiling module COREAHBLITE_MASTERSTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_MASTERSTAGE
+# End time: 11:11:08 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:08 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavearbiter.v 
+# -- Compiling module COREAHBLITE_SLAVEARBITER
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVEARBITER
+# End time: 11:11:08 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavestage.v 
+# -- Compiling module COREAHBLITE_SLAVESTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVESTAGE
+# End time: 11:11:09 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_matrix4x16.v 
+# -- Compiling module COREAHBLITE_MATRIX4X16
+# 
+# Top level modules:
+# 	COREAHBLITE_MATRIX4X16
+# End time: 11:11:09 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:09 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/rtl/vlog/core/coreahblite.v 
+# -- Compiling module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# 
+# Top level modules:
+# 	fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:11:10 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:10 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v 
+# -- Compiling module fpga_soc
+# 
+# Top level modules:
+# 	fpga_soc
+# End time: 11:11:10 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:10 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog" "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 11:11:10 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:11:10 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v 
+# -- Compiling module mt48lc16m16a2
+# 
+# Top level modules:
+# 	mt48lc16m16a2
+# End time: 11:11:10 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:11:11 on Mar 24,2020, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 0
+# vsim -L SmartFusion2 -L presynth -L COREAHBLITE_LIB -t 1fs presynth.testbench 
+# Start time: 11:11:12 on Mar 24,2020
+# Loading presynth.testbench
+# Loading presynth.fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# Loading presynth.sdr_CORESDR
+# Loading presynth.sdr_fastinit
+# Loading presynth.sdr_fastsdram
+# Loading presynth.sdr_openbank
+# Loading COREAHBLITE_LIB.BFM_AHBL
+# Loading SmartFusion2.BFM_MAIN
+# Loading presynth.mt48lc16m16a2
+# WARNING: No extended dataflow license exists
+#  
+###########################################################################
+# AMBA BFM Model
+# Version 2.1 22Dec08
+#  
+# Opening BFM Script file master.vec
+# Read 66 Vectors - Compiler Version 22.25
+# BFM:Filenames referenced in Vectors
+#   master.bfm
+################################################################
+# BFM:CoreAhbSDR Master Test Harness
+# BFM:47: DEBUG 1
+# testbench.genblk1.mem000 : at time  150233.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150338.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150443.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150548.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150653.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150758.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150863.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150968.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  151073.0 ns LMR  : Load Mode Register
+# testbench.genblk1.mem000 :                             CAS Latency      = 3
+# testbench.genblk1.mem000 :                             Burst Length     = 2
+# testbench.genblk1.mem000 :                             Burst Type       = Sequential
+# testbench.genblk1.mem000 :                             Write Burst Mode = Programmed Burst Length
+# testbench.genblk1.mem000 : at time  151118.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  151223.0 ns ACT  : Bank = 0 Row =    0
+# testbench.genblk1.mem000 : at time  151253.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151268.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151373.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151393.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151553.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  151568.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151658.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  151673.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151778.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151798.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  151958.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151973.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152078.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152098.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152258.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  152273.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152363.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  152378.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152483.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152503.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  152663.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152678.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152783.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152803.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152963.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  152978.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153068.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153083.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153188.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153208.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153368.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  153383.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153488.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153508.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  153668.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  153683.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153773.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153788.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153893.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153913.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154073.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154088.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154193.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154213.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154373.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  154388.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154478.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154493.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154598.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154618.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154778.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154793.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154898.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154918.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155078.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  155093.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155183.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155198.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155303.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155323.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155483.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155498.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155603.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155623.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155783.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  155798.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155888.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155903.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156008.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156028.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156188.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156203.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156308.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156328.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156488.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  156503.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156593.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156608.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156713.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156733.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156893.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156908.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157013.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157033.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157193.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  157208.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157298.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  157313.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157418.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157438.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  157598.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157613.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157718.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157738.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157898.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  157913.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158003.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158018.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158123.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158143.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158303.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  158318.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158423.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158443.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  158603.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  158618.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158708.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158723.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158828.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158848.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159008.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159023.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159128.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159148.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159308.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  159323.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159413.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159428.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159533.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159553.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159713.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159728.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159833.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159853.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160013.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  160028.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160118.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160133.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160238.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160258.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160418.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160433.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160538.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160558.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160718.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  160733.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160823.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160838.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160943.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160963.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161123.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161138.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161243.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161263.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161423.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  161438.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161528.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161543.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161648.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161668.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161828.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161843.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161948.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161968.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162128.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  162143.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162233.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162248.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162353.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162373.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162533.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162548.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162653.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162673.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162833.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  162848.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162938.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162953.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  163058.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  163078.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+###########################################################
+#  
+# BFM Simulation Complete - 112 Instructions - NO ERRORS
+#  
+###########################################################
+#  
+# ** Note: $finish    : C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v(89)
+#    Time: 163135501 ps  Iteration: 0  Instance: /testbench
+# 1
+# Break in Module testbench at C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v line 89
+do run.do
+# 
+# AMBA BFM Compiler (Version 3.0.0 Mar 2014) 
+# 
+# @I: BFM101 : Reading input BFM file "test.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "user.bfm".
+# 
+# @I: BFM101 : Reading input BFM file "subsystem.bfm".
+# 
+# @I: BFM107 : Checking procedure calls.
+# 
+# @I: BFM103 : Writing vectors output file "test.vec".
+# 
+# @I: BFM104 : 12 commands are generated in the output vectors output file.
+# 
+# @I: BFM105 : 29 vectors are generated in the output vectors output file.
+# 
+# @I: BFM106 : Output vectors files CheckSum 0e47e36c
+# 
+# 
+# @I: BFM Compiler Completed Successfully.
+# 
+# 
+# --- Using Windows Actel DirectCore AMBA BFM compiler
+# --- Compiling Actel DirectCore AMBA BFM source files ...
+# 
+# AMBA BFM Compiler (BETA Version 2.1.107 04Feb09) 
+#   Reading
+#    Processing ./coreahblite_usertb_ahb_master0.bfm
+#    Processing coreahblite_usertb_include.bfm
+#   Enumerating
+#   Assigning
+#   Checking
+#    Checking Complete
+#    162 Global  localconstants Defined
+#    92 Global  localvariables Defined
+#   Writing Vectors ./coreahblite_usertb_ahb_master0.vec
+#    Commands Generated 893
+#    Vectors Generated 3754
+#    Vector CheckSum 6e869d88
+# 
+# BFM Compiler Completed Okay
+# 
+# AMBA BFM Compiler (BETA Version 2.1.107 04Feb09) 
+#   Reading
+#    Processing ./coreahblite_usertb_ahb_master1.bfm
+#    Processing coreahblite_usertb_include.bfm
+#   Enumerating
+#   Assigning
+#   Checking
+#    Checking Complete
+#    44 Global  localconstants Defined
+#    92 Global  localvariables Defined
+#   Writing Vectors ./coreahblite_usertb_ahb_master1.vec
+#    Commands Generated 439
+#    Vectors Generated 1740
+#    Vector CheckSum e561b2ad
+# 
+# BFM Compiler Completed Okay
+# --- Done Compiling Actel DirectCore AMBA BFM source files.
+# INFO: Simulation library presynth already exists
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap presynth presynth 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap SmartFusion2 C:/Microsemi/Libero_SoC_v11.8/Designer/lib/modelsim/precompiled/vlog/SmartFusion2 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vmap 10.5c Lib Mapping Utility 2016.07 Jul 21 2016
+# vmap COREAHBLITE_LIB ../component/Actel/DirectCore/CoreAHBLite/5.4.102/mti/user_vlog/COREAHBLITE_LIB 
+# Modifying modelsim.ini
+# Model Technology ModelSim Microsemi vcom 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:01 on Mar 24,2020
+# vcom -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Skipping module BFM_AHBL
+# -- Skipping module BFM_AHBSLAVE
+# -- Skipping module BFM_AHBSLAVEEXT
+# -- Skipping module BFM_MAIN
+# -- Skipping module COREAHBLITE_ADDRDEC
+# -- Skipping module COREAHBLITE_DEFAULTSLAVESM
+# -- Skipping module COREAHBLITE_MASTERSTAGE
+# -- Skipping module COREAHBLITE_MATRIX4X16
+# -- Skipping module COREAHBLITE_SLAVEARBITER
+# -- Skipping module COREAHBLITE_SLAVESTAGE
+# -- Skipping module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:16:01 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:01 on Mar 24,2020
+# vlog -reportprogress 300 -work COREAHBLITE_LIB -force_refresh 
+# -- Refreshing module BFM_AHBL
+# -- Refreshing module BFM_AHBSLAVE
+# -- Refreshing module BFM_AHBSLAVEEXT
+# -- Refreshing module BFM_MAIN
+# -- Refreshing module COREAHBLITE_ADDRDEC
+# -- Refreshing module COREAHBLITE_DEFAULTSLAVESM
+# -- Refreshing module COREAHBLITE_MASTERSTAGE
+# -- Refreshing module COREAHBLITE_MATRIX4X16
+# -- Refreshing module COREAHBLITE_SLAVEARBITER
+# -- Refreshing module COREAHBLITE_SLAVESTAGE
+# -- Refreshing module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:16:02 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:02 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v 
+# -- Compiling module PLL_2X
+# -- Compiling module PLL_2X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_2X
+# End time: 11:16:02 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:02 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v 
+# -- Compiling module PLL_4X
+# -- Compiling module PLL_4X_CCC_0_CCC
+# 
+# Top level modules:
+# 	PLL_4X
+# End time: 11:16:03 on Mar 24,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:03 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v 
+# -- Compiling module sdr_openbank
+# 
+# Top level modules:
+# 	sdr_openbank
+# End time: 11:16:03 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:03 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v 
+# -- Compiling module sdr_fastsdram
+# 
+# Top level modules:
+# 	sdr_fastsdram
+# End time: 11:16:03 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:03 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v 
+# -- Compiling module sdr_fastinit
+# 
+# Top level modules:
+# 	sdr_fastinit
+# End time: 11:16:03 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:04 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v 
+# -- Compiling module sdr_CORESDR
+# 
+# Top level modules:
+# 	sdr_CORESDR
+# End time: 11:16:04 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:04 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v 
+# -- Compiling module fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# 
+# Top level modules:
+# 	fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# End time: 11:16:04 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:04 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v 
+# -- Compiling module fpga_soc_FCCC_100MHz_FCCC
+# 
+# Top level modules:
+# 	fpga_soc_FCCC_100MHz_FCCC
+# End time: 11:16:04 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:04 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v 
+# -- Compiling module fpga_soc_MSS
+# 
+# Top level modules:
+# 	fpga_soc_MSS
+# End time: 11:16:04 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v 
+# -- Compiling module fpga_soc_OSC_50MHz_OSC
+# 
+# Top level modules:
+# 	fpga_soc_OSC_50MHz_OSC
+# End time: 11:16:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_addrdec.v 
+# -- Compiling module COREAHBLITE_ADDRDEC
+# 
+# Top level modules:
+# 	COREAHBLITE_ADDRDEC
+# End time: 11:16:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_defaultslavesm.v 
+# -- Compiling module COREAHBLITE_DEFAULTSLAVESM
+# 
+# Top level modules:
+# 	COREAHBLITE_DEFAULTSLAVESM
+# End time: 11:16:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_masterstage.v 
+# -- Compiling module COREAHBLITE_MASTERSTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_MASTERSTAGE
+# End time: 11:16:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:05 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavearbiter.v 
+# -- Compiling module COREAHBLITE_SLAVEARBITER
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVEARBITER
+# End time: 11:16:05 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavestage.v 
+# -- Compiling module COREAHBLITE_SLAVESTAGE
+# 
+# Top level modules:
+# 	COREAHBLITE_SLAVESTAGE
+# End time: 11:16:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_matrix4x16.v 
+# -- Compiling module COREAHBLITE_MATRIX4X16
+# 
+# Top level modules:
+# 	COREAHBLITE_MATRIX4X16
+# End time: 11:16:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:06 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work COREAHBLITE_LIB C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/rtl/vlog/core/coreahblite.v 
+# -- Compiling module fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# 
+# Top level modules:
+# 	fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+# End time: 11:16:06 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:07 on Mar 24,2020
+# vlog -reportprogress 300 -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v 
+# -- Compiling module fpga_soc
+# 
+# Top level modules:
+# 	fpga_soc
+# End time: 11:16:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:07 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog" "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 11:16:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim Microsemi vlog 10.5c Compiler 2016.07 Jul 21 2016
+# Start time: 11:16:07 on Mar 24,2020
+# vlog -reportprogress 300 "+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user" -vlog01compat -work presynth C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v 
+# -- Compiling module mt48lc16m16a2
+# 
+# Top level modules:
+# 	mt48lc16m16a2
+# End time: 11:16:07 on Mar 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:16:08 on Mar 24,2020, Elapsed time: 0:04:56
+# Errors: 0, Warnings: 1
+# vsim -L SmartFusion2 -L presynth -L COREAHBLITE_LIB -t 1fs presynth.testbench 
+# Start time: 11:16:09 on Mar 24,2020
+# Loading presynth.testbench
+# Loading presynth.fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+# Loading presynth.sdr_CORESDR
+# Loading presynth.sdr_fastinit
+# Loading presynth.sdr_fastsdram
+# Loading presynth.sdr_openbank
+# Loading COREAHBLITE_LIB.BFM_AHBL
+# Loading SmartFusion2.BFM_MAIN
+# Loading presynth.mt48lc16m16a2
+#  
+###########################################################################
+# AMBA BFM Model
+# Version 2.1 22Dec08
+#  
+# Opening BFM Script file master.vec
+# Read 66 Vectors - Compiler Version 22.25
+# BFM:Filenames referenced in Vectors
+#   master.bfm
+################################################################
+# BFM:CoreAhbSDR Master Test Harness
+# BFM:47: DEBUG 1
+# testbench.genblk1.mem000 : at time  150233.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150338.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150443.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150548.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150653.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150758.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150863.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  150968.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  151073.0 ns LMR  : Load Mode Register
+# testbench.genblk1.mem000 :                             CAS Latency      = 3
+# testbench.genblk1.mem000 :                             Burst Length     = 2
+# testbench.genblk1.mem000 :                             Burst Type       = Sequential
+# testbench.genblk1.mem000 :                             Write Burst Mode = Programmed Burst Length
+# testbench.genblk1.mem000 : at time  151118.0 ns AREF : Auto Refresh
+# testbench.genblk1.mem000 : at time  151223.0 ns ACT  : Bank = 0 Row =    0
+# testbench.genblk1.mem000 : at time  151253.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151268.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151373.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151393.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151553.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  151568.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151658.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  151673.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151778.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  151798.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  151958.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  151973.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152078.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152098.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152258.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  152273.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152363.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  152378.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152483.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152503.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  152663.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152678.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152783.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  152803.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  152963.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  152978.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153068.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153083.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153188.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153208.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153368.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  153383.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153488.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153508.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  153668.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  153683.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153773.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  153788.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153893.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  153913.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154073.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154088.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154193.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154213.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154373.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  154388.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154478.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154493.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154598.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154618.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  154778.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  154793.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154898.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  154918.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155078.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  155093.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155183.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155198.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155303.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155323.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155483.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155498.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155603.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155623.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  155783.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  155798.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  155888.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  155903.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156008.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156028.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156188.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156203.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156308.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156328.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156488.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  156503.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156593.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156608.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156713.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  156733.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  156893.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  156908.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157013.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157033.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157193.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  157208.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157298.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  157313.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157418.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157438.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  157598.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157613.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157718.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  157738.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  157898.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  157913.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158003.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158018.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158123.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158143.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158303.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  158318.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158423.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158443.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  158603.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  158618.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158708.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  158723.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158828.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  158848.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159008.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159023.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159128.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159148.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159308.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  159323.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159413.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159428.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159533.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159553.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  159713.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  159728.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159833.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  159853.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160013.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  160028.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160118.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160133.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160238.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160258.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160418.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160433.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160538.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160558.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  160718.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  160733.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160823.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  160838.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160943.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  160963.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161123.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161138.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161243.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161263.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161423.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  161438.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161528.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161543.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161648.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161668.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  161828.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  161843.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161948.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  161968.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162128.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  162143.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162233.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162248.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162353.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162373.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162533.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162548.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162653.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162673.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 20493
+# testbench.genblk1.mem000 : at time  162833.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 20701
+# testbench.genblk1.mem000 : at time  162848.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  162938.0 ns WRITE: Bank = 0 Row =    0, Col =   3, Data = 61149
+# testbench.genblk1.mem000 : at time  162953.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  163058.0 ns BST  : Burst Terminate
+# testbench.genblk1.mem000 : at time  163078.0 ns READ : Bank = 0 Row =    0, Col =   3, Data = 61149
+###########################################################
+#  
+# BFM Simulation Complete - 112 Instructions - NO ERRORS
+#  
+###########################################################
+#  
+# ** Note: $finish    : C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v(89)
+#    Time: 163135501 ps  Iteration: 0  Instance: /testbench
+# 1
+# Break in Module testbench at C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v line 89
+# Printing not supported.
+# End time: 11:38:58 on Mar 24,2020, Elapsed time: 0:22:49
+# Errors: 1, Warnings: 0

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component> 
+<vendor></vendor>
+<library></library>
+<name>fpga_soc_FCCC_100MHz_FCCC</name>
+<version></version>
+<hwModel>
+<views>
+<view>
+<name>HDL</name>
+<fileSetRef>HDL_FILESET</fileSetRef>
+</view>
+<view>
+<name>OTHER</name>
+<fileSetRef>OTHER_FILESET</fileSetRef>
+</view>
+</views>
+</hwModel>
+<fileSets>
+<fileSet fileSetId="HDL_FILESET">
+<file>
+<name>fpga_soc_FCCC_100MHz_FCCC.v</name>
+<userFileType>verilogSource</userFileType>
+</file>
+</fileSet>
+<fileSet fileSetId="OTHER_FILESET">
+<file>
+<name>./FCCC_100MHz/fpga_soc_FCCC_100MHz_configuration.xml</name>
+<userFileType>LOG</userFileType>
+</file>
+</fileSet>
+</fileSets>
+</component>

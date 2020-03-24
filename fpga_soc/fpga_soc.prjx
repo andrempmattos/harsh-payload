@@ -1,0 +1,1156 @@
+KEY LIBERO "11.8"
+KEY CAPTURE "11.8.0.26"
+KEY DEFAULT_IMPORT_LOC "E:\Naveen\Projects\G4_i\G4i_AnalogPairs\trunk\HW\VL_33V_18V\proj01\hdl"
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VERILOG"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "TRUE"
+KEY VendorTechnology_Family "SmartFusion2"
+KEY VendorTechnology_Die "PA4M1000_N"
+KEY VendorTechnology_Package "vf400"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.2"
+KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE "100_MS"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_PLL_SUPPLY "PLL_SUPPLY_33"
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "PA4M1000_N"
+KEY VendorTechnology_TEMPR "COM"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.2_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "COM"
+KEY ProjectLocation "C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc"
+KEY ProjectDescription ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VERILOG"
+KEY Vendor "Actel"
+KEY ActiveRoot "fpga_soc::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+CURREV=1
+ENDLIST
+LIST LIBRARIES
+COREAHBLITE_LIB
+ENDLIST
+LIST LIBRARY_COREAHBLITE_LIB
+ALIAS=..\component\Actel\DirectCore\CoreAHBLite\5.4.102\mti\user_vlog\COREAHBLITE_LIB
+COMPILE_OPTION=REFRESH_AND_COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST FileManager
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044358"
+SIZE="3798"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\mti\scripts\wave_user.do,do"
+STATE="utd"
+TIME="1584365657"
+SIZE="912"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v,tb_hdl"
+STATE="utd"
+TIME="1584365656"
+SIZE="8059"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v,tb_hdl"
+STATE="utd"
+TIME="1584365656"
+SIZE="2462"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v,tb_hdl"
+STATE="utd"
+TIME="1584365656"
+SIZE="48752"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+STATE="utd"
+TIME="1584365656"
+SIZE="122458"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_addrdec.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="6576"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_defaultslavesm.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="2069"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_masterstage.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="17556"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_matrix4x16.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="227942"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavearbiter.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="14709"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavestage.v,hdl"
+STATE="utd"
+TIME="1584365658"
+SIZE="9403"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044356"
+SIZE="3103"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\mti\scripts\time.do,do"
+STATE="utd"
+TIME="1584365660"
+SIZE="10"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\mti\scripts\wave_vlog.do,do"
+STATE="utd"
+TIME="1584365660"
+SIZE="3773"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_coresdr.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="10016"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastinit.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="13213"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastsdram.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="55902"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_openbank.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="17269"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_2x_smartfusion2.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="4625"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_4x_smartfusion2.v,hdl"
+STATE="utd"
+TIME="1584365660"
+SIZE="4625"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="7999"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="11227"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="3075"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="41524"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="6485"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="9072"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="2847"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="20763"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="6386"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="197433"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_package.v,tb_hdl"
+STATE="utd"
+TIME="1584365659"
+SIZE="40024"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044362"
+SIZE="241"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SgCore\OSC\2.0.101\OSC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044365"
+SIZE="684"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SgCore\OSC\2.0.101\osc_comps.v,hdl"
+STATE="utd"
+TIME="1584365667"
+SIZE="924"
+PARENT="<project>\component\Actel\SgCore\OSC\2.0.101\OSC.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="SYNPLIFY7_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\SgCore\OSC\2.0.101\osc_comps_pre.v,hdl"
+STATE="utd"
+TIME="1584365667"
+SIZE="726"
+PARENT="<project>\component\Actel\SgCore\OSC\2.0.101\OSC.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="PRECISION_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS\1.1.500\MSS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044352"
+SIZE="526"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_CCC\1.0.100\MSS_CCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="253"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_CC\1.0.100\MSS_CC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="252"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_CFGM\1.1.100\MSS_CFGM.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_CM3\1.0.200\MSS_CM3.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="253"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_DDRB\1.0.200\MSS_DDRB.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_EDAC\1.0.101\MSS_EDAC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_ENVM\1.0.101\MSS_ENVM.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_GPIO\1.0.100\MSS_GPIO.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_I2C\1.0.100\MSS_I2C.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="253"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_INTR\1.0.200\MSS_INTR.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_MDDR\1.0.203\MSS_MDDR.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="254"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_MMUART\1.0.100\MSS_MMUART.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="256"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_RESET\1.0.100\MSS_RESET.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="255"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_RTC\1.0.201\MSS_RTC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="253"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_SECURITY\1.0.100\MSS_SECURITY.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="258"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_SPI\1.0.100\MSS_SPI.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="253"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_SWITCH\1.0.101\MSS_SWITCH.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="256"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusion2MSS\MSS_WATCHDOG\1.0.100\MSS_WATCHDOG.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044338"
+SIZE="258"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\coreparameters.v,tb_hdl"
+STATE="utd"
+TIME="1585044356"
+SIZE="891"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044356"
+SIZE="2986"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\core\coresdrahb_coresdr_ahb.v,hdl"
+STATE="utd"
+TIME="1585044356"
+SIZE="37351"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+STATE="utd"
+TIME="1585044356"
+SIZE="47785"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v,tb_hdl"
+STATE="utd"
+TIME="1585044356"
+SIZE="47641"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1585044356"
+SIZE="8405"
+PARENT="<project>\component\work\fpga_soc\Controller_SDRAM_AHB\fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\coreparameters.v,tb_hdl"
+STATE="utd"
+TIME="1585044358"
+SIZE="3737"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044358"
+SIZE="1876"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\core\coreahblite.v,hdl"
+STATE="utd"
+TIME="1585044358"
+SIZE="24077"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1585044357"
+SIZE="52661"
+LIBRARY="COREAHBLITE_LIB"
+PARENT="<project>\component\work\fpga_soc\CoreAHBLite_Interface\fpga_soc_CoreAHBLite_Interface_CoreAHBLite.cxf"
+MODULE_UNDER_TEST="testbench"
+SIMULATION_TIME="-all"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\FCCC_100MHz\fpga_soc_FCCC_100MHz_FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044361"
+SIZE="717"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\FCCC_100MHz\fpga_soc_FCCC_100MHz_FCCC.v,hdl"
+STATE="utd"
+TIME="1585044361"
+SIZE="1827"
+PARENT="<project>\component\work\fpga_soc\FCCC_100MHz\fpga_soc_FCCC_100MHz_FCCC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\fpga_soc.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044372"
+SIZE="13166"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\fpga_soc.v,hdl"
+STATE="utd"
+TIME="1585044365"
+SIZE="34990"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\OSC_50MHz\fpga_soc_OSC_50MHz_OSC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044365"
+SIZE="467"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc\OSC_50MHz\fpga_soc_OSC_50MHz_OSC.v,hdl"
+STATE="utd"
+TIME="1585044365"
+SIZE="536"
+PARENT="<project>\component\work\fpga_soc\OSC_50MHz\fpga_soc_OSC_50MHz_OSC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1585044354"
+SIZE="21013"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.v,hdl"
+STATE="utd"
+TIME="1585044352"
+SIZE="84528"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc_MSS\fpga_soc_MSS_pre.v,hdl"
+STATE="utd"
+TIME="1585044350"
+SIZE="73063"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="PRECISION_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\fpga_soc_MSS\fpga_soc_MSS_syn.v,hdl"
+STATE="utd"
+TIME="1585044350"
+SIZE="61644"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="SYNPLIFY7_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\simulation\bfmtovec_compile.log,log"
+STATE="utd"
+TIME="1585044663"
+SIZE="941"
+ENDFILE
+VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
+STATE="utd"
+TIME="1584365657"
+SIZE="1462"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
+STATE="utd"
+TIME="1585044351"
+SIZE="500"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\simulation\coreahblite_usertb_ahb_master0.bfm,sim"
+STATE="utd"
+TIME="1584365658"
+SIZE="26241"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\coreahblite_usertb_ahb_master1.bfm,sim"
+STATE="utd"
+TIME="1584365658"
+SIZE="6518"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\coreahblite_usertb_ahb_master2.bfm,sim"
+STATE="utd"
+TIME="1584365658"
+SIZE="6200"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\coreahblite_usertb_ahb_master3.bfm,sim"
+STATE="utd"
+TIME="1584365658"
+SIZE="6200"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\coreahblite_usertb_include.bfm,sim"
+STATE="utd"
+TIME="1584365658"
+SIZE="12178"
+PARENT="<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\CoreAHBLite.cxf"
+ENDFILE
+VALUE "<project>\simulation\master.bfm,sim"
+STATE="utd"
+TIME="1584365660"
+SIZE="14766"
+PARENT="<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\CORESDR_AHB.cxf"
+ENDFILE
+VALUE "<project>\simulation\peripheral_init.bfm,sim"
+STATE="utd"
+TIME="1584365651"
+SIZE="8450"
+PARENT="<project>\component\Actel\SmartFusion2MSS\MSS\1.1.500\MSS.cxf"
+ENDFILE
+VALUE "<project>\simulation\run.do,do"
+STATE="utd"
+TIME="1585044522"
+SIZE="3646"
+ENDFILE
+VALUE "<project>\simulation\subsystem.bfm,sim"
+STATE="utd"
+TIME="1585044366"
+SIZE="602"
+PARENT="<project>\component\work\fpga_soc\fpga_soc.cxf"
+ENDFILE
+VALUE "<project>\simulation\test.bfm,sim"
+STATE="utd"
+TIME="1585044351"
+SIZE="734"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+VALUE "<project>\simulation\testbench_presynth_simulation.log,log"
+STATE="utd"
+TIME="1585044538"
+SIZE="114"
+ENDFILE
+VALUE "<project>\simulation\user.bfm,sim"
+STATE="utd"
+TIME="1585044351"
+SIZE="555"
+PARENT="<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.cxf"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "fpga_soc::work"
+FILE "<project>\component\work\fpga_soc\fpga_soc.v,hdl"
+LIST Other_Association
+VALUE "<project>\simulation\subsystem.bfm,sim"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB::work"
+FILE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\core\coresdrahb_coresdr_ahb.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_package.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_package.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "fpga_soc_MSS::work"
+FILE "<project>\component\work\fpga_soc_MSS\fpga_soc_MSS.v,hdl"
+LIST Other_Association
+VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
+VALUE "<project>\simulation\user.bfm,sim"
+VALUE "<project>\simulation\test.bfm,sim"
+VALUE "<project>\simulation\peripheral_init.bfm,sim"
+ENDLIST
+ENDLIST
+LIST "fpga_soc_CoreAHBLite_Interface_CoreAHBLite::COREAHBLITE_LIB"
+FILE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\core\coreahblite.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+LIST fpga_soc
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+ENDLIST
+LIST fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_package.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v,tb_hdl"
+ENDLIST
+LIST fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST Other_Association
+LIST fpga_soc
+VALUE "<project>\simulation\subsystem.bfm,sim"
+ENDLIST
+LIST fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_package.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v,tb_hdl"
+ENDLIST
+LIST fpga_soc_MSS
+VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
+VALUE "<project>\simulation\user.bfm,sim"
+VALUE "<project>\simulation\test.bfm,sim"
+VALUE "<project>\simulation\peripheral_init.bfm,sim"
+ENDLIST
+LIST fpga_soc_CoreAHBLite_Interface_CoreAHBLite
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v,tb_hdl"
+VALUE "<project>\component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=false
+IncludeWaveDo=false
+Type=max
+RunTime=150us
+Resolution=1fs
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/simulation/run.do
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin\synplify_pro.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Modelsim\win32acoem\modelsim.exe"
+PARAM=" -l testbench_presynth_simulation.log "
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "fpga_soc::work"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB::work"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "fpga_soc_CoreAHBLite_Interface_CoreAHBLite::COREAHBLITE_LIB"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+ENDLIST
+LIST ModuleSubBlockList
+LIST "fpga_soc::work","component\work\fpga_soc\fpga_soc.v","TRUE","FALSE"
+SUBBLOCK "fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\core\coresdrahb_coresdr_ahb.v","FALSE","FALSE"
+SUBBLOCK "fpga_soc_FCCC_100MHz_FCCC::work","component\work\fpga_soc\FCCC_100MHz\fpga_soc_FCCC_100MHz_FCCC.v","FALSE","FALSE"
+SUBBLOCK "fpga_soc_MSS::work","component\work\fpga_soc_MSS\fpga_soc_MSS.v","TRUE","FALSE"
+SUBBLOCK "fpga_soc_OSC_50MHz_OSC::work","component\work\fpga_soc\OSC_50MHz\fpga_soc_OSC_50MHz_OSC.v","FALSE","FALSE"
+SUBBLOCK "fpga_soc_CoreAHBLite_Interface_CoreAHBLite::COREAHBLITE_LIB","component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\core\coreahblite.v","FALSE","FALSE"
+ENDLIST
+LIST "fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\core\coresdrahb_coresdr_ahb.v","FALSE","FALSE"
+SUBBLOCK "PLL_2X::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_2x_smartfusion2.v","FALSE","FALSE"
+SUBBLOCK "PLL_4X::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_4x_smartfusion2.v","FALSE","FALSE"
+SUBBLOCK "sdr_CORESDR::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_coresdr.v","FALSE","FALSE"
+ENDLIST
+LIST "fpga_soc_FCCC_100MHz_FCCC::work","component\work\fpga_soc\FCCC_100MHz\fpga_soc_FCCC_100MHz_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "fpga_soc_MSS::work","component\work\fpga_soc_MSS\fpga_soc_MSS.v","TRUE","FALSE"
+SUBBLOCK "MSS_010::work","component\work\fpga_soc_MSS\fpga_soc_MSS_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "fpga_soc_OSC_50MHz_OSC::work","component\work\fpga_soc\OSC_50MHz\fpga_soc_OSC_50MHz_OSC.v","FALSE","FALSE"
+SUBBLOCK "RCOSC_25_50MHZ::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "MSS_010::work","component\work\fpga_soc_MSS\fpga_soc_MSS_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "PLL_2X::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_2x_smartfusion2.v","FALSE","FALSE"
+SUBBLOCK "PLL_2X_CCC_0_CCC::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_2x_smartfusion2.v","FALSE","FALSE"
+ENDLIST
+LIST "PLL_2X_CCC_0_CCC::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_2x_smartfusion2.v","FALSE","FALSE"
+ENDLIST
+LIST "PLL_4X::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_4x_smartfusion2.v","FALSE","FALSE"
+SUBBLOCK "PLL_4X_CCC_0_CCC::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_4x_smartfusion2.v","FALSE","FALSE"
+ENDLIST
+LIST "PLL_4X_CCC_0_CCC::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\pll_4x_smartfusion2.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_1MHZ::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_1MHZ_FAB::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_25_50MHZ::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_25_50MHZ_FAB::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "sdr_CORESDR::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_coresdr.v","FALSE","FALSE"
+SUBBLOCK "sdr_fastinit::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastinit.v","FALSE","FALSE"
+ENDLIST
+LIST "sdr_fastinit::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastinit.v","FALSE","FALSE"
+SUBBLOCK "sdr_fastsdram::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastsdram.v","FALSE","FALSE"
+ENDLIST
+LIST "sdr_fastsdram::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_fastsdram.v","FALSE","FALSE"
+SUBBLOCK "sdr_openbank::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_openbank.v","FALSE","FALSE"
+ENDLIST
+LIST "sdr_openbank::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\core\coresdrahb_openbank.v","FALSE","FALSE"
+ENDLIST
+LIST "XTLOSC::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "XTLOSC_FAB::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "BFM_AHB2APB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_AHBL::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v","FALSE","TRUE"
+SUBBLOCK "SDR_BFM_MAIN::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_AHBLAPB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahblapb.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHB2APB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v","FALSE","TRUE"
+SUBBLOCK "BFM_MAIN::work","","FALSE","FALSE"
+ENDLIST
+LIST "BFM_AHBSLAVE::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslave.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHBSLAVEEXT::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_AHBSLAVEEXT::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apb.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHB2APB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbtoapb.v","FALSE","TRUE"
+SUBBLOCK "BFM_MAIN::work","","FALSE","FALSE"
+ENDLIST
+LIST "BFM_APB2APB::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbtoapb.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVE::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslave.v","FALSE","TRUE"
+SUBBLOCK "BFM_APBSLAVEEXT::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVEEXT::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_MAIN::work","","FALSE","FALSE"
+ENDLIST
+LIST "mt48lc16m16a2::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v","FALSE","TRUE"
+ENDLIST
+LIST "mt48lc4m16a2::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc4m16a2.v","FALSE","TRUE"
+ENDLIST
+LIST "SDR_BFM_MAIN::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\testbench.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHBL::work","component\Actel\DirectCore\CORESDR_AHB\4.3.100\rtl\vlog\test\bfm_ahbl.v","FALSE","TRUE"
+SUBBLOCK "fpga_soc_Controller_SDRAM_AHB_CORESDR_AHB::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\core\coresdrahb_coresdr_ahb.v","FALSE","FALSE"
+SUBBLOCK "mt48lc16m16a2::work","component\work\fpga_soc\Controller_SDRAM_AHB\rtl\vlog\test\user\mt48lc16m16a2.v","FALSE","TRUE"
+ENDLIST
+LIST "COREAHBLITE_ADDRDEC::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_addrdec.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLITE_DEFAULTSLAVESM::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_defaultslavesm.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLITE_MASTERSTAGE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_masterstage.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_ADDRDEC::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_addrdec.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_DEFAULTSLAVESM::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_defaultslavesm.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLITE_MATRIX4X16::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_matrix4x16.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_MASTERSTAGE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_masterstage.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_SLAVESTAGE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavestage.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLITE_SLAVEARBITER::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavearbiter.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLITE_SLAVESTAGE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavestage.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_SLAVEARBITER::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_slavearbiter.v","FALSE","FALSE"
+ENDLIST
+LIST "fpga_soc_CoreAHBLite_Interface_CoreAHBLite::COREAHBLITE_LIB","component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\core\coreahblite.v","FALSE","FALSE"
+SUBBLOCK "COREAHBLITE_MATRIX4X16::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\core\coreahblite_matrix4x16.v","FALSE","FALSE"
+ENDLIST
+LIST "BFM_AHBL::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v","FALSE","TRUE"
+SUBBLOCK "BFM_MAIN::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_AHBSLAVE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHBSLAVEEXT::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_AHBSLAVEEXT::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_MAIN::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::COREAHBLITE_LIB","component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\test\user\testbench.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHBL::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbl.v","FALSE","TRUE"
+SUBBLOCK "BFM_AHBSLAVE::COREAHBLITE_LIB","component\Actel\DirectCore\CoreAHBLite\5.4.102\rtl\vlog\amba_bfm\bfm_ahbslave.v","FALSE","TRUE"
+SUBBLOCK "fpga_soc_CoreAHBLite_Interface_CoreAHBLite::COREAHBLITE_LIB","component\work\fpga_soc\CoreAHBLite_Interface\rtl\vlog\core\coreahblite.v","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+ENDLIST
+LIST FDCTabList
+ENDLIST

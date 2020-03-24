@@ -1,0 +1,58 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
+
+Date      :  Tue Mar 24 11:06:12 2020
+Project   :  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc
+Component :  fpga_soc
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_addrdec.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_defaultslavesm.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_masterstage.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_matrix4x16.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavearbiter.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/core/coreahblite_slavestage.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/rtl/vlog/core/coreahblite.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v
+
+HDL source files for Synopsys SynplifyPro Synthesis tool:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/SgCore/OSC/2.0.101/osc_comps.v
+
+HDL source files for Mentor Precision Synthesis tool:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/SgCore/OSC/2.0.101/osc_comps_pre.v
+
+Stimulus files for all Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/subsystem.bfm
+
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_ahbl.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_ahblapb.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_ahbslave.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_ahbslaveext.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_ahbtoapb.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_apb.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_apbslave.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_apbslaveext.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_apbtoapb.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_main.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/test/bfm_package.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/amba_bfm/bfm_ahbl.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/amba_bfm/bfm_ahbslave.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/amba_bfm/bfm_ahbslaveext.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.4.102/rtl/vlog/amba_bfm/bfm_main.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/coreparameters.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc4m16a2.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/coreparameters.v
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/CoreAHBLite_Interface/rtl/vlog/test/user/testbench.v
+

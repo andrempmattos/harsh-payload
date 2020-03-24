@@ -1,0 +1,352 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/simulation
+vfpga_soc
+Z1 !s110 1585044967
+!i10b 1
+!s100 22RZA[HGoQk6Gomc6DK993
+I3GBRTUhLFbiD=7:kCl8520
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1585044365
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v
+L0 9
+Z4 OW;L;10.5c;63
+r1
+!s85 0
+31
+Z5 !s108 1585044967.000000
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/fpga_soc.v|
+!s101 -O0
+!i113 1
+Z6 o-vlog01compat -work presynth -O0
+Z7 tCvgOpt 0
+vfpga_soc_Controller_SDRAM_AHB_CORESDR_AHB
+Z8 !s110 1585044964
+!i10b 1
+!s100 ]Ba<EIXh?jbcn6RKd^DjO3
+IlRW9QTd==PYnBjjYO^VM:2
+R2
+R0
+Z9 w1585044356
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v
+L0 18
+R4
+r1
+!s85 0
+31
+Z10 !s108 1585044964.000000
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/core/coresdrahb_coresdr_ahb.v|
+!s101 -O0
+!i113 1
+R6
+R7
+nfpga_soc_@controller_@s@d@r@a@m_@a@h@b_@c@o@r@e@s@d@r_@a@h@b
+vfpga_soc_FCCC_100MHz_FCCC
+R8
+!i10b 1
+!s100 C0Y3I2?HiZ`3[6Ab>Fhld2
+IjUakcLzdd`fQ`>_WdIZ6m1
+R2
+R0
+w1585044361
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v
+L0 5
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/FCCC_100MHz/fpga_soc_FCCC_100MHz_FCCC.v|
+!s101 -O0
+!i113 1
+R6
+R7
+nfpga_soc_@f@c@c@c_100@m@hz_@f@c@c@c
+vfpga_soc_MSS
+R8
+!i10b 1
+!s100 dAR6gXMU^:b275;@o0CI33
+IhGUha7Uhm=:V_A691bXD71
+R2
+R0
+w1585044352
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v
+L0 9
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc_MSS/fpga_soc_MSS.v|
+!s101 -O0
+!i113 1
+R6
+R7
+nfpga_soc_@m@s@s
+vfpga_soc_OSC_50MHz_OSC
+!s110 1585044965
+!i10b 1
+!s100 OinWHCbza]ddRBDaiAO]z3
+ID295FfT>2mmQDPR;:9<9U0
+R2
+R0
+R3
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v
+L0 5
+R4
+r1
+!s85 0
+31
+!s108 1585044965.000000
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/OSC_50MHz/fpga_soc_OSC_50MHz_OSC.v|
+!s101 -O0
+!i113 1
+R6
+R7
+nfpga_soc_@o@s@c_50@m@hz_@o@s@c
+vmt48lc16m16a2
+R1
+!i10b 1
+!s100 1gOGIGZ7WYN:_C;TgPHCD3
+IfBlLn3j[d5Ff40:[Bm4U92
+R2
+R0
+R9
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v
+L0 44
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v|
+!s90 -reportprogress|300|+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/mt48lc16m16a2.v|
+!s101 -O0
+!i113 1
+R6
+!s92 +incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user -vlog01compat -work presynth -O0
+R7
+vPLL_2X
+Z11 !s110 1585044962
+!i10b 1
+!s100 Pb6m>TOI4EXXj?B_if]Uf0
+I_VSVI<^SCWKLUjeNcAC161
+R2
+R0
+Z12 w1584365660
+Z13 8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v
+Z14 FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v
+L0 9
+R4
+r1
+!s85 0
+31
+Z15 !s108 1585044962.000000
+Z16 !s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v|
+Z17 !s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_2x_smartfusion2.v|
+!s101 -O0
+!i113 1
+R6
+R7
+n@p@l@l_2@x
+vPLL_2X_CCC_0_CCC
+R11
+!i10b 1
+!s100 z12h][=G^4l`gW0C3M^gQ1
+Iladk3MODl<2C1W5WX00>G3
+R2
+R0
+R12
+R13
+R14
+Z18 L0 87
+R4
+r1
+!s85 0
+31
+R15
+R16
+R17
+!s101 -O0
+!i113 1
+R6
+R7
+n@p@l@l_2@x_@c@c@c_0_@c@c@c
+vPLL_4X
+R11
+!i10b 1
+!s100 SSXJGehb;cNYG0V<=QQKV3
+I3kbe2mSiGKa]2hKlkM2cL3
+R2
+R0
+R12
+Z19 8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v
+Z20 FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v
+L0 9
+R4
+r1
+!s85 0
+31
+R15
+Z21 !s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v|
+Z22 !s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/pll_4x_smartfusion2.v|
+!s101 -O0
+!i113 1
+R6
+R7
+n@p@l@l_4@x
+vPLL_4X_CCC_0_CCC
+R11
+!i10b 1
+!s100 _GeVijBFE9FHfh7@zZ=gD3
+Ia]XefaSZg[9f;i`J<mLdF0
+R2
+R0
+R12
+R19
+R20
+R18
+R4
+r1
+!s85 0
+31
+R15
+R21
+R22
+!s101 -O0
+!i113 1
+R6
+R7
+n@p@l@l_4@x_@c@c@c_0_@c@c@c
+vsdr_CORESDR
+R8
+!i10b 1
+!s100 PbMSh?mFhC[BmEVXKnH>42
+I4DNG4]8Z6GTF@>UB?@U8O0
+R2
+R0
+R12
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v
+L0 17
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_coresdr.v|
+!s101 -O0
+!i113 1
+R6
+R7
+nsdr_@c@o@r@e@s@d@r
+vsdr_fastinit
+Z23 !s110 1585044963
+!i10b 1
+!s100 R_m@U341S_5niWiKlNHYC3
+IhUQn2fURnIemDMUaR]l_X2
+R2
+R0
+R12
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v
+Z24 L0 21
+R4
+r1
+!s85 0
+31
+Z25 !s108 1585044963.000000
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastinit.v|
+!s101 -O0
+!i113 1
+R6
+R7
+vsdr_fastsdram
+R23
+!i10b 1
+!s100 Z;>KQl@J459hP;G0@V=Ui0
+IVgG9d[inkR12=i6LO8[mH2
+R2
+R0
+R12
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v
+L0 19
+R4
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_fastsdram.v|
+!s101 -O0
+!i113 1
+R6
+R7
+vsdr_openbank
+R23
+!i10b 1
+!s100 omgbLQccHA<G3=OJMWIo21
+ICIzD:S3S;T`L7L;oYYd]N0
+R2
+R0
+R12
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v
+R24
+R4
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AHB/4.3.100/rtl/vlog/core/coresdrahb_openbank.v|
+!s101 -O0
+!i113 1
+R6
+R7
+vtestbench
+R1
+!i10b 1
+!s100 <TzWdnM7RoE9gPZH40Web1
+IXPhgbLAa=[1fDNiYBR7Je3
+R2
+R0
+R9
+8C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v
+FC:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/../../coreparameters.v
+L0 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/../../coreparameters.v|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v|
+!s90 -reportprogress|300|+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog|+incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user|-vlog01compat|-work|presynth|C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user/testbench.v|
+!s101 -O0
+!i113 1
+R6
+!s92 +incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog +incdir+C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/fpga_soc/Controller_SDRAM_AHB/rtl/vlog/test/user -vlog01compat -work presynth -O0
+R7

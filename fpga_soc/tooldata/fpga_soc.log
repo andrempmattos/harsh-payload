@@ -1,0 +1,16 @@
+Project Name: fpga_soc
+Location: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc
+Description: 
+Preferred HDL Type: Verilog
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : M2S010-VF400
+Family         : SmartFusion2
+Die            : M2S010
+Package        : 400 VF
+Speed          : STD
+Core Voltage   : 1.2
+Range          : COM
