@@ -1,0 +1,53 @@
+# Microsemi Physical design constraints file
+
+# Version: v11.8 11.8.0.26
+
+# Design Name:  
+
+# Input Netlist Format: EDIF 
+
+# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: -1 
+
+# Date generated: Thu Mar 26 22:08:11 2020 
+
+
+#
+# IO banks setting
+#
+
+set_iobank Bank1 -vcci 3.30 -fixed no
+set_iobank Bank2 -vcci 3.30 -fixed no
+
+#
+# Local clock constraints
+#
+
+
+#
+# Region constraints
+#
+
+
+#
+# I/O constraints
+#
+
+set_io DEVRST_N -DIRECTION INPUT -pinname U17
+set_io GPIO_10_OUT -DIRECTION OUTPUT -pinname H17 -fixed yes
+set_io GPIO_11_OUT -DIRECTION OUTPUT -pinname L16 -fixed yes
+set_io GPIO_12_OUT -DIRECTION OUTPUT -pinname K20 -fixed yes
+set_io GPIO_13_OUT -DIRECTION OUTPUT -pinname J20 -fixed yes
+set_io GPIO_14_OUT -DIRECTION OUTPUT -pinname H16 -fixed yes
+set_io GPIO_15_OUT -DIRECTION OUTPUT -pinname G19 -fixed yes
+set_io GPIO_16_OUT -DIRECTION OUTPUT -pinname F20 -fixed yes
+set_io GPIO_25_OUT -DIRECTION OUTPUT -pinname E18 -fixed yes
+set_io GPIO_29_IN -DIRECTION INPUT -pinname B19 -fixed yes
+set_io GPIO_8_OUT -DIRECTION OUTPUT -pinname H19 -fixed yes
+set_io GPIO_9_OUT -DIRECTION OUTPUT -pinname G18 -fixed yes
+set_io MMUART_0_RXD -DIRECTION INPUT -pinname C19 -fixed yes
+set_io MMUART_0_TXD -DIRECTION OUTPUT -pinname D18 -fixed yes
+
+#
+# Core cell constraints
+#
+

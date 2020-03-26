@@ -1,0 +1,16 @@
+Project Name: SMFSDRAM
+Location: B:\SVN\Customers\Arrow\SF2000\SMFSDRAM
+Description: 
+Preferred HDL Type: VHDL
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : M2S010-1VF400
+Family         : SmartFusion2
+Die            : M2S010
+Package        : 400 VF
+Speed          : -1
+Core Voltage   : 1.2
+Range          : COM

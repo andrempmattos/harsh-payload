@@ -1,0 +1,82 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
+
+Date      :  Thu Mar 26 22:06:45 2020
+Project   :  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc
+Component :  top_sb
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_AHBAccessControl.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_AXIAccessControl.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_RDCHANNELFIFO.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_WRCHANNELFIFO.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_rdch_ram.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_reset_sync.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/CoreAHBLtoAXI_wrch_ram.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/Synchronizer_AHBtoAXI.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/core/Synchronizer_AXItoAHB.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/XHDL_misc.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/XHDL_std_logic.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_feedthrough.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_interconnect_ntom.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_master_stage.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_matrix_m.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_matrix_s.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_pkg.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_ra_arbiter.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_ra_channel.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_rd_channel.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_rdmatrix_16Sto1M.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_rdmatrix_4Mto1S.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_rdmatrix_4Mto1S_hgs_high.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_rdmatrix_4Mto1S_hgs_low.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_slave_stage.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wa_arbiter.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wa_channel.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wd_channel.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wresp_channel.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wrmatrix_4Mto1S.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wrmatrix_4Mto1S_hgs_high.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/core/axi_wrmatrix_4Mto1S_hgs_low.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AXI/2.0.116/rtl/vhdl/core/coresdr.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AXI/2.0.116/rtl/vhdl/core/coresdr_axi.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AXI/2.0.116/rtl/vhdl/core/fastinit.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AXI/2.0.116/rtl/vhdl/core/fastsdram.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CORESDR_AXI/2.0.116/rtl/vhdl/core/openbank.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/components.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_addrdec.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_defaultslavesm.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_masterstage.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_matrix4x16.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_pkg.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_slavearbiter.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vhdl/core/coreahblite_slavestage.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vhdl/core/coreresetp_pcie_hotreset.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/CCC_0/top_sb_CCC_0_FCCC.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/COREAHBLTOAXI_0/rtl/vhdl/core/CoreAHBLtoAXI.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/COREAXI_0/rtl/vhdl/core/coreaxi.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/FABOSC_0/top_sb_FABOSC_0_OSC.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/top_sb.vhd
+
+HDL source files for Synopsys SynplifyPro Synthesis tool:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/SgCore/OSC/2.0.101/osc_comps.vhd
+
+HDL source files for Mentor Precision Synthesis tool:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/SgCore/OSC/2.0.101/osc_comps_pre.vhd
+
+Stimulus files for all Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/subsystem.bfm
+
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/test/user/XHDL_misc.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/test/user/XHDL_std_logic.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAHBLTOAXI/2.1.101/rtl/vhdl/test/user/axi_slave.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/coreparameters.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/test/user/axi_master.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/Actel/DirectCore/COREAXI/3.1.100/rtl/vhdl/test/user/axi_slave.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/COREAHBLTOAXI_0/coreparameters.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/COREAHBLTOAXI_0/rtl/vhdl/test/user/Tb_CoreAHBLtoAXI.vhd
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top_sb/COREAXI_0/rtl/vhdl/test/user/testbench.vhd
+

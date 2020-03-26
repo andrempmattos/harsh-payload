@@ -1,0 +1,7 @@
+DESIGN=top
+DESDIR=B:\SVN\Customers\Arrow\SF2000\SMFSDRAM\designer\top
+TARGET_DIR=B:\SVN\Customers\Arrow\SF2000\SMFSDRAM\designer\top
+FAM=SmartFusion2
+DIE=PA4M1000_N
+PACKAGE=vf400
+PDC_FILE=B:\SVN\Customers\Arrow\SF2000\SMFSDRAM\constraint\io\user.pdc,,

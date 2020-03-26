@@ -1,0 +1,14 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
+
+Date      :  Thu Mar 26 22:07:11 2020
+Project   :  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc
+Component :  top
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top/top.vhd
+
+Stimulus files for all Simulation tools:
+    C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top/subsystem.bfm
+

@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<text>SmartTime Version 11.8.0.26</text>
+<text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
+Date: Thu Mar 26 22:13:50 2020 </text>
+<table>
+<header>
+</header>
+<row>
+ <cell>Design</cell>
+ <cell>top</cell>
+</row>
+<row>
+ <cell>Family</cell>
+ <cell>SmartFusion2</cell>
+</row>
+<row>
+ <cell>Die</cell>
+ <cell>M2S010</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>400 VF</cell>
+</row>
+<row>
+ <cell>Temperature Range</cell>
+ <cell>0 - 85 C</cell>
+</row>
+<row>
+ <cell>Voltage Range</cell>
+ <cell>1.14 - 1.26 V</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>-1</cell>
+</row>
+</table>
+<text></text>
+<text></text>
+<section>
+<name>Coverage Summary</name>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>         3493</cell>
+ <cell>           21</cell>
+ <cell>         3514</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>         2327</cell>
+ <cell>            6</cell>
+ <cell>         2333</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>         5820</cell>
+ <cell>           76</cell>
+ <cell>         5896</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>         3493</cell>
+ <cell>           21</cell>
+ <cell>         3514</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>         2327</cell>
+ <cell>            6</cell>
+ <cell>         2333</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>         5820</cell>
+ <cell>           76</cell>
+ <cell>         5896</cell>
+</row>
+</table>
+<section>
+<name>Clock domain: </name>
+<text>CLK1_PAD</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on  port:</text>
+<text>   </text>
+<list>
+ <item>SDRCLK</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on  port:</text>
+<text>   </text>
+<list>
+ <item>SDRCLK</item>
+</list>
+<text></text>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>top_sb_0/CCC_0/GL2</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>         3493</cell>
+ <cell>           21</cell>
+ <cell>         3514</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>         2327</cell>
+ <cell>            6</cell>
+ <cell>         2333</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>           48</cell>
+ <cell>           48</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>         5820</cell>
+ <cell>           75</cell>
+ <cell>         5895</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>         3493</cell>
+ <cell>           21</cell>
+ <cell>         3514</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>         2327</cell>
+ <cell>            6</cell>
+ <cell>         2333</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>           48</cell>
+ <cell>           48</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>         5820</cell>
+ <cell>           75</cell>
+ <cell>         5895</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Max input delay constraint missing on  ports:</text>
+<text>   </text>
+<list>
+ <item>DQ[0]</item>
+ <item>DQ[10]</item>
+ <item>DQ[11]</item>
+ <item>DQ[12]</item>
+ <item>DQ[13]</item>
+ <item>DQ[14]</item>
+ <item>DQ[15]</item>
+ <item>DQ[1]</item>
+ <item>DQ[2]</item>
+ <item>DQ[3]</item>
+ <item>DQ[4]</item>
+ <item>DQ[5]</item>
+ <item>DQ[6]</item>
+ <item>DQ[7]</item>
+ <item>DQ[8]</item>
+ <item>DQ[9]</item>
+</list>
+<text></text>
+<text> - Min input delay constraint missing on  ports:</text>
+<text>   </text>
+<list>
+ <item>DQ[0]</item>
+ <item>DQ[10]</item>
+ <item>DQ[11]</item>
+ <item>DQ[12]</item>
+ <item>DQ[13]</item>
+ <item>DQ[14]</item>
+ <item>DQ[15]</item>
+ <item>DQ[1]</item>
+ <item>DQ[2]</item>
+ <item>DQ[3]</item>
+ <item>DQ[4]</item>
+ <item>DQ[5]</item>
+ <item>DQ[6]</item>
+ <item>DQ[7]</item>
+ <item>DQ[8]</item>
+ <item>DQ[9]</item>
+</list>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on  ports:</text>
+<text>   </text>
+<list>
+ <item>BA[0]</item>
+ <item>BA[1]</item>
+ <item>CAS_N</item>
+ <item>CKE</item>
+ <item>CS_N[0]</item>
+ <item>DQM[0]</item>
+ <item>DQM[1]</item>
+ <item>DQ[0]</item>
+ <item>DQ[10]</item>
+ <item>DQ[11]</item>
+ <item>DQ[12]</item>
+ <item>DQ[13]</item>
+ <item>DQ[14]</item>
+ <item>DQ[15]</item>
+ <item>DQ[1]</item>
+ <item>DQ[2]</item>
+ <item>DQ[3]</item>
+ <item>DQ[4]</item>
+ <item>DQ[5]</item>
+ <item>DQ[6]</item>
+ <item>DQ[7]</item>
+ <item>DQ[8]</item>
+ <item>DQ[9]</item>
+ <item>GPIO_10_OUT</item>
+ <item>GPIO_11_OUT</item>
+ <item>GPIO_12_OUT</item>
+ <item>GPIO_13_OUT</item>
+ <item>GPIO_14_OUT</item>
+ <item>GPIO_15_OUT</item>
+ <item>GPIO_16_OUT</item>
+ <item>GPIO_25_OUT</item>
+ <item>GPIO_8_OUT</item>
+ <item>GPIO_9_OUT</item>
+ <item>MMUART_0_TXD</item>
+ <item>RAS_N</item>
+ <item>SA[0]</item>
+ <item>SA[10]</item>
+ <item>SA[11]</item>
+ <item>SA[1]</item>
+ <item>SA[2]</item>
+ <item>SA[3]</item>
+ <item>SA[4]</item>
+ <item>SA[5]</item>
+ <item>SA[6]</item>
+ <item>SA[7]</item>
+ <item>SA[8]</item>
+ <item>SA[9]</item>
+ <item>WE_N</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on  ports:</text>
+<text>   </text>
+<list>
+ <item>BA[0]</item>
+ <item>BA[1]</item>
+ <item>CAS_N</item>
+ <item>CKE</item>
+ <item>CS_N[0]</item>
+ <item>DQM[0]</item>
+ <item>DQM[1]</item>
+ <item>DQ[0]</item>
+ <item>DQ[10]</item>
+ <item>DQ[11]</item>
+ <item>DQ[12]</item>
+ <item>DQ[13]</item>
+ <item>DQ[14]</item>
+ <item>DQ[15]</item>
+ <item>DQ[1]</item>
+ <item>DQ[2]</item>
+ <item>DQ[3]</item>
+ <item>DQ[4]</item>
+ <item>DQ[5]</item>
+ <item>DQ[6]</item>
+ <item>DQ[7]</item>
+ <item>DQ[8]</item>
+ <item>DQ[9]</item>
+ <item>GPIO_10_OUT</item>
+ <item>GPIO_11_OUT</item>
+ <item>GPIO_12_OUT</item>
+ <item>GPIO_13_OUT</item>
+ <item>GPIO_14_OUT</item>
+ <item>GPIO_15_OUT</item>
+ <item>GPIO_16_OUT</item>
+ <item>GPIO_25_OUT</item>
+ <item>GPIO_8_OUT</item>
+ <item>GPIO_9_OUT</item>
+ <item>MMUART_0_TXD</item>
+ <item>RAS_N</item>
+ <item>SA[0]</item>
+ <item>SA[10]</item>
+ <item>SA[11]</item>
+ <item>SA[1]</item>
+ <item>SA[2]</item>
+ <item>SA[3]</item>
+ <item>SA[4]</item>
+ <item>SA[5]</item>
+ <item>SA[6]</item>
+ <item>SA[7]</item>
+ <item>SA[8]</item>
+ <item>SA[9]</item>
+ <item>WE_N</item>
+</list>
+<text></text>
+<text></text>
+<text> - Setup uncconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
+ <item>top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState[2]:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[0]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[10]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[11]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[12]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[13]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[14]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[15]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[1]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[2]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[3]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[4]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[5]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[6]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[7]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[8]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[9]:D</item>
+</list>
+<text></text>
+<text> - Recovery uncconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
+</list>
+<text></text>
+<text> - Hold uncconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
+ <item>top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState[2]:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
+ <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[0]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[10]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[11]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[12]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[13]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[14]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[15]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[1]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[2]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[3]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[4]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[5]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[6]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[7]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[8]:D</item>
+ <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[9]:D</item>
+</list>
+<text></text>
+<text> - Removal uncconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Input to Output</name>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<separator/>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+</table>
+</section>
+</section>
+</doc>

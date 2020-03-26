@@ -1,0 +1,16 @@
+# Microsemi Corp.
+# Date: 2020-Mar-26 16:04:04
+# This file was generated based on the following SDC source files:
+#   C:/Users/lirmm2/Desktop/SMFSDRAM/component/work/top_sb/CCC_0/top_sb_CCC_0_FCCC.sdc
+#   C:/Microsemi/Libero_SoC_v11.8/Designer/data/aPA4M/cores/constraints/coreresetp.sdc
+#   C:/Users/lirmm2/Desktop/SMFSDRAM/component/work/top_sb/FABOSC_0/top_sb_FABOSC_0_OSC.sdc
+#   C:/Users/lirmm2/Desktop/SMFSDRAM/component/work/top_sb_MSS/top_sb_MSS.sdc
+#
+
+create_clock -name {CLK1_PAD} -period 83.3333 [ get_ports { CLK1_PAD } ]
+create_generated_clock -name {top_sb_0/CCC_0/GL2} -multiply_by 25 -divide_by 3 -source [ get_pins { top_sb_0/CCC_0/CCC_INST/CLK1_PAD } ] -phase 0 [ get_pins { top_sb_0/CCC_0/CCC_INST/GL2 } ]
+set_false_path -ignore_errors -through [ get_nets { top_sb_0/CORERESETP_0/ddr_settled top_sb_0/CORERESETP_0/count_ddr_enable top_sb_0/CORERESETP_0/release_sdif*_core top_sb_0/CORERESETP_0/count_sdif*_enable } ]
+set_false_path -ignore_errors -from [ get_cells { top_sb_0/CORERESETP_0/MSS_HPMS_READY_int } ] -to [ get_cells { top_sb_0/CORERESETP_0/sm0_areset_n_rcosc top_sb_0/CORERESETP_0/sm0_areset_n_rcosc_q1 } ]
+set_false_path -ignore_errors -from [ get_cells { top_sb_0/CORERESETP_0/MSS_HPMS_READY_int top_sb_0/CORERESETP_0/SDIF*_PERST_N_re } ] -to [ get_cells { top_sb_0/CORERESETP_0/sdif*_areset_n_rcosc* } ]
+set_false_path -ignore_errors -through [ get_nets { top_sb_0/CORERESETP_0/CONFIG1_DONE top_sb_0/CORERESETP_0/CONFIG2_DONE top_sb_0/CORERESETP_0/SDIF*_PERST_N top_sb_0/CORERESETP_0/SDIF*_PSEL top_sb_0/CORERESETP_0/SDIF*_PWRITE top_sb_0/CORERESETP_0/SDIF*_PRDATA[*] top_sb_0/CORERESETP_0/SOFT_EXT_RESET_OUT top_sb_0/CORERESETP_0/SOFT_RESET_F2M top_sb_0/CORERESETP_0/SOFT_M3_RESET top_sb_0/CORERESETP_0/SOFT_MDDR_DDR_AXI_S_CORE_RESET top_sb_0/CORERESETP_0/SOFT_FDDR_CORE_RESET top_sb_0/CORERESETP_0/SOFT_SDIF*_PHY_RESET top_sb_0/CORERESETP_0/SOFT_SDIF*_CORE_RESET top_sb_0/CORERESETP_0/SOFT_SDIF0_0_CORE_RESET top_sb_0/CORERESETP_0/SOFT_SDIF0_1_CORE_RESET } ]
+set_false_path -ignore_errors -through [ get_pins { top_sb_0/top_sb_MSS_0/MSS_ADLIB_INST/CONFIG_PRESET_N } ]

@@ -1,0 +1,27 @@
+
+===============================================================================.
+
+Info: Global design data: 
+      Total globals:                       3 
+      Globals that cannot be demoted:      1 
+      Globals considered for demotion:     2 
+
+
+Info: List of globals that cannot be demoted: 
+    CLK    ASYN   DATA   Instance Name 
+    ---    ----   ----   ------------- 
+    2372   0      1      'top_sb_0/CCC_0/GL2_INST' 
+
+Info: List of globals considered for demotion: 
+    CLK    ASYN   DATA   Instance Name 
+    ---    ----   ----   ------------- 
+    0      1450   1      'top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI5MMF' 
+    0      872    0      'top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1_RNIGF7C' 
+
+Info: Demotion information: 
+      Disconnected 1 data pins from global 'top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI5MMF'. 
+Info: CMPG4-302: Added 0 row global instances.
+Info: CMPG4-303: Deleted 0 global instances.
+
+===============================================================================.
+

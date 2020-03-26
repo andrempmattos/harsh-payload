@@ -1,0 +1,63 @@
+INFO: Reading User SDC file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\constraint\top_derived_constraints.sdc.
+
+***** Place and Route Configurations *****
+Timing-driven            : ON
+Power-driven             : OFF
+High-effort              : OFF
+Repair min-delay         : ON
+Incremental              : OFF
+Inter-clock optimization : ON
+TDPR scenario            : place_and_route
+
+INFO: Reading User PDC file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
+
+Running the I/O Bank and Globals Assigner.
+Info:  I/O Bank and Globals Assigner identified 54 fixed I/O macros, 0 unfixed I/O macros
+
+I/O Bank and Globals Assigner completed successfully.
+Total time spent in I/O Bank and Globals Assigner: 1 seconds
+
+Placer V4.0 - 11.8.0 
+Design: top                             Started: Thu Mar 26 22:11:01 2020
+
+Initializing Timing-Driven Placement ...
+Placing design...
+End of placement.
+Pre-Placement Runtime        : 7 seconds
+Placement Runtime            : 56 seconds
+
+Placer completed successfully.
+
+Design: top                             
+Finished: Thu Mar 26 22:12:34 2020
+Total CPU Time:     00:01:29            Total Elapsed Time: 00:01:33
+Total Memory Usage: 355.5 Mbytes
+                        o - o - o - o - o - o
+
+
+Router 
+Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\topStarted: Thu Mar 26 22:12:42 2020
+
+Final stats: search run time 19.497693
+
+Router completed successfully.
+
+Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top
+Finished: Thu Mar 26 22:13:11 2020
+Total CPU Time:     00:00:27            Total Elapsed Time: 00:00:29
+Total Memory Usage: 496.1 Mbytes
+                        o - o - o - o - o - o
+
+Info: Iteration 1:
+  Total violating paths eligible for improvement: 0
+  Worst minimum delay slack: 
+Resource Usage
++---------------+------+-------+------------+
+| Type          | Used | Total | Percentage |
++---------------+------+-------+------------+
+| 4LUT          | 2667 | 12084 | 22.07      |
+| DFF           | 2569 | 12084 | 21.26      |
+| I/O Register  | 0    | 579   | 0.00       |
+| Logic Element | 3163 | 12084 | 26.18      |
++---------------+------+-------+------------+
+

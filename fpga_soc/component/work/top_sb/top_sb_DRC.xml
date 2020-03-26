@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>top_sb</header>
+  <drc>
+    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin COREAXI_0:AXImslave0</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/top_sb/pins/COREAXI_0:AXImslave0</crossprobe>
+  </drc>
+</drcreport>

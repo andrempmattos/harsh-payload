@@ -1,0 +1,285 @@
+# Microsemi I/O Physical Design Constraints file
+
+# User I/O Constraints file 
+
+# Version: v11.8 11.8.0.26
+
+# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF
+
+# Date generated: Fri Oct 20 14:01:01 2017 
+
+
+# 
+# User Locked I/O Bank Settings
+# 
+
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+
+# 
+# User Locked I/O settings
+# 
+
+set_io {BA[0]}         \
+    -pinname W10       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {BA[1]}         \
+    -pinname V12       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io CAS_N           \
+    -pinname Y12       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io CKE             \
+    -pinname Y13       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io CLK1_PAD       \
+    -pinname N16      \
+    -fixed yes        \
+    -DIRECTION INPUT
+
+
+set_io {CS_N[0]}       \
+    -pinname R13       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {DQM[0]}        \
+    -pinname E5        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {DQM[1]}        \
+    -pinname F7        \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {DQ[0]}        \
+    -pinname F1       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[1]}        \
+    -pinname G1       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[2]}        \
+    -pinname E2       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[3]}        \
+    -pinname G2       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[4]}        \
+    -pinname E3       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[5]}        \
+    -pinname G3       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[6]}        \
+    -pinname F3       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[7]}        \
+    -pinname F4       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[8]}        \
+    -pinname J7       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[9]}        \
+    -pinname G6       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[10]}       \
+    -pinname F6       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[11]}       \
+    -pinname H5       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[12]}       \
+    -pinname H6       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[13]}       \
+    -pinname H4       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[14]}       \
+    -pinname F5       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io {DQ[15]}       \
+    -pinname G4       \
+    -fixed yes        \
+    -DIRECTION INOUT
+
+
+set_io RAS_N           \
+    -pinname U13       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[0]}         \
+    -pinname U11       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[1]}         \
+    -pinname U12       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[2]}         \
+    -pinname V11       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[3]}         \
+    -pinname Y10       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[4]}         \
+    -pinname W15       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[5]}         \
+    -pinname U14       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[6]}         \
+    -pinname Y15       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[7]}         \
+    -pinname W14       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[8]}         \
+    -pinname T15       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[9]}         \
+    -pinname W13       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[10]}        \
+    -pinname T13       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[11]}        \
+    -pinname V14       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[12]}        \
+    -pinname V15       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io {SA[13]}        \
+    -pinname Y16       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io SDRCLK          \
+    -pinname T14       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+set_io WE_N            \
+    -pinname R12       \
+    -fixed yes         \
+    -DIRECTION OUTPUT
+
+
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
+# 
+

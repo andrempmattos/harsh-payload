@@ -1,0 +1,42 @@
+Software Version: 11.8.0.26
+Embedded FlashPro5 programmer detected.
+programmer 'E2003RDUTS' : FlashPro5
+Opened 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp\top.pro'
+The 'open_project' command succeeded.
+IPD file 'C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
+DESIGN : top;  CHECKSUM : A7FD;  PDB_VERSION : 1.9
+The 'set_programming_file' command succeeded.
+Warning: Programming is already enabled for device 'M2S010'.
+The 'enable_device' command succeeded.
+The 'set_programming_action' command succeeded.
+programmer 'E2003RDUTS' : Scan Chain...
+Warning: programmer 'E2003RDUTS' : Vpump has been selected on programmer AND an externally provided Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer 'E2003RDUTS' : Check Chain...
+programmer 'E2003RDUTS' : Scan and Check Chain PASSED.
+programmer 'E2003RDUTS' : device 'M2S010' : Executing action PROGRAM
+programmer 'E2003RDUTS' : device 'M2S010' : Family: Igloo2
+programmer 'E2003RDUTS' : device 'M2S010' : Product:      M2GL005
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT ISC_ENABLE_RESULT[32] = 007d6944
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT CRCERR[1] = 0
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT EDCERR[1] = 0
+programmer 'E2003RDUTS' : device 'M2S010' : TEMPGRADE: ROOM
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT VPPRANGE[3] = 2
+programmer 'E2003RDUTS' : device 'M2S010' : VPPRANGE: HIGH
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT TEMP[8] = 69
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT VPP[8] = 7d
+programmer 'E2003RDUTS' : device 'M2S010' : Programming FPGA Array...
+programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
+programmer 'E2003RDUTS' : device 'M2S010' : EXPORT DSN[128] = 84445cfe4f2a83db00d3cd5548918e11
+programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
+programmer 'E2003RDUTS' : device 'M2S010' : Finished: Thu Mar 26 22:17:11 2020 (Elapsed time 00:00:24)
+programmer 'E2003RDUTS' : device 'M2S010' : Executing action PROGRAM PASSED.
+programmer 'E2003RDUTS' : Chain programming PASSED.
+Chain Programming Finished: Thu Mar 26 22:17:11 2020 (Elapsed time 00:00:24)
+
+                        o - o - o - o - o - o
+
+The 'run_selected_actions' command succeeded.
+The 'set_programming_file' command succeeded.
+Project saved.
+The 'save_project' command succeeded.
+Project closed.
