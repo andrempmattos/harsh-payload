@@ -710,7 +710,7 @@ SIZE="2093"
 ENDFILE
 VALUE "<project>\component\work\top\top.cxf,actgen_cxf"
 STATE="utd"
-TIME="1585256831"
+TIME="1585259446"
 SIZE="9021"
 ENDFILE
 VALUE "<project>\component\work\top\top.vhd,hdl"
@@ -907,8 +907,8 @@ PARENT="<project>\component\Actel\SmartFusion2MSS\MSS\1.1.500\MSS.cxf"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1508350064"
-SIZE="602"
+TIME="1585256830"
+SIZE="759"
 PARENT="<project>\component\work\top\top.cxf"
 PARENT="<project>\component\work\top_sb\top_sb.cxf"
 ENDFILE
@@ -926,28 +926,28 @@ PARENT="<project>\component\work\top_sb_MSS\top_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>\synthesis\top.edn,syn_edn"
 STATE="utd"
-TIME="1585235271"
-SIZE="4475716"
+TIME="1585256875"
+SIZE="4422139"
 ENDFILE
 VALUE "<project>\synthesis\top.so,so"
 STATE="utd"
-TIME="1585235272"
-SIZE="208"
+TIME="1585256876"
+SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top.vhd,syn_hdl"
 STATE="utd"
-TIME="1585235284"
-SIZE="2128937"
+TIME="1585256884"
+SIZE="2078130"
 ENDFILE
 VALUE "<project>\synthesis\top_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1585235271"
-SIZE="2386"
+TIME="1585256875"
+SIZE="951"
 ENDFILE
 VALUE "<project>\synthesis\top_syn.prj,prj"
 STATE="utd"
-TIME="1585235273"
-SIZE="12281"
+TIME="1585256877"
+SIZE="10596"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -1134,6 +1134,12 @@ VALUE "<project>\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\a
 VALUE "<project>\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\axi_slave.vhd,tb_hdl"
 VALUE "<project>\component\work\top_sb\COREAXI_0\rtl\vhdl\test\user\testbench.vhd,tb_hdl"
 ENDLIST
+LIST top_sb_MSS
+VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
+VALUE "<project>\simulation\user.bfm,sim"
+VALUE "<project>\simulation\test.bfm,sim"
+VALUE "<project>\simulation\peripheral_init.bfm,sim"
+ENDLIST
 LIST CoreAHBLite
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
 VALUE "<project>\simulation\coreahblite_usertb_include.bfm,sim"
@@ -1151,12 +1157,6 @@ VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\amba_bf
 VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\amba_bfm\bfm_ahbslave.vhd,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\test\user\testbench.vhd,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAHBLite\5.2.100\mti\scripts\wave_user.do,do"
-ENDLIST
-LIST top_sb_MSS
-VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
-VALUE "<project>\simulation\user.bfm,sim"
-VALUE "<project>\simulation\test.bfm,sim"
-VALUE "<project>\simulation\peripheral_init.bfm,sim"
 ENDLIST
 ENDLIST
 LIST SimulationOptions
@@ -1224,8 +1224,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1321,9 +1321,11 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Run PROGRAM Action:top_PROGRAM.log
+ReportsCurrentItem;Generate Memory Map:top_DataSheet.xml
 SmartDesign;top;0
 Constraint Manager;Constraint Manager;0
+StartPage;StartPage;0
+SmartDesign;DESIGN_FIRMWARE;0
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
@@ -1459,9 +1461,9 @@ SUBBLOCK "top_sb_CCC_0_FCCC::work","component\work\top_sb\CCC_0\top_sb_CCC_0_FCC
 SUBBLOCK "top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI::work","component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd","FALSE","FALSE"
 SUBBLOCK "top_sb_COREAXI_0_COREAXI::work","component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd","FALSE","FALSE"
 SUBBLOCK "top_sb_FABOSC_0_OSC::work","component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd","FALSE","FALSE"
+SUBBLOCK "top_sb_MSS::work","component\work\top_sb_MSS\top_sb_MSS.vhd","TRUE","FALSE"
 SUBBLOCK "CoreAHBLite::COREAHBLITE_LIB::components","component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite.vhd","FALSE","FALSE"
 SUBBLOCK "CORESDR_AXI::CORESDR_AXI_LIB","component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd","FALSE","FALSE"
-SUBBLOCK "top_sb_MSS::work","component\work\top_sb_MSS\top_sb_MSS.vhd","TRUE","FALSE"
 ENDLIST
 LIST "top_sb_CCC_0_FCCC::work","component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd","FALSE","FALSE"
 ENDLIST
