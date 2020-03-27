@@ -147,7 +147,7 @@ int main(void)
         }
         else 
         {
-            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA read transfer failed.\n\r");
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA read transfer or memory change failed.\n\r");
             //MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"Read pattern:\n\r");
             //MSS_UART_polled_tx(&g_mss_uart0, (uint8_t)g_buffer_b, HPDMA_TRANSFER_SIZE);
             //MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"\n\r");
