@@ -45,8 +45,8 @@
 #include "CMSIS/system_m2sxxx.h"
 #include "top_hw_platform.h"
 
-#define HPDMA_TRANSFER_SIZE             16
-#define HPDMA_TRANSFER_SIZE_ARRAY       ( HPDMA_TRANSFER_SIZE/4 )
+#define HPDMA_TRANSFER_SIZE             8
+#define HPDMA_TRANSFER_SIZE_ARRAY       ( HPDMA_TRANSFER_SIZE/4 )     
 
 /*
  * Local functions prototypes.
@@ -76,12 +76,12 @@ volatile uint8_t  g_xfr_completed;
  */
 mss_uart_instance_t * const gp_my_uart = &g_mss_uart0;
 
-
 /*
  * main function.
  */
 int main(void)
 {
+    uint32_t gpio_inputs;
 
     /* Infinite loop */
     while(1)
@@ -94,21 +94,73 @@ int main(void)
 
         MSS_HPDMA_set_handler(xfer_complete_handler);
 
+
         /*
          * Start a HPDMA transfer from g_buffer_a[] to SDRAM and wait for the operation on HPDMA channel 0 to complete.
          */
         g_xfr_completed = 0u;
         MSS_HPDMA_start((uint32_t)g_buffer_a, EXTERNAL_SDR_SDRAM_ADDR, HPDMA_TRANSFER_SIZE, HPDMA_TO_DDR);
-        while(0u == g_xfr_completed);
+
+        do {
+            g_xfr_completed = MSS_HPDMA_get_transfer_status();
+        } while(g_xfr_completed == HPDMA_IN_PROGRESS);
+        
+        if (g_xfr_completed == HPDMA_COMPLETED)
+        {
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA write transfer succeeded.\n\r");
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"Written pattern:\n\r");
+            MSS_UART_polled_tx(&g_mss_uart0, (uint8_t)g_buffer_a, HPDMA_TRANSFER_SIZE);
+        }
+        else 
+        {
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA write transfer failed.\n\r");
+        }
+
 
         /*
          * Start a HPDMA transfer from SDRAM to g_buffer_b[] and wait for the operation on HPDMA channel 0 to complete.
          */
         g_xfr_completed = 0u;
         MSS_HPDMA_start(EXTERNAL_SDR_SDRAM_ADDR, (uint32_t)g_buffer_b, HPDMA_TRANSFER_SIZE, HPDMA_FROM_DDR);
-        while(0u == g_xfr_completed);
+        
+        do {
+            g_xfr_completed = MSS_HPDMA_get_transfer_status();
+        } while(g_xfr_completed == HPDMA_IN_PROGRESS);
+        
+        if (g_xfr_completed == HPDMA_COMPLETED)
+        {
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA read transfer succeeded.\n\r");
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"Read pattern:\n\r");
+            MSS_UART_polled_tx(&g_mss_uart0, (uint8_t)g_buffer_b, HPDMA_TRANSFER_SIZE);
+        }
+        else 
+        {
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"HPDMA read transfer failed.\n\r");
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"Read pattern:\n\r");
+            MSS_UART_polled_tx(&g_mss_uart0, (uint8_t)g_buffer_b, HPDMA_TRANSFER_SIZE);
+        }
 
+        
+        /*
+         * Check if user button is pressed.
+         */
+        gpio_inputs = MSS_GPIO_get_inputs();
+        if (gpio_inputs == MSS_GPIO_29_MASK)
+        {
+            MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t*)"Button pressed!\n\r");
+        }
 
+        /*
+         * Toggle GPIO output pattern by doing an exclusive OR with system LED GPIO mask.
+         */
+        gpio_pattern = MSS_GPIO_get_outputs();
+        gpio_pattern ^= MSS_GPIO_25_MASK;
+        MSS_GPIO_set_outputs(gpio_pattern);
+
+        /*
+         * Delay cycle operation
+         */
+        delay();
     }
 }
 
@@ -119,6 +171,11 @@ int main(void)
  */
 static void peripherals_init(void)
 {
+    /*
+     *  Turn off watchdog timer case enabled in MSS.
+     */
+    SYSREG->WDOG_CR = 0;
+
     /*
      *  Initialize HPDMA controller.
      */
