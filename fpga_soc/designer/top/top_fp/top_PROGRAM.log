@@ -4,7 +4,7 @@ programmer 'E2003RDUTS' : FlashPro5
 Opened 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp\top.pro'
 The 'open_project' command succeeded.
 IPD file 'C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
-DESIGN : top;  CHECKSUM : A7FD;  PDB_VERSION : 1.9
+DESIGN : top;  CHECKSUM : 7D55;  PDB_VERSION : 1.9
 The 'set_programming_file' command succeeded.
 Warning: Programming is already enabled for device 'M2S010'.
 The 'enable_device' command succeeded.
@@ -28,10 +28,10 @@ programmer 'E2003RDUTS' : device 'M2S010' : Programming FPGA Array...
 programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
 programmer 'E2003RDUTS' : device 'M2S010' : EXPORT DSN[128] = 84445cfe4f2a83db00d3cd5548918e11
 programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
-programmer 'E2003RDUTS' : device 'M2S010' : Finished: Thu Mar 26 22:17:11 2020 (Elapsed time 00:00:24)
+programmer 'E2003RDUTS' : device 'M2S010' : Finished: Mon Apr 06 16:49:06 2020 (Elapsed time 00:00:25)
 programmer 'E2003RDUTS' : device 'M2S010' : Executing action PROGRAM PASSED.
 programmer 'E2003RDUTS' : Chain programming PASSED.
-Chain Programming Finished: Thu Mar 26 22:17:11 2020 (Elapsed time 00:00:24)
+Chain Programming Finished: Mon Apr 06 16:49:06 2020 (Elapsed time 00:00:25)
 
                         o - o - o - o - o - o
 

@@ -13,7 +13,7 @@ The file contains the area information from mapper to be displayed as part of th
 <title>Hierarchical Area Report</title>
 </report_link>
 <parameter tooltip="Total Carry Cells used" name="Carry Cells">
-<data>268</data>
+<data>269</data>
 </parameter>
 <parameter tooltip="Total Sequential Cells used" name="Sequential Cells">
 <data>2353</data>
@@ -31,6 +31,6 @@ The file contains the area information from mapper to be displayed as part of th
 <data>6</data>
 </parameter>
 <parameter tcl_name="total_luts" tooltip="Total LUTs used" name="LUTs">
-<data>2445</data>
+<data>2379</data>
 </parameter>
 </report_table>

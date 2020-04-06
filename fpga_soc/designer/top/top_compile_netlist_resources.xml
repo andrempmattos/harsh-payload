@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Thu Mar 26 22:08:10 2020
+<text>Date: Mon Apr 06 16:42:03 2020
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,9 +106,9 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>2667</cell>
+ <cell>2601</cell>
  <cell>12084</cell>
- <cell>22.07</cell>
+ <cell>21.52</cell>
 </row>
 <row>
  <cell>DFF</cell>
@@ -204,7 +204,7 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>2451</cell>
+ <cell>2385</cell>
  <cell>2353</cell>
 </row>
 <row>
@@ -224,7 +224,7 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>2667</cell>
+ <cell>2601</cell>
  <cell>2569</cell>
 </row>
 </table>
@@ -321,11 +321,11 @@
 </row>
 <row>
  <cell>17</cell>
- <cell>3</cell>
+ <cell>2</cell>
 </row>
 <row>
  <cell>18</cell>
- <cell>1</cell>
+ <cell>2</cell>
 </row>
 <row>
  <cell>23</cell>
@@ -490,14 +490,14 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>172</cell>
+ <cell>170</cell>
  <cell>INT_NET</cell>
  <cell>Net   : top_sb_0/masterAddrInProg[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNI89PK3[12]</cell>
+ <cell>Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNIJOHM5[12]</cell>
 </row>
 <row>
  <cell>148</cell>
@@ -520,9 +520,9 @@
  <cell>Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1</cell>
 </row>
 <row>
- <cell>133</cell>
+ <cell>135</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI0</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/RREADY_MI0</cell>
 </row>
 <row>
  <cell></cell>
@@ -540,54 +540,54 @@
  <cell>Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d</cell>
 </row>
 <row>
- <cell>84</cell>
- <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/MSS_SMC_0/asize_reg[1]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: top_sb_0/MSS_SMC_0/asize_reg[1]</cell>
-</row>
-<row>
  <cell>82</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/rlast_im_int_xhdl45_1_sqmuxa</cell>
+ <cell>Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/inst_matrix_m0/inst_rd_channel/inst_rdmatrix_16Sto1M/rlast_im_int_xhdl45_1_sqmuxa_0_a2</cell>
-</row>
-<row>
- <cell>82</cell>
- <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0_AXImslave0_0_ARVALID</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L7.slave_stage0/ARVALID_S_xhdl35</cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L23.slave_stage16/ARVALID_S_xhdl35</cell>
 </row>
 <row>
  <cell>76</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/WREADY_SI0</cell>
+ <cell>Net   : top_sb_0/WREADY_SI16</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/MSS_SMC_0/un1_rvalid_xhdl1_i_a2_RNI2SLG_0</cell>
+ <cell>Driver: top_sb_0/MSS_SMC_0/axi_nextstate_1_sqmuxa_i_o2_i_a2</cell>
 </row>
 <row>
  <cell>74</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/MST_WRGNT_NUM[0]</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/MST_WRGNT_NUM[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/MST_WRGNT_NUM_xhdl16[0]</cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/MST_WRGNT_NUM_xhdl16[0]</cell>
+</row>
+<row>
+ <cell>72</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/L23.slave_stage16/N_3295_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L23.slave_stage16/WVALID_IS_r1_RNI619R</cell>
+</row>
+<row>
+ <cell>68</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : top_sb_0/MSS_SMC_0/N_326_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: top_sb_0/MSS_SMC_0/asize_reg_RNIF2JA_0[0]</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -598,14 +598,14 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>172</cell>
+ <cell>170</cell>
  <cell>INT_NET</cell>
  <cell>Net   : top_sb_0/masterAddrInProg[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNI89PK3[12]</cell>
+ <cell>Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNIJOHM5[12]</cell>
 </row>
 <row>
  <cell>148</cell>
@@ -628,9 +628,9 @@
  <cell>Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1</cell>
 </row>
 <row>
- <cell>133</cell>
+ <cell>135</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI0</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/RREADY_MI0</cell>
 </row>
 <row>
  <cell></cell>
@@ -648,54 +648,54 @@
  <cell>Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d</cell>
 </row>
 <row>
- <cell>84</cell>
- <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/MSS_SMC_0/asize_reg[1]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: top_sb_0/MSS_SMC_0/asize_reg[1]</cell>
-</row>
-<row>
  <cell>82</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/rlast_im_int_xhdl45_1_sqmuxa</cell>
+ <cell>Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/inst_matrix_m0/inst_rd_channel/inst_rdmatrix_16Sto1M/rlast_im_int_xhdl45_1_sqmuxa_0_a2</cell>
-</row>
-<row>
- <cell>82</cell>
- <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0_AXImslave0_0_ARVALID</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L7.slave_stage0/ARVALID_S_xhdl35</cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L23.slave_stage16/ARVALID_S_xhdl35</cell>
 </row>
 <row>
  <cell>76</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/WREADY_SI0</cell>
+ <cell>Net   : top_sb_0/WREADY_SI16</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/MSS_SMC_0/un1_rvalid_xhdl1_i_a2_RNI2SLG_0</cell>
+ <cell>Driver: top_sb_0/MSS_SMC_0/axi_nextstate_1_sqmuxa_i_o2_i_a2</cell>
 </row>
 <row>
  <cell>74</cell>
  <cell>INT_NET</cell>
- <cell>Net   : top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/MST_WRGNT_NUM[0]</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/MST_WRGNT_NUM[0]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L10.inst_matrix_S0/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/MST_WRGNT_NUM_xhdl16[0]</cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/MST_WRGNT_NUM_xhdl16[0]</cell>
+</row>
+<row>
+ <cell>72</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : top_sb_0/COREAXI_0/L23.slave_stage16/N_3295_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: top_sb_0/COREAXI_0/L23.slave_stage16/WVALID_IS_r1_RNI619R</cell>
+</row>
+<row>
+ <cell>68</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : top_sb_0/MSS_SMC_0/N_326_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: top_sb_0/MSS_SMC_0/asize_reg_RNIF2JA_0[0]</cell>
 </row>
 </table>
 </doc>

@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Thu Mar 26 22:06:37 2020
+-- Created by SmartDesign Mon Apr 06 16:40:38 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ component top_sb_COREAXI_0_COREAXI
         HGS_CFG          : integer := 1 ;
         ID_WIDTH         : integer := 4 ;
         INP_REG_BUF      : integer := 1 ;
-        M0_SLAVE0ENABLE  : integer := 1 ;
+        M0_SLAVE0ENABLE  : integer := 0 ;
         M0_SLAVE1ENABLE  : integer := 0 ;
         M0_SLAVE2ENABLE  : integer := 0 ;
         M0_SLAVE3ENABLE  : integer := 0 ;
@@ -170,7 +170,7 @@ component top_sb_COREAXI_0_COREAXI
         M0_SLAVE13ENABLE : integer := 0 ;
         M0_SLAVE14ENABLE : integer := 0 ;
         M0_SLAVE15ENABLE : integer := 0 ;
-        M0_SLAVE16ENABLE : integer := 0 ;
+        M0_SLAVE16ENABLE : integer := 1 ;
         M1_SLAVE0ENABLE  : integer := 0 ;
         M1_SLAVE1ENABLE  : integer := 0 ;
         M1_SLAVE2ENABLE  : integer := 0 ;
@@ -226,18 +226,18 @@ component top_sb_COREAXI_0_COREAXI
         NUM_MASTER_SLOT  : integer := 1 ;
         OUT_REG_BUF      : integer := 1 ;
         RD_ACCEPTANCE    : integer := 4 ;
-        SC_0             : integer := 0 ;
-        SC_1             : integer := 0 ;
-        SC_2             : integer := 0 ;
-        SC_3             : integer := 0 ;
-        SC_4             : integer := 0 ;
-        SC_5             : integer := 0 ;
-        SC_6             : integer := 0 ;
-        SC_7             : integer := 0 ;
-        SC_8             : integer := 0 ;
-        SC_9             : integer := 0 ;
-        SC_10            : integer := 0 ;
-        SC_11            : integer := 0 ;
+        SC_0             : integer := 1 ;
+        SC_1             : integer := 1 ;
+        SC_2             : integer := 1 ;
+        SC_3             : integer := 1 ;
+        SC_4             : integer := 1 ;
+        SC_5             : integer := 1 ;
+        SC_6             : integer := 1 ;
+        SC_7             : integer := 1 ;
+        SC_8             : integer := 1 ;
+        SC_9             : integer := 1 ;
+        SC_10            : integer := 1 ;
+        SC_11            : integer := 1 ;
         SC_12            : integer := 0 ;
         SC_13            : integer := 0 ;
         SC_14            : integer := 0 ;
@@ -1302,37 +1302,37 @@ signal COREAHBLTOAXI_0_AXIMasterIF_WLAST           : std_logic;
 signal COREAHBLTOAXI_0_AXIMasterIF_WREADY          : std_logic;
 signal COREAHBLTOAXI_0_AXIMasterIF_WSTRB           : std_logic_vector(7 downto 0);
 signal COREAHBLTOAXI_0_AXIMasterIF_WVALID          : std_logic;
-signal COREAXI_0_AXImslave0_0_ARADDR               : std_logic_vector(31 downto 0);
-signal COREAXI_0_AXImslave0_0_ARBURST              : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_ARCACHE              : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_ARLEN                : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_ARLOCK               : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_ARPROT               : std_logic_vector(2 downto 0);
-signal COREAXI_0_AXImslave0_0_ARREADY              : std_logic;
-signal COREAXI_0_AXImslave0_0_ARSIZE               : std_logic_vector(2 downto 0);
-signal COREAXI_0_AXImslave0_0_ARVALID              : std_logic;
-signal COREAXI_0_AXImslave0_0_AWADDR               : std_logic_vector(31 downto 0);
-signal COREAXI_0_AXImslave0_0_AWBURST              : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_AWCACHE              : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_AWLEN                : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_AWLOCK               : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_AWPROT               : std_logic_vector(2 downto 0);
-signal COREAXI_0_AXImslave0_0_AWREADY              : std_logic;
-signal COREAXI_0_AXImslave0_0_AWSIZE               : std_logic_vector(2 downto 0);
-signal COREAXI_0_AXImslave0_0_AWVALID              : std_logic;
-signal COREAXI_0_AXImslave0_0_BREADY               : std_logic;
-signal COREAXI_0_AXImslave0_0_BRESP                : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_BVALID               : std_logic;
-signal COREAXI_0_AXImslave0_0_RDATA                : std_logic_vector(63 downto 0);
-signal COREAXI_0_AXImslave0_0_RLAST                : std_logic;
-signal COREAXI_0_AXImslave0_0_RREADY               : std_logic;
-signal COREAXI_0_AXImslave0_0_RRESP                : std_logic_vector(1 downto 0);
-signal COREAXI_0_AXImslave0_0_RVALID               : std_logic;
-signal COREAXI_0_AXImslave0_0_WDATA                : std_logic_vector(63 downto 0);
-signal COREAXI_0_AXImslave0_0_WLAST                : std_logic;
-signal COREAXI_0_AXImslave0_0_WREADY               : std_logic;
-signal COREAXI_0_AXImslave0_0_WSTRB                : std_logic_vector(7 downto 0);
-signal COREAXI_0_AXImslave0_0_WVALID               : std_logic;
+signal COREAXI_0_AXImslave16_ARADDR                : std_logic_vector(31 downto 0);
+signal COREAXI_0_AXImslave16_ARBURST               : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_ARCACHE               : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARLEN                 : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARLOCK                : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_ARPROT                : std_logic_vector(2 downto 0);
+signal COREAXI_0_AXImslave16_ARREADY               : std_logic;
+signal COREAXI_0_AXImslave16_ARSIZE                : std_logic_vector(2 downto 0);
+signal COREAXI_0_AXImslave16_ARVALID               : std_logic;
+signal COREAXI_0_AXImslave16_AWADDR                : std_logic_vector(31 downto 0);
+signal COREAXI_0_AXImslave16_AWBURST               : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_AWCACHE               : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWLEN                 : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWLOCK                : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_AWPROT                : std_logic_vector(2 downto 0);
+signal COREAXI_0_AXImslave16_AWREADY               : std_logic;
+signal COREAXI_0_AXImslave16_AWSIZE                : std_logic_vector(2 downto 0);
+signal COREAXI_0_AXImslave16_AWVALID               : std_logic;
+signal COREAXI_0_AXImslave16_BREADY                : std_logic;
+signal COREAXI_0_AXImslave16_BRESP                 : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_BVALID                : std_logic;
+signal COREAXI_0_AXImslave16_RDATA                 : std_logic_vector(63 downto 0);
+signal COREAXI_0_AXImslave16_RLAST                 : std_logic;
+signal COREAXI_0_AXImslave16_RREADY                : std_logic;
+signal COREAXI_0_AXImslave16_RRESP                 : std_logic_vector(1 downto 0);
+signal COREAXI_0_AXImslave16_RVALID                : std_logic;
+signal COREAXI_0_AXImslave16_WDATA                 : std_logic_vector(63 downto 0);
+signal COREAXI_0_AXImslave16_WLAST                 : std_logic;
+signal COREAXI_0_AXImslave16_WREADY                : std_logic;
+signal COREAXI_0_AXImslave16_WSTRB                 : std_logic_vector(7 downto 0);
+signal COREAXI_0_AXImslave16_WVALID                : std_logic;
 signal CORERESETP_0_RESET_N_F2M                    : std_logic;
 signal CS_N_net_0                                  : std_logic_vector(0 to 0);
 signal DQM_net_0                                   : std_logic_vector(1 downto 0);
@@ -1456,6 +1456,11 @@ signal HRDATA_S15_const_net_0                      : std_logic_vector(31 downto 
 signal HRESP_S15_const_net_0                       : std_logic_vector(1 downto 0);
 signal HRDATA_S16_const_net_0                      : std_logic_vector(31 downto 0);
 signal HRESP_S16_const_net_0                       : std_logic_vector(1 downto 0);
+signal BID_S0_const_net_0                          : std_logic_vector(5 downto 0);
+signal BRESP_S0_const_net_0                        : std_logic_vector(1 downto 0);
+signal RID_S0_const_net_0                          : std_logic_vector(5 downto 0);
+signal RDATA_S0_const_net_0                        : std_logic_vector(63 downto 0);
+signal RRESP_S0_const_net_0                        : std_logic_vector(1 downto 0);
 signal BID_S1_const_net_0                          : std_logic_vector(5 downto 0);
 signal BRESP_S1_const_net_0                        : std_logic_vector(1 downto 0);
 signal RID_S1_const_net_0                          : std_logic_vector(5 downto 0);
@@ -1531,11 +1536,6 @@ signal BRESP_S15_const_net_0                       : std_logic_vector(1 downto 0
 signal RID_S15_const_net_0                         : std_logic_vector(5 downto 0);
 signal RDATA_S15_const_net_0                       : std_logic_vector(63 downto 0);
 signal RRESP_S15_const_net_0                       : std_logic_vector(1 downto 0);
-signal BID_S16_const_net_0                         : std_logic_vector(5 downto 0);
-signal BRESP_S16_const_net_0                       : std_logic_vector(1 downto 0);
-signal RID_S16_const_net_0                         : std_logic_vector(5 downto 0);
-signal RDATA_S16_const_net_0                       : std_logic_vector(63 downto 0);
-signal RRESP_S16_const_net_0                       : std_logic_vector(1 downto 0);
 signal AWCACHE_M0_const_net_0                      : std_logic_vector(3 downto 0);
 signal AWPROT_M0_const_net_0                       : std_logic_vector(2 downto 0);
 signal ARCACHE_M0_const_net_0                      : std_logic_vector(3 downto 0);
@@ -1601,31 +1601,31 @@ signal FIC_2_APB_M_PRDATA_const_net_0              : std_logic_vector(31 downto 
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
-signal COREAXI_0_AXImslave0_0_ARID                 : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave0_0_ARID_0_3to0          : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_ARID_0               : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARID_0_3to0           : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARID_0                : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARID                  : std_logic_vector(5 downto 0);
 
-signal COREAXI_0_AXImslave0_0_AWID                 : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave0_0_AWID_0_3to0          : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_AWID_0               : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWID_0_3to0           : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWID_0                : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWID                  : std_logic_vector(5 downto 0);
 
-signal COREAXI_0_AXImslave0_0_BID_0_5to4           : std_logic_vector(5 downto 4);
-signal COREAXI_0_AXImslave0_0_BID_0_3to0           : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_BID_0                : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave0_0_BID                  : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_BID                   : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_BID_0_5to4            : std_logic_vector(5 downto 4);
+signal COREAXI_0_AXImslave16_BID_0_3to0            : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_BID_0                 : std_logic_vector(5 downto 0);
 
-signal COREAXI_0_AXImslave0_0_RID_0_5to4           : std_logic_vector(5 downto 4);
-signal COREAXI_0_AXImslave0_0_RID_0_3to0           : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_RID_0                : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave0_0_RID                  : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_RID                   : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_RID_0_5to4            : std_logic_vector(5 downto 4);
+signal COREAXI_0_AXImslave16_RID_0_3to0            : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_RID_0                 : std_logic_vector(5 downto 0);
 
-signal COREAXI_0_AXImslave0_0_WID                  : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave0_0_WID_0_3to0           : std_logic_vector(3 downto 0);
-signal COREAXI_0_AXImslave0_0_WID_0                : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_WID_0_3to0            : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_WID_0                 : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_WID                   : std_logic_vector(5 downto 0);
 
-signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP  : std_logic_vector(1 downto 0);
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0: std_logic_vector(0 to 0);
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0: std_logic;
+signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP  : std_logic_vector(1 downto 0);
 
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_2to2: std_logic_vector(2 to 2);
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_1to0: std_logic_vector(1 downto 0);
@@ -1696,6 +1696,11 @@ begin
  HRESP_S15_const_net_0          <= B"00";
  HRDATA_S16_const_net_0         <= B"00000000000000000000000000000000";
  HRESP_S16_const_net_0          <= B"00";
+ BID_S0_const_net_0             <= B"000000";
+ BRESP_S0_const_net_0           <= B"00";
+ RID_S0_const_net_0             <= B"000000";
+ RDATA_S0_const_net_0           <= B"0000000000000000000000000000000000000000000000000000000000000000";
+ RRESP_S0_const_net_0           <= B"00";
  BID_S1_const_net_0             <= B"000000";
  BRESP_S1_const_net_0           <= B"00";
  RID_S1_const_net_0             <= B"000000";
@@ -1771,11 +1776,6 @@ begin
  RID_S15_const_net_0            <= B"000000";
  RDATA_S15_const_net_0          <= B"0000000000000000000000000000000000000000000000000000000000000000";
  RRESP_S15_const_net_0          <= B"00";
- BID_S16_const_net_0            <= B"000000";
- BRESP_S16_const_net_0          <= B"00";
- RID_S16_const_net_0            <= B"000000";
- RDATA_S16_const_net_0          <= B"0000000000000000000000000000000000000000000000000000000000000000";
- RRESP_S16_const_net_0          <= B"00";
  AWCACHE_M0_const_net_0         <= B"0000";
  AWPROT_M0_const_net_0          <= B"000";
  ARCACHE_M0_const_net_0         <= B"0000";
@@ -1896,22 +1896,22 @@ begin
 ----------------------------------------------------------------------
 -- Bus Interface Nets Assignments - Unequal Pin Widths
 ----------------------------------------------------------------------
- COREAXI_0_AXImslave0_0_ARID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave0_0_ARID(3 downto 0);
- COREAXI_0_AXImslave0_0_ARID_0 <= ( COREAXI_0_AXImslave0_0_ARID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_ARID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_ARID(3 downto 0);
+ COREAXI_0_AXImslave16_ARID_0 <= ( COREAXI_0_AXImslave16_ARID_0_3to0(3 downto 0) );
 
- COREAXI_0_AXImslave0_0_AWID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave0_0_AWID(3 downto 0);
- COREAXI_0_AXImslave0_0_AWID_0 <= ( COREAXI_0_AXImslave0_0_AWID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_AWID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_AWID(3 downto 0);
+ COREAXI_0_AXImslave16_AWID_0 <= ( COREAXI_0_AXImslave16_AWID_0_3to0(3 downto 0) );
 
- COREAXI_0_AXImslave0_0_BID_0_5to4(5 downto 4) <= B"00";
- COREAXI_0_AXImslave0_0_BID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave0_0_BID(3 downto 0);
- COREAXI_0_AXImslave0_0_BID_0 <= ( COREAXI_0_AXImslave0_0_BID_0_5to4(5 downto 4) & COREAXI_0_AXImslave0_0_BID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_BID_0_5to4(5 downto 4) <= B"00";
+ COREAXI_0_AXImslave16_BID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_BID(3 downto 0);
+ COREAXI_0_AXImslave16_BID_0 <= ( COREAXI_0_AXImslave16_BID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_BID_0_3to0(3 downto 0) );
 
- COREAXI_0_AXImslave0_0_RID_0_5to4(5 downto 4) <= B"00";
- COREAXI_0_AXImslave0_0_RID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave0_0_RID(3 downto 0);
- COREAXI_0_AXImslave0_0_RID_0 <= ( COREAXI_0_AXImslave0_0_RID_0_5to4(5 downto 4) & COREAXI_0_AXImslave0_0_RID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_RID_0_5to4(5 downto 4) <= B"00";
+ COREAXI_0_AXImslave16_RID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_RID(3 downto 0);
+ COREAXI_0_AXImslave16_RID_0 <= ( COREAXI_0_AXImslave16_RID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_RID_0_3to0(3 downto 0) );
 
- COREAXI_0_AXImslave0_0_WID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave0_0_WID(3 downto 0);
- COREAXI_0_AXImslave0_0_WID_0 <= ( COREAXI_0_AXImslave0_0_WID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_WID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_WID(3 downto 0);
+ COREAXI_0_AXImslave16_WID_0 <= ( COREAXI_0_AXImslave16_WID_0_3to0(3 downto 0) );
 
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0(0) <= top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP(0);
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0 <= ( top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0(0) );
@@ -2368,7 +2368,7 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         HGS_CFG          => ( 1 ),
         ID_WIDTH         => ( 4 ),
         INP_REG_BUF      => ( 1 ),
-        M0_SLAVE0ENABLE  => ( 1 ),
+        M0_SLAVE0ENABLE  => ( 0 ),
         M0_SLAVE1ENABLE  => ( 0 ),
         M0_SLAVE2ENABLE  => ( 0 ),
         M0_SLAVE3ENABLE  => ( 0 ),
@@ -2384,7 +2384,7 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         M0_SLAVE13ENABLE => ( 0 ),
         M0_SLAVE14ENABLE => ( 0 ),
         M0_SLAVE15ENABLE => ( 0 ),
-        M0_SLAVE16ENABLE => ( 0 ),
+        M0_SLAVE16ENABLE => ( 1 ),
         M1_SLAVE0ENABLE  => ( 0 ),
         M1_SLAVE1ENABLE  => ( 0 ),
         M1_SLAVE2ENABLE  => ( 0 ),
@@ -2440,18 +2440,18 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         NUM_MASTER_SLOT  => ( 1 ),
         OUT_REG_BUF      => ( 1 ),
         RD_ACCEPTANCE    => ( 4 ),
-        SC_0             => ( 0 ),
-        SC_1             => ( 0 ),
-        SC_2             => ( 0 ),
-        SC_3             => ( 0 ),
-        SC_4             => ( 0 ),
-        SC_5             => ( 0 ),
-        SC_6             => ( 0 ),
-        SC_7             => ( 0 ),
-        SC_8             => ( 0 ),
-        SC_9             => ( 0 ),
-        SC_10            => ( 0 ),
-        SC_11            => ( 0 ),
+        SC_0             => ( 1 ),
+        SC_1             => ( 1 ),
+        SC_2             => ( 1 ),
+        SC_3             => ( 1 ),
+        SC_4             => ( 1 ),
+        SC_5             => ( 1 ),
+        SC_6             => ( 1 ),
+        SC_7             => ( 1 ),
+        SC_8             => ( 1 ),
+        SC_9             => ( 1 ),
+        SC_10            => ( 1 ),
+        SC_11            => ( 1 ),
         SC_12            => ( 0 ),
         SC_13            => ( 0 ),
         SC_14            => ( 0 ),
@@ -2485,12 +2485,12 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         BREADY_M3   => GND_net, -- tied to '0' from definition
         ARVALID_M3  => GND_net, -- tied to '0' from definition
         RREADY_M3   => GND_net, -- tied to '0' from definition
-        AWREADY_S0  => COREAXI_0_AXImslave0_0_AWREADY,
-        WREADY_S0   => COREAXI_0_AXImslave0_0_WREADY,
-        BVALID_S0   => COREAXI_0_AXImslave0_0_BVALID,
-        ARREADY_S0  => COREAXI_0_AXImslave0_0_ARREADY,
-        RLAST_S0    => COREAXI_0_AXImslave0_0_RLAST,
-        RVALID_S0   => COREAXI_0_AXImslave0_0_RVALID,
+        AWREADY_S0  => GND_net, -- tied to '0' from definition
+        WREADY_S0   => GND_net, -- tied to '0' from definition
+        BVALID_S0   => GND_net, -- tied to '0' from definition
+        ARREADY_S0  => GND_net, -- tied to '0' from definition
+        RLAST_S0    => GND_net, -- tied to '0' from definition
+        RVALID_S0   => GND_net, -- tied to '0' from definition
         AWREADY_S1  => GND_net, -- tied to '0' from definition
         WREADY_S1   => GND_net, -- tied to '0' from definition
         BVALID_S1   => GND_net, -- tied to '0' from definition
@@ -2581,12 +2581,12 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         ARREADY_S15 => GND_net, -- tied to '0' from definition
         RLAST_S15   => GND_net, -- tied to '0' from definition
         RVALID_S15  => GND_net, -- tied to '0' from definition
-        AWREADY_S16 => GND_net, -- tied to '0' from definition
-        WREADY_S16  => GND_net, -- tied to '0' from definition
-        BVALID_S16  => GND_net, -- tied to '0' from definition
-        ARREADY_S16 => GND_net, -- tied to '0' from definition
-        RLAST_S16   => GND_net, -- tied to '0' from definition
-        RVALID_S16  => GND_net, -- tied to '0' from definition
+        AWREADY_S16 => COREAXI_0_AXImslave16_AWREADY,
+        WREADY_S16  => COREAXI_0_AXImslave16_WREADY,
+        BVALID_S16  => COREAXI_0_AXImslave16_BVALID,
+        ARREADY_S16 => COREAXI_0_AXImslave16_ARREADY,
+        RLAST_S16   => COREAXI_0_AXImslave16_RLAST,
+        RVALID_S16  => COREAXI_0_AXImslave16_RVALID,
         AWID_M0     => COREAHBLTOAXI_0_AXIMasterIF_AWID,
         AWADDR_M0   => COREAHBLTOAXI_0_AXIMasterIF_AWADDR,
         AWLEN_M0    => COREAHBLTOAXI_0_AXIMasterIF_AWLEN,
@@ -2663,11 +2663,11 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         ARLOCK_M3   => ARLOCK_M3_const_net_0, -- tied to X"0" from definition
         ARCACHE_M3  => ARCACHE_M3_const_net_0, -- tied to X"0" from definition
         ARPROT_M3   => ARPROT_M3_const_net_0, -- tied to X"0" from definition
-        BID_S0      => COREAXI_0_AXImslave0_0_BID_0,
-        BRESP_S0    => COREAXI_0_AXImslave0_0_BRESP,
-        RID_S0      => COREAXI_0_AXImslave0_0_RID_0,
-        RDATA_S0    => COREAXI_0_AXImslave0_0_RDATA,
-        RRESP_S0    => COREAXI_0_AXImslave0_0_RRESP,
+        BID_S0      => BID_S0_const_net_0, -- tied to X"0" from definition
+        BRESP_S0    => BRESP_S0_const_net_0, -- tied to X"0" from definition
+        RID_S0      => RID_S0_const_net_0, -- tied to X"0" from definition
+        RDATA_S0    => RDATA_S0_const_net_0, -- tied to X"0" from definition
+        RRESP_S0    => RRESP_S0_const_net_0, -- tied to X"0" from definition
         BID_S1      => BID_S1_const_net_0, -- tied to X"0" from definition
         BRESP_S1    => BRESP_S1_const_net_0, -- tied to X"0" from definition
         RID_S1      => RID_S1_const_net_0, -- tied to X"0" from definition
@@ -2743,11 +2743,11 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         RID_S15     => RID_S15_const_net_0, -- tied to X"0" from definition
         RDATA_S15   => RDATA_S15_const_net_0, -- tied to X"0" from definition
         RRESP_S15   => RRESP_S15_const_net_0, -- tied to X"0" from definition
-        BID_S16     => BID_S16_const_net_0, -- tied to X"0" from definition
-        BRESP_S16   => BRESP_S16_const_net_0, -- tied to X"0" from definition
-        RID_S16     => RID_S16_const_net_0, -- tied to X"0" from definition
-        RDATA_S16   => RDATA_S16_const_net_0, -- tied to X"0" from definition
-        RRESP_S16   => RRESP_S16_const_net_0, -- tied to X"0" from definition
+        BID_S16     => COREAXI_0_AXImslave16_BID_0,
+        BRESP_S16   => COREAXI_0_AXImslave16_BRESP,
+        RID_S16     => COREAXI_0_AXImslave16_RID_0,
+        RDATA_S16   => COREAXI_0_AXImslave16_RDATA,
+        RRESP_S16   => COREAXI_0_AXImslave16_RRESP,
         -- Outputs
         AWREADY_M0  => COREAHBLTOAXI_0_AXIMasterIF_AWREADY,
         WREADY_M0   => COREAHBLTOAXI_0_AXIMasterIF_WREADY,
@@ -2773,12 +2773,12 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         ARREADY_M3  => OPEN,
         RLAST_M3    => OPEN,
         RVALID_M3   => OPEN,
-        AWVALID_S0  => COREAXI_0_AXImslave0_0_AWVALID,
-        WLAST_S0    => COREAXI_0_AXImslave0_0_WLAST,
-        WVALID_S0   => COREAXI_0_AXImslave0_0_WVALID,
-        BREADY_S0   => COREAXI_0_AXImslave0_0_BREADY,
-        ARVALID_S0  => COREAXI_0_AXImslave0_0_ARVALID,
-        RREADY_S0   => COREAXI_0_AXImslave0_0_RREADY,
+        AWVALID_S0  => OPEN,
+        WLAST_S0    => OPEN,
+        WVALID_S0   => OPEN,
+        BREADY_S0   => OPEN,
+        ARVALID_S0  => OPEN,
+        RREADY_S0   => OPEN,
         AWVALID_S1  => OPEN,
         WLAST_S1    => OPEN,
         WVALID_S1   => OPEN,
@@ -2869,12 +2869,12 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         BREADY_S15  => OPEN,
         ARVALID_S15 => OPEN,
         RREADY_S15  => OPEN,
-        AWVALID_S16 => OPEN,
-        WLAST_S16   => OPEN,
-        WVALID_S16  => OPEN,
-        BREADY_S16  => OPEN,
-        ARVALID_S16 => OPEN,
-        RREADY_S16  => OPEN,
+        AWVALID_S16 => COREAXI_0_AXImslave16_AWVALID,
+        WLAST_S16   => COREAXI_0_AXImslave16_WLAST,
+        WVALID_S16  => COREAXI_0_AXImslave16_WVALID,
+        BREADY_S16  => COREAXI_0_AXImslave16_BREADY,
+        ARVALID_S16 => COREAXI_0_AXImslave16_ARVALID,
+        RREADY_S16  => COREAXI_0_AXImslave16_RREADY,
         BID_M0      => COREAHBLTOAXI_0_AXIMasterIF_BID,
         BRESP_M0    => COREAHBLTOAXI_0_AXIMasterIF_BRESP,
         RID_M0      => COREAHBLTOAXI_0_AXIMasterIF_RID,
@@ -2895,25 +2895,25 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         RID_M3      => OPEN,
         RDATA_M3    => OPEN,
         RRESP_M3    => OPEN,
-        AWID_S0     => COREAXI_0_AXImslave0_0_AWID,
-        AWADDR_S0   => COREAXI_0_AXImslave0_0_AWADDR,
-        AWLEN_S0    => COREAXI_0_AXImslave0_0_AWLEN,
-        AWSIZE_S0   => COREAXI_0_AXImslave0_0_AWSIZE,
-        AWBURST_S0  => COREAXI_0_AXImslave0_0_AWBURST,
-        AWLOCK_S0   => COREAXI_0_AXImslave0_0_AWLOCK,
-        AWCACHE_S0  => COREAXI_0_AXImslave0_0_AWCACHE,
-        AWPROT_S0   => COREAXI_0_AXImslave0_0_AWPROT,
-        WID_S0      => COREAXI_0_AXImslave0_0_WID,
-        WDATA_S0    => COREAXI_0_AXImslave0_0_WDATA,
-        WSTRB_S0    => COREAXI_0_AXImslave0_0_WSTRB,
-        ARID_S0     => COREAXI_0_AXImslave0_0_ARID,
-        ARADDR_S0   => COREAXI_0_AXImslave0_0_ARADDR,
-        ARLEN_S0    => COREAXI_0_AXImslave0_0_ARLEN,
-        ARSIZE_S0   => COREAXI_0_AXImslave0_0_ARSIZE,
-        ARBURST_S0  => COREAXI_0_AXImslave0_0_ARBURST,
-        ARLOCK_S0   => COREAXI_0_AXImslave0_0_ARLOCK,
-        ARCACHE_S0  => COREAXI_0_AXImslave0_0_ARCACHE,
-        ARPROT_S0   => COREAXI_0_AXImslave0_0_ARPROT,
+        AWID_S0     => OPEN,
+        AWADDR_S0   => OPEN,
+        AWLEN_S0    => OPEN,
+        AWSIZE_S0   => OPEN,
+        AWBURST_S0  => OPEN,
+        AWLOCK_S0   => OPEN,
+        AWCACHE_S0  => OPEN,
+        AWPROT_S0   => OPEN,
+        WID_S0      => OPEN,
+        WDATA_S0    => OPEN,
+        WSTRB_S0    => OPEN,
+        ARID_S0     => OPEN,
+        ARADDR_S0   => OPEN,
+        ARLEN_S0    => OPEN,
+        ARSIZE_S0   => OPEN,
+        ARBURST_S0  => OPEN,
+        ARLOCK_S0   => OPEN,
+        ARCACHE_S0  => OPEN,
+        ARPROT_S0   => OPEN,
         AWID_S1     => OPEN,
         AWADDR_S1   => OPEN,
         AWLEN_S1    => OPEN,
@@ -3199,25 +3199,25 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         ARLOCK_S15  => OPEN,
         ARCACHE_S15 => OPEN,
         ARPROT_S15  => OPEN,
-        AWID_S16    => OPEN,
-        AWADDR_S16  => OPEN,
-        AWLEN_S16   => OPEN,
-        AWSIZE_S16  => OPEN,
-        AWBURST_S16 => OPEN,
-        AWLOCK_S16  => OPEN,
-        AWCACHE_S16 => OPEN,
-        AWPROT_S16  => OPEN,
-        WID_S16     => OPEN,
-        WDATA_S16   => OPEN,
-        WSTRB_S16   => OPEN,
-        ARID_S16    => OPEN,
-        ARADDR_S16  => OPEN,
-        ARLEN_S16   => OPEN,
-        ARSIZE_S16  => OPEN,
-        ARBURST_S16 => OPEN,
-        ARLOCK_S16  => OPEN,
-        ARCACHE_S16 => OPEN,
-        ARPROT_S16  => OPEN 
+        AWID_S16    => COREAXI_0_AXImslave16_AWID,
+        AWADDR_S16  => COREAXI_0_AXImslave16_AWADDR,
+        AWLEN_S16   => COREAXI_0_AXImslave16_AWLEN,
+        AWSIZE_S16  => COREAXI_0_AXImslave16_AWSIZE,
+        AWBURST_S16 => COREAXI_0_AXImslave16_AWBURST,
+        AWLOCK_S16  => COREAXI_0_AXImslave16_AWLOCK,
+        AWCACHE_S16 => COREAXI_0_AXImslave16_AWCACHE,
+        AWPROT_S16  => COREAXI_0_AXImslave16_AWPROT,
+        WID_S16     => COREAXI_0_AXImslave16_WID,
+        WDATA_S16   => COREAXI_0_AXImslave16_WDATA,
+        WSTRB_S16   => COREAXI_0_AXImslave16_WSTRB,
+        ARID_S16    => COREAXI_0_AXImslave16_ARID,
+        ARADDR_S16  => COREAXI_0_AXImslave16_ARADDR,
+        ARLEN_S16   => COREAXI_0_AXImslave16_ARLEN,
+        ARSIZE_S16  => COREAXI_0_AXImslave16_ARSIZE,
+        ARBURST_S16 => COREAXI_0_AXImslave16_ARBURST,
+        ARLOCK_S16  => COREAXI_0_AXImslave16_ARLOCK,
+        ARCACHE_S16 => COREAXI_0_AXImslave16_ARCACHE,
+        ARPROT_S16  => COREAXI_0_AXImslave16_ARPROT 
         );
 -- CORERESETP_0   -   Actel:DirectCore:CoreResetP:7.1.100
 CORERESETP_0 : CoreResetP
@@ -3356,45 +3356,45 @@ MSS_SMC_0 : CORESDR_AXI
         -- Inputs
         ACLK    => FAB_CCC_GL2_net_0,
         ARESETN => MSS_READY_net_0,
-        AWVALID => COREAXI_0_AXImslave0_0_AWVALID,
-        WLAST   => COREAXI_0_AXImslave0_0_WLAST,
-        WVALID  => COREAXI_0_AXImslave0_0_WVALID,
-        BREADY  => COREAXI_0_AXImslave0_0_BREADY,
-        ARVALID => COREAXI_0_AXImslave0_0_ARVALID,
-        RREADY  => COREAXI_0_AXImslave0_0_RREADY,
-        AWID    => COREAXI_0_AXImslave0_0_AWID_0,
-        AWADDR  => COREAXI_0_AXImslave0_0_AWADDR,
-        AWLEN   => COREAXI_0_AXImslave0_0_AWLEN,
-        AWSIZE  => COREAXI_0_AXImslave0_0_AWSIZE,
-        AWBURST => COREAXI_0_AXImslave0_0_AWBURST,
-        AWLOCK  => COREAXI_0_AXImslave0_0_AWLOCK,
-        WID     => COREAXI_0_AXImslave0_0_WID_0,
-        WDATA   => COREAXI_0_AXImslave0_0_WDATA,
-        WSTRB   => COREAXI_0_AXImslave0_0_WSTRB,
-        ARID    => COREAXI_0_AXImslave0_0_ARID_0,
-        ARADDR  => COREAXI_0_AXImslave0_0_ARADDR,
-        ARLEN   => COREAXI_0_AXImslave0_0_ARLEN,
-        ARSIZE  => COREAXI_0_AXImslave0_0_ARSIZE,
-        ARBURST => COREAXI_0_AXImslave0_0_ARBURST,
-        ARLOCK  => COREAXI_0_AXImslave0_0_ARLOCK,
+        AWVALID => COREAXI_0_AXImslave16_AWVALID,
+        WLAST   => COREAXI_0_AXImslave16_WLAST,
+        WVALID  => COREAXI_0_AXImslave16_WVALID,
+        BREADY  => COREAXI_0_AXImslave16_BREADY,
+        ARVALID => COREAXI_0_AXImslave16_ARVALID,
+        RREADY  => COREAXI_0_AXImslave16_RREADY,
+        AWID    => COREAXI_0_AXImslave16_AWID_0,
+        AWADDR  => COREAXI_0_AXImslave16_AWADDR,
+        AWLEN   => COREAXI_0_AXImslave16_AWLEN,
+        AWSIZE  => COREAXI_0_AXImslave16_AWSIZE,
+        AWBURST => COREAXI_0_AXImslave16_AWBURST,
+        AWLOCK  => COREAXI_0_AXImslave16_AWLOCK,
+        WID     => COREAXI_0_AXImslave16_WID_0,
+        WDATA   => COREAXI_0_AXImslave16_WDATA,
+        WSTRB   => COREAXI_0_AXImslave16_WSTRB,
+        ARID    => COREAXI_0_AXImslave16_ARID_0,
+        ARADDR  => COREAXI_0_AXImslave16_ARADDR,
+        ARLEN   => COREAXI_0_AXImslave16_ARLEN,
+        ARSIZE  => COREAXI_0_AXImslave16_ARSIZE,
+        ARBURST => COREAXI_0_AXImslave16_ARBURST,
+        ARLOCK  => COREAXI_0_AXImslave16_ARLOCK,
         -- Outputs
-        AWREADY => COREAXI_0_AXImslave0_0_AWREADY,
-        WREADY  => COREAXI_0_AXImslave0_0_WREADY,
-        BVALID  => COREAXI_0_AXImslave0_0_BVALID,
-        ARREADY => COREAXI_0_AXImslave0_0_ARREADY,
-        RLAST   => COREAXI_0_AXImslave0_0_RLAST,
-        RVALID  => COREAXI_0_AXImslave0_0_RVALID,
+        AWREADY => COREAXI_0_AXImslave16_AWREADY,
+        WREADY  => COREAXI_0_AXImslave16_WREADY,
+        BVALID  => COREAXI_0_AXImslave16_BVALID,
+        ARREADY => COREAXI_0_AXImslave16_ARREADY,
+        RLAST   => COREAXI_0_AXImslave16_RLAST,
+        RVALID  => COREAXI_0_AXImslave16_RVALID,
         SDRCLK  => SDRCLK_net_0,
         OE      => OE_net_0,
         CKE     => CKE_net_0,
         RAS_N   => RAS_N_net_0,
         CAS_N   => CAS_N_net_0,
         WE_N    => WE_N_net_0,
-        BID     => COREAXI_0_AXImslave0_0_BID,
-        BRESP   => COREAXI_0_AXImslave0_0_BRESP,
-        RID     => COREAXI_0_AXImslave0_0_RID,
-        RDATA   => COREAXI_0_AXImslave0_0_RDATA,
-        RRESP   => COREAXI_0_AXImslave0_0_RRESP,
+        BID     => COREAXI_0_AXImslave16_BID,
+        BRESP   => COREAXI_0_AXImslave16_BRESP,
+        RID     => COREAXI_0_AXImslave16_RID,
+        RDATA   => COREAXI_0_AXImslave16_RDATA,
+        RRESP   => COREAXI_0_AXImslave16_RRESP,
         SA      => SA_net_0,
         BA      => BA_net_0,
         CS_N    => CS_N_net_0,

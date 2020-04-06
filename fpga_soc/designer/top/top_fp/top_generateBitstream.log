@@ -1,8 +1,8 @@
 Software Version: 11.8.0.26
 Opened 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp\top.pro'
 The 'open_project' command succeeded.
-PDB file 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\255c1d17-c654-4ebc-8654-0ebcc6540ebc.pdb' has been loaded successfully.
-DESIGN : top;  CHECKSUM : A7FD;  PDB_VERSION : 1.9
+PDB file 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\1b649d5c-3f8c-44bc-bf8c-64bc3f8c64bc.pdb' has been loaded successfully.
+DESIGN : top;  CHECKSUM : 7D55;  PDB_VERSION : 1.9
 The 'load_programming_data' command succeeded.
 The 'set_programming_file' command succeeded.
 Project saved.

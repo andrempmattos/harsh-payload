@@ -37,6 +37,7 @@ read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\compone
 read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd}
+read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAHBLITE_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_addrdec.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAHBLITE_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAHBLITE_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_masterstage.vhd}
@@ -50,7 +51,6 @@ read_vhdl -mode vhdl_2008 -lib CORESDR_AXI_LIB {C:\Users\lirmm2\Desktop\GitHub\H
 read_vhdl -mode vhdl_2008 -lib CORESDR_AXI_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastinit.vhd}
 read_vhdl -mode vhdl_2008 -lib CORESDR_AXI_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr.vhd}
 read_vhdl -mode vhdl_2008 -lib CORESDR_AXI_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd}
-read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd}
 read_vhdl -mode vhdl_2008 -lib COREAHBLITE_LIB {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\components.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd}
 read_vhdl -mode vhdl_2008 {C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd}

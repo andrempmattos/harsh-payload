@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by Microsemi SmartDesign Thu Mar 26 22:06:35 2020
+-- Created by Microsemi SmartDesign Mon Apr 06 16:40:35 2020
 -- Parameters for COREAXI
 ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ package coreparameters is
     constant HGS_CFG : integer := 1;
     constant ID_WIDTH : integer := 4;
     constant INP_REG_BUF : integer := 1;
-    constant M0_SLAVE0ENABLE : integer := 1;
+    constant M0_SLAVE0ENABLE : integer := 0;
     constant M0_SLAVE1ENABLE : integer := 0;
     constant M0_SLAVE2ENABLE : integer := 0;
     constant M0_SLAVE3ENABLE : integer := 0;
@@ -34,7 +34,7 @@ package coreparameters is
     constant M0_SLAVE13ENABLE : integer := 0;
     constant M0_SLAVE14ENABLE : integer := 0;
     constant M0_SLAVE15ENABLE : integer := 0;
-    constant M0_SLAVE16ENABLE : integer := 0;
+    constant M0_SLAVE16ENABLE : integer := 1;
     constant M1_SLAVE0ENABLE : integer := 0;
     constant M1_SLAVE1ENABLE : integer := 0;
     constant M1_SLAVE2ENABLE : integer := 0;
@@ -90,18 +90,18 @@ package coreparameters is
     constant NUM_MASTER_SLOT : integer := 1;
     constant OUT_REG_BUF : integer := 1;
     constant RD_ACCEPTANCE : integer := 4;
-    constant SC_0 : integer := 0;
-    constant SC_1 : integer := 0;
-    constant SC_2 : integer := 0;
-    constant SC_3 : integer := 0;
-    constant SC_4 : integer := 0;
-    constant SC_5 : integer := 0;
-    constant SC_6 : integer := 0;
-    constant SC_7 : integer := 0;
-    constant SC_8 : integer := 0;
-    constant SC_9 : integer := 0;
-    constant SC_10 : integer := 0;
-    constant SC_11 : integer := 0;
+    constant SC_0 : integer := 1;
+    constant SC_1 : integer := 1;
+    constant SC_2 : integer := 1;
+    constant SC_3 : integer := 1;
+    constant SC_4 : integer := 1;
+    constant SC_5 : integer := 1;
+    constant SC_6 : integer := 1;
+    constant SC_7 : integer := 1;
+    constant SC_8 : integer := 1;
+    constant SC_9 : integer := 1;
+    constant SC_10 : integer := 1;
+    constant SC_11 : integer := 1;
     constant SC_12 : integer := 0;
     constant SC_13 : integer := 0;
     constant SC_14 : integer := 0;

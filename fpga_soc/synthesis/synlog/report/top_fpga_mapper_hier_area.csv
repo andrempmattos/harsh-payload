@@ -1,8 +1,8 @@
 
 . Module name, SLE, CFG, ARI1, BUFFER, MACC, RAM1K18, RAM64X18, GLOBAL, IO
-. top, 2353, 2177, 268, 0, 0, 0, 6, 3, 54
-.	. top_sb, 2353, 2177, 268, 0, 0, 0, 6, 3, 14
-.	.	. CORESDR_AXI, 613, 999, 67, 0, 0, 0, 0, 0, 0
+. top, 2353, 2110, 269, 0, 0, 0, 6, 3, 54
+.	. top_sb, 2353, 2110, 269, 0, 0, 0, 6, 3, 14
+.	.	. CORESDR_AXI, 610, 931, 67, 0, 0, 0, 0, 0, 0
 .	.	.	. CORESDR, 368, 436, 44, 0, 0, 0, 0, 0, 0
 .	.	.	.	. fastinit, 343, 434, 44, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	. fastsdram, 298, 405, 28, 0, 0, 0, 0, 0, 0
@@ -10,38 +10,38 @@
 .	.	.	.	.	.	. openbank_0, 50, 61, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	.	. openbank_1, 50, 56, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	.	. openbank_2, 50, 56, 0, 0, 0, 0, 0, 0, 0
-.	.	. CoreAHBLite, 61, 147, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. COREAHBLITE_MATRIX4X16, 61, 147, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	. COREAHBLITE_MASTERSTAGE_1_1_0_1024_0, 55, 66, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	. COREAHBLITE_DEFAULTSLAVESM_0, 1, 9, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	. COREAHBLITE_SLAVESTAGE_0, 6, 81, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	. COREAHBLITE_SLAVEARBITER_1, 5, 48, 0, 0, 0, 0, 0, 0, 0
+.	.	. CoreAHBLite, 61, 153, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. COREAHBLITE_MATRIX4X16, 61, 153, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. COREAHBLITE_MASTERSTAGE_1_1_0_1024_0, 55, 69, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. COREAHBLITE_DEFAULTSLAVESM_0, 1, 8, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. COREAHBLITE_SLAVESTAGE_0, 6, 84, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. COREAHBLITE_SLAVEARBITER_1, 5, 51, 0, 0, 0, 0, 0, 0, 0
 .	.	. CoreResetP, 10, 2, 0, 0, 0, 0, 0, 1, 0
 .	.	. top_sb_CCC_0_FCCC, 0, 0, 0, 0, 0, 0, 0, 1, 1
-.	.	. top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI, 874, 631, 201, 0, 0, 0, 6, 1, 0
-.	.	.	. CoreAHBLtoAXI_AHBAccessControlHX, 111, 22, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. CoreAHBLtoAXI_AXIAccessControlHX, 149, 230, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. CoreAHBLtoAXI_RDCHANNELFIFOHX, 266, 153, 101, 0, 0, 0, 2, 0, 0
+.	.	. top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI, 874, 626, 202, 0, 0, 0, 6, 1, 0
+.	.	.	. CoreAHBLtoAXI_AHBAccessControlHX, 111, 23, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. CoreAHBLtoAXI_AXIAccessControlHX, 149, 229, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. CoreAHBLtoAXI_RDCHANNELFIFOHX, 266, 152, 101, 0, 0, 0, 2, 0, 0
 .	.	.	.	. CoreAHBLtoAXI_rdch_ramHX, 0, 2, 0, 0, 0, 0, 2, 0, 0
-.	.	.	. CoreAHBLtoAXI_WRCHANNELFIFOHX, 332, 223, 100, 0, 0, 0, 4, 0, 0
+.	.	.	. CoreAHBLtoAXI_WRCHANNELFIFOHX, 332, 219, 101, 0, 0, 0, 4, 0, 0
 .	.	.	.	. CoreAHBLtoAXI_wrch_ramHX, 0, 4, 0, 0, 0, 0, 4, 0, 0
 .	.	.	. CoreAHBLtoAXI_reset_syncHX_0, 2, 0, 0, 0, 0, 0, 0, 1, 0
 .	.	.	. Synchronizer_AHBtoAXIHX, 6, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	.	. Synchronizer_AXItoAHBHX, 8, 3, 0, 0, 0, 0, 0, 0, 0
-.	.	. top_sb_COREAXI_0_COREAXI, 795, 366, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. axi_interconnect_ntom, 296, 133, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	. axi_matrix_m, 70, 9, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	. axi_rd_channel, 69, 9, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	.	. axi_rdmatrix_16Sto1M, 69, 9, 0, 0, 0, 0, 0, 0, 0
+.	.	. top_sb_COREAXI_0_COREAXI, 798, 365, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. axi_interconnect_ntom, 303, 125, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. axi_matrix_m, 70, 8, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. axi_rd_channel, 69, 8, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. axi_rdmatrix_16Sto1M, 69, 8, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	. axi_wresp_channel, 1, 0, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	. axi_matrix_s, 226, 124, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	. axi_ra_channel, 76, 29, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	.	. axi_rdmatrix_4Mto1S, 76, 29, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. axi_matrix_s, 226, 114, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. axi_ra_channel, 76, 22, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. axi_rdmatrix_4Mto1S, 76, 22, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	.	.	. axi_RA_ARBITER, 16, 16, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	. axi_wa_channel, 75, 21, 0, 0, 0, 0, 0, 0, 0
-.	.	.	.	.	.	. axi_wrmatrix_4Mto1S, 75, 21, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. axi_wa_channel, 75, 18, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. axi_wrmatrix_4Mto1S, 75, 18, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	.	.	. axi_WA_ARBITER, 16, 13, 0, 0, 0, 0, 0, 0, 0
 .	.	.	.	.	. axi_wd_channel, 75, 74, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. axi_master_stage, 368, 179, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. axi_slave_stage, 131, 54, 0, 0, 0, 0, 0, 0, 0
-.	.	. top_sb_MSS, 0, 32, 0, 0, 0, 0, 0, 0, 13
+.	.	.	. axi_master_stage, 364, 183, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. axi_slave_stage, 131, 57, 0, 0, 0, 0, 0, 0, 0
+.	.	. top_sb_MSS, 0, 33, 0, 0, 0, 0, 0, 0, 13

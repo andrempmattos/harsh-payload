@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Thu Mar 26 22:07:10 2020
+-- Created by SmartDesign Mon Apr 06 16:19:47 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -125,10 +125,6 @@ signal CKE_net_1                 : std_logic;
 signal RAS_N_net_1               : std_logic;
 signal CAS_N_net_1               : std_logic;
 signal WE_N_net_1                : std_logic;
-signal SA_net_1                  : std_logic_vector(13 downto 0);
-signal BA_net_1                  : std_logic_vector(1 downto 0);
-signal CS_N_1_net_0              : std_logic_vector(0 to 0);
-signal DQM_net_1                 : std_logic_vector(1 downto 0);
 signal GPIO_8_OUT_net_1          : std_logic;
 signal GPIO_9_OUT_net_1          : std_logic;
 signal GPIO_10_OUT_net_1         : std_logic;
@@ -139,6 +135,10 @@ signal GPIO_14_OUT_net_1         : std_logic;
 signal GPIO_15_OUT_net_1         : std_logic;
 signal GPIO_16_OUT_net_1         : std_logic;
 signal GPIO_25_OUT_0_net_0       : std_logic;
+signal SA_net_1                  : std_logic_vector(13 downto 0);
+signal BA_net_1                  : std_logic_vector(1 downto 0);
+signal CS_N_1_net_0              : std_logic_vector(0 to 0);
+signal DQM_net_1                 : std_logic_vector(1 downto 0);
 
 begin
 ----------------------------------------------------------------------
@@ -156,14 +156,6 @@ begin
  CAS_N               <= CAS_N_net_1;
  WE_N_net_1          <= WE_N_net_0;
  WE_N                <= WE_N_net_1;
- SA_net_1            <= SA_net_0;
- SA(13 downto 0)     <= SA_net_1;
- BA_net_1            <= BA_net_0;
- BA(1 downto 0)      <= BA_net_1;
- CS_N_1_net_0(0)     <= CS_N_1(0);
- CS_N(0)             <= CS_N_1_net_0(0);
- DQM_net_1           <= DQM_net_0;
- DQM(1 downto 0)     <= DQM_net_1;
  GPIO_8_OUT_net_1    <= GPIO_8_OUT_net_0;
  GPIO_8_OUT          <= GPIO_8_OUT_net_1;
  GPIO_9_OUT_net_1    <= GPIO_9_OUT_net_0;
@@ -184,6 +176,14 @@ begin
  GPIO_16_OUT         <= GPIO_16_OUT_net_1;
  GPIO_25_OUT_0_net_0 <= GPIO_25_OUT_0;
  GPIO_25_OUT         <= GPIO_25_OUT_0_net_0;
+ SA_net_1            <= SA_net_0;
+ SA(13 downto 0)     <= SA_net_1;
+ BA_net_1            <= BA_net_0;
+ BA(1 downto 0)      <= BA_net_1;
+ CS_N_1_net_0(0)     <= CS_N_1(0);
+ CS_N(0)             <= CS_N_1_net_0(0);
+ DQM_net_1           <= DQM_net_0;
+ DQM(1 downto 0)     <= DQM_net_1;
 ----------------------------------------------------------------------
 -- Component instances
 ----------------------------------------------------------------------
@@ -209,10 +209,6 @@ top_sb_0 : top_sb
         RAS_N            => RAS_N_net_0,
         CAS_N            => CAS_N_net_0,
         WE_N             => WE_N_net_0,
-        SA               => SA_net_0,
-        BA               => BA_net_0,
-        CS_N             => CS_N_1,
-        DQM              => DQM_net_0,
         GPIO_8_OUT       => GPIO_8_OUT_net_0,
         GPIO_9_OUT       => GPIO_9_OUT_net_0,
         GPIO_10_OUT      => GPIO_10_OUT_net_0,
@@ -223,6 +219,10 @@ top_sb_0 : top_sb
         GPIO_15_OUT      => GPIO_15_OUT_net_0,
         GPIO_16_OUT      => GPIO_16_OUT_net_0,
         GPIO_25_OUT      => GPIO_25_OUT_0,
+        SA               => SA_net_0,
+        BA               => BA_net_0,
+        CS_N             => CS_N_1,
+        DQM              => DQM_net_0,
         -- Inouts
         DQ               => DQ 
         );

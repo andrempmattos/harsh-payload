@@ -1,16 +1,16 @@
 C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\m_generic.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis   -part M2S010  -package VF400  -grade -1    -maxfan 10000 -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -RWCheckOnRam 0 -summaryfile C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper.xml  -top_level_module  work.top  -licensetype  synplifypro_actel  -flow mapping  -mp  4  -prjfile  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\scratchproject.prs  -implementation  synthesis  -multisrs  -oedif  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.edn   -freq 100.000   -tcl  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\synthesis.fdc  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\top_prem.srd  -sap  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap  -otap  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.tap  -omap  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.map  -devicelib  C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.v  -sap  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap  -ologparam  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\syntmp\top.plg  -osyn  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.srm  -prjdir  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\  -prjname  top_syn  -log  C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\top_fpga_mapper.srr 
-rc:1 success:1 runtime:16
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\scratchproject.prs|io:o|time:1585256262|size:10659|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.edn|io:o|time:1585256875|size:4422139|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\synthesis.fdc|io:i|time:1585256844|size:54|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:i|time:1585256860|size:639186|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1585256861|size:10126|exec:0
+rc:1 success:1 runtime:20
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\scratchproject.prs|io:o|time:1586178692|size:10659|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.edn|io:o|time:1586184106|size:4407006|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\synthesis.fdc|io:i|time:1586184061|size:54|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:i|time:1586184086|size:642764|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1586184087|size:10169|exec:0
 file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.tap|io:o|time:0|size:0|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.map|io:o|time:1585256876|size:28|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.map|io:o|time:1586184107|size:28|exec:0
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.v|io:i|time:1487941628|size:16359|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1585256861|size:10126|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\syntmp\top.plg|io:o|time:1585256876|size:758|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.srm|io:o|time:1585256875|size:8970|exec:0
-file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\top_fpga_mapper.srr|io:o|time:1585256876|size:113149|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1586184087|size:10169|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\syntmp\top.plg|io:o|time:1586184107|size:760|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.srm|io:o|time:1586184105|size:8918|exec:0
+file:C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\top_fpga_mapper.srr|io:o|time:1586184107|size:134539|exec:0
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin\m_generic.exe|io:i|time:1485304562|size:17958400|exec:1
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\m_generic.exe|io:i|time:1485306114|size:32495616|exec:1

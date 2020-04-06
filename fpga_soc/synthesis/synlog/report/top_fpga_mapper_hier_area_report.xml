@@ -19,8 +19,8 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>top</data>
 <data>2353</data>
-<data>2177</data>
-<data>268</data>
+<data>2110</data>
+<data>269</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -30,8 +30,8 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>top_sb</data>
 <data>2353</data>
-<data>2177</data>
-<data>268</data>
+<data>2110</data>
+<data>269</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -40,8 +40,8 @@ The file contains the information about resource utilization per module to be di
 <data>14</data>
 <module>
 <data>CORESDR_AXI</data>
-<data>613</data>
-<data>999</data>
+<data>610</data>
+<data>931</data>
 <data>67</data>
 <data>0</data>
 <data>0</data>
@@ -137,7 +137,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>CoreAHBLite</data>
 <data>61</data>
-<data>147</data>
+<data>153</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -148,7 +148,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>COREAHBLITE_MATRIX4X16</data>
 <data>61</data>
-<data>147</data>
+<data>153</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -159,7 +159,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>COREAHBLITE_MASTERSTAGE_1_1_0_1024_0</data>
 <data>55</data>
-<data>66</data>
+<data>69</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -170,7 +170,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>COREAHBLITE_DEFAULTSLAVESM_0</data>
 <data>1</data>
-<data>9</data>
+<data>8</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -183,7 +183,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>COREAHBLITE_SLAVESTAGE_0</data>
 <data>6</data>
-<data>81</data>
+<data>84</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -194,7 +194,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>COREAHBLITE_SLAVEARBITER_1</data>
 <data>5</data>
-<data>48</data>
+<data>51</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -233,8 +233,8 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI</data>
 <data>874</data>
-<data>631</data>
-<data>201</data>
+<data>626</data>
+<data>202</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -244,7 +244,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>CoreAHBLtoAXI_AHBAccessControlHX</data>
 <data>111</data>
-<data>22</data>
+<data>23</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -256,7 +256,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>CoreAHBLtoAXI_AXIAccessControlHX</data>
 <data>149</data>
-<data>230</data>
+<data>229</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -268,7 +268,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>CoreAHBLtoAXI_RDCHANNELFIFOHX</data>
 <data>266</data>
-<data>153</data>
+<data>152</data>
 <data>101</data>
 <data>0</data>
 <data>0</data>
@@ -292,8 +292,8 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>CoreAHBLtoAXI_WRCHANNELFIFOHX</data>
 <data>332</data>
-<data>223</data>
-<data>100</data>
+<data>219</data>
+<data>101</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -352,8 +352,8 @@ The file contains the information about resource utilization per module to be di
 </module>
 <module>
 <data>top_sb_COREAXI_0_COREAXI</data>
-<data>795</data>
-<data>366</data>
+<data>798</data>
+<data>365</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -363,8 +363,8 @@ The file contains the information about resource utilization per module to be di
 <data>0</data>
 <module>
 <data>axi_interconnect_ntom</data>
-<data>296</data>
-<data>133</data>
+<data>303</data>
+<data>125</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -375,7 +375,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_matrix_m</data>
 <data>70</data>
-<data>9</data>
+<data>8</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -386,7 +386,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_rd_channel</data>
 <data>69</data>
-<data>9</data>
+<data>8</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -397,7 +397,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_rdmatrix_16Sto1M</data>
 <data>69</data>
-<data>9</data>
+<data>8</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -423,7 +423,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_matrix_s</data>
 <data>226</data>
-<data>124</data>
+<data>114</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -434,7 +434,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_ra_channel</data>
 <data>76</data>
-<data>29</data>
+<data>22</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -445,7 +445,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_rdmatrix_4Mto1S</data>
 <data>76</data>
-<data>29</data>
+<data>22</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -470,7 +470,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_wa_channel</data>
 <data>75</data>
-<data>21</data>
+<data>18</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -481,7 +481,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_wrmatrix_4Mto1S</data>
 <data>75</data>
-<data>21</data>
+<data>18</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -519,8 +519,8 @@ The file contains the information about resource utilization per module to be di
 </module>
 <module>
 <data>axi_master_stage</data>
-<data>368</data>
-<data>179</data>
+<data>364</data>
+<data>183</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -532,7 +532,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>axi_slave_stage</data>
 <data>131</data>
-<data>54</data>
+<data>57</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
@@ -545,7 +545,7 @@ The file contains the information about resource utilization per module to be di
 <module>
 <data>top_sb_MSS</data>
 <data>0</data>
-<data>32</data>
+<data>33</data>
 <data>0</data>
 <data>0</data>
 <data>0</data>
