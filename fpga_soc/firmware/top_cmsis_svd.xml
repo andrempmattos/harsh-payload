@@ -2,7 +2,7 @@
 <device>
   <name>top</name>
   <version>1.0</version>
-  <description>CMSIS description for top.  Created by Microsemi SmartDesign on Thu Mar 26 22:50:37 2020</description>
+  <description>CMSIS description for top.  Created by Microsemi SmartDesign on Tue Apr 07 19:27:14 2020</description>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
@@ -3660,12 +3660,12 @@
       <baseAddress>0x40020000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>RTC</name>
-      <baseAddress>0x40017000</baseAddress>
-    </peripheral>
-    <peripheral>
       <name>COMBLK</name>
       <baseAddress>0x40016000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>CAN</name>
+      <baseAddress>0x40015000</baseAddress>
     </peripheral>
     <peripheral>
       <name>HDMA</name>
@@ -3680,8 +3680,20 @@
       <baseAddress>0x40006000</baseAddress>
     </peripheral>
     <peripheral>
+      <name>WATCHDOG</name>
+      <baseAddress>0x40005000</baseAddress>
+    </peripheral>
+    <peripheral>
       <name>TIMER</name>
       <baseAddress>0x40004000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>I2C_0</name>
+      <baseAddress>0x40002000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>SPI_0</name>
+      <baseAddress>0x40001000</baseAddress>
     </peripheral>
     <peripheral>
       <name>MMUART_0</name>
