@@ -13,7 +13,7 @@ The file contains the job information from mapper to be displayed as part of the
 </job_status>
 <job_info>
 <info name="Notes">
-<data>209</data>
+<data>197</data>
 <report_link name="more">
 <data>C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_notes.txt</data>
 </report_link>
@@ -34,13 +34,13 @@ The file contains the job information from mapper to be displayed as part of the
 <data>0h:00m:15s</data>
 </info>
 <info name="Real Time">
-<data>0h:00m:18s</data>
+<data>0h:00m:16s</data>
 </info>
 <info name="Peak Memory">
-<data>196MB</data>
+<data>195MB</data>
 </info>
 <info name="Date &amp; Time">
-<data type="timestamp">1586184107</data>
+<data type="timestamp">1586278570</data>
 </info>
 </job_info>
 </job_run_status>

@@ -3,7 +3,7 @@
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Mon Apr 06 16:46:36 2020
+<text>Date: Tue Apr 07 19:00:28 2020
 </text>
 <section><name>top_sb_0/CCC_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -898,7 +898,7 @@
  <cell>SOFTRESET</cell>
  <cell>G4SPI0_SOFTRESET</cell>
  <cell>INIT[359:359]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[27]</cell>
  <cell>1</cell>
 </row>
@@ -914,7 +914,7 @@
  <cell>SOFTRESET</cell>
  <cell>I2C0_SOFTRESET</cell>
  <cell>INIT[361:361]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[29]</cell>
  <cell>1</cell>
 </row>
@@ -930,7 +930,7 @@
  <cell>SOFTRESET</cell>
  <cell>CAN_SOFTRESET</cell>
  <cell>INIT[363:363]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[31]</cell>
  <cell>1</cell>
 </row>
@@ -1170,7 +1170,7 @@
  <cell>GPIN_SRC_SEL</cell>
  <cell>MSS_GPINSOURCE</cell>
  <cell>INIT[455:424]</cell>
- <cell>32&apos;h20000000</cell>
+ <cell>32&apos;h26780000</cell>
  <cell>INIT[49]</cell>
  <cell>1</cell>
 </row>
@@ -1242,7 +1242,7 @@
  <cell>WDOGCONFIG</cell>
  <cell>G4_TESTWDOGENABLE</cell>
  <cell>INIT[465:465]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[53]</cell>
  <cell>1</cell>
 </row>
@@ -1722,7 +1722,7 @@
  <cell>MSSDDR_FACC_CONFIG_2</cell>
  <cell>RTC_CLK_SEL</cell>
  <cell>INIT[618:617]</cell>
- <cell>2&apos;h3</cell>
+ <cell>2&apos;h1</cell>
  <cell>INIT[77]</cell>
  <cell>1</cell>
 </row>
@@ -2922,7 +2922,7 @@
  <cell>IOMUXCELL_12_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[989:989]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[102]</cell>
  <cell>1</cell>
 </row>
@@ -2962,7 +2962,7 @@
  <cell>IOMUXCELL_12_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[994:994]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[102]</cell>
  <cell>1</cell>
 </row>
@@ -2986,7 +2986,7 @@
  <cell>IOMUXCELL_12_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[997:997]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[102]</cell>
  <cell>1</cell>
 </row>
@@ -3050,7 +3050,7 @@
  <cell>IOMUXCELL_13_CONFIG</cell>
  <cell>MSS_IOMUXSEL5UPPER</cell>
  <cell>INIT[1005:1005]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[103]</cell>
  <cell>1</cell>
 </row>
@@ -3074,7 +3074,7 @@
  <cell>IOMUXCELL_14_CONFIG</cell>
  <cell>MSS_IOMUXSEL0</cell>
  <cell>INIT[1008:1008]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[104]</cell>
  <cell>1</cell>
 </row>
@@ -3114,7 +3114,7 @@
  <cell>IOMUXCELL_14_CONFIG</cell>
  <cell>MSS_IOMUXSEL4MID</cell>
  <cell>INIT[1013:1013]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[104]</cell>
  <cell>1</cell>
 </row>
@@ -3122,7 +3122,7 @@
  <cell>IOMUXCELL_14_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1014:1014]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[104]</cell>
  <cell>1</cell>
 </row>
@@ -3138,7 +3138,7 @@
  <cell>IOMUXCELL_14_CONFIG</cell>
  <cell>MSS_IOMUXSEL5MID</cell>
  <cell>INIT[1016:1016]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[104]</cell>
  <cell>1</cell>
 </row>
@@ -3146,7 +3146,7 @@
  <cell>IOMUXCELL_14_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1017:1017]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[104]</cell>
  <cell>1</cell>
 </row>
@@ -3210,7 +3210,7 @@
  <cell>IOMUXCELL_15_CONFIG</cell>
  <cell>MSS_IOMUXSEL5UPPER</cell>
  <cell>INIT[1025:1025]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[105]</cell>
  <cell>1</cell>
 </row>
@@ -3234,7 +3234,7 @@
  <cell>IOMUXCELL_16_CONFIG</cell>
  <cell>MSS_IOMUXSEL0</cell>
  <cell>INIT[1028:1028]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[106]</cell>
  <cell>1</cell>
 </row>
@@ -3274,7 +3274,7 @@
  <cell>IOMUXCELL_16_CONFIG</cell>
  <cell>MSS_IOMUXSEL4MID</cell>
  <cell>INIT[1033:1033]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[106]</cell>
  <cell>1</cell>
 </row>
@@ -3282,7 +3282,7 @@
  <cell>IOMUXCELL_16_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1034:1034]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[106]</cell>
  <cell>1</cell>
 </row>
@@ -3298,7 +3298,7 @@
  <cell>IOMUXCELL_16_CONFIG</cell>
  <cell>MSS_IOMUXSEL5MID</cell>
  <cell>INIT[1036:1036]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[106]</cell>
  <cell>1</cell>
 </row>
@@ -3306,7 +3306,7 @@
  <cell>IOMUXCELL_16_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1037:1037]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[106]</cell>
  <cell>1</cell>
 </row>
@@ -3370,7 +3370,7 @@
  <cell>IOMUXCELL_17_CONFIG</cell>
  <cell>MSS_IOMUXSEL5UPPER</cell>
  <cell>INIT[1045:1045]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[107]</cell>
  <cell>1</cell>
 </row>
@@ -3394,7 +3394,7 @@
  <cell>IOMUXCELL_18_CONFIG</cell>
  <cell>MSS_IOMUXSEL0</cell>
  <cell>INIT[1048:1048]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[108]</cell>
  <cell>1</cell>
 </row>
@@ -3482,7 +3482,7 @@
  <cell>IOMUXCELL_19_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1059:1059]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[109]</cell>
  <cell>1</cell>
 </row>
@@ -3562,7 +3562,7 @@
  <cell>IOMUXCELL_20_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1069:1069]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[110]</cell>
  <cell>1</cell>
 </row>
@@ -3642,7 +3642,7 @@
  <cell>IOMUXCELL_21_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1079:1079]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[111]</cell>
  <cell>1</cell>
 </row>
@@ -4042,7 +4042,7 @@
  <cell>IOMUXCELL_26_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1129:1129]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[116]</cell>
  <cell>1</cell>
 </row>
@@ -4122,7 +4122,7 @@
  <cell>IOMUXCELL_27_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1139:1139]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[117]</cell>
  <cell>1</cell>
 </row>
@@ -4202,7 +4202,7 @@
  <cell>IOMUXCELL_28_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1149:1149]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[118]</cell>
  <cell>1</cell>
 </row>
@@ -4282,7 +4282,7 @@
  <cell>IOMUXCELL_29_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1159:1159]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[119]</cell>
  <cell>1</cell>
 </row>
@@ -4362,7 +4362,7 @@
  <cell>IOMUXCELL_30_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1169:1169]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[120]</cell>
  <cell>1</cell>
 </row>
@@ -4442,7 +4442,7 @@
  <cell>IOMUXCELL_31_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1179:1179]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[121]</cell>
  <cell>1</cell>
 </row>
@@ -4522,7 +4522,7 @@
  <cell>IOMUXCELL_32_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1189:1189]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[122]</cell>
  <cell>1</cell>
 </row>
@@ -4562,7 +4562,7 @@
  <cell>IOMUXCELL_32_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1194:1194]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[122]</cell>
  <cell>1</cell>
 </row>
@@ -4586,7 +4586,7 @@
  <cell>IOMUXCELL_32_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1197:1197]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[122]</cell>
  <cell>1</cell>
 </row>
@@ -4602,7 +4602,7 @@
  <cell>IOMUXCELL_33_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1199:1199]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[123]</cell>
  <cell>1</cell>
 </row>
@@ -4642,7 +4642,7 @@
  <cell>IOMUXCELL_33_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1204:1204]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[123]</cell>
  <cell>1</cell>
 </row>
@@ -4666,7 +4666,7 @@
  <cell>IOMUXCELL_33_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1207:1207]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[123]</cell>
  <cell>1</cell>
 </row>
@@ -4682,7 +4682,7 @@
  <cell>IOMUXCELL_34_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1209:1209]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[124]</cell>
  <cell>1</cell>
 </row>
@@ -4722,7 +4722,7 @@
  <cell>IOMUXCELL_34_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1214:1214]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[124]</cell>
  <cell>1</cell>
 </row>
@@ -4746,7 +4746,7 @@
  <cell>IOMUXCELL_34_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1217:1217]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[124]</cell>
  <cell>1</cell>
 </row>
@@ -4762,7 +4762,7 @@
  <cell>IOMUXCELL_35_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1219:1219]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[125]</cell>
  <cell>1</cell>
 </row>
@@ -4802,7 +4802,7 @@
  <cell>IOMUXCELL_35_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1224:1224]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[125]</cell>
  <cell>1</cell>
 </row>
@@ -4826,7 +4826,7 @@
  <cell>IOMUXCELL_35_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1227:1227]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[125]</cell>
  <cell>1</cell>
 </row>
@@ -5402,7 +5402,7 @@
  <cell>IOMUXCELL_43_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1299:1299]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[133]</cell>
  <cell>1</cell>
 </row>
@@ -5482,7 +5482,7 @@
  <cell>IOMUXCELL_44_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1309:1309]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[134]</cell>
  <cell>1</cell>
 </row>
@@ -5522,7 +5522,7 @@
  <cell>IOMUXCELL_44_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1314:1314]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[134]</cell>
  <cell>1</cell>
 </row>
@@ -5546,7 +5546,7 @@
  <cell>IOMUXCELL_44_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1317:1317]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[134]</cell>
  <cell>1</cell>
 </row>
@@ -5722,7 +5722,7 @@
  <cell>IOMUXCELL_47_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1339:1339]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[137]</cell>
  <cell>1</cell>
 </row>
@@ -5762,7 +5762,7 @@
  <cell>IOMUXCELL_47_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1344:1344]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[137]</cell>
  <cell>1</cell>
 </row>
@@ -5786,7 +5786,7 @@
  <cell>IOMUXCELL_47_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1347:1347]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[137]</cell>
  <cell>1</cell>
 </row>
@@ -5802,7 +5802,7 @@
  <cell>IOMUXCELL_48_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1349:1349]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[138]</cell>
  <cell>1</cell>
 </row>
@@ -5842,7 +5842,7 @@
  <cell>IOMUXCELL_48_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1354:1354]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[138]</cell>
  <cell>1</cell>
 </row>
@@ -5866,7 +5866,7 @@
  <cell>IOMUXCELL_48_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1357:1357]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[138]</cell>
  <cell>1</cell>
 </row>
@@ -5882,7 +5882,7 @@
  <cell>IOMUXCELL_49_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1359:1359]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[139]</cell>
  <cell>1</cell>
 </row>
@@ -5922,7 +5922,7 @@
  <cell>IOMUXCELL_49_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1364:1364]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[139]</cell>
  <cell>1</cell>
 </row>
@@ -5946,7 +5946,7 @@
  <cell>IOMUXCELL_49_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1367:1367]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[139]</cell>
  <cell>1</cell>
 </row>
@@ -5962,7 +5962,7 @@
  <cell>IOMUXCELL_50_CONFIG</cell>
  <cell>MSS_IOMUXSEL1</cell>
  <cell>INIT[1369:1369]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[140]</cell>
  <cell>1</cell>
 </row>
@@ -6002,7 +6002,7 @@
  <cell>IOMUXCELL_50_CONFIG</cell>
  <cell>MSS_IOMUXSEL4LOWER</cell>
  <cell>INIT[1374:1374]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[140]</cell>
  <cell>1</cell>
 </row>
@@ -6026,7 +6026,7 @@
  <cell>IOMUXCELL_50_CONFIG</cell>
  <cell>MSS_IOMUXSEL5LOWER</cell>
  <cell>INIT[1377:1377]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[140]</cell>
  <cell>1</cell>
 </row>
@@ -6234,7 +6234,7 @@
  <cell>IOMUXCELL_53_CONFIG</cell>
  <cell>MSS_IOMUXSEL4MID</cell>
  <cell>INIT[1403:1403]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[143]</cell>
  <cell>1</cell>
 </row>
@@ -6258,7 +6258,7 @@
  <cell>IOMUXCELL_53_CONFIG</cell>
  <cell>MSS_IOMUXSEL5MID</cell>
  <cell>INIT[1406:1406]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[143]</cell>
  <cell>1</cell>
 </row>
@@ -6274,7 +6274,7 @@
  <cell>IOMUXCELL_54_CONFIG</cell>
  <cell>MSS_IOMUXSEL0</cell>
  <cell>INIT[1408:1408]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[144]</cell>
  <cell>1</cell>
 </row>
@@ -6354,7 +6354,7 @@
  <cell>IOMUXCELL_55_CONFIG</cell>
  <cell>MSS_IOMUXSEL0</cell>
  <cell>INIT[1418:1418]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[145]</cell>
  <cell>1</cell>
 </row>

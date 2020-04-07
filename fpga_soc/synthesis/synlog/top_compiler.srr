@@ -8,79 +8,19 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Top entity is set to top.
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AXIAccessControl.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_rdch_ram.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_reset_sync.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AHBtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AXItoAHB.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_pkg.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_misc.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_std_logic.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_addrdec.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_pkg.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\openbank.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\components.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_RDCHANNELFIFO.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_WRCHANNELFIFO.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_feedthrough.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_16Sto1M.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rd_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_m.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_arbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_high.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_low.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_arbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_high.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_low.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wd_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_s.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_interconnect_ntom.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_master_stage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_masterstage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastinit.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\signed.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
+Options changed - recompiling
 VHDL syntax check successful!
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
+Options changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Synthesizing work.top.rtl.
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd":22:7:22:12|Synthesizing work.top_sb.rtl.
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd":17:7:17:16|Synthesizing work.top_sb_mss.rtl.
-@N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":413:10:413:15|Synthesizing smartfusion2.outbuf.syn_black_box.
-Post processing for smartfusion2.outbuf.syn_black_box
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":403:10:403:14|Synthesizing smartfusion2.inbuf.syn_black_box.
 Post processing for smartfusion2.inbuf.syn_black_box
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":423:10:423:16|Synthesizing smartfusion2.tribuff.syn_black_box.
 Post processing for smartfusion2.tribuff.syn_black_box
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":434:10:434:14|Synthesizing smartfusion2.bibuf.syn_black_box.
+Post processing for smartfusion2.bibuf.syn_black_box
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
 Post processing for work.mss_010.def_arch
 Post processing for work.top_sb_mss.rtl
@@ -9777,33 +9717,33 @@ State machine has 10 reachable states with original encodings of:
 @N: CL159 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":121:6:121:10|Input WLAST is unused.
 @N: CL159 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":133:6:133:11|Input ARLOCK is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 186MB peak: 196MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 186MB peak: 197MB)
 
-Process took 0h:00m:08s realtime, 0h:00m:07s cputime
+Process took 0h:00m:06s realtime, 0h:00m:06s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:13 2020
+# Tue Apr 07 18:55:43 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
 @N|Running in 64-bit mode
 File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\layer0.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:17 2020
+# Tue Apr 07 18:55:45 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:09s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:13s realtime, 0h:00m:09s cputime
+Process took 0h:00m:08s realtime, 0h:00m:07s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:17 2020
+# Tue Apr 07 18:55:45 2020
 
 ###########################################################]

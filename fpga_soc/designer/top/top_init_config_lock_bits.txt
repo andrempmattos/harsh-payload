@@ -1,6 +1,6 @@
 # Register Lock Bits Configuration File for MSS, SERDES(s) and Fabric DDR
 # Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-# Date: Mon Apr 06 16:46:36 2020
+# Date: Tue Apr 07 19:00:28 2020
 
 # top_sb_0/top_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
  MSS_ESRAM_CONFIG_LOCK                               1  

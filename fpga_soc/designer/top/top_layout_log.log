@@ -12,39 +12,39 @@ TDPR scenario            : place_and_route
 INFO: Reading User PDC file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 54 fixed I/O macros, 0 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 73 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 0 seconds
+Total time spent in I/O Bank and Globals Assigner: 1 seconds
 
 Placer V4.0 - 11.8.0 
-Design: top                             Started: Mon Apr 06 16:43:20 2020
+Design: top                             Started: Tue Apr 07 18:57:10 2020
 
 Initializing Timing-Driven Placement ...
 Placing design...
 End of placement.
-Pre-Placement Runtime        : 7 seconds
-Placement Runtime            : 59 seconds
+Pre-Placement Runtime        : 8 seconds
+Placement Runtime            : 60 seconds
 
 Placer completed successfully.
 
 Design: top                             
-Finished: Mon Apr 06 16:44:56 2020
-Total CPU Time:     00:01:33            Total Elapsed Time: 00:01:36
-Total Memory Usage: 354.3 Mbytes
+Finished: Tue Apr 07 18:58:50 2020
+Total CPU Time:     00:01:35            Total Elapsed Time: 00:01:40
+Total Memory Usage: 356.5 Mbytes
                         o - o - o - o - o - o
 
 
 Router 
-Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\topStarted: Mon Apr 06 16:45:04 2020
+Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\topStarted: Tue Apr 07 18:58:58 2020
 
-Final stats: search run time 9.886619
+Final stats: search run time 11.050385
 
 Router completed successfully.
 
 Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top
-Finished: Mon Apr 06 16:45:24 2020
-Total CPU Time:     00:00:18            Total Elapsed Time: 00:00:20
+Finished: Tue Apr 07 18:59:20 2020
+Total CPU Time:     00:00:19            Total Elapsed Time: 00:00:22
 Total Memory Usage: 496.8 Mbytes
                         o - o - o - o - o - o
 
@@ -55,9 +55,9 @@ Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 2601 | 12084 | 21.52      |
-| DFF           | 2569 | 12084 | 21.26      |
+| 4LUT          | 2619 | 12084 | 21.67      |
+| DFF           | 2576 | 12084 | 21.32      |
 | I/O Register  | 0    | 579   | 0.00       |
-| Logic Element | 3124 | 12084 | 25.85      |
+| Logic Element | 3134 | 12084 | 25.94      |
 +---------------+------+-------+------------+
 

@@ -1,17 +1,17 @@
-@P:  Worst Slack : -0.049
-@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Estimated Frequency : 99.5 MHz
+@P:  Worst Slack : 0.154
+@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Estimated Frequency : 101.6 MHz
 @P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Estimated Period : 10.049
+@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Estimated Period : 9.847
 @P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Requested Period : 10.000
-@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Slack : -0.049
+@P:  top_sb_CCC_0_FCCC|GL2_net_inferred_clock - Slack : 0.154
 @P:  System - Estimated Frequency : NA
 @P:  System - Requested Frequency : 100.0 MHz
 @P:  System - Estimated Period : NA
 @P:  System - Requested Period : 10.000
 @P:  System - Slack : NA
 @P: top Part : m2s010vf400-1
-@P: top Register bits  : 2353 
+@P: top Register bits  : 2360 
 @P: top DSP Blocks  : 0
-@P: top I/O primitives : 54
+@P: top I/O primitives : 73
 @P: top RAM64x18 :  6
 @P:  CPU Time : 0h:00m:15s

@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 11.8.0.26</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Mon Apr 06 16:46:03 2020 </text>
+Date: Tue Apr 07 19:00:00 2020 </text>
 <table>
 <header>
 </header>
@@ -50,52 +50,52 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3439</cell>
- <cell>           21</cell>
- <cell>         3460</cell>
+ <cell>         3449</cell>
+ <cell>           20</cell>
+ <cell>         3469</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2327</cell>
+ <cell>         2334</cell>
  <cell>            6</cell>
- <cell>         2333</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>           49</cell>
- <cell>           49</cell>
+ <cell>           65</cell>
+ <cell>           65</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5766</cell>
- <cell>           76</cell>
- <cell>         5842</cell>
+ <cell>         5783</cell>
+ <cell>           91</cell>
+ <cell>         5874</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3439</cell>
- <cell>           21</cell>
- <cell>         3460</cell>
+ <cell>         3449</cell>
+ <cell>           20</cell>
+ <cell>         3469</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2327</cell>
+ <cell>         2334</cell>
  <cell>            6</cell>
- <cell>         2333</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>           49</cell>
- <cell>           49</cell>
+ <cell>           65</cell>
+ <cell>           65</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5766</cell>
- <cell>           76</cell>
- <cell>         5842</cell>
+ <cell>         5783</cell>
+ <cell>           91</cell>
+ <cell>         5874</cell>
 </row>
 </table>
 <section>
@@ -191,52 +191,52 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3439</cell>
- <cell>           21</cell>
- <cell>         3460</cell>
+ <cell>         3449</cell>
+ <cell>           20</cell>
+ <cell>         3469</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2327</cell>
+ <cell>         2334</cell>
  <cell>            6</cell>
- <cell>         2333</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>           48</cell>
- <cell>           48</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5766</cell>
- <cell>           75</cell>
- <cell>         5841</cell>
+ <cell>         5783</cell>
+ <cell>           90</cell>
+ <cell>         5873</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3439</cell>
- <cell>           21</cell>
- <cell>         3460</cell>
+ <cell>         3449</cell>
+ <cell>           20</cell>
+ <cell>         3469</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2327</cell>
+ <cell>         2334</cell>
  <cell>            6</cell>
- <cell>         2333</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>           48</cell>
- <cell>           48</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5766</cell>
- <cell>           75</cell>
- <cell>         5841</cell>
+ <cell>         5783</cell>
+ <cell>           90</cell>
+ <cell>         5873</cell>
 </row>
 </table>
 <section>
@@ -290,6 +290,8 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 <list>
  <item>BA[0]</item>
  <item>BA[1]</item>
+ <item>CAN_TX</item>
+ <item>CAN_TX_EN_N</item>
  <item>CAS_N</item>
  <item>CKE</item>
  <item>CS_N[0]</item>
@@ -311,16 +313,29 @@ Date: Mon Apr 06 16:46:03 2020 </text>
  <item>DQ[7]</item>
  <item>DQ[8]</item>
  <item>DQ[9]</item>
- <item>GPIO_10_OUT</item>
- <item>GPIO_11_OUT</item>
- <item>GPIO_12_OUT</item>
- <item>GPIO_13_OUT</item>
- <item>GPIO_14_OUT</item>
- <item>GPIO_15_OUT</item>
- <item>GPIO_16_OUT</item>
- <item>GPIO_25_OUT</item>
- <item>GPIO_8_OUT</item>
- <item>GPIO_9_OUT</item>
+ <item>GPIO_10_BI</item>
+ <item>GPIO_11_BI</item>
+ <item>GPIO_12_BI</item>
+ <item>GPIO_13_BI</item>
+ <item>GPIO_14_BI</item>
+ <item>GPIO_15_BI</item>
+ <item>GPIO_16_BI</item>
+ <item>GPIO_17_BI</item>
+ <item>GPIO_18_BI</item>
+ <item>GPIO_19_BI</item>
+ <item>GPIO_1_BI</item>
+ <item>GPIO_20_BI</item>
+ <item>GPIO_21_BI</item>
+ <item>GPIO_22_BI</item>
+ <item>GPIO_23_BI</item>
+ <item>GPIO_24_BI</item>
+ <item>GPIO_25_BI</item>
+ <item>GPIO_26_BI</item>
+ <item>GPIO_29_BI</item>
+ <item>GPIO_8_BI</item>
+ <item>GPIO_9_BI</item>
+ <item>I2C_0_SCL</item>
+ <item>I2C_0_SDA</item>
  <item>MMUART_0_TXD</item>
  <item>RAS_N</item>
  <item>SA[0]</item>
@@ -335,6 +350,7 @@ Date: Mon Apr 06 16:46:03 2020 </text>
  <item>SA[7]</item>
  <item>SA[8]</item>
  <item>SA[9]</item>
+ <item>SPI_0_DO</item>
  <item>WE_N</item>
 </list>
 <text></text>
@@ -343,6 +359,8 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 <list>
  <item>BA[0]</item>
  <item>BA[1]</item>
+ <item>CAN_TX</item>
+ <item>CAN_TX_EN_N</item>
  <item>CAS_N</item>
  <item>CKE</item>
  <item>CS_N[0]</item>
@@ -364,16 +382,29 @@ Date: Mon Apr 06 16:46:03 2020 </text>
  <item>DQ[7]</item>
  <item>DQ[8]</item>
  <item>DQ[9]</item>
- <item>GPIO_10_OUT</item>
- <item>GPIO_11_OUT</item>
- <item>GPIO_12_OUT</item>
- <item>GPIO_13_OUT</item>
- <item>GPIO_14_OUT</item>
- <item>GPIO_15_OUT</item>
- <item>GPIO_16_OUT</item>
- <item>GPIO_25_OUT</item>
- <item>GPIO_8_OUT</item>
- <item>GPIO_9_OUT</item>
+ <item>GPIO_10_BI</item>
+ <item>GPIO_11_BI</item>
+ <item>GPIO_12_BI</item>
+ <item>GPIO_13_BI</item>
+ <item>GPIO_14_BI</item>
+ <item>GPIO_15_BI</item>
+ <item>GPIO_16_BI</item>
+ <item>GPIO_17_BI</item>
+ <item>GPIO_18_BI</item>
+ <item>GPIO_19_BI</item>
+ <item>GPIO_1_BI</item>
+ <item>GPIO_20_BI</item>
+ <item>GPIO_21_BI</item>
+ <item>GPIO_22_BI</item>
+ <item>GPIO_23_BI</item>
+ <item>GPIO_24_BI</item>
+ <item>GPIO_25_BI</item>
+ <item>GPIO_26_BI</item>
+ <item>GPIO_29_BI</item>
+ <item>GPIO_8_BI</item>
+ <item>GPIO_9_BI</item>
+ <item>I2C_0_SCL</item>
+ <item>I2C_0_SDA</item>
  <item>MMUART_0_TXD</item>
  <item>RAS_N</item>
  <item>SA[0]</item>
@@ -388,6 +419,7 @@ Date: Mon Apr 06 16:46:03 2020 </text>
  <item>SA[7]</item>
  <item>SA[8]</item>
  <item>SA[9]</item>
+ <item>SPI_0_DO</item>
  <item>WE_N</item>
 </list>
 <text></text>
@@ -396,7 +428,6 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 <text>   </text>
 <list>
  <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
- <item>top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState[2]:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>
@@ -433,7 +464,6 @@ Date: Mon Apr 06 16:46:03 2020 </text>
 <text>   </text>
 <list>
  <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
- <item>top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState[2]:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
  <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>

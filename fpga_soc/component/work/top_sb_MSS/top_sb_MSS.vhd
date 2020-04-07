@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Thu Mar 26 22:07:06 2020
+-- Created by SmartDesign Tue Apr 07 18:54:22 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -18,44 +18,64 @@ entity top_sb_MSS is
     -- Port list
     port(
         -- Inputs
-        FIC_2_APB_M_PRDATA       : in  std_logic_vector(31 downto 0);
-        FIC_2_APB_M_PREADY       : in  std_logic;
-        FIC_2_APB_M_PSLVERR      : in  std_logic;
-        GPIO_29_IN               : in  std_logic;
-        MCCC_CLK_BASE            : in  std_logic;
-        MCCC_CLK_BASE_PLL_LOCK   : in  std_logic;
-        MDDR_SMC_AHB_M_HRDATA    : in  std_logic_vector(31 downto 0);
-        MDDR_SMC_AHB_M_HREADY    : in  std_logic;
-        MDDR_SMC_AHB_M_HRESP     : in  std_logic;
-        MMUART_0_RXD             : in  std_logic;
-        MSS_RESET_N_F2M          : in  std_logic;
+        CAN_RX                   : in    std_logic;
+        FIC_2_APB_M_PRDATA       : in    std_logic_vector(31 downto 0);
+        FIC_2_APB_M_PREADY       : in    std_logic;
+        FIC_2_APB_M_PSLVERR      : in    std_logic;
+        MCCC_CLK_BASE            : in    std_logic;
+        MCCC_CLK_BASE_PLL_LOCK   : in    std_logic;
+        MDDR_SMC_AHB_M_HRDATA    : in    std_logic_vector(31 downto 0);
+        MDDR_SMC_AHB_M_HREADY    : in    std_logic;
+        MDDR_SMC_AHB_M_HRESP     : in    std_logic;
+        MMUART_0_RXD             : in    std_logic;
+        MSS_RESET_N_F2M          : in    std_logic;
+        SPI_0_DI                 : in    std_logic;
         -- Outputs
-        FIC_2_APB_M_PADDR        : out std_logic_vector(15 downto 2);
-        FIC_2_APB_M_PCLK         : out std_logic;
-        FIC_2_APB_M_PENABLE      : out std_logic;
-        FIC_2_APB_M_PRESET_N     : out std_logic;
-        FIC_2_APB_M_PSEL         : out std_logic;
-        FIC_2_APB_M_PWDATA       : out std_logic_vector(31 downto 0);
-        FIC_2_APB_M_PWRITE       : out std_logic;
-        GPIO_10_OUT              : out std_logic;
-        GPIO_11_OUT              : out std_logic;
-        GPIO_12_OUT              : out std_logic;
-        GPIO_13_OUT              : out std_logic;
-        GPIO_14_OUT              : out std_logic;
-        GPIO_15_OUT              : out std_logic;
-        GPIO_16_OUT              : out std_logic;
-        GPIO_25_OUT              : out std_logic;
-        GPIO_8_OUT               : out std_logic;
-        GPIO_9_OUT               : out std_logic;
-        MDDR_SMC_AHB_M_HADDR     : out std_logic_vector(31 downto 0);
-        MDDR_SMC_AHB_M_HBURST    : out std_logic_vector(2 downto 0);
-        MDDR_SMC_AHB_M_HMASTLOCK : out std_logic;
-        MDDR_SMC_AHB_M_HSIZE     : out std_logic_vector(1 downto 0);
-        MDDR_SMC_AHB_M_HTRANS    : out std_logic_vector(1 downto 0);
-        MDDR_SMC_AHB_M_HWDATA    : out std_logic_vector(31 downto 0);
-        MDDR_SMC_AHB_M_HWRITE    : out std_logic;
-        MMUART_0_TXD             : out std_logic;
-        MSS_RESET_N_M2F          : out std_logic
+        CAN_TX                   : out   std_logic;
+        CAN_TX_EN_N              : out   std_logic;
+        FIC_2_APB_M_PADDR        : out   std_logic_vector(15 downto 2);
+        FIC_2_APB_M_PCLK         : out   std_logic;
+        FIC_2_APB_M_PENABLE      : out   std_logic;
+        FIC_2_APB_M_PRESET_N     : out   std_logic;
+        FIC_2_APB_M_PSEL         : out   std_logic;
+        FIC_2_APB_M_PWDATA       : out   std_logic_vector(31 downto 0);
+        FIC_2_APB_M_PWRITE       : out   std_logic;
+        MDDR_SMC_AHB_M_HADDR     : out   std_logic_vector(31 downto 0);
+        MDDR_SMC_AHB_M_HBURST    : out   std_logic_vector(2 downto 0);
+        MDDR_SMC_AHB_M_HMASTLOCK : out   std_logic;
+        MDDR_SMC_AHB_M_HSIZE     : out   std_logic_vector(1 downto 0);
+        MDDR_SMC_AHB_M_HTRANS    : out   std_logic_vector(1 downto 0);
+        MDDR_SMC_AHB_M_HWDATA    : out   std_logic_vector(31 downto 0);
+        MDDR_SMC_AHB_M_HWRITE    : out   std_logic;
+        MMUART_0_TXD             : out   std_logic;
+        MSS_RESET_N_M2F          : out   std_logic;
+        SPI_0_DO                 : out   std_logic;
+        -- Inouts
+        GPIO_10_BI               : inout std_logic;
+        GPIO_11_BI               : inout std_logic;
+        GPIO_12_BI               : inout std_logic;
+        GPIO_13_BI               : inout std_logic;
+        GPIO_14_BI               : inout std_logic;
+        GPIO_15_BI               : inout std_logic;
+        GPIO_16_BI               : inout std_logic;
+        GPIO_17_BI               : inout std_logic;
+        GPIO_18_BI               : inout std_logic;
+        GPIO_19_BI               : inout std_logic;
+        GPIO_1_BI                : inout std_logic;
+        GPIO_20_BI               : inout std_logic;
+        GPIO_21_BI               : inout std_logic;
+        GPIO_22_BI               : inout std_logic;
+        GPIO_23_BI               : inout std_logic;
+        GPIO_24_BI               : inout std_logic;
+        GPIO_25_BI               : inout std_logic;
+        GPIO_26_BI               : inout std_logic;
+        GPIO_29_BI               : inout std_logic;
+        GPIO_8_BI                : inout std_logic;
+        GPIO_9_BI                : inout std_logic;
+        I2C_0_SCL                : inout std_logic;
+        I2C_0_SDA                : inout std_logic;
+        SPI_0_CLK                : inout std_logic;
+        SPI_0_SS0                : inout std_logic
         );
 end top_sb_MSS;
 ----------------------------------------------------------------------
@@ -65,19 +85,6 @@ architecture RTL of top_sb_MSS is
 ----------------------------------------------------------------------
 -- Component declarations
 ----------------------------------------------------------------------
--- OUTBUF
-component OUTBUF
-    generic( 
-        IOSTD : string := "" 
-        );
-    -- Port list
-    port(
-        -- Inputs
-        D   : in  std_logic;
-        -- Outputs
-        PAD : out std_logic
-        );
-end component;
 -- INBUF
 component INBUF
     generic( 
@@ -103,6 +110,22 @@ component TRIBUFF
         E   : in  std_logic;
         -- Outputs
         PAD : out std_logic
+        );
+end component;
+-- BIBUF
+component BIBUF
+    generic( 
+        IOSTD : string := "" 
+        );
+    -- Port list
+    port(
+        -- Inputs
+        D   : in    std_logic;
+        E   : in    std_logic;
+        -- Outputs
+        Y   : out   std_logic;
+        -- Inouts
+        PAD : inout std_logic
         );
 end component;
 -- MSS_010
@@ -613,6 +636,9 @@ end component;
 ----------------------------------------------------------------------
 -- Signal declarations
 ----------------------------------------------------------------------
+signal CAN_RX_PAD_Y                                       : std_logic;
+signal CAN_TX_net_0                                       : std_logic;
+signal CAN_TX_EN_N_net_0                                  : std_logic;
 signal FIC_2_APB_M_PCLK_0                                 : std_logic;
 signal FIC_2_APB_M_PRESET_N_0                             : std_logic;
 signal FIC_2_APB_MASTER_0_PADDR                           : std_logic_vector(15 downto 2);
@@ -620,17 +646,29 @@ signal FIC_2_APB_MASTER_0_PENABLE                         : std_logic;
 signal FIC_2_APB_MASTER_0_PSELx                           : std_logic;
 signal FIC_2_APB_MASTER_0_PWDATA                          : std_logic_vector(31 downto 0);
 signal FIC_2_APB_MASTER_0_PWRITE                          : std_logic;
-signal GPIO_8_OUT_net_0                                   : std_logic;
-signal GPIO_9_OUT_net_0                                   : std_logic;
-signal GPIO_10_OUT_net_0                                  : std_logic;
-signal GPIO_11_OUT_net_0                                  : std_logic;
-signal GPIO_12_OUT_net_0                                  : std_logic;
-signal GPIO_13_OUT_net_0                                  : std_logic;
-signal GPIO_14_OUT_net_0                                  : std_logic;
-signal GPIO_15_OUT_net_0                                  : std_logic;
-signal GPIO_16_OUT_net_0                                  : std_logic;
-signal GPIO_25_OUT_net_0                                  : std_logic;
-signal GPIO_GPIO_29_IN_PAD_Y                              : std_logic;
+signal GPIO_GPIO_1_BI_PAD_Y                               : std_logic;
+signal GPIO_GPIO_8_BI_PAD_Y                               : std_logic;
+signal GPIO_GPIO_9_BI_PAD_Y                               : std_logic;
+signal GPIO_GPIO_10_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_11_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_12_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_13_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_14_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_15_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_16_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_17_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_18_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_19_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_20_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_21_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_22_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_23_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_24_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_25_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_26_BI_PAD_Y                              : std_logic;
+signal GPIO_GPIO_29_BI_PAD_Y                              : std_logic;
+signal I2C_0_SCL_PAD_Y                                    : std_logic;
+signal I2C_0_SDA_PAD_Y                                    : std_logic;
 signal MDDR_SMC_AHB_M_HADDR_net_0                         : std_logic_vector(31 to 31);
 signal MDDR_SMC_AHB_M_HADDR_0                             : std_logic_vector(30 to 30);
 signal MDDR_SMC_AHB_M_HADDR_1                             : std_logic_vector(29 to 29);
@@ -737,19 +775,69 @@ signal MDDR_SMC_AHB_M_HWDATA_30                           : std_logic_vector(32 
 signal MDDR_SMC_AHB_M_HWRITE_net_0                        : std_logic;
 signal MMUART_0_RXD_PAD_Y                                 : std_logic;
 signal MMUART_0_TXD_net_0                                 : std_logic;
+signal MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE    : std_logic;
+signal MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT   : std_logic;
+signal MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OE     : std_logic;
+signal MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT    : std_logic;
+signal MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OE     : std_logic;
+signal MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OUT    : std_logic;
+signal MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OE     : std_logic;
+signal MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OUT    : std_logic;
+signal MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OE      : std_logic;
+signal MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OUT     : std_logic;
+signal MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OE  : std_logic;
+signal MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT : std_logic;
+signal MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OE             : std_logic;
+signal MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OUT            : std_logic;
+signal MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OE             : std_logic;
+signal MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OUT            : std_logic;
+signal MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OE              : std_logic;
+signal MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OUT             : std_logic;
+signal MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OE    : std_logic;
+signal MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OUT   : std_logic;
 signal MSS_ADLIB_INST_MMUART0_TXD_USBC_DIR_MGPIO27B_OE    : std_logic;
 signal MSS_ADLIB_INST_MMUART0_TXD_USBC_DIR_MGPIO27B_OUT   : std_logic;
+signal MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OE  : std_logic;
+signal MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT : std_logic;
+signal MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OE  : std_logic;
 signal MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT : std_logic;
+signal MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OE               : std_logic;
+signal MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OUT              : std_logic;
+signal MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OE        : std_logic;
+signal MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OUT       : std_logic;
+signal MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OE        : std_logic;
+signal MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OUT       : std_logic;
+signal MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OE      : std_logic;
 signal MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OUT     : std_logic;
+signal MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OE      : std_logic;
 signal MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OUT     : std_logic;
+signal MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OE     : std_logic;
 signal MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OUT    : std_logic;
+signal MSS_ADLIB_INST_SPI1_SDI_MGPIO11A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SDI_MGPIO11A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SDO_MGPIO12A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SDO_MGPIO12A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS0_MGPIO13A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SS0_MGPIO13A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OE                : std_logic;
 signal MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OE                : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OE                : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OE                : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OUT               : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OE                : std_logic;
+signal MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OUT               : std_logic;
 signal MSS_RESET_N_M2F_net_0                              : std_logic;
+signal SPI_0_CLK_PAD_Y                                    : std_logic;
+signal SPI_0_DI_PAD_Y                                     : std_logic;
+signal SPI_0_DO_net_0                                     : std_logic;
+signal SPI_0_SS0_PAD_Y                                    : std_logic;
 signal MMUART_0_TXD_net_1                                 : std_logic;
 signal MSS_RESET_N_M2F_net_1                              : std_logic;
 signal MDDR_SMC_AHB_M_HMASTLOCK_net_1                     : std_logic;
@@ -759,16 +847,9 @@ signal FIC_2_APB_M_PCLK_0_net_0                           : std_logic;
 signal FIC_2_APB_MASTER_0_PWRITE_net_0                    : std_logic;
 signal FIC_2_APB_MASTER_0_PENABLE_net_0                   : std_logic;
 signal FIC_2_APB_MASTER_0_PSELx_net_0                     : std_logic;
-signal GPIO_8_OUT_net_1                                   : std_logic;
-signal GPIO_9_OUT_net_1                                   : std_logic;
-signal GPIO_10_OUT_net_1                                  : std_logic;
-signal GPIO_11_OUT_net_1                                  : std_logic;
-signal GPIO_12_OUT_net_1                                  : std_logic;
-signal GPIO_13_OUT_net_1                                  : std_logic;
-signal GPIO_14_OUT_net_1                                  : std_logic;
-signal GPIO_15_OUT_net_1                                  : std_logic;
-signal GPIO_16_OUT_net_1                                  : std_logic;
-signal GPIO_25_OUT_net_1                                  : std_logic;
+signal SPI_0_DO_net_1                                     : std_logic;
+signal CAN_TX_net_1                                       : std_logic;
+signal CAN_TX_EN_N_net_1                                  : std_logic;
 signal MDDR_SMC_AHB_M_HBURST_1_net_0                      : std_logic_vector(0 to 0);
 signal MDDR_SMC_AHB_M_HBURST_0_net_0                      : std_logic_vector(1 to 1);
 signal MDDR_SMC_AHB_M_HBURST_net_1                        : std_logic_vector(2 to 2);
@@ -944,26 +1025,12 @@ begin
  FIC_2_APB_M_PENABLE                <= FIC_2_APB_MASTER_0_PENABLE_net_0;
  FIC_2_APB_MASTER_0_PSELx_net_0     <= FIC_2_APB_MASTER_0_PSELx;
  FIC_2_APB_M_PSEL                   <= FIC_2_APB_MASTER_0_PSELx_net_0;
- GPIO_8_OUT_net_1                   <= GPIO_8_OUT_net_0;
- GPIO_8_OUT                         <= GPIO_8_OUT_net_1;
- GPIO_9_OUT_net_1                   <= GPIO_9_OUT_net_0;
- GPIO_9_OUT                         <= GPIO_9_OUT_net_1;
- GPIO_10_OUT_net_1                  <= GPIO_10_OUT_net_0;
- GPIO_10_OUT                        <= GPIO_10_OUT_net_1;
- GPIO_11_OUT_net_1                  <= GPIO_11_OUT_net_0;
- GPIO_11_OUT                        <= GPIO_11_OUT_net_1;
- GPIO_12_OUT_net_1                  <= GPIO_12_OUT_net_0;
- GPIO_12_OUT                        <= GPIO_12_OUT_net_1;
- GPIO_13_OUT_net_1                  <= GPIO_13_OUT_net_0;
- GPIO_13_OUT                        <= GPIO_13_OUT_net_1;
- GPIO_14_OUT_net_1                  <= GPIO_14_OUT_net_0;
- GPIO_14_OUT                        <= GPIO_14_OUT_net_1;
- GPIO_15_OUT_net_1                  <= GPIO_15_OUT_net_0;
- GPIO_15_OUT                        <= GPIO_15_OUT_net_1;
- GPIO_16_OUT_net_1                  <= GPIO_16_OUT_net_0;
- GPIO_16_OUT                        <= GPIO_16_OUT_net_1;
- GPIO_25_OUT_net_1                  <= GPIO_25_OUT_net_0;
- GPIO_25_OUT                        <= GPIO_25_OUT_net_1;
+ SPI_0_DO_net_1                     <= SPI_0_DO_net_0;
+ SPI_0_DO                           <= SPI_0_DO_net_1;
+ CAN_TX_net_1                       <= CAN_TX_net_0;
+ CAN_TX                             <= CAN_TX_net_1;
+ CAN_TX_EN_N_net_1                  <= CAN_TX_EN_N_net_0;
+ CAN_TX_EN_N                        <= CAN_TX_EN_N_net_1;
  MDDR_SMC_AHB_M_HBURST_1_net_0(0)   <= MDDR_SMC_AHB_M_HBURST_1(0);
  MDDR_SMC_AHB_M_HBURST(0)           <= MDDR_SMC_AHB_M_HBURST_1_net_0(0);
  MDDR_SMC_AHB_M_HBURST_0_net_0(1)   <= MDDR_SMC_AHB_M_HBURST_0(1);
@@ -1223,93 +1290,284 @@ begin
 ----------------------------------------------------------------------
 -- Component instances
 ----------------------------------------------------------------------
--- GPIO_GPIO_8_OUT_PAD
-GPIO_GPIO_8_OUT_PAD : OUTBUF
+-- CAN_RX_PAD
+CAN_RX_PAD : INBUF
+    port map( 
+        -- Inputs
+        PAD => CAN_RX,
+        -- Outputs
+        Y   => CAN_RX_PAD_Y 
+        );
+-- CAN_TX_EN_N_PAD
+CAN_TX_EN_N_PAD : TRIBUFF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,
+        E   => MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE,
+        -- Outputs
+        PAD => CAN_TX_EN_N_net_0 
+        );
+-- CAN_TX_PAD
+CAN_TX_PAD : TRIBUFF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,
+        E   => MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OE,
+        -- Outputs
+        PAD => CAN_TX_net_0 
+        );
+-- GPIO_GPIO_1_BI_PAD
+GPIO_GPIO_1_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,
+        E   => MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_1_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_1_BI 
+        );
+-- GPIO_GPIO_8_BI_PAD
+GPIO_GPIO_8_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OE,
         -- Outputs
-        PAD => GPIO_8_OUT_net_0 
+        Y   => GPIO_GPIO_8_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_8_BI 
         );
--- GPIO_GPIO_9_OUT_PAD
-GPIO_GPIO_9_OUT_PAD : OUTBUF
+-- GPIO_GPIO_9_BI_PAD
+GPIO_GPIO_9_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OE,
         -- Outputs
-        PAD => GPIO_9_OUT_net_0 
+        Y   => GPIO_GPIO_9_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_9_BI 
         );
--- GPIO_GPIO_10_OUT_PAD
-GPIO_GPIO_10_OUT_PAD : OUTBUF
+-- GPIO_GPIO_10_BI_PAD
+GPIO_GPIO_10_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OE,
         -- Outputs
-        PAD => GPIO_10_OUT_net_0 
+        Y   => GPIO_GPIO_10_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_10_BI 
         );
--- GPIO_GPIO_11_OUT_PAD
-GPIO_GPIO_11_OUT_PAD : OUTBUF
+-- GPIO_GPIO_11_BI_PAD
+GPIO_GPIO_11_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SDI_MGPIO11A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SDI_MGPIO11A_OE,
         -- Outputs
-        PAD => GPIO_11_OUT_net_0 
+        Y   => GPIO_GPIO_11_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_11_BI 
         );
--- GPIO_GPIO_12_OUT_PAD
-GPIO_GPIO_12_OUT_PAD : OUTBUF
+-- GPIO_GPIO_12_BI_PAD
+GPIO_GPIO_12_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SDO_MGPIO12A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SDO_MGPIO12A_OE,
         -- Outputs
-        PAD => GPIO_12_OUT_net_0 
+        Y   => GPIO_GPIO_12_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_12_BI 
         );
--- GPIO_GPIO_13_OUT_PAD
-GPIO_GPIO_13_OUT_PAD : OUTBUF
+-- GPIO_GPIO_13_BI_PAD
+GPIO_GPIO_13_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SS0_MGPIO13A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS0_MGPIO13A_OE,
         -- Outputs
-        PAD => GPIO_13_OUT_net_0 
+        Y   => GPIO_GPIO_13_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_13_BI 
         );
--- GPIO_GPIO_14_OUT_PAD
-GPIO_GPIO_14_OUT_PAD : OUTBUF
+-- GPIO_GPIO_14_BI_PAD
+GPIO_GPIO_14_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OE,
         -- Outputs
-        PAD => GPIO_14_OUT_net_0 
+        Y   => GPIO_GPIO_14_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_14_BI 
         );
--- GPIO_GPIO_15_OUT_PAD
-GPIO_GPIO_15_OUT_PAD : OUTBUF
+-- GPIO_GPIO_15_BI_PAD
+GPIO_GPIO_15_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OE,
         -- Outputs
-        PAD => GPIO_15_OUT_net_0 
+        Y   => GPIO_GPIO_15_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_15_BI 
         );
--- GPIO_GPIO_16_OUT_PAD
-GPIO_GPIO_16_OUT_PAD : OUTBUF
+-- GPIO_GPIO_16_BI_PAD
+GPIO_GPIO_16_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OE,
         -- Outputs
-        PAD => GPIO_16_OUT_net_0 
+        Y   => GPIO_GPIO_16_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_16_BI 
         );
--- GPIO_GPIO_25_OUT_PAD
-GPIO_GPIO_25_OUT_PAD : OUTBUF
+-- GPIO_GPIO_17_BI_PAD
+GPIO_GPIO_17_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_17_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_17_BI 
+        );
+-- GPIO_GPIO_18_BI_PAD
+GPIO_GPIO_18_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_18_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_18_BI 
+        );
+-- GPIO_GPIO_19_BI_PAD
+GPIO_GPIO_19_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT,
+        E   => MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_19_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_19_BI 
+        );
+-- GPIO_GPIO_20_BI_PAD
+GPIO_GPIO_20_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OUT,
+        E   => MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_20_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_20_BI 
+        );
+-- GPIO_GPIO_21_BI_PAD
+GPIO_GPIO_21_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OUT,
+        E   => MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_21_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_21_BI 
+        );
+-- GPIO_GPIO_22_BI_PAD
+GPIO_GPIO_22_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OUT,
+        E   => MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_22_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_22_BI 
+        );
+-- GPIO_GPIO_23_BI_PAD
+GPIO_GPIO_23_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_23_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_23_BI 
+        );
+-- GPIO_GPIO_24_BI_PAD
+GPIO_GPIO_24_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OUT,
+        E   => MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_24_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_24_BI 
+        );
+-- GPIO_GPIO_25_BI_PAD
+GPIO_GPIO_25_BI_PAD : BIBUF
     port map( 
         -- Inputs
         D   => MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,
+        E   => MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OE,
         -- Outputs
-        PAD => GPIO_25_OUT_net_0 
+        Y   => GPIO_GPIO_25_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_25_BI 
         );
--- GPIO_GPIO_29_IN_PAD
-GPIO_GPIO_29_IN_PAD : INBUF
+-- GPIO_GPIO_26_BI_PAD
+GPIO_GPIO_26_BI_PAD : BIBUF
     port map( 
         -- Inputs
-        PAD => GPIO_29_IN,
+        D   => MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT,
+        E   => MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OE,
         -- Outputs
-        Y   => GPIO_GPIO_29_IN_PAD_Y 
+        Y   => GPIO_GPIO_26_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_26_BI 
+        );
+-- GPIO_GPIO_29_BI_PAD
+GPIO_GPIO_29_BI_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OUT,
+        E   => MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OE,
+        -- Outputs
+        Y   => GPIO_GPIO_29_BI_PAD_Y,
+        -- Inouts
+        PAD => GPIO_29_BI 
+        );
+-- I2C_0_SCL_PAD
+I2C_0_SCL_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,
+        E   => MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OE,
+        -- Outputs
+        Y   => I2C_0_SCL_PAD_Y,
+        -- Inouts
+        PAD => I2C_0_SCL 
+        );
+-- I2C_0_SDA_PAD
+I2C_0_SDA_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,
+        E   => MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OE,
+        -- Outputs
+        Y   => I2C_0_SDA_PAD_Y,
+        -- Inouts
+        PAD => I2C_0_SDA 
         );
 -- MMUART_0_RXD_PAD
 MMUART_0_RXD_PAD : INBUF
@@ -1333,7 +1591,7 @@ MSS_ADLIB_INST : MSS_010
     generic map( 
         ACT_UBITS         => ( x"FFFFFFFFFFFFFF" ),
         DDR_CLK_FREQ      => ( 100.0 ),
-        INIT              => ( "00" & x"0000000D8B612000000000000000000090000000000000000000000000000090240902409024000000000009024090000000000000000000000000000000000000000000000000F00000000F000000000000000000000000000000007FFFFFFFB000001007C37C000200006092C0104003FFFFE0000000000000320000000F0F01C000000025FC4010842108421000001FE34001FF8000000480000000020091007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" ),
+        INIT              => ( "00" & x"000040190B612024290A4290800002429080000000000000000090A4290A4290A4290A4290A42000000000090A4290801203612036120242000000000000000000000000000000F00000000F000000000000000000000000000000007FFFFFFFB000001007C33C000200006092C0104003FFFFE0000000000020326780000F0F01C000000025544010842108421000001FE34001FF8000000480000000020091007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" ),
         MEMORYFILE        => ( "ENVM_init.mem" ),
         RTC_MAIN_XTL_FREQ => ( 0.0 ),
         RTC_MAIN_XTL_MODE => ( "" )
@@ -1496,28 +1754,28 @@ MSS_ADLIB_INST : MSS_010
         MDDR_FABRIC_PWDATA                      => MDDR_FABRIC_PWDATA_const_net_0, -- tied to X"1" from definition
         MDDR_FABRIC_PWRITE                      => VCC_net, -- tied to '1' from definition
         PRESET_N                                => GND_net, -- tied to '0' from definition
-        CAN_RXBUS_USBA_DATA1_MGPIO3A_IN         => GND_net,
+        CAN_RXBUS_USBA_DATA1_MGPIO3A_IN         => CAN_RX_PAD_Y,
         CAN_TX_EBL_USBA_DATA2_MGPIO4A_IN        => GND_net,
         CAN_TXBUS_USBA_DATA0_MGPIO2A_IN         => GND_net,
         DM_IN                                   => DM_IN_const_net_0,
         DRAM_DQ_IN                              => DRAM_DQ_IN_const_net_0,
         DRAM_DQS_IN                             => DRAM_DQS_IN_const_net_0,
         DRAM_FIFO_WE_IN                         => DRAM_FIFO_WE_IN_const_net_0,
-        I2C0_SCL_USBC_DATA1_MGPIO31B_IN         => GND_net,
-        I2C0_SDA_USBC_DATA0_MGPIO30B_IN         => GND_net,
-        I2C1_SCL_USBA_DATA4_MGPIO1A_IN          => GND_net,
+        I2C0_SCL_USBC_DATA1_MGPIO31B_IN         => I2C_0_SCL_PAD_Y,
+        I2C0_SDA_USBC_DATA0_MGPIO30B_IN         => I2C_0_SDA_PAD_Y,
+        I2C1_SCL_USBA_DATA4_MGPIO1A_IN          => GPIO_GPIO_1_BI_PAD_Y,
         I2C1_SDA_USBA_DATA3_MGPIO0A_IN          => GND_net,
-        MMUART0_CTS_USBC_DATA7_MGPIO19B_IN      => GND_net,
-        MMUART0_DCD_MGPIO22B_IN                 => GND_net,
-        MMUART0_DSR_MGPIO20B_IN                 => GND_net,
+        MMUART0_CTS_USBC_DATA7_MGPIO19B_IN      => GPIO_GPIO_19_BI_PAD_Y,
+        MMUART0_DCD_MGPIO22B_IN                 => GPIO_GPIO_22_BI_PAD_Y,
+        MMUART0_DSR_MGPIO20B_IN                 => GPIO_GPIO_20_BI_PAD_Y,
         MMUART0_DTR_USBC_DATA6_MGPIO18B_IN      => GND_net,
-        MMUART0_RI_MGPIO21B_IN                  => GND_net,
+        MMUART0_RI_MGPIO21B_IN                  => GPIO_GPIO_21_BI_PAD_Y,
         MMUART0_RTS_USBC_DATA5_MGPIO17B_IN      => GND_net,
         MMUART0_RXD_USBC_STP_MGPIO28B_IN        => MMUART_0_RXD_PAD_Y,
-        MMUART0_SCK_USBC_NXT_MGPIO29B_IN        => GPIO_GPIO_29_IN_PAD_Y,
+        MMUART0_SCK_USBC_NXT_MGPIO29B_IN        => GPIO_GPIO_29_BI_PAD_Y,
         MMUART0_TXD_USBC_DIR_MGPIO27B_IN        => GND_net,
-        MMUART1_RXD_USBC_DATA3_MGPIO26B_IN      => GND_net,
-        MMUART1_SCK_USBC_DATA4_MGPIO25B_IN      => GND_net,
+        MMUART1_RXD_USBC_DATA3_MGPIO26B_IN      => GPIO_GPIO_26_BI_PAD_Y,
+        MMUART1_SCK_USBC_DATA4_MGPIO25B_IN      => GPIO_GPIO_25_BI_PAD_Y,
         MMUART1_TXD_USBC_DATA2_MGPIO24B_IN      => GND_net,
         RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_IN     => GND_net,
         RGMII_MDC_RMII_MDC_IN                   => GND_net,
@@ -1534,24 +1792,24 @@ MSS_ADLIB_INST : MSS_010
         RGMII_TXD1_RMII_TXD1_USBB_STP_IN        => GND_net,
         RGMII_TXD2_USBB_DATA5_IN                => GND_net,
         RGMII_TXD3_USBB_DATA6_IN                => GND_net,
-        SPI0_SCK_USBA_XCLK_IN                   => GND_net,
-        SPI0_SDI_USBA_DIR_MGPIO5A_IN            => GND_net,
+        SPI0_SCK_USBA_XCLK_IN                   => SPI_0_CLK_PAD_Y,
+        SPI0_SDI_USBA_DIR_MGPIO5A_IN            => SPI_0_DI_PAD_Y,
         SPI0_SDO_USBA_STP_MGPIO6A_IN            => GND_net,
-        SPI0_SS0_USBA_NXT_MGPIO7A_IN            => GND_net,
-        SPI0_SS1_USBA_DATA5_MGPIO8A_IN          => GND_net,
-        SPI0_SS2_USBA_DATA6_MGPIO9A_IN          => GND_net,
-        SPI0_SS3_USBA_DATA7_MGPIO10A_IN         => GND_net,
+        SPI0_SS0_USBA_NXT_MGPIO7A_IN            => SPI_0_SS0_PAD_Y,
+        SPI0_SS1_USBA_DATA5_MGPIO8A_IN          => GPIO_GPIO_8_BI_PAD_Y,
+        SPI0_SS2_USBA_DATA6_MGPIO9A_IN          => GPIO_GPIO_9_BI_PAD_Y,
+        SPI0_SS3_USBA_DATA7_MGPIO10A_IN         => GPIO_GPIO_10_BI_PAD_Y,
         SPI1_SCK_IN                             => GND_net,
-        SPI1_SDI_MGPIO11A_IN                    => GND_net,
-        SPI1_SDO_MGPIO12A_IN                    => GND_net,
-        SPI1_SS0_MGPIO13A_IN                    => GND_net,
-        SPI1_SS1_MGPIO14A_IN                    => GND_net,
-        SPI1_SS2_MGPIO15A_IN                    => GND_net,
-        SPI1_SS3_MGPIO16A_IN                    => GND_net,
-        SPI1_SS4_MGPIO17A_IN                    => GND_net,
-        SPI1_SS5_MGPIO18A_IN                    => GND_net,
-        SPI1_SS6_MGPIO23A_IN                    => GND_net,
-        SPI1_SS7_MGPIO24A_IN                    => GND_net,
+        SPI1_SDI_MGPIO11A_IN                    => GPIO_GPIO_11_BI_PAD_Y,
+        SPI1_SDO_MGPIO12A_IN                    => GPIO_GPIO_12_BI_PAD_Y,
+        SPI1_SS0_MGPIO13A_IN                    => GPIO_GPIO_13_BI_PAD_Y,
+        SPI1_SS1_MGPIO14A_IN                    => GPIO_GPIO_14_BI_PAD_Y,
+        SPI1_SS2_MGPIO15A_IN                    => GPIO_GPIO_15_BI_PAD_Y,
+        SPI1_SS3_MGPIO16A_IN                    => GPIO_GPIO_16_BI_PAD_Y,
+        SPI1_SS4_MGPIO17A_IN                    => GPIO_GPIO_17_BI_PAD_Y,
+        SPI1_SS5_MGPIO18A_IN                    => GPIO_GPIO_18_BI_PAD_Y,
+        SPI1_SS6_MGPIO23A_IN                    => GPIO_GPIO_23_BI_PAD_Y,
+        SPI1_SS7_MGPIO24A_IN                    => GPIO_GPIO_24_BI_PAD_Y,
         USBC_XCLK_IN                            => GND_net,
         -- Outputs
         CAN_RXBUS_MGPIO3A_H2F_A                 => OPEN,
@@ -1708,8 +1966,8 @@ MSS_ADLIB_INST : MSS_010
         MDDR_FABRIC_PREADY                      => OPEN,
         MDDR_FABRIC_PSLVERR                     => OPEN,
         CAN_RXBUS_USBA_DATA1_MGPIO3A_OUT        => OPEN,
-        CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT       => OPEN,
-        CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT        => OPEN,
+        CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT       => MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OUT,
+        CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT        => MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OUT,
         DRAM_ADDR                               => OPEN,
         DRAM_BA                                 => OPEN,
         DRAM_CASN                               => OPEN,
@@ -1724,20 +1982,20 @@ MSS_ADLIB_INST : MSS_010
         DRAM_RASN                               => OPEN,
         DRAM_RSTN                               => OPEN,
         DRAM_WEN                                => OPEN,
-        I2C0_SCL_USBC_DATA1_MGPIO31B_OUT        => OPEN,
-        I2C0_SDA_USBC_DATA0_MGPIO30B_OUT        => OPEN,
-        I2C1_SCL_USBA_DATA4_MGPIO1A_OUT         => OPEN,
+        I2C0_SCL_USBC_DATA1_MGPIO31B_OUT        => MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OUT,
+        I2C0_SDA_USBC_DATA0_MGPIO30B_OUT        => MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OUT,
+        I2C1_SCL_USBA_DATA4_MGPIO1A_OUT         => MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OUT,
         I2C1_SDA_USBA_DATA3_MGPIO0A_OUT         => OPEN,
-        MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT     => OPEN,
-        MMUART0_DCD_MGPIO22B_OUT                => OPEN,
-        MMUART0_DSR_MGPIO20B_OUT                => OPEN,
+        MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT     => MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OUT,
+        MMUART0_DCD_MGPIO22B_OUT                => MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OUT,
+        MMUART0_DSR_MGPIO20B_OUT                => MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OUT,
         MMUART0_DTR_USBC_DATA6_MGPIO18B_OUT     => OPEN,
-        MMUART0_RI_MGPIO21B_OUT                 => OPEN,
+        MMUART0_RI_MGPIO21B_OUT                 => MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OUT,
         MMUART0_RTS_USBC_DATA5_MGPIO17B_OUT     => OPEN,
         MMUART0_RXD_USBC_STP_MGPIO28B_OUT       => OPEN,
-        MMUART0_SCK_USBC_NXT_MGPIO29B_OUT       => OPEN,
+        MMUART0_SCK_USBC_NXT_MGPIO29B_OUT       => MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OUT,
         MMUART0_TXD_USBC_DIR_MGPIO27B_OUT       => MSS_ADLIB_INST_MMUART0_TXD_USBC_DIR_MGPIO27B_OUT,
-        MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT     => OPEN,
+        MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT     => MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OUT,
         MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT     => MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OUT,
         MMUART1_TXD_USBC_DATA2_MGPIO24B_OUT     => OPEN,
         RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_OUT    => OPEN,
@@ -1755,10 +2013,10 @@ MSS_ADLIB_INST : MSS_010
         RGMII_TXD1_RMII_TXD1_USBB_STP_OUT       => OPEN,
         RGMII_TXD2_USBB_DATA5_OUT               => OPEN,
         RGMII_TXD3_USBB_DATA6_OUT               => OPEN,
-        SPI0_SCK_USBA_XCLK_OUT                  => OPEN,
+        SPI0_SCK_USBA_XCLK_OUT                  => MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OUT,
         SPI0_SDI_USBA_DIR_MGPIO5A_OUT           => OPEN,
-        SPI0_SDO_USBA_STP_MGPIO6A_OUT           => OPEN,
-        SPI0_SS0_USBA_NXT_MGPIO7A_OUT           => OPEN,
+        SPI0_SDO_USBA_STP_MGPIO6A_OUT           => MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OUT,
+        SPI0_SS0_USBA_NXT_MGPIO7A_OUT           => MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OUT,
         SPI0_SS1_USBA_DATA5_MGPIO8A_OUT         => MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OUT,
         SPI0_SS2_USBA_DATA6_MGPIO9A_OUT         => MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OUT,
         SPI0_SS3_USBA_DATA7_MGPIO10A_OUT        => MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OUT,
@@ -1769,32 +2027,32 @@ MSS_ADLIB_INST : MSS_010
         SPI1_SS1_MGPIO14A_OUT                   => MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OUT,
         SPI1_SS2_MGPIO15A_OUT                   => MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OUT,
         SPI1_SS3_MGPIO16A_OUT                   => MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OUT,
-        SPI1_SS4_MGPIO17A_OUT                   => OPEN,
-        SPI1_SS5_MGPIO18A_OUT                   => OPEN,
-        SPI1_SS6_MGPIO23A_OUT                   => OPEN,
-        SPI1_SS7_MGPIO24A_OUT                   => OPEN,
+        SPI1_SS4_MGPIO17A_OUT                   => MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OUT,
+        SPI1_SS5_MGPIO18A_OUT                   => MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OUT,
+        SPI1_SS6_MGPIO23A_OUT                   => MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OUT,
+        SPI1_SS7_MGPIO24A_OUT                   => MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OUT,
         USBC_XCLK_OUT                           => OPEN,
         CAN_RXBUS_USBA_DATA1_MGPIO3A_OE         => OPEN,
-        CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE        => OPEN,
-        CAN_TXBUS_USBA_DATA0_MGPIO2A_OE         => OPEN,
+        CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE        => MSS_ADLIB_INST_CAN_TX_EBL_USBA_DATA2_MGPIO4A_OE,
+        CAN_TXBUS_USBA_DATA0_MGPIO2A_OE         => MSS_ADLIB_INST_CAN_TXBUS_USBA_DATA0_MGPIO2A_OE,
         DM_OE                                   => OPEN,
         DRAM_DQ_OE                              => OPEN,
         DRAM_DQS_OE                             => OPEN,
-        I2C0_SCL_USBC_DATA1_MGPIO31B_OE         => OPEN,
-        I2C0_SDA_USBC_DATA0_MGPIO30B_OE         => OPEN,
-        I2C1_SCL_USBA_DATA4_MGPIO1A_OE          => OPEN,
+        I2C0_SCL_USBC_DATA1_MGPIO31B_OE         => MSS_ADLIB_INST_I2C0_SCL_USBC_DATA1_MGPIO31B_OE,
+        I2C0_SDA_USBC_DATA0_MGPIO30B_OE         => MSS_ADLIB_INST_I2C0_SDA_USBC_DATA0_MGPIO30B_OE,
+        I2C1_SCL_USBA_DATA4_MGPIO1A_OE          => MSS_ADLIB_INST_I2C1_SCL_USBA_DATA4_MGPIO1A_OE,
         I2C1_SDA_USBA_DATA3_MGPIO0A_OE          => OPEN,
-        MMUART0_CTS_USBC_DATA7_MGPIO19B_OE      => OPEN,
-        MMUART0_DCD_MGPIO22B_OE                 => OPEN,
-        MMUART0_DSR_MGPIO20B_OE                 => OPEN,
+        MMUART0_CTS_USBC_DATA7_MGPIO19B_OE      => MSS_ADLIB_INST_MMUART0_CTS_USBC_DATA7_MGPIO19B_OE,
+        MMUART0_DCD_MGPIO22B_OE                 => MSS_ADLIB_INST_MMUART0_DCD_MGPIO22B_OE,
+        MMUART0_DSR_MGPIO20B_OE                 => MSS_ADLIB_INST_MMUART0_DSR_MGPIO20B_OE,
         MMUART0_DTR_USBC_DATA6_MGPIO18B_OE      => OPEN,
-        MMUART0_RI_MGPIO21B_OE                  => OPEN,
+        MMUART0_RI_MGPIO21B_OE                  => MSS_ADLIB_INST_MMUART0_RI_MGPIO21B_OE,
         MMUART0_RTS_USBC_DATA5_MGPIO17B_OE      => OPEN,
         MMUART0_RXD_USBC_STP_MGPIO28B_OE        => OPEN,
-        MMUART0_SCK_USBC_NXT_MGPIO29B_OE        => OPEN,
+        MMUART0_SCK_USBC_NXT_MGPIO29B_OE        => MSS_ADLIB_INST_MMUART0_SCK_USBC_NXT_MGPIO29B_OE,
         MMUART0_TXD_USBC_DIR_MGPIO27B_OE        => MSS_ADLIB_INST_MMUART0_TXD_USBC_DIR_MGPIO27B_OE,
-        MMUART1_RXD_USBC_DATA3_MGPIO26B_OE      => OPEN,
-        MMUART1_SCK_USBC_DATA4_MGPIO25B_OE      => OPEN,
+        MMUART1_RXD_USBC_DATA3_MGPIO26B_OE      => MSS_ADLIB_INST_MMUART1_RXD_USBC_DATA3_MGPIO26B_OE,
+        MMUART1_SCK_USBC_DATA4_MGPIO25B_OE      => MSS_ADLIB_INST_MMUART1_SCK_USBC_DATA4_MGPIO25B_OE,
         MMUART1_TXD_USBC_DATA2_MGPIO24B_OE      => OPEN,
         RGMII_GTX_CLK_RMII_CLK_USBB_XCLK_OE     => OPEN,
         RGMII_MDC_RMII_MDC_OE                   => OPEN,
@@ -1811,25 +2069,64 @@ MSS_ADLIB_INST : MSS_010
         RGMII_TXD1_RMII_TXD1_USBB_STP_OE        => OPEN,
         RGMII_TXD2_USBB_DATA5_OE                => OPEN,
         RGMII_TXD3_USBB_DATA6_OE                => OPEN,
-        SPI0_SCK_USBA_XCLK_OE                   => OPEN,
+        SPI0_SCK_USBA_XCLK_OE                   => MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OE,
         SPI0_SDI_USBA_DIR_MGPIO5A_OE            => OPEN,
-        SPI0_SDO_USBA_STP_MGPIO6A_OE            => OPEN,
-        SPI0_SS0_USBA_NXT_MGPIO7A_OE            => OPEN,
-        SPI0_SS1_USBA_DATA5_MGPIO8A_OE          => OPEN,
-        SPI0_SS2_USBA_DATA6_MGPIO9A_OE          => OPEN,
-        SPI0_SS3_USBA_DATA7_MGPIO10A_OE         => OPEN,
+        SPI0_SDO_USBA_STP_MGPIO6A_OE            => MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OE,
+        SPI0_SS0_USBA_NXT_MGPIO7A_OE            => MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OE,
+        SPI0_SS1_USBA_DATA5_MGPIO8A_OE          => MSS_ADLIB_INST_SPI0_SS1_USBA_DATA5_MGPIO8A_OE,
+        SPI0_SS2_USBA_DATA6_MGPIO9A_OE          => MSS_ADLIB_INST_SPI0_SS2_USBA_DATA6_MGPIO9A_OE,
+        SPI0_SS3_USBA_DATA7_MGPIO10A_OE         => MSS_ADLIB_INST_SPI0_SS3_USBA_DATA7_MGPIO10A_OE,
         SPI1_SCK_OE                             => OPEN,
-        SPI1_SDI_MGPIO11A_OE                    => OPEN,
-        SPI1_SDO_MGPIO12A_OE                    => OPEN,
-        SPI1_SS0_MGPIO13A_OE                    => OPEN,
-        SPI1_SS1_MGPIO14A_OE                    => OPEN,
-        SPI1_SS2_MGPIO15A_OE                    => OPEN,
-        SPI1_SS3_MGPIO16A_OE                    => OPEN,
-        SPI1_SS4_MGPIO17A_OE                    => OPEN,
-        SPI1_SS5_MGPIO18A_OE                    => OPEN,
-        SPI1_SS6_MGPIO23A_OE                    => OPEN,
-        SPI1_SS7_MGPIO24A_OE                    => OPEN,
+        SPI1_SDI_MGPIO11A_OE                    => MSS_ADLIB_INST_SPI1_SDI_MGPIO11A_OE,
+        SPI1_SDO_MGPIO12A_OE                    => MSS_ADLIB_INST_SPI1_SDO_MGPIO12A_OE,
+        SPI1_SS0_MGPIO13A_OE                    => MSS_ADLIB_INST_SPI1_SS0_MGPIO13A_OE,
+        SPI1_SS1_MGPIO14A_OE                    => MSS_ADLIB_INST_SPI1_SS1_MGPIO14A_OE,
+        SPI1_SS2_MGPIO15A_OE                    => MSS_ADLIB_INST_SPI1_SS2_MGPIO15A_OE,
+        SPI1_SS3_MGPIO16A_OE                    => MSS_ADLIB_INST_SPI1_SS3_MGPIO16A_OE,
+        SPI1_SS4_MGPIO17A_OE                    => MSS_ADLIB_INST_SPI1_SS4_MGPIO17A_OE,
+        SPI1_SS5_MGPIO18A_OE                    => MSS_ADLIB_INST_SPI1_SS5_MGPIO18A_OE,
+        SPI1_SS6_MGPIO23A_OE                    => MSS_ADLIB_INST_SPI1_SS6_MGPIO23A_OE,
+        SPI1_SS7_MGPIO24A_OE                    => MSS_ADLIB_INST_SPI1_SS7_MGPIO24A_OE,
         USBC_XCLK_OE                            => OPEN 
+        );
+-- SPI_0_CLK_PAD
+SPI_0_CLK_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SCK_USBA_XCLK_OE,
+        -- Outputs
+        Y   => SPI_0_CLK_PAD_Y,
+        -- Inouts
+        PAD => SPI_0_CLK 
+        );
+-- SPI_0_DI_PAD
+SPI_0_DI_PAD : INBUF
+    port map( 
+        -- Inputs
+        PAD => SPI_0_DI,
+        -- Outputs
+        Y   => SPI_0_DI_PAD_Y 
+        );
+-- SPI_0_DO_PAD
+SPI_0_DO_PAD : TRIBUFF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SDO_USBA_STP_MGPIO6A_OE,
+        -- Outputs
+        PAD => SPI_0_DO_net_0 
+        );
+-- SPI_0_SS0_PAD
+SPI_0_SS0_PAD : BIBUF
+    port map( 
+        -- Inputs
+        D   => MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OUT,
+        E   => MSS_ADLIB_INST_SPI0_SS0_USBA_NXT_MGPIO7A_OE,
+        -- Outputs
+        Y   => SPI_0_SS0_PAD_Y,
+        -- Inouts
+        PAD => SPI_0_SS0 
         );
 
 end RTL;

@@ -1,4 +1,4 @@
-# Mon Apr 06 16:41:23 2020
+# Tue Apr 07 18:55:49 2020
 
 Synopsys Generic Technology Pre-mapping, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -21,7 +21,7 @@ Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5322:4:5322:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_16 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5268:4:5268:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_14. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -143,7 +143,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_16sto1m.vhd":508:6:508:7|Removing sequential instance RRESP_IM_xhdl2[1:0] (in view: work.axi_rdmatrix_16Sto1M(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN115 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3319:0:3319:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
+@N: BN115 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3330:0:3330:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd":406:6:406:7|Removing sequential instance BID_IM_xhdl1[1:0] (in view: work.axi_wresp_channel(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":2182:6:2182:7|Removing sequential instance WLAST_MI_xhdl24 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @W: BN114 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\fabosc_0\top_sb_fabosc_0_osc.vhd":52:4:52:19|Removing instance I_RCOSC_25_50MHZ (in view: work.top_sb_FABOSC_0_OSC(def_arch)) of black box view:work.RCOSC_25_50MHZ(def_arch) because it does not drive other instances.
@@ -168,7 +168,7 @@ top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferre
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 183MB)
+Starting constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 183MB)
 
 Encoding state machine arbRegSMCurrentState[0:15] (in view: coreahblite_lib.COREAHBLITE_SLAVEARBITER_1(coreahblite_slavearbiter_arch))
 original code -> new code
@@ -300,13 +300,13 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 187MB)
+Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 188MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 187MB)
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 84MB peak: 188MB)
 
 Process took 0h:00m:04s realtime, 0h:00m:03s cputime
-# Mon Apr 06 16:41:27 2020
+# Tue Apr 07 18:55:53 2020
 
 ###########################################################]

@@ -12,7 +12,7 @@
     <project-description>
     </project-description>
     <location>C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top</location>
-    <state>GENERATED ( Mon Apr 06 15:30:41 2020 )</state>
+    <state>GENERATED ( Tue Apr 07 19:27:17 2020 )</state>
     <swide-toolchain>SoftConsole workspace generated to C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\SoftConsole</swide-toolchain>
   </project-settings>
   <site-map>
@@ -3727,19 +3727,19 @@
           <range>0x00010000</range>
         </slave>
         <slave>
-          <name>RTC</name>
-          <fullPinName>
-          </fullPinName>
-          <remapAddress>0x40017000</remapAddress>
-          <fullAddressSpace>0x40017000 - 0x40017FFF</fullAddressSpace>
-          <range>0x1000</range>
-        </slave>
-        <slave>
           <name>COMBLK</name>
           <fullPinName>
           </fullPinName>
           <remapAddress>0x40016000</remapAddress>
           <fullAddressSpace>0x40016000 - 0x40016FFF</fullAddressSpace>
+          <range>0x1000</range>
+        </slave>
+        <slave>
+          <name>CAN</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x40015000</remapAddress>
+          <fullAddressSpace>0x40015000 - 0x40015FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
@@ -3767,11 +3767,35 @@
           <range>0x1000</range>
         </slave>
         <slave>
+          <name>WATCHDOG</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x40005000</remapAddress>
+          <fullAddressSpace>0x40005000 - 0x40005FFF</fullAddressSpace>
+          <range>0x1000</range>
+        </slave>
+        <slave>
           <name>TIMER</name>
           <fullPinName>
           </fullPinName>
           <remapAddress>0x40004000</remapAddress>
           <fullAddressSpace>0x40004000 - 0x40004FFF</fullAddressSpace>
+          <range>0x1000</range>
+        </slave>
+        <slave>
+          <name>I2C_0</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x40002000</remapAddress>
+          <fullAddressSpace>0x40002000 - 0x40002FFF</fullAddressSpace>
+          <range>0x1000</range>
+        </slave>
+        <slave>
+          <name>SPI_0</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x40001000</remapAddress>
+          <fullAddressSpace>0x40001000 - 0x40001FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>

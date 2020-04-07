@@ -17,8 +17,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>top_sb_CCC_0_FCCC|GL2_net_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>99.5 MHz</data>
-<data>-0.049</data>
+<data>101.6 MHz</data>
+<data>0.154</data>
 </row>
 <row>
 <data>System</data>

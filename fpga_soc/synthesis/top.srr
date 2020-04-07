@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-TTDEFTL
 
-# Mon Apr 06 16:41:04 2020
+# Tue Apr 07 18:55:37 2020
 
 #Implementation: synthesis
 
@@ -17,79 +17,19 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Top entity is set to top.
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AXIAccessControl.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_rdch_ram.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_reset_sync.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AHBtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AXItoAHB.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_pkg.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_misc.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_std_logic.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_addrdec.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_pkg.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\openbank.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\components.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_RDCHANNELFIFO.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_WRCHANNELFIFO.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_feedthrough.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_16Sto1M.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rd_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_m.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_arbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_high.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_low.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_arbiter.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_high.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_low.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wd_channel.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_s.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_interconnect_ntom.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_master_stage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_masterstage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastinit.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\signed.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
+Options changed - recompiling
 VHDL syntax check successful!
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
-File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
+Options changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Synthesizing work.top.rtl.
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd":22:7:22:12|Synthesizing work.top_sb.rtl.
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd":17:7:17:16|Synthesizing work.top_sb_mss.rtl.
-@N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":413:10:413:15|Synthesizing smartfusion2.outbuf.syn_black_box.
-Post processing for smartfusion2.outbuf.syn_black_box
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":403:10:403:14|Synthesizing smartfusion2.inbuf.syn_black_box.
 Post processing for smartfusion2.inbuf.syn_black_box
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":423:10:423:16|Synthesizing smartfusion2.tribuff.syn_black_box.
 Post processing for smartfusion2.tribuff.syn_black_box
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.vhd":434:10:434:14|Synthesizing smartfusion2.bibuf.syn_black_box.
+Post processing for smartfusion2.bibuf.syn_black_box
 @N: CD630 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd":10:7:10:13|Synthesizing work.mss_010.def_arch.
 Post processing for work.mss_010.def_arch
 Post processing for work.top_sb_mss.rtl
@@ -9786,34 +9726,34 @@ State machine has 10 reachable states with original encodings of:
 @N: CL159 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":121:6:121:10|Input WLAST is unused.
 @N: CL159 :"C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":133:6:133:11|Input ARLOCK is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 186MB peak: 196MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 186MB peak: 197MB)
 
-Process took 0h:00m:08s realtime, 0h:00m:07s cputime
+Process took 0h:00m:06s realtime, 0h:00m:06s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:13 2020
+# Tue Apr 07 18:55:43 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
 @N|Running in 64-bit mode
 File C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\layer0.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:17 2020
+# Tue Apr 07 18:55:45 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:09s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:13s realtime, 0h:00m:09s cputime
+Process took 0h:00m:08s realtime, 0h:00m:07s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:17 2020
+# Tue Apr 07 18:55:45 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
@@ -9825,12 +9765,12 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 06 16:41:21 2020
+# Tue Apr 07 18:55:48 2020
 
 ###########################################################]
 Pre-mapping Report
 
-# Mon Apr 06 16:41:23 2020
+# Tue Apr 07 18:55:49 2020
 
 Synopsys Generic Technology Pre-mapping, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -9853,7 +9793,7 @@ Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5322:4:5322:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_16 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5268:4:5268:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_14. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -9975,7 +9915,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_16sto1m.vhd":508:6:508:7|Removing sequential instance RRESP_IM_xhdl2[1:0] (in view: work.axi_rdmatrix_16Sto1M(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN115 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3319:0:3319:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
+@N: BN115 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3330:0:3330:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd":406:6:406:7|Removing sequential instance BID_IM_xhdl1[1:0] (in view: work.axi_wresp_channel(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":2182:6:2182:7|Removing sequential instance WLAST_MI_xhdl24 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @W: BN114 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\fabosc_0\top_sb_fabosc_0_osc.vhd":52:4:52:19|Removing instance I_RCOSC_25_50MHZ (in view: work.top_sb_FABOSC_0_OSC(def_arch)) of black box view:work.RCOSC_25_50MHZ(def_arch) because it does not drive other instances.
@@ -10000,7 +9940,7 @@ top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferre
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 183MB)
+Starting constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 183MB)
 
 Encoding state machine arbRegSMCurrentState[0:15] (in view: coreahblite_lib.COREAHBLITE_SLAVEARBITER_1(coreahblite_slavearbiter_arch))
 original code -> new code
@@ -10132,19 +10072,19 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 187MB)
+Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 188MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 187MB)
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 84MB peak: 188MB)
 
 Process took 0h:00m:04s realtime, 0h:00m:03s cputime
-# Mon Apr 06 16:41:27 2020
+# Tue Apr 07 18:55:53 2020
 
 ###########################################################]
 Map & Optimize Report
 
-# Mon Apr 06 16:41:28 2020
+# Tue Apr 07 18:55:54 2020
 
 Synopsys Generic Technology Mapper, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -10168,7 +10108,7 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 155MB peak: 157MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 155MB peak: 157MB)
 
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_reset_sync.vhd":59:6:59:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_RST_H.reset_sync_2 because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_RST_A.reset_sync_2. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_reset_sync.vhd":59:6:59:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_RST_H.reset_sync_1 because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_RST_A.reset_sync_1. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -10431,7 +10371,7 @@ original code -> new code
 @W: MO160 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":95:4:95:5|Register bit line[13] (in view view:coresdr_axi_lib.openbank(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO160 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":95:4:95:5|Register bit line[12] (in view view:coresdr_axi_lib.openbank(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:02s; Memory used current: 156MB peak: 159MB)
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 156MB peak: 159MB)
 
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1114:6:1114:7|Removing instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[3] because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1114:6:1114:7|Removing instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[2] because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -10454,22 +10394,13 @@ Starting factoring (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:02s; M
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[0] (in view: work.top_sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance COREAXI_0.L3\.master_stage0.ARSIZE_M_INPFF1[2] (in view: work.top_sb(rtl)) because it does not drive other instances.
 
-Finished factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 168MB peak: 169MB)
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 168MB peak: 169MB)
 
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HSIZE_sync[2] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[10] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[1] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[0] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[9] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[8] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[5] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[4] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":291:6:291:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.wr_resp_reg[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1343:6:1343:7|Removing sequential instance top_sb_0.MSS_SMC_0.aburst_reg[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWBURST_S_xhdl16[1] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd":122:8:122:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.masterDataInProg[1] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd":122:8:122:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.masterDataInProg[2] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd":122:8:122:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.masterDataInProg[3] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARBURST_S_xhdl31[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1343:6:1343:7|Removing sequential instance top_sb_0.MSS_SMC_0.aburst_reg[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWBURST_S_xhdl16[0] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10480,50 +10411,71 @@ Finished factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; M
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Removing sequential instance top_sb_0.MSS_SMC_0.SA[13] (in view: work.top(rtl)) because it does not drive other instances.
 @A: BN291 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Boundary register top_sb_0.MSS_SMC_0.SA[13] (in view: work.top(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 167MB peak: 171MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 166MB peak: 171MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:05s; Memory used current: 164MB peak: 171MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 164MB peak: 171MB)
 
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd":398:8:398:9|Removing sequential instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState[6] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[9] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:05s; Memory used current: 165MB peak: 171MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 165MB peak: 171MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:07s; Memory used current: 165MB peak: 171MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 165MB peak: 171MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:07s; Memory used current: 164MB peak: 171MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 164MB peak: 171MB)
 
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[31] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[30] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[29] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":588:6:588:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.axi_wstrb[25] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[4] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[3] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[2] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[1] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[0] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[8] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
+
+Finished preparing to map (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:08s; Memory used current: 164MB peak: 171MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 191MB peak: 194MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:09s		    -1.75ns		2668 /      2435
+   2		0h:00m:09s		    -1.75ns		2513 /      2435
+
+   3		0h:00m:10s		    -1.50ns		2515 /      2435
+
+
+   4		0h:00m:10s		    -1.49ns		2516 /      2435
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[24] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[31] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[30] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[29] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[25] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[24] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[31] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[30] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[27] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[26] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[24] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[31] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[30] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[29] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[28] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[31] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[30] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[27] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[26] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[24] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[31] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[30] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[29] (in view: work.top(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[28] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10556,7 +10508,6 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CP
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[24] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":588:6:588:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.axi_wstrb[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[30] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10565,33 +10516,6 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CP
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":896:6:896:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":896:6:896:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":896:6:896:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[4] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[3] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[2] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[1] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[0] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[8] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
-
-Finished preparing to map (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:08s; Memory used current: 164MB peak: 171MB)
-
-
-Finished technology mapping (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:09s; Memory used current: 192MB peak: 195MB)
-
-Pass		 CPU time		Worst Slack		Luts / Registers
-------------------------------------------------------------
-   1		0h:00m:09s		    -1.78ns		2517 /      2356
-   2		0h:00m:09s		    -1.78ns		2413 /      2356
-   3		0h:00m:09s		    -1.78ns		2413 /      2356
-@N: FX271 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1292:6:1292:7|Replicating instance top_sb_0.MSS_SMC_0.sdr_count[1] (in view: work.top(rtl)) with 92 loads 2 times to improve timing.
-@N: FX271 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1292:6:1292:7|Replicating instance top_sb_0.MSS_SMC_0.sdr_count[0] (in view: work.top(rtl)) with 63 loads 2 times to improve timing.
-Timing driven replication report
-Added 4 Registers via timing driven replication
-Added 4 LUTs via timing driven replication
-
-   4		0h:00m:10s		    -1.60ns		2431 /      2360
-
-
-   5		0h:00m:10s		    -1.60ns		2430 /      2360
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":291:6:291:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.wr_resp_reg[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":459:6:459:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.current_state[3] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1388:6:1388:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.latch_wr_resp[0] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10600,18 +10524,18 @@ Added 4 LUTs via timing driven replication
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1371:6:1371:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.BRESP_M_INPFF1[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1504:6:1504:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.BRESP_M_pulse[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: FP130 |Promoting Net N_172 on CLKINT  I_1 
-@N: FP130 |Promoting Net top_sb_0.MSS_READY on CLKINT  I_526 
-@N: FP130 |Promoting Net top_sb_0.COREAHBLTOAXI_0.ARESET_n on CLKINT  I_527 
+@N: FP130 |Promoting Net top_sb_0.MSS_READY on CLKINT  I_598 
+@N: FP130 |Promoting Net top_sb_0.COREAHBLTOAXI_0.ARESET_n on CLKINT  I_599 
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:11s; Memory used current: 192MB peak: 196MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 191MB peak: 195MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:11s; Memory used current: 193MB peak: 196MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 192MB peak: 195MB)
 
 
 
@@ -10622,24 +10546,24 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 2372 clock pin(s) of sequential element(s)
-0 instances converted, 2372 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 2379 clock pin(s) of sequential element(s)
+0 instances converted, 2379 sequential instances remain driven by gated/generated clocks
 
-=========================================================================== Gated/Generated Clocks ============================================================================
-Clock Tree ID     Driving Element             Drive Element Type     Fanout     Sample Instance                         Explanation                                            
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2372       top_sb_0.MSS_SMC_0.sdr_count_0_rep1     No gated clock conversion method for cell cell:ACG4.SLE
-===============================================================================================================================================================================
+======================================================================= Gated/Generated Clocks =======================================================================
+Clock Tree ID     Driving Element             Drive Element Type     Fanout     Sample Instance                Explanation                                            
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2379       top_sb_0.MSS_SMC_0.R_VALID     No gated clock conversion method for cell cell:ACG4.SLE
+======================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:12s; Memory used current: 150MB peak: 196MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 148MB peak: 195MB)
 
 Writing Analyst data base C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synwork\top_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:13s; Memory used current: 184MB peak: 196MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:13s; Memory used current: 183MB peak: 195MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.edn
@@ -10647,17 +10571,17 @@ Writing EDIF Netlist and constraint files
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 L-2016.09M-2
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 185MB peak: 196MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memory used current: 184MB peak: 195MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 183MB peak: 196MB)
+Start final timing analysis (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 182MB peak: 195MB)
 
 @W: MT246 :"c:\users\lirmm2\desktop\github\harsh\fpga_soc\component\work\top_sb\ccc_0\top_sb_ccc_0_fccc.vhd":117:4:117:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT420 |Found inferred clock top_sb_CCC_0_FCCC|GL2_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on object "n:top_sb_0.CCC_0.GL2_net"
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Mon Apr 06 16:41:47 2020
+# Timing Report written on Tue Apr 07 18:56:10 2020
 #
 
 
@@ -10677,14 +10601,14 @@ Performance Summary
 *******************
 
 
-Worst slack in design: -0.049
+Worst slack in design: 0.154
 
-                                             Requested     Estimated     Requested     Estimated                Clock        Clock              
-Starting Clock                               Frequency     Frequency     Period        Period        Slack      Type         Group              
-------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     99.5 MHz      10.000        10.049        -0.049     inferred     Inferred_clkgroup_0
-System                                       100.0 MHz     NA            10.000        NA            NA         system       system_clkgroup    
-================================================================================================================================================
+                                             Requested     Estimated     Requested     Estimated               Clock        Clock              
+Starting Clock                               Frequency     Frequency     Period        Period        Slack     Type         Group              
+-----------------------------------------------------------------------------------------------------------------------------------------------
+top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     101.6 MHz     10.000        9.847         0.154     inferred     Inferred_clkgroup_0
+System                                       100.0 MHz     NA            10.000        NA            NA        system       system_clkgroup    
+===============================================================================================================================================
 @N: MT582 |Estimated period and frequency not reported for given clock unless the clock has at least one timing path which is not a false or a max delay path and that does not have excessive slack
 
 
@@ -10694,12 +10618,12 @@ System                                       100.0 MHz     NA            10.000 
 Clock Relationships
 *******************
 
-Clocks                                                                              |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Starting                                  Ending                                    |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_CCC_0_FCCC|GL2_net_inferred_clock  top_sb_CCC_0_FCCC|GL2_net_inferred_clock  |  10.000      -0.049  |  No paths    -      |  No paths    -      |  No paths    -    
-===========================================================================================================================================================================
+Clocks                                                                              |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                  Ending                                    |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top_sb_CCC_0_FCCC|GL2_net_inferred_clock  top_sb_CCC_0_FCCC|GL2_net_inferred_clock  |  10.000      0.154  |  No paths    -      |  No paths    -      |  No paths    -    
+==========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -10721,41 +10645,41 @@ Detailed Report for Clock: top_sb_CCC_0_FCCC|GL2_net_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                                                   Starting                                                                                                                             Arrival           
-Instance                                                           Reference                                    Type        Pin                      Net                                                Time        Slack 
-                                                                   Clock                                                                                                                                                  
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[29]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]     3.537       -0.049
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[30]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[30]     3.466       0.024 
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[31]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[31]     3.453       0.102 
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_BRESP_HRESP0[1]        top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HTRANS[1]     4.069       0.239 
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[28]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[28]     3.677       0.504 
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_BVALID                 top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HLOCK         3.968       1.349 
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[0]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[0]                                     0.094       2.644 
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[1]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[1]                                     0.094       2.726 
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[4]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[4]                                     0.094       2.727 
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[2]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[2]                                     0.094       2.791 
-==========================================================================================================================================================================================================================
+                                                                   Starting                                                                                                                             Arrival          
+Instance                                                           Reference                                    Type        Pin                      Net                                                Time        Slack
+                                                                   Clock                                                                                                                                                 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[31]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[31]     3.453       0.154
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[28]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[28]     3.677       0.456
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_BRESP_HRESP0[1]        top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HTRANS[1]     4.069       0.533
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[29]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]     3.537       0.926
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_RDATA_HRDATA01[30]     top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[30]     3.466       0.927
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                               top_sb_CCC_0_FCCC|GL2_net_inferred_clock     MSS_010     F_BVALID                 top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HLOCK         3.968       0.960
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[3]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[3]                                     0.094       1.818
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[7]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[7]                                     0.094       1.894
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[4]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[4]                                     0.094       1.900
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SDATASELInt[5]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE         Q                        SDATASELInt[5]                                     0.094       1.965
+=========================================================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                                             Starting                                                                               Required           
-Instance                                                     Reference                                    Type     Pin     Net                      Time         Slack 
-                                                             Clock                                                                                                     
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[0]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[1]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[2]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[3]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[4]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[5]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[6]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[7]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[8]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[9]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      EN      latchahbcmd_xhdl34_1     9.707        -0.049
-=======================================================================================================================================================================
+                                                             Starting                                                                                             Required          
+Instance                                                     Reference                                    Type     Pin     Net                                    Time         Slack
+                                                             Clock                                                                                                                  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[0]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[0]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[1]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[1]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[2]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[2]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[3]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[3]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[4]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[4]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[5]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[5]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[6]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[6]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[7]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[7]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[8]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[8]     9.778        0.154
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[9]     top_sb_CCC_0_FCCC|GL2_net_inferred_clock     SLE      D       CoreAHBLite_0_AHBmslave10_HADDR[9]     9.778        0.154
+====================================================================================================================================================================================
 
 
 
@@ -10765,211 +10689,46 @@ Worst Path Information
 
 Path information for path number 1: 
       Requested Period:                      10.000
-    - Setup time:                            0.293
+    - Setup time:                            0.222
     + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.707
+    = Required time:                         9.778
 
-    - Propagation time:                      9.755
+    - Propagation time:                      9.624
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.049
+    = Slack (critical) :                     0.154
 
-    Number of logic level(s):                5
-    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[29]
-    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[0] / EN
+    Number of logic level(s):                6
+    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[31]
+    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[8] / D
     The start point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK_BASE
     The end   point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK
 
 Instance / Net                                                                                                  Pin                      Pin               Arrival     No. of    
 Name                                                                                                Type        Name                     Dir     Delay     Time        Fan Out(s)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[29]     Out     3.537     3.537       -         
-top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]                                                      Net         -                        -       0.977     -           2         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        B                        In      -         4.513       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        Y                        Out     0.143     4.656       -         
-M0GATEDHADDR[29]                                                                                    Net         -                        -       0.793     -           15        
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        B                        In      -         5.449       -         
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        Y                        Out     0.143     5.592       -         
-o2                                                                                                  Net         -                        -       0.483     -           1         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        C                        In      -         6.075       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        Y                        Out     0.182     6.258       -         
-N_3067_i                                                                                            Net         -                        -       0.873     -           10        
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        C                        In      -         7.130       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        Y                        Out     0.182     7.313       -         
-masterAddrInProg[0]                                                                                 Net         -                        -       1.206     -           170       
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        C                        In      -         8.518       -         
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        Y                        Out     0.182     8.700       -         
-latchahbcmd_xhdl34_1                                                                                Net         -                        -       1.055     -           34        
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[0]                                            SLE         EN                       In      -         9.755       -         
+top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[31]     Out     3.453     3.453       -         
+top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[31]                                                      Net         -                        -       0.977     -           2         
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[31]                                   CFG3        B                        In      -         4.430       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[31]                                   CFG3        Y                        Out     0.143     4.573       -         
+M0GATEDHADDR[31]                                                                                    Net         -                        -       0.820     -           18        
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHTRANS_RNI9J371                                  CFG4        B                        In      -         5.393       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHTRANS_RNI9J371                                  CFG4        Y                        Out     0.125     5.517       -         
+G_11_1                                                                                              Net         -                        -       0.483     -           1         
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIOOFI2[29]                          CFG4        C                        In      -         6.001       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIOOFI2[29]                          CFG4        Y                        Out     0.194     6.194       -         
+xhdl1221[10]                                                                                        Net         -                        -       0.761     -           12        
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIBMJN3[12]     CFG4        B                        In      -         6.955       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIBMJN3[12]     CFG4        Y                        Out     0.143     7.098       -         
+masterAddrInProg[0]                                                                                 Net         -                        -       1.171     -           140       
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.hsel2_0_a2                                          CFG2        A                        In      -         8.269       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.hsel2_0_a2                                          CFG2        Y                        Out     0.067     8.336       -         
+hsel2                                                                                               Net         -                        -       0.914     -           32        
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.hsel2_0_a2_RNI050O                                  CFG4        D                        In      -         9.251       -         
+top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.hsel2_0_a2_RNI050O                                  CFG4        Y                        Out     0.236     9.487       -         
+CoreAHBLite_0_AHBmslave10_HADDR[8]                                                                  Net         -                        -       0.138     -           1         
+top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[8]                                            SLE         D                        In      -         9.624       -         
 =================================================================================================================================================================================
-Total path delay (propagation time + setup) of 10.049 is 4.663(46.4%) logic and 5.386(53.6%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 2: 
-      Requested Period:                      10.000
-    - Setup time:                            0.293
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.707
-
-    - Propagation time:                      9.755
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.049
-
-    Number of logic level(s):                5
-    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[29]
-    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HMASTLOCK_d_xhdl19 / EN
-    The start point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK_BASE
-    The end   point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK
-
-Instance / Net                                                                                                  Pin                      Pin               Arrival     No. of    
-Name                                                                                                Type        Name                     Dir     Delay     Time        Fan Out(s)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[29]     Out     3.537     3.537       -         
-top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]                                                      Net         -                        -       0.977     -           2         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        B                        In      -         4.513       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        Y                        Out     0.143     4.656       -         
-M0GATEDHADDR[29]                                                                                    Net         -                        -       0.793     -           15        
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        B                        In      -         5.449       -         
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        Y                        Out     0.143     5.592       -         
-o2                                                                                                  Net         -                        -       0.483     -           1         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        C                        In      -         6.075       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        Y                        Out     0.182     6.258       -         
-N_3067_i                                                                                            Net         -                        -       0.873     -           10        
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        C                        In      -         7.130       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        Y                        Out     0.182     7.313       -         
-masterAddrInProg[0]                                                                                 Net         -                        -       1.206     -           170       
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        C                        In      -         8.518       -         
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        Y                        Out     0.182     8.700       -         
-latchahbcmd_xhdl34_1                                                                                Net         -                        -       1.055     -           34        
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HMASTLOCK_d_xhdl19                                           SLE         EN                       In      -         9.755       -         
-=================================================================================================================================================================================
-Total path delay (propagation time + setup) of 10.049 is 4.663(46.4%) logic and 5.386(53.6%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 3: 
-      Requested Period:                      10.000
-    - Setup time:                            0.293
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.707
-
-    - Propagation time:                      9.755
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.049
-
-    Number of logic level(s):                5
-    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[29]
-    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HWRITE_d_xhdl14 / EN
-    The start point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK_BASE
-    The end   point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK
-
-Instance / Net                                                                                                  Pin                      Pin               Arrival     No. of    
-Name                                                                                                Type        Name                     Dir     Delay     Time        Fan Out(s)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[29]     Out     3.537     3.537       -         
-top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]                                                      Net         -                        -       0.977     -           2         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        B                        In      -         4.513       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        Y                        Out     0.143     4.656       -         
-M0GATEDHADDR[29]                                                                                    Net         -                        -       0.793     -           15        
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        B                        In      -         5.449       -         
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        Y                        Out     0.143     5.592       -         
-o2                                                                                                  Net         -                        -       0.483     -           1         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        C                        In      -         6.075       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        Y                        Out     0.182     6.258       -         
-N_3067_i                                                                                            Net         -                        -       0.873     -           10        
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        C                        In      -         7.130       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        Y                        Out     0.182     7.313       -         
-masterAddrInProg[0]                                                                                 Net         -                        -       1.206     -           170       
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        C                        In      -         8.518       -         
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        Y                        Out     0.182     8.700       -         
-latchahbcmd_xhdl34_1                                                                                Net         -                        -       1.055     -           34        
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HWRITE_d_xhdl14                                              SLE         EN                       In      -         9.755       -         
-=================================================================================================================================================================================
-Total path delay (propagation time + setup) of 10.049 is 4.663(46.4%) logic and 5.386(53.6%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 4: 
-      Requested Period:                      10.000
-    - Setup time:                            0.293
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.707
-
-    - Propagation time:                      9.755
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.049
-
-    Number of logic level(s):                5
-    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[29]
-    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[2] / EN
-    The start point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK_BASE
-    The end   point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK
-
-Instance / Net                                                                                                  Pin                      Pin               Arrival     No. of    
-Name                                                                                                Type        Name                     Dir     Delay     Time        Fan Out(s)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[29]     Out     3.537     3.537       -         
-top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]                                                      Net         -                        -       0.977     -           2         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        B                        In      -         4.513       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        Y                        Out     0.143     4.656       -         
-M0GATEDHADDR[29]                                                                                    Net         -                        -       0.793     -           15        
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        B                        In      -         5.449       -         
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        Y                        Out     0.143     5.592       -         
-o2                                                                                                  Net         -                        -       0.483     -           1         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        C                        In      -         6.075       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        Y                        Out     0.182     6.258       -         
-N_3067_i                                                                                            Net         -                        -       0.873     -           10        
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        C                        In      -         7.130       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        Y                        Out     0.182     7.313       -         
-masterAddrInProg[0]                                                                                 Net         -                        -       1.206     -           170       
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        C                        In      -         8.518       -         
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        Y                        Out     0.182     8.700       -         
-latchahbcmd_xhdl34_1                                                                                Net         -                        -       1.055     -           34        
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[2]                                            SLE         EN                       In      -         9.755       -         
-=================================================================================================================================================================================
-Total path delay (propagation time + setup) of 10.049 is 4.663(46.4%) logic and 5.386(53.6%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 5: 
-      Requested Period:                      10.000
-    - Setup time:                            0.293
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.707
-
-    - Propagation time:                      9.755
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.049
-
-    Number of logic level(s):                5
-    Starting point:                          top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST / F_RDATA_HRDATA01[29]
-    Ending point:                            top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[1] / EN
-    The start point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK_BASE
-    The end   point is clocked by            top_sb_CCC_0_FCCC|GL2_net_inferred_clock [rising] on pin CLK
-
-Instance / Net                                                                                                  Pin                      Pin               Arrival     No. of    
-Name                                                                                                Type        Name                     Dir     Delay     Time        Fan Out(s)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST                                                                MSS_010     F_RDATA_HRDATA01[29]     Out     3.537     3.537       -         
-top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HADDR[29]                                                      Net         -                        -       0.977     -           2         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        B                        In      -         4.513       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[29]                                   CFG3        Y                        Out     0.143     4.656       -         
-M0GATEDHADDR[29]                                                                                    Net         -                        -       0.793     -           15        
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        B                        In      -         5.449       -         
-top_sb_0.top_sb_MSS_0.MSS_ADLIB_INST_RNIH2IL1                                                       CFG4        Y                        Out     0.143     5.592       -         
-o2                                                                                                  Net         -                        -       0.483     -           1         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        C                        In      -         6.075       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR_RNIRE1I3[30]                          CFG4        Y                        Out     0.182     6.258       -         
-N_3067_i                                                                                            Net         -                        -       0.873     -           10        
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        C                        In      -         7.130       -         
-top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_10.slave_arbiter.arbRegSMCurrentState_RNIJOHM5[12]     CFG4        Y                        Out     0.182     7.313       -         
-masterAddrInProg[0]                                                                                 Net         -                        -       1.206     -           170       
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        C                        In      -         8.518       -         
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.valid_ahbcmd_i_o3_0_RNI7ELD7                                 CFG4        Y                        Out     0.182     8.700       -         
-latchahbcmd_xhdl34_1                                                                                Net         -                        -       1.055     -           34        
-top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.HADDR_d_xhdl13[1]                                            SLE         EN                       In      -         9.755       -         
-=================================================================================================================================================================================
-Total path delay (propagation time + setup) of 10.049 is 4.663(46.4%) logic and 5.386(53.6%) route.
+Total path delay (propagation time + setup) of 9.846 is 4.583(46.5%) logic and 5.264(53.5%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -10979,10 +10738,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 183MB peak: 196MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 182MB peak: 195MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 183MB peak: 196MB)
+Finished timing report (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 182MB peak: 195MB)
 
 ---------------------------------------
 Resource Usage Report for top 
@@ -10994,25 +10753,25 @@ CLKINT          3 uses
 MSS_010         1 use
 SYSRESET        1 use
 CFG1           12 uses
-CFG2           693 uses
-CFG3           692 uses
-CFG4           713 uses
+CFG2           714 uses
+CFG3           553 uses
+CFG4           849 uses
 
 Carry cells:
 ARI1            269 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            2353 uses
+SLE            2360 uses
 
 DSP Blocks:    0 of 22 (0%)
 
-I/O ports: 55
-I/O primitives: 54
-BIBUF          16 uses
-INBUF          3 uses
-OUTBUF         34 uses
-TRIBUFF        1 use
+I/O ports: 74
+I/O primitives: 73
+BIBUF          41 uses
+INBUF          4 uses
+OUTBUF         24 uses
+TRIBUFF        4 uses
 
 
 Global Clock Buffers: 3 of 8 (37%)
@@ -11021,7 +10780,7 @@ Global Clock Buffers: 3 of 8 (37%)
 RAM/ROM usage summary
 Total Block RAMs (RAM64x18) : 6 of 22 (27%)
 
-Total LUTs:    2379
+Total LUTs:    2397
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -11029,14 +10788,14 @@ RAM64x18 Interface Logic : SLEs = 216; LUTs = 216;
 RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  2353 + 216 + 0 + 0 = 2569;
-Total number of LUTs after P&R:  2379 + 216 + 0 + 0 = 2595;
+Total number of SLEs after P&R:  2360 + 216 + 0 + 0 = 2576;
+Total number of LUTs after P&R:  2397 + 216 + 0 + 0 = 2613;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 37MB peak: 196MB)
+At Mapper Exit (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 37MB peak: 195MB)
 
-Process took 0h:00m:18s realtime, 0h:00m:15s cputime
-# Mon Apr 06 16:41:47 2020
+Process took 0h:00m:16s realtime, 0h:00m:15s cputime
+# Tue Apr 07 18:56:10 2020
 
 ###########################################################]

@@ -8,7 +8,7 @@
 
 # Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: -1 
 
-# Date generated: Mon Apr 06 16:42:04 2020 
+# Date generated: Tue Apr 07 18:56:26 2020 
 
 
 #
@@ -32,20 +32,39 @@ set_iobank Bank2 -vcci 3.30 -fixed no
 # I/O constraints
 #
 
+set_io CAN_RX -DIRECTION INPUT -pinname N20 -fixed yes
+set_io CAN_TX -DIRECTION OUTPUT -pinname R15 -fixed yes
+set_io CAN_TX_EN_N -DIRECTION OUTPUT -pinname M19 -fixed yes
 set_io DEVRST_N -DIRECTION INPUT -pinname U17
-set_io GPIO_10_OUT -DIRECTION OUTPUT -pinname H17 -fixed yes
-set_io GPIO_11_OUT -DIRECTION OUTPUT -pinname L16 -fixed yes
-set_io GPIO_12_OUT -DIRECTION OUTPUT -pinname K20 -fixed yes
-set_io GPIO_13_OUT -DIRECTION OUTPUT -pinname J20 -fixed yes
-set_io GPIO_14_OUT -DIRECTION OUTPUT -pinname H16 -fixed yes
-set_io GPIO_15_OUT -DIRECTION OUTPUT -pinname G19 -fixed yes
-set_io GPIO_16_OUT -DIRECTION OUTPUT -pinname F20 -fixed yes
-set_io GPIO_25_OUT -DIRECTION OUTPUT -pinname E18 -fixed yes
-set_io GPIO_29_IN -DIRECTION INPUT -pinname B19 -fixed yes
-set_io GPIO_8_OUT -DIRECTION OUTPUT -pinname H19 -fixed yes
-set_io GPIO_9_OUT -DIRECTION OUTPUT -pinname G18 -fixed yes
+set_io GPIO_10_BI -DIRECTION INOUT -pinname H17 -fixed yes
+set_io GPIO_11_BI -DIRECTION INOUT -pinname L16 -fixed yes
+set_io GPIO_12_BI -DIRECTION INOUT -pinname K20 -fixed yes
+set_io GPIO_13_BI -DIRECTION INOUT -pinname J20 -fixed yes
+set_io GPIO_14_BI -DIRECTION INOUT -pinname H16 -fixed yes
+set_io GPIO_15_BI -DIRECTION INOUT -pinname G19 -fixed yes
+set_io GPIO_16_BI -DIRECTION INOUT -pinname F20 -fixed yes
+set_io GPIO_17_BI -DIRECTION INOUT -pinname J17 -fixed yes
+set_io GPIO_18_BI -DIRECTION INOUT -pinname J18 -fixed yes
+set_io GPIO_19_BI -DIRECTION INOUT -pinname E17 -fixed yes
+set_io GPIO_1_BI -DIRECTION INOUT -pinname M17 -fixed yes
+set_io GPIO_20_BI -DIRECTION INOUT -pinname E16 -fixed yes
+set_io GPIO_21_BI -DIRECTION INOUT -pinname D20 -fixed yes
+set_io GPIO_22_BI -DIRECTION INOUT -pinname C20 -fixed yes
+set_io GPIO_23_BI -DIRECTION INOUT -pinname K16 -fixed yes
+set_io GPIO_24_BI -DIRECTION INOUT -pinname K15 -fixed yes
+set_io GPIO_25_BI -DIRECTION INOUT -pinname E18 -fixed yes
+set_io GPIO_26_BI -DIRECTION INOUT -pinname F18 -fixed yes
+set_io GPIO_29_BI -DIRECTION INOUT -pinname B19 -fixed yes
+set_io GPIO_8_BI -DIRECTION INOUT -pinname H19 -fixed yes
+set_io GPIO_9_BI -DIRECTION INOUT -pinname G18 -fixed yes
+set_io I2C_0_SCL -DIRECTION INOUT -pinname A19 -fixed yes
+set_io I2C_0_SDA -DIRECTION INOUT -pinname A20 -fixed yes
 set_io MMUART_0_RXD -DIRECTION INPUT -pinname C19 -fixed yes
 set_io MMUART_0_TXD -DIRECTION OUTPUT -pinname D18 -fixed yes
+set_io SPI_0_CLK -DIRECTION INOUT -pinname P15 -fixed yes
+set_io SPI_0_DI -DIRECTION INPUT -pinname N15 -fixed yes
+set_io SPI_0_DO -DIRECTION OUTPUT -pinname L20 -fixed yes
+set_io SPI_0_SS0 -DIRECTION INOUT -pinname L19 -fixed yes
 
 #
 # Core cell constraints
