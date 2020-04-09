@@ -1,0 +1,9 @@
+# Altium output and version control files
+
+*.SchDocPreview
+__Previews/
+History/
+Project Logs for HARSH_Payload/
+Project Outputs for HARSH_Payload/
+*.LOG
+*.Dat
