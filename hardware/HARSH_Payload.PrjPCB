@@ -191,7 +191,7 @@ GenerateClassCluster=0
 DocumentUniqueId=QRICXIGW
 
 [Document10]
-DocumentPath=Source\5_FPGA_Banks_3_7.SchDoc
+DocumentPath=Source\5_FPGA_Banks_4_7.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
