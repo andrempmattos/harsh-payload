@@ -1,0 +1,88 @@
+*************************************************************
+FileName = HARSH_Payload.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\matrix\matrix
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\profile
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_paste\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__gnd_\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__gnd_\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_solder\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__vcc_\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__vcc_\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-outer-layer__gnd_\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-outer-layer__gnd_\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-outer-layer__gnd_\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-outer-layer__gnd_\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-mid-layer_signal\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-mid-layer_signal\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-mid-layer_signal\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-mid-layer_signal\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\mechanical_1\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\mechanical_1\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\internal_plane_1\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\internal_plane_1\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\board_outline\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\board_outline\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\features
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\components
+
+Generated File : C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_ODB\odb\steps\pcb\eda\data
+
