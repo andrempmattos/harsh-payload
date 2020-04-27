@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: Gerber.GBR   4/27/2020  8:26:26 PM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GTL                Top-Outer-Layer (GND)                   
+.G1                 Top-Mid-Layer Signal                    
+.GP1                Inner-Layer (GND)                       
+.GP2                Inner-Layer (VCC)                       
+.G2                 Bottom-Mid-Layer Signal                 
+.GBL                Bottom-Outer-Layer (GND)                
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
+.GM2                Board Outline                           
+.GD1                Drill Drawing                           
+------------------------------------------------------------------------------------------

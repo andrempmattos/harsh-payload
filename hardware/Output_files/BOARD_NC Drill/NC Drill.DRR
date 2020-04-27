@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: HARSH_Payload.PcbDoc   4/27/2020  8:26:30 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top-Outer-Layer (GND) to Bottom-Outer-Layer (GND)
+ASCII RoundHoles File : NC Drill.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.2mm)                                              Round             488       PTH        0.00inch (0.00mm)
+T2      12mil (0.3mm)                                             Round             123       PTH        0.00inch (0.00mm)
+T3      39mil (1mm)                                               Round             17        PTH        0.00inch (0.00mm)
+T4      138mil (3.5mm)                                            Round             1         PTH        0.00inch (0.00mm)
+T5      47mil (1.2mm)                                             Round             2         NPTH       0.00inch (0.00mm)
+T6      138mil (3.5mm)                                            Round             3         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              634
+
+Total Processing Time (hh:mm:ss) : 00:00:01
