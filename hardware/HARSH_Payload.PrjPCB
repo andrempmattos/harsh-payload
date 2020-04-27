@@ -38,7 +38,7 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=Output_files\Output Job File\HARSH_Payload.OutJob
+DocumentPath=Output_files\HARSH_Payload.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -343,12 +343,430 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TFUSEATF
 
+[Document19]
+DocumentPath=Output_files\CAMStatic.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document20]
+DocumentPath=CAMStatic.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\BGA Escape Route - HARSH_Payload.html
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOM\ASSEMBLY_BOM.xls
 DItemRevisionGUID=
 
 [GeneratedDocument2]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\BGA Escape Route - HARSH_Payload.html
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\Design Rule Check - HARSH_Payload.html
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Output_files\BOARD_DRC\Design Rules Check.html
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\board_outline\features
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-mid-layer_signal\features
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-outer-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__vcc_\features
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\internal_plane_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\mechanical_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-mid-layer_signal\features
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top-outer-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\top_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\board_outline\features
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-mid-layer_signal\features
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom-outer-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\bottom_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\inner-layer__vcc_\features
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\internal_plane_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\mechanical_1\features
+DItemRevisionGUID=
+
+[GeneratedDocument42]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\top-mid-layer_signal\features
+DItemRevisionGUID=
+
+[GeneratedDocument43]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\top-outer-layer__gnd_\features
+DItemRevisionGUID=
+
+[GeneratedDocument44]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\top_overlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument45]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\top_paste\features
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\top_solder\features
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.G1
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.G1
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.G2
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GP1
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GP2
+DItemRevisionGUID=
+
+[GeneratedDocument68]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument69]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument70]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument71]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument72]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument73]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument74]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument75]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument76]
+DocumentPath=Output_files\BOARD_Gerber\Gerber.REP
+DItemRevisionGUID=
+
+[GeneratedDocument77]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_Gerber\Gerber.REP
+DItemRevisionGUID=
+
+[GeneratedDocument78]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument79]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument80]
+DocumentPath=Output_files\BOARD_NC Drill\NC Drill.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument81]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_NC Drill\NC Drill.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument82]
+DocumentPath=Output_files\BOARD_NC Drill\NC Drill.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument83]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_NC Drill\NC Drill.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument84]
+DocumentPath=Output_files\BOARD_NC Drill\NC Drill.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument85]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\BOARD_NC Drill\NC Drill.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument86]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument87]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument88]
+DocumentPath=Output_files\ASSEMBLY_ODB\ODB++.REP
+DItemRevisionGUID=
+
+[GeneratedDocument89]
+DocumentPath=Output_files\ASSEMBLY_ExportSTEP\PCB3D STEP.step
+DItemRevisionGUID=
+
+[GeneratedDocument90]
+DocumentPath=Output_files\ASSEMBLY_Pick Place\Pick and Place.txt
+DItemRevisionGUID=
+
+[GeneratedDocument91]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_Pick Place\Pick and Place.txt
+DItemRevisionGUID=
+
+[GeneratedDocument92]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument93]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument94]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument95]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument96]
+DocumentPath=Output_files\BOARD_Test Points\Test Point Report.ipc
+DItemRevisionGUID=
+
+[GeneratedDocument97]
+DocumentPath=Output_files\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument98]
+DocumentPath=Project Outputs for Memory_Expansion_Daughter_Board\[No Variations]\ASSEMBLY_ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
 [Configuration1]
@@ -662,7 +1080,7 @@ Configuration1_Item6=ONFIGURATIONKIND\33\2CFGALL.CONFIGURATIONDESC\3Altium%203D%
 Configuration1_Name7=SortOrder
 Configuration1_Item7=LibRef=Down
 Configuration1_Name8=VisibleOrder
-Configuration1_Item8=Library Reference=163|Description=190|Partnumber=140|Designator=73|Quantity=17
+Configuration1_Item8=Library Reference=145|Description=218|Partnumber=159|Designator=67|Quantity=35
 OutputType2=ComponentCrossReference
 OutputName2=Component Cross Reference Report
 OutputDocumentPath2=
