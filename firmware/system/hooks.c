@@ -1,5 +1,5 @@
-/* 
- * main.c
+/*
+ * hooks.c
  *
  * MIT License
  *
@@ -26,38 +26,47 @@
  */
 
 /**
- * \brief Main file.
+ * \brief FreeRTOS hooks implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.1
  * 
- * \date 27/03/2020
+ * \date 08/05/2020
  * 
- * \defgroup main Main file
+ * \defgroup hooks FreeRTOS Hooks
+ * \ingroup system
  * \{
  */
 
 #include <FreeRTOS.h>
 #include <task.h>
 
-#include "devices/watchdog/watchdog.h"
-#include "app/tasks/tasks.h"
-
-void main(void)
+void vApplicationIdleHook(void)
 {
-    /* Prepare the essential hardware initializations to start running the operating system. */
-    //prvSetupHardware();
+    /* Called on each iteration of the idle task. In this case the idle task just enters a low(ish) power mode */
+}
 
-    /* Create all the tasks */
-    create_tasks();
+void vApplicationMallocFailedHook(void)
+{
+    /* Called if a call to pvPortMalloc() fails because there is insufficient free memory available in the */
+    /* FreeRTOS heap. pvPortMalloc() is called internally by FreeRTOS API functions that create tasks, queues */
+    /* or semaphores */
+    taskDISABLE_INTERRUPTS();
 
-    /* Start the scheduler */
-    vTaskStartScheduler();
-
-    /* Will only get here if there was insufficient memory to create the idle and/or timer task */
     while(1);
 }
 
+void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
+{
+    (void)pxTask;
+    (void)pcTaskName;
 
+    /* Run time stack overflow checking is performed if configconfigCHECK_FOR_STACK_OVERFLOW is defined to 1 or */
+    /* 2. This hook function is called if a stack overflow is detected */
+    taskDISABLE_INTERRUPTS();
 
+    while(1);
+}
+
+/** \} End of hooks group */

@@ -1,5 +1,5 @@
-/* 
- * main.c
+/*
+ * app.h
  *
  * MIT License
  *
@@ -26,38 +26,23 @@
  */
 
 /**
- * \brief Main file.
+ * \brief Application layer.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.1
  * 
- * \date 27/03/2020
+ * \date 08/05/2020
  * 
- * \defgroup main Main file
+ * \defgroup app Applications
  * \{
  */
 
-#include <FreeRTOS.h>
-#include <task.h>
-
-#include "devices/watchdog/watchdog.h"
-#include "app/tasks/tasks.h"
-
-void main(void)
-{
-    /* Prepare the essential hardware initializations to start running the operating system. */
-    //prvSetupHardware();
-
-    /* Create all the tasks */
-    create_tasks();
-
-    /* Start the scheduler */
-    vTaskStartScheduler();
-
-    /* Will only get here if there was insufficient memory to create the idle and/or timer task */
-    while(1);
-}
+#ifndef APP_H_
+#define APP_H_
 
 
 
+#endif /* APP_H_ */
+
+/** \} End of app group */

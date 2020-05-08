@@ -1,5 +1,5 @@
 /* 
- * main.c
+ * tasks.h
  *
  * MIT License
  *
@@ -26,38 +26,35 @@
  */
 
 /**
- * \brief Main file.
+ * \brief Tasks definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.1
  * 
- * \date 27/03/2020
+ * \date 08/05/2020
  * 
- * \defgroup main Main file
+ * \defgroup tasks Tasks
  * \{
  */
 
-#include <FreeRTOS.h>
-#include <task.h>
+#ifndef TASKS_H_
+#define TASKS_H_
 
-#include "devices/watchdog/watchdog.h"
-#include "app/tasks/tasks.h"
+/**
+ * \brief Creates the system tasks.
+ *
+ * \return None.
+ */
+void create_tasks();
 
-void main(void)
-{
-    /* Prepare the essential hardware initializations to start running the operating system. */
-    //prvSetupHardware();
+/**
+ * \brief Creates the system event groups.
+ *
+ * \return None.
+ */
+//void create_event_groups();
 
-    /* Create all the tasks */
-    create_tasks();
+#endif /* TASKS_H_ */
 
-    /* Start the scheduler */
-    vTaskStartScheduler();
-
-    /* Will only get here if there was insufficient memory to create the idle and/or timer task */
-    while(1);
-}
-
-
-
+/** \} End of tasks group */
