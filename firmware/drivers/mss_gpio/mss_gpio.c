@@ -7,7 +7,7 @@
  * SVN $Date: 2015-09-04 14:32:09 +0530 (Fri, 04 Sep 2015) $
  */
 #include "mss_gpio.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 
 #ifdef __cplusplus
 extern "C" {
