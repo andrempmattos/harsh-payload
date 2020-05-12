@@ -1,5 +1,5 @@
 /*
- * version.h
+ * latchup_monitors.c
  *
  * MIT License
  *
@@ -26,29 +26,37 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Latch-up monitor implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.10
  * 
- * \date 08/05/2020
+ * \date 12/05/2020
  * 
- * \defgroup version Version
+ * \addtogroup latchup_monitors
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#include <system/sys_log/sys_log.h>
+#include <drivers/mss_gpio/mss_gpio.h>
 
-#define FIRMWARE_VERSION            "0.0.9"
+#include "latchup_monitors.h"
 
-#define FIRMWARE_STATUS             "Development"
+void latchup_monitors_init()
+{
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+}
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+void latchup_monitors_get_status(latchup_monitor_t *l)
+{
 
-#endif /* VERSION_H_ */
+}
 
-/** \} End of version group */
+void latchup_monitors_set_enable(latchup_monitor_t *l)
+{
+
+}
+
+
+/** \} End of latchup_monitors group */
