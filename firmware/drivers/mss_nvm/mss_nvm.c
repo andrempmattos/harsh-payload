@@ -7,9 +7,9 @@
  * SVN $Date: 2016-06-23 12:32:32 +0530 (Thu, 23 Jun 2016) $
  */
 
-#include "../../CMSIS/m2sxxx.h"
-#include "../../CMSIS/mss_assert.h"
-#include "../../CMSIS/system_m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
+#include "../../hal/arm_cmsis/system_m2sxxx.h"
 #include "mss_nvm.h"
 
 #ifdef __cplusplus

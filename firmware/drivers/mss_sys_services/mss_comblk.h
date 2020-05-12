@@ -9,7 +9,7 @@
 #ifndef __MSS_COMBLK_H_
 #define __MSS_COMBLK_H_ 1
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 #include "mss_comblk_page_handler.h"
 
 #ifdef __cplusplus

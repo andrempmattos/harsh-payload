@@ -8,7 +8,7 @@
  */
 
 #include "mss_comblk.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 
 /*==============================================================================
  *
@@ -115,7 +115,7 @@ void MSS_COMBLK_init
     
     /*
      * Disable loopback before enabling the MSS COMM_BLK to ensure that any
-     * codes waiting in the TX FIFO of the System Controller’s COMM_BLK are
+     * codes waiting in the TX FIFO of the System Controllerï¿½s COMM_BLK are
      * not lost.
      */
     COMBLK->CONTROL &= ~CR_LOOPBACK_MASK;

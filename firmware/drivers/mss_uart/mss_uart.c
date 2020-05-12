@@ -9,9 +9,9 @@
  */
 #include "mss_uart.h"
 #include "mss_uart_regs.h"
-#include "../../CMSIS/mss_assert.h"
-#include "../../CMSIS/hw_reg_io.h"
-#include "../../CMSIS/system_m2sxxx.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
+#include "../../hal/arm_cmsis/hw_reg_io.h"
+#include "../../hal/arm_cmsis/system_m2sxxx.h"
 
 #ifdef __cplusplus
 extern "C" {

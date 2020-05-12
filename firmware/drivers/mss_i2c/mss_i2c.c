@@ -8,7 +8,7 @@
  * SVN $Date: 2015-09-14 17:07:12 +0530 (Mon, 14 Sep 2015) $
  */
 #include "mss_i2c.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 
 #include <string.h>
 

@@ -124,8 +124,8 @@
 extern "C" {
 #endif 
 
-#include "../../CMSIS/m2sxxx.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 
 /***************************************************************************//**
  * The MSS_WDOG_TIMEOUT_IRQ_ENABLE_BIT_MASK macro is a bit mask specifying the

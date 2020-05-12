@@ -139,7 +139,7 @@
 extern "C" {
 #endif 
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 
 /*-------------------------------------------------------------------------*//**
   The MSS_RTC_BINARY_MODE constant is used to specify the mode parameter to the

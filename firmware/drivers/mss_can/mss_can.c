@@ -13,7 +13,7 @@
  */
  
 #include "mss_can.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 
 #ifdef __cplusplus
 extern "C" {

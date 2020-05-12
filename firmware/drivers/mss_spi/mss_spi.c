@@ -8,7 +8,7 @@
  * SVN $Date: 2015-08-31 14:52:39 +0530 (Mon, 31 Aug 2015) $
  */
 #include "mss_spi.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 #include <string.h>
 
 #ifdef __cplusplus

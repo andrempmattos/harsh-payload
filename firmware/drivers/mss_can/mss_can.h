@@ -160,7 +160,7 @@
 
  *//*=========================================================================*/
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 
 #ifndef MSS_CAN_H_
 #define MSS_CAN_H_

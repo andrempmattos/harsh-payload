@@ -7,7 +7,7 @@
  * SVN $Date: 2015-08-24 16:58:16 +0530 (Mon, 24 Aug 2015) $
  */
 #include "mss_rtc.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 #include <string.h>
 
 #ifdef __cplusplus

@@ -289,7 +289,7 @@
 #ifndef MSS_I2C_H_
 #define MSS_I2C_H_
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -32,7 +32,7 @@
   must ensure that the MSS SPI peripherals are enabled and configured in the
   SmartFusion2 MSS configurator if you wish to use them. For more information on
   IOMUXs, refer to the IOMUX section of the SmartFusion2 Microcontroller
-  Subsystem (MSS) User’s Guide.
+  Subsystem (MSS) Userï¿½s Guide.
   The base address, register addresses and interrupt number assignment for the
   MSS SPI peripherals are defined as constants in the SmartFusion2 CMSIS HAL.
   You must ensure that the latest SmartFusion2 CMSIS HAL is included in the
@@ -53,7 +53,7 @@
   read the result of an ADC conversion from a SPI analog to digital converter.
   Block transfers allow the MSS SPI to write or read a number of bytes in a SPI
   transaction. Block transfer transactions allow data transfers in multiples of
-  8 bits (8, 16, 24, 32, 40…). Block transfers are typically used with byte
+  8 bits (8, 16, 24, 32, 40ï¿½). Block transfers are typically used with byte
   oriented devices like SPI FLASH devices.
   
   Initialization 
@@ -80,7 +80,7 @@
   The MSS_SPI_configure_master_mode() function configures the specified MSS SPI
   block for operations as a SPI master. It must be called once for each remote
   SPI slave device which the MSS SPI block will communicate with. It is used to
-  provide the following information about each SPI slave’s communication
+  provide the following information about each SPI slaveï¿½s communication
   characteristics:
     - The SPI protocol mode
     - The SPI clock speed
@@ -213,7 +213,7 @@
 #ifndef MSS_SPI_H_
 #define MSS_SPI_H_
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -492,23 +492,23 @@ void MSS_SPI_configure_slave_mode
     The slave parameter is used to identify a target SPI slave. The driver will
     hold the MSS SPI master configuration required to communicate with this
     slave, as specified by the other function parameters. Allowed values are:
-        • MSS_SPI_SLAVE_0
-        • MSS_SPI_SLAVE_1
-        • MSS_SPI_SLAVE_2
-        • MSS_SPI_SLAVE_3
-        • MSS_SPI_SLAVE_4
-        • MSS_SPI_SLAVE_5
-        • MSS_SPI_SLAVE_6
-        • MSS_SPI_SLAVE_7
+        ï¿½ MSS_SPI_SLAVE_0
+        ï¿½ MSS_SPI_SLAVE_1
+        ï¿½ MSS_SPI_SLAVE_2
+        ï¿½ MSS_SPI_SLAVE_3
+        ï¿½ MSS_SPI_SLAVE_4
+        ï¿½ MSS_SPI_SLAVE_5
+        ï¿½ MSS_SPI_SLAVE_6
+        ï¿½ MSS_SPI_SLAVE_7
     
   @param protocol_mode
     This parameter is used to specify the SPI operating mode. Allowed values are:
-        • MSS_SPI_MODE0
-        • MSS_SPI_MODE1
-        • MSS_SPI_MODE2
-        • MSS_SPI_MODE3
-        • MSS_SPI_TI_MODE
-        • MSS_SPI_NSC_MODE
+        ï¿½ MSS_SPI_MODE0
+        ï¿½ MSS_SPI_MODE1
+        ï¿½ MSS_SPI_MODE2
+        ï¿½ MSS_SPI_MODE3
+        ï¿½ MSS_SPI_TI_MODE
+        ï¿½ MSS_SPI_NSC_MODE
  
   @param clk_div
     SPI clock divider value used to generate serial interface clock signal from

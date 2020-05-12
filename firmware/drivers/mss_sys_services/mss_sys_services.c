@@ -8,7 +8,7 @@
  */
 #include "mss_sys_services.h"
 #include "mss_comblk.h"
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 #include <string.h>
 
 /*==============================================================================

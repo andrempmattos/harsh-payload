@@ -100,9 +100,9 @@
   The System Controller sends asynchronous messages to the MSS COMM_BLK when
   certain events are detected during the execution of the following system 
   services:
-    •Flash*Freeze
-    •Power-on-reset (POR) digest check
-    •Tamper detect events
+    ï¿½Flash*Freeze
+    ï¿½Power-on-reset (POR) digest check
+    ï¿½Tamper detect events
   The MSS_SYS_init() function can register a callback function with the System
   Services driver to handle these asynchronous messages allowing the user
   application code to take remedial or defensive action. If the application
@@ -115,7 +115,7 @@
   parameter to the event handler callback function.
     Power-on Reset (POR) Digest Error
   The POR digest check service is enabled in the Libero hardware flow and if 
-  enabled is automatically performed as part of the device’s power up sequence.
+  enabled is automatically performed as part of the deviceï¿½s power up sequence.
   The System Controller sends a POR digest check error message to the MSS 
   COMM_BLK when the result of the POR digest check is a mismatch between the
   original stored digest and the current digest. The driver passes the command
@@ -143,7 +143,7 @@
   MSS_SYS_start_isp(), passing two function pointers as parameters. These two
   function pointers point to a page read handler function and an ISP completion
   handler function that must be implemented as part of the application. The
-  system services driver will call the application’s page read handler
+  system services driver will call the applicationï¿½s page read handler
   function every time it is ready to program the FPGA with a new page of
   programming data. The page read handler function is responsible for splitting
   the programming file into suitably sized pages. The page size is not fixed
@@ -204,10 +204,10 @@
   by performing a point multiplication of a 384-bit private key with the base
   point for the NIST P-384 curve. Both parties involved in the key
   establishment compute their public keys and send them to each other. A shared
-  secret is established by point multiplication of each party’s private key
-  with the remote party’s public key. The elliptic curve mathematical
+  secret is established by point multiplication of each partyï¿½s private key
+  with the remote partyï¿½s public key. The elliptic curve mathematical
   properties ensure that the private key point multiplication with the remote
-  party’s public key results in the same point on the curve for both parties.
+  partyï¿½s public key results in the same point on the curve for both parties.
   The coordinates of this point on the curve is used as the shared secret for
   further cryptographic operations.
   Note: There is no checking done to see if the given input point or points
@@ -235,9 +235,9 @@
         
   Activation Code
   An activation code is required by the SRAM-PUF to regenerate the intrinsic
-  secret from the SRAM-PUF start-up value. The start-up value of the PUF’s SRAM
+  secret from the SRAM-PUF start-up value. The start-up value of the PUFï¿½s SRAM
   block is slightly different from one power-up to the next. Some processing is
-  performed on the PUF’s SRAM start-up value to eliminate randomness and 
+  performed on the PUFï¿½s SRAM start-up value to eliminate randomness and 
   retrieve the exact same intrinsic secret on each power-up cycle. This 
   processing is performed using the activation code, which can be thought of as
   parity bits that are used to reconstruct the same PUF intrinsic secret each 
@@ -247,7 +247,7 @@
   the manufacturing process. The PUF secret computed from this enrollment is
   used to protect a 376-bit ECC private key that may be used for design 
   security purposes as described elsewhere. The user may optionally enroll a
-  second activation code in special “S” -suffix (i.e., security enabled) 
+  second activation code in special ï¿½Sï¿½ -suffix (i.e., security enabled) 
   devices. The activation code is usually generated only once, typically when
   the system containing the SmartFusion2 device is being commissioned, using a
   JTAG or SPI programming command. Alternatively, the activation code is 
@@ -256,7 +256,7 @@
     - MSS_SYS_puf_create_activation_code()
   This might be used if the first user activation code were intentionally
   deleted and a new one was desired. The activation code is stored the System
-  Controller’s private eNVM after being created. Its value is never exported in
+  Controllerï¿½s private eNVM after being created. Its value is never exported in
   clear text from the System Controller. Because of the inherent noise in each 
   SRAM start-up, there is a negligible probability two activation codes or the 
   associated PUF intrinsic secret are ever the same, even if the same device is
@@ -268,11 +268,11 @@
   
   Enrolling Keys
   The SRAM-PUF can be used to store cryptographic keys. The keys are stored in 
-  such a way that the key’s actual value never appears in the system unless it
+  such a way that the keyï¿½s actual value never appears in the system unless it
   is retrieved by the user. A so-called "Key Code" is stored in the System 
-  Controller’s private eNVM instead of the key’s value. The key code is 
+  Controllerï¿½s private eNVM instead of the keyï¿½s value. The key code is 
   generated when a key is enrolled. The key code value is created from the 
-  enrolled key’s value and the intrinsic secret value. The key’s value can then
+  enrolled keyï¿½s value and the intrinsic secret value. The keyï¿½s value can then
   later be regenerated from the key code value and intrinsic secret value upon 
   user request.
   NOTE:Note: Key #0 and key #1 are used for design security and are not 
@@ -283,7 +283,7 @@
   The enrolled keys can be intrinsic keys or extrinsic keys. The value of an 
   intrinsic key is a random number generated from the SRAM-PUF start-up value.
   Intrinsic keys are useful where a security protocol executing on SmartFusion2
-  needs to generate a key’s value and store it for later use. For example, the
+  needs to generate a keyï¿½s value and store it for later use. For example, the
   user could request a 384-bit long intrinsic key to be enrolled and use it as
   private key in an elliptic curve Diffie-Hellman key exchange.
   The value of an extrinsic key is specified by the user. For example, the user
@@ -308,7 +308,7 @@
   Keys are numbered from 0 up to 57 (the maximum number of keys assuming all 
   user keys are less than or equal to 256 bits in length). For example, 
   assuming only the first three key codes mentioned above have been enrolled 
-  using the JTAG programming commands, the value returned would be ‘3’. The 
+  using the JTAG programming commands, the value returned would be ï¿½3ï¿½. The 
   number of keys returned by MSS_SYS_puf_get_number_of_keys() can then be used
   as the newly enrolled key identification number since key numbering is zero 
   based. Thus, the first data security key enrolled by the user would generate
@@ -316,22 +316,22 @@
   
   A key is enrolled through a call to function MSS_SYS_puf_enroll_key(). This
   function takes the following parameters:
-    • The key identification number that will be used to later retrieve the
-      key’s value. This is the value returned by a call to
+    ï¿½ The key identification number that will be used to later retrieve the
+      keyï¿½s value. This is the value returned by a call to
       MSS_SYS_puf_get_number_of_keys().
-    • The key size.
-    • A pointer to the buffer containing the value of the key to enroll. The
+    ï¿½ The key size.
+    ï¿½ A pointer to the buffer containing the value of the key to enroll. The
       value of this pointer must be NULL if enrolling an intrinsic key where
       the SRAM-PUF will generate the actual key value.
-    • A pointer to the buffer where the enrolled key will be regenerated when
+    ï¿½ A pointer to the buffer where the enrolled key will be regenerated when
       later fetched by the user.
 
   The value of the enrolled keys can be regenerated through a call to function
   MSS_SYS_puf_fetch_key(). The identification number of the key to fetch is
-  passed as parameter to this function. The requested key’s value will be
+  passed as parameter to this function. The requested keyï¿½s value will be
   regenerated and copied to the buffer specified during key enrollment. The
-  key’s value is then available for use until it is no further required and
-  wiped, by the user’s application, from the memory buffer it was fetched into.
+  keyï¿½s value is then available for use until it is no further required and
+  wiped, by the userï¿½s application, from the memory buffer it was fetched into.
   
   Note: It is not possible to fetch a key if the key codes have been exported
         and not re-imported.
@@ -349,7 +349,7 @@
   The activation code and key codes used to regenerate the enrolled keys can be
   exported out of the SRAM-PUF. The exported activation code and key codes are
   encrypted using a one-time pad. The one-time pad is stored in the System
-  Controller’s private eNVM and is never exported. This means that the exported
+  Controllerï¿½s private eNVM and is never exported. This means that the exported
   activation and key codes can only be decrypted by the unique device that
   exported them.
   The activation and key code values stored in eNVM are replaced with hash
@@ -385,7 +385,7 @@
   When the 384 bit user design security private ECC key is intrinsically
   generated and key code #1 is stored using the JTAG or SPI programming 
   commands, the associated 768 bit public key is also generated and stored 
-  in the system controller’s private eNVM. At the same time, the256 bit SHA-256
+  in the system controllerï¿½s private eNVM. At the same time, the256 bit SHA-256
   hash of the ECC public key is enrolled to key code #2.
   The 768 bit design security ECC public key can be retrieved using the following
   system service function:
@@ -404,7 +404,7 @@
   the 256 bit hash of the associated 768 bit public key was stored using key 
   code #2. The JTAG (or SPI) key verification protocol has a special option 
   which includes the value stored in key code #2 in the computation. Thus, 
-  besides also validating the device really “knows” the already trusted key,
+  besides also validating the device really ï¿½knowsï¿½ the already trusted key,
   with this option selected, the 256-bit value stored using key code #2 is also
   validated. If this is the hash of the user ECC public key, then it is proved 
   that the public key is the authentic public key as stored in the device, and 
@@ -421,7 +421,7 @@
         enroll KC#2, when KC#1 is enrolled.
   
   Random Number Generator Seed
-  The PUF’s SRAM start-up value randomness can be harvested to generate a 
+  The PUFï¿½s SRAM start-up value randomness can be harvested to generate a 
   256-bit full entropy true random seed. A random seed can be obtained using
   function:
     - MSS_SYS_puf_get_random_seed()
@@ -449,7 +449,7 @@
 #ifndef __MSS_SYS_SERVICES_H_
 #define __MSS_SYS_SERVICES_H_ 1
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 #include "mss_comblk_page_handler.h"
 
 #ifdef __cplusplus
@@ -1586,9 +1586,9 @@ void MSS_SYS_zeroize_device
   system service which allows the Cortex-M3 processor to directly provide a 
   bitstream for programming the SmartFusion2 device.
   The ISP system service can perform these services:
-    • Authenticate a programming bitstream
-    • Program the device with a programming bitstream
-    • Verify that a programming bitstream has been correctly programmed
+    ï¿½ Authenticate a programming bitstream
+    ï¿½ Program the device with a programming bitstream
+    ï¿½ Verify that a programming bitstream has been correctly programmed
   The mode parameter specifies the ISP system service to perform. The 
   application must also provide two functions as parameters to the 
   MSS_SYS_start_isp() function. The first function is used by the ISP system
@@ -1611,7 +1611,7 @@ void MSS_SYS_zeroize_device
     next page of programming data to be sent to the System Controller and 
     the number of bytes contained in the next page. Refer to the description 
     of the comblk_page_handler_t type for details of the page_read_handler 
-    function’s parameters and return values.
+    functionï¿½s parameters and return values.
  
   @param isp_completion_handler
     The isp_completion_handler parameter is a pointer to a function with the
@@ -1713,8 +1713,8 @@ uint8_t MSS_SYS_initiate_iap
 
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_check_digest() function is used to recalculate and compare 
-  cryptographic digests of selected NVM component(s) – FPGA fabric, eNVM0, and 
-  eNVM1 – to those previously computed and saved in NVM.
+  cryptographic digests of selected NVM component(s) ï¿½ FPGA fabric, eNVM0, and 
+  eNVM1 ï¿½ to those previously computed and saved in NVM.
   Note: The FPGA fabric will enter the Flash*Freeze state if it is powered up 
   when its digest is checked.
 
@@ -1722,12 +1722,12 @@ uint8_t MSS_SYS_initiate_iap
     The options parameter specifies which components' digest will be recalculated
     and checked. The allowed values for the options parameter are any one of the 
     following bitmask constants or a bitwise OR of more than one:
-    • MSS_SYS_DIGEST_CHECK_FABRIC  (bit mask = 0x01)
-    • MSS_SYS_DIGEST_CHECK_ENVM0   (bit mask = 0x02)
-    • MSS_SYS_DIGEST_CHECK_ENVM1   (bit mask = 0x04)
-    • MSS_SYS_DIGEST_CHECK_SYS     (bit mask = 0x08)
-    • MSS_SYS_DIGEST_CHECK_ENVMFP  (bit mask = 0x10)
-    • MSS_SYS_DIGEST_CHECK_ENVMUP  (bit mask = 0x20)
+    ï¿½ MSS_SYS_DIGEST_CHECK_FABRIC  (bit mask = 0x01)
+    ï¿½ MSS_SYS_DIGEST_CHECK_ENVM0   (bit mask = 0x02)
+    ï¿½ MSS_SYS_DIGEST_CHECK_ENVM1   (bit mask = 0x04)
+    ï¿½ MSS_SYS_DIGEST_CHECK_SYS     (bit mask = 0x08)
+    ï¿½ MSS_SYS_DIGEST_CHECK_ENVMFP  (bit mask = 0x10)
+    ï¿½ MSS_SYS_DIGEST_CHECK_ENVMUP  (bit mask = 0x20)
     NOTE: Private factory eNVM and private user eNVM digest checks are only 
           available on the M2S060 and larger devices.
   @return
@@ -1769,7 +1769,7 @@ uint8_t MSS_SYS_check_digest
   enrolling the device into the overall system it operates in. It creates an 
   activation code which will be used to regenerate the SRAM-PUF secret key after
   each power-up of the SRAM-PUF. The activation code is used to eliminate the 
-  randomness of the SRAM-PUF power-up content in order to retrieve the device’s 
+  randomness of the SRAM-PUF power-up content in order to retrieve the deviceï¿½s 
   unique PUF secret key.
   Note: This system service is only available on large SmartFusion2 devices
         starting with the M2S060.
@@ -1867,12 +1867,12 @@ uint8_t MSS_SYS_puf_get_number_of_keys
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_puf_enroll_key() function is used to enroll keys into the 
   SRAM-PUF hardware block. Keys can be either intrinsic keys or extrinsic keys. 
-  An intrinsic key’s value is randomly generated by the SRAM-PUF hardware block
-  during key enrollment. An extrinsic key’s value is supplied by the user. A key
-  code is created and stored in the System Controller’s private eNVM during key 
+  An intrinsic keyï¿½s value is randomly generated by the SRAM-PUF hardware block
+  during key enrollment. An extrinsic keyï¿½s value is supplied by the user. A key
+  code is created and stored in the System Controllerï¿½s private eNVM during key 
   enrollment. The key code along with the activation code created as part of the
   call to MSS_SYS_puf_create_activation_code()  and the SRAM-PUF start-up value 
-  can then be used later to regenerate the enrolled key’s value. Enrolled keys 
+  can then be used later to regenerate the enrolled keyï¿½s value. Enrolled keys 
   can be later reconstructed and retrieved using the MSS_SYS_puf_fetch_key() 
   function. The value of the key is protected until it is fetched since its 
   actual value is not stored anywhere in the system.
@@ -1900,7 +1900,7 @@ uint8_t MSS_SYS_puf_get_number_of_keys
     The p_key_value parameter is a pointer to the buffer containing the value of
     the key to enroll. The buffer pointed to by p_key_value contains the value 
     of the extrinsic key specified by the user.
-    Setting this pointer’s value to zero specifies that an intrinsic key is to 
+    Setting this pointerï¿½s value to zero specifies that an intrinsic key is to 
     be enrolled. In this case, a random value is generated using the SRAM-PUF as
     the key value.
 
@@ -1982,7 +1982,7 @@ uint8_t MSS_SYS_puf_delete_key
   The key value is reconstructed based on the SRAM-PUF power-on value, the 
   activation code created when the device was commissioned using the 
   MSS_SYS_puf_create_activation_code() function and the key code stored in the 
-  SRAM-PUF hardware block’s  private eNVM at key enrollment time. The key value 
+  SRAM-PUF hardware blockï¿½s  private eNVM at key enrollment time. The key value 
   does not exist anywhere in the system until it is retrieved by a call to 
   MSS_SYS_puf_fetch_key(). Care must be taken to destroy the key value returned 
   by MSS_SYS_puf_fetch_key() once it is not required anymore.
@@ -2177,7 +2177,7 @@ uint8_t MSS_SYS_puf_get_random_seed
 
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_ecc_point_multiplication() function provides access to the
-  SmartFusion2 System Controller’s Elliptic Curve Cryptography (ECC) point
+  SmartFusion2 System Controllerï¿½s Elliptic Curve Cryptography (ECC) point
   multiplication system service. The MSS_SYS_ecc_point_multiplication() function
   computes the point multiplication of a point P on the NIST-384 curve by a
   scalar value d. The point multiplication results in point Q as follows:
@@ -2224,7 +2224,7 @@ uint8_t MSS_SYS_ecc_point_multiplication
 
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_ecc_point_addition() function provides access to the SmartFusion2
-  System Controller’s Elliptic Curve Cryptography (ECC) point addition system
+  System Controllerï¿½s Elliptic Curve Cryptography (ECC) point addition system
   service. The MSS_SYS_ecc_point_addition() function computes the addition of
   two points, P and Q, on the NIST P-384 curve. The point addition results in
   point R as follows:
@@ -2311,8 +2311,8 @@ void MSS_SYS_ecc_get_base_point
   @return
     The MSS_SYS_start_clock_monitor() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_start_clock_monitor
 (
@@ -2334,8 +2334,8 @@ uint8_t MSS_SYS_start_clock_monitor
   @return
     The MSS_SYS_stop_clock_monitor() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_stop_clock_monitor
 (
@@ -2345,10 +2345,10 @@ uint8_t MSS_SYS_stop_clock_monitor
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_enable_puf_power_down() function is used to instruct the system
   controller to power down the PUF after each of the following operations:
-    • key fetch
-    • key creation
-    • key import
-    • random seed generation
+    ï¿½ key fetch
+    ï¿½ key creation
+    ï¿½ key import
+    ï¿½ random seed generation
   Powering down the PUF after these operations is the default PUF behaviour.
   Note: This system service is only available on large SmartFusion2 devices
         starting with the M2S060.
@@ -2359,8 +2359,8 @@ uint8_t MSS_SYS_stop_clock_monitor
   @return
     The MSS_SYS_enable_puf_power_down() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_enable_puf_power_down
 (
@@ -2370,10 +2370,10 @@ uint8_t MSS_SYS_enable_puf_power_down
 /*-------------------------------------------------------------------------*//**
   The MSS_SYS_disable_puf_power_down() function is used to retain PUF power 
   after the following operations:
-    • key fetch
-    • key creation
-    • key import
-    • random seed generation
+    ï¿½ key fetch
+    ï¿½ key creation
+    ï¿½ key import
+    ï¿½ random seed generation
   Note: This system service is only available on large SmartFusion2 devices
       starting with the M2S060.
       
@@ -2383,8 +2383,8 @@ uint8_t MSS_SYS_enable_puf_power_down
   @return
     The MSS_SYS_disable_puf_power_down() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_disable_puf_power_down
 (
@@ -2407,8 +2407,8 @@ uint8_t MSS_SYS_disable_puf_power_down
   @return
     The MSS_SYS_clear_lock_parity() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_clear_lock_parity
 (
@@ -2434,8 +2434,8 @@ uint8_t MSS_SYS_clear_lock_parity
   @return
     The MSS_SYS_clear_mesh_short() function returns one of the following
     status codes:
-        • MSS_SYS_SUCCESS
-        • MSS_SYS_UNEXPECTED_ERROR
+        ï¿½ MSS_SYS_SUCCESS
+        ï¿½ MSS_SYS_UNEXPECTED_ERROR
 */
 uint8_t MSS_SYS_clear_mesh_short
 (

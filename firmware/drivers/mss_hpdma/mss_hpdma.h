@@ -75,7 +75,7 @@
 extern "C" {
 #endif 
 
-#include "../../CMSIS/m2sxxx.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
 
 /*-------------------------------------------------------------------------*//**
   The HPDMA_TO_DDR constant is used to specify the data transfer direction. It
