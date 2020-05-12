@@ -44,7 +44,7 @@
 #include <drivers/mss_can/mss_can.h>
 #include <drivers/mss_uart/mss_uart.h>
 
-#include "leds.h"
+#include "obc.h"
 
 int obc_init(void) 
 {

@@ -41,8 +41,8 @@
 
 #ifndef OBC_H_
 #define OBC_H_
-
-#define LEDS_MODULE_NAME        		"OBC"
+	
+#define OBC_MODULE_NAME        			"OBC"
 
 /* Operation modes */
 #define EXPERIMENT_PAYLOAD          	0       /**< Experiment payload operation mode. */
