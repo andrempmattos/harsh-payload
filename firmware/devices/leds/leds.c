@@ -66,13 +66,14 @@ void led_clear(void)
 
 void led_toggle(void)
 {
-    if ((MSS_GPIO_get_outputs() & LED_SYSTEM_PIN_MASK) == HIGH)
+
+    if (MSS_GPIO_get_outputs() & LED_SYSTEM_PIN_MASK)
     {
-        MSS_GPIO_set_output(LED_SYSTEM, LOW);
+        MSS_GPIO_set_output(LED_SYSTEM_PIN, LOW);
     }
     else 
     {
-        MSS_GPIO_set_output(LED_SYSTEM, HIGH);    
+        MSS_GPIO_set_output(LED_SYSTEM_PIN, HIGH);
     }
 }
 
