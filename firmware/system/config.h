@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.6
+ * \version 0.0.9
  * 
  * \date 08/05/2020
  * 
@@ -43,7 +43,7 @@
 
 /* Tasks */
 #define CONFIG_TASK_STARTUP_ENABLED                     1
-#define CONFIG_TASK_WATCHDOG_RESET_ENABLED              0
+#define CONFIG_TASK_WATCHDOG_RESET_ENABLED              1
 #define CONFIG_TASK_HEARTBEAT_ENABLED                   1
 #define CONFIG_TASK_SYSTEM_RESET_ENABLED                0
 
