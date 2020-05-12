@@ -41,7 +41,7 @@
 #include <FreeRTOS.h>
 #include <task.h>
 
-#include <config/config.h>
+#include <system/config.h>
 
 #include "tasks.h"
 #include "startup.h"
@@ -112,5 +112,6 @@ void create_tasks()
 //        /* Error creating the startup status event group */
 //    }
 //}
+}
 
 /** \} End of tasks group */

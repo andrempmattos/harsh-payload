@@ -48,7 +48,7 @@
 
 xTaskHandle xTaskStartupHandle;
 
-EventGroupHandle_t task_startup_status;
+//EventGroupHandle_t task_startup_status;
 
 void vTaskStartup(void *pvParameters)
 {
@@ -67,7 +67,7 @@ void vTaskStartup(void *pvParameters)
     sys_log_new_line();
 
     /* LEDs device initialization */
-    leds_init()
+    leds_init();
 
     if (error)
     {
@@ -85,7 +85,7 @@ void vTaskStartup(void *pvParameters)
     }
 
     /* Startup task status = Done */
-    xEventGroupSetBits(task_startup_status, TASK_STARTUP_DONE);
+    //xEventGroupSetBits(task_startup_status, TASK_STARTUP_DONE);
 
     vTaskSuspend(xTaskStartupHandle);
 }

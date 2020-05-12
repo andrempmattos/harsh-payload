@@ -48,7 +48,7 @@ xTaskHandle xTaskHeartbeatHandle;
 void vTaskHeartbeat(void *pvParameters)
 {
     /* Wait startup task to finish */
-    xEventGroupWaitBits(task_startup_status, TASK_STARTUP_DONE, pdFALSE, pdTRUE, pdMS_TO_TICKS(TASK_HEARTBEAT_INIT_TIMEOUT_MS));
+    //xEventGroupWaitBits(task_startup_status, TASK_STARTUP_DONE, pdFALSE, pdTRUE, pdMS_TO_TICKS(TASK_HEARTBEAT_INIT_TIMEOUT_MS));
 
     while(1)
     {
