@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.7
+ * \version 0.0.8
  * 
  * \date 08/05/2020
  * 
