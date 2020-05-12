@@ -30,7 +30,7 @@
  * 
  * \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * \version 0.0.2
+ * \version 0.0.6
  * 
  * \date 22/02/2019
  * 
@@ -42,7 +42,7 @@
 #ifndef SYS_LOG_CONFIG_H_
 #define SYS_LOG_CONFIG_H_
 
-#include <config/config.h>
+#include <system/config.h>
 
 #include "sys_log.h"
 

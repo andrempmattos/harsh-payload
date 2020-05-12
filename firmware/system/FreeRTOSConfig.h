@@ -118,11 +118,11 @@ extern uint32_t SystemCoreClock;
 #define configTIMER_TASK_STACK_DEPTH	( configMINIMAL_STACK_SIZE * 2 )
 
 /* Run time stats gathering definitions. */
-void vConfigureTimerForRunTimeStats( void );
-uint32_t ulGetRunTimeCounterValue( void );
-#define configGENERATE_RUN_TIME_STATS	1
-#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() vConfigureTimerForRunTimeStats()
-#define portGET_RUN_TIME_COUNTER_VALUE() ulGetRunTimeCounterValue()
+//void vConfigureTimerForRunTimeStats( void );
+//uint32_t ulGetRunTimeCounterValue( void );
+//#define configGENERATE_RUN_TIME_STATS	1
+//#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() vConfigureTimerForRunTimeStats()
+//#define portGET_RUN_TIME_COUNTER_VALUE() ulGetRunTimeCounterValue()
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */

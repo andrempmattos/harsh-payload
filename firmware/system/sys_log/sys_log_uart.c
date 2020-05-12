@@ -30,7 +30,7 @@
  * 
  * \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * \version 0.0.2
+ * \version 0.0.6
  * 
  * \date 03/11/2019
  * 
@@ -39,25 +39,21 @@
  * \{
  */
 
-#include <drivers/uart/uart.h>
+#include <drivers/mss_uart/mss_uart.h>
 
 #include "sys_log.h"
 
 bool sys_log_uart_init()
 {
-    uart_config_t config;
 
-    config.baudrate     = 115200;
-    config.data_bits    = 8;
-    config.parity       = UART_NO_PARITY;
-    config.stop_bits    = UART_ONE_STOP_BIT;
+    MSS_UART_init(&g_mss_uart0, MSS_UART_115200_BAUD, MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
 
-    return uart_init(UART_PORT_2, config) == 0 ? true : false;
+    return true;
 }
 
 void sys_log_uart_write_byte(uint8_t byte)
 {
-    uart_write(UART_PORT_2, &byte, 1);
+	MSS_UART_polled_tx(&g_mss_uart0, &byte, sizeof(uint8_t));
 }
 
 /** \} End of sys_log_uart group */

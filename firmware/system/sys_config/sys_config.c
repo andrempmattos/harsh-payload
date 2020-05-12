@@ -7,8 +7,8 @@
  *
  */
 
-#include "../../CMSIS/m2sxxx.h"
-#include "../../CMSIS/sys_init_cfg_types.h"
+#include "../../hal/arm_cmsis/m2sxxx.h"
+#include "../../hal/arm_cmsis/sys_init_cfg_types.h"
 #include "sys_config.h"
 
 /*==============================================================================
