@@ -12,7 +12,7 @@
 #ifdef MSCC_NO_RELATIVE_PATHS
 #include "mss_assert.h"
 #else
-#include "../../CMSIS/mss_assert.h"
+#include "../../hal/arm_cmsis/mss_assert.h"
 #endif
 
 
