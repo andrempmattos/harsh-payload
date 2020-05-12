@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.6
+ * \version 0.0.7
  * 
  * \date 08/05/2020
  * 
@@ -41,13 +41,13 @@
 #ifndef VERSION_H_
 #define VERSION_H_
 
-#define FIRMWARE_VERSION            "0.0.6"
+#define FIRMWARE_VERSION            "0.0.7"
 
 #define FIRMWARE_STATUS             "Development"
 
 #define FIRMWARE_AUTHOR             "Andre Mattos"
 
-#define FIRMWARE_AUTHOR_EMAIL       "andre.mattos@spacelab.ufsc.br"
+#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
 
 #endif /* VERSION_H_ */
 
