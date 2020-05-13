@@ -1,5 +1,5 @@
 /*
- * version.h
+ * ext_sdram.c
  *
  * MIT License
  *
@@ -26,29 +26,46 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief External SDRAM driver implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.11
  * 
- * \date 08/05/2020
+ * \date 13/05/2020
  * 
- * \defgroup version Version
+ * \addtogroup ext_sdram
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#include <system/sys_log/sys_log.h>
 
-#define FIRMWARE_VERSION            "0.0.11"
+#include "ext_sdram.h"
 
-#define FIRMWARE_STATUS             "Development"
+int sdram_init(media_t med)
+{
+    
+}
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+void sdram_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
+{
+    while(len > 0) 
+    {
+        *(volatile uint32_t *)(addr) = *data++;
+        addr = addr + 4;
+        len--;
+    }    
+}
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+int sdram_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
+{
+    while(len > 0) 
+    {
+        *data++ = *(volatile uint32_t *)(addr);
+        addr = addr + 4;
+        len--;
+    }    
+}
 
-#endif /* VERSION_H_ */
 
-/** \} End of version group */
+/** \} End of ext_sdram group */
