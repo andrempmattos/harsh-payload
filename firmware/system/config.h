@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.9
+ * \version 0.0.13
  * 
  * \date 08/05/2020
  * 
@@ -48,7 +48,10 @@
 #define CONFIG_TASK_SYSTEM_RESET_ENABLED                0
 
 /* Debug and log messages */
-//#define CONFIG_DRIVERS_DEBUG_ENABLED                    0
+#define CONFIG_DRIVERS_DEBUG_ENABLED                    1
+
+/* SDRAM test during initialization  */
+#define CONFIG_EXT_SDRAM_TEST_ENABLED                   1
 
 
 #endif /* CONFIG_H_ */
