@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.12
+ * \version 0.0.14
  * 
  * \date 13/05/2020
  * 
@@ -53,22 +53,30 @@ int media_init(media_t med)
         case MEDIA_ENVM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eNVM memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM memory!");
+
+        case MEDIA_ESRAM_0:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM_0 memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_SDRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the SDRAM memory!");
+
+        case MEDIA_ESRAM_1:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM_1 memory!");
             sys_log_new_line();
-
             return -1;
+
+        case MEDIA_SDRAM_B:
+            return sdram_init(EXT_SDRAM_B);
+        
+        case MEDIA_SDRAM_D:
+            return sdram_init(EXT_SDRAM_D);
+        
+        case MEDIA_SDRAM_F:
+            return sdram_init(EXT_SDRAM_F);
+        
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to initialize!");
             sys_log_new_line();
-
             return -1;
     }
 }
@@ -80,22 +88,30 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
         case MEDIA_ENVM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eNVM memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM memory!");
+
+        case MEDIA_ESRAM_0:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM_0 memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_SDRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the SDRAM memory!");
+
+        case MEDIA_ESRAM_1:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM_1 memory!");
             sys_log_new_line();
-
             return -1;
+
+        case MEDIA_SDRAM_B:
+            return sdram_write(EXT_SDRAM_B, addr, data, len);
+        
+        case MEDIA_SDRAM_D:
+            return sdram_write(EXT_SDRAM_D, addr, data, len);
+        
+        case MEDIA_SDRAM_F:
+            return sdram_write(EXT_SDRAM_F, addr, data, len);
+
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to write!");
             sys_log_new_line();
-
             return -1;
     }
 }
@@ -107,22 +123,30 @@ int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
         case MEDIA_ENVM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eNVM memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM memory!");
+
+        case MEDIA_ESRAM_0:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM_0 memory!");
             sys_log_new_line();
-
             return -1;
-        case MEDIA_SDRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the SDRAM memory!");
+
+        case MEDIA_ESRAM_1:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM_1 memory!");
             sys_log_new_line();
-
             return -1;
+
+        case MEDIA_SDRAM_B:
+            return sdram_read(EXT_SDRAM_B, addr, data, len);
+        
+        case MEDIA_SDRAM_D:
+            return sdram_read(EXT_SDRAM_D, addr, data, len);
+        
+        case MEDIA_SDRAM_F:
+            return sdram_read(EXT_SDRAM_F, addr, data, len);
+
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to read!");
             sys_log_new_line();
-
             return -1;
     }
 }

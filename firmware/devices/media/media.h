@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.12
+ * \version 0.0.14
  * 
  * \date 13/05/2020
  * 
@@ -50,8 +50,6 @@
 #define MEDIA_ENVM_END_ADDR			0x6003FFFFu			/**< Embedded flash memory end address. */
 #define MEDIA_ESRAM_START_ADDR		0x20000000u			/**< Embedded SRAM memory start address. */
 #define MEDIA_ESRAM_END_ADDR		0x2000FFFFu			/**< Embedded SRAM memory end address. */
-#define MEDIA_SDRAM_START_ADDR		0xA0000000u			/**< External SDRAM memory start address. */
-#define MEDIA_SDRAM_END_ADDR		0xA0C00000u			/**< External SDRAM memory end address. */
 
 /**
  * \brief Media types.
@@ -59,8 +57,11 @@
 typedef enum
 {
     MEDIA_ENVM=0,      	/**< Embedded flash memory. */
-    MEDIA_ESRAM,       	/**< Embedded SRAM memory. */
-    MEDIA_SDRAM			/**< External SDRAM memory. */
+    MEDIA_ESRAM_0,      /**< Embedded SRAM memory. */
+    MEDIA_ESRAM_1,      /**< Embedded SRAM memory. */
+    MEDIA_SDRAM_B,		/**< External SDRAM memory B. */
+    MEDIA_SDRAM_D,		/**< External SDRAM memory D. */
+    MEDIA_SDRAM_F,		/**< External SDRAM memory F. */
 } media_types_e;
 
 /**
@@ -74,8 +75,11 @@ typedef uint8_t media_t;
  * \param[in] med is the storage media to initiailize. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *		-\b MEDIA_ESRAM_0
+ *		-\b MEDIA_ESRAM_1
+ *      -\b MEDIA_SDRAM_B
+ *      -\b MEDIA_SDRAM_D
+ *      -\b MEDIA_SDRAM_F
  *      .
  * \endparblock
  *
@@ -89,8 +93,11 @@ int media_init(media_t med);
  * \param[in] med is the storage media to write. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *		-\b MEDIA_ESRAM_0
+ *		-\b MEDIA_ESRAM_1
+ *      -\b MEDIA_SDRAM_B
+ *      -\b MEDIA_SDRAM_D
+ *      -\b MEDIA_SDRAM_F
  *      .
  * \endparblock
  *
@@ -110,8 +117,11 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
  * \param[in] med is the storage media to read. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *		-\b MEDIA_ESRAM_0
+ *		-\b MEDIA_ESRAM_1
+ *      -\b MEDIA_SDRAM_B
+ *      -\b MEDIA_SDRAM_D
+ *      -\b MEDIA_SDRAM_F
  *      .
  * \endparblock
  *
