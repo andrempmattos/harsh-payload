@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.11
+ * \version 0.0.13
  * 
  * \date 13/05/2020
  * 
@@ -46,29 +46,53 @@
 
 #define EXT_SDRAM_MODULE_NAME           "SDRAM"
 
+#define EXT_SDRAM_B_START_ADDR		0xA0000000u			/**< External SDRAM memory B start address. */
+#define EXT_SDRAM_B_END_ADDR		0xA3FFFFFFu			/**< External SDRAM memory B end address. */
+#define EXT_SDRAM_D_START_ADDR		0xA4000000u			/**< External SDRAM memory D start address. */
+#define EXT_SDRAM_D_END_ADDR		0xA7FFFFFFu			/**< External SDRAM memory D end address. */
+#define EXT_SDRAM_F_START_ADDR		0xA8000000u			/**< External SDRAM memory F start address. */
+#define EXT_SDRAM_F_END_ADDR		0xABFFFFFFu			/**< External SDRAM memory F end address. */
+
+#define DUMMY_TEST_VALUE			0xAABBCCDDu			/**< Dummy value for test purposes. */
+
 /**
- * \brief Media initialization.
+ * \brief External SDRAM devices types.
+ */
+typedef enum
+{
+    EXT_SDRAM_B=0,      	/**< External SDRAM memory B. */
+    EXT_SDRAM_D,       		/**< External SDRAM memory D. */
+    EXT_SDRAM_F				/**< External SDRAM memory F. */
+} sdram_devices_e;
+
+/**
+ * \brief External SDRAM type.
+ */
+typedef uint8_t sdram_device_t;
+
+/**
+ * \brief External SDRAM initialization.
  *
- * \param[in] med is the storage media to initiailize. It can be:
+ * \param[in] dev is the storage external SDRAM device to initiailize. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *      -\b EXT_SDRAM_B
+ *		-\b EXT_SDRAM_D
+ *      -\b EXT_SDRAM_F
  *      .
  * \endparblock
  *
  * \return The status/error code.
  */
-int media_init(media_t med);
+int sdram_init(sdram_device_t dev);
 
 /**
- * \brief Writes data into a given address of a media device.
+ * \brief Writes data into a given address of a external SDRAM device.
  *
- * \param[in] med is the storage media to write. It can be:
+ * \param[in] dev is the storage external SDRAM device to write. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *      -\b EXT_SDRAM_B
+ *		-\b EXT_SDRAM_D
+ *      -\b EXT_SDRAM_F
  *      .
  * \endparblock
  *
@@ -80,16 +104,16 @@ int media_init(media_t med);
  *
  * \return The status/error code.
  */
-int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
+int sdram_write(sdram_device_t dev, uint32_t addr, uint32_t *data, uint16_t len);
 
 /**
- * \brief Reads data from a given address of a media device.
+ * \brief Reads data from a given address of a external SDRAM device.
  *
- * \param[in] med is the storage media to read. It can be:
+ * \param[in] dev is the storage external SDRAM device to read. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
- *      -\b MEDIA_SDRAM
+ *      -\b EXT_SDRAM_B
+ *		-\b EXT_SDRAM_D
+ *      -\b EXT_SDRAM_F
  *      .
  * \endparblock
  *
@@ -101,7 +125,7 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
  *
  * \return The status/error code.
  */
-int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
+int sdram_read(sdram_device_t dev, uint32_t addr, uint32_t *data, uint16_t len);
 
 #endif /* EXT_SDRAM_H_ */
 
