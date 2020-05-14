@@ -1,5 +1,5 @@
 /*
- * version.h
+ * experiment_manager.c
  *
  * MIT License
  *
@@ -26,29 +26,38 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Experiment Manager task implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.15
  * 
- * \date 08/05/2020
+ * \date 09/05/2020
  * 
- * \defgroup version Version
+ * \addtogroup experiment_manager
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#include <devices/latchup_monitors/latchup_monitors.h>
 
-#define FIRMWARE_VERSION            "0.0.15"
+#include "experiment_manager.h"
+#include "startup.h"
 
-#define FIRMWARE_STATUS             "Development"
+xTaskHandle xTaskHeartbeatHandle;
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+void vTaskExperimentManager(void *pvParameters)
+{
+    /* Wait startup task to finish */
+    //xEventGroupWaitBits(task_startup_status, TASK_STARTUP_DONE, pdFALSE, pdTRUE, pdMS_TO_TICKS(TASK_HEARTBEAT_INIT_TIMEOUT_MS));
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+    while(1)
+    {
+        TickType_t last_cycle = xTaskGetTickCount();
 
-#endif /* VERSION_H_ */
+        
 
-/** \} End of version group */
+        vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_HEARTBEAT_PERIOD_MS));
+    }
+}
+
+/** \} End of experiment_manager group */

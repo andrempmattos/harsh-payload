@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.15
  * 
  * \date 08/05/2020
  * 
@@ -47,8 +47,7 @@
 #include "startup.h"
 #include "watchdog_reset.h"
 #include "heartbeat.h"
-#include "system_reset.h"
-//#include "csp_server.h"
+#include "experiment_manager.h"
 
 void create_tasks()
 {
@@ -82,36 +81,16 @@ void create_tasks()
     }
 #endif /* CONFIG_TASK_HEARTBEAT_ENABLED */
 
-#if CONFIG_TASK_SYSTEM_RESET_ENABLED == 1
-    xTaskCreate(vTaskSystemReset, TASK_SYSTEM_RESET_NAME, TASK_SYSTEM_RESET_STACK_SIZE, NULL, TASK_SYSTEM_RESET_PRIORITY, &xTaskSystemResetHandle);
+#if CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED == 1
+    xTaskCreate(vTaskExperimentManager, TASK_EXPERIMENT_MANAGER_NAME, TASK_EXPERIMENT_MANAGER_STACK_SIZE, NULL, TASK_EXPERIMENT_MANAGER_PRIORITY, &xTaskExperimentManagerHandle);
 
-    if (xTaskSystemResetHandle == NULL)
+    if (xTaskExperimentManagerHandle == NULL)
     {
         /* Error creating the system reset task */
     }
-#endif /* CONFIG_TASK_SYSTEM_RESET_ENABLED */
+#endif /* CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED */
 
-//#if CONFIG_TASK_CSP_SERVER_ENABLED == 1
-//    xTaskCreate(vTaskCSPServer, TASK_CSP_SERVER_NAME, TASK_CSP_SERVER_STACK_SIZE, NULL, TASK_CSP_SERVER_PRIORITY, &xTaskCSPServerHandle);
-//
-//    if (xTaskCSPServerHandle == NULL)
-//    {
-//        /* Error creating the CSP server task */
-//    }
-//#endif /* CONFIG_TASK_CSP_SERVER_ENABLED */
-//
-//    create_event_groups();
-//}
-//
-//void create_event_groups()
-//{
-//    task_startup_status = xEventGroupCreate();
-//
-//    if (task_startup_status == NULL)
-//    {
-//        /* Error creating the startup status event group */
-//    }
-//}
+
 }
 
 /** \} End of tasks group */

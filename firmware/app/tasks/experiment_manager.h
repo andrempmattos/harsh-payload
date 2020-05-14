@@ -1,5 +1,5 @@
 /*
- * version.h
+ * experiment_manager.h
  *
  * MIT License
  *
@@ -26,29 +26,45 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Experiment Manager task definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.15
  * 
- * \date 08/05/2020
+ * \date 09/05/2020
  * 
- * \defgroup version Version
+ * \defgroup experiment_manager ExperimentManager
+ * \ingroup tasks
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#ifndef EXPERIMENT_MANAGER_H_
+#define EXPERIMENT_MANAGER_H_
 
-#define FIRMWARE_VERSION            "0.0.15"
+#include <FreeRTOS.h>
+#include <task.h>
 
-#define FIRMWARE_STATUS             "Development"
+#define TASK_EXPERIMENT_MANAGER_NAME        		"ExperimentManager"     /**< Task name. */
+#define TASK_EXPERIMENT_MANAGER_STACK_SIZE          500             		/**< Memory stack size in bytes. */
+#define TASK_EXPERIMENT_MANAGER_PRIORITY            3               		/**< Priority. */
+#define TASK_EXPERIMENT_MANAGER_PERIOD_MS           1000             		/**< Period in milliseconds. */
+#define TASK_EXPERIMENT_MANAGER_INIT_TIMEOUT_MS     2000            		/**< Wait time to initialize the task in milliseconds. */
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+/**
+ * \brief Experiment manager task handle.
+ */
+extern xTaskHandle xTaskExperimentManagerHandle;
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+/**
+ * \brief Experiment manager task.
+ *
+ * \param[in] pvParameters is a value that will passed as the task's parameter.
+ *
+ * \return None.
+ */
+void vTaskExperimentManager(void *pvParameters);
 
-#endif /* VERSION_H_ */
+#endif /* EXPERIMENT_MANAGER_H_ */
 
-/** \} End of version group */
+/** \} End of experiment_manager group */
