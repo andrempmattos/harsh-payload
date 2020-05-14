@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.13
+ * \version 0.0.15
  * 
  * \date 08/05/2020
  * 
@@ -45,7 +45,7 @@
 #define CONFIG_TASK_STARTUP_ENABLED                     1
 #define CONFIG_TASK_WATCHDOG_RESET_ENABLED              1
 #define CONFIG_TASK_HEARTBEAT_ENABLED                   1
-#define CONFIG_TASK_SYSTEM_RESET_ENABLED                0
+#define CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED          1
 
 /* Debug and log messages */
 #define CONFIG_DRIVERS_DEBUG_ENABLED                    1
