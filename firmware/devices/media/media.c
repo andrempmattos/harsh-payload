@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.14
+ * \version 0.0.16
  * 
  * \date 13/05/2020
  * 
@@ -41,7 +41,7 @@
 #include <system/sys_log/sys_log.h>
 
 #include <drivers/mss_nvm/mss_nvm.h>
-#include <drivers/mss_sram/mss_sram.h>
+//#include <drivers/mss_sram/mss_sram.h>
 #include <drivers/ext_sdram/ext_sdram.h>
 
 #include "media.h"

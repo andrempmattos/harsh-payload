@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.7
+ * \version 0.0.16
  * 
  * \date 12/05/2020
  * 
@@ -41,6 +41,8 @@
 
 #ifndef OBC_H_
 #define OBC_H_
+
+#include <stdint.h>
 	
 #define OBC_MODULE_NAME        			"OBC"
 

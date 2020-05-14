@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.10
+ * \version 0.0.16
  * 
  * \date 12/05/2020
  * 
@@ -43,7 +43,7 @@
 
 #include "latchup_monitors.h"
 
-void latchup_monitors_init()
+int latchup_monitors_init()
 {
 
 }

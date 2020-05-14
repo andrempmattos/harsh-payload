@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.16
  * 
  * \date 08/05/2020
  * 
@@ -41,7 +41,11 @@
 #ifndef DEVICES_H_
 #define DEVICES_H_
 
-//#include "/.h"
+#include "leds/leds.h"
+#include "latchup_monitors/latchup_monitors.h"
+#include "media/media.h"
+#include "obc/obc.h"
+#include "watchdog/watchdog.h"
 
 
 #endif /* DEVICES_H_ */

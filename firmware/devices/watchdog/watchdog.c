@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.8
+ * \version 0.0.16
  * 
  * \date 09/05/2020
  * 
@@ -39,7 +39,7 @@
  */
 
 
-#include <drivers/wdt/wdt.h>
+#include <drivers/mss_watchdog/mss_watchdog.h>
 
 #include "watchdog.h"
 
