@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.4
+ * \version 0.0.15
  * 
  * \date 09/05/2020
  * 
@@ -43,6 +43,7 @@
 #include <system/config.h>
 #include <system/sys_log/sys_log.h>
 #include <devices/leds/leds.h>
+#include <devices/watchdog/watchdog.h>
 
 #include "startup.h"
 
@@ -53,6 +54,9 @@ xTaskHandle xTaskStartupHandle;
 void vTaskStartup(void *pvParameters)
 {
     bool error = false;
+
+    /* Watchdog device initialization */
+    watchdog_init()
 
     /* Logger device initialization */
     sys_log_init();
