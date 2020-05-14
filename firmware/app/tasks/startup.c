@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.15
+ * \version 0.0.16
  * 
  * \date 09/05/2020
  * 
@@ -56,7 +56,7 @@ void vTaskStartup(void *pvParameters)
     bool error = false;
 
     /* Watchdog device initialization */
-    watchdog_init()
+    watchdog_init();
 
     /* Logger device initialization */
     sys_log_init();

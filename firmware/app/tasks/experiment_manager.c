@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.15
+ * \version 0.0.16
  * 
  * \date 09/05/2020
  * 
@@ -43,7 +43,7 @@
 #include "experiment_manager.h"
 #include "startup.h"
 
-xTaskHandle xTaskHeartbeatHandle;
+xTaskHandle xTaskExperimentManagerHandle;
 
 void vTaskExperimentManager(void *pvParameters)
 {
@@ -56,7 +56,7 @@ void vTaskExperimentManager(void *pvParameters)
 
         
 
-        vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_HEARTBEAT_PERIOD_MS));
+        vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_EXPERIMENT_MANAGER_PERIOD_MS));
     }
 }
 
