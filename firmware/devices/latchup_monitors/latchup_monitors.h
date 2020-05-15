@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.18
  * 
  * \date 12/05/2020
  * 
@@ -47,21 +47,29 @@
 #define LATCHUP_MODULE_NAME        "LATCHUP"
 
 /* Latch-up monitor pins */
-#define MEMORY_B_LATCHUP_PWGD_STATUS_PIN    MSS_GPIO_3     	/**< SDRAM Memory B latch-up monitor power good status pin. */
-#define MEMORY_D_LATCHUP_PWGD_STATUS_PIN	MSS_GPIO_4  	/**< SDRAM Memory D latch-up monitor power good status pin. */
-#define MEMORY_F_LATCHUP_PWGD_STATUS_PIN    MSS_GPIO_5  	/**< SDRAM Memory F latch-up monitor power good status pin. */
-#define MEMORY_B_LATCHUP_ENABLE_PIN    		MSS_GPIO_6     	/**< SDRAM Memory B latch-up monitor enable pin. */
-#define MEMORY_D_LATCHUP_ENABLE_PIN    		MSS_GPIO_7     	/**< SDRAM Memory D latch-up monitor enable pin. */
-#define MEMORY_F_LATCHUP_ENABLE_PIN    		MSS_GPIO_8     	/**< SDRAM Memory F latch-up monitor enable pin. */
+#define MEMORY_B_LATCHUP_PWGD_STATUS_PIN    MSS_GPIO_3     		/**< SDRAM Memory B latch-up monitor power good status pin. */
+#define MEMORY_D_LATCHUP_PWGD_STATUS_PIN	MSS_GPIO_4  		/**< SDRAM Memory D latch-up monitor power good status pin. */
+#define MEMORY_F_LATCHUP_PWGD_STATUS_PIN    MSS_GPIO_5  		/**< SDRAM Memory F latch-up monitor power good status pin. */
+#define MEMORY_B_LATCHUP_ENABLE_PIN    		MSS_GPIO_6     		/**< SDRAM Memory B latch-up monitor enable pin. */
+#define MEMORY_D_LATCHUP_ENABLE_PIN    		MSS_GPIO_7     		/**< SDRAM Memory D latch-up monitor enable pin. */
+#define MEMORY_F_LATCHUP_ENABLE_PIN    		MSS_GPIO_8     		/**< SDRAM Memory F latch-up monitor enable pin. */
+#define MEMORY_B_LATCHUP_PWGD_STATUS_MASK	MSS_GPIO_3_MASK  	/**< SDRAM Memory B latch-up monitor power good status pin mask. */
+#define MEMORY_D_LATCHUP_PWGD_STATUS_MASK	MSS_GPIO_4_MASK  	/**< SDRAM Memory B latch-up monitor power good status pin mask. */
+#define MEMORY_F_LATCHUP_PWGD_STATUS_MASK	MSS_GPIO_5_MASK  	/**< SDRAM Memory B latch-up monitor power good status pin mask. */
 
 /* GPIO states */
 #define HIGH		1
 #define LOW			0
 
-/* Latchup monitor devices */
-#define MEMORY_B_LATCHUP_MONITOR			0				/**< SDRAM Memory B latch-up monitor device. */
-#define MEMORY_D_LATCHUP_MONITOR			1				/**< SDRAM Memory D latch-up monitor device. */
-#define MEMORY_F_LATCHUP_MONITOR			2				/**< SDRAM Memory F latch-up monitor device. */
+/**
+ * \brief Latchup monitor devices types.
+ */
+typedef enum
+{
+    MEMORY_B_LATCHUP_MONITOR=0,      	/**< External SDRAM memory B. */
+    MEMORY_D_LATCHUP_MONITOR,       	/**< External SDRAM memory D. */
+    MEMORY_F_LATCHUP_MONITOR			/**< External SDRAM memory F. */
+} latchup_devices_e;
 
 /**
  * \brief Latchup monitor type.
@@ -79,19 +87,27 @@ int latchup_monitors_init(void);
  * \brief Get a given latch-up monitor power good status.
  *
  * \param[in] l is the latchup monitor device.
- *
+ * \parblock
+ *      -\b MEMORY_B_LATCHUP_MONITOR
+ *		-\b MEMORY_D_LATCHUP_MONITOR
+ *      -\b MEMORY_F_LATCHUP_MONITOR
+ *		.
  * \return None.
  */
-void latchup_monitors_get_status(latchup_monitor_t *l);
+int latchup_monitors_get_status(latchup_monitor_t *l);
 
 /**
  * \brief Enable a given latch-up monitor device.
  *
  * \param[in] l is the latchup monitor device.
- *
+ * \parblock
+ *      -\b MEMORY_B_LATCHUP_MONITOR
+ *		-\b MEMORY_D_LATCHUP_MONITOR
+ *      -\b MEMORY_F_LATCHUP_MONITOR
+ *		.
  * \return None.
  */
-void latchup_monitors_set_enable(latchup_monitor_t *l);
+int latchup_monitors_set_enable(latchup_monitor_t *l);
 
 
 #endif /* LATCHUP_H_ */

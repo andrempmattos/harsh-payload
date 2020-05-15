@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.18
  * 
  * \date 12/05/2020
  * 
@@ -45,17 +45,124 @@
 
 int latchup_monitors_init()
 {
+	sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Initializing latch-up monitors...");
+    sys_log_new_line();
 
+    MSS_GPIO_init();
+
+    MSS_GPIO_config(MEMORY_B_LATCHUP_ENABLE_PIN, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MEMORY_D_LATCHUP_ENABLE_PIN, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MEMORY_F_LATCHUP_ENABLE_PIN, MSS_GPIO_OUTPUT_MODE);
+
+    MSS_GPIO_set_output(MEMORY_B_LATCHUP_ENABLE_PIN, LOW);
+    MSS_GPIO_set_output(MEMORY_D_LATCHUP_ENABLE_PIN, LOW);
+    MSS_GPIO_set_output(MEMORY_F_LATCHUP_ENABLE_PIN, LOW);
+
+    MSS_GPIO_config(MEMORY_B_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
+    MSS_GPIO_config(MEMORY_D_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
+    MSS_GPIO_config(MEMORY_F_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
 }
 
-void latchup_monitors_get_status(latchup_monitor_t *l)
+int latchup_monitors_get_status(latchup_monitor_t *l)
 {
-
+	switch(l)
+    {
+        case MEMORY_B_LATCHUP_MONITOR:
+        	if(MSS_GPIO_get_outputs() & MEMORY_B_LATCHUP_PWGD_STATUS_MASK) 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory B latch-up detection status: None");
+            	sys_log_new_line();
+            	return HIGH;
+        	}
+        	else 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory B latch-up detection status: Critical");
+            	sys_log_new_line();
+            	return LOW;
+        	}
+        case MEMORY_D_LATCHUP_MONITOR:
+            if(MSS_GPIO_get_outputs() & MEMORY_D_LATCHUP_PWGD_STATUS_MASK) 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory D latch-up detection status: None");
+            	sys_log_new_line();
+            	return HIGH;
+        	}
+        	else 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory D latch-up detection status: Critical");
+            	sys_log_new_line();
+            	return LOW;
+        	}
+        case MEMORY_F_LATCHUP_MONITOR:
+            if(MSS_GPIO_get_outputs() & MEMORY_B_LATCHUP_PWGD_STATUS_MASK) 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory F latch-up detection status: None");
+            	sys_log_new_line();
+            	return HIGH;
+        	}
+        	else 
+        	{
+        		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory F latch-up detection status: Critical");
+            	sys_log_new_line();
+            	return LOW;
+        	}
+        default:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, LATCHUP_MODULE_NAME, "Invalid latch-up monitor device!");
+            sys_log_new_line();
+            return -1;
+    }
 }
 
-void latchup_monitors_set_enable(latchup_monitor_t *l)
+int latchup_monitors_set_enable(latchup_monitor_t *l)
 {
+	switch(l)
+    {
+        case MEMORY_B_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_B_LATCHUP_ENABLE_PIN, HIGH);
+        	sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory B latch-up monitor enabled");
+            sys_log_new_line();
+            return 0;
+        case MEMORY_D_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_D_LATCHUP_ENABLE_PIN, HIGH);
+            sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory D latch-up monitor enabled");
+            sys_log_new_line();
+            return 0;
+        case MEMORY_F_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_F_LATCHUP_ENABLE_PIN, HIGH);
+            sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory F latch-up monitor enabled");
+            sys_log_new_line();
+            return 0;
+        default:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, LATCHUP_MODULE_NAME, "Invalid latch-up monitor device!");
+            sys_log_new_line();
+            return -1;
+    }
+}
 
+int latchup_monitors_clear_enable(latchup_monitor_t *l)
+{
+	switch(l)
+    {
+        case MEMORY_B_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_B_LATCHUP_ENABLE_PIN, LOW);
+        	sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory B latch-up monitor disabled");
+            sys_log_new_line();
+            return 0;
+        case MEMORY_D_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_D_LATCHUP_ENABLE_PIN, LOW);
+            sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory D latch-up monitor disabled");
+            sys_log_new_line();
+            return 0;
+        case MEMORY_F_LATCHUP_MONITOR:
+        	MSS_GPIO_set_output(MEMORY_F_LATCHUP_ENABLE_PIN, LOW);
+            sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory F latch-up monitor disabled");
+            sys_log_new_line();
+            return 0;
+        default:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, LATCHUP_MODULE_NAME, "Invalid latch-up monitor device!");
+            sys_log_new_line();
+            return -1;
+    }
 }
 
 
