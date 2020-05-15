@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.3
+ * \version 0.0.17
  * 
  * \date 09/05/2020
  * 
@@ -48,8 +48,6 @@ void leds_init()
     sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing system LEDs...");
     sys_log_new_line();
 
-    MSS_GPIO_init();
-
     MSS_GPIO_config(LED_SYSTEM_PIN, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_set_output(LED_SYSTEM_PIN, LOW);
 }
@@ -57,16 +55,21 @@ void leds_init()
 void led_set(void)
 {
     MSS_GPIO_set_output(LED_SYSTEM_PIN, HIGH);
+
+    sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Set system LED high");
+    sys_log_new_line();
 }
 
 void led_clear(void)
 {
     MSS_GPIO_set_output(LED_SYSTEM_PIN, LOW);
+    
+    sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Set system LED low");
+    sys_log_new_line();
 }
 
 void led_toggle(void)
 {
-
     if (MSS_GPIO_get_outputs() & LED_SYSTEM_PIN_MASK)
     {
         MSS_GPIO_set_output(LED_SYSTEM_PIN, LOW);
