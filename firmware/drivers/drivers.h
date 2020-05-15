@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.17
  * 
  * \date 08/05/2020
  * 
@@ -51,6 +51,8 @@
 #include "mss_timer/mss_timer.h"
 #include "mss_uart/mss_uart.h"
 #include "mss_watchdog/mss_watchdog.h"
+#include "mss_sram/mss_sram.h"
+#include "ext_sdram/ext_sdram.h"
 
 
 #endif /* DRIVERS_H_ */

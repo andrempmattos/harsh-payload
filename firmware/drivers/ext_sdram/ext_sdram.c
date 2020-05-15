@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.13
+ * \version 0.0.17
  * 
  * \date 13/05/2020
  * 
@@ -45,7 +45,30 @@
 
 int sdram_init(sdram_device_t dev)
 {
+    switch(dev)
+    {
+        case EXT_SDRAM_B:
+            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory B...");
+            sys_log_new_line();
+            break;
+        case EXT_SDRAM_D:
+            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory D...");
+            sys_log_new_line();
+            break;
+        case EXT_SDRAM_F:
+            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory F...");
+            sys_log_new_line();
+            break;
+        default:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, EXT_SDRAM_MODULE_NAME, "Invalid SDRAM device!");
+            sys_log_new_line();
+            return -1;
+    }
+
     #if CONFIG_EXT_SDRAM_TEST_ENABLED == 1
+        sys_log_print_event_from_module(SYS_LOG_WARNING, EXT_SDRAM_MODULE_NAME, "Performing SDRAM memory initialization test");
+        sys_log_new_line();
+
         uint32_t *data, *check;
         *data = DUMMY_TEST_VALUE;
         *check = 0;
@@ -55,6 +78,8 @@ int sdram_init(sdram_device_t dev)
         
         if ( (*data) != (*check) )
         {
+            sys_log_print_event_from_module(SYS_LOG_ERROR, EXT_SDRAM_MODULE_NAME, "Initialization test failed!");
+            sys_log_new_line();
             return -1;
         }
     #endif /* CONFIG_EXT_SDRAM_TEST_ENABLED */
@@ -111,6 +136,14 @@ int sdram_write(sdram_device_t dev, uint32_t addr, uint32_t *data, uint16_t len)
         *(volatile uint32_t *)(addr) = *data++;
         addr = addr + 4;
         len--;
+        
+        #if CONFIG_EXT_SDRAM_TEST_ENABLED == 1
+            sys_log_print_event_from_module(SYS_LOG_INFO, EXT_SDRAM_MODULE_NAME, "Write(addr, data): ");
+            sys_log_dump_hex((uint8_t*)addr, 4);
+            sys_log_print_msg(" | ");
+            sys_log_dump_hex((uint8_t*)data, 4);
+            sys_log_new_line();
+        #endif /* CONFIG_EXT_SDRAM_TEST_ENABLED */
     }    
 
     return 0;
@@ -165,6 +198,14 @@ int sdram_read(sdram_device_t dev, uint32_t addr, uint32_t *data, uint16_t len)
         *data++ = *(volatile uint32_t *)(addr);
         addr = addr + 4;
         len--;
+
+        #if CONFIG_EXT_SDRAM_TEST_ENABLED == 1
+            sys_log_print_event_from_module(SYS_LOG_INFO, EXT_SDRAM_MODULE_NAME, "Read(addr, data): ");
+            sys_log_dump_hex((uint8_t*)addr, 4);
+            sys_log_print_msg(" | ");
+            sys_log_dump_hex((uint8_t*)data, 4);
+            sys_log_new_line();
+        #endif /* CONFIG_EXT_SDRAM_TEST_ENABLED */
     }
 
     return 0;    
