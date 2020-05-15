@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.17
  * 
  * \date 09/05/2020
  * 
@@ -45,6 +45,8 @@
 
 void watchdog_init()
 {
+	sys_log_print_event_from_module(SYS_LOG_INFO, WATCHDOG_MODULE_NAME, "Initializing system watchdog...");
+    sys_log_new_line();
     MSS_WD_init();
 }
 
