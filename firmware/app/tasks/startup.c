@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.20
  * 
  * \date 09/05/2020
  * 
@@ -42,6 +42,7 @@
 
 #include <system/config.h>
 #include <system/sys_log/sys_log.h>
+#include <system/sys_config/sys_config_mss_clocks.h>
 #include <devices/leds/leds.h>
 #include <devices/watchdog/watchdog.h>
 
@@ -55,9 +56,6 @@ void vTaskStartup(void *pvParameters)
 {
     bool error = false;
 
-    /* Watchdog device initialization */
-    watchdog_init();
-
     /* Logger device initialization */
     sys_log_init();
 
@@ -67,25 +65,38 @@ void vTaskStartup(void *pvParameters)
     sys_log_new_line();
 
     /* Print the system clocks */
-    sys_log_print_event_from_module(SYS_LOG_INFO, TASK_STARTUP_NAME, "System clock: 100MHz");
+    sys_log_print_event_from_module(SYS_LOG_INFO, TASK_STARTUP_NAME, "System clock: ");
+    sys_log_print_dec(MSS_SYS_M3_CLK_FREQ);
+    sys_log_print_msg(" Hz");
     sys_log_new_line();
+
+    /* Latch-up monitors devices initialization */
+    latchup_monitors_init();
 
     /* LEDs device initialization */
     leds_init();
+
+    /* Media device initialization */
+    if ((media_init(MEDIA_SDRAM_B) | media_init(MEDIA_SDRAM_D) | media_init(MEDIA_SDRAM_F)) != 0)
+    {
+        error = true;
+    }
+
+    /* Media device initialization */
+    if (obc_init() != 0)
+    {
+        error = true;
+    }
 
     if (error)
     {
         sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_STARTUP_NAME, "Boot completed with ERRORS!");
         sys_log_new_line();
-
-        led_set();
     }
     else
     {
         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_STARTUP_NAME, "Boot completed with SUCCESS!");
         sys_log_new_line();
-
-        led_clear();
     }
 
     /* Startup task status = Done */
