@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.18
+ * \version 0.0.21
  * 
  * \date 12/05/2020
  * 
@@ -72,44 +72,44 @@ int latchup_monitors_get_status(latchup_monitor_t *l)
         	{
         		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory B latch-up detection status: None");
             	sys_log_new_line();
-            	return HIGH;
+            	return 0;
         	}
         	else 
         	{
         		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory B latch-up detection status: Critical");
             	sys_log_new_line();
-            	return LOW;
+            	return -1;
         	}
         case MEMORY_D_LATCHUP_MONITOR:
             if(MSS_GPIO_get_outputs() & MEMORY_D_LATCHUP_PWGD_STATUS_MASK) 
         	{
         		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory D latch-up detection status: None");
             	sys_log_new_line();
-            	return HIGH;
+            	return 0;
         	}
         	else 
         	{
         		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory D latch-up detection status: Critical");
             	sys_log_new_line();
-            	return LOW;
+            	return -1;
         	}
         case MEMORY_F_LATCHUP_MONITOR:
             if(MSS_GPIO_get_outputs() & MEMORY_B_LATCHUP_PWGD_STATUS_MASK) 
         	{
         		sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Memory F latch-up detection status: None");
             	sys_log_new_line();
-            	return HIGH;
+            	return 0;
         	}
         	else 
         	{
         		sys_log_print_event_from_module(SYS_LOG_WARNING, LATCHUP_MODULE_NAME, "Memory F latch-up detection status: Critical");
             	sys_log_new_line();
-            	return LOW;
+            	return -1;
         	}
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, LATCHUP_MODULE_NAME, "Invalid latch-up monitor device!");
             sys_log_new_line();
-            return -1;
+            return 0;
     }
 }
 

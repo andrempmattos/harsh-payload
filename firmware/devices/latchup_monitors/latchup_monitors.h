@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.18
+ * \version 0.0.21
  * 
  * \date 12/05/2020
  * 
@@ -92,6 +92,8 @@ void latchup_monitors_init(void);
  *		-\b MEMORY_D_LATCHUP_MONITOR
  *      -\b MEMORY_F_LATCHUP_MONITOR
  *		.
+ * \endparblock
+ *
  * \return The status/error code.
  */
 int latchup_monitors_get_status(latchup_monitor_t *l);
@@ -105,6 +107,8 @@ int latchup_monitors_get_status(latchup_monitor_t *l);
  *		-\b MEMORY_D_LATCHUP_MONITOR
  *      -\b MEMORY_F_LATCHUP_MONITOR
  *		.
+ * \endparblock
+ *
  * \return The status/error code.
  */
 int latchup_monitors_set_enable(latchup_monitor_t *l);
@@ -118,6 +122,8 @@ int latchup_monitors_set_enable(latchup_monitor_t *l);
  *		-\b MEMORY_D_LATCHUP_MONITOR
  *      -\b MEMORY_F_LATCHUP_MONITOR
  *		.
+ * \endparblock
+ *
  * \return The status/error code.
  */
 int latchup_monitors_clear_enable(latchup_monitor_t *l);
