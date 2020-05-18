@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.20
+ * \version 0.0.21
  * 
  * \date 18/05/2020
  * 
@@ -57,16 +57,6 @@ void create_queues()
     }
 #endif /* CONFIG_QUEUE_OBC_COMMAND_ENABLED */
 
-    /* OBC state queue */
-#if CONFIG_QUEUE_OBC_STATE_ENABLED == 1
-    xQueueOBCState = xQueueCreate(5, sizeof(obc_state_package_t));
-
-    if (xQueueOBCCommand == NULL)
-    {
-        /* Error creating the OBC state queue */
-    }
-#endif /* CONFIG_QUEUE_OBC_STATE_ENABLED */
-
     /* OBC data queue */
 #if CONFIG_QUEUE_OBC_DATA_ENABLED == 1
     xQueueOBCData = xQueueCreate(10, sizeof(obc_data_package_t));
@@ -76,6 +66,16 @@ void create_queues()
         /* Error creating the OBC data queue */
     }
 #endif /* CONFIG_QUEUE_OBC_DATA_ENABLED */
+
+    /* System state queue */
+#if CONFIG_QUEUE_SYS_STATE_ENABLED == 1
+    xQueueSystemState = xQueueCreate(5, sizeof(sys_state_package_t));
+
+    if (xQueueSystemState == NULL)
+    {
+        /* Error creating the system state queue */
+    }
+#endif /* CONFIG_QUEUE_SYS_STATE_ENABLED */
 
     /* Experiment command queue */
 #if CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED == 1
