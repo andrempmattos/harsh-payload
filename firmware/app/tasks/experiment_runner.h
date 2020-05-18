@@ -1,5 +1,5 @@
 /*
- * version.h
+ * experiment_runner.h
  *
  * MIT License
  *
@@ -26,29 +26,46 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Experiment runner task definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.19
  * 
- * \date 08/05/2020
+ * \date 16/05/2020
  * 
- * \defgroup version Version
+ * \defgroup experiment_runner ExperimentRunner
+ * \ingroup tasks
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#ifndef EXPERIMENT_RUNNER_H_
+#define EXPERIMENT_RUNNER_H_
 
-#define FIRMWARE_VERSION            "0.0.19"
+#include <FreeRTOS.h>
+#include <task.h>
 
-#define FIRMWARE_STATUS             "Development"
+#define TASK_EXPERIMENT_RUNNER_NAME        			"ExperimentRunner"     	/**< Task name. */
+#define TASK_EXPERIMENT_RUNNER_STACK_SIZE          	500             		/**< Memory stack size in bytes. */
+#define TASK_EXPERIMENT_RUNNER_PRIORITY            	3               		/**< Priority. */
+#define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	1000             		/**< Period in milliseconds. */
+#define TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS		15000					/**< Delay, in milliseconds, before the first execution. */
+#define TASK_EXPERIMENT_RUNNER_INIT_TIMEOUT_MS     	2000            		/**< Wait time to initialize the task in milliseconds. */
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+/**
+ * \brief Experiment runner task handle.
+ */
+extern xTaskHandle xTaskExperimentRunnerHandle;
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+/**
+ * \brief Experiment runner task.
+ *
+ * \param[in] pvParameters is a value that will passed as the task's parameter.
+ *
+ * \return None.
+ */
+void vTaskExperimentRunner(void *pvParameters);
 
-#endif /* VERSION_H_ */
+#endif /* EXPERIMENT_RUNNER_H_ */
 
-/** \} End of version group */
+/** \} End of experiment_runner group */

@@ -1,5 +1,5 @@
 /*
- * version.h
+ * experiment_runner.c
  *
  * MIT License
  *
@@ -26,29 +26,38 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Experiment runner task implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.19
  * 
- * \date 08/05/2020
+ * \date 16/05/2020
  * 
- * \defgroup version Version
+ * \addtogroup experiment_runner
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+//#include <libs/experiment_algorithms.h>
 
-#define FIRMWARE_VERSION            "0.0.19"
+#include "experiment_runner.h"
+#include "startup.h"
 
-#define FIRMWARE_STATUS             "Development"
+xTaskHandle xTaskExperimentRunnerHandle;
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+void vTaskExperimentRunner(void *pvParameters)
+{
+    /* Delay before the first cycle */
+    vTaskDelay(pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS));
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+    while(1)
+    {
+        TickType_t last_cycle = xTaskGetTickCount();
 
-#endif /* VERSION_H_ */
+        
 
-/** \} End of version group */
+        vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_PERIOD_MS));
+    }
+}
+
+/** \} End of experiment_runner group */

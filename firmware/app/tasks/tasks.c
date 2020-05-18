@@ -48,6 +48,7 @@
 #include "watchdog_reset.h"
 #include "heartbeat.h"
 #include "experiment_manager.h"
+#include "experiment_runner.h"
 
 void create_tasks()
 {
@@ -90,6 +91,14 @@ void create_tasks()
     }
 #endif /* CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED */
 
+#if CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED == 1
+    xTaskCreate(vTaskExperimentRunner, TASK_EXPERIMENT_RUNNER_NAME, TASK_EXPERIMENT_RUNNER_STACK_SIZE, NULL, TASK_EXPERIMENT_RUNNER_PRIORITY, &xTaskExperimentRunnerHandle);
+
+    if (xTaskExperimentRunnerHandle == NULL)
+    {
+        /* Error creating the system reset task */
+    }
+#endif /* CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED */    
 
 }
 
