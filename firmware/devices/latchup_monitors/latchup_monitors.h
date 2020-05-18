@@ -66,9 +66,9 @@
  */
 typedef enum
 {
-    MEMORY_B_LATCHUP_MONITOR=0,      	/**< External SDRAM memory B. */
-    MEMORY_D_LATCHUP_MONITOR,       	/**< External SDRAM memory D. */
-    MEMORY_F_LATCHUP_MONITOR			/**< External SDRAM memory F. */
+    MEMORY_B_LATCHUP_MONITOR=0,      	/**< SDRAM Memory B latch-up monitor. */
+    MEMORY_D_LATCHUP_MONITOR,       	/**< SDRAM Memory D latch-up monitor. */
+    MEMORY_F_LATCHUP_MONITOR			/**< SDRAM Memory F latch-up monitor. */
 } latchup_devices_e;
 
 /**
@@ -79,9 +79,9 @@ typedef uint8_t latchup_monitor_t;
 /**
  * \brief Initialization routine of the latch-up monitors.
  *
- * \return The status/error code.
+ * \return None.
  */
-int latchup_monitors_init(void);
+void latchup_monitors_init(void);
 
 /**
  * \brief Get a given latch-up monitor power good status.
@@ -92,7 +92,7 @@ int latchup_monitors_init(void);
  *		-\b MEMORY_D_LATCHUP_MONITOR
  *      -\b MEMORY_F_LATCHUP_MONITOR
  *		.
- * \return None.
+ * \return The status/error code.
  */
 int latchup_monitors_get_status(latchup_monitor_t *l);
 
@@ -105,9 +105,22 @@ int latchup_monitors_get_status(latchup_monitor_t *l);
  *		-\b MEMORY_D_LATCHUP_MONITOR
  *      -\b MEMORY_F_LATCHUP_MONITOR
  *		.
- * \return None.
+ * \return The status/error code.
  */
 int latchup_monitors_set_enable(latchup_monitor_t *l);
+
+/**
+ * \brief Disable a given latch-up monitor device.
+ *
+ * \param[in] l is the latchup monitor device.
+ * \parblock
+ *      -\b MEMORY_B_LATCHUP_MONITOR
+ *		-\b MEMORY_D_LATCHUP_MONITOR
+ *      -\b MEMORY_F_LATCHUP_MONITOR
+ *		.
+ * \return The status/error code.
+ */
+int latchup_monitors_clear_enable(latchup_monitor_t *l);
 
 
 #endif /* LATCHUP_H_ */

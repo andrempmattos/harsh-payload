@@ -43,7 +43,7 @@
 
 #include "latchup_monitors.h"
 
-int latchup_monitors_init()
+void latchup_monitors_init()
 {
 	sys_log_print_event_from_module(SYS_LOG_INFO, LATCHUP_MODULE_NAME, "Initializing latch-up monitors...");
     sys_log_new_line();
@@ -54,9 +54,9 @@ int latchup_monitors_init()
     MSS_GPIO_config(MEMORY_D_LATCHUP_ENABLE_PIN, MSS_GPIO_OUTPUT_MODE);
     MSS_GPIO_config(MEMORY_F_LATCHUP_ENABLE_PIN, MSS_GPIO_OUTPUT_MODE);
 
-    MSS_GPIO_set_output(MEMORY_B_LATCHUP_ENABLE_PIN, LOW);
-    MSS_GPIO_set_output(MEMORY_D_LATCHUP_ENABLE_PIN, LOW);
-    MSS_GPIO_set_output(MEMORY_F_LATCHUP_ENABLE_PIN, LOW);
+    MSS_GPIO_set_output(MEMORY_B_LATCHUP_ENABLE_PIN, HIGH);
+    MSS_GPIO_set_output(MEMORY_D_LATCHUP_ENABLE_PIN, HIGH);
+    MSS_GPIO_set_output(MEMORY_F_LATCHUP_ENABLE_PIN, HIGH);
 
     MSS_GPIO_config(MEMORY_B_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
     MSS_GPIO_config(MEMORY_D_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
