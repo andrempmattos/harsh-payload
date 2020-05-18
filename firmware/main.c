@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.20
  * 
  * \date 27/03/2020
  * 
@@ -48,9 +48,13 @@ void main(void)
 {
     /* Prepare the essential hardware initializations to start running the operating system. */
     //prvSetupHardware();
+    watchdog_init();
 
-    /* Create all the tasks */
+    /* Create all the system tasks */
     create_tasks();
+
+    /* Create all the system queues */
+    create_queues();
 
     /* Start the scheduler */
     vTaskStartScheduler();

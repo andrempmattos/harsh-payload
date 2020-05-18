@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.15
+ * \version 0.0.20
  * 
  * \date 08/05/2020
  * 
@@ -46,6 +46,14 @@
 #define CONFIG_TASK_WATCHDOG_RESET_ENABLED              1
 #define CONFIG_TASK_HEARTBEAT_ENABLED                   1
 #define CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED          1
+#define CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED	        1
+
+/* Queues */
+#define CONFIG_QUEUE_OBC_COMMAND_ENABLED                1
+#define CONFIG_QUEUE_OBC_STATE_ENABLED                  1
+#define CONFIG_QUEUE_OBC_DATA_ENABLED              		1
+#define CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED         1
+#define CONFIG_QUEUE_EXPERIMENT_DATA_ENABLED	        1
 
 /* Debug and log messages */
 #define CONFIG_DRIVERS_DEBUG_ENABLED                    1
