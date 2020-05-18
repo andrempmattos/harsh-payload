@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.15
+ * \version 0.0.21
  * 
  * \date 09/05/2020
  * 
@@ -49,7 +49,13 @@
 #define TASK_EXPERIMENT_MANAGER_STACK_SIZE          500             		/**< Memory stack size in bytes. */
 #define TASK_EXPERIMENT_MANAGER_PRIORITY            3               		/**< Priority. */
 #define TASK_EXPERIMENT_MANAGER_PERIOD_MS           1000             		/**< Period in milliseconds. */
+#define TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS	15000					/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_MANAGER_INIT_TIMEOUT_MS     2000            		/**< Wait time to initialize the task in milliseconds. */
+
+#define DEFAULT_OPERATION_MODE     		0         	/**< Standard operation mode: Payload experiment. */
+#define DEFAULT_EXECUTION_CONFIG     	0x1F        /**< Standard execution configuration: Memories, static and dynamic tests enabled. */
+#define DEFAULT_OBC_SYS_TIME     		0         	/**< Standard OBC system time. */
+
 
 /**
  * \brief Experiment manager task handle.
