@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.19
+ * \version 0.0.22
  * 
  * \date 16/05/2020
  * 
@@ -56,6 +56,22 @@
  * \brief Experiment runner task handle.
  */
 extern xTaskHandle xTaskExperimentRunnerHandle;
+
+/**
+ * \brief Experiment data package.
+ */
+typedef struct
+{
+	uint32_t time_stamp;				/**< Data time stamp. */
+	uint8_t device;						/**< Device in test. */
+	uint8_t memory_frequency;			/**< Memory frequency during this test (in MHz). */
+	uint16_t refresh_rate;				/**< Memory refresh rate during this test (cycles/ms). */
+    uint8_t algorithm;         			/**< Algorithm executed. */
+    uint16_t iteration;         		/**< Iteration cycle in dynamic tests. */
+    uint32_t address;	         		/**< Address with detected error. */
+    uint32_t data;         				/**< Data in the malfunctioning address. */
+    uint16_t error;         			/**< Error code. */
+} experiment_data_package_t;
 
 /**
  * \brief Experiment runner task.
