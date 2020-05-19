@@ -55,7 +55,7 @@ void vTaskExperimentManager(void *pvParameters)
     /* Delay before the first cycle */
     vTaskDelay(pdMS_TO_TICKS(TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS));
     
-    /* Create local queue package */
+    /* Create local queue OBC command package */
     obc_command_package_t obc_command = 
     {
         .operation_mode = DEFAULT_OPERATION_MODE,   
@@ -79,8 +79,8 @@ void vTaskExperimentManager(void *pvParameters)
     /* Create local queue experiment command package */
     experiment_command_package_t exp_command;
 
-    /* Create local queue experiment command package */
-    experiment_data_package_t exp_data;
+    /* Create local queue experiment state package */
+    experiment_state_package_t exp_state;
 
     while(1)
     {
@@ -110,9 +110,9 @@ void vTaskExperimentManager(void *pvParameters)
             xQueueSendToBack(xQueueExperimentCommand, &exp_command, 0);   
         }
 
-        if (xQueueReceive(xQueueExperimentData, &exp_data, 0) == pdPASS) 
+        if (xQueueReceive(xQueueExperimentState, &exp_state, 0) == pdPASS) 
         {
-            obc_data = exp_data;
+            media_read(MEDIA_ESRAM, exp_state.address, &obc_data, exp_state.length);
             xQueueSendToBack(xQueueOBCData, &obc_data, 0);
         }
         

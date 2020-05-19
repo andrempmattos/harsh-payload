@@ -46,7 +46,7 @@ QueueHandle_t xQueueOBCCommand;
 QueueHandle_t xQueueOBCData;
 QueueHandle_t xQueueSystemState;
 QueueHandle_t xQueueExperimentCommand;
-QueueHandle_t xQueueExperimentData;
+QueueHandle_t xQueueExperimentState;
 
 /* Operation modes */
 #define EXPERIMENT_PAYLOAD          	0       /**< Experiment payload operation mode. */
@@ -147,15 +147,9 @@ typedef struct
  */
 typedef struct
 {
-	uint32_t time_stamp;				/**< Data time stamp. */
-	uint8_t device;						/**< Device in test. */
-	uint8_t memory_frequency;			/**< Memory frequency during this test (in MHz). */
-	uint16_t refresh_rate;				/**< Memory refresh rate during this test (cycles/ms). */
-    uint8_t algorithm;         			/**< Algorithm executed. */
-    uint16_t iteration;         		/**< Iteration cycle in dynamic tests. */
-    uint32_t address;	         		/**< Address with detected error. */
-    uint32_t data;         				/**< Data in the malfunctioning address. */
-    uint16_t error;         			/**< Error code. */
+	uint16_t package_id;				/**< Package ID(incremented each tests cycle). */
+	uint32_t address;				    /**< Test result SRAM(experiment data storage device) start address. */
+    uint32_t length;                    /**< Test result SRAM(experiment data storage device) data length. */
 } experiment_data_package_t;
 
 /**

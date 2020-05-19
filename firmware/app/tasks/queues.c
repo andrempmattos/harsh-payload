@@ -87,15 +87,15 @@ void create_queues()
     }
 #endif /* CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED */
 
-    /* Experiment data queue */
-#if CONFIG_QUEUE_EXPERIMENT_DATA_ENABLED == 1
-    xQueueExperimentData = xQueueCreate(1, sizeof(experiment_data_package_t));
+    /* Experiment state queue */
+#if CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED == 1
+    xQueueExperimentState= xQueueCreate(1, sizeof(experiment_state_package_t));
 
-    if (xQueueExperimentData == NULL)
+    if (xQueueExperimentState == NULL)
     {
-        /* Error creating the experiment data queue */
+        /* Error creating the experiment state queue */
     }
-#endif /* CONFIG_QUEUE_EXPERIMENT_DATA_ENABLED */
+#endif /* CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED */
 
 }
 
