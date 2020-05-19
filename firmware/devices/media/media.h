@@ -57,8 +57,7 @@
 typedef enum
 {
     MEDIA_ENVM=0,      	/**< Embedded flash memory. */
-    MEDIA_ESRAM_0,      /**< Embedded SRAM memory. */
-    MEDIA_ESRAM_1,      /**< Embedded SRAM memory. */
+    MEDIA_ESRAM,        /**< Embedded SRAM memory. */
     MEDIA_SDRAM_B,		/**< External SDRAM memory B. */
     MEDIA_SDRAM_D,		/**< External SDRAM memory D. */
     MEDIA_SDRAM_F,		/**< External SDRAM memory F. */
@@ -75,8 +74,7 @@ typedef uint8_t media_t;
  * \param[in] med is the storage media to initiailize. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM_0
- *		-\b MEDIA_ESRAM_1
+ *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F
@@ -93,8 +91,7 @@ int media_init(media_t med);
  * \param[in] med is the storage media to write. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM_0
- *		-\b MEDIA_ESRAM_1
+ *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F
@@ -117,8 +114,7 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
  * \param[in] med is the storage media to read. It can be:
  * \parblock
  *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM_0
- *		-\b MEDIA_ESRAM_1
+ *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F

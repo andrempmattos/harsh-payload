@@ -55,13 +55,8 @@ int media_init(media_t med)
             sys_log_new_line();
             return -1;
 
-        case MEDIA_ESRAM_0:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM_0 memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM_1:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM_1 memory!");
+        case MEDIA_ESRAM:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM memory!");
             sys_log_new_line();
             return -1;
 
@@ -91,12 +86,7 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
             return -1;
 
         case MEDIA_ESRAM_0:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM_0 memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM_1:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM_1 memory!");
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM memory!");
             sys_log_new_line();
             return -1;
 
@@ -125,13 +115,8 @@ int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
             sys_log_new_line();
             return -1;
 
-        case MEDIA_ESRAM_0:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM_0 memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM_1:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM_1 memory!");
+        case MEDIA_ESRAM:
+            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM memory!");
             sys_log_new_line();
             return -1;
 
