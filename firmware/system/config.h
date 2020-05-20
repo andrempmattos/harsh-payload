@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.20
+ * \version 0.0.23
  * 
  * \date 08/05/2020
  * 
@@ -50,16 +50,16 @@
 
 /* Queues */
 #define CONFIG_QUEUE_OBC_COMMAND_ENABLED                1
-#define CONFIG_QUEUE_OBC_STATE_ENABLED                  1
 #define CONFIG_QUEUE_OBC_DATA_ENABLED              		1
+#define CONFIG_QUEUE_SYS_STATE_ENABLED                  1
 #define CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED         1
-#define CONFIG_QUEUE_EXPERIMENT_DATA_ENABLED	        1
+#define CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED	        1
 
 /* Debug and log messages */
 #define CONFIG_DRIVERS_DEBUG_ENABLED                    1
 
 /* SDRAM test during initialization  */
-#define CONFIG_EXT_SDRAM_TEST_ENABLED                   1
+#define CONFIG_EXT_SDRAM_TEST_ENABLED                   0
 
 
 #endif /* CONFIG_H_ */

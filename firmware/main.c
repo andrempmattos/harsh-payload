@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.20
+ * \version 0.0.23
  * 
  * \date 27/03/2020
  * 
@@ -43,6 +43,7 @@
 
 #include "devices/watchdog/watchdog.h"
 #include "app/tasks/tasks.h"
+#include "app/tasks/queues.h"
 
 void main(void)
 {
