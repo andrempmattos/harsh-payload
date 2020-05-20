@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.17
+ * \version 0.0.23
  * 
  * \date 13/05/2020
  * 
@@ -48,15 +48,15 @@ int sdram_init(sdram_device_t dev)
     switch(dev)
     {
         case EXT_SDRAM_B:
-            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory B...");
+            sys_log_print_event_from_module(SYS_LOG_INFO, EXT_SDRAM_MODULE_NAME, "Initializing external SDRAM memory B...");
             sys_log_new_line();
             break;
         case EXT_SDRAM_D:
-            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory D...");
+            sys_log_print_event_from_module(SYS_LOG_INFO, EXT_SDRAM_MODULE_NAME, "Initializing external SDRAM memory D...");
             sys_log_new_line();
             break;
         case EXT_SDRAM_F:
-            sys_log_print_event_from_module(SYS_LOG_INFO, LEDS_MODULE_NAME, "Initializing external SDRAM memory F...");
+            sys_log_print_event_from_module(SYS_LOG_INFO, EXT_SDRAM_MODULE_NAME, "Initializing external SDRAM memory F...");
             sys_log_new_line();
             break;
         default:
