@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 12/05/2020
  * 
@@ -96,7 +96,7 @@ void latchup_monitors_init(void);
  *
  * \return The status/error code.
  */
-int latchup_monitors_get_status(latchup_monitor_t *l);
+int latchup_monitors_get_status(latchup_monitor_t l);
 
 /**
  * \brief Enable a given latch-up monitor device.
@@ -111,7 +111,7 @@ int latchup_monitors_get_status(latchup_monitor_t *l);
  *
  * \return The status/error code.
  */
-int latchup_monitors_set_enable(latchup_monitor_t *l);
+int latchup_monitors_set_enable(latchup_monitor_t l);
 
 /**
  * \brief Disable a given latch-up monitor device.
@@ -126,7 +126,7 @@ int latchup_monitors_set_enable(latchup_monitor_t *l);
  *
  * \return The status/error code.
  */
-int latchup_monitors_clear_enable(latchup_monitor_t *l);
+int latchup_monitors_clear_enable(latchup_monitor_t l);
 
 
 #endif /* LATCHUP_H_ */

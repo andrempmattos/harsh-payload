@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 12/05/2020
  * 
@@ -63,7 +63,7 @@ void latchup_monitors_init()
     MSS_GPIO_config(MEMORY_F_LATCHUP_PWGD_STATUS_PIN, MSS_GPIO_INPUT_MODE);
 }
 
-int latchup_monitors_get_status(latchup_monitor_t *l)
+int latchup_monitors_get_status(latchup_monitor_t l)
 {
 	switch(l)
     {
@@ -113,7 +113,7 @@ int latchup_monitors_get_status(latchup_monitor_t *l)
     }
 }
 
-int latchup_monitors_set_enable(latchup_monitor_t *l)
+int latchup_monitors_set_enable(latchup_monitor_t l)
 {
 	switch(l)
     {
@@ -139,7 +139,7 @@ int latchup_monitors_set_enable(latchup_monitor_t *l)
     }
 }
 
-int latchup_monitors_clear_enable(latchup_monitor_t *l)
+int latchup_monitors_clear_enable(latchup_monitor_t l)
 {
 	switch(l)
     {
