@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 09/05/2020
  * 
@@ -38,8 +38,11 @@
  * \{
  */
 
+//#include <stdint.h>
+
 #include <devices/latchup_monitors/latchup_monitors.h>
 #include <devices/obc/obc.h>
+#include <devices/media/media.h>
 
 #include "experiment_manager.h"
 #include "queues.h"
@@ -77,7 +80,10 @@ void vTaskExperimentManager(void *pvParameters)
     };
 
     /* Create local queue experiment command package */
-    experiment_command_package_t exp_command;
+    experiment_command_package_t exp_command = 
+    {
+        .execution_config = DEFAULT_EXECUTION_CONFIG
+    };
 
     /* Create local queue experiment state package */
     experiment_state_package_t exp_state;
@@ -95,7 +101,7 @@ void vTaskExperimentManager(void *pvParameters)
             sys_state.execution_config = obc_command.execution_config;
         }
 
-        if(latchup_detection_routine(sys_state) != 0) 
+        if(latchup_detection_routine(&sys_state) != 0)
         {
             /* Get system ticks, convert to milliseconds and add to system time stamp */
             sys_state.time_stamp += ((xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000);
@@ -104,7 +110,7 @@ void vTaskExperimentManager(void *pvParameters)
             xQueueSendToBack(xQueueSystemState, &sys_state, 0);
         }
 
-        if (experiment_runner_routine(sys_state, exp_command))
+        if (experiment_runner_routine(&sys_state, &exp_command))
         {
             /* Send the command to be executed in the experiment runner task */
             xQueueSendToBack(xQueueExperimentCommand, &exp_command, 0);   
@@ -112,12 +118,12 @@ void vTaskExperimentManager(void *pvParameters)
 
         if (xQueueReceive(xQueueExperimentState, &exp_state, 0) == pdPASS) 
         {
-            media_read(MEDIA_ESRAM, exp_state.address, &obc_data, exp_state.length);
+            //media_read(MEDIA_ESRAM, exp_state.address, (uint8_t *)&obc_data, exp_state.length);
             xQueueSendToBack(xQueueOBCData, &obc_data, 0);
         }
         
         /* Restore the system state variable error code for the next cycle */            
-        sys_state.error_code = 0 
+        sys_state.error_code = 0;
 
         vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_EXPERIMENT_MANAGER_PERIOD_MS));
     }
@@ -135,17 +141,17 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
     int error = 0;
 
     /* Check for turn-off commands */
-    if(!(sys_package.execution_config & ENABLE_SDRAM_MEMORY_B))
+    if(!(sys_package->execution_config & ENABLE_SDRAM_MEMORY_B))
     {
         latchup_monitors_clear_enable(MEMORY_B_LATCHUP_MONITOR);
     }
 
-    if(!(sys_package.execution_config & ENABLE_SDRAM_MEMORY_D))
+    if(!(sys_package->execution_config & ENABLE_SDRAM_MEMORY_D))
     {
         latchup_monitors_clear_enable(MEMORY_D_LATCHUP_MONITOR);
     }
 
-    if(!(sys_package.execution_config & ENABLE_SDRAM_MEMORY_F))
+    if(!(sys_package->execution_config & ENABLE_SDRAM_MEMORY_F))
     {
         latchup_monitors_clear_enable(MEMORY_F_LATCHUP_MONITOR);
     }
@@ -154,10 +160,10 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
     if(latchup_monitors_get_status(MEMORY_B_LATCHUP_MONITOR) != 0)
     {
         latchup_monitors_clear_enable(MEMORY_B_LATCHUP_MONITOR);
-        sys_package.error_code |= MEMORY_B_LATCHUP;
-        sys_package.error_count++;
+        sys_package->error_code |= MEMORY_B_LATCHUP;
+        sys_package->error_count++;
 
-        if (sys_package.execution_config & FORCE_HALT_AFTER_LATCHUP)
+        if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
             // Add log
         }
@@ -172,10 +178,10 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
     if(latchup_monitors_get_status(MEMORY_D_LATCHUP_MONITOR) != 0)
     {
         latchup_monitors_clear_enable(MEMORY_D_LATCHUP_MONITOR);
-        sys_package.error_code |= MEMORY_D_LATCHUP;
-        sys_package.error_count++;
+        sys_package->error_code |= MEMORY_D_LATCHUP;
+        sys_package->error_count++;
 
-        if (sys_package.execution_config & FORCE_HALT_AFTER_LATCHUP)
+        if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
             // Add log
         }
@@ -190,10 +196,10 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
     if(latchup_monitors_get_status(MEMORY_F_LATCHUP_MONITOR) != 0)
     {
         latchup_monitors_clear_enable(MEMORY_F_LATCHUP_MONITOR);
-        sys_package.error_code |= MEMORY_F_LATCHUP;
-        sys_package.error_count++;
+        sys_package->error_code |= MEMORY_F_LATCHUP;
+        sys_package->error_count++;
 
-        if (sys_package.execution_config & FORCE_HALT_AFTER_LATCHUP)
+        if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
             // Add log
         }
@@ -213,19 +219,19 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
  *
  * \param[in] sys_package is the current system state queue package.
  *
- * \param[in] sys_package is the experiment runner command queue package.
+ * \param[in] exp_package is the experiment runner command queue package.
  *
  * \return The status/error code.
  */
 int experiment_runner_routine(sys_state_package_t *sys_package, experiment_command_package_t *exp_package) 
 {
-    if (exp_package.execution_config == sys_package.execution_config)
+    if (exp_package->execution_config == sys_package->execution_config)
     {
         return 0;
     }
     else 
     {
-        exp_package.execution_config = sys_package.execution_config;
+        exp_package->execution_config = sys_package->execution_config;
         return 1;
     }
 }
