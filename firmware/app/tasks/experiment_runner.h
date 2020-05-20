@@ -48,8 +48,8 @@
 #define TASK_EXPERIMENT_RUNNER_NAME        			"ExperimentRunner"     	/**< Task name. */
 #define TASK_EXPERIMENT_RUNNER_STACK_SIZE          	500             		/**< Memory stack size in bytes. */
 #define TASK_EXPERIMENT_RUNNER_PRIORITY            	3               		/**< Priority. */
-#define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	1000             		/**< Period in milliseconds. */
-#define TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS		15000					/**< Delay, in milliseconds, before the first execution. */
+#define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	2000             		/**< Period in milliseconds. */
+#define TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS		(10*1000)				/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_RUNNER_INIT_TIMEOUT_MS     	2000            		/**< Wait time to initialize the task in milliseconds. */
 
 /* Test algorithms selection definitions */

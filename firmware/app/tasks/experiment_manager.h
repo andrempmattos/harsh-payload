@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 09/05/2020
  * 
@@ -47,9 +47,9 @@
 
 #define TASK_EXPERIMENT_MANAGER_NAME        		"ExperimentManager"     /**< Task name. */
 #define TASK_EXPERIMENT_MANAGER_STACK_SIZE          500             		/**< Memory stack size in bytes. */
-#define TASK_EXPERIMENT_MANAGER_PRIORITY            3               		/**< Priority. */
+#define TASK_EXPERIMENT_MANAGER_PRIORITY            4               		/**< Priority. */
 #define TASK_EXPERIMENT_MANAGER_PERIOD_MS           1000             		/**< Period in milliseconds. */
-#define TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS	15000					/**< Delay, in milliseconds, before the first execution. */
+#define TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS	(10*1000)				/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_MANAGER_INIT_TIMEOUT_MS     2000            		/**< Wait time to initialize the task in milliseconds. */
 
 #define DEFAULT_OPERATION_MODE     		0         	/**< Standard operation mode: Payload experiment. */
