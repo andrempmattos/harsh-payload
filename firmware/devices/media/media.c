@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.23
  * 
  * \date 13/05/2020
  * 
@@ -76,7 +76,7 @@ int media_init(media_t med)
     }
 }
 
-int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
+int media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
 {
     switch(med)
     {
@@ -85,19 +85,19 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
             sys_log_new_line();
             return -1;
 
-        case MEDIA_ESRAM_0:
+        case MEDIA_ESRAM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM memory!");
             sys_log_new_line();
             return -1;
 
         case MEDIA_SDRAM_B:
-            return sdram_write(EXT_SDRAM_B, addr, data, len);
+            return sdram_write(EXT_SDRAM_B, addr, (uint32_t *)data, (len/4));
         
         case MEDIA_SDRAM_D:
-            return sdram_write(EXT_SDRAM_D, addr, data, len);
+            return sdram_write(EXT_SDRAM_D, addr, (uint32_t *)data, (len/4));
         
         case MEDIA_SDRAM_F:
-            return sdram_write(EXT_SDRAM_F, addr, data, len);
+            return sdram_write(EXT_SDRAM_F, addr, (uint32_t *)data, (len/4));
 
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to write!");
@@ -106,7 +106,7 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
     }
 }
 
-int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
+int media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
 {
     switch(med)
     {
@@ -121,13 +121,13 @@ int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
             return -1;
 
         case MEDIA_SDRAM_B:
-            return sdram_read(EXT_SDRAM_B, addr, data, len);
+            return sdram_read(EXT_SDRAM_B, addr, (uint32_t *)data, (len/4));
         
         case MEDIA_SDRAM_D:
-            return sdram_read(EXT_SDRAM_D, addr, data, len);
+            return sdram_read(EXT_SDRAM_D, addr, (uint32_t *)data, (len/4));
         
         case MEDIA_SDRAM_F:
-            return sdram_read(EXT_SDRAM_F, addr, data, len);
+            return sdram_read(EXT_SDRAM_F, addr, (uint32_t *)data, (len/4));
 
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to read!");

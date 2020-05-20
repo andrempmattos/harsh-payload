@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.14
+ * \version 0.0.23
  * 
  * \date 13/05/2020
  * 
@@ -106,7 +106,7 @@ int media_init(media_t med);
  *
  * \return The status/error code.
  */
-int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
+int media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len);
 
 /**
  * \brief Reads data from a given address of a media device.
@@ -129,7 +129,7 @@ int media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
  *
  * \return The status/error code.
  */
-int media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
+int media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len);
 
 #endif /* MEDIA_H_ */
 
