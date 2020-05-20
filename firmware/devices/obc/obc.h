@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.16
+ * \version 0.0.23
  * 
  * \date 12/05/2020
  * 
@@ -45,33 +45,6 @@
 #include <stdint.h>
 	
 #define OBC_MODULE_NAME        			"OBC"
-
-/* Operation modes */
-#define EXPERIMENT_PAYLOAD          	0       /**< Experiment payload operation mode. */
-#define HEALTH_MONITOR              	1       /**< Health monitor operation mode. */
-
-/* Execution configurations */
-#define ENABLE_SDRAM_MEMORY_B       	(1 << 0)       /**< Enable the SDRAM memory B. */
-#define ENABLE_SDRAM_MEMORY_D       	(1 << 1)       /**< Enable the SDRAM memory D. */
-#define ENABLE_SDRAM_MEMORY_F       	(1 << 2)       /**< Enable the SDRAM memory F. */
-#define ENABLE_STATIC_TESTS         	(1 << 3)       /**< Enable static algorithm tests. */
-#define ENABLE_DYNAMIC_TESTS        	(1 << 4)       /**< Enable dynamic algorithm tests. */
-#define ENABLE_FREQUENCY_TESTS      	(1 << 5)       /**< Enable frequency variation tests. */
-#define ENABLE_REFRESH_RATE_TESTS   	(1 << 6)       /**< Enable refresh rate variation tests. */
-#define FORCE_LOW_POWER      			(1 << 7)       /**< Force low power execution. */
-#define FORCE_REDUCED_LOG      			(1 << 8)       /**< Force reduced log report. */
-#define FORCE_HALT_AFTER_LATCHUP		(1 << 9)       /**< Force system halt after latchup. */
-
-/* Error codes */
-#define BOOT_FAILURE     				(1 << 0)       /**< Initialization error. */
-#define SYSTEM_FAILURE     				(1 << 1)       /**< System error. */
-#define EXPERIMENT_FAILURE     			(1 << 2)       /**< Experiment execution error. */
-#define MEMORY_B_INTERFACE_ERROR		(1 << 3)       /**< SDRAM memory B interface error. */
-#define MEMORY_D_INTERFACE_ERROR       	(1 << 4)       /**< SDRAM memory D interface error. */
-#define MEMORY_F_INTERFACE_ERROR        (1 << 5)       /**< SDRAM memory F interface error. */
-#define MEMORY_B_LATCHUP        		(1 << 6)       /**< SDRAM memory B latchup detection. */
-#define MEMORY_D_LATCHUP      			(1 << 7)       /**< SDRAM memory D latchup detection. */
-#define MEMORY_F_LATCHUP      			(1 << 8)       /**< SDRAM memory F latchup detection. */
 
 /**
  * \brief OBC commands.
