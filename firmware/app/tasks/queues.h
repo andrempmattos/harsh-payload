@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 18/05/2020
  * 
@@ -40,6 +40,9 @@
 
 #ifndef QUEUES_H_
 #define QUEUES_H_
+
+#include <FreeRTOS.h>
+#include <queue.h>
 
 /* Queue instances */
 QueueHandle_t xQueueOBCCommand;
@@ -150,7 +153,7 @@ typedef struct
 	uint16_t package_id;				/**< Package ID(incremented each tests cycle). */
 	uint32_t address;				    /**< Test result SRAM(experiment data storage device) start address. */
     uint32_t length;                    /**< Test result SRAM(experiment data storage device) data length. */
-} experiment_data_package_t;
+} experiment_state_package_t;
 
 /**
  * \brief Creates the system queues.

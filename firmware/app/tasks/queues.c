@@ -30,16 +30,13 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.21
+ * \version 0.0.23
  * 
  * \date 18/05/2020
  * 
  * \addtogroup queues
  * \{
  */
-
-#include <FreeRTOS.h>
-#include <queue.h>
 
 #include <system/config.h>
 

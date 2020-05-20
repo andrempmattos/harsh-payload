@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.20
+ * \version 0.0.23
  * 
  * \date 09/05/2020
  * 
@@ -40,11 +40,15 @@
 
 #include <stdbool.h>
 
-#include <system/config.h>
+//#include <system/config.h>
 #include <system/sys_log/sys_log.h>
 #include <system/sys_config/sys_config_mss_clocks.h>
+
 #include <devices/leds/leds.h>
+#include <devices/obc/obc.h>
+#include <devices/media/media.h>
 #include <devices/watchdog/watchdog.h>
+#include <devices/latchup_monitors/latchup_monitors.h>
 
 #include "startup.h"
 
