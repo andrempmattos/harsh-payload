@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.22
+ * \version 0.0.23
  * 
  * \date 16/05/2020
  * 
@@ -39,11 +39,16 @@
  */
 
 //#include <libs/experiment_algorithms.h>
+#include <devices/media/media.h>
 
 #include "experiment_runner.h"
 #include "queues.h"
 
 xTaskHandle xTaskExperimentRunnerHandle;
+
+/* Local functions prototypes */
+void test_manager_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, experiment_state_package_t *state_package, int test);
+int test_runner_routine(experiment_data_package_t *data_package, int test, int memory_device);
 
 void vTaskExperimentRunner(void *pvParameters)
 {
@@ -51,7 +56,10 @@ void vTaskExperimentRunner(void *pvParameters)
     vTaskDelay(pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS));
 
     /* Create local queue experiment command package */
-    experiment_command_package_t exp_command;
+    experiment_command_package_t exp_command = 
+    {
+        .execution_config = DEFAULT_EXECUTION_CONFIG
+    };
 
     /* Create local queue experiment state package */
     experiment_state_package_t exp_state = 
@@ -67,6 +75,9 @@ void vTaskExperimentRunner(void *pvParameters)
     /* Create local execution state variable to check when the test should be executed */
     int execution_state = 0;
 
+    /* Create timeout value to start executing the experiment in case of any OBC command */
+    uint32_t timeout;
+
     while(1)
     {
         TickType_t last_cycle = xTaskGetTickCount();
@@ -77,7 +88,10 @@ void vTaskExperimentRunner(void *pvParameters)
             execution_state = 1;
         }
 
-        if (execution_state)
+        /* Get system ticks and convert to milliseconds */
+        timeout = (xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000;
+
+        if (execution_state || (timeout > EXPERIMENT_INIT_TIMEOUT_MS))
         {
         	if (exp_command.execution_config & ENABLE_FREQUENCY_TESTS)
         	{
@@ -91,67 +105,94 @@ void vTaskExperimentRunner(void *pvParameters)
 
 			if (exp_command.execution_config & ENABLE_STATIC_TESTS)
         	{
-        		test_manager_routine(exp_command, exp_data, STATIC_WRITE_TEST);
-        		test_manager_routine(exp_command, exp_data, STATIC_READ_TEST); 
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, STATIC_WRITE_TEST);
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, STATIC_READ_TEST);
         	}
 
         	if (exp_command.execution_config & ENABLE_DYNAMIC_TESTS)
         	{
-        		test_manager_routine(exp_command, exp_data, DYNAMIC_LOOP_C_TESTS);
-        		test_manager_routine(exp_command, exp_data, DYNAMIC_STRESS_TESTS);
-        		test_manager_routine(exp_command, exp_data, DYNAMIC_E_CLASSIC_TESTS);
-        		test_manager_routine(exp_command, exp_data, DYNAMIC_F_TESTS); 
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_LOOP_C_TESTS);
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_STRESS_TESTS);
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_E_CLASSIC_TESTS);
+        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_F_TESTS);
         	}
 
-			exp_state.package_id++;
-			exp_state.address += exp_state.length;
-			exp_state.length = 0;
 
-			xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
+            if (exp_state.length > 0)
+            {
+                xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
+    			
+                exp_state.package_id++;
+    			exp_state.address += exp_state.length;
+    			exp_state.length = 0;
+            }
         }
 
         vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_PERIOD_MS));
     }
 }
 
-
-void test_manager_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, experiment_state_package_t *state_package int test) 
+/**
+ * \brief Test manager routine.
+ *
+ * \param[in] cmd_package is the current command queue package.
+ *
+ * \param[in] data_package is the current experiment data queue package.
+ *
+ * \param[in] state_package is the current state data queue package.
+ *
+ * \param[in] test is the test to be executed.
+ *
+ * \return None.
+ */
+void test_manager_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, experiment_state_package_t *state_package, int test) 
 {
-	if (cmd_package.execution_config & ENABLE_SDRAM_MEMORY_B)
+	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_B)
 	{
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_B) != 0)
 		{
-		 	if(media_write(MEDIA_ESRAM, state_package.address, data_package, sizeof(experiment_data_package_t)) == 0)
+		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
 	 		{	
-	 			state_package.length += sizeof(experiment_data_package_t);
+	 			state_package->length += sizeof(experiment_data_package_t);
 	 		} 
 		}
 	}
 
-	if (cmd_package.execution_config & ENABLE_SDRAM_MEMORY_D)
+	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_D)
 	{
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_D) != 0)
 		{
-		 	if(media_write(MEDIA_ESRAM, state_package.address, data_package, sizeof(experiment_data_package_t)) == 0)
+		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
 	 		{	
-	 			state_package.length += sizeof(experiment_data_package_t);
+	 			state_package->length += sizeof(experiment_data_package_t);
 	 		} 
 		}	
 	}
 
-	if (cmd_package.execution_config & ENABLE_SDRAM_MEMORY_F)
+	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_F)
 	{
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_F) != 0)
 		{
-		 	if(media_write(MEDIA_ESRAM, state_package.address, data_package, sizeof(experiment_data_package_t)) == 0)
+		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
 	 		{	
-	 			state_package.length += sizeof(experiment_data_package_t);
+	 			state_package->length += sizeof(experiment_data_package_t);
 	 		} 
 		}
 	}
 }
 
-void test_runner_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, int test) 
+/**
+ * \brief Test manager routine.
+ *
+ * \param[in] data_package is the current experiment data queue package.
+ *
+ * \param[in] test is the test to be executed.
+ *
+ * \param[in] memory_device is the memory device to be used in the test.
+ *
+ * \return The status/error code.
+ */
+int test_runner_routine(experiment_data_package_t *data_package, int test, int memory_device) 
 {
 
 }

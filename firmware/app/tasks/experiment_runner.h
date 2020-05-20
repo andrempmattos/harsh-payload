@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.22
+ * \version 0.0.23
  * 
  * \date 16/05/2020
  * 
@@ -51,6 +51,23 @@
 #define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	1000             		/**< Period in milliseconds. */
 #define TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS		15000					/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_RUNNER_INIT_TIMEOUT_MS     	2000            		/**< Wait time to initialize the task in milliseconds. */
+
+/* Test algorithms selection definitions */
+#define STATIC_WRITE_TEST							0						/**< Static write test algorithm */		
+#define STATIC_READ_TEST							1						/**< Static read test algorithm */		
+#define DYNAMIC_LOOP_C_TESTS						2						/**< Dynamic Loop C test algorithm */			
+#define DYNAMIC_STRESS_TESTS						3						/**< Dynamic stress test algorithm */			
+#define DYNAMIC_E_CLASSIC_TESTS						4						/**< Dynamic E classic test algorithm */			
+#define DYNAMIC_F_TESTS								5						/**< Dynamic F test algorithm */	
+
+/* Memory devices selection definitions */
+#define SDRAM_MEMORY_B								0						/**< SDRAM memory B device */
+#define SDRAM_MEMORY_D								1						/**< SDRAM memory D device */
+#define SDRAM_MEMORY_F								2						/**< SDRAM memory F device */
+
+#define EXPERIMENT_INIT_TIMEOUT_MS     				2000            		/**< Wait time to initialize the experiment in milliseconds. */
+
+#define DEFAULT_EXECUTION_CONFIG     	0x1F        /**< Standard execution configuration: Memories, static and dynamic tests enabled. */
 
 /**
  * \brief Experiment runner task handle.
