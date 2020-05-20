@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.17
+ * \version 0.0.23
  * 
  * \date 09/05/2020
  * 
@@ -41,8 +41,6 @@
 
 #ifndef WATCHDOG_H_
 #define WATCHDOG_H_
-
-#define WATCHDOG_MODULE_NAME       			"Watchdog"
 
 /**
  * \brief Watchdog initialization.
