@@ -1,5 +1,5 @@
 /*
- * version.h
+ * obc_interface.c
  *
  * MIT License
  *
@@ -26,29 +26,36 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief OBC communication interface task implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.24
  * 
- * \date 08/05/2020
+ * \date 21/05/2020
  * 
- * \defgroup version Version
+ * \addtogroup obc_interface
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#include "obc_interface.h"
 
-#define FIRMWARE_VERSION            "0.0.24"
+xTaskHandle xTaskOBCInterfaceHandle;
 
-#define FIRMWARE_STATUS             "Development"
+void vTaskOBCInterface(void *pvParameters)
+{
+    while(1)
+    {
+    	/* This binary semaphore is used to wait for the interrupt event release. 
+    	The task blocks indefinitely, meaning this function call will only return 
+    	once the semaphore has been successfully obtained.*/
+		xSemaphoreTake( xBinarySemaphore, portMAX_DELAY );
+		
+		/* To get here the event must have occurred. */
+		//Do something
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+    }
+}
 
-#endif /* VERSION_H_ */
-
-/** \} End of version group */
+/** \} End of obc_interface group */

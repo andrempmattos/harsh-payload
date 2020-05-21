@@ -1,5 +1,5 @@
 /*
- * version.h
+ * obc_interface.h
  *
  * MIT License
  *
@@ -26,29 +26,43 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief OBC communication interface task definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.24
  * 
- * \date 08/05/2020
+ * \date 21/05/2020
  * 
- * \defgroup version Version
+ * \defgroup obc_interface OBC Interface
+ * \ingroup tasks
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#ifndef OBC_INTERFACE_H_
+#define OBC_INTERFACE_H_
 
-#define FIRMWARE_VERSION            "0.0.24"
+#include <FreeRTOS.h>
+#include <task.h>
 
-#define FIRMWARE_STATUS             "Development"
+#define TASK_OBC_INTERFACE_NAME                 "OBC_Interface" /**< Task name. */
+#define TASK_OBC_INTERFACE_STACK_SIZE           128             /**< Memory stack size in bytes. */
+#define TASK_OBC_INTERFACE_PRIORITY             1               /**< Priority. */
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
+/**
+ * \brief OBC communication interface task handle.
+ */
+extern xTaskHandle xTaskOBCInterfaceHandle;
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+/**
+ * \brief OBC communication interface task.
+ *
+ * \param[in] pvParameters is a value that will passed as the task's parameter.
+ *
+ * \return None.
+ */
+void vTaskOBCInterface(void *pvParameters);
 
-#endif /* VERSION_H_ */
+#endif /* OBC_INTERFACE_H_ */
 
-/** \} End of version group */
+/** \} End of obc_interface group */
