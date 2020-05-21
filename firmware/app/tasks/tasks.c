@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.15
+ * \version 0.0.29
  * 
  * \date 08/05/2020
  * 
@@ -87,7 +87,7 @@ void create_tasks()
 
     if (xTaskExperimentManagerHandle == NULL)
     {
-        /* Error creating the system reset task */
+        /* Error creating the experiment manager task */
     }
 #endif /* CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED */
 
@@ -96,9 +96,18 @@ void create_tasks()
 
     if (xTaskExperimentRunnerHandle == NULL)
     {
-        /* Error creating the system reset task */
+        /* Error creating the experiment runner task */
     }
-#endif /* CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED */    
+#endif /* CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED */   
+
+#if CONFIG_TASK_OBC_INTERFACE_ENABLED == 1
+    xTaskCreate(vTaskOBCInterface, TASK_OBC_INTERFACE_NAME, TASK_OBC_INTERFACE_STACK_SIZE, NULL, TASK_OBC_INTERFACE_PRIORITY, &xTaskOBCInterfaceHandle);
+
+    if (xTaskExperimentRunnerHandle == NULL)
+    {
+        /* Error creating the OBC interface task */
+    }
+#endif /* CONFIG_TASK_OBC_INTERFACE_ENABLED */    
 
 }
 
