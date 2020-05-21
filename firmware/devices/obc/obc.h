@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.26
  * 
  * \date 12/05/2020
  * 
@@ -46,43 +46,8 @@
 	
 #define OBC_MODULE_NAME        			"OBC"
 
-/**
- * \brief OBC commands.
- */
-typedef struct
-{
-    uint8_t operation_mode;				/**< Operation mode selection. */
-    uint16_t execution_config;			/**< Execution configuration. */
-    uint32_t obc_sys_time;				/**< OBC system time syncronization. */
-} obc_command_t;
-
-/**
- * \brief OBC data.
- */
-typedef struct
-{
-	uint32_t time_stamp;				/**< Data time stamp. */
-	uint8_t device;						/**< Device in test. */
-	uint8_t memory_frequency;			/**< Memory frequency during this test (in MHz). */
-	uint16_t refresh_rate;				/**< Memory refresh rate during this test (cycles/ms). */
-    uint8_t algorithm;         			/**< Algorithm executed. */
-    uint16_t iteration;         		/**< Iteration cycle in dynamic tests. */
-    uint32_t address;	         		/**< Address with detected error. */
-    uint32_t data;         				/**< Data in the malfunctioning address. */
-    uint16_t error;         			/**< Error code. */
-} obc_data_t;
-
-/**
- * \brief system state.
- */
-typedef struct
-{
-	uint32_t time_stamp;				/**< Current time stamp. */
-	uint8_t operation_mode;				/**< Current operation mode. */	
-	uint16_t execution_config;			/**< Current execution configuration. */
-	uint8_t error_count;				/**< Errors count. */
-	uint16_t error_code;				/**< Error code. */
-} system_state_t;
+#define MAX_TRANSACTION_SIZE    256
+uint8_t slave_rx_buffer[MAX_TRANSACTION_SIZE];
 
 /**
  * \brief Initialization routine of the OBC interface.
@@ -92,31 +57,22 @@ typedef struct
 int obc_init(void);
 
 /**
- * \brief Gets commands from OBC.
+ * \brief Read commands from OBC.
  *
- * \param[in] command is a pointer store the obc command.
+ * \param[in] package is a pointer to store the obc command.
  *
  * \return The status/error code.
  */
-int obc_get_command(obc_command_t *command);
+int obc_read_data(uint8_t *package);
 
 /**
- * \brief Gets commands from OBC.
+ * \brief Send data to OBC.
  *
- * \param[in] command is a pointer store the obc data package.
- *
- * \return The status/error code.
- */
-int obc_send_data(obc_data_t *data);
-
-/**
- * \brief Gets the general state of the payload.
- *
- * \param[in] command is a pointer store the obc data package.
+ * \param[in] package is a pointer that stores the obc data package.
  *
  * \return The status/error code.
  */
-int obc_send_state(system_state_t *state);
+int obc_send_data(uint8_t *package);
 
 
 #endif /* OBC_H_ */

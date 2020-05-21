@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.7
+ * \version 0.0.26
  * 
  * \date 12/05/2020
  * 
@@ -46,24 +46,44 @@
 
 #include "obc.h"
 
-int obc_init(void) 
-{
+int obc_init() 
+{ 
+    MSS_SPI_init(&g_mss_spi0);
 
+    MSS_SPI_configure_slave_mode
+    (
+        &g_mss_spi0,
+        MSS_SPI_MODE1,
+        MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE
+    );
+  
+    MSS_SPI_set_slave_block_buffers
+    (
+        &g_mss_spi0,
+        0,
+        0,
+        slave_rx_buffer,
+        sizeof(slave_rx_buffer),
+        spi_rx_interrupt_handler
+    );
 }
 
-int obc_get_command(obc_command_t *command)
+int obc_read(uint8_t *package)
 {
-
+    uint8_t i;
+    for (i = 0; i < sizeof(package); i++)
+    {
+        *package++ = slave_rx_buffer[i];
+    }
 }
 
-int obc_send_data(obc_data_t *data)
+int obc_send(uint8_t *package)
 {
-
-}
-
-int obc_send_state(system_state_t *state)
-{
-
+    uint8_t i;
+    for (i = 0; i < sizeof(package); i++)
+    {
+        MSS_SPI_set_slave_tx_frame(&g_mss_spi0, *package++);
+    }
 }
 
 /** \} End of obc group */
