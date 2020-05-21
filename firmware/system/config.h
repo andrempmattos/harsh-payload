@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.30
  * 
  * \date 08/05/2020
  * 
@@ -47,6 +47,7 @@
 #define CONFIG_TASK_HEARTBEAT_ENABLED                   1
 #define CONFIG_TASK_EXPERIMENT_MANAGER_ENABLED          1
 #define CONFIG_TASK_EXPERIMENT_RUNNER_ENABLED	        1
+#define CONFIG_TASK_OBC_INTERFACE_ENABLED		        1
 
 /* Queues */
 #define CONFIG_QUEUE_OBC_COMMAND_ENABLED                1
@@ -54,6 +55,9 @@
 #define CONFIG_QUEUE_SYS_STATE_ENABLED                  1
 #define CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED         1
 #define CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED	        1
+
+/* Semaphores */
+#define CONFIG_SEMAPHORE_HANDLER_OBC_ENABLED  			1
 
 /* Debug and log messages */
 #define CONFIG_DRIVERS_DEBUG_ENABLED                    1

@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.30
  * 
  * \date 27/03/2020
  * 
@@ -56,6 +56,9 @@ void main(void)
 
     /* Create all the system queues */
     create_queues();
+
+    /* Create all the interrupt handlers */
+    create_interrupt_handlers();
 
     /* Start the scheduler */
     vTaskStartScheduler();
