@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.25
+ * \version 0.0.27
  * 
  * \date 21/05/2020
  * 
@@ -38,8 +38,50 @@
  * \{
  */
 
+#include <devices/obc/obc.h>
+
 #include "interrupt_handler.h"
 
+void create_interrupt_handlers() 
+{
+	/* OBC communication interface interrupt handler semaphore */
+	#if CONFIG_SEMAPHORE_HANDLER_OBC_ENABLED == 1
+		xBinarySemaphore = xSemaphoreCreateBinary();
 
+		/* Give the semaphore here to allow the first execution of OBC Interface 
+		task, which is blocked by this semaphore  */
+		//xSemaphoreGive(xBinarySemaphore);
+
+	#endif /* CONFIG_SEMAPHORE_HANDLER_OBC_ENABLED */
+}
+
+void spi_rx_interrupt_handler(uint8_t *rx_buff, uint16_t rx_size)
+{
+	/* Store the received data */
+	uint8_t i;
+	for (i = 0; i < rx_size; i++)
+	{
+		slave_rx_buffer[i] = *rx_buff++;
+	}
+
+	BaseType_t xHigherPriorityTaskWoken;
+	
+	/* The xHigherPriorityTaskWoken parameter must be initialized to pdFALSE as
+	it will get set to pdTRUE inside the interrupt safe API function if a
+	context switch is required. */
+	xHigherPriorityTaskWoken = pdFALSE;
+	
+	/* 'Give' the semaphore to unblock the task, passing in the address of
+	xHigherPriorityTaskWoken as the interrupt safe API function's
+	pxHigherPriorityTaskWoken parameter. */
+	xSemaphoreGiveFromISR( xBinarySemaphore, &xHigherPriorityTaskWoken );
+	
+	/* Pass the xHigherPriorityTaskWoken value into portYIELD_FROM_ISR(). If
+	xHigherPriorityTaskWoken was set to pdTRUE inside xSemaphoreGiveFromISR()
+	then calling portYIELD_FROM_ISR() will request a context switch. If
+	xHigherPriorityTaskWoken is still pdFALSE then calling
+	portYIELD_FROM_ISR() will have no effect. */
+	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+}
 
 /** \} End of interrupt_handler group */

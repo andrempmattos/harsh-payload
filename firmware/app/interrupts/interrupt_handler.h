@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.25
+ * \version 0.0.27
  * 
  * \date 21/05/2020
  * 
@@ -43,6 +43,8 @@
 #define INTERRUPT_HANDLER_H_
 
 #include <FreeRTOS.h>
+
+#include <stdint.h>
 
 #endif /* INTERRUPT_HANDLER_H_ */
 
