@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.4
+ * \version 0.0.29
  * 
  * \date 09/05/2020
  * 
@@ -48,7 +48,7 @@
 
 #define TASK_STARTUP_NAME                   "Startup"
 #define TASK_STARTUP_STACK_SIZE             500
-#define TASK_STARTUP_PRIORITY               5
+#define TASK_STARTUP_PRIORITY               6
 
 /* Status done bit position */
 #define TASK_STARTUP_DONE                   (1 << 0)

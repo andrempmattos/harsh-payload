@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.29
  * 
  * \date 09/05/2020
  * 
@@ -86,7 +86,7 @@ void vTaskStartup(void *pvParameters)
         error = true;
     }
 
-    /* Media device initialization */
+    /* OBC device initialization */
     if (obc_init() != 0)
     {
         error = true;

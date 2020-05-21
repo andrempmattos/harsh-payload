@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.24
+ * \version 0.0.29
  * 
  * \date 21/05/2020
  * 
@@ -45,9 +45,11 @@
 #include <FreeRTOS.h>
 #include <task.h>
 
+#include <app/interrupts/interrupt_handler.h>
+
 #define TASK_OBC_INTERFACE_NAME                 "OBC_Interface" /**< Task name. */
 #define TASK_OBC_INTERFACE_STACK_SIZE           128             /**< Memory stack size in bytes. */
-#define TASK_OBC_INTERFACE_PRIORITY             1               /**< Priority. */
+#define TASK_OBC_INTERFACE_PRIORITY             5               /**< Priority. */
 
 /**
  * \brief OBC communication interface task handle.

@@ -30,13 +30,15 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.24
+ * \version 0.0.29
  * 
  * \date 21/05/2020
  * 
  * \addtogroup obc_interface
  * \{
  */
+
+#include <devices/obc/obc.h>
 
 #include "obc_interface.h"
 
@@ -52,7 +54,7 @@ void vTaskOBCInterface(void *pvParameters)
 		xSemaphoreTake( xBinarySemaphore, portMAX_DELAY );
 		
 		/* To get here the event must have occurred. */
-		//Do something
+        //Do something
 
 
     }
