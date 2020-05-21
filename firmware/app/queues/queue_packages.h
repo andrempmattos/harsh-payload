@@ -1,5 +1,5 @@
-/*
- * version.h
+/* 
+ * queues_packages.h
  *
  * MIT License
  *
@@ -26,29 +26,22 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Queues packages definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
  * \version 0.0.25
  * 
- * \date 08/05/2020
+ * \date 18/05/2020
  * 
- * \defgroup version Version
+ * \defgroup queues_packages Queues Packages
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#ifndef QUEUE_PACKAGES_H_
+#define QUEUE_PACKAGES_H_
 
-#define FIRMWARE_VERSION            "0.0.25"
 
-#define FIRMWARE_STATUS             "Development"
+#endif /* QUEUE_PACKAGES_H_ */
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
-
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
-
-#endif /* VERSION_H_ */
-
-/** \} End of version group */
+/** \} End of queues_packages group */
