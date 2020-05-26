@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.25
+ * \version 0.0.31
  * 
  * \date 18/05/2020
  * 
@@ -86,7 +86,7 @@ void create_queues()
 
     /* Experiment state queue */
 #if CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED == 1
-    xQueueExperimentState= xQueueCreate(1, sizeof(experiment_state_package_t));
+    xQueueExperimentState= xQueueCreate(10, sizeof(experiment_state_package_t));
 
     if (xQueueExperimentState == NULL)
     {
