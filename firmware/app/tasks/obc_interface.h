@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.29
+ * \version 0.0.32
  * 
  * \date 21/05/2020
  * 
@@ -46,10 +46,20 @@
 #include <task.h>
 
 #include <app/interrupts/interrupt_handler.h>
+#include <app/queues/queues.h>
 
 #define TASK_OBC_INTERFACE_NAME                 "OBC_Interface" /**< Task name. */
 #define TASK_OBC_INTERFACE_STACK_SIZE           128             /**< Memory stack size in bytes. */
 #define TASK_OBC_INTERFACE_PRIORITY             5               /**< Priority. */
+
+/**
+ * \brief OBC FSP command.
+ */
+typedef struct
+{
+    uint8_t fsp_command;						/**< FSP command. */
+    obc_command_package_t parameter;			/**< FSP command parameter. */
+} obc_command_t;
 
 /**
  * \brief OBC communication interface task handle.
