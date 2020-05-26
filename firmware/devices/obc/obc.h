@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.26
+ * \version 0.0.31
  * 
  * \date 12/05/2020
  * 
@@ -46,7 +46,9 @@
 	
 #define OBC_MODULE_NAME        			"OBC"
 
-#define MAX_TRANSACTION_SIZE    256
+#define SPI_TIMEOUT    					10000		/* Arbitrary timeout define to approximately 100us */
+#define MAX_TRANSACTION_SIZE    		256
+
 uint8_t slave_rx_buffer[MAX_TRANSACTION_SIZE];
 
 /**
@@ -59,20 +61,22 @@ int obc_init(void);
 /**
  * \brief Read commands from OBC.
  *
- * \param[in] package is a pointer to store the obc command.
+ * \param[in] package is a pointer to store the obc package.
  *
  * \return The status/error code.
  */
-int obc_read_data(uint8_t *package);
+int obc_read(uint8_t *package);
 
 /**
  * \brief Send data to OBC.
  *
- * \param[in] package is a pointer that stores the obc data package.
+ * \param[in] package is a pointer that stores the obc package.
+ *
+ * \param[in] package is the obc package length.
  *
  * \return The status/error code.
  */
-int obc_send_data(uint8_t *package);
+int obc_send(uint8_t *package, uint8_t package_len);
 
 
 #endif /* OBC_H_ */
