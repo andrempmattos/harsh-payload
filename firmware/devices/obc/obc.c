@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.31
+ * \version 0.0.33
  * 
  * \date 12/05/2020
  * 
@@ -45,6 +45,8 @@
 #include <drivers/mss_spi/mss_spi.h>
 #include <drivers/mss_can/mss_can.h>
 #include <drivers/mss_uart/mss_uart.h>
+
+#include <app/interrupts/interrupt_handler.h>
 
 #include "obc.h"
 
@@ -91,8 +93,8 @@ int obc_read(uint8_t *package)
 
 int obc_send(uint8_t *package, uint8_t package_len)
 {
-    debug_print_event_from_module(SYS_LOG_INFO, OBC_MODULE_NAME, "Sending a data packet...");
-    debug_new_line();
+	sys_log_print_event_from_module(SYS_LOG_INFO, OBC_MODULE_NAME, "Sending a data packet...");
+	sys_log_new_line();
 
     /* Disable SPI channel to set the transfer byte count */
     MSS_SPI_disable(&g_mss_spi0);
@@ -114,8 +116,8 @@ int obc_send(uint8_t *package, uint8_t package_len)
     uint8_t timeout_counter;
     while((!MSS_SPI_tx_done(&g_mss_spi0)) || (timeout_counter++ < SPI_TIMEOUT)) 
     {
-        debug_print_event_from_module(SYS_LOG_ERROR, OBC_MODULE_NAME, "Communication interface timeout!");
-        debug_new_line();
+    	sys_log_print_event_from_module(SYS_LOG_ERROR, OBC_MODULE_NAME, "Communication interface timeout!");
+    	sys_log_new_line();
         return -1;
     }
 
