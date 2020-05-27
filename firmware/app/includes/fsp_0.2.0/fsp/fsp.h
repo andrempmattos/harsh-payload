@@ -52,6 +52,7 @@
 #define FSP_ADR_EPS                     1       /**< EPS module address. */
 #define FSP_ADR_TTC                     2       /**< TTC module address. */
 #define FSP_ADR_OBDH                    3       /**< OBDH module address. */
+#define FSP_ADR_HARSH					4		/**< Payload HARSH module address. */
 
 // Types of packets
 #define FSP_PKT_TYPE_DATA               1       /**< Data packet. */
@@ -67,6 +68,8 @@
 #define FSP_CMD_REQUEST_RF_MUTEX        3       /**< Request RF mutex command. */
 #define FSP_CMD_HIBERNATION             4       /**< Hibernation command. */
 #define FSP_CMD_RESET_CHARGE            5       /**< Reset battery charge command. */
+#define FSP_CMD_SEND_STATE	            6       /**< Send state command. */
+#define FSP_CMD_SET_CONFIG              7       /**< Set configuration command. */
 
 // Ack answers
 #define FSP_ACK_RF_MUTEX_FREE           1       /**< RF mutex is free. */
