@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.27
+ * \version 0.0.33
  * 
  * \date 21/05/2020
  * 
@@ -43,8 +43,22 @@
 #define INTERRUPT_HANDLER_H_
 
 #include <FreeRTOS.h>
+#include <semphr.h>
 
 #include <stdint.h>
+
+/**
+ * \brief SPI RX buffer interrupt handler.
+ *
+ * \param[in] package is a pointer to the RX buffer.
+ *
+ * \param[in] package is the RX buffer size.
+ *
+ * \return The status/error code.
+ */
+void spi_rx_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size);
+
+QueueHandle_t xBinarySemaphore;
 
 #endif /* INTERRUPT_HANDLER_H_ */
 

@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.27
+ * \version 0.0.33
  * 
  * \date 21/05/2020
  * 
@@ -39,6 +39,7 @@
  */
 
 #include <devices/obc/obc.h>
+#include <system/config.h>
 
 #include "interrupt_handler.h"
 
@@ -55,7 +56,7 @@ void create_interrupt_handlers()
 	#endif /* CONFIG_SEMAPHORE_HANDLER_OBC_ENABLED */
 }
 
-void spi_rx_interrupt_handler(uint8_t *rx_buff, uint16_t rx_size)
+void spi_rx_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size)
 {
 	/* Store the received data */
 	uint8_t i;
