@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.32
+ * \version 0.0.33
  * 
  * \date 21/05/2020
  * 
@@ -38,8 +38,9 @@
  * \{
  */
 
-#include <system/sys_log/sys_log.h>
+#include <app/includes/fsp_0.2.0/fsp/fsp.h>
 
+#include <system/sys_log/sys_log.h>
 #include <devices/obc/obc.h>
 
 #include "obc_interface.h"
@@ -48,7 +49,7 @@ xTaskHandle xTaskOBCInterfaceHandle;
 
 /* Local functions prototypes */
 int send_obc_package(uint8_t *package);
-int process_obc_package(uint8_t *command);
+int process_obc_package(obc_command_t *command);
 
 void vTaskOBCInterface(void *pvParameters)
 {
@@ -60,13 +61,12 @@ void vTaskOBCInterface(void *pvParameters)
 		xSemaphoreTake(xBinarySemaphore, portMAX_DELAY);
 		
 		/* To get here the event must have occurred. */
-        //Do something
 
         obc_command_t obc_command;
         obc_data_package_t obc_data;
         sys_state_package_t sys_state;
         
-        if (process_obc_package(obc_command) == 0)
+        if (process_obc_package(&obc_command) == 0)
         {
             switch(obc_command.fsp_command) 
             {
@@ -100,7 +100,7 @@ void vTaskOBCInterface(void *pvParameters)
                         sys_log_new_line();
                     }
                     break;
-                case FSP_CMD_SEND_CONFIG:
+                case FSP_CMD_SET_CONFIG:
                     /* Send to queue the command package */
                     xQueueSendToBack(xQueueOBCCommand, &obc_command.parameter, 0);
 
@@ -157,7 +157,7 @@ int send_obc_package(uint8_t *package)
  */
 int process_obc_package(obc_command_t *command) 
 {
-    uint8_t obc_package[FSP_PKT_MAX_LENGTH]
+    uint8_t obc_package[FSP_PKT_MAX_LENGTH];
     uint8_t fsp_status = 0;
     uint8_t i = 0;
     fsp_packet_t fsp_packet;
@@ -210,7 +210,7 @@ int process_obc_package(obc_command_t *command)
                 /* Set the payload internal experiment configuration */
                 for (i = 0; i < fsp_packet.length; i++)
                 {
-                    (uint8_t *)command->parameter++ = fsp_packet.payload[i];
+                    *((uint8_t *)(++command)) = fsp_packet.payload[i];
                 }
                 command->fsp_command = FSP_CMD_SET_CONFIG;
                 fsp_gen_ack_pkt(FSP_ADR_OBDH, &fsp_packet_ack);
@@ -228,7 +228,7 @@ int process_obc_package(obc_command_t *command)
         fsp_encode(&fsp_packet_ack, pkt, &pkt_len);
         
         /* Send the acknowledge package to the OBC (just after receiving a valid command) */
-        return obdh_send(pkt, pkt_len);
+        return obc_send(pkt, pkt_len);
     }
     else 
     {
