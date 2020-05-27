@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.33
  * 
  * \date 16/05/2020
  * 
@@ -38,11 +38,13 @@
  * \{
  */
 
-//#include <libs/experiment_algorithms.h>
+#include <system/sys_log/sys_log.h>
+
+#include <app/includes/experiment_algorithms/algorithms.h>
 #include <devices/media/media.h>
+#include <app/queues/queues.h>
 
 #include "experiment_runner.h"
-#include "queues.h"
 
 xTaskHandle xTaskExperimentRunnerHandle;
 
@@ -149,6 +151,8 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 {
 	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_B)
 	{
+        sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory B test: ");
+
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_B) != 0)
 		{
 		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
@@ -160,6 +164,8 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 
 	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_D)
 	{
+        sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory D test: ");
+
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_D) != 0)
 		{
 		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
@@ -171,6 +177,8 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 
 	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_F)
 	{
+        sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory F test: ");
+
 		if (test_runner_routine(data_package, test, SDRAM_MEMORY_F) != 0)
 		{
 		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
@@ -194,7 +202,47 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
  */
 int test_runner_routine(experiment_data_package_t *data_package, int test, int memory_device) 
 {
-
+    switch(test)
+    {
+        case STATIC_WRITE_TEST:
+            static_write_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("static write algorithm");
+            sys_log_new_line();
+            return 0;
+        
+        case STATIC_READ_TEST:
+            static_read_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("static read algorithm");
+            sys_log_new_line();
+            return 0;
+        
+        case DYNAMIC_LOOP_C_TESTS:
+            dynamic_loopc_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("dynamic loop c algorithm");
+            sys_log_new_line();
+            return 0;
+        
+        case DYNAMIC_STRESS_TESTS:
+            dynamic_stress_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("dynamic stress algorithm");
+            sys_log_new_line();
+            return 0;
+        
+        case DYNAMIC_E_CLASSIC_TESTS:
+            dynamic_eclassic_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("dynamic e classic algorithm");
+            sys_log_new_line();
+            return 0;
+        
+        case DYNAMIC_F_TESTS:
+            dynamic_f_algorithm((uint8_t *)data_package, memory_device);
+            sys_log_print_msg("dynamic f algorithm");
+            sys_log_new_line();
+            break;
+        
+        default:
+            return -1;
+    }
 }
 
 /** \} End of experiment_runner group */
