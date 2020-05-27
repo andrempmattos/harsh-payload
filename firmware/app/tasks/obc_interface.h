@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.32
+ * \version 0.0.33
  * 
  * \date 21/05/2020
  * 
@@ -44,6 +44,8 @@
 
 #include <FreeRTOS.h>
 #include <task.h>
+#include <queue.h>
+#include <semphr.h>
 
 #include <app/interrupts/interrupt_handler.h>
 #include <app/queues/queues.h>

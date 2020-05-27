@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.29
+ * \version 0.0.33
  * 
  * \date 08/05/2020
  * 
@@ -49,6 +49,7 @@
 #include "heartbeat.h"
 #include "experiment_manager.h"
 #include "experiment_runner.h"
+#include "obc_interface.h"
 
 void create_tasks()
 {
