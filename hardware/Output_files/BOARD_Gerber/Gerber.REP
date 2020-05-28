@@ -2,10 +2,204 @@
 FileName = Gerber.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Solder
-      File : Gerber.GTS
+Generating : Drill Drawing
+      File : Gerber.GD1
 
-    Adding Layer      : Top Solder
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Drill Pair : Top-Outer-Layer (GND)-Bottom-Outer-Layer (GND)
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D83
+    D84
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Gerber.GM1
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : Gerber.GM2
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Gerber.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Layer      : Bottom-Outer-Layer (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D13
+    D30
+    D32
+    D33
+    D35
+    D36
+    D37
+    D38
+    D39
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D69
+    D76
+    D77
+    D78
+    D79
+    D80
+*************************************************************
+
+*************************************************************
+Generating : Bottom-Outer-Layer (GND)
+      File : Gerber.GBL
+
+    Adding Layer      : Bottom-Outer-Layer (GND)
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D13
+    D17
+    D18
+    D20
+    D22
+    D23
+    D24
+    D25
+    D27
+    D28
+    D29
+    D48
+    D49
+    D50
+    D51
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+*************************************************************
+
+*************************************************************
+Generating : Inner-Layer (VCC)
+      File : Gerber.GP2
+
+    Adding Layer      : Inner-Layer (VCC)
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D13
+    D59
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Gerber.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Layer      : Bottom-Outer-Layer (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D20
+    D22
+    D23
+    D24
+    D25
+    D27
+    D28
+    D29
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Gerber.GTP
+
+    Adding Layer      : Top Paste
 
     Adding Layer      : Mechanical 1
 
@@ -17,32 +211,20 @@ Generating : Top Solder
 
 
 Used DCodes :
-    D12
-    D13
     D16
     D17
     D18
     D19
     D20
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
 *************************************************************
 
 *************************************************************
@@ -63,271 +245,6 @@ Used DCodes :
     D13
     D14
     D15
-    D16
-    D17
-    D18
-    D19
-*************************************************************
-
-*************************************************************
-Generating : Top-Mid-Layer Signal
-      File : Gerber.G1
-
-    Adding Layer      : Top-Mid-Layer Signal
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D13
-    D16
-    D17
-    D18
-    D19
-    D48
-    D53
-    D54
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-*************************************************************
-
-*************************************************************
-Generating : Board Outline
-      File : Gerber.GM2
-
-    Adding Layer      : Board Outline
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : Gerber.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Layer      : Bottom-Outer-Layer (GND)
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D13
-    D16
-    D17
-    D18
-    D19
-    D34
-    D36
-    D37
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
-    D75
-    D80
-    D81
-    D82
-    D83
-    D84
-*************************************************************
-
-*************************************************************
-Generating : Top-Outer-Layer (GND)
-      File : Gerber.GTL
-
-    Adding Layer      : Top-Outer-Layer (GND)
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D13
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D48
-    D53
-    D54
-    D55
-    D56
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-*************************************************************
-
-*************************************************************
-Generating : Drill Drawing
-      File : Gerber.GD1
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Drill Pair : Top-Outer-Layer (GND)-Bottom-Outer-Layer (GND)
-
-    Adding Layer      : Drill Drawing
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-    D87
-    D88
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : Gerber.GM1
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Gerber.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Layer      : Bottom-Outer-Layer (GND)
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-    D22
-    D23
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D73
-    D74
-    D75
-    D76
-    D77
-    D78
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : Gerber.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Sheet
-
-    Adding Layer      : Top-Outer-Layer (GND)
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
 *************************************************************
 
 *************************************************************
@@ -344,20 +261,15 @@ Generating : Bottom-Mid-Layer Signal
 
 
 Used DCodes :
-    D12
     D13
-    D16
-    D17
-    D18
-    D19
     D48
-    D53
+    D49
+    D50
     D54
+    D55
+    D56
     D57
-    D59
-    D60
-    D61
-    D62
+    D58
 *************************************************************
 
 *************************************************************
@@ -374,20 +286,15 @@ Generating : Inner-Layer (GND)
 
 
 Used DCodes :
-    D12
     D13
-    D16
-    D17
-    D18
-    D19
+    D59
+    D60
+    D61
+    D62
     D63
     D64
     D65
     D66
-    D67
-    D68
-    D69
-    D70
 *************************************************************
 
 *************************************************************
@@ -407,68 +314,55 @@ Used DCodes :
     D13
     D14
     D15
-    D16
-    D17
-    D18
-    D19
-    D85
-    D86
+    D81
+    D82
 *************************************************************
 
 *************************************************************
-Generating : Bottom-Outer-Layer (GND)
-      File : Gerber.GBL
+Generating : Top Solder
+      File : Gerber.GTS
 
-    Adding Layer      : Bottom-Outer-Layer (GND)
+    Adding Layer      : Top Solder
 
     Adding Layer      : Mechanical 1
 
     Adding Layer      : Sheet
 
+    Adding Layer      : Top-Outer-Layer (GND)
+
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D12
+    D10
     D13
-    D16
-    D17
-    D18
-    D19
-    D22
-    D23
-    D26
-    D27
-    D28
-    D29
+    D21
     D30
     D31
     D32
     D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
     D48
-    D53
-    D54
-    D55
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-    D73
-    D74
-    D75
-    D76
-    D77
-    D78
-    D79
 *************************************************************
 
 *************************************************************
-Generating : Inner-Layer (VCC)
-      File : Gerber.GP2
+Generating : Top-Mid-Layer Signal
+      File : Gerber.G1
 
-    Adding Layer      : Inner-Layer (VCC)
+    Adding Layer      : Top-Mid-Layer Signal
 
     Adding Layer      : Mechanical 1
 
@@ -478,19 +372,58 @@ Generating : Inner-Layer (VCC)
 
 
 Used DCodes :
-    D12
+    D13
+    D48
+    D49
+    D50
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Top-Outer-Layer (GND)
+      File : Gerber.GTL
+
+    Adding Layer      : Top-Outer-Layer (GND)
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Sheet
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
     D13
     D16
     D17
     D18
     D19
-    D63
-    D66
-    D67
-    D68
-    D69
-    D70
-    D71
-    D72
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
 *************************************************************
 
