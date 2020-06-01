@@ -4,11 +4,8 @@ The Harsh Environment CubeSat Payload was designed to be compatible with the OBD
 Under Development! More information soon.
 
 <p align="center">
-<img src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/harsh_pcb_top.png">
-</p>
-
-<p align="center">
-<img src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/harsh_pcb_bottom.png">
+<img width="50%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/harsh_pcb_top.png">
+<img width="49%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/harsh_pcb_bottom.png">
 </p>
 
 
