@@ -4,9 +4,9 @@ C:\Users\lirmm2\Desktop\GitHub\HARSH\hardware\Output_files\ASSEMBLY_Pick Place\P
 ========================================================================================================================
 File Design Information:
 
-Date:       27/04/20
-Time:       20:30
-Revision:   b08dad6dc8e34382ab80bf6837f7081de1b101ca
+Date:       01/06/20
+Time:       15:21
+Revision:   eab1d0e029c8443fb3f3607a8a4c2a21ecd841e2
 Variant:    No variations
 Units used: mil
 
@@ -51,7 +51,7 @@ R4         10k                        BottomLayer DONE_R0603                    
 R3         1K                         BottomLayer DONE_R0603                    1118.110      1350.886      90       "RES SMD 1K OHM 1% 1/4W 0603"                                                                                                        
 R2         1K                         TopLayer    DONE_R0603                    1303.642      1530.767      360      "RES SMD 1K OHM 1% 1/4W 0603"                                                                                                        
 R1         120R                       BottomLayer DONE_R0603                    398.130       1400.591      360      "120R 1% 0603"                                                                                                                       
-P5         53261-0371                 BottomLayer DONE_PICOBLADE_3H_HORIZONTAL  423.228       1542.323      360      "Picoblade, 3 pos, Right-angle"                                                                                                      
+P5         53261-0371                 BottomLayer DONE_PICOBLADE_3H_HORIZONTAL  423.228       1542.323      0        "Picoblade, 3 pos, Right-angle"                                                                                                      
 P4         "Header 5H"                TopLayer    DONE_H1X5_PADS                470.079       97.441        180      "Header, 5-Pin, Pads"                                                                                                                
 P3         53261-0671                 BottomLayer DONE_PICOBLADE_6H_HORIZONTAL  937.992       1542.323      360      "Picoblade, 6 pos, Right-angle"                                                                                                      
 P2         53261-1571                 TopLayer    DONE_PICOBLADE_15H_HORIZONTAL 717.520       1542.323      180      "Picoblade, 15 pos, Right-angle, 53261-1571"                                                                                         
@@ -79,7 +79,7 @@ D2         Green                      TopLayer    DONE_D0603_GREEN              
 D1         Orange                     TopLayer    DONE_D0603_ORANGE             1265.880      1631.398      90       "SMD Orange LED"                                                                                                                     
 C63        10uF                       BottomLayer DONE_C0603                    2378.937      611.221       360      "CAP CER 10uF 16V 0603 X5R"                                                                                                          
 C62        10uF                       BottomLayer DONE_C0603                    2378.937      1027.559      360      "CAP CER 10uF 16V 0603 X5R"                                                                                                          
-C61        10uF                       BottomLayer DONE_C0603                    2378.937      1420.276      360      "CAP CER 10uF 16V 0603 X5R"                                                                                                          
+C61        10uF                       BottomLayer DONE_C0603                    2378.937      1420.276      0        "CAP CER 10uF 16V 0603 X5R"                                                                                                          
 C60        10uF                       TopLayer    DONE_C0603                    546.260       276.575       360      "CAP CER 10uF 16V 0603 X5R"                                                                                                          
 C59        22uF                       BottomLayer DONE_C0603                    781.221       464.567       90       "CAP CER 22UF 10V X5R 0603"                                                                                                          
 C58        22uF                       BottomLayer DONE_C0603                    601.378       442.913       180      "CAP CER 22UF 10V X5R 0603"                                                                                                          
