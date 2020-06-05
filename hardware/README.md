@@ -11,10 +11,13 @@
 		<img src="https://img.shields.io/badge/revision-1.1-lightgreen?style=for-the-badge">
 	</a>
     <a href="">
-		<img src="https://img.shields.io/badge/CAD%20tool-altium-blue?style=for-the-badge">
+		<img src="https://img.shields.io/badge/model-engineering-blue?style=for-the-badge">
 	</a>
 	<a href="">
-		<img src="https://img.shields.io/badge/use-acedemic%20only-9cf?style=for-the-badge">
+		<img src="https://img.shields.io/badge/CAD%20tool-altium%20v19.2-9cf?style=for-the-badge">
+	</a>
+	<a href="">
+		<img src="https://img.shields.io/badge/use-acedemic%20only-orange?style=for-the-badge">
 	</a>
 	<a href="">
 		<img src="https://img.shields.io/badge/license-MIT-red?style=for-the-badge">
