@@ -30,7 +30,7 @@
 <p align="center">
   	<a href="#overview">Overview</a> •
   	<a href="#license">License</a> •
-  	<a href="#version">Revision</a> •
+  	<a href="#revision">Revision</a> •
   	<a href="#references">References</a> •
   	<a href="#development">Development</a> •
   	<a href="#notes">Notes</a>
@@ -45,7 +45,7 @@
 
 ## License
 
-## Version
+## Revision
 
 ## References
 
