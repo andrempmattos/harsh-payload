@@ -10,13 +10,13 @@
     <a href="">
 		<img src="https://img.shields.io/badge/latest%20version-0.0.33-lightgreen?style=for-the-badge">
 	</a>
-    <a href="https://spacelab.ufsc.br">
+    <a href="">
 		<img src="https://img.shields.io/badge/stable%20version-0.0.0-blue?style=for-the-badge">
 	</a>
-	<a href="http://www.lirmm.fr/">
+	<a href="">
 		<img src="https://img.shields.io/badge/use-acedemic%20only-9cf?style=for-the-badge">
 	</a>
-	<a href="http://www.lirmm.fr/">
+	<a href="">
 		<img src="https://img.shields.io/badge/license-MIT-red?style=for-the-badge">
 	</a>
 	<a href="https://github.com/andrempmattos/HARSH/tree/master/documentation">
@@ -50,6 +50,9 @@
 * [OBDH2](https://github.com/spacelab-ufsc/obdh2) (On-Board Data Handling 2.0) - SpaceLab UFSC 
 
 ## Development
+* Toolchain setup
+* Compiling and building
+* Debugging
 
 ## Notes
 
