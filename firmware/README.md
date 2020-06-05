@@ -14,7 +14,16 @@
 		<img src="https://img.shields.io/badge/stable%20version-0.0.0-blue?style=for-the-badge">
 	</a>
 	<a href="">
-		<img src="https://img.shields.io/badge/use-acedemic%20only-9cf?style=for-the-badge">
+		<img src="https://img.shields.io/badge/model-engineering-9cf?style=for-the-badge">
+	</a>
+	<a href="">
+		<img src="https://img.shields.io/badge/language-c-blueviolet?style=for-the-badge">
+	</a>
+	<a href="">
+		<img src="https://img.shields.io/badge/IDE%20tool-SoftConsole%20v6.0-yellow?style=for-the-badge">
+	</a>
+	<a href="">
+		<img src="https://img.shields.io/badge/use-acedemic%20only-orange?style=for-the-badge">
 	</a>
 	<a href="">
 		<img src="https://img.shields.io/badge/license-MIT-red?style=for-the-badge">
