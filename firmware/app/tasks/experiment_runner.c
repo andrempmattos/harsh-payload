@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.34
  * 
  * \date 16/05/2020
  * 
@@ -41,7 +41,7 @@
 #include <system/sys_log/sys_log.h>
 
 #include <app/includes/experiment_algorithms/algorithms.h>
-#include <devices/media/media.h>
+#include <devices/media/sys_media.h>
 #include <app/queues/queues.h>
 
 #include "experiment_runner.h"
@@ -49,8 +49,8 @@
 xTaskHandle xTaskExperimentRunnerHandle;
 
 /* Local functions prototypes */
-void test_manager_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, experiment_state_package_t *state_package, int test);
-int test_runner_routine(experiment_data_package_t *data_package, int test, int memory_device);
+void test_manager_routine(experiment_command_package_t *cmd_package, experiment_state_package_t *state_package, int test);
+int test_runner_routine(int test, int memory_device);
 
 void vTaskExperimentRunner(void *pvParameters)
 {
@@ -107,16 +107,15 @@ void vTaskExperimentRunner(void *pvParameters)
 
 			if (exp_command.execution_config & ENABLE_STATIC_TESTS)
         	{
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, STATIC_WRITE_TEST);
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, STATIC_READ_TEST);
+        		test_manager_routine(&exp_command, &exp_state, STATIC_LOOP_TEST);
         	}
 
         	if (exp_command.execution_config & ENABLE_DYNAMIC_TESTS)
         	{
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_LOOP_C_TESTS);
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_STRESS_TESTS);
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_E_CLASSIC_TESTS);
-        		test_manager_routine(&exp_command, &exp_data, &exp_state, DYNAMIC_F_TESTS);
+        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_LOOP_C_TESTS);
+        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_STRESS_TESTS);
+        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_E_CLASSIC_TESTS);
+        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_F_TESTS);
         	}
 
 
@@ -147,17 +146,20 @@ void vTaskExperimentRunner(void *pvParameters)
  *
  * \return None.
  */
-void test_manager_routine(experiment_command_package_t *cmd_package, experiment_data_package_t *data_package, experiment_state_package_t *state_package, int test) 
+void test_manager_routine(experiment_command_package_t *cmd_package, experiment_state_package_t *state_package, int test) 
 {
+    int log_size = 0;
+
 	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_B)
 	{
         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory B test: ");
 
-		if (test_runner_routine(data_package, test, SDRAM_MEMORY_B) != 0)
+        log_size = test_runner_routine(test, SDRAM_MEMORY_B);
+		if (log_size > 0)
 		{
-		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
+		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
-	 			state_package->length += sizeof(experiment_data_package_t);
+	 			state_package->length += log_size;
 	 		} 
 		}
 	}
@@ -166,11 +168,12 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 	{
         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory D test: ");
 
-		if (test_runner_routine(data_package, test, SDRAM_MEMORY_D) != 0)
+		log_size = test_runner_routine(test, SDRAM_MEMORY_D);
+        if (log_size > 0)
 		{
-		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
+		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
-	 			state_package->length += sizeof(experiment_data_package_t);
+	 			state_package->length += log_size;
 	 		} 
 		}	
 	}
@@ -179,11 +182,12 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 	{
         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory F test: ");
 
-		if (test_runner_routine(data_package, test, SDRAM_MEMORY_F) != 0)
-		{
-		 	if(media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)data_package, sizeof(experiment_data_package_t)) == 0)
+		log_size = test_runner_routine(test, SDRAM_MEMORY_F);
+        if (log_size > 0)
+        {
+		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
-	 			state_package->length += sizeof(experiment_data_package_t);
+	 			state_package->length += log_size;
 	 		} 
 		}
 	}
@@ -200,45 +204,34 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
  *
  * \return The status/error code.
  */
-int test_runner_routine(experiment_data_package_t *data_package, int test, int memory_device) 
+int test_runner_routine(int test, int memory_device) 
 {
     switch(test)
     {
-        case STATIC_WRITE_TEST:
-            static_write_algorithm((uint8_t *)data_package, memory_device);
+        case STATIC_LOOP_TEST:
             sys_log_print_msg("static write algorithm");
             sys_log_new_line();
-            return 0;
-        
-        case STATIC_READ_TEST:
-            static_read_algorithm((uint8_t *)data_package, memory_device);
-            sys_log_print_msg("static read algorithm");
-            sys_log_new_line();
-            return 0;
+            return static_loop_algorithm(memory_device, DEFAULT_DATA_INJECTION, MEMORY_FULL_SIZE);
         
         case DYNAMIC_LOOP_C_TESTS:
-            dynamic_loopc_algorithm((uint8_t *)data_package, memory_device);
             sys_log_print_msg("dynamic loop c algorithm");
             sys_log_new_line();
-            return 0;
+            //return dynamic_loopc_algorithm(memory_device);
         
         case DYNAMIC_STRESS_TESTS:
-            dynamic_stress_algorithm((uint8_t *)data_package, memory_device);
             sys_log_print_msg("dynamic stress algorithm");
             sys_log_new_line();
-            return 0;
+            //return dynamic_stress_algorithm(memory_device);
         
         case DYNAMIC_E_CLASSIC_TESTS:
-            dynamic_eclassic_algorithm((uint8_t *)data_package, memory_device);
             sys_log_print_msg("dynamic e classic algorithm");
             sys_log_new_line();
-            return 0;
+            //return dynamic_eclassic_algorithm(memory_device);
         
         case DYNAMIC_F_TESTS:
-            dynamic_f_algorithm((uint8_t *)data_package, memory_device);
             sys_log_print_msg("dynamic f algorithm");
             sys_log_new_line();
-            break;
+            //return dynamic_f_algorithm(memory_device)        
         
         default:
             return -1;

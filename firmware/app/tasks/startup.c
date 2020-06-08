@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.29
+ * \version 0.0.34
  * 
  * \date 09/05/2020
  * 
@@ -46,7 +46,8 @@
 
 #include <devices/leds/leds.h>
 #include <devices/obc/obc.h>
-#include <devices/media/media.h>
+#include <devices/media/exp_media.h>
+#include <devices/media/sys_media.h>
 #include <devices/watchdog/watchdog.h>
 #include <devices/latchup_monitors/latchup_monitors.h>
 
@@ -80,11 +81,17 @@ void vTaskStartup(void *pvParameters)
     /* LEDs device initialization */
     leds_init();
 
-    /* Media device initialization */
-    if ((media_init(MEDIA_SDRAM_B) | media_init(MEDIA_SDRAM_D) | media_init(MEDIA_SDRAM_F)) != 0)
+    /* Experiment media device initialization */
+    if ((exp_media_init(MEDIA_SDRAM_B) | exp_media_init(MEDIA_SDRAM_D) | exp_media_init(MEDIA_SDRAM_F)) != 0)
     {
         error = true;
     }
+
+    /* System media device initialization */
+	if ((sys_media_init(MEDIA_ESRAM)) != 0)
+	{
+		error = true;
+	}
 
     /* OBC device initialization */
     if (obc_init() != 0)

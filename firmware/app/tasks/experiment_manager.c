@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.34
  * 
  * \date 09/05/2020
  * 
@@ -40,7 +40,6 @@
 
 #include <devices/latchup_monitors/latchup_monitors.h>
 #include <devices/obc/obc.h>
-#include <devices/media/media.h>
 #include <app/queues/queues.h>
 
 #include "experiment_manager.h"
