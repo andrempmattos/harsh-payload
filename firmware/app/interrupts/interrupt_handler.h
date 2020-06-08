@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.34
  * 
  * \date 21/05/2020
  * 
@@ -57,6 +57,9 @@
  * \return The status/error code.
  */
 void spi_rx_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size);
+
+
+void create_interrupt_handlers();
 
 QueueHandle_t xBinarySemaphore;
 
