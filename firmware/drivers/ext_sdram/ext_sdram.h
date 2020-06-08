@@ -53,6 +53,8 @@
 #define EXT_SDRAM_F_START_ADDR		0xA8000000u			/**< External SDRAM memory F start address. */
 #define EXT_SDRAM_F_END_ADDR		0xABFFFFFFu			/**< External SDRAM memory F end address. */
 
+#define EXT_SDRAM_MEMORY_SIZE		0x04000000u			/**< External SDRAM memories size. */
+
 #define DUMMY_TEST_VALUE			0xAABBCCDDu			/**< Dummy value for test purposes. */
 
 /**
