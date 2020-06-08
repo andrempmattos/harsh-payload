@@ -30,7 +30,7 @@
  * 
  * \author Lucas Matana <lucas.matana-luza@lirmm.fr> and Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.35
  * 
  * \date 26/05/2020
  * 
@@ -38,19 +38,93 @@
  * \{
  */
 
-#include <devices/media/media.h>
+#include <devices/media/exp_media.h>
 
 #include "algorithms.h"
 
-
-void static_write_algorithm(uint8_t *data_package, int memory_device) 
+uint16_t static_loop_algorithm(int memory_device, uint32_t data_injection, uint32_t length) 
 {
+	/* Create address variable (in byte size) to handle the operation execution */
+	uint32_t addr = 0;
 
-}
-void static_read_algorithm(uint8_t *data_package, int memory_device) 
-{
+	/* Buffers used to write the injection data and to receive/compare the read data */
+	uint32_t write_buffer = data_injection;
+	uint32_t read_buffer = 0;
 
+	/* Auxiliary counter for log payload package management */
+	uint16_t i = 0;
+
+	/* Write loop from the first memory address until the given length in multiples of the word size (4 bytes) */
+	for (addr = 0; addr < length; addr += 4)
+	{
+		/* Select which memory is used in this execution cycle */
+		switch(memory_device) 
+		{
+			case MEDIA_SDRAM_B:
+				exp_media_write(MEDIA_SDRAM_B, addr, &write_buffer, 1);
+				break;
+			case MEDIA_SDRAM_D:
+				exp_media_write(MEDIA_SDRAM_D, addr, &write_buffer, 1);
+				break;
+			case MEDIA_SDRAM_F:
+				exp_media_write(MEDIA_SDRAM_F, addr, &write_buffer, 1);
+				break;
+		}
+	}
+
+	/* Read loop from the first memory address until the given length in multiples of the word size (4 bytes) */
+	for (addr = 0; addr < length; addr += 4)
+	{
+		/* Select which memory is used in this execution cycle */
+		switch(memory_device) 
+		{
+			case MEDIA_SDRAM_B:
+				exp_media_read(MEDIA_SDRAM_B, addr, &read_buffer, 1);
+				if (read_buffer != data_injection) {
+					log_payload[i].algorithm = STATIC_LOOP_TEST;
+					log_payload[i].iteration = 0;
+					log_payload[i].error_addr = addr;
+					log_payload[i].error_data = read_buffer ^ data_injection;
+					log_payload[i].error++;
+					i++;
+				}
+				break;
+			case MEDIA_SDRAM_D:
+				exp_media_read(MEDIA_SDRAM_D, addr, &read_buffer, 1);
+				if (read_buffer != data_injection) {
+					log_payload[i].algorithm = STATIC_LOOP_TEST;
+					log_payload[i].iteration = 0;
+					log_payload[i].error_addr = addr;
+					log_payload[i].error_data = read_buffer ^ data_injection;
+					log_payload[i].error++;
+					i++;
+				}
+				break;
+			case MEDIA_SDRAM_F:
+				exp_media_read(MEDIA_SDRAM_F, addr, &read_buffer, 1);
+				if (read_buffer != data_injection) {
+					log_payload[i].algorithm = STATIC_LOOP_TEST;
+					log_payload[i].iteration = 0;
+					log_payload[i].error_addr = addr;
+					log_payload[i].error_data = read_buffer ^ data_injection;
+					log_payload[i].error++;
+					i++;
+				}
+				break;
+		}
+
+		if (i >= (MAX_LOG_PAYLOAD_SIZE-1)) 
+		{
+			return (MAX_LOG_PAYLOAD_SIZE * sizeof(exp_log_payload_t));
+		}
+	}
+	
+	return (i * sizeof(exp_log_payload_t));
 }
+
+
+
+
 void dynamic_loopc_algorithm(uint8_t *data_package, int memory_device) 
 {
 
@@ -101,66 +175,6 @@ void MemoryVerify(u32 AddressInitial, u32 AddressFinal, u16 DataInjected)
 
 
 
-
-
-
-
-
-
-
-
-/*
- * ====================================================================================
- * == WRITE STATIC
- * ====================================================================================
-	
-	xil_printf(
-			"Write static 0x%04X from address 0x%06X to address 0x%06X\n\r",
-			DataInjected, AddressInitial, AddressFinal - 1);
-
-	for (i = AddressInitial;
-			i < (AddressInitial + (AddressFinal - AddressInitial)); i++) {
-		if (i == (AddressInitial + (AddressFinal - AddressInitial) - 1))
-			DataWrite = 0xF0F0;
-		else
-			DataWrite = DataInjected;
-		RAM_WR(RAM_BASE, i, DataWrite);
-	}
-
-*/
-
-
-
-
-
-
-
-
-
-/*
- * ====================================================================================
- * == READ STATIC
- * ====================================================================================
-
-	xil_printf(
-			"Read static 0x%04X from address 0x%06X to address 0x%06X\n\r",
-			DataInjected, AddressInitial, AddressFinal - 1);
-
-	ErrorCounter = 0;
-	for (i = AddressInitial;
-			i < (AddressInitial + (AddressFinal - AddressInitial)); i++) {
-		DataRead = RAM_RD(RAM_BASE, i);
-		if (DataRead != DataInjected) {
-			ErrorAddress = i;
-			ErrorData = DataRead ^ DataInjected;
-			ErrorCounter++;
-			FormatError(ErrorAddress, ErrorData, 0, 0);
-			xil_printf("%s\n\r", ErrorString);
-		}
-	}
-	xil_printf("\nErrors = %u\n\r", ErrorCounter);
-
-*/
 
 
 
