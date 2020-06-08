@@ -1,5 +1,5 @@
 /*
- * media.h
+ * exp_media.h
  *
  * MIT License
  *
@@ -26,42 +26,35 @@
  */
 
 /**
- * \brief Media device definition.
+ * \brief Experiment media device definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.34
  * 
  * \date 13/05/2020
  * 
- * \defgroup media Media
+ * \defgroup exp_media Experiment Media
  * \ingroup devices
  * \{
  */
 
-#ifndef MEDIA_H_
-#define MEDIA_H_
+#ifndef EXP_MEDIA_H_
+#define EXP_MEDIA_H_
 
 #include <stdint.h>
 
-#define MEDIA_MODULE_NAME           "Media"
-
-#define MEDIA_ENVM_START_ADDR		0x60000000u			/**< Embedded flash memory start address. */
-#define MEDIA_ENVM_END_ADDR			0x6003FFFFu			/**< Embedded flash memory end address. */
-#define MEDIA_ESRAM_START_ADDR		0x20000000u			/**< Embedded SRAM memory start address. */
-#define MEDIA_ESRAM_END_ADDR		0x2000FFFFu			/**< Embedded SRAM memory end address. */
+#define EXP_MEDIA_MODULE_NAME           "Exp_Media"
 
 /**
- * \brief Media types.
+ * \brief Experiment media types.
  */
 typedef enum
 {
-    MEDIA_ENVM=0,      	/**< Embedded flash memory. */
-    MEDIA_ESRAM,        /**< Embedded SRAM memory. */
     MEDIA_SDRAM_B,		/**< External SDRAM memory B. */
     MEDIA_SDRAM_D,		/**< External SDRAM memory D. */
     MEDIA_SDRAM_F,		/**< External SDRAM memory F. */
-} media_types_e;
+} exp_media_types_e;
 
 /**
  * \brief Media type.
@@ -73,8 +66,6 @@ typedef uint8_t media_t;
  *
  * \param[in] med is the storage media to initiailize. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F
@@ -83,15 +74,13 @@ typedef uint8_t media_t;
  *
  * \return The status/error code.
  */
-int media_init(media_t med);
+int exp_media_init(media_t med);
 
 /**
  * \brief Writes data into a given address of a media device.
  *
  * \param[in] med is the storage media to write. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F
@@ -106,15 +95,13 @@ int media_init(media_t med);
  *
  * \return The status/error code.
  */
-int media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len);
+int exp_media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
 
 /**
  * \brief Reads data from a given address of a media device.
  *
  * \param[in] med is the storage media to read. It can be:
  * \parblock
- *      -\b MEDIA_ENVM
- *		-\b MEDIA_ESRAM
  *      -\b MEDIA_SDRAM_B
  *      -\b MEDIA_SDRAM_D
  *      -\b MEDIA_SDRAM_F
@@ -125,12 +112,12 @@ int media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len);
  *
  * \param[in,out] data is a pointer to store the read data.
  *
- * \param[in] len is the number of bytes to read starting at addr.
+ * \param[in] len is multiples of 4 bytes to read starting at addr.
  *
  * \return The status/error code.
  */
-int media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len);
+int exp_media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len);
 
-#endif /* MEDIA_H_ */
+#endif /* EXP_MEDIA_H_ */
 
-/** \} End of media group */
+/** \} End of exp_media group */

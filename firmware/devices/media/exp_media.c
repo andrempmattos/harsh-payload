@@ -1,5 +1,5 @@
 /*
- * media.c
+ * exp_media.c
  *
  * MIT License
  *
@@ -26,40 +26,28 @@
  */
 
 /**
- * \brief Media device implementation.
+ * \brief Experiment media device implementation.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.34
  * 
  * \date 13/05/2020
  * 
- * \addtogroup media
+ * \addtogroup exp_media
  * \{
  */
 
 #include <system/sys_log/sys_log.h>
 
-#include <drivers/mss_nvm/mss_nvm.h>
-//#include <drivers/mss_sram/mss_sram.h>
 #include <drivers/ext_sdram/ext_sdram.h>
 
-#include "media.h"
+#include "exp_media.h"
 
-int media_init(media_t med)
+int exp_media_init(media_t med)
 {
     switch(med)
     {
-        case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eNVM memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM memory!");
-            sys_log_new_line();
-            return -1;
-
         case MEDIA_SDRAM_B:
             return sdram_init(EXT_SDRAM_B);
         
@@ -70,56 +58,36 @@ int media_init(media_t med)
             return sdram_init(EXT_SDRAM_F);
         
         default:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to initialize!");
+            sys_log_print_event_from_module(SYS_LOG_ERROR, EXP_MEDIA_MODULE_NAME, "Invalid storage media to initialize!");
             sys_log_new_line();
             return -1;
     }
 }
 
-int media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
+int exp_media_write(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
 {
     switch(med)
     {
-        case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eNVM memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM memory!");
-            sys_log_new_line();
-            return -1;
-
         case MEDIA_SDRAM_B:
-            return sdram_write(EXT_SDRAM_B, addr, (uint32_t *)data, (len/4));
+            return sdram_write(EXT_SDRAM_B, addr, data, len);
         
         case MEDIA_SDRAM_D:
-            return sdram_write(EXT_SDRAM_D, addr, (uint32_t *)data, (len/4));
+            return sdram_write(EXT_SDRAM_D, addr, data, len);
         
         case MEDIA_SDRAM_F:
-            return sdram_write(EXT_SDRAM_F, addr, (uint32_t *)data, (len/4));
+            return sdram_write(EXT_SDRAM_F, addr, data, len);
 
         default:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to write!");
+            sys_log_print_event_from_module(SYS_LOG_ERROR, EXP_MEDIA_MODULE_NAME, "Invalid storage media to write!");
             sys_log_new_line();
             return -1;
     }
 }
 
-int media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
+int exp_media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
 {
     switch(med)
     {
-        case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eNVM memory!");
-            sys_log_new_line();
-            return -1;
-
-        case MEDIA_ESRAM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM memory!");
-            sys_log_new_line();
-            return -1;
-
         case MEDIA_SDRAM_B:
             return sdram_read(EXT_SDRAM_B, addr, (uint32_t *)data, (len/4));
         
@@ -130,11 +98,11 @@ int media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
             return sdram_read(EXT_SDRAM_F, addr, (uint32_t *)data, (len/4));
 
         default:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, MEDIA_MODULE_NAME, "Invalid storage media to read!");
+            sys_log_print_event_from_module(SYS_LOG_ERROR, EXP_MEDIA_MODULE_NAME, "Invalid storage media to read!");
             sys_log_new_line();
             return -1;
     }
 }
 
 
-/** \} End of media group */
+/** \} End of exp_media group */
