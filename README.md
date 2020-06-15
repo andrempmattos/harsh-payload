@@ -4,6 +4,13 @@
   	<br>
 </h1>
 
+<h1 align="center">
+	<img width="15%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/ufsc_logo.png">
+	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/um_logo.png">
+	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/lirmm_logo.png">
+	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/spacelab_logo.png">
+</h1>
+
 <h4 align="center">A brief of the project description, objectives, version, organization and acknowledgements.</h4>
 
 <p align="center">
@@ -31,12 +38,6 @@
   	<a href="#notes">Notes</a>
 </p>
 
-<p align="center">
-	<img width="15%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/ufsc_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/um_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/lirmm_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/spacelab_logo.png">
-</p>
 
 ## Overview:
 
