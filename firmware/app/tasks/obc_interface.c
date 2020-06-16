@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.36
  * 
  * \date 21/05/2020
  * 
@@ -88,6 +88,9 @@ void vTaskOBCInterface(void *pvParameters)
                 case FSP_CMD_SEND_STATE:
                     if (xQueueReceive(xQueueSystemState, &sys_state, 0) == pdPASS) 
                     {
+                        /* Setting current remaining data packages capable to be read */
+                        sys_state_package_t.data_packages_count = QUEUE_OBC_DATA_SIZE - uxQueueSpacesAvailable(xQueueOBCData);
+
                         /* Succeed to receive the message, then send the OBC state package */
                         send_obc_package((uint8_t *)&sys_state);
 
