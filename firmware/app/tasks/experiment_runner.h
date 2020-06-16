@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.37
  * 
  * \date 16/05/2020
  * 
@@ -49,17 +49,12 @@
 #define TASK_EXPERIMENT_RUNNER_STACK_SIZE          	500             		/**< Memory stack size in bytes. */
 #define TASK_EXPERIMENT_RUNNER_PRIORITY            	3               		/**< Priority. */
 #define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	2000             		/**< Period in milliseconds. */
-#define TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS		(10*1000)				/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_RUNNER_INIT_TIMEOUT_MS     	2000            		/**< Wait time to initialize the task in milliseconds. */	
 
 /* Memory devices selection definitions */
 #define SDRAM_MEMORY_B								0						/**< SDRAM memory B device */
 #define SDRAM_MEMORY_D								1						/**< SDRAM memory D device */
 #define SDRAM_MEMORY_F								2						/**< SDRAM memory F device */
-
-#define EXPERIMENT_INIT_TIMEOUT_MS     				2000            		/**< Wait time to initialize the experiment in milliseconds. */
-
-#define DEFAULT_EXECUTION_CONFIG     	0x1F        /**< Standard execution configuration: Memories, static and dynamic tests enabled. */
 
 /**
  * \brief Experiment runner task handle.

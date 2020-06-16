@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.37
  * 
  * \date 16/05/2020
  * 
@@ -54,8 +54,9 @@ int test_runner_routine(int test, int memory_device);
 
 void vTaskExperimentRunner(void *pvParameters)
 {
-    /* Delay before the first cycle */
-    vTaskDelay(pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_INITIAL_DELAY_MS));
+    /* Suspension before the first cycle */
+    vTaskSuspend(xTaskExperimentRunnerHandle);
+    sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Task suspended: ExperimentRunner");            
 
     /* Create local queue experiment command package */
     experiment_command_package_t exp_command = 
@@ -77,9 +78,6 @@ void vTaskExperimentRunner(void *pvParameters)
     /* Create local execution state variable to check when the test should be executed */
     int execution_state = 0;
 
-    /* Create timeout value to start executing the experiment in case of any OBC command */
-    uint32_t timeout;
-
     while(1)
     {
         TickType_t last_cycle = xTaskGetTickCount();
@@ -90,44 +88,41 @@ void vTaskExperimentRunner(void *pvParameters)
             execution_state = 1;
         }
 
-        /* Get system ticks and convert to milliseconds */
-        timeout = (xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000;
+		if (execution_state)
+		{
+			if (exp_command.execution_config & ENABLE_FREQUENCY_TESTS)
+			{
 
-        if (execution_state || (timeout > EXPERIMENT_INIT_TIMEOUT_MS))
-        {
-        	if (exp_command.execution_config & ENABLE_FREQUENCY_TESTS)
-        	{
-        			
-        	}
+			}
 
-        	if (exp_command.execution_config & ENABLE_REFRESH_RATE_TESTS)
-        	{
-        		 
-        	}        	
+			if (exp_command.execution_config & ENABLE_REFRESH_RATE_TESTS)
+			{
+
+			}
 
 			if (exp_command.execution_config & ENABLE_STATIC_TESTS)
-        	{
-        		test_manager_routine(&exp_command, &exp_state, STATIC_LOOP_TEST);
-        	}
+			{
+				test_manager_routine(&exp_command, &exp_state, STATIC_LOOP_TEST);
+			}
 
-        	if (exp_command.execution_config & ENABLE_DYNAMIC_TESTS)
-        	{
-        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_LOOP_C_TESTS);
-        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_STRESS_TESTS);
-        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_E_CLASSIC_TESTS);
-        		test_manager_routine(&exp_command, &exp_state, DYNAMIC_F_TESTS);
-        	}
+			if (exp_command.execution_config & ENABLE_DYNAMIC_TESTS)
+			{
+				test_manager_routine(&exp_command, &exp_state, DYNAMIC_LOOP_C_TESTS);
+				test_manager_routine(&exp_command, &exp_state, DYNAMIC_STRESS_TESTS);
+				test_manager_routine(&exp_command, &exp_state, DYNAMIC_E_CLASSIC_TESTS);
+				test_manager_routine(&exp_command, &exp_state, DYNAMIC_F_TESTS);
+			}
 
 
-            if (exp_state.length > 0)
-            {
-                xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
-    			
-                exp_state.package_id++;
-    			exp_state.address += exp_state.length;
-    			exp_state.length = 0;
-            }
-        }
+			if (exp_state.length > 0)
+			{
+				xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
+
+				exp_state.package_id++;
+				exp_state.address += exp_state.length;
+				exp_state.length = 0;
+			}
+		}
 
         vTaskDelayUntil(&last_cycle, pdMS_TO_TICKS(TASK_EXPERIMENT_RUNNER_PERIOD_MS));
     }
@@ -157,9 +152,17 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
         log_size = test_runner_routine(test, SDRAM_MEMORY_B);
 		if (log_size > 0)
 		{
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
+            sys_log_print_dec(log_size);
+            sys_log_print_msg(" error bytes");
+            sys_log_new_line();
+
 		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
+                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                sys_log_print_msg("%");
 	 		} 
 		}
 	}
@@ -169,11 +172,20 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_RUNNER_NAME, "Performing memory D test: ");
 
 		log_size = test_runner_routine(test, SDRAM_MEMORY_D);
+
         if (log_size > 0)
 		{
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
+            sys_log_print_dec(log_size);
+            sys_log_print_msg("error bytes");
+            sys_log_new_line();
+
 		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
+                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                sys_log_print_msg("%");
 	 		} 
 		}	
 	}
@@ -185,9 +197,17 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 		log_size = test_runner_routine(test, SDRAM_MEMORY_F);
         if (log_size > 0)
         {
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
+            sys_log_print_dec(log_size);
+            sys_log_print_msg("error bytes");
+            sys_log_new_line();
+            
 		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
+                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                sys_log_print_msg("%");
 	 		} 
 		}
 	}
@@ -209,7 +229,7 @@ int test_runner_routine(int test, int memory_device)
     switch(test)
     {
         case STATIC_LOOP_TEST:
-            sys_log_print_msg("static write algorithm");
+            sys_log_print_msg("static loop algorithm");
             sys_log_new_line();
             return static_loop_algorithm(memory_device, DEFAULT_DATA_INJECTION, MEMORY_FULL_SIZE);
         
