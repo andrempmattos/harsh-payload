@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.23
+ * \version 0.0.37
  * 
  * \date 09/05/2020
  * 
@@ -52,15 +52,21 @@
 #define TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS	(10*1000)				/**< Delay, in milliseconds, before the first execution. */
 #define TASK_EXPERIMENT_MANAGER_INIT_TIMEOUT_MS     2000            		/**< Wait time to initialize the task in milliseconds. */
 
+#define EXPERIMENT_INIT_TIMEOUT_MS     				2000            		/**< Wait time to initialize the experiment in milliseconds. */
+
 #define DEFAULT_OPERATION_MODE     		0         	/**< Standard operation mode: Payload experiment. */
 #define DEFAULT_EXECUTION_CONFIG     	0x1F        /**< Standard execution configuration: Memories, static and dynamic tests enabled. */
 #define DEFAULT_OBC_SYS_TIME     		0         	/**< Standard OBC system time. */
-
 
 /**
  * \brief Experiment manager task handle.
  */
 extern xTaskHandle xTaskExperimentManagerHandle;
+
+/**
+ * \brief Experiment runner task handle.
+ */
+extern xTaskHandle xTaskExperimentRunnerHandle;
 
 /**
  * \brief Experiment manager task.
