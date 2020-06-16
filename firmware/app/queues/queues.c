@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.31
+ * \version 0.0.36
  * 
  * \date 18/05/2020
  * 
@@ -46,7 +46,7 @@ void create_queues()
 {
     /* OBC command queue */
 #if CONFIG_QUEUE_OBC_COMMAND_ENABLED == 1
-    xQueueOBCCommand = xQueueCreate(1, sizeof(obc_command_package_t));
+    xQueueOBCCommand = xQueueCreate(QUEUE_OBC_COMMAND_SIZE, sizeof(obc_command_package_t));
 
     if (xQueueOBCCommand == NULL)
     {
@@ -56,7 +56,7 @@ void create_queues()
 
     /* OBC data queue */
 #if CONFIG_QUEUE_OBC_DATA_ENABLED == 1
-    xQueueOBCData = xQueueCreate(10, sizeof(obc_data_package_t));
+    xQueueOBCData = xQueueCreate(QUEUE_OBC_DATA_SIZE, sizeof(obc_data_package_t));
 
     if (xQueueOBCData == NULL)
     {
@@ -66,7 +66,7 @@ void create_queues()
 
     /* System state queue */
 #if CONFIG_QUEUE_SYS_STATE_ENABLED == 1
-    xQueueSystemState = xQueueCreate(5, sizeof(sys_state_package_t));
+    xQueueSystemState = xQueueCreate(QUEUE_SYS_STATE_SIZE, sizeof(sys_state_package_t));
 
     if (xQueueSystemState == NULL)
     {
@@ -76,7 +76,7 @@ void create_queues()
 
     /* Experiment command queue */
 #if CONFIG_QUEUE_EXPERIMENT_COMMAND_ENABLED == 1
-    xQueueExperimentCommand = xQueueCreate(1, sizeof(experiment_command_package_t));
+    xQueueExperimentCommand = xQueueCreate(QUEUE_EXPERIMENT_COMMAND_SIZE, sizeof(experiment_command_package_t));
 
     if (xQueueExperimentCommand == NULL)
     {
@@ -86,7 +86,7 @@ void create_queues()
 
     /* Experiment state queue */
 #if CONFIG_QUEUE_EXPERIMENT_STATE_ENABLED == 1
-    xQueueExperimentState= xQueueCreate(10, sizeof(experiment_state_package_t));
+    xQueueExperimentState= xQueueCreate(QUEUE_EXPERIMENT_STATE_SIZE, sizeof(experiment_state_package_t));
 
     if (xQueueExperimentState == NULL)
     {

@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.28
+ * \version 0.0.36
  * 
  * \date 18/05/2020
  * 
@@ -126,6 +126,7 @@ typedef struct
 	uint16_t execution_config;			/**< Current execution configuration. */
 	uint8_t error_count;				/**< Errors count. */
 	uint16_t error_code;				/**< Error code. */
+    uint8_t data_packages_count;        /**< Remaning data packages count. */
 } sys_state_package_t;
 
 /**

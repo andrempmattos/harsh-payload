@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.28
+ * \version 0.0.36
  * 
  * \date 18/05/2020
  * 
@@ -52,6 +52,12 @@ QueueHandle_t xQueueOBCData;
 QueueHandle_t xQueueSystemState;
 QueueHandle_t xQueueExperimentCommand;
 QueueHandle_t xQueueExperimentState;
+
+#define QUEUE_OBC_COMMAND_SIZE        		1
+#define QUEUE_OBC_DATA_SIZE              	10
+#define QUEUE_SYS_STATE_SIZE            	5
+#define QUEUE_EXPERIMENT_COMMAND_SIZE       1
+#define QUEUE_EXPERIMENT_STATE_SIZE	        10
 
 /**
  * \brief Creates the system queues.
