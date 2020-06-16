@@ -51,6 +51,8 @@
 #define MEDIA_ESRAM_START_ADDR		0x20000000u			/**< Embedded SRAM memory start address. */
 #define MEDIA_ESRAM_END_ADDR		0x2000FFFFu			/**< Embedded SRAM memory end address. */
 
+#define ESRAM_MAX_SIZE				0X00010000u
+
 /**
  * \brief System media types.
  */
