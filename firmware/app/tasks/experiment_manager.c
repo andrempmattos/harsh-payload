@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.37
+ * \version 0.0.38
  * 
  * \date 09/05/2020
  * 
@@ -92,6 +92,12 @@ void vTaskExperimentManager(void *pvParameters)
     bool timeout_state = false;
     bool timeout_check = true;
 
+    /* Create latch-up state control for handling invalid test results */
+    //bool latchup_state = false;
+
+    /* Create a value to store the OBC time stamp synchronization in milliseconds */
+    uint32_t obc_time_stamp = DEFAULT_OBC_SYS_TIME;
+
     while(1)
     {
         TickType_t last_cycle = xTaskGetTickCount();
@@ -100,7 +106,8 @@ void vTaskExperimentManager(void *pvParameters)
         if (xQueueReceive(xQueueOBCCommand, &obc_command, 0) == pdPASS) 
         {
             /* Succeed to receive the message, then update the system state variables */
-            sys_state.time_stamp = obc_command.obc_sys_time;
+            obc_time_stamp = obc_command.obc_sys_time;
+            sys_state.time_stamp = obc_time_stamp + ((xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000); 
             sys_state.operation_mode = obc_command.operation_mode;
             sys_state.execution_config = obc_command.execution_config;
 
@@ -120,10 +127,13 @@ void vTaskExperimentManager(void *pvParameters)
         if(latchup_detection_routine(&sys_state) != 0)
         {
             /* Get system ticks, convert to milliseconds and add to system time stamp */
-            sys_state.time_stamp += ((xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000);
-            
+            sys_state.time_stamp = obc_time_stamp + ((xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000);
+
             /* Send system status if latch-up detected */
             xQueueSendToBack(xQueueSystemState, &sys_state, 0);
+
+            /* Set latch-up state to invalidate the cycle test result */
+            //latchup_state = true;
         }
 
         /* Get system ticks and convert to milliseconds */
@@ -201,7 +211,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
 
         if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
-            /* Suspend runner task after latch-up event */
+            /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_RUNNER_NAME, "experiment_runner_task halted due to latch-up event in memory B");
         }
@@ -221,7 +231,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
 
         if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
-            /* Suspend runner task after latch-up event */
+            /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_RUNNER_NAME, "experiment_runner_task halted due to latch-up event in memory D");
         }
@@ -241,7 +251,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
 
         if (sys_package->execution_config & FORCE_HALT_AFTER_LATCHUP)
         {
-            /* Suspend runner task after latch-up event */
+            /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_RUNNER_NAME, "experiment_runner_task halted due to latch-up event in memory F");
         }

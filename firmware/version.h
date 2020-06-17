@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.37
+ * \version 0.0.38
  * 
  * \date 08/05/2020
  * 
@@ -41,7 +41,7 @@
 #ifndef VERSION_H_
 #define VERSION_H_
 
-#define FIRMWARE_VERSION            "0.0.37"
+#define FIRMWARE_VERSION            "0.0.38"
 
 #define FIRMWARE_STATUS             "Development"
 
