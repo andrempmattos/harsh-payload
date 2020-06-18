@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.37
+ * \version 0.0.38
  * 
  * \date 16/05/2020
  * 
@@ -59,10 +59,7 @@ void vTaskExperimentRunner(void *pvParameters)
     sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Task suspended: ExperimentRunner");            
 
     /* Create local queue experiment command package */
-    experiment_command_package_t exp_command = 
-    {
-        .execution_config = DEFAULT_EXECUTION_CONFIG
-    };
+    experiment_command_package_t exp_command;
 
     /* Create local queue experiment state package */
     experiment_state_package_t exp_state = 

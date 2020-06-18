@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.36
+ * \version 0.0.38
  * 
  * \date 21/05/2020
  * 
@@ -47,7 +47,7 @@
 
 xTaskHandle xTaskOBCInterfaceHandle;
 
-/* Local functions prototypes */
+/* Local functions prototypes used to process and generate packages using the FSP library */
 int send_obc_package(uint8_t *package);
 int process_obc_package(obc_command_t *command);
 
@@ -61,7 +61,6 @@ void vTaskOBCInterface(void *pvParameters)
 		xSemaphoreTake(xBinarySemaphore, portMAX_DELAY);
 		
 		/* To get here the event must have occurred. */
-
         obc_command_t obc_command;
         obc_data_package_t obc_data;
         sys_state_package_t sys_state;
@@ -88,10 +87,10 @@ void vTaskOBCInterface(void *pvParameters)
                 case FSP_CMD_SEND_STATE:
                     if (xQueueReceive(xQueueSystemState, &sys_state, 0) == pdPASS) 
                     {
-                        /* Setting current remaining data packages capable to be read */
-                        sys_state_package_t.data_packages_count = QUEUE_OBC_DATA_SIZE - uxQueueSpacesAvailable(xQueueOBCData);
+                        /* Succeed to receive the message, then set current remaining data packages capable to be read */
+                    	sys_state.data_packages_count = QUEUE_OBC_DATA_SIZE - uxQueueSpacesAvailable(xQueueOBCData);
 
-                        /* Succeed to receive the message, then send the OBC state package */
+                        /* Next, send the OBC state package */
                         send_obc_package((uint8_t *)&sys_state);
 
                         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_OBC_INTERFACE_NAME, "State package sent to OBC");
@@ -219,7 +218,7 @@ int process_obc_package(obc_command_t *command)
                 fsp_gen_ack_pkt(FSP_ADR_OBDH, &fsp_packet_ack);
                 break;
             default:
-                /* Since there are other commands not used in the FSP, send a not acknowledged response */
+                /* Since there are other commands not used in this Payload/FSP interface, send a not acknowledged response */
                 fsp_gen_nack_pkt(FSP_ADR_OBDH, &fsp_packet_ack);
         }
         

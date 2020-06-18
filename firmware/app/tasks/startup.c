@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.38
  * 
  * \date 09/05/2020
  * 
@@ -75,7 +75,7 @@ void vTaskStartup(void *pvParameters)
     sys_log_print_msg(" Hz");
     sys_log_new_line();
 
-    /* Latch-up monitors devices initialization */
+    /* Latch-up monitors devices initialization (initialize before LEDs) */
     latchup_monitors_init();
 
     /* LEDs device initialization */
