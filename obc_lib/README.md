@@ -19,9 +19,11 @@
 	<a href="">
 		<img src="https://img.shields.io/badge/language-c-blueviolet?style=for-the-badge">
 	</a>
+	<!--
 	<a href="">
 		<img src="https://img.shields.io/badge/IDE%20tool-SoftConsole%20v6.0-yellow?style=for-the-badge">
 	</a>
+	-->
 	<a href="">
 		<img src="https://img.shields.io/badge/use-acedemic%20only-orange?style=for-the-badge">
 	</a>
@@ -45,13 +47,18 @@
 
 ## Overview
 
+This firmware library is an API for the OBC/OBDH module. It implements an example of interface for communication and management of the Harsh Payload. In order to validate the payload engineering model, the library was tested using a Raspberry PI 3 (Model A+) implementation.
+
 ## License
 
 ## Version
 
 ## Dependencies
+* [wiringPI](http://wiringpi.com/) Raspberry PI Library for handling serial ports
+* [FSP](https://github.com/floripasat/fsp) FloripaSat communication interface protocol 
 
 ## References
+* [Sparkfun](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all) tutorial
 
 ## Development
 
