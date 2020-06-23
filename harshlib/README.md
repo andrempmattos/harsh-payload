@@ -1,10 +1,10 @@
 <h1 align="center">
 	<br>
-	OBC FIRMWARE LIBRARY
+	HARSH API LIBRARY
 	<br>
 </h1>
 
-<h4 align="center">OBC firmware library for the Harsh Payload (Raspberry PI version).</h4>
+<h4 align="center">A library for the Harsh Payload communication interface (Raspberry PI version).</h4>
 
 <p align="center">
     <a href="">
