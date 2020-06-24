@@ -1,6 +1,7 @@
-TARGET=harsh_runner
-LIBS=../
-SOURCE=main.c rasp_wrapper.c $(LIBS)/harshlib/harshlib.c
+TARGET=runner
+HARSHLIB=../
+FSPLIB=fsp_0.2.0
+SOURCE=main.c rasp_wrapper.c $(HARSHLIB)/harshlib/harshlib.c $(FSPLIB)/fsp/fsp.c $(FSPLIB)/fsp/crc16.c
 
 CC=gcc
 FLAGS=-Wall -I$(LIBS) -o
