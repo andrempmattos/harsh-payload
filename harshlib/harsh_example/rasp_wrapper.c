@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.0
+ * \version 0.0.3
  * 
  * \date 23/06/2020
  * 
@@ -38,7 +38,121 @@
  * \{
  */
 
+#include <bcm2835.h>
+#include <stdio.h>
 
+#define OBC_GPIO_0		PIN0
+#define OBC_GPIO_1		PIN1
+
+void system_init(void) 
+{
+    if (!bcm2835_init())
+    {
+      printf("bcm2835_init failed. Are you running as root??\n");
+      return 1;
+    }
+
+    /*
+     * If you call this, it will not actually access the GPIO
+	 * Use for testing
+	 * bcm2835_set_debug(1); 
+	*/
+}
+
+
+void gpio_init(void) 
+{
+    /* Set the pins to be an output */
+    bcm2835_gpio_fsel(OBC_GPIO_0, BCM2835_GPIO_FSEL_OUTP);
+    bcm2835_gpio_fsel(OBC_GPIO_1, BCM2835_GPIO_FSEL_OUTP);
+}
+
+void gpio_set(uint8_t pin) 
+{
+    /* Set GPIO high */
+    bcm2835_gpio_write(pin, HIGH);
+}
+
+void gpio_clear(uint8_t pin) 
+{
+	/* Set GPIO low */
+	bcm2835_gpio_write(pin, LOW);
+}
+
+
+void spi_init(void) 
+{
+    /** 
+     * After installing bcm2835, you can build this with something like:
+	 * gcc -o spi spi.c -l bcm2835
+	 * sudo ./spi
+	 *
+	 * Or you can test it before installing with:
+	 * gcc -o spi -I ../../src ../../src/bcm2835.c spi.c
+	 * sudo ./spi
+	 */
+
+	/* SPI interface initialization */
+    if (!bcm2835_spi_begin())
+    {
+      printf("bcm2835_spi_begin failed. Are you running as root??\n");
+      return 1;
+    }
+
+    /* Configure SPI parameters with default values */
+    bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);     
+    bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);                  
+    bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_65536);
+    bcm2835_spi_chipSelect(BCM2835_SPI_CS0);                     
+    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);     
+}
+
+
+void log_print_event(char msg[]) 
+{
+	printf("%s\n", msg);
+}
+
+
+void delay_ms(uint32_t time_ms) 
+{
+	bcm2835_delay(time_ms);
+}
+
+void spi_send(uint8_t *send_data, length) 
+{
+	uint8_t counter = 0;
+	
+	while(counter++ < length) 
+	{
+		bcm2835_spi_transfer(*(send_data++));
+	}
+}
+
+void spi_read(uint8_t *read_data, length) 
+{
+	uint8_t counter = 0;
+	
+	while(counter++ < length) 
+	{
+		*(read_data++) = bcm2835_spi_transfer();	
+	}
+}
+
+void get_timestamp(void) 
+{
+
+}
+
+void store_payload_data(void) 
+{
+
+}
 
 
 /** \} End of rasp_wrapper group */
+
+
+
+// bcm2835_spi_end();
+// bcm2835_close();
