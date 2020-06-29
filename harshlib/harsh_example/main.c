@@ -39,6 +39,7 @@
  */
 
 #include "../harshlib/harshlib.h"
+#include <stdint.h>
 
 #define EXPERIMENT_SECTION_PERIOD	(10*1000)		/* Period between experiment section cycles */
 #define EXPERIMENT_ROUTINE_PERIOD	(10*1000)		/* Period between experiment routine cycles */
@@ -48,6 +49,8 @@
 
 int main(int argc, char const *argv[])
 {
+	uint8_t cycle = 0;
+
 	command_package_t command;
 	state_package_t state;
 	data_package_t data;
@@ -75,7 +78,7 @@ int main(int argc, char const *argv[])
 		command.execution_config = ENABLE_SDRAM_MEMORY_B | ENABLE_SDRAM_MEMORY_D | ENABLE_SDRAM_MEMORY_F | ENABLE_STATIC_TESTS;
 		command.obc_sys_time = get_timestamp();
 
-		if(harsh_set_config(command) != 0)
+		if(harsh_set_config(&command) != 0)
 		{
 			log_print_event("Error detected during set config routine!");
 		}
@@ -84,7 +87,7 @@ int main(int argc, char const *argv[])
 		while(cycle++ < EXPERIMENT_ROUTINE_CYCLES) 
 		{
 			/* Get the payload state */
-			if(harsh_get_state(state) == 0)
+			if(harsh_get_state(&state) == 0)
 			{
 				/* Check timestamp synchronization */
 				if(state.time_stamp != get_timestamp()) 
@@ -136,16 +139,16 @@ int main(int argc, char const *argv[])
 					{
 						for (int i = 0; i < data_packages_count; i++)
 						{
-							harsh_get_data(data);
-							store_payload_data(data);
+							harsh_get_data(&data);
+							store_payload_data(&data);
 						}
 					}
 					else 
 					{
 						for (int i = 0; i < MAX_PAYLOAD_DATA_PACKAGES; i++)
 						{
-							harsh_get_data(data);
-							store_payload_data(data);
+							harsh_get_data(&data);
+							store_payload_data((uint8_t *)&data);
 						}
 					}
 				}

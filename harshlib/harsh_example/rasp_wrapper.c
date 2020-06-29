@@ -144,7 +144,7 @@ void get_timestamp(void)
 
 }
 
-void store_payload_data(void) 
+void store_payload_data(uint8_t *data) 
 {
 
 }
