@@ -38,9 +38,17 @@
  * \{
  */
 
-#include "rasp_wrapper.c"
+/* Raspberry Pi wrapper inlcude (change the implementations for other devices) */
+#include "../harsh_example/rasp_wrapper.c"
+
+/* FloripaSat Protocol include (required in the FloripaSat core missions) */
 #include "../harsh_example/fsp_0.2.0/fsp/fsp.h"
 
+/* Harsh API library include (required for defines, data structures and function protypes) */
+#include "harshlib.h"
+
+/* Standard integer library (required for integer bytes, halfwords and words) */
+#include <stdint.h>
 
 int harsh_init(void) 
 {
