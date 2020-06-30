@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.6
  * 
  * \date 23/06/2020
  * 
@@ -41,6 +41,9 @@
 
 #ifndef HARSHLIB_H_
 #define HARSHLIB_H_
+
+/* Standard integer library (required for integer bytes, halfwords and words) */
+#include <stdint.h>
 
 #define HARSH_BOARD_ENABLE_N_PIN		OBC_GPIO_0
 #define HARSH_FPGA_ENABLE_PIN			OBC_GPIO_1

@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.1
+ * \version 0.0.6
  * 
  * \date 23/06/2020
  * 
@@ -39,16 +39,13 @@
  */
 
 /* Raspberry Pi wrapper inlcude (change the implementations for other devices) */
-#include "../harsh_example/rasp_wrapper.c"
+#include "../harsh_example/rasp_wrapper.h"
 
 /* FloripaSat Protocol include (required in the FloripaSat core missions) */
 #include "../harsh_example/fsp_0.2.0/fsp/fsp.h"
 
 /* Harsh API library include (required for defines, data structures and function protypes) */
 #include "harshlib.h"
-
-/* Standard integer library (required for integer bytes, halfwords and words) */
-#include <stdint.h>
 
 int harsh_init(void) 
 {
@@ -60,6 +57,9 @@ int harsh_init(void)
 
 int harsh_start(void) 
 {
+    /* Create the decodification status variable */
+    uint8_t fsp_status;
+
 	/* Turn-on the payload board and FPGA */
 	log_print_event("Turn-on the payload board and FPGA");
 	gpio_clear(HARSH_BOARD_ENABLE_N_PIN);
@@ -92,9 +92,10 @@ int harsh_start(void)
     delay_ms(100);
 
     /* Read the received package */
-    spi_read(ack_package);
+    spi_read(ack_package, FSP_PKT_MIN_LENGTH + 1);
 
     /* Decode the received obc_package to set the output in the fsp_ack */
+    int i = 0;
     do 
     { 
         fsp_status = fsp_decode(ack_package[i++], &fsp_ack);
@@ -124,6 +125,9 @@ int harsh_stop(void)
 
 int harsh_set_config(command_package_t *cmd) 
 {
+    /* Create the decodification status variable */
+    uint8_t fsp_status;
+
     /* Create FSP data structure buffers */
     fsp_packet_t fsp_command;
     fsp_packet_t fsp_ack;
@@ -136,7 +140,7 @@ int harsh_set_config(command_package_t *cmd)
 	/* Set the command buffer parameters */ 
 	uint8_t command_payload[8];
 	command_payload[0] = FSP_CMD_SET_CONFIG;
-	for (i = 1; i < sizeof(command_payload); i++)
+	for (int i = 1; i < sizeof(command_payload); i++)
     {
         command_payload[i] = *((uint8_t *)cmd++);
     }
@@ -155,12 +159,13 @@ int harsh_set_config(command_package_t *cmd)
     delay_ms(100);
 
     /* Read the received ack package */
-    spi_read(ack_package);
+    spi_read(ack_package, FSP_PKT_MIN_LENGTH + 1);
 
     /* Decode the received obc_package to set the output in the fsp_ack */
+    int j = 0;
     do 
     { 
-        fsp_status = fsp_decode(ack_package[i++], &fsp_ack);
+        fsp_status = fsp_decode(ack_package[j++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
@@ -179,6 +184,9 @@ int harsh_set_config(command_package_t *cmd)
 
 int harsh_get_state(state_package_t *state) 
 {
+    /* Create the decodification status variable */
+    uint8_t fsp_status;
+
 	/* Create FSP data structure buffers */
     fsp_packet_t fsp_command;
     fsp_packet_t fsp_ack;
@@ -204,12 +212,13 @@ int harsh_get_state(state_package_t *state)
     delay_ms(100);
 
     /* Read the received ack package */
-    spi_read(data_package);
+    spi_read(ack_package, FSP_PKT_MIN_LENGTH + 1);
 
     /* Decode the received obc_package to set the output in the fsp_ack */
+    int i = 0;
     do 
     { 
-        fsp_status = fsp_decode(data_package[i++], &fsp_ack);
+        fsp_status = fsp_decode(ack_package[i++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
@@ -225,14 +234,15 @@ int harsh_get_state(state_package_t *state)
     }
 
     /* Read the received state package */
-    spi_read(state_package);
+    spi_read(state_package, FSP_PKT_MAX_LENGTH);
 
     fsp_reset();
 
     /* Decode the received obc_package to set the output in the fsp_state */
+    int j = 0;
     do 
     { 
-        fsp_status = fsp_decode(state_package[i++], &fsp_state);
+        fsp_status = fsp_decode(state_package[j++], &fsp_state);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid state package */
@@ -241,10 +251,10 @@ int harsh_get_state(state_package_t *state)
         log_print_event("Payload state package receive: Succeeded!");
 
         /* Save received valid state package */
-        uint8_t j = 0;
-        while (j++ < i)
+        uint8_t k = 0;
+        while (k++ < i)
         {
-            *((uint8_t *)state++) = state_package[j];
+            *((uint8_t *)state++) = state_package[k];
         }
         return 0;
     }
@@ -258,6 +268,9 @@ int harsh_get_state(state_package_t *state)
 
 int harsh_get_data(data_package_t *data) 
 {
+    /* Create the decodification status variable */
+    uint8_t fsp_status;
+
     /* Create FSP data structure buffers */
     fsp_packet_t fsp_command;
     fsp_packet_t fsp_ack;
@@ -283,9 +296,10 @@ int harsh_get_data(data_package_t *data)
     delay_ms(100);
 
     /* Read the received ack package */
-    spi_read(data_package);
+    spi_read(ack_package, FSP_PKT_MIN_LENGTH + 1);
 
     /* Decode the received obc_package to set the output in the fsp_ack */
+    int i = 0;
     do 
     { 
         fsp_status = fsp_decode(data_package[i++], &fsp_ack);
@@ -306,12 +320,13 @@ int harsh_get_data(data_package_t *data)
     fsp_reset();
 
     /* Read the received state package */
-    spi_read(state_package);
+    spi_read(data_package, FSP_PKT_MAX_LENGTH);
 
     /* Decode the received obc_package to set the output in the fsp_data */
+    int j = 0;
     do 
     { 
-        fsp_status = fsp_decode(data_package[i++], &fsp_data);
+        fsp_status = fsp_decode(data_package[j++], &fsp_data);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid state package */
@@ -320,10 +335,10 @@ int harsh_get_data(data_package_t *data)
         log_print_event("Payload data package receive: Succeeded!");
 
         /* Save received valid state package */
-        uint8_t j = 0;
-        while (j++ < i)
+        uint8_t k = 0;
+        while (k++ < i)
         {
-            *((uint8_t *)data++) = data_package[j];
+            *((uint8_t *)data++) = data_package[k];
         }
         return 0;
     }
