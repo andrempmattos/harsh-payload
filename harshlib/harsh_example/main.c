@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.2
+ * \version 0.0.5
  * 
  * \date 23/06/2020
  * 
@@ -39,6 +39,7 @@
  */
 
 #include "../harshlib/harshlib.h"
+#include "rasp_wrapper.h"
 #include <stdint.h>
 
 #define EXPERIMENT_SECTION_PERIOD	(10*1000)		/* Period between experiment section cycles */
@@ -130,17 +131,17 @@ int main(int argc, char const *argv[])
 				}
 
 				/* Check the experiment remainining data packages */
-				if (data_packages_count > 0)
+				if (state.data_packages_count > 0)
 				{
 					log_print_event("Reading data packages");
 					
 					/* Read the packages with a maximum of "MAX_PAYLOAD_DATA_PACKAGES" packages */
-					if (data_packages_count < MAX_PAYLOAD_DATA_PACKAGES)
+					if (state.data_packages_count < MAX_PAYLOAD_DATA_PACKAGES)
 					{
-						for (int i = 0; i < data_packages_count; i++)
+						for (int i = 0; i < state.data_packages_count; i++)
 						{
 							harsh_get_data(&data);
-							store_payload_data(&data);
+							store_payload_data((uint8_t *)&data);
 						}
 					}
 					else 
