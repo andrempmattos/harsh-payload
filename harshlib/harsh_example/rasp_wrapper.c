@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.3
+ * \version 0.0.4
  * 
  * \date 23/06/2020
  * 
@@ -38,11 +38,7 @@
  * \{
  */
 
-#include <bcm2835.h>
-#include <stdio.h>
-
-#define OBC_GPIO_0		PIN0
-#define OBC_GPIO_1		PIN1
+#include "rasp_wrapper.h"
 
 void system_init(void) 
 {
@@ -119,7 +115,7 @@ void delay_ms(uint32_t time_ms)
 	bcm2835_delay(time_ms);
 }
 
-void spi_send(uint8_t *send_data, length) 
+void spi_send(uint8_t *send_data, uint8_t length) 
 {
 	uint8_t counter = 0;
 	
@@ -129,7 +125,7 @@ void spi_send(uint8_t *send_data, length)
 	}
 }
 
-void spi_read(uint8_t *read_data, length) 
+void spi_read(uint8_t *read_data, uint8_t length) 
 {
 	uint8_t counter = 0;
 	
@@ -139,9 +135,9 @@ void spi_read(uint8_t *read_data, length)
 	}
 }
 
-void get_timestamp(void) 
+uint32_t get_timestamp(void) 
 {
-
+	return 0;
 }
 
 void store_payload_data(uint8_t *data) 

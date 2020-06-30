@@ -1,5 +1,5 @@
 /*
- * version.h
+ * rasp_wrapper.h
  *
  * MIT License
  *
@@ -26,7 +26,7 @@
  */
 
 /**
- * \brief Version control file.
+ * \brief Raspberry PI 3 (Model 3A+) wrapper definition.
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
@@ -34,21 +34,44 @@
  * 
  * \date 23/06/2020
  * 
- * \defgroup version Version
+ * \defgroup harshlib harshlib
+ * \ingroup libs
  * \{
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#ifndef RASP_WRAPPER_H_
+#define RASP_WRAPPER_H_
 
-#define FIRMWARE_VERSION            "0.0.4"
+#include <bcm2835.h>
+#include <stdio.h>
+#include <stdint.h>
 
-#define FIRMWARE_STATUS             "Development"
+#define OBC_GPIO_0		0
+#define OBC_GPIO_1		1
 
-#define FIRMWARE_AUTHOR             "Andre Mattos"
 
-#define FIRMWARE_AUTHOR_EMAIL       "andrempmattos@gmail.com"
+void system_init(void);
 
-#endif /* VERSION_H_ */
+void gpio_init(void);
+void gpio_set(uint8_t pin);
+void gpio_clear(uint8_t pin);
 
-/** \} End of version group */
+void spi_init(void);
+void spi_send(uint8_t *send_data, uint8_t length);
+void spi_read(uint8_t *read_data, uint8_t length);
+
+void log_print_event(char msg[]);
+
+void delay_ms(uint32_t time_ms);
+uint32_t get_timestamp(void);
+
+void store_payload_data(uint8_t *data);
+
+#endif /* RASP_WRAPPER_H_ */
+
+/** \} End of rasp_wrapper group */
+
+
+
+// bcm2835_spi_end();
+// bcm2835_close();
