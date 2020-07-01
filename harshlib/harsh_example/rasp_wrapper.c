@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.6
+ * \version 0.0.7
  * 
  * \date 23/06/2020
  * 
@@ -55,6 +55,11 @@ int system_init(void)
 	*/
 
 	return 0;
+}
+
+void system_close(void) {
+	bcm2835_spi_end();
+	bcm2835_close();
 }
 
 
@@ -108,9 +113,10 @@ int spi_init(void)
 }
 
 
-void log_print_event(char msg[]) 
+void log_print_event(char *module_name, char *msg) 
 {
-	printf("%s\n", msg);
+	printf("%s: ", &module_name);
+	printf("%s\n", &msg);
 }
 
 
@@ -152,8 +158,3 @@ void store_payload_data(uint8_t *data)
 
 
 /** \} End of rasp_wrapper group */
-
-
-
-// bcm2835_spi_end();
-// bcm2835_close();

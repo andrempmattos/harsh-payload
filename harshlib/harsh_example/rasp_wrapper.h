@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.4
+ * \version 0.0.7
  * 
  * \date 23/06/2020
  * 
@@ -51,6 +51,7 @@
 
 
 int system_init(void);
+void system_close(void);
 
 void gpio_init(void);
 void gpio_set(uint8_t pin);
