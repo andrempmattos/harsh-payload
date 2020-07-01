@@ -1,59 +1,71 @@
 #
-# This is a Makefile for an library example program. 
-# This program uses both the harshlib library and the fsp module.
-# Typing 'make' or 'make runner' will create the executable file.
+# 'make depend' uses makedepend to automatically generate dependencies 
+#               (dependencies are added to end of Makefile)
+# 'make'        build executable file 'mycc'
+# 'make clean'  removes all .o and executable files
 #
-# Define some Makefile variables for the compiler and compiler flags
-# to use Makefile variables later in the Makefile: $()
-#
-#  -g    adds debugging information to the executable file
-#  -Wall turns on most, but not all, compiler warnings
-#
+
+# define the C compiler to use
 CC = gcc
-CFLAGS  = -g -Wall
-RM = rm
 
-# Typing 'make' will invoke the first target entry in the file 
-# (in this case the default target entry)
-# you can name this target entry anything, but "default" or "all"
-# are the most commonly used names by convention
-#
-default: runner
+# define any compile-time flags
+CFLAGS = -Wall -g
 
-# To create the executable file runner we need the object files
-# main.o, rasp_wrapper.o, harshlib.o, and fsplib.o:
+# define any directories containing header files other than /usr/include
 #
-runner:  main.o rasp_wrapper.o harshlib.o fsplib.o
-	$(CC) $(CFLAGS) -o runner main.o rasp_wrapper.o harshlib.o fsp.o crc16.o
-	$(RM) *.o
+INCLUDES = -I../harshlib -I/fsp_0.2.0/fsp
 
-# To create the object file main.o, we need the source
-# files main.c, rasp_wrapper.h and harshlib.h:
-#
-main.o:  main.c rasp_wrapper.h ../harshlib/harshlib.h
-	$(CC) $(CFLAGS) -c main.c
+# define library paths in addition to /usr/lib
+#   if I wanted to include libraries not in /usr/lib I'd specify
+#   their path using -Lpath, something like:
+# LFLAGS = 
 
-# To create the object file rasp_wrapper.o, we need the source
-# files rasp_wrapper.c and rasp_wrapper.h 
-#
-rasp_wrapper.o:  rasp_wrapper.c rasp_wrapper.h
-	$(CC) $(CFLAGS) -c rasp_wrapper.c
+# define any libraries to link into executable:
+#   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
+#   option, something like (this will link in libmylib.so and libm.so:
+LIBS = -lbcm2835
 
-# To create the object file harshlib.o, we need the source
-# files harshlib.c, harshlib.h, rasp_wrapper.h and fsp.h
-#
-harshlib.o:  ../harshlib/harshlib.c ../harshlib/harshlib.h rasp_wrapper.h fsp_0.2.0/fsp/fsp.h
-	$(CC) $(CFLAGS) -c ../harshlib/harshlib.c
+# define the C source files
+SRCS = harshlib.c rasp_wrapper.c main.c fsp.c crc16.c
 
-# To create the object file fsplib.o, we need the source
-# files fsp.c, crc16.c, fsp.h and crc.h:
+# define the C object files 
 #
-fsplib.o:  fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/fsp.h fsp_0.2.0/fsp/crc16.c fsp_0.2.0/fsp/crc.h
-	$(CC) $(CFLAGS) -c fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/crc16.c
+# This uses Suffix Replacement within a macro:
+#   $(name:string1=string2)
+#         For each word in 'name' replace 'string1' with 'string2'
+# Below we are replacing the suffix .c of all words in the macro SRCS
+# with the .o suffix
+#
+OBJS = $(SRCS:.c=.o)
 
-# To start over from scratch, type 'make clean'.  This
-# removes the executable file, as well as old .o object
-# files and *~ backup files:
+# define the executable file 
+MAIN = runner
+
 #
-clean: 
-	$(RM) runner *.o
+# The following part of the makefile is generic; it can be used to 
+# build any executable just by changing the definitions above and by
+# deleting dependencies appended to the file from 'make depend'
+#
+
+.PHONY: depend clean
+
+all:    $(MAIN)
+        @echo  Executable file named runner has been created
+
+$(MAIN): $(OBJS) 
+        $(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+
+# this is a suffix replacement rule for building .o's from .c's
+# it uses automatic variables $<: the name of the prerequisite of
+# the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
+# (see the gnu make manual section about automatic variables)
+.c.o:
+        $(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+
+clean:
+        $(RM) *.o *~ $(MAIN)
+
+depend: $(SRCS)
+        makedepend $(INCLUDES) $^
+
+# DO NOT DELETE THIS LINE -- make depend needs it
