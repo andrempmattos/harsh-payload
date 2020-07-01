@@ -53,6 +53,8 @@ int harsh_init(void)
 	log_print_event(HARSHLIB_MODULE_NAME, "Initializing payload board: Keeping turned-off");
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
+
+    return 0;
 }
 
 int harsh_start(void) 
@@ -121,6 +123,8 @@ int harsh_stop(void)
 	log_print_event(HARSHLIB_MODULE_NAME, "Turn-off the payload board and FPGA");
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
+
+    return 0;
 }
 
 int harsh_set_config(command_package_t *cmd) 
