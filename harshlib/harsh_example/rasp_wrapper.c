@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.4
+ * \version 0.0.6
  * 
  * \date 23/06/2020
  * 
@@ -40,12 +40,12 @@
 
 #include "rasp_wrapper.h"
 
-void system_init(void) 
+int system_init(void) 
 {
     if (!bcm2835_init())
     {
       printf("bcm2835_init failed. Are you running as root??\n");
-      return 1;
+      return -1;
     }
 
     /*
@@ -53,6 +53,8 @@ void system_init(void)
 	 * Use for testing
 	 * bcm2835_set_debug(1); 
 	*/
+
+	return 0;
 }
 
 
@@ -76,7 +78,7 @@ void gpio_clear(uint8_t pin)
 }
 
 
-void spi_init(void) 
+int spi_init(void) 
 {
     /** 
      * After installing bcm2835, you can build this with something like:
@@ -92,7 +94,7 @@ void spi_init(void)
     if (!bcm2835_spi_begin())
     {
       printf("bcm2835_spi_begin failed. Are you running as root??\n");
-      return 1;
+      return -1;
     }
 
     /* Configure SPI parameters with default values */
@@ -100,7 +102,9 @@ void spi_init(void)
     bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);                  
     bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_65536);
     bcm2835_spi_chipSelect(BCM2835_SPI_CS0);                     
-    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);     
+    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);    
+
+    return 0; 
 }
 
 
@@ -128,10 +132,11 @@ void spi_send(uint8_t *send_data, uint8_t length)
 void spi_read(uint8_t *read_data, uint8_t length) 
 {
 	uint8_t counter = 0;
+	uint8_t dummy = 0;
 	
 	while(counter++ < length) 
 	{
-		*(read_data++) = bcm2835_spi_transfer();	
+		*(read_data++) = bcm2835_spi_transfer(dummy);	
 	}
 }
 
