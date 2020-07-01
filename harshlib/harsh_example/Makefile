@@ -26,7 +26,7 @@ INCLUDES = -I../harshlib -I/fsp_0.2.0/fsp
 LIBS = -lbcm2835
 
 # define the C source files
-SRCS = ../harshlibharshlib.c rasp_wrapper.c main.c fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/crc16.c
+SRCS = ../harshlib/harshlib.c rasp_wrapper.c main.c fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/crc16.c
 
 # define the C object files 
 #

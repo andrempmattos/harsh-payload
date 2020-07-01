@@ -61,7 +61,7 @@ int spi_init(void);
 void spi_send(uint8_t *send_data, uint8_t length);
 void spi_read(uint8_t *read_data, uint8_t length);
 
-void log_print_event(char msg[]);
+void log_print_event(char *module_name, char *msg);
 
 void delay_ms(uint32_t time_ms);
 uint32_t get_timestamp(void);

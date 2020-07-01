@@ -115,8 +115,10 @@ int spi_init(void)
 
 void log_print_event(char *module_name, char *msg) 
 {
-	printf("%s: ", &module_name);
-	printf("%s\n", &msg);
+	printf("\033[0;34m");
+	printf("%s: ", module_name);
+  	printf("\033[0m;")
+	printf("%s\n", msg);
 }
 
 
