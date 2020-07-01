@@ -117,7 +117,7 @@ void log_print_event(char *module_name, char *msg)
 {
 	printf("\033[0;34m");
 	printf("%s: ", module_name);
-  	printf("\033[0m;")
+  	printf("\033[0m");
 	printf("%s\n", msg);
 }
 
