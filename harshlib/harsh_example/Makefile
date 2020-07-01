@@ -63,7 +63,7 @@ $(MAIN): $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) *.o *~ $(MAIN)
+	$(RM) *.o *~ $(MAIN) ../harshlib/*.o fsp_0.2.0/fsp/*.o
 
 depend: $(SRCS)
 	makedepend $(INCLUDES) $^
