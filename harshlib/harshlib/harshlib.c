@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.6
+ * \version 0.0.7
  * 
  * \date 23/06/2020
  * 
@@ -50,7 +50,7 @@
 int harsh_init(void) 
 {
 	/* Keep the payload board and FPGA turned-off until called to execute */
-	log_print_event("Initializing payload board: Keeping turned-off");
+	log_print_event(HARSHLIB_MODULE_NAME, "Initializing payload board: Keeping turned-off");
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
 }
@@ -61,12 +61,12 @@ int harsh_start(void)
     uint8_t fsp_status;
 
 	/* Turn-on the payload board and FPGA */
-	log_print_event("Turn-on the payload board and FPGA");
+	log_print_event(HARSHLIB_MODULE_NAME, "Turn-on the payload board and FPGA");
 	gpio_clear(HARSH_BOARD_ENABLE_N_PIN);
 	gpio_set(HARSH_FPGA_ENABLE_PIN);
 
 	/* Dalay before perform a interface test routine */
-    log_print_event("Initializing payload interface test");
+    log_print_event(HARSHLIB_MODULE_NAME, "Initializing payload interface test");
 	delay_ms(2000);
 
 	/* Create FSP data structure buffers */
@@ -104,13 +104,13 @@ int harsh_start(void)
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event("Payload start interface test: Passed!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "Payload start interface test: Passed!");
     	return 0;
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload start interface test: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload start interface test: Failed!");
         return -1;
     }
 }
@@ -118,7 +118,7 @@ int harsh_start(void)
 int harsh_stop(void) 
 {
 	/* Turn-off the FPGA and payload board*/
-	log_print_event("Turn-off the payload board and FPGA");
+	log_print_event(HARSHLIB_MODULE_NAME, "Turn-off the payload board and FPGA");
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
 }
@@ -171,13 +171,13 @@ int harsh_set_config(command_package_t *cmd)
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event("Payload set config command: Succeeded!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "Payload set config command: Succeeded!");
     	return 0;
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload set config command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload set config command: Failed!");
         return -1;
     }
 }
@@ -224,12 +224,12 @@ int harsh_get_state(state_package_t *state)
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event("Payload send state command: Succeeded!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "Payload send state command: Succeeded!");
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload send state command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload send state command: Failed!");
         return -1;
     }
 
@@ -248,7 +248,7 @@ int harsh_get_state(state_package_t *state)
     /* Check if the decodification generated a valid state package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event("Payload state package receive: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload state package receive: Succeeded!");
 
         /* Save received valid state package */
         uint8_t k = 0;
@@ -261,7 +261,7 @@ int harsh_get_state(state_package_t *state)
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload state package receive: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload state package receive: Failed!");
         return -1;
     }
 }
@@ -308,12 +308,12 @@ int harsh_get_data(data_package_t *data)
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event("Payload send data command: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload send data command: Succeeded!");
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload send data command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload send data command: Failed!");
         return -1;
     }
 
@@ -332,7 +332,7 @@ int harsh_get_data(data_package_t *data)
     /* Check if the decodification generated a valid state package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event("Payload data package receive: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload data package receive: Succeeded!");
 
         /* Save received valid state package */
         uint8_t k = 0;
@@ -345,7 +345,7 @@ int harsh_get_data(data_package_t *data)
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event("Payload data package receive: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "Payload data package receive: Failed!");
         return -1;
     }
 }
