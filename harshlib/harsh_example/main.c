@@ -48,6 +48,8 @@
 #define MAX_PAYLOAD_ERRORS_ALLOWED	20				/* Maximum payload errors allowed */
 #define MAX_PAYLOAD_DATA_PACKAGES	5				/* Maximum payload errors allowed */
 
+#define MAIN_MODULE_NAME			"main"
+
 int main(int argc, char const *argv[])
 {
 	uint8_t cycle = 0;
@@ -55,6 +57,9 @@ int main(int argc, char const *argv[])
 	command_package_t command;
 	state_package_t state;
 	data_package_t data;
+
+	/* System initialization routine */
+	system_init();
 
 	/* GPIO initialization routine (used for the payload enables) */
 	gpio_init();
@@ -71,7 +76,7 @@ int main(int argc, char const *argv[])
 		/* Turn-on the payload and perform a interface communication test */
 		if(harsh_start() != 0)
 		{
-			log_print_event("Error detected during initialization!");
+			log_print_event(MAIN_MODULE_NAME, "Error detected during initialization!");
 		}
 
 		/* Set command parameters */
@@ -81,7 +86,7 @@ int main(int argc, char const *argv[])
 
 		if(harsh_set_config(&command) != 0)
 		{
-			log_print_event("Error detected during set config routine!");
+			log_print_event(MAIN_MODULE_NAME, "Error detected during set config routine!");
 		}
 
 		/* This loop perform the regular routines during an experiment section */
@@ -93,13 +98,13 @@ int main(int argc, char const *argv[])
 				/* Check timestamp synchronization */
 				if(state.time_stamp != get_timestamp()) 
 				{
-					log_print_event("Different timestamp detected!");
+					log_print_event(MAIN_MODULE_NAME, "Different timestamp detected!");
 				}
 
 				/* Check parameters configuration */
 				if((state.operation_mode != command.operation_mode) || (state.execution_config != command.execution_config))
 				{
-					log_print_event("Different parameter config detected!");	
+					log_print_event(MAIN_MODULE_NAME, "Different parameter config detected!");	
 				}
 
 				/* Check errors (it could be implement as an error handler instead) */
@@ -109,31 +114,31 @@ int main(int argc, char const *argv[])
 					if (state.error_code & EXPERIMENT_FAILURE)
 					{
 						harsh_stop();
-						log_print_event("Payload turned-off!");
+						log_print_event(MAIN_MODULE_NAME, "Payload turned-off!");
 					}
 					/* Case experiment memory interface failure, then just notify (it should be properly handled) */ 
 					if (state.error_code & (MEMORY_B_INTERFACE_ERROR | MEMORY_D_INTERFACE_ERROR | MEMORY_F_INTERFACE_ERROR))
 					{
-						log_print_event("Experiment memories interface errors detected");
+						log_print_event(MAIN_MODULE_NAME, "Experiment memories interface errors detected");
 					}
 					/* Case experiment memory latch-up failure, then just notify (it should be properly handled) */
 					if (state.error_code & (MEMORY_B_LATCHUP | MEMORY_D_LATCHUP | MEMORY_F_LATCHUP))
 					{
-						log_print_event("Experiment memories latch-up errors detected");	
+						log_print_event(MAIN_MODULE_NAME, "Experiment memories latch-up errors detected");	
 					}
 				}
 				else 
 				{
 					/* Case maximum allowed errors achieved, then stop execution for this entire section */
 					harsh_stop();
-					log_print_event("Maximum payload allowed errors achieved");
-					log_print_event("Payload turned-off!");
+					log_print_event(MAIN_MODULE_NAME, "Maximum payload allowed errors achieved");
+					log_print_event(MAIN_MODULE_NAME, "Payload turned-off!");
 				}
 
 				/* Check the experiment remainining data packages */
 				if (state.data_packages_count > 0)
 				{
-					log_print_event("Reading data packages");
+					log_print_event(MAIN_MODULE_NAME, "Reading data packages");
 					
 					/* Read the packages with a maximum of "MAX_PAYLOAD_DATA_PACKAGES" packages */
 					if (state.data_packages_count < MAX_PAYLOAD_DATA_PACKAGES)
@@ -156,7 +161,7 @@ int main(int argc, char const *argv[])
 			}
 			else 
 			{
-				log_print_event("Error detected during get state routine!");
+				log_print_event(MAIN_MODULE_NAME, "Error detected during get state routine!");
 			}
 
 			delay_ms(EXPERIMENT_ROUTINE_PERIOD);
@@ -165,6 +170,10 @@ int main(int argc, char const *argv[])
 
 		delay_ms(EXPERIMENT_SECTION_PERIOD);
 	}
+
+	/* System termination routine */
+	system_close();
+	return 0;
 }
 
 /** \} End of main group */
