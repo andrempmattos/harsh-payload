@@ -26,7 +26,7 @@ INCLUDES = -I../harshlib -I/fsp_0.2.0/fsp
 LIBS = -lbcm2835
 
 # define the C source files
-SRCS = harshlib.c rasp_wrapper.c main.c fsp.c crc16.c
+SRCS = ../harshlibharshlib.c rasp_wrapper.c main.c fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/crc16.c
 
 # define the C object files 
 #
@@ -49,23 +49,23 @@ MAIN = runner
 
 .PHONY: depend clean
 
-all:    $(MAIN)
-        @echo  Executable file named runner has been created
+all: $(MAIN)
+	@echo  Executable file named runner has been created
 
-$(MAIN): $(OBJS) 
-        $(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+$(MAIN): $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 # this is a suffix replacement rule for building .o's from .c's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
 # (see the gnu make manual section about automatic variables)
 .c.o:
-        $(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-        $(RM) *.o *~ $(MAIN)
+	$(RM) *.o *~ $(MAIN)
 
 depend: $(SRCS)
-        makedepend $(INCLUDES) $^
+	makedepend $(INCLUDES) $^
 
 # DO NOT DELETE THIS LINE -- make depend needs it
