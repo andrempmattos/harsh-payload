@@ -27,13 +27,13 @@
 
 /**
  * \brief Raspberry PI 3 (Model 3A+) wrapper definition.
- * 
+ *
  * \author Andre Mattos <andrempmattos@gmail.com>
- * 
- * \version 0.0.7
- * 
+ *
+ * \version 0.0.8
+ *
  * \date 23/06/2020
- * 
+ *
  * \defgroup harshlib harshlib
  * \ingroup libs
  * \{
@@ -46,8 +46,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define OBC_GPIO_0		0
-#define OBC_GPIO_1		1
+#define OBC_GPIO_0		5
+#define OBC_GPIO_1		6
 
 
 int system_init(void);
@@ -61,12 +61,12 @@ int spi_init(void);
 void spi_send(uint8_t *send_data, uint8_t length);
 void spi_read(uint8_t *read_data, uint8_t length);
 
-void log_print_event(char *module_name, char *msg);
+void log_print_event(char *module_name, char *funct_name, char *msg);
 
 void delay_ms(uint32_t time_ms);
 uint32_t get_timestamp(void);
 
-void store_payload_data(uint8_t *data);
+void store_payload_data(uint8_t *data, uint8_t length);
 
 #endif /* RASP_WRAPPER_H_ */
 
