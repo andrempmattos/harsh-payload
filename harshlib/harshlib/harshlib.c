@@ -27,13 +27,13 @@
 
 /**
  * \brief Harsh Payload API library implementation.
- * 
+ *
  * \author Andre Mattos <andrempmattos@gmail.com>
- * 
- * \version 0.0.7
- * 
+ *
+ * \version 0.0.8
+ *
  * \date 23/06/2020
- * 
+ *
  * \addtogroup harshlib
  * \{
  */
@@ -47,35 +47,35 @@
 /* Harsh API library include (required for defines, data structures and function protypes) */
 #include "harshlib.h"
 
-int harsh_init(void) 
+int harsh_init(void)
 {
 	/* Keep the payload board and FPGA turned-off until called to execute */
-	log_print_event(HARSHLIB_MODULE_NAME, "Initializing payload board: Keeping turned-off");
+	log_print_event(HARSHLIB_MODULE_NAME, "init", "Initializing payload board: Keeping turned-off");
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
 
     return 0;
 }
 
-int harsh_start(void) 
+int harsh_start(void)
 {
     /* Create the decodification status variable */
     uint8_t fsp_status;
 
 	/* Turn-on the payload board and FPGA */
-	log_print_event(HARSHLIB_MODULE_NAME, "Turn-on the payload board and FPGA");
+	log_print_event(HARSHLIB_MODULE_NAME, "start", "Turn-on the payload board and FPGA");
 	gpio_clear(HARSH_BOARD_ENABLE_N_PIN);
 	gpio_set(HARSH_FPGA_ENABLE_PIN);
 
 	/* Dalay before perform a interface test routine */
-    log_print_event(HARSHLIB_MODULE_NAME, "Initializing payload interface test");
+    log_print_event(HARSHLIB_MODULE_NAME, "start", "Initializing payload interface test");
 	delay_ms(2000);
 
 	/* Create FSP data structure buffers */
     fsp_packet_t fsp_command;
     fsp_packet_t fsp_ack;
 
-    /* Create buffer to transfer the actual data in the SPI communication */    
+    /* Create buffer to transfer the actual data in the SPI communication */
     uint8_t cmd_package[FSP_PKT_MIN_LENGTH + 1];
     uint8_t cmd_package_len;
     uint8_t ack_package[FSP_PKT_MIN_LENGTH + 1];
@@ -98,36 +98,36 @@ int harsh_start(void)
 
     /* Decode the received obc_package to set the output in the fsp_ack */
     int i = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(ack_package[i++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event(HARSHLIB_MODULE_NAME, "Payload start interface test: Passed!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "start", "Payload start interface test: Passed!");
     	return 0;
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload start interface test: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "start", "Payload start interface test: Failed!");
         return -1;
     }
 }
 
-int harsh_stop(void) 
+int harsh_stop(void)
 {
 	/* Turn-off the FPGA and payload board*/
-	log_print_event(HARSHLIB_MODULE_NAME, "Turn-off the payload board and FPGA");
+	log_print_event(HARSHLIB_MODULE_NAME, "stop", "Turn-off the payload board and FPGA");
 	gpio_clear(HARSH_FPGA_ENABLE_PIN);
 	gpio_set(HARSH_BOARD_ENABLE_N_PIN);
 
     return 0;
 }
 
-int harsh_set_config(command_package_t *cmd) 
+int harsh_set_config(command_package_t *cmd)
 {
     /* Create the decodification status variable */
     uint8_t fsp_status;
@@ -136,12 +136,12 @@ int harsh_set_config(command_package_t *cmd)
     fsp_packet_t fsp_command;
     fsp_packet_t fsp_ack;
 
-	/* Create buffer to transfer the actual data in the SPI communication */    
+	/* Create buffer to transfer the actual data in the SPI communication */
     uint8_t cmd_package[FSP_PKT_MAX_LENGTH];
 	uint8_t cmd_package_len;
 	uint8_t ack_package[FSP_PKT_MIN_LENGTH + 1];
 
-	/* Set the command buffer parameters */ 
+	/* Set the command buffer parameters */
 	uint8_t command_payload[8];
 	command_payload[0] = FSP_CMD_SET_CONFIG;
 	for (int i = 1; i < sizeof(command_payload); i++)
@@ -167,26 +167,26 @@ int harsh_set_config(command_package_t *cmd)
 
     /* Decode the received obc_package to set the output in the fsp_ack */
     int j = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(ack_package[j++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event(HARSHLIB_MODULE_NAME, "Payload set config command: Succeeded!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "set_config", "Payload set config command: Succeeded!");
     	return 0;
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload set config command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "set_config", "Payload set config command: Failed!");
         return -1;
     }
 }
 
-int harsh_get_state(state_package_t *state) 
+int harsh_get_state(state_package_t *state)
 {
     /* Create the decodification status variable */
     uint8_t fsp_status;
@@ -196,7 +196,7 @@ int harsh_get_state(state_package_t *state)
     fsp_packet_t fsp_ack;
     fsp_packet_t fsp_state;
 
-	/* Create buffer to transfer the actual data in the SPI communication */    
+	/* Create buffer to transfer the actual data in the SPI communication */
     uint8_t cmd_package[FSP_PKT_MAX_LENGTH];
 	uint8_t cmd_package_len;
     uint8_t ack_package[FSP_PKT_MIN_LENGTH + 1];
@@ -220,20 +220,20 @@ int harsh_get_state(state_package_t *state)
 
     /* Decode the received obc_package to set the output in the fsp_ack */
     int i = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(ack_package[i++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-    	log_print_event(HARSHLIB_MODULE_NAME, "Payload send state command: Succeeded!");
+    	log_print_event(HARSHLIB_MODULE_NAME, "get_state", "Payload send state command: Succeeded!");
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload send state command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_state", "Payload send state command: Failed!");
         return -1;
     }
 
@@ -244,15 +244,15 @@ int harsh_get_state(state_package_t *state)
 
     /* Decode the received obc_package to set the output in the fsp_state */
     int j = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(state_package[j++], &fsp_state);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid state package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload state package receive: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_state", "Payload state package receive: Succeeded!");
 
         /* Save received valid state package */
         uint8_t k = 0;
@@ -265,12 +265,12 @@ int harsh_get_state(state_package_t *state)
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload state package receive: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_state", "Payload state package receive: Failed!");
         return -1;
     }
 }
 
-int harsh_get_data(data_package_t *data) 
+int harsh_get_data(data_package_t *data)
 {
     /* Create the decodification status variable */
     uint8_t fsp_status;
@@ -280,7 +280,7 @@ int harsh_get_data(data_package_t *data)
     fsp_packet_t fsp_ack;
     fsp_packet_t fsp_data;
 
-    /* Create buffer to transfer the actual data in the SPI communication */    
+    /* Create buffer to transfer the actual data in the SPI communication */
     uint8_t cmd_package[FSP_PKT_MAX_LENGTH];
     uint8_t cmd_package_len;
     uint8_t ack_package[FSP_PKT_MIN_LENGTH + 1];
@@ -304,20 +304,20 @@ int harsh_get_data(data_package_t *data)
 
     /* Decode the received obc_package to set the output in the fsp_ack */
     int i = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(data_package[i++], &fsp_ack);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid ACK package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload send data command: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_data", "Payload send data command: Succeeded!");
     }
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload send data command: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_data", "Payload send data command: Failed!");
         return -1;
     }
 
@@ -328,15 +328,15 @@ int harsh_get_data(data_package_t *data)
 
     /* Decode the received obc_package to set the output in the fsp_data */
     int j = 0;
-    do 
-    { 
+    do
+    {
         fsp_status = fsp_decode(data_package[j++], &fsp_data);
     } while(fsp_status == FSP_PKT_NOT_READY);
 
     /* Check if the decodification generated a valid state package */
     if (fsp_status == FSP_PKT_READY)
     {
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload data package receive: Succeeded!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_data", "Payload data package receive: Succeeded!");
 
         /* Save received valid state package */
         uint8_t k = 0;
@@ -349,7 +349,7 @@ int harsh_get_data(data_package_t *data)
     else
     {
         /* Invalid package, wrong address or critical error occurred */
-        log_print_event(HARSHLIB_MODULE_NAME, "Payload data package receive: Failed!");
+        log_print_event(HARSHLIB_MODULE_NAME, "get_data", "Payload data package receive: Failed!");
         return -1;
     }
 }
