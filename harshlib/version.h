@@ -27,13 +27,13 @@
 
 /**
  * \brief Version control file.
- * 
+ *
  * \author Andre Mattos <andrempmattos@gmail.com>
- * 
- * \version 0.0.7
- * 
+ *
+ * \version 0.0.8
+ *
  * \date 23/06/2020
- * 
+ *
  * \defgroup version Version
  * \{
  */
@@ -41,7 +41,7 @@
 #ifndef VERSION_H_
 #define VERSION_H_
 
-#define FIRMWARE_VERSION            "0.0.7"
+#define FIRMWARE_VERSION            "0.0.8"
 
 #define FIRMWARE_STATUS             "Development"
 
