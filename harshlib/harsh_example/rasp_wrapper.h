@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.8
+ * \version 0.0.9
  *
  * \date 23/06/2020
  *
@@ -45,6 +45,7 @@
 #include <bcm2835.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <time.h>
 
 #define OBC_GPIO_0		5
 #define OBC_GPIO_1		6

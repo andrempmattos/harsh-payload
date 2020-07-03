@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.8
+ * \version 0.0.9
  *
  * \date 23/06/2020
  *
@@ -116,7 +116,7 @@ int spi_init(void)
 void log_print_event(char *module_name, char *funct_name, char *msg)
 {
     printf("\033[0;32m");
-	printf("[%d] ", 456456);
+	printf("[%d] ", get_timestamp());
 	printf("\033[0;35m");
 	printf("%s: ", module_name);
 	printf("\033[0;36m");
@@ -154,15 +154,22 @@ void spi_read(uint8_t *read_data, uint8_t length)
 
 uint32_t get_timestamp(void)
 {
-	return 0;
+	/* Get current time value in nanoseconds, then convert to milliseconds */
+	struct timespec gettime_now;
+	clock_gettime(CLOCK_REALTIME, &gettime_now);
+	return (gettime_now.tv_nsec / 1000000);
 }
 
 void store_payload_data(uint8_t *data, uint8_t length)
 {
     for(int i = 0; i < length; i++) {
-        printf("%d\t", *(data++));
+        printf("%d ", *(data++));
     }
+    printf("\n");
 }
 
 
 /** \} End of rasp_wrapper group */
+
+
+
