@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.38
+ * \version 0.0.39
  * 
  * \date 09/05/2020
  * 
@@ -143,6 +143,7 @@ void vTaskExperimentManager(void *pvParameters)
         if (timeout_check && (timeout_count >= (TASK_EXPERIMENT_MANAGER_INITIAL_DELAY_MS + EXPERIMENT_INIT_TIMEOUT_MS)))
         {
             sys_log_print_event_from_module(SYS_LOG_INFO, TASK_EXPERIMENT_MANAGER_NAME, "OBC interface timeout, running experiment with the parameters: ");
+            sys_log_new_line();
             sys_log_print_msg("time_stamp = ");
             sys_log_print_dec(timeout_count);
             sys_log_new_line();
@@ -158,7 +159,8 @@ void vTaskExperimentManager(void *pvParameters)
             /* Send the command to be executed in the experiment runner task */
             xQueueSendToBack(xQueueExperimentCommand, &exp_command, 0);  
             vTaskResume(xTaskExperimentRunnerHandle);
-            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_MANAGER_NAME, "Task resumed: ExperimentRunner");            
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_MANAGER_NAME, "Task resumed: ExperimentRunner");
+            sys_log_new_line();
             timeout_state = false; 
         }
 
@@ -214,6 +216,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
             /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_MANAGER_NAME, "experiment_runner_task halted due to latch-up event in memory B");
+            sys_log_new_line();
         }
         else 
         {
@@ -234,6 +237,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
             /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_MANAGER_NAME, "experiment_runner_task halted due to latch-up event in memory D");
+            sys_log_new_line();
         }
         else 
         {
@@ -254,6 +258,7 @@ int latchup_detection_routine(sys_state_package_t *sys_package)
             /* Suspend runner task after latch-up event if halt forced */
             vTaskSuspend(xTaskExperimentRunnerHandle);
             sys_log_print_event_from_module(SYS_LOG_ERROR, TASK_EXPERIMENT_MANAGER_NAME, "experiment_runner_task halted due to latch-up event in memory F");
+            sys_log_new_line();
         }
         else 
         {
