@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.39
  * 
  * \date 12/05/2020
  * 
@@ -67,7 +67,7 @@ int obc_init()
     MSS_SPI_configure_slave_mode
     (
         &g_mss_spi0,
-        MSS_SPI_MODE1,
+        MSS_SPI_MODE0,
         MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE
     );
   
