@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.8
+ * \version 0.0.10
  *
  * \date 23/06/2020
  *
@@ -74,99 +74,100 @@ int main(int argc, char const *argv[])
 	while(1)
 	{
 		/* Turn-on the payload and perform a interface communication test */
-		if(harsh_start() != 0)
+		if(harsh_start() == 0)
 		{
-			log_print_event(MAIN_MODULE_NAME, "harsh_start", "Error detected during payload initialization!");
-		}
+			/* Set command parameters */
+			command.operation_mode = EXPERIMENT_PAYLOAD;
+			command.execution_config = ENABLE_SDRAM_MEMORY_B | ENABLE_SDRAM_MEMORY_D | ENABLE_SDRAM_MEMORY_F | ENABLE_STATIC_TESTS;
+			command.obc_sys_time = get_timestamp();
 
-		/* Set command parameters */
-		command.operation_mode = EXPERIMENT_PAYLOAD;
-		command.execution_config = ENABLE_SDRAM_MEMORY_B | ENABLE_SDRAM_MEMORY_D | ENABLE_SDRAM_MEMORY_F | ENABLE_STATIC_TESTS;
-		command.obc_sys_time = get_timestamp();
-
-		if(harsh_set_config(&command) != 0)
-		{
-			log_print_event(MAIN_MODULE_NAME, "harsh_config", "Error detected during set config routine!");
-		}
-
-		/* This loop perform the regular routines during an experiment section */
-		while(cycle++ < EXPERIMENT_ROUTINE_CYCLES)
-		{
-			/* Get the payload state */
-			if(harsh_get_state(&state) == 0)
+			if(harsh_set_config(&command) != 0)
 			{
-				/* Check timestamp synchronization */
-				if(state.time_stamp != get_timestamp())
-				{
-					log_print_event(MAIN_MODULE_NAME, "state_check", "Different timestamp detected!");
-				}
+				log_print_event(MAIN_MODULE_NAME, "harsh_config", "Error detected during set config routine!");
+			}
 
-				/* Check parameters configuration */
-				if((state.operation_mode != command.operation_mode) || (state.execution_config != command.execution_config))
+			/* This loop perform the regular routines during an experiment section */
+			while(cycle++ < EXPERIMENT_ROUTINE_CYCLES)
+			{
+				/* Get the payload state */
+				if(harsh_get_state(&state) == 0)
 				{
-					log_print_event(MAIN_MODULE_NAME, "state_check", "Different parameter config detected!");
-				}
+					/* Check timestamp synchronization */
+					if(state.time_stamp != get_timestamp())
+					{
+						log_print_event(MAIN_MODULE_NAME, "state_check", "Different timestamp detected!");
+					}
 
-				/* Check errors (it could be implement as an error handler instead) */
-				if(state.error_count < MAX_PAYLOAD_ERRORS_ALLOWED)
-				{
-					/* Case experiment critical failure, then stop the execution for this entire section */
-					if (state.error_code & EXPERIMENT_FAILURE)
+					/* Check parameters configuration */
+					if((state.operation_mode != command.operation_mode) || (state.execution_config != command.execution_config))
 					{
-						harsh_stop();
-						log_print_event(MAIN_MODULE_NAME, "state_check", "Payload turned-off!");
+						log_print_event(MAIN_MODULE_NAME, "state_check", "Different parameter config detected!");
 					}
-					/* Case experiment memory interface failure, then just notify (it should be properly handled) */
-					if (state.error_code & (MEMORY_B_INTERFACE_ERROR | MEMORY_D_INTERFACE_ERROR | MEMORY_F_INTERFACE_ERROR))
-					{
-						log_print_event(MAIN_MODULE_NAME, "state_check", "Experiment memories interface errors detected");
-					}
-					/* Case experiment memory latch-up failure, then just notify (it should be properly handled) */
-					if (state.error_code & (MEMORY_B_LATCHUP | MEMORY_D_LATCHUP | MEMORY_F_LATCHUP))
-					{
-						log_print_event(MAIN_MODULE_NAME, "state_check", "Experiment memories latch-up errors detected");
-					}
-				}
-				else
-				{
-					/* Case maximum allowed errors achieved, then stop execution for this entire section */
-					harsh_stop();
-					log_print_event(MAIN_MODULE_NAME, "state_check", "Maximum payload allowed errors achieved");
-					log_print_event(MAIN_MODULE_NAME, "state_check", "Payload turned-off!");
-				}
 
-				/* Check the experiment remainining data packages */
-				if (state.data_packages_count > 0)
-				{
-					log_print_event(MAIN_MODULE_NAME, "data_packages", "Reading data packages");
-					
-					/* Read the packages with a maximum of "MAX_PAYLOAD_DATA_PACKAGES" packages */
-					if (state.data_packages_count < MAX_PAYLOAD_DATA_PACKAGES)
+					/* Check errors (it could be implement as an error handler instead) */
+					if(state.error_count < MAX_PAYLOAD_ERRORS_ALLOWED)
 					{
-						for (int i = 0; i < state.data_packages_count; i++)
+						/* Case experiment critical failure, then stop the execution for this entire section */
+						if (state.error_code & EXPERIMENT_FAILURE)
 						{
-							harsh_get_data(&data);
-							store_payload_data((uint8_t *)&data, sizeof(data));
+							harsh_stop();
+							log_print_event(MAIN_MODULE_NAME, "state_check", "Payload turned-off!");
+						}
+						/* Case experiment memory interface failure, then just notify (it should be properly handled) */
+						if (state.error_code & (MEMORY_B_INTERFACE_ERROR | MEMORY_D_INTERFACE_ERROR | MEMORY_F_INTERFACE_ERROR))
+						{
+							log_print_event(MAIN_MODULE_NAME, "state_check", "Experiment memories interface errors detected");
+						}
+						/* Case experiment memory latch-up failure, then just notify (it should be properly handled) */
+						if (state.error_code & (MEMORY_B_LATCHUP | MEMORY_D_LATCHUP | MEMORY_F_LATCHUP))
+						{
+							log_print_event(MAIN_MODULE_NAME, "state_check", "Experiment memories latch-up errors detected");
 						}
 					}
 					else
 					{
-						for (int i = 0; i < MAX_PAYLOAD_DATA_PACKAGES; i++)
+						/* Case maximum allowed errors achieved, then stop execution for this entire section */
+						harsh_stop();
+						log_print_event(MAIN_MODULE_NAME, "state_check", "Maximum payload allowed errors achieved");
+						log_print_event(MAIN_MODULE_NAME, "state_check", "Payload turned-off!");
+					}
+
+					/* Check the experiment remainining data packages */
+					if (state.data_packages_count > 0)
+					{
+						log_print_event(MAIN_MODULE_NAME, "data_packages", "Reading data packages");
+						
+						/* Read the packages with a maximum of "MAX_PAYLOAD_DATA_PACKAGES" packages */
+						if (state.data_packages_count < MAX_PAYLOAD_DATA_PACKAGES)
 						{
-							harsh_get_data(&data);
-							store_payload_data((uint8_t *)&data, sizeof(data));
+							for (int i = 0; i < state.data_packages_count; i++)
+							{
+								harsh_get_data(&data);
+								store_payload_data((uint8_t *)&data, sizeof(data));
+							}
+						}
+						else
+						{
+							for (int i = 0; i < MAX_PAYLOAD_DATA_PACKAGES; i++)
+							{
+								harsh_get_data(&data);
+								store_payload_data((uint8_t *)&data, sizeof(data));
+							}
 						}
 					}
 				}
-			}
-			else
-			{
-				log_print_event(MAIN_MODULE_NAME, "state_check", "Error detected during get state routine!");
-			}
+				else
+				{
+					log_print_event(MAIN_MODULE_NAME, "state_check", "Error detected during get state routine!");
+				}
 
-			delay_ms(EXPERIMENT_ROUTINE_PERIOD);
+				delay_ms(EXPERIMENT_ROUTINE_PERIOD);
+			}
 		}
-
+		else 
+		{
+			log_print_event(MAIN_MODULE_NAME, "harsh_start", "Error detected during payload initialization!");
+		}
 
 		delay_ms(EXPERIMENT_SECTION_PERIOD);
 	}
