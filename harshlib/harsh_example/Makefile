@@ -23,7 +23,7 @@ INCLUDES = -I../harshlib -I/fsp_0.2.0/fsp
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-LIBS = -lbcm2835
+LIBS = -lbcm2835 -lrt
 
 # define the C source files
 SRCS = ../harshlib/harshlib.c rasp_wrapper.c main.c fsp_0.2.0/fsp/fsp.c fsp_0.2.0/fsp/crc16.c
