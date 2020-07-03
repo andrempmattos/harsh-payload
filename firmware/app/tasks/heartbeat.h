@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.5
+ * \version 0.0.40
  * 
  * \date 09/05/2020
  * 
@@ -47,7 +47,7 @@
 
 #define TASK_HEARTBEAT_NAME                 "Heartbeat"     /**< Task name. */
 #define TASK_HEARTBEAT_STACK_SIZE           128             /**< Memory stack size in bytes. */
-#define TASK_HEARTBEAT_PRIORITY             1               /**< Priority. */
+#define TASK_HEARTBEAT_PRIORITY             3               /**< Priority. */
 #define TASK_HEARTBEAT_PERIOD_MS            500             /**< Period in milliseconds. */
 #define TASK_HEARTBEAT_INIT_TIMEOUT_MS      2000            /**< Wait time to initialize the task in milliseconds. */
 

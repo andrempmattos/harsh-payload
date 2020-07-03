@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.37
+ * \version 0.0.40
  * 
  * \date 16/05/2020
  * 
@@ -47,7 +47,7 @@
 
 #define TASK_EXPERIMENT_RUNNER_NAME        			"ExperimentRunner"     	/**< Task name. */
 #define TASK_EXPERIMENT_RUNNER_STACK_SIZE          	500             		/**< Memory stack size in bytes. */
-#define TASK_EXPERIMENT_RUNNER_PRIORITY            	3               		/**< Priority. */
+#define TASK_EXPERIMENT_RUNNER_PRIORITY            	2               		/**< Priority. */
 #define TASK_EXPERIMENT_RUNNER_PERIOD_MS           	2000             		/**< Period in milliseconds. */
 #define TASK_EXPERIMENT_RUNNER_INIT_TIMEOUT_MS     	2000            		/**< Wait time to initialize the task in milliseconds. */	
 

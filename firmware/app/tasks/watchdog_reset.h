@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.9
+ * \version 0.0.40
  * 
  * \date 09/05/2020
  * 
@@ -47,7 +47,7 @@
 
 #define TASK_WATCHDOG_RESET_NAME                    "WatchdogReset"     /**< Task name. */
 #define TASK_WATCHDOG_RESET_STACK_SIZE              128                 /**< Stack size in bytes. */
-#define TASK_WATCHDOG_RESET_PRIORITY                1                   /**< Task priority. */
+#define TASK_WATCHDOG_RESET_PRIORITY                3                   /**< Task priority. */
 #define TASK_WATCHDOG_RESET_PERIOD_MS               100                 /**< Task period in milliseconds. */
 #define TASK_WATCHDOG_RESET_INITIAL_DELAY_MS        0                   /**< Delay, in milliseconds, before the first execution. */
 
