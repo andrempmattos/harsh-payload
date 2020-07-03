@@ -105,7 +105,7 @@ int spi_init(void)
     /* Configure SPI parameters with default values */
     bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);
     bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);
-    bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_65536);
+    bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_64);
     bcm2835_spi_chipSelect(BCM2835_SPI_CS0);
     bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);
 
