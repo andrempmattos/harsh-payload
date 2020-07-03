@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.38
+ * \version 0.0.39
  * 
  * \date 16/05/2020
  * 
@@ -55,8 +55,9 @@ int test_runner_routine(int test, int memory_device);
 void vTaskExperimentRunner(void *pvParameters)
 {
     /* Suspension before the first cycle */
+    sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Task suspended: ExperimentRunner");
+    sys_log_new_line();
     vTaskSuspend(xTaskExperimentRunnerHandle);
-    sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Task suspended: ExperimentRunner");            
 
     /* Create local queue experiment command package */
     experiment_command_package_t exp_command;
@@ -174,7 +175,7 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 		{
             sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
             sys_log_print_dec(log_size);
-            sys_log_print_msg("error bytes");
+            sys_log_print_msg(" error bytes");
             sys_log_new_line();
 
 		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
@@ -196,7 +197,7 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
         {
             sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
             sys_log_print_dec(log_size);
-            sys_log_print_msg("error bytes");
+            sys_log_print_msg(" error bytes");
             sys_log_new_line();
             
 		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
@@ -234,21 +235,25 @@ int test_runner_routine(int test, int memory_device)
             sys_log_print_msg("dynamic loop c algorithm");
             sys_log_new_line();
             //return dynamic_loopc_algorithm(memory_device);
+            return 0;
         
         case DYNAMIC_STRESS_TESTS:
             sys_log_print_msg("dynamic stress algorithm");
             sys_log_new_line();
             //return dynamic_stress_algorithm(memory_device);
+            return 0;
         
         case DYNAMIC_E_CLASSIC_TESTS:
             sys_log_print_msg("dynamic e classic algorithm");
             sys_log_new_line();
             //return dynamic_eclassic_algorithm(memory_device);
+            return 0;
         
         case DYNAMIC_F_TESTS:
             sys_log_print_msg("dynamic f algorithm");
             sys_log_new_line();
-            //return dynamic_f_algorithm(memory_device)        
+            //return dynamic_f_algorithm(memory_device); 
+            return 0;       
         
         default:
             return -1;
