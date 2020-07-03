@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.9
+ * \version 0.0.10
  *
  * \date 23/06/2020
  *
@@ -39,6 +39,8 @@
  */
 
 #include "rasp_wrapper.h"
+
+struct timespec gettime_start;
 
 int system_init(void)
 {
@@ -53,6 +55,9 @@ int system_init(void)
 	 * Use for testing
 	 * bcm2835_set_debug(1);
 	*/
+	
+	/* Get initial time to start timestamp */
+    clock_gettime(CLOCK_REALTIME, &gettime_start);
 
 	return 0;
 }
@@ -154,10 +159,10 @@ void spi_read(uint8_t *read_data, uint8_t length)
 
 uint32_t get_timestamp(void)
 {
-	/* Get current time value in nanoseconds, then convert to milliseconds */
+	/* Get current time value in seconds, then convert to milliseconds */
 	struct timespec gettime_now;
 	clock_gettime(CLOCK_REALTIME, &gettime_now);
-	return (gettime_now.tv_nsec / 1000000);
+	return ((gettime_now.tv_sec - gettime_start.tv_sec) * 1000);
 }
 
 void store_payload_data(uint8_t *data, uint8_t length)
