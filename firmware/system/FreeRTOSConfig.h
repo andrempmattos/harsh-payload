@@ -169,7 +169,9 @@ PRIORITY THAN THIS! (higher priorities are lower numeric values. */
 to all Cortex-M ports, and do not rely on any particular library functions. */
 #define configKERNEL_INTERRUPT_PRIORITY 		( configLIBRARY_LOWEST_INTERRUPT_PRIORITY << (8 - configPRIO_BITS) )
 /* !!!! configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to zero !!!!
-See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
+ * See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. 
+ * SPI interrupt priority setted under the maximum FreeRTOS syscall allowed
+ * NVIC_SetPriority( this_spi->irqn, 11 ); */
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY 	( configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS) )
 
 /* Normal assert() semantics without relying on the provision of an assert.h

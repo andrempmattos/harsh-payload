@@ -144,6 +144,7 @@ void MSS_SPI_init
      * of data requiring 0 for initial state so we just need to fill
      * with 0s and finish off with a small number of non zero values.
      */
+
     /* Shut down interrupts from the MSS SPI while we do this */
     NVIC_DisableIRQ( this_spi->irqn );
 
@@ -161,6 +162,9 @@ void MSS_SPI_init
         this_spi->hw_reg = ((SPI_TypeDef *) SPI0_BASE);
         this_spi->irqn = SPI0_IRQn;
 
+        /* Set interrupt priority under the maximum FreeRTOS syscall allowed */
+        NVIC_SetPriority( this_spi->irqn, 11 );
+
         /* reset SPI0 */
         SYSREG->SOFT_RST_CR |= SYSREG_SPI0_SOFTRESET_MASK;
         /* Clear any previously pended SPI0 interrupt */
@@ -173,6 +177,9 @@ void MSS_SPI_init
         this_spi->hw_reg = ((SPI_TypeDef *) SPI1_BASE);
         this_spi->irqn = SPI1_IRQn;
         
+        /* Set interrupt priority under the maximum FreeRTOS syscall allowed */
+        NVIC_SetPriority( this_spi->irqn, 11 );
+
         /* reset SPI1 */
         SYSREG->SOFT_RST_CR |= SYSREG_SPI1_SOFTRESET_MASK;
         /* Clear any previously pended SPI1 interrupt */
