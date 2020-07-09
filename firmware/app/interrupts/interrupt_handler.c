@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.43
  * 
  * \date 21/05/2020
  * 
@@ -56,15 +56,8 @@ void create_interrupt_handlers()
 	#endif /* CONFIG_SEMAPHORE_HANDLER_OBC_ENABLED */
 }
 
-void spi_rx_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size)
+void spi_cmd_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size)
 {
-	/* Store the received data */
-	uint8_t i;
-	for (i = 0; i < rx_size; i++)
-	{
-		slave_rx_buffer[i] = *rx_buff++;
-	}
-
 	BaseType_t xHigherPriorityTaskWoken;
 	
 	/* The xHigherPriorityTaskWoken parameter must be initialized to pdFALSE as

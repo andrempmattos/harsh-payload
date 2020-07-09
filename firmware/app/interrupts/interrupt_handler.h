@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.43
  * 
  * \date 21/05/2020
  * 
@@ -56,7 +56,7 @@
  *
  * \return The status/error code.
  */
-void spi_rx_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size);
+void spi_cmd_interrupt_handler(uint8_t *rx_buff, uint32_t rx_size);
 
 
 void create_interrupt_handlers();
