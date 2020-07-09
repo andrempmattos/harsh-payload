@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.38
+ * \version 0.0.41
  * 
  * \date 21/05/2020
  * 
@@ -48,7 +48,7 @@
 xTaskHandle xTaskOBCInterfaceHandle;
 
 /* Local functions prototypes used to process and generate packages using the FSP library */
-int send_obc_package(uint8_t *package);
+void send_obc_package(uint8_t *package);
 int process_obc_package(obc_command_t *command);
 
 void vTaskOBCInterface(void *pvParameters)
@@ -127,9 +127,9 @@ void vTaskOBCInterface(void *pvParameters)
  *
  * \param[in] package is the buffer used to store the useful data (payload slot in the FSP protocol).
  *
- * \return The status/error code.
+ * \return None.
  */
-int send_obc_package(uint8_t *package) 
+void send_obc_package(uint8_t *package) 
 {
     /* Create FSP data structure buffer */
     fsp_packet_t fsp_data;
@@ -147,7 +147,7 @@ int send_obc_package(uint8_t *package)
     fsp_encode(&fsp_data, obc_pkt_data, &obc_pkt_data_len);
 
     /* Send the complete package to the OBC */
-    return obc_send(obc_pkt_data, obc_pkt_data_len);
+    obc_send(obc_pkt_data, obc_pkt_data_len);
 }
 
 /**
@@ -230,7 +230,9 @@ int process_obc_package(obc_command_t *command)
         fsp_encode(&fsp_packet_ack, pkt, &pkt_len);
         
         /* Send the acknowledge package to the OBC (just after receiving a valid command) */
-        return obc_send(pkt, pkt_len);
+        obc_send(pkt, pkt_len);
+
+        return 0;
     }
     else 
     {
