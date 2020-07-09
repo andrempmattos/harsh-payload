@@ -27,13 +27,13 @@
 
 /**
  * \brief Harsh Payload API library definition.
- * 
+ *
  * \author Andre Mattos <andrempmattos@gmail.com>
- * 
- * \version 0.0.7
- * 
+ *
+ * \version 0.0.11
+ *
  * \date 23/06/2020
- * 
+ *
  * \defgroup harshlib harshlib
  * \ingroup libs
  * \{
@@ -110,7 +110,7 @@ typedef struct
 typedef struct
 {
 	uint32_t time_stamp;				/**< Current time stamp. */
-	uint8_t operation_mode;				/**< Current operation mode. */	
+	uint8_t operation_mode;				/**< Current operation mode. */
 	uint16_t execution_config;			/**< Current execution configuration. */
 	uint8_t error_count;				/**< Errors count. */
 	uint16_t error_code;				/**< Error code. */

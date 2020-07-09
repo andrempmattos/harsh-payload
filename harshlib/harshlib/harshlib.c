@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.8
+ * \version 0.0.11
  *
  * \date 23/06/2020
  *
@@ -83,7 +83,7 @@ int harsh_start(void)
     fsp_init(FSP_ADR_OBDH);
 
     /* Generate a NOP command package and store it in the fsp_command buffer */
-    fsp_gen_cmd_pkt(FSP_CMD_NOP, FSP_ADR_HARSH, FSP_PKT_TYPE_CMD_WITH_ACK, &fsp_command);
+    fsp_gen_cmd_pkt(FSP_CMD_NOP, FSP_ADR_HARSH, FSP_PKT_WITH_ACK, &fsp_command);
     
     /* Set the transfer buffer with the complete fsp_command */
 	fsp_encode(&fsp_command, cmd_package, &cmd_package_len);
