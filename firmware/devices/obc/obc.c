@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.41
+ * \version 0.0.42
  * 
  * \date 12/05/2020
  * 
@@ -50,7 +50,7 @@
 
 #include "obc.h"
 
-int obc_init() 
+int obc_init(void) 
 { 
     MSS_SPI_init(&g_mss_spi0);
 
@@ -68,16 +68,23 @@ int obc_init()
         0,
         slave_rx_buffer,
         sizeof(slave_rx_buffer),
-        spi_rx_interrupt_handler
+        0
+    );
+
+    MSS_SPI_set_cmd_handler
+    (
+        &g_mss_spi0,
+        spi_cmd_interrupt_handler,
+        MAX_COMMAND_SIZE
     );
 }
 
-void obc_read(uint8_t *package)
+void obc_read(uint8_t *package, uint16_t length)
 {
     uint8_t i;
-    for (i = 0; i < sizeof(package); i++)
+    for (i = 0; i < length; i++)
     {
-        *package++ = slave_rx_buffer[i];
+        *(package++) = slave_rx_buffer[i];
     }
 }
 
@@ -94,7 +101,7 @@ void obc_send(uint8_t *package, uint8_t package_len)
         package_len,
         slave_rx_buffer,
         sizeof(slave_rx_buffer),
-        spi_rx_interrupt_handler
+        0
     );
 }
 

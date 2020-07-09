@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.41
+ * \version 0.0.42
  * 
  * \date 12/05/2020
  * 
@@ -46,7 +46,7 @@
 	
 #define OBC_MODULE_NAME        			"OBC"
 
-#define SPI_TIMEOUT    					10000		/* Arbitrary timeout define to approximately 100us */
+#define MAX_COMMAND_SIZE    			8
 #define MAX_TRANSACTION_SIZE    		256
 
 uint8_t slave_rx_buffer[MAX_TRANSACTION_SIZE];
@@ -65,7 +65,7 @@ int obc_init(void);
  *
  * \return None.
  */
-void obc_read(uint8_t *package);
+void obc_read(uint8_t *package, uint16_t length);
 
 /**
  * \brief Send data to OBC.
