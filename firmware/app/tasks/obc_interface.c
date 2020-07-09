@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.41
+ * \version 0.0.42
  * 
  * \date 21/05/2020
  * 
@@ -165,7 +165,7 @@ int process_obc_package(obc_command_t *command)
     fsp_packet_t fsp_packet;
 
     /* Read the received package */
-    obc_read(obc_package);
+    obc_read(obc_package, sizeof(obc_package));
 
     /* Init this FSP interface before start communication */
     fsp_init(FSP_ADR_HARSH);
