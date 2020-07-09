@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.10
+ * \version 0.0.12
  *
  * \date 23/06/2020
  *
@@ -73,6 +73,7 @@ void gpio_init(void)
     /* Set the pins to be an output */
     bcm2835_gpio_fsel(OBC_GPIO_0, BCM2835_GPIO_FSEL_OUTP);
     bcm2835_gpio_fsel(OBC_GPIO_1, BCM2835_GPIO_FSEL_OUTP);
+    bcm2835_gpio_fsel(OBC_SPI_CS, BCM2835_GPIO_FSEL_OUTP);
 }
 
 void gpio_set(uint8_t pin)
@@ -111,8 +112,9 @@ int spi_init(void)
     bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);
     bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);
     bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_64);
-    bcm2835_spi_chipSelect(BCM2835_SPI_CS0);
-    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);
+    bcm2835_spi_chipSelect(BCM2835_SPI_CS_NONE);
+    
+	bcm2835_gpio_write(OBC_SPI_CS, HIGH);
 
     return 0;
 }
@@ -140,10 +142,14 @@ void spi_send(uint8_t *send_data, uint8_t length)
 {
 	uint8_t counter = 0;
 	
+	bcm2835_gpio_write(OBC_SPI_CS, LOW);
+	
 	while(counter++ < length)
 	{
 		bcm2835_spi_transfer(*(send_data++));
 	}
+	
+	bcm2835_gpio_write(OBC_SPI_CS, HIGH);
 }
 
 void spi_read(uint8_t *read_data, uint8_t length)
@@ -151,10 +157,14 @@ void spi_read(uint8_t *read_data, uint8_t length)
 	uint8_t counter = 0;
 	uint8_t dummy = 0;
 	
+	bcm2835_gpio_write(OBC_SPI_CS, LOW);
+	
 	while(counter++ < length)
 	{
 		*(read_data++) = bcm2835_spi_transfer(dummy);
 	}
+	
+	bcm2835_gpio_write(OBC_SPI_CS, HIGH);
 }
 
 uint32_t get_timestamp(void)

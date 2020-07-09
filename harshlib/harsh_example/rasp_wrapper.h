@@ -30,7 +30,7 @@
  *
  * \author Andre Mattos <andrempmattos@gmail.com>
  *
- * \version 0.0.9
+ * \version 0.0.12
  *
  * \date 23/06/2020
  *
@@ -49,6 +49,7 @@
 
 #define OBC_GPIO_0		5
 #define OBC_GPIO_1		6
+#define OBC_SPI_CS      25
 
 
 int system_init(void);
