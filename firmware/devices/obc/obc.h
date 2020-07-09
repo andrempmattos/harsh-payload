@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.31
+ * \version 0.0.41
  * 
  * \date 12/05/2020
  * 
@@ -63,9 +63,9 @@ int obc_init(void);
  *
  * \param[in] package is a pointer to store the obc package.
  *
- * \return The status/error code.
+ * \return None.
  */
-int obc_read(uint8_t *package);
+void obc_read(uint8_t *package);
 
 /**
  * \brief Send data to OBC.
@@ -74,9 +74,9 @@ int obc_read(uint8_t *package);
  *
  * \param[in] package is the obc package length.
  *
- * \return The status/error code.
+ * \return None.
  */
-int obc_send(uint8_t *package, uint8_t package_len);
+void obc_send(uint8_t *package, uint8_t package_len);
 
 
 #endif /* OBC_H_ */

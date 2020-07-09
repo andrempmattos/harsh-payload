@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.39
+ * \version 0.0.41
  * 
  * \date 12/05/2020
  * 
@@ -52,16 +52,6 @@
 
 int obc_init() 
 { 
-    PDMA_init();
-    PDMA->RATIO_HIGH_LOW = 0xFF;
-    PDMA_configure
-    (
-        PDMA_CHANNEL_0,
-        PDMA_TO_SPI_0,
-        PDMA_LOW_PRIORITY | PDMA_BYTE_TRANSFER | PDMA_INC_SRC_ONE_BYTE,
-        PDMA_DEFAULT_WRITE_ADJ
-    );
-
     MSS_SPI_init(&g_mss_spi0);
 
     MSS_SPI_configure_slave_mode
@@ -82,7 +72,7 @@ int obc_init()
     );
 }
 
-int obc_read(uint8_t *package)
+void obc_read(uint8_t *package)
 {
     uint8_t i;
     for (i = 0; i < sizeof(package); i++)
@@ -91,37 +81,21 @@ int obc_read(uint8_t *package)
     }
 }
 
-int obc_send(uint8_t *package, uint8_t package_len)
+void obc_send(uint8_t *package, uint8_t package_len)
 {
 	sys_log_print_event_from_module(SYS_LOG_INFO, OBC_MODULE_NAME, "Sending a data packet...");
 	sys_log_new_line();
 
-    /* Disable SPI channel to set the transfer byte count */
-    MSS_SPI_disable(&g_mss_spi0);
-    MSS_SPI_set_transfer_byte_count( &g_mss_spi0, package_len );
-    
-    /* Request to the PDMA a data transference from the package buffer to the SPI TX register */
-    PDMA_start
+    /* Set SPI TX buffer content accordingly */
+    MSS_SPI_set_slave_block_buffers
     (
-        PDMA_CHANNEL_0,
+        &g_mss_spi0,
         package,
-        PDMA_SPI0_TX_REGISTER,
-        package_len
+        package_len,
+        slave_rx_buffer,
+        sizeof(slave_rx_buffer),
+        spi_rx_interrupt_handler
     );
-
-    /* Enable SPI channel again */
-    MSS_SPI_enable(&g_mss_spi0);
-
-    /* Ensure that the data was transfered */
-    uint8_t timeout_counter;
-    while((!MSS_SPI_tx_done(&g_mss_spi0)) || (timeout_counter++ < SPI_TIMEOUT)) 
-    {
-    	sys_log_print_event_from_module(SYS_LOG_ERROR, OBC_MODULE_NAME, "Communication interface timeout!");
-    	sys_log_new_line();
-        return -1;
-    }
-
-    return 0;
 }
 
 /** \} End of obc group */
