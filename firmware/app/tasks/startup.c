@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.38
+ * \version 0.0.43
  * 
  * \date 09/05/2020
  * 
@@ -94,10 +94,12 @@ void vTaskStartup(void *pvParameters)
 	}
 
     /* OBC device initialization */
+    taskENTER_CRITICAL();
     if (obc_init() != 0)
     {
         error = true;
     }
+    taskEXIT_CRITICAL();
 
     if (error)
     {
