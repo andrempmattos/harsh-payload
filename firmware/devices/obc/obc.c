@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.42
+ * \version 0.0.43
  * 
  * \date 12/05/2020
  * 
@@ -94,15 +94,7 @@ void obc_send(uint8_t *package, uint8_t package_len)
 	sys_log_new_line();
 
     /* Set SPI TX buffer content accordingly */
-    MSS_SPI_set_slave_block_buffers
-    (
-        &g_mss_spi0,
-        package,
-        package_len,
-        slave_rx_buffer,
-        sizeof(slave_rx_buffer),
-        0
-    );
+    MSS_SPI_set_cmd_response(&g_mss_spi0, package, package_len);
 }
 
 /** \} End of obc group */
