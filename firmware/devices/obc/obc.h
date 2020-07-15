@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.42
+ * \version 0.0.44
  * 
  * \date 12/05/2020
  * 
@@ -47,7 +47,7 @@
 #define OBC_MODULE_NAME        			"OBC"
 
 #define MAX_COMMAND_SIZE    			8
-#define MAX_TRANSACTION_SIZE    		256
+#define MAX_TRANSACTION_SIZE    		20
 
 uint8_t slave_rx_buffer[MAX_TRANSACTION_SIZE];
 
