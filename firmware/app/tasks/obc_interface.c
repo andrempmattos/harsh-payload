@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.42
+ * \version 0.0.44
  * 
  * \date 21/05/2020
  * 
@@ -69,6 +69,10 @@ void vTaskOBCInterface(void *pvParameters)
         {
             switch(obc_command.fsp_command) 
             {
+                case FSP_CMD_NOP:
+                    sys_log_print_event_from_module(SYS_LOG_INFO, TASK_OBC_INTERFACE_NAME, "Valid NOP command received and processed");
+                    sys_log_new_line();
+                    break;
                 case FSP_CMD_SEND_DATA:
                     if (xQueueReceive(xQueueOBCData, &obc_data, 0) == pdPASS) 
                     {
@@ -196,6 +200,7 @@ int process_obc_package(obc_command_t *command)
         {
             case FSP_CMD_NOP:
                 /* No operation, only used for communication handshake tests */
+                command->fsp_command = FSP_CMD_NOP;
                 fsp_gen_ack_pkt(FSP_ADR_OBDH, &fsp_packet_ack);
                 break;
             case FSP_CMD_SEND_DATA:
@@ -212,7 +217,7 @@ int process_obc_package(obc_command_t *command)
                 /* Set the payload internal experiment configuration */
                 for (i = 0; i < fsp_packet.length; i++)
                 {
-                    *((uint8_t *)(++command)) = fsp_packet.payload[i];
+                    ((uint8_t *)command)[i+1] = fsp_packet.payload[i];
                 }
                 command->fsp_command = FSP_CMD_SET_CONFIG;
                 fsp_gen_ack_pkt(FSP_ADR_OBDH, &fsp_packet_ack);

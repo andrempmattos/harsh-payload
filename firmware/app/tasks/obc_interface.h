@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.33
+ * \version 0.0.44
  * 
  * \date 21/05/2020
  * 
@@ -51,7 +51,7 @@
 #include <app/queues/queues.h>
 
 #define TASK_OBC_INTERFACE_NAME                 "OBC_Interface" /**< Task name. */
-#define TASK_OBC_INTERFACE_STACK_SIZE           128             /**< Memory stack size in bytes. */
+#define TASK_OBC_INTERFACE_STACK_SIZE           1024            /**< Memory stack size in bytes. */
 #define TASK_OBC_INTERFACE_PRIORITY             5               /**< Priority. */
 
 /**
