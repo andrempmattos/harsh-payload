@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.47
  * 
  * \date 13/05/2020
  * 
@@ -39,9 +39,9 @@
  */
 
 #include <system/sys_log/sys_log.h>
-
+#include <system/config.h>
 #include <drivers/mss_nvm/mss_nvm.h>
-//#include <drivers/mss_sram/mss_sram.h>
+//#include <drivers/mss_esram/mss_esram.h>
 
 #include "sys_media.h"
 
@@ -50,9 +50,30 @@ int sys_media_init(media_t med)
     switch(med)
     {
         case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Initialization not implemented for the eNVM memory!");
+            sys_log_print_event_from_module(SYS_LOG_INFO, SYS_MEDIA_MODULE_NAME, "Initializing eNVM memory...");
             sys_log_new_line();
-            return -1;
+
+            #if CONFIG_MSS_ENVM_TEST_ENABLED == 1
+                sys_log_print_event_from_module(SYS_LOG_WARNING, SYS_MEDIA_MODULE_NAME, "Performing memory initialization test");
+                sys_log_new_line();
+
+                uint8_t data = 0xAA;
+                uint8_t check = 0;
+
+                for(int i = 0; i < 4; i++)
+                {
+					sys_media_write(MEDIA_ENVM, i, &data, 1);
+					sys_media_read(MEDIA_ENVM, i, &check, 1);
+                }
+                
+                if(data != check)
+                {
+                    sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Initialization test failed!");
+                    sys_log_new_line();
+                    return -1;
+                }
+            #endif /* CONFIG_EXT_SDRAM_TEST_ENABLED */
+            return 0;
 
         case MEDIA_ESRAM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Initialization not implemented for the eSRAM memory!");
@@ -71,9 +92,7 @@ int sys_media_write(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
     switch(med)
     {
         case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Write operation not implemented for the eNVM memory!");
-            sys_log_new_line();
-            return -1;
+            return NVM_write((MEDIA_ENVM_START_ADDR + addr), data, len, NVM_DO_NOT_LOCK_PAGE);
 
         case MEDIA_ESRAM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Write operation not implemented for the eSRAM memory!");
@@ -92,9 +111,21 @@ int sys_media_read(media_t med, uint32_t addr, uint8_t *data, uint16_t len)
     switch(med)
     {
         case MEDIA_ENVM:
-            sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Read operation not implemented for the eNVM memory!");
-            sys_log_new_line();
-            return -1;
+            addr += MEDIA_ENVM_START_ADDR;
+            
+            if(addr >= MEDIA_ENVM_END_ADDR)
+            {
+                addr = MEDIA_ENVM_START_ADDR;
+            }
+
+            while(len > 0) 
+            {
+                *data++ = *(volatile uint8_t *)(addr);
+                addr++;
+                len--;
+            }
+
+            return 0;
 
         case MEDIA_ESRAM:
             sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_MEDIA_MODULE_NAME, "Read operation not implemented for the eSRAM memory!");

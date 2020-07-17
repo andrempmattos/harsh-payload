@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.47
  * 
  * \date 13/05/2020
  * 
@@ -46,12 +46,9 @@
 
 #define SYS_MEDIA_MODULE_NAME           "Sys_Media"
 
-#define MEDIA_ENVM_START_ADDR		0x60000000u			/**< Embedded flash memory start address. */
+#define MEDIA_ENVM_START_ADDR		0x60020000u			/**< Embedded flash memory start address. */
 #define MEDIA_ENVM_END_ADDR			0x6003FFFFu			/**< Embedded flash memory end address. */
-#define MEDIA_ESRAM_START_ADDR		0x20000000u			/**< Embedded SRAM memory start address. */
-#define MEDIA_ESRAM_END_ADDR		0x2000FFFFu			/**< Embedded SRAM memory end address. */
-
-#define ESRAM_MAX_SIZE				0X00010000u
+#define MEDIA_ENVM_LENGTH			0x20000
 
 /**
  * \brief System media types.

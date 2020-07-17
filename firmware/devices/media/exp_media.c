@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.34
+ * \version 0.0.47
  * 
  * \date 13/05/2020
  * 
@@ -89,13 +89,13 @@ int exp_media_read(media_t med, uint32_t addr, uint32_t *data, uint16_t len)
     switch(med)
     {
         case MEDIA_SDRAM_B:
-            return sdram_read(EXT_SDRAM_B, addr, (uint32_t *)data, (len/4));
+            return sdram_read(EXT_SDRAM_B, addr, (uint32_t *)data, len);
         
         case MEDIA_SDRAM_D:
-            return sdram_read(EXT_SDRAM_D, addr, (uint32_t *)data, (len/4));
+            return sdram_read(EXT_SDRAM_D, addr, (uint32_t *)data, len);
         
         case MEDIA_SDRAM_F:
-            return sdram_read(EXT_SDRAM_F, addr, (uint32_t *)data, (len/4));
+            return sdram_read(EXT_SDRAM_F, addr, (uint32_t *)data, len);
 
         default:
             sys_log_print_event_from_module(SYS_LOG_ERROR, EXP_MEDIA_MODULE_NAME, "Invalid storage media to read!");
