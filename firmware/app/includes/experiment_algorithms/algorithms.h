@@ -30,7 +30,7 @@
  * 
  * \author Lucas Matana <lucas.matana-luza@lirmm.fr> and Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.35
+ * \version 0.0.45
  * 
  * \date 26/05/2020
  * 
@@ -63,7 +63,6 @@
 typedef struct
 {
 	uint32_t time_stamp;				/**< Data package time stamp. */
-	uint8_t device;						/**< Device in test. */
 	uint8_t memory_frequency;			/**< Memory frequency during this test (in MHz). */
 	uint16_t refresh_rate;				/**< Memory refresh rate during this test (cycles/ms). */
 	uint16_t error;						/**< Total error count (sum of all executed algorithms in that cycle). */
@@ -74,6 +73,7 @@ typedef struct
  */
 typedef struct
 {
+	uint8_t device;
     uint8_t algorithm;         			/**< Algorithm executed. */
     uint16_t iteration;         		/**< Iteration cycle in dynamic tests. */
     uint32_t error_addr;	         	/**< Address with detected error. */

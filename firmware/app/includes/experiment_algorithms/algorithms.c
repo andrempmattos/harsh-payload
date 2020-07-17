@@ -30,7 +30,7 @@
  * 
  * \author Lucas Matana <lucas.matana-luza@lirmm.fr> and Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.35
+ * \version 0.0.45
  * 
  * \date 26/05/2020
  * 
@@ -81,6 +81,7 @@ uint16_t static_loop_algorithm(int memory_device, uint32_t data_injection, uint3
 			case MEDIA_SDRAM_B:
 				exp_media_read(MEDIA_SDRAM_B, addr, &read_buffer, 1);
 				if (read_buffer != data_injection) {
+					log_payload[i].device = MEDIA_SDRAM_B;
 					log_payload[i].algorithm = STATIC_LOOP_TEST;
 					log_payload[i].iteration = 0;
 					log_payload[i].error_addr = addr;
@@ -92,6 +93,7 @@ uint16_t static_loop_algorithm(int memory_device, uint32_t data_injection, uint3
 			case MEDIA_SDRAM_D:
 				exp_media_read(MEDIA_SDRAM_D, addr, &read_buffer, 1);
 				if (read_buffer != data_injection) {
+					log_payload[i].device = MEDIA_SDRAM_D;
 					log_payload[i].algorithm = STATIC_LOOP_TEST;
 					log_payload[i].iteration = 0;
 					log_payload[i].error_addr = addr;
@@ -103,6 +105,7 @@ uint16_t static_loop_algorithm(int memory_device, uint32_t data_injection, uint3
 			case MEDIA_SDRAM_F:
 				exp_media_read(MEDIA_SDRAM_F, addr, &read_buffer, 1);
 				if (read_buffer != data_injection) {
+					log_payload[i].device = MEDIA_SDRAM_F;
 					log_payload[i].algorithm = STATIC_LOOP_TEST;
 					log_payload[i].iteration = 0;
 					log_payload[i].error_addr = addr;
@@ -115,10 +118,12 @@ uint16_t static_loop_algorithm(int memory_device, uint32_t data_injection, uint3
 
 		if (i >= (MAX_LOG_PAYLOAD_SIZE-1)) 
 		{
+			log_header.error += MAX_LOG_PAYLOAD_SIZE;
 			return (MAX_LOG_PAYLOAD_SIZE * sizeof(exp_log_payload_t));
 		}
 	}
 	
+	log_header.error += i;
 	return (i * sizeof(exp_log_payload_t));
 }
 
