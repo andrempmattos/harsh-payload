@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.39
+ * \version 0.0.46
  * 
  * \date 09/05/2020
  * 
@@ -40,8 +40,10 @@
 
 #include <system/sys_log/sys_log.h>
 
+#include <app/includes/experiment_algorithms/algorithms.h>
 #include <devices/latchup_monitors/latchup_monitors.h>
 #include <devices/obc/obc.h>
+#include <devices/media/sys_media.h>
 #include <app/queues/queues.h>
 
 #include "experiment_manager.h"
@@ -166,8 +168,37 @@ void vTaskExperimentManager(void *pvParameters)
 
         if (xQueueReceive(xQueueExperimentState, &exp_state, 0) == pdPASS) 
         {
-            //media_read(MEDIA_ESRAM, exp_state.address, (uint8_t *)&obc_data, exp_state.length);
-            xQueueSendToBack(xQueueOBCData, &obc_data, 0);
+            exp_log_header_t buffer_header;
+            exp_log_payload_t buffer_payload;
+            uint8_t packages = 0;
+            
+            sys_media_read(MEDIA_ENVM, exp_state.address, (uint8_t *)&buffer_header, sizeof(buffer_header));
+            
+            obc_data.time_stamp = buffer_header.time_stamp + obc_time_stamp;
+            obc_data.memory_frequency = buffer_header.memory_frequency;
+            obc_data.refresh_rate = buffer_header.refresh_rate;
+            //buffer_header.error
+
+            for (int i = 0; i < exp_state.length; i += sizeof(buffer_payload))
+            {
+            	sys_media_read(MEDIA_ENVM, (exp_state.address + sizeof(buffer_header)), (uint8_t *)&buffer_payload, sizeof(buffer_payload));
+                
+                obc_data.device = buffer_payload.device; 
+                obc_data.algorithm = buffer_payload.algorithm;
+                obc_data.iteration = buffer_payload.iteration;
+                obc_data.address = buffer_payload.error_addr;
+                obc_data.data = buffer_payload.error_data;
+                //obc_data.error
+
+                xQueueSendToBack(xQueueOBCData, &obc_data, 0);
+
+                packages++;
+            }
+
+            sys_state.time_stamp = obc_time_stamp + ((xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000);
+            sys_state.data_packages_count += packages;
+            
+            xQueueSendToBack(xQueueSystemState, &sys_state, 0);
         }
         
         /* Restore the system state variable error code for the next cycle */            
