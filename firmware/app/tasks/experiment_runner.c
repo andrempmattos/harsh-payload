@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.39
+ * \version 0.0.46
  * 
  * \date 16/05/2020
  * 
@@ -112,9 +112,16 @@ void vTaskExperimentRunner(void *pvParameters)
 			}
 
 
+            log_header.time_stamp = (xTaskGetTickCount() / (uint32_t)configTICK_RATE_HZ) * 1000;
+            //log_header->memory_frequency = ?
+            //log_header->refresh_rate = ?
+            sys_media_write(MEDIA_ENVM, exp_state.address, (uint8_t *)&log_header, sizeof(log_header));
+            
+
+
 			if (exp_state.length > 0)
 			{
-				xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
+                xQueueSendToBack(xQueueExperimentState, &exp_state, 0);
 
 				exp_state.package_id++;
 				exp_state.address += exp_state.length;
@@ -142,6 +149,7 @@ void vTaskExperimentRunner(void *pvParameters)
 void test_manager_routine(experiment_command_package_t *cmd_package, experiment_state_package_t *state_package, int test) 
 {
     int log_size = 0;
+    int address = state_package->address + sizeof(log_header);
 
 	if (cmd_package->execution_config & ENABLE_SDRAM_MEMORY_B)
 	{
@@ -150,17 +158,19 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
         log_size = test_runner_routine(test, SDRAM_MEMORY_B);
 		if (log_size > 0)
 		{
-            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory B test: ");
             sys_log_print_dec(log_size);
             sys_log_print_msg(" error bytes");
             sys_log_new_line();
 
-		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
+		 	if(sys_media_write(MEDIA_ENVM, address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
-                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
-                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                address += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded NVM memory usage: ");
+                sys_log_print_dec((state_package->length)/(MEDIA_ENVM_LENGTH));
                 sys_log_print_msg("%");
+                sys_log_new_line();
 	 		} 
 		}
 	}
@@ -178,12 +188,14 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
             sys_log_print_msg(" error bytes");
             sys_log_new_line();
 
-		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
+		 	if(sys_media_write(MEDIA_ENVM, address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
-                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
-                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                address += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded NVM memory usage: ");
+                sys_log_print_dec((state_package->length)/(MEDIA_ENVM_LENGTH));
                 sys_log_print_msg("%");
+                sys_log_new_line();
 	 		} 
 		}	
 	}
@@ -195,17 +207,19 @@ void test_manager_routine(experiment_command_package_t *cmd_package, experiment_
 		log_size = test_runner_routine(test, SDRAM_MEMORY_F);
         if (log_size > 0)
         {
-            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory D test: ");
+            sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report memory F test: ");
             sys_log_print_dec(log_size);
             sys_log_print_msg(" error bytes");
             sys_log_new_line();
             
-		 	if(sys_media_write(MEDIA_ESRAM, state_package->address, (uint8_t *)log_payload, log_size) == 0)
+		 	if(sys_media_write(MEDIA_ENVM, address, (uint8_t *)log_payload, log_size) == 0)
 	 		{	
 	 			state_package->length += log_size;
-                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded SRAM memory usage: ");
-                sys_log_print_dec((state_package->length)/(ESRAM_MAX_SIZE));
+                address += log_size;
+                sys_log_print_event_from_module(SYS_LOG_WARNING, TASK_EXPERIMENT_RUNNER_NAME, "Report embedded NVM memory usage: ");
+                sys_log_print_dec((state_package->length)/(MEDIA_ENVM_LENGTH));
                 sys_log_print_msg("%");
+                sys_log_new_line();
 	 		} 
 		}
 	}
