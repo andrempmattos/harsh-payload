@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.44
+ * \version 0.0.46
  * 
  * \date 21/05/2020
  * 
@@ -63,7 +63,15 @@ void vTaskOBCInterface(void *pvParameters)
 		/* To get here the event must have occurred. */
         obc_command_t obc_command;
         obc_data_package_t obc_data;
-        sys_state_package_t sys_state;
+        sys_state_package_t sys_state = 
+        {
+            .time_stamp = 0,
+            .operation_mode = 0,
+            .execution_config = 0,
+            .error_count = 0,
+            .error_code = 0,
+            .data_packages_count = 0
+        };
         
         if (process_obc_package(&obc_command) == 0)
         {
@@ -79,6 +87,8 @@ void vTaskOBCInterface(void *pvParameters)
                         /* Succeed to receive the message, then send the OBC data package */
                         send_obc_package((uint8_t *)&obc_data);
                         
+                        sys_state.data_packages_count--;
+                         
                         sys_log_print_event_from_module(SYS_LOG_INFO, TASK_OBC_INTERFACE_NAME, "Data package sent to OBC");
                         sys_log_new_line();
                     }
