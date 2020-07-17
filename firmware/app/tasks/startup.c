@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.43
+ * \version 0.0.46
  * 
  * \date 09/05/2020
  * 
@@ -88,7 +88,7 @@ void vTaskStartup(void *pvParameters)
     }
 
     /* System media device initialization */
-	if ((sys_media_init(MEDIA_ESRAM)) != 0)
+	if ((sys_media_init(MEDIA_ENVM)) != 0)
 	{
 		error = true;
 	}
