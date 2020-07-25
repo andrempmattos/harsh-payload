@@ -1,7 +1,12 @@
 ===========================================
 
-v0.1 - 08/05/2020
+v0.1 - 25/07/2020
 
 - First release
+- Prototype version of the hardware
+- Base version of the firmware (FreeRTOS, watchdog, heartbeat, experiments and log messages)
+- OBC communication interface through SPI using the FSP protocol
+- Preliminary static test algorithm
+- Preliminary memory management
 
 ===========================================
