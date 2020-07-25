@@ -129,7 +129,7 @@ void sys_log_reset_color()
 
 void sys_log_print_event(uint8_t type, const char *event)
 {
-    sys_log_mutex_take();
+    //sys_log_mutex_take();
 
     sys_log_print_system_time();
     sys_log_print_msg(" ");
@@ -153,7 +153,7 @@ void sys_log_print_event(uint8_t type, const char *event)
 
 void sys_log_print_event_from_module(uint8_t type, const char *module, const char *event)
 {
-    sys_log_mutex_take();
+    //sys_log_mutex_take();
 
     sys_log_print_system_time();
 
@@ -194,7 +194,7 @@ void sys_log_new_line()
 {
     sys_log_reset_color();
     sys_log_print_msg("\n\r");
-    sys_log_mutex_give();
+    //sys_log_mutex_give();
 }
 
 void sys_log_print_digit(uint8_t digit)

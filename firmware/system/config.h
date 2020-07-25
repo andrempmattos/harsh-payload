@@ -30,7 +30,7 @@
  * 
  * \author Andre Mattos <andrempmattos@gmail.com>
  * 
- * \version 0.0.30
+ * \version 0.0.45
  * 
  * \date 08/05/2020
  * 
@@ -64,6 +64,13 @@
 
 /* SDRAM test during initialization  */
 #define CONFIG_EXT_SDRAM_TEST_ENABLED                   0
+#define CONFIG_MSS_ENVM_TEST_ENABLED					1
+
+//experiment period
+//experiment default settings
+//experiment timeout
+//experiment recordable log size
+//esram threshold warning
 
 
 #endif /* CONFIG_H_ */

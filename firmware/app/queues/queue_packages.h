@@ -126,7 +126,7 @@ typedef struct
 	uint16_t execution_config;			/**< Current execution configuration. */
 	uint8_t error_count;				/**< Errors count. */
 	uint16_t error_code;				/**< Error code. */
-    uint8_t data_packages_count;        /**< Remaning data packages count. */
+    uint8_t data_packages_count;        /**< Remaining data packages count. */
 } sys_state_package_t;
 
 /**

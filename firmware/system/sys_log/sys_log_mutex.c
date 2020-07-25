@@ -43,56 +43,56 @@
 #include "sys_log_config.h"
 
 SemaphoreHandle_t xSysLogSemaphore = NULL;
-
+//
 bool sys_log_mutex_create()
 {
-    /* Create a mutex type semaphore */
-    xSysLogSemaphore = xSemaphoreCreateMutex();
-
-    if (xSysLogSemaphore == NULL)
-    {
-        sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_LOG_DEVICE_NAME, "Error creating a mutex!");
-        sys_log_new_line();
-
-        return false;
-    }
-
-    return true;
+//    /* Create a mutex type semaphore */
+//    xSysLogSemaphore = xSemaphoreCreateMutex();
+//
+//    if (xSysLogSemaphore == NULL)
+//    {
+//        sys_log_print_event_from_module(SYS_LOG_ERROR, SYS_LOG_DEVICE_NAME, "Error creating a mutex!");
+//        sys_log_new_line();
+//
+//        return false;
+//    }
+//
+//    return true;
 }
-
-bool sys_log_mutex_take()
-{
-    if (xSysLogSemaphore != NULL)
-    {
-        /* See if we can obtain the semaphore. If the semaphore is not */
-        /* available wait SYS_LOG_MUTEX_WAIT_TIME_MS ms to see if it becomes free */
-        if (xSemaphoreTake(xSysLogSemaphore, pdMS_TO_TICKS(SYS_LOG_MUTEX_WAIT_TIME_MS)) == pdTRUE)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool sys_log_mutex_give()
-{
-    if (xSysLogSemaphore != NULL)
-    {
-        xSemaphoreGive(xSysLogSemaphore);
-
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+//
+//bool sys_log_mutex_take()
+//{
+//    if (xSysLogSemaphore != NULL)
+//    {
+//        /* See if we can obtain the semaphore. If the semaphore is not */
+//        /* available wait SYS_LOG_MUTEX_WAIT_TIME_MS ms to see if it becomes free */
+//        if (xSemaphoreTake(xSysLogSemaphore, pdMS_TO_TICKS(SYS_LOG_MUTEX_WAIT_TIME_MS)) == pdTRUE)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
+//
+//bool sys_log_mutex_give()
+//{
+//    if (xSysLogSemaphore != NULL)
+//    {
+//        xSemaphoreGive(xSysLogSemaphore);
+//
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
 
 /** \} End of sys_log_mutex group */
