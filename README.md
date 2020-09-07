@@ -9,7 +9,7 @@
 
 <p align="center">
     <a href="">
-		<img src="https://img.shields.io/badge/version-0.0.33-lightgreen?style=for-the-badge">
+		<img src="https://img.shields.io/badge/version-0.1-lightgreen?style=for-the-badge">
 	</a>
     <a href="https://spacelab.ufsc.br">
 		<img src="https://img.shields.io/badge/sourced%20by-SpaceLab-blue?style=for-the-badge">
@@ -46,7 +46,32 @@ This project is open-source and under MIT license, but some files are subjected 
 
 ## Releases
 
-First release soon!
+#### v0.1
+```
+Hardware:
+    - Adding engineering model design
+    - Adding engineering model output files
+    - Adding the files used in the first fabrication
+
+SoC FPGA:
+    - Adding preliminary system design
+    - Adding prototype assigments
+
+Firmware:
+    - First release
+    - Prototype version of the hardware
+    - Base version of the firmware (FreeRTOS, watchdog, heartbeat, experiments and log messages)
+    - OBC communication interface through SPI using the FSP protocol
+    - Preliminary static test algorithm
+    - Preliminary memory management
+	
+Harshlib:
+    - Adding preliminary OBC library
+    - Adding Raspeberry Pi 3 (Model B) functions wrapper
+
+Documentation:
+    - Adding preliminary diagrams and images
+```
 
 ## Deployment
 
@@ -54,25 +79,22 @@ More info soon!
 
 ## Repository Organization
 
+```
 documentation: Project detailed info and main document files, diagrams, images and reports.
-
-firmware: Payload firmware sources, including third-part libraries and frameworks and developed proprietary files.   
-
-fpga_soc: System-On-a-Chip FPGA project sources, including the HDL sources, synthesis outputs, reports and IDE framework files.
-
+firmware: Payload firmware sources, including third-part libraries and frameworks and developed proprietary files.
+fpga_soc: System-On-a-Chip FPGA sources, including the HDL sources, synthesis outputs, reports and IDE framework files.
 hardware: Payload hardware files, including CAD sources, fabrication outputs and auxiliary report. 
+harshlib: The library for interfacing the Harsh Payload as the OBC.
+```
 
 ## Acknowledgements
 
+```
 Academic Advisors: Eduardo Bezerra and Luigi Dilillo.
-
 SpaceLab team: Gabriel Mariano Marcelino.
-
 SPACERADGroup team: Lucas Matana Luza (LIRMM).
-
 Universities: Federal University of Santa Catarina (Brazil) and University of Montpellier (France).
-
-Others: Indicated within each category at the repository main folders. 
+```
 
 ## Notes
 
