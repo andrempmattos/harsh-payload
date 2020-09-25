@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Tue Apr 07 18:55:18 2020
+-- Created by SmartDesign Fri Sep 25 15:25:41 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -24,11 +24,11 @@ entity top_sb is
     port(
         -- Inputs
         CAN_RX           : in    std_logic;
-        CLK1_PAD         : in    std_logic;
         DEVRST_N         : in    std_logic;
         FAB_RESET_N      : in    std_logic;
         MMUART_0_RXD     : in    std_logic;
         SPI_0_DI         : in    std_logic;
+        XTL              : in    std_logic;
         -- Outputs
         BA               : out   std_logic_vector(1 downto 0);
         CAN_TX           : out   std_logic;
@@ -90,10 +90,10 @@ component top_sb_CCC_0_FCCC
     -- Port list
     port(
         -- Inputs
-        CLK1_PAD : in  std_logic;
+        XTLOSC : in  std_logic;
         -- Outputs
-        GL2      : out std_logic;
-        LOCK     : out std_logic
+        GL2    : out std_logic;
+        LOCK   : out std_logic
         );
 end component;
 -- CoreAHBLite   -   Actel:DirectCore:CoreAHBLite:5.2.100
@@ -1215,6 +1215,21 @@ component CORESDR_AXI
         DQ      : inout std_logic_vector(15 downto 0)
         );
 end component;
+-- top_sb_OSC_0_OSC   -   Actel:SgCore:OSC:2.0.101
+component top_sb_OSC_0_OSC
+    -- Port list
+    port(
+        -- Inputs
+        XTL                : in  std_logic;
+        -- Outputs
+        RCOSC_1MHZ_CCC     : out std_logic;
+        RCOSC_1MHZ_O2F     : out std_logic;
+        RCOSC_25_50MHZ_CCC : out std_logic;
+        RCOSC_25_50MHZ_O2F : out std_logic;
+        XTLOSC_CCC         : out std_logic;
+        XTLOSC_O2F         : out std_logic
+        );
+end component;
 -- SYSRESET
 component SYSRESET
     -- Port list
@@ -1384,6 +1399,7 @@ signal INIT_DONE_net_0                             : std_logic;
 signal MMUART_0_TXD_net_0                          : std_logic;
 signal MSS_READY_net_0                             : std_logic;
 signal OE_net_0                                    : std_logic;
+signal OSC_0_XTLOSC_CCC_OUT_XTLOSC_CCC             : std_logic;
 signal POWER_ON_RESET_N_net_0                      : std_logic;
 signal RAS_N_net_0                                 : std_logic;
 signal SA_net_0                                    : std_logic_vector(13 downto 0);
@@ -1938,10 +1954,10 @@ begin
 CCC_0 : top_sb_CCC_0_FCCC
     port map( 
         -- Inputs
-        CLK1_PAD => CLK1_PAD,
+        XTLOSC => OSC_0_XTLOSC_CCC_OUT_XTLOSC_CCC,
         -- Outputs
-        GL2      => FAB_CCC_GL2_net_0,
-        LOCK     => FAB_CCC_LOCK_net_0 
+        GL2    => FAB_CCC_GL2_net_0,
+        LOCK   => FAB_CCC_LOCK_net_0 
         );
 -- CoreAHBLite_0   -   Actel:DirectCore:CoreAHBLite:5.2.100
 CoreAHBLite_0 : entity COREAHBLITE_LIB.CoreAHBLite
@@ -3412,6 +3428,19 @@ MSS_SMC_0 : CORESDR_AXI
         DQM     => DQM_net_0,
         -- Inouts
         DQ      => DQ 
+        );
+-- OSC_0   -   Actel:SgCore:OSC:2.0.101
+OSC_0 : top_sb_OSC_0_OSC
+    port map( 
+        -- Inputs
+        XTL                => XTL,
+        -- Outputs
+        RCOSC_25_50MHZ_CCC => OPEN,
+        RCOSC_25_50MHZ_O2F => OPEN,
+        RCOSC_1MHZ_CCC     => OPEN,
+        RCOSC_1MHZ_O2F     => OPEN,
+        XTLOSC_CCC         => OSC_0_XTLOSC_CCC_OUT_XTLOSC_CCC,
+        XTLOSC_O2F         => OPEN 
         );
 -- SYSRESET_POR
 SYSRESET_POR : SYSRESET

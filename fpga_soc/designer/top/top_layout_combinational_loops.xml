@@ -4,7 +4,7 @@
 <title>Combinational Loop Report</title>
 <text>SmartTime Version 11.8.0.26</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Tue Apr 07 18:57:02 2020
+<text>Date: Fri Sep 25 15:43:33 2020
 </text>
 <table>
 <header>
@@ -19,7 +19,7 @@
 </row>
 <row>
  <cell>Die</cell>
- <cell>M2S010</cell>
+ <cell>M2S025</cell>
 </row>
 <row>
  <cell>Package</cell>
@@ -27,7 +27,7 @@
 </row>
 <row>
  <cell>Temperature Range</cell>
- <cell>0 - 85 C</cell>
+ <cell>-40 - 100 C</cell>
 </row>
 <row>
  <cell>Voltage Range</cell>
@@ -35,7 +35,7 @@
 </row>
 <row>
  <cell>Speed Grade</cell>
- <cell>-1</cell>
+ <cell>STD</cell>
 </row>
 <row>
  <cell>Design State</cell>
@@ -43,11 +43,11 @@
 </row>
 <row>
  <cell>Analysis Min Case</cell>
- <cell>BEST - 1.26 V - 0 C</cell>
+ <cell>BEST - 1.26 V - -40 C</cell>
 </row>
 <row>
  <cell>Analysis Max Case</cell>
- <cell>WORST - 1.14 V - 85 C</cell>
+ <cell>WORST - 1.14 V - 100 C</cell>
 </row>
 <row>
  <cell>Scenario for Timing Analysis</cell>

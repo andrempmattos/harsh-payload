@@ -8,7 +8,7 @@
 </header>
 <row>
  <cell>Date:</cell>
- <cell>Tue Apr 07 18:55:13 2020</cell>
+ <cell>Fri Sep 25 15:25:30 2020</cell>
 </row>
 <separator/>
 <row>
@@ -25,7 +25,7 @@
 </row>
 <row>
  <cell>Die:</cell>
- <cell>M2S010</cell>
+ <cell>M2S025</cell>
 </row>
 <row>
  <cell>Package:</cell>
@@ -68,7 +68,7 @@
 </row>
 <row>
  <cell>Reference clock source</cell>
- <cell>Dedicated Input Pad 1</cell>
+ <cell>External Main Crystal Oscillator</cell>
 </row>
 <row>
  <cell>Output frequency</cell>
@@ -155,7 +155,7 @@
 <row>
  <cell>FCCC_RFMUX_CR</cell>
  <cell>0x01</cell>
- <cell>0x01</cell>
+ <cell>0x09</cell>
  <cell>RFMUX configuration register</cell>
 </row>
 <row>

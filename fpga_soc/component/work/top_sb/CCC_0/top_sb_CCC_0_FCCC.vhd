@@ -7,22 +7,14 @@ use smartfusion2.all;
 
 entity top_sb_CCC_0_FCCC is
 
-    port( LOCK     : out   std_logic;
-          CLK1_PAD : in    std_logic;
-          GL2      : out   std_logic
+    port( XTLOSC : in    std_logic;
+          LOCK   : out   std_logic;
+          GL2    : out   std_logic
         );
 
 end top_sb_CCC_0_FCCC;
 
 architecture DEF_ARCH of top_sb_CCC_0_FCCC is 
-
-  component INBUF
-    generic (IOSTD:string := "");
-
-    port( PAD : in    std_logic := 'U';
-          Y   : out   std_logic
-        );
-  end component;
 
   component VCC
     port( Y : out   std_logic
@@ -96,15 +88,12 @@ architecture DEF_ARCH of top_sb_CCC_0_FCCC is
         );
   end component;
 
-    signal gnd_net, vcc_net, CLK1_PAD_net, GL2_net : std_logic;
+    signal gnd_net, vcc_net, GL2_net : std_logic;
     signal nc8, nc7, nc6, nc2, nc5, nc4, nc3, nc1 : std_logic;
 
 begin 
 
 
-    CLK1_PAD_INST : INBUF
-      port map(PAD => CLK1_PAD, Y => CLK1_PAD_net);
-    
     vcc_inst : VCC
       port map(Y => vcc_net);
     
@@ -116,7 +105,7 @@ begin
     
     CCC_INST : CCC
 
-              generic map(INIT => "00" & x"000007F98000044D74000318C1F18C6318C61C40404040401802",
+              generic map(INIT => "00" & x"000007F98000044D74000318C1F18C6318C61E40404040401802",
          VCOFREQUENCY => 800.000)
 
       port map(Y0 => OPEN, Y1 => OPEN, Y2 => OPEN, Y3 => OPEN, 
@@ -141,10 +130,10 @@ begin
         PWDATA(6) => vcc_net, PWDATA(5) => vcc_net, PWDATA(4) => 
         vcc_net, PWDATA(3) => vcc_net, PWDATA(2) => vcc_net, 
         PWDATA(1) => vcc_net, PWDATA(0) => vcc_net, CLK0_PAD => 
-        gnd_net, CLK1_PAD => CLK1_PAD_net, CLK2_PAD => gnd_net, 
+        gnd_net, CLK1_PAD => gnd_net, CLK2_PAD => gnd_net, 
         CLK3_PAD => gnd_net, GL0 => OPEN, GL1 => OPEN, GL2 => 
         GL2_net, GL3 => OPEN, RCOSC_25_50MHZ => gnd_net, 
-        RCOSC_1MHZ => gnd_net, XTLOSC => gnd_net);
+        RCOSC_1MHZ => gnd_net, XTLOSC => XTLOSC);
     
 
 end DEF_ARCH; 

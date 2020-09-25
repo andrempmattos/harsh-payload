@@ -1,25 +1,25 @@
 <project name="top" version="1.1">
     <ProjectDirectory>
-        C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp
+        C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp
     </ProjectDirectory>
     <View>
         ChainView
     </View>
     <LiberoTargetDevice>
-        M2S010
+        M2S025
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp\top.log
+        C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp\top.log
     </LogFile>
     <SerializationOption>
         Skip
     </SerializationOption>
-    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb2.0">
+    <programmer status="enable" type="FlashPro4" revision="UndefRev" connection="usb2.0">
         <name>
-            E2003RDUTS
+            74764
         </name>
         <id>
-            E2003RDUTS
+            74764
         </id>
     </programmer>
     <configuration>
@@ -74,10 +74,10 @@
         </Hardware>
         <Device type="ACTEL">
             <Name>
-                M2S010
+                M2S025
             </Name>
             <Custom>
-                M2S010
+                M2S025
             </Custom>
             <Algo type="unknown">
                 <irlength>

@@ -1,4 +1,4 @@
-INFO: Reading User SDC file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\constraint\top_derived_constraints.sdc.
+INFO: Reading User SDC file C:\Users\Andre\Desktop\github\HARSH\fpga_soc\constraint\top_derived_constraints.sdc.
 
 ***** Place and Route Configurations *****
 Timing-driven            : ON
@@ -9,43 +9,43 @@ Incremental              : OFF
 Inter-clock optimization : ON
 TDPR scenario            : place_and_route
 
-INFO: Reading User PDC file C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
+INFO: Reading User PDC file C:\Users\Andre\Desktop\github\HARSH\fpga_soc\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 73 fixed I/O macros, 0 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 72 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 1 seconds
 
 Placer V4.0 - 11.8.0 
-Design: top                             Started: Tue Apr 07 18:57:10 2020
+Design: top                             Started: Fri Sep 25 15:43:43 2020
 
 Initializing Timing-Driven Placement ...
 Placing design...
 End of placement.
-Pre-Placement Runtime        : 8 seconds
-Placement Runtime            : 60 seconds
+Pre-Placement Runtime        : 7 seconds
+Placement Runtime            : 57 seconds
 
 Placer completed successfully.
 
 Design: top                             
-Finished: Tue Apr 07 18:58:50 2020
-Total CPU Time:     00:01:35            Total Elapsed Time: 00:01:40
-Total Memory Usage: 356.5 Mbytes
+Finished: Fri Sep 25 15:45:17 2020
+Total CPU Time:     00:01:28            Total Elapsed Time: 00:01:34
+Total Memory Usage: 389.8 Mbytes
                         o - o - o - o - o - o
 
 
 Router 
-Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\topStarted: Tue Apr 07 18:58:58 2020
+Design: C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\topStarted: Fri Sep 25 15:45:27 2020
 
-Final stats: search run time 11.050385
+Final stats: search run time 9.711238
 
 Router completed successfully.
 
-Design: C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top
-Finished: Tue Apr 07 18:59:20 2020
-Total CPU Time:     00:00:19            Total Elapsed Time: 00:00:22
-Total Memory Usage: 496.8 Mbytes
+Design: C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top
+Finished: Fri Sep 25 15:45:53 2020
+Total CPU Time:     00:00:23            Total Elapsed Time: 00:00:26
+Total Memory Usage: 997.4 Mbytes
                         o - o - o - o - o - o
 
 Info: Iteration 1:
@@ -55,9 +55,9 @@ Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 2619 | 12084 | 21.67      |
-| DFF           | 2576 | 12084 | 21.32      |
-| I/O Register  | 0    | 579   | 0.00       |
-| Logic Element | 3134 | 12084 | 25.94      |
+| 4LUT          | 2626 | 27696 | 9.48       |
+| DFF           | 2576 | 27696 | 9.30       |
+| I/O Register  | 0    | 615   | 0.00       |
+| Logic Element | 3148 | 27696 | 11.37      |
 +---------------+------+-------+------------+
 

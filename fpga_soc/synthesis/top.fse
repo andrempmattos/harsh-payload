@@ -15,41 +15,41 @@ fsm_state_encoding {3653365335} rd_s16_sel {100000}
 
 fsm_registers {3653365335} {curr_state[0]}  {curr_state[1]}  {curr_state[2]}  {curr_state[3]}  {curr_state[4]}  {curr_state[5]} 
 
-fsm_encoding {2739883981} onehot
+fsm_encoding {2639883981} onehot
 
-fsm_state_encoding {2739883981} m0extend {0000000000000001}
+fsm_state_encoding {2639883981} m0extend {0000000000000001}
 
-fsm_state_encoding {2739883981} m0done {0000000000000010}
+fsm_state_encoding {2639883981} m0done {0000000000000010}
 
-fsm_state_encoding {2739883981} m0lock {0000000000000100}
+fsm_state_encoding {2639883981} m0lock {0000000000000100}
 
-fsm_state_encoding {2739883981} m0lockextend {0000000000001000}
+fsm_state_encoding {2639883981} m0lockextend {0000000000001000}
 
-fsm_state_encoding {2739883981} m1extend {0000000000010000}
+fsm_state_encoding {2639883981} m1extend {0000000000010000}
 
-fsm_state_encoding {2739883981} m1done {0000000000100000}
+fsm_state_encoding {2639883981} m1done {0000000000100000}
 
-fsm_state_encoding {2739883981} m1lock {0000000001000000}
+fsm_state_encoding {2639883981} m1lock {0000000001000000}
 
-fsm_state_encoding {2739883981} m1lockextend {0000000010000000}
+fsm_state_encoding {2639883981} m1lockextend {0000000010000000}
 
-fsm_state_encoding {2739883981} m2extend {0000000100000000}
+fsm_state_encoding {2639883981} m2extend {0000000100000000}
 
-fsm_state_encoding {2739883981} m2done {0000001000000000}
+fsm_state_encoding {2639883981} m2done {0000001000000000}
 
-fsm_state_encoding {2739883981} m2lock {0000010000000000}
+fsm_state_encoding {2639883981} m2lock {0000010000000000}
 
-fsm_state_encoding {2739883981} m2lockextend {0000100000000000}
+fsm_state_encoding {2639883981} m2lockextend {0000100000000000}
 
-fsm_state_encoding {2739883981} m3extend {0001000000000000}
+fsm_state_encoding {2639883981} m3extend {0001000000000000}
 
-fsm_state_encoding {2739883981} m3done {0010000000000000}
+fsm_state_encoding {2639883981} m3done {0010000000000000}
 
-fsm_state_encoding {2739883981} m3lock {0100000000000000}
+fsm_state_encoding {2639883981} m3lock {0100000000000000}
 
-fsm_state_encoding {2739883981} m3lockextend {1000000000000000}
+fsm_state_encoding {2639883981} m3lockextend {1000000000000000}
 
-fsm_registers {2739883981} {arbRegSMCurrentState[0]}  {arbRegSMCurrentState[1]}  {arbRegSMCurrentState[2]}  {arbRegSMCurrentState[3]}  {arbRegSMCurrentState[4]}  {arbRegSMCurrentState[5]}  {arbRegSMCurrentState[6]}  {arbRegSMCurrentState[7]}  {arbRegSMCurrentState[8]}  {arbRegSMCurrentState[9]}  {arbRegSMCurrentState[10]}  {arbRegSMCurrentState[11]}  {arbRegSMCurrentState[12]}  {arbRegSMCurrentState[13]}  {arbRegSMCurrentState[14]}  {arbRegSMCurrentState[15]} 
+fsm_registers {2639883981} {arbRegSMCurrentState[0]}  {arbRegSMCurrentState[1]}  {arbRegSMCurrentState[2]}  {arbRegSMCurrentState[3]}  {arbRegSMCurrentState[4]}  {arbRegSMCurrentState[5]}  {arbRegSMCurrentState[6]}  {arbRegSMCurrentState[7]}  {arbRegSMCurrentState[8]}  {arbRegSMCurrentState[9]}  {arbRegSMCurrentState[10]}  {arbRegSMCurrentState[11]}  {arbRegSMCurrentState[12]}  {arbRegSMCurrentState[13]}  {arbRegSMCurrentState[14]}  {arbRegSMCurrentState[15]} 
 
 fsm_encoding {1245964592} onehot
 

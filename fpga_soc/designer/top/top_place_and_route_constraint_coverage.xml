@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 11.8.0.26</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Tue Apr 07 19:00:00 2020 </text>
+Date: Fri Sep 25 15:46:36 2020 </text>
 <table>
 <header>
 </header>
@@ -17,7 +17,7 @@ Date: Tue Apr 07 19:00:00 2020 </text>
 </row>
 <row>
  <cell>Die</cell>
- <cell>M2S010</cell>
+ <cell>M2S025</cell>
 </row>
 <row>
  <cell>Package</cell>
@@ -25,7 +25,7 @@ Date: Tue Apr 07 19:00:00 2020 </text>
 </row>
 <row>
  <cell>Temperature Range</cell>
- <cell>0 - 85 C</cell>
+ <cell>-40 - 100 C</cell>
 </row>
 <row>
  <cell>Voltage Range</cell>
@@ -33,7 +33,7 @@ Date: Tue Apr 07 19:00:00 2020 </text>
 </row>
 <row>
  <cell>Speed Grade</cell>
- <cell>-1</cell>
+ <cell>STD</cell>
 </row>
 </table>
 <text></text>
@@ -98,86 +98,6 @@ Date: Tue Apr 07 19:00:00 2020 </text>
  <cell>         5874</cell>
 </row>
 </table>
-<section>
-<name>Clock domain: </name>
-<text>CLK1_PAD</text>
-<text></text>
-<table>
-<header>
- <cell>Type of check</cell>
- <cell>Constrained</cell>
- <cell>UnConstrained</cell>
- <cell>Total</cell>
-</header>
-<row>
- <cell>Setup</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Recovery</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Output Setup</cell>
- <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
-</row>
-<row>
- <cell>Total Setup</cell>
- <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
-</row>
-<separator/>
-<row>
- <cell>Hold</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Removal</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Output Hold</cell>
- <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
-</row>
-<row>
- <cell>Total Hold</cell>
- <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
-</row>
-</table>
-<section>
-<name>Enhancement Suggestions</name>
-<text></text>
-<text></text>
-<text> - Max output delay constraint missing on  port:</text>
-<text>   </text>
-<list>
- <item>SDRCLK</item>
-</list>
-<text></text>
-<text> - Min output delay constraint missing on  port:</text>
-<text>   </text>
-<list>
- <item>SDRCLK</item>
-</list>
-<text></text>
-<text></text>
-</section>
-</section>
 <section>
 <name>Clock domain: </name>
 <text>top_sb_0/CCC_0/GL2</text>
@@ -454,10 +374,10 @@ Date: Tue Apr 07 19:00:00 2020 </text>
 <list>
  <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/sm1_areset_n_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
 </list>
 <text></text>
 <text> - Hold uncconstrained for the following pins:</text>
@@ -490,11 +410,91 @@ Date: Tue Apr 07 19:00:00 2020 </text>
 <list>
  <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_q1:ALn</item>
+ <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/sm1_areset_n_clk_base:ALn</item>
+ <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
 </list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>top_sb_0/OSC_0/I_XTLOSC/CLKOUT</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on  port:</text>
+<text>   </text>
+<list>
+ <item>SDRCLK</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on  port:</text>
+<text>   </text>
+<list>
+ <item>SDRCLK</item>
+</list>
+<text></text>
 <text></text>
 </section>
 </section>

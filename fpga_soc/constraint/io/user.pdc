@@ -49,12 +49,6 @@ set_io CKE             \
     -DIRECTION OUTPUT
 
 
-set_io CLK1_PAD       \
-    -pinname N16      \
-    -fixed yes        \
-    -DIRECTION INPUT
-
-
 set_io {CS_N[0]}       \
     -pinname R13       \
     -fixed yes         \
@@ -270,6 +264,7 @@ set_io WE_N            \
     -fixed yes         \
     -DIRECTION OUTPUT
 
+set_location top_sb_0/CCC_0/CCC_INST 618 134 -fixed yes
 
 
 # 

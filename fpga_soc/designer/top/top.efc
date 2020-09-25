@@ -2,7 +2,7 @@
     <format name="NVM File" version="01.00.00"/>
     <header>
         <die>
-            M2S010
+            M2S025
         </die>
         <family>
             SmartFusion2
@@ -18,7 +18,7 @@
         </version>
     </header>
     <nvm>
-        <region name="boot" address="0x000000" retrieveAddressFromFile="false" size="4432" format="HEX" type="Data Storage" wordSize="8" numberWords="4432" memFile="C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc" memType="" memFileTimeStamp="1586278880" clientType="public" program="false">
+        <region name="boot" address="0x000000" retrieveAddressFromFile="false" size="4432" format="HEX" type="Data Storage" wordSize="8" numberWords="4432" memFile="C:\Users\Andre\Desktop\github\HARSH\fpga_soc" memType="" memFileTimeStamp="1601063315" clientType="public" program="false">
             <read_protect/>
             000000000000000000000000000000000000000000000000000000000000
             000000000000000000000000000000000000000000000000000000000000

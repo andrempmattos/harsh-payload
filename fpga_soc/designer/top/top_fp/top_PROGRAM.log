@@ -1,37 +1,36 @@
 Software Version: 11.8.0.26
-Embedded FlashPro5 programmer detected.
-programmer 'E2003RDUTS' : FlashPro5
-Opened 'C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top\top_fp\top.pro'
+Driver : 3.0.0 build 1
+programmer '74764' : FlashPro4
+Opened 'C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp\top.pro'
 The 'open_project' command succeeded.
-IPD file 'C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
-DESIGN : top;  CHECKSUM : E0B8;  PDB_VERSION : 1.9
+IPD file 'C:/Users/Andre/Desktop/github/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
+DESIGN : top;  CHECKSUM : 8C1E;  PDB_VERSION : 1.9
 The 'set_programming_file' command succeeded.
-Warning: Programming is already enabled for device 'M2S010'.
+Warning: Programming is already enabled for device 'M2S025'.
 The 'enable_device' command succeeded.
 The 'set_programming_action' command succeeded.
-programmer 'E2003RDUTS' : Scan Chain...
-Warning: programmer 'E2003RDUTS' : Vpump has been selected on programmer AND an externally provided Vpump has also been detected. Using externally provided Vpump voltage source.
-programmer 'E2003RDUTS' : Check Chain...
-programmer 'E2003RDUTS' : Scan and Check Chain PASSED.
-programmer 'E2003RDUTS' : device 'M2S010' : Executing action PROGRAM
-programmer 'E2003RDUTS' : device 'M2S010' : Family: Igloo2
-programmer 'E2003RDUTS' : device 'M2S010' : Product:      M2GL005
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT ISC_ENABLE_RESULT[32] = 007d6c44
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT CRCERR[1] = 0
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT EDCERR[1] = 0
-programmer 'E2003RDUTS' : device 'M2S010' : TEMPGRADE: ROOM
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT VPPRANGE[3] = 2
-programmer 'E2003RDUTS' : device 'M2S010' : VPPRANGE: HIGH
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT TEMP[8] = 6c
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT VPP[8] = 7d
-programmer 'E2003RDUTS' : device 'M2S010' : Programming FPGA Array...
-programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
-programmer 'E2003RDUTS' : device 'M2S010' : EXPORT DSN[128] = 84445cfe4f2a83db00d3cd5548918e11
-programmer 'E2003RDUTS' : device 'M2S010' : ===================================================================================
-programmer 'E2003RDUTS' : device 'M2S010' : Finished: Tue Apr 07 19:28:26 2020 (Elapsed time 00:00:26)
-programmer 'E2003RDUTS' : device 'M2S010' : Executing action PROGRAM PASSED.
-programmer 'E2003RDUTS' : Chain programming PASSED.
-Chain Programming Finished: Tue Apr 07 19:28:26 2020 (Elapsed time 00:00:26)
+programmer '74764' : Scan Chain...
+programmer '74764' : Check Chain...
+programmer '74764' : Scan and Check Chain PASSED.
+programmer '74764' : device 'M2S025' : Executing action PROGRAM
+programmer '74764' : device 'M2S025' : Family: SmartFusion2
+programmer '74764' : device 'M2S025' : Product:      M2S025
+programmer '74764' : device 'M2S025' : EXPORT ISC_ENABLE_RESULT[32] = 007a6944
+programmer '74764' : device 'M2S025' : EXPORT CRCERR[1] = 0
+programmer '74764' : device 'M2S025' : EXPORT EDCERR[1] = 0
+programmer '74764' : device 'M2S025' : TEMPGRADE: ROOM
+programmer '74764' : device 'M2S025' : EXPORT VPPRANGE[3] = 2
+programmer '74764' : device 'M2S025' : VPPRANGE: HIGH
+programmer '74764' : device 'M2S025' : EXPORT TEMP[8] = 69
+programmer '74764' : device 'M2S025' : EXPORT VPP[8] = 7a
+programmer '74764' : device 'M2S025' : Programming FPGA Array...
+programmer '74764' : device 'M2S025' : ===================================================================================
+programmer '74764' : device 'M2S025' : EXPORT DSN[128] = 6bb4f5ce8c2f1d6af2705583065f3bea
+programmer '74764' : device 'M2S025' : ===================================================================================
+programmer '74764' : device 'M2S025' : Finished: Fri Sep 25 15:50:49 2020 (Elapsed time 00:00:37)
+programmer '74764' : device 'M2S025' : Executing action PROGRAM PASSED.
+programmer '74764' : Chain programming PASSED.
+Chain Programming Finished: Fri Sep 25 15:50:49 2020 (Elapsed time 00:00:37)
 
                         o - o - o - o - o - o
 

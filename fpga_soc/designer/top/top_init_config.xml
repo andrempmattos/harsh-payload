@@ -3,7 +3,7 @@
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Tue Apr 07 19:00:28 2020
+<text>Date: Fri Sep 25 15:47:22 2020
 </text>
 <section><name>top_sb_0/CCC_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -59,7 +59,7 @@
  <cell>FCCC_RFMUX_CR</cell>
  <cell>SELRF[3:0]</cell>
  <cell>INIT[57:54]</cell>
- <cell>4&apos;h1</cell>
+ <cell>4&apos;h9</cell>
 </row>
 <row>
  <cell>FCCC_FBMUX_CR</cell>
@@ -95,7 +95,7 @@
  <cell>FCCC_NGMUX0_CR0</cell>
  <cell>SELGL[4:0]</cell>
  <cell>INIT[86:82]</cell>
- <cell>5&apos;h18</cell>
+ <cell>5&apos;h7</cell>
 </row>
 <row>
  <cell>FCCC_NGMUX0_CR1</cell>
@@ -131,7 +131,7 @@
  <cell>FCCC_NGMUX3_CR0</cell>
  <cell>SELGL[34:30]</cell>
  <cell>INIT[116:112]</cell>
- <cell>5&apos;h7</cell>
+ <cell>5&apos;h18</cell>
 </row>
 <row>
  <cell>FCCC_NGMUX3_CR1</cell>
@@ -215,7 +215,7 @@
  <cell>FCCC_PLL_CR5</cell>
  <cell>MODE_3V3</cell>
  <cell>INIT[151:151]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
 </row>
 <row>
  <cell>FCCC_PLL_CR6</cell>
@@ -404,7 +404,7 @@
  <cell>8&apos;h0</cell>
 </row>
 </table>
-<section><name>top_sb_0/top_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP</name></section>
+<section><name>top_sb_0/top_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_025_IP</name></section>
 <table>
 <header>
  <cell>Register</cell>
@@ -1570,7 +1570,7 @@
  <cell>MSSDDR_PLL_STATUS_HIGH</cell>
  <cell>FACC_PLL_MODE_3V3</cell>
  <cell>INIT[578:578]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[63]</cell>
  <cell>1</cell>
 </row>

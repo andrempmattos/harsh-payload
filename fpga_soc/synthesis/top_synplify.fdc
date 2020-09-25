@@ -1,4 +1,3 @@
-define_attribute {i:top_sb_0.CCC_0.CLK1_PAD_INST} {syn_noprune} 1
 define_attribute {i:top_sb_0.top_sb_MSS_0.CAN_RX_PAD} {syn_noprune} 1
 define_attribute {i:top_sb_0.top_sb_MSS_0.CAN_TX_EN_N_PAD} {syn_noprune} 1
 define_attribute {i:top_sb_0.top_sb_MSS_0.CAN_TX_PAD} {syn_noprune} 1

@@ -6,9 +6,9 @@
 
 # Input Netlist Format: EDIF 
 
-# Family: SmartFusion2 , Die: M2S010 , Package: 400 VF , Speed grade: -1 
+# Family: SmartFusion2 , Die: M2S025 , Package: 400 VF , Speed grade: STD 
 
-# Date generated: Tue Apr 07 18:56:26 2020 
+# Date generated: Fri Sep 25 15:34:04 2020 
 
 
 #
@@ -65,6 +65,7 @@ set_io SPI_0_CLK -DIRECTION INOUT -pinname P15 -fixed yes
 set_io SPI_0_DI -DIRECTION INPUT -pinname N15 -fixed yes
 set_io SPI_0_DO -DIRECTION OUTPUT -pinname L20 -fixed yes
 set_io SPI_0_SS0 -DIRECTION INOUT -pinname L19 -fixed yes
+set_io XTL -DIRECTION INPUT -pinname Y18
 
 #
 # Core cell constraints

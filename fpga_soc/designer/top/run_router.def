@@ -1,12 +1,12 @@
 DESIGN=top
-DESDIR=C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\designer\top
+DESDIR=C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top
 FAM=SmartFusion2
-DIE=PA4M1000_N
+DIE=PA4M2500_N
 PACKAGE=vf400
-SPEED=-1
+SPEED=STD
 VOLTAGE=1.2
-TEMPR=COM
-VOLTR=COM
+TEMPR=IND
+VOLTR=IND
 VCCI_1.2_VOLTR=COM
 VCCI_1.5_VOLTR=COM
 VCCI_1.8_VOLTR=COM

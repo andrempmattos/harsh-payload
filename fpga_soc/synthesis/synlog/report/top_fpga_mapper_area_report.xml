@@ -5,11 +5,11 @@ The file contains the area information from mapper to be displayed as part of th
 *******************************************************************************************-->
 <report_table display_priority="1" name="Area Summary">
 <report_link name="Detailed report">
-<data>C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_resourceusage.rpt</data>
+<data>C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_resourceusage.rpt</data>
 <title>Resource Usage</title>
 </report_link>
 <report_link name="Hierarchical Area report">
-<data>C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_hier_area_report.xml</data>
+<data>C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_hier_area_report.xml</data>
 <title>Hierarchical Area Report</title>
 </report_link>
 <parameter tooltip="Total Carry Cells used" name="Carry Cells">
@@ -22,7 +22,7 @@ The file contains the area information from mapper to be displayed as part of th
 <data>0</data>
 </parameter>
 <parameter tooltip="Total I/O Cells used" name="I/O Cells">
-<data>73</data>
+<data>72</data>
 </parameter>
 <parameter tooltip="Total Global Clock Buffers used" name="Global Clock Buffers">
 <data>3</data>
@@ -31,6 +31,6 @@ The file contains the area information from mapper to be displayed as part of th
 <data>6</data>
 </parameter>
 <parameter tcl_name="total_luts" tooltip="Total LUTs used" name="LUTs">
-<data>2397</data>
+<data>2404</data>
 </parameter>
 </report_table>

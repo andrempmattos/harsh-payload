@@ -1,0 +1,16 @@
+Project Name: fpga_soc
+Location: C:\Users\Andre\Desktop\github\HARSH\fpga_soc
+Description: 
+Preferred HDL Type: VHDL
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : M2S025-VF400I
+Family         : SmartFusion2
+Die            : M2S025
+Package        : 400 VF
+Speed          : STD
+Core Voltage   : 1.2
+Range          : IND

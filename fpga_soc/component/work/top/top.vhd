@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Tue Apr 07 18:55:26 2020
+-- Created by SmartDesign Fri Sep 25 15:27:07 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -19,10 +19,10 @@ entity top is
     port(
         -- Inputs
         CAN_RX       : in    std_logic;
-        CLK1_PAD     : in    std_logic;
         DEVRST_N     : in    std_logic;
         MMUART_0_RXD : in    std_logic;
         SPI_0_DI     : in    std_logic;
+        XTL          : in    std_logic;
         -- Outputs
         BA           : out   std_logic_vector(1 downto 0);
         CAN_TX       : out   std_logic;
@@ -79,11 +79,11 @@ component top_sb
     port(
         -- Inputs
         CAN_RX           : in    std_logic;
-        CLK1_PAD         : in    std_logic;
         DEVRST_N         : in    std_logic;
         FAB_RESET_N      : in    std_logic;
         MMUART_0_RXD     : in    std_logic;
         SPI_0_DI         : in    std_logic;
+        XTL              : in    std_logic;
         -- Outputs
         BA               : out   std_logic_vector(1 downto 0);
         CAN_TX           : out   std_logic;
@@ -141,7 +141,7 @@ signal CAN_TX_net_0              : std_logic;
 signal CAN_TX_EN_N_net_0         : std_logic;
 signal CAS_N_net_0               : std_logic;
 signal CKE_net_0                 : std_logic;
-signal CS_N_2                    : std_logic_vector(0 to 0);
+signal CS_N_1                    : std_logic_vector(0 to 0);
 signal DQM_net_0                 : std_logic_vector(1 downto 0);
 signal MMUART_0_TXD_net_0        : std_logic;
 signal RAS_N_net_0               : std_logic;
@@ -156,13 +156,13 @@ signal CKE_net_1                 : std_logic;
 signal RAS_N_net_1               : std_logic;
 signal CAS_N_net_1               : std_logic;
 signal WE_N_net_1                : std_logic;
-signal SA_net_1                  : std_logic_vector(13 downto 0);
-signal BA_net_1                  : std_logic_vector(1 downto 0);
-signal CS_N_2_net_0              : std_logic_vector(0 to 0);
-signal DQM_net_1                 : std_logic_vector(1 downto 0);
 signal SPI_0_DO_net_1            : std_logic;
 signal CAN_TX_net_1              : std_logic;
 signal CAN_TX_EN_N_net_1         : std_logic;
+signal SA_net_1                  : std_logic_vector(13 downto 0);
+signal BA_net_1                  : std_logic_vector(1 downto 0);
+signal CS_N_1_net_0              : std_logic_vector(0 to 0);
+signal DQM_net_1                 : std_logic_vector(1 downto 0);
 
 begin
 ----------------------------------------------------------------------
@@ -180,20 +180,20 @@ begin
  CAS_N              <= CAS_N_net_1;
  WE_N_net_1         <= WE_N_net_0;
  WE_N               <= WE_N_net_1;
- SA_net_1           <= SA_net_0;
- SA(13 downto 0)    <= SA_net_1;
- BA_net_1           <= BA_net_0;
- BA(1 downto 0)     <= BA_net_1;
- CS_N_2_net_0(0)    <= CS_N_2(0);
- CS_N(0)            <= CS_N_2_net_0(0);
- DQM_net_1          <= DQM_net_0;
- DQM(1 downto 0)    <= DQM_net_1;
  SPI_0_DO_net_1     <= SPI_0_DO_net_0;
  SPI_0_DO           <= SPI_0_DO_net_1;
  CAN_TX_net_1       <= CAN_TX_net_0;
  CAN_TX             <= CAN_TX_net_1;
  CAN_TX_EN_N_net_1  <= CAN_TX_EN_N_net_0;
  CAN_TX_EN_N        <= CAN_TX_EN_N_net_1;
+ SA_net_1           <= SA_net_0;
+ SA(13 downto 0)    <= SA_net_1;
+ BA_net_1           <= BA_net_0;
+ BA(1 downto 0)     <= BA_net_1;
+ CS_N_1_net_0(0)    <= CS_N_1(0);
+ CS_N(0)            <= CS_N_1_net_0(0);
+ DQM_net_1          <= DQM_net_0;
+ DQM(1 downto 0)    <= DQM_net_1;
 ----------------------------------------------------------------------
 -- Component instances
 ----------------------------------------------------------------------
@@ -203,10 +203,10 @@ top_sb_0 : top_sb
         -- Inputs
         MMUART_0_RXD     => MMUART_0_RXD,
         FAB_RESET_N      => top_sb_0_POWER_ON_RESET_N,
-        CLK1_PAD         => CLK1_PAD,
         DEVRST_N         => DEVRST_N,
         SPI_0_DI         => SPI_0_DI,
         CAN_RX           => CAN_RX,
+        XTL              => XTL,
         -- Outputs
         MMUART_0_TXD     => MMUART_0_TXD_net_0,
         POWER_ON_RESET_N => top_sb_0_POWER_ON_RESET_N,
@@ -225,7 +225,7 @@ top_sb_0 : top_sb
         CAN_TX_EN_N      => CAN_TX_EN_N_net_0,
         SA               => SA_net_0,
         BA               => BA_net_0,
-        CS_N             => CS_N_2,
+        CS_N             => CS_N_1,
         DQM              => DQM_net_0,
         -- Inouts
         SPI_0_CLK        => SPI_0_CLK,

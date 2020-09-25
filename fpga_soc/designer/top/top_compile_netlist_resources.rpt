@@ -1,30 +1,30 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Tue Apr 07 18:56:25 2020
+Date: Fri Sep 25 15:34:03 2020
 
 Device Selection
 +--------------------------------+----------------+
 | Family                         | SmartFusion2   |
-| Device                         | M2S010         |
+| Device                         | M2S025         |
 | Package                        | 400 VF         |
-| Speed Grade                    | -1             |
-| Temp                           | 0:25:85        |
+| Speed Grade                    | STD            |
+| Temp                           | -40:25:100     |
 | Voltage                        | 1.26:1.20:1.14 |
 | Core Voltage                   | 1.2V           |
 | Ramp Rate                      | 100ms Minimum  |
 | System Controller Suspend Mode | No             |
-| PLL Supply Voltage             | 3.3V           |
+| PLL Supply Voltage             | 2.5V           |
 | Default I/O technology         | LVCMOS 3.3V    |
 | Restrict Probe Pins            | Yes            |
 | Restrict SPI Pins              | No             |
 +--------------------------------+----------------+
 
 Source Files
-+---------+-----------------------------------------------------------------+
-| Topcell | top                                                             |
-| Format  | EDIF                                                            |
-| Source  | C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\synthesis\top.edn |
-+---------+-----------------------------------------------------------------+
++---------+----------------------------------------------------------------+
+| Topcell | top                                                            |
+| Format  | EDIF                                                           |
+| Source  | C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn |
++---------+----------------------------------------------------------------+
 
 Options
 +----------------------------------------------------+-------+
@@ -37,20 +37,20 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 2619 | 12084 | 21.67      |
-| DFF                       | 2576 | 12084 | 21.32      |
-| I/O Register              | 0    | 585   | 0.00       |
-| User I/O                  | 73   | 195   | 37.44      |
-| -- Single-ended I/O       | 73   | 195   | 37.44      |
-| -- Differential I/O Pairs | 0    | 97    | 0.00       |
-| RAM64x18                  | 6    | 22    | 27.27      |
-| RAM1K18                   | 0    | 21    | 0.00       |
-| MACC                      | 0    | 22    | 0.00       |
-| Chip Globals              | 3    | 8     | 37.50      |
-| CCC                       | 1    | 2     | 50.00      |
+| 4LUT                      | 2626 | 27696 | 9.48       |
+| DFF                       | 2576 | 27696 | 9.30       |
+| I/O Register              | 0    | 621   | 0.00       |
+| User I/O                  | 72   | 207   | 34.78      |
+| -- Single-ended I/O       | 72   | 207   | 34.78      |
+| -- Differential I/O Pairs | 0    | 103   | 0.00       |
+| RAM64x18                  | 6    | 34    | 17.65      |
+| RAM1K18                   | 0    | 31    | 0.00       |
+| MACC                      | 0    | 34    | 0.00       |
+| Chip Globals              | 3    | 16    | 18.75      |
+| CCC                       | 1    | 6     | 16.67      |
 | RCOSC_25_50MHZ            | 0    | 1     | 0.00       |
 | RCOSC_1MHZ                | 0    | 1     | 0.00       |
-| XTLOSC                    | 0    | 1     | 0.00       |
+| XTLOSC                    | 1    | 1     | 100.00     |
 | MSS                       | 1    | 1     | 100.00     |
 +---------------------------+------+-------+------------+
 
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 2403 | 2360 |
+| Fabric Logic             | 2410 | 2360 |
 | RAM64x18 Interface Logic | 216  | 216  |
 | RAM1K18 Interface Logic  | 0    | 0    |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 2619 | 2576 |
+| Total Used               | 2626 | 2576 |
 +--------------------------+------+------+
 
 MSS Resource Usage
@@ -102,7 +102,7 @@ I/O Function
 +-------------------------------+--------------+-------------+-----------------+
 | Type                          | w/o register | w/ register | w/ DDR register |
 +-------------------------------+--------------+-------------+-----------------+
-| Input I/O                     | 4            | 0           | 0               |
+| Input I/O                     | 3            | 0           | 0               |
 | Output I/O                    | 28           | 0           | 0               |
 | Bidirectional I/O             | 41           | 0           | 0               |
 | Differential Input I/O Pairs  | 0            | 0           | 0               |
@@ -113,16 +113,16 @@ I/O Technology
 +--------------+--------+------+-------+--------+---------------+
 | I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
 +--------------+--------+------+-------+--------+---------------+
-| LVCMOS33     |  3.30v |  N/A |  4    |  28    |  41           |
+| LVCMOS33     |  3.30v |  N/A |  3    |  28    |  41           |
 +--------------+--------+------+-------+--------+---------------+
 
 I/O Placement
 +----------+-------+------------+
 | Type     | Count | Percentage |
 +----------+-------+------------+
-| Locked   |  32   | 43.84%     |
+| Locked   |  32   | 44.44%     |
 | Placed   |  0    | 0.00%      |
-| UnPlaced |  41   | 56.16%     |
+| UnPlaced |  40   | 55.56%     |
 +----------+-------+------------+
 
 Nets assigned to chip global resources
@@ -153,12 +153,12 @@ High fanout nets
 | 148    | INT_NET | Net   : top_sb_0/wready_m_xhdl2                                                                                             |
 |        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/L1.wready_m_xhdl2                                                               |
 | 140    | INT_NET | Net   : top_sb_0/masterAddrInProg[0]                                                                                        |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNIBMJN3[12]                     |
+|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNILR3D1[12]                     |
 | 137    | INT_NET | Net   : top_sb_0/hsel2_0_a2_1                                                                                               |
 |        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/hsel2_0_a2_1                                                        |
-| 137    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
+| 136    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
 |        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1                                                          |
-| 135    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
+| 134    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
 |        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI                                                                       |
 | 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
 |        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
@@ -179,12 +179,12 @@ High fanout nets (through buffer trees)
 | 148    | INT_NET | Net   : top_sb_0/wready_m_xhdl2                                                                                             |
 |        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/L1.wready_m_xhdl2                                                               |
 | 140    | INT_NET | Net   : top_sb_0/masterAddrInProg[0]                                                                                        |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNIBMJN3[12]                     |
+|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNILR3D1[12]                     |
 | 137    | INT_NET | Net   : top_sb_0/hsel2_0_a2_1                                                                                               |
 |        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/hsel2_0_a2_1                                                        |
-| 137    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
+| 136    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
 |        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1                                                          |
-| 135    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
+| 134    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
 |        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI                                                                       |
 | 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
 |        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
