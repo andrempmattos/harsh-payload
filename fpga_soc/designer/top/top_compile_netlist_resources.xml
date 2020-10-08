@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Fri Sep 25 15:34:03 2020
+<text>Date: Tue Oct 06 16:30:08 2020
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,15 +106,15 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>2626</cell>
+ <cell>2701</cell>
  <cell>27696</cell>
- <cell>9.48</cell>
+ <cell>9.75</cell>
 </row>
 <row>
  <cell>DFF</cell>
- <cell>2576</cell>
+ <cell>2623</cell>
  <cell>27696</cell>
- <cell>9.30</cell>
+ <cell>9.47</cell>
 </row>
 <row>
  <cell>I/O Register</cell>
@@ -124,15 +124,15 @@
 </row>
 <row>
  <cell>User I/O</cell>
- <cell>72</cell>
+ <cell>74</cell>
  <cell>207</cell>
- <cell>34.78</cell>
+ <cell>35.75</cell>
 </row>
 <row>
  <cell>-- Single-ended I/O</cell>
- <cell>72</cell>
+ <cell>74</cell>
  <cell>207</cell>
- <cell>34.78</cell>
+ <cell>35.75</cell>
 </row>
 <row>
  <cell>-- Differential I/O Pairs</cell>
@@ -204,8 +204,8 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>2410</cell>
- <cell>2360</cell>
+ <cell>2485</cell>
+ <cell>2407</cell>
 </row>
 <row>
  <cell>RAM64x18 Interface Logic</cell>
@@ -224,8 +224,8 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>2626</cell>
- <cell>2576</cell>
+ <cell>2701</cell>
+ <cell>2623</cell>
 </row>
 </table>
 <section><name>MSS Resource Usage</name></section>
@@ -312,7 +312,7 @@
  <cell>Used</cell>
 </row>
 <row>
- <cell>8</cell>
+ <cell>9</cell>
  <cell>4</cell>
 </row>
 <row>
@@ -328,7 +328,7 @@
  <cell>2</cell>
 </row>
 <row>
- <cell>23</cell>
+ <cell>27</cell>
  <cell>1</cell>
 </row>
 <row>
@@ -356,7 +356,7 @@
 </row>
 <row>
  <cell>Output I/O</cell>
- <cell>28</cell>
+ <cell>30</cell>
  <cell>0</cell>
  <cell>0</cell>
 </row>
@@ -394,7 +394,7 @@
  <cell> 3.30v</cell>
  <cell> N/A</cell>
  <cell> 3</cell>
- <cell> 28</cell>
+ <cell> 30</cell>
  <cell> 41</cell>
 </row>
 </table>
@@ -408,7 +408,7 @@
 <row>
  <cell>Locked</cell>
  <cell> 32</cell>
- <cell>44.44%</cell>
+ <cell>43.24%</cell>
 </row>
 <row>
  <cell>Placed</cell>
@@ -417,8 +417,8 @@
 </row>
 <row>
  <cell>UnPlaced</cell>
- <cell> 40</cell>
- <cell>55.56%</cell>
+ <cell> 42</cell>
+ <cell>56.76%</cell>
 </row>
 </table>
 <section><name>Nets assigned to chip global resources</name></section>
@@ -429,7 +429,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>2380</cell>
+ <cell>2427</cell>
  <cell>INT_NET</cell>
  <cell>Net   : SDRCLK_c</cell>
 </row>
@@ -444,7 +444,7 @@
  <cell>Source: NETLIST</cell>
 </row>
 <row>
- <cell>1457</cell>
+ <cell>1501</cell>
  <cell>INT_NET</cell>
  <cell>Net   : top_sb_0/MSS_READY</cell>
 </row>
@@ -560,7 +560,7 @@
  <cell>Driver: top_sb_0/MSS_SMC_0/sdr_count[1]</cell>
 </row>
 <row>
- <cell>81</cell>
+ <cell>93</cell>
  <cell>INT_NET</cell>
  <cell>Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID</cell>
 </row>
@@ -668,7 +668,7 @@
  <cell>Driver: top_sb_0/MSS_SMC_0/sdr_count[1]</cell>
 </row>
 <row>
- <cell>81</cell>
+ <cell>93</cell>
  <cell>INT_NET</cell>
  <cell>Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID</cell>
 </row>

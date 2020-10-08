@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Sep 25 15:25:41 2020
+-- Created by SmartDesign Tue Oct 06 15:51:26 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -35,14 +35,13 @@ entity top_sb is
         CAN_TX_EN_N      : out   std_logic;
         CAS_N            : out   std_logic;
         CKE              : out   std_logic;
-        CS_N             : out   std_logic_vector(0 to 0);
+        CS_N             : out   std_logic_vector(2 downto 0);
         DQM              : out   std_logic_vector(1 downto 0);
         FAB_CCC_GL2      : out   std_logic;
         FAB_CCC_LOCK     : out   std_logic;
         INIT_DONE        : out   std_logic;
         MMUART_0_TXD     : out   std_logic;
         MSS_READY        : out   std_logic;
-        OE               : out   std_logic;
         POWER_ON_RESET_N : out   std_logic;
         RAS_N            : out   std_logic;
         SA               : out   std_logic_vector(13 downto 0);
@@ -1144,23 +1143,23 @@ component CORESDR_AXI
     generic( 
         AUTO_PCH              : integer := 0 ;
         CL                    : integer := 2 ;
-        DELAY                 : integer := 6800 ;
+        DELAY                 : integer := 10000 ;
         FAMILY                : integer := 19 ;
         MRD                   : integer := 2 ;
-        RAS                   : integer := 2 ;
+        RAS                   : integer := 5 ;
         RC                    : integer := 8 ;
         RCD                   : integer := 2 ;
-        REF                   : integer := 4096 ;
+        REF                   : integer := 8192 ;
         REGDIMM               : integer := 0 ;
-        RFC                   : integer := 9 ;
-        RP                    : integer := 3 ;
+        RFC                   : integer := 8 ;
+        RP                    : integer := 2 ;
         RRD                   : integer := 2 ;
         SDRAM_BANKSTATMODULES : integer := 4 ;
-        SDRAM_CHIPBITS        : integer := 1 ;
-        SDRAM_CHIPS           : integer := 1 ;
-        SDRAM_COLBITS         : integer := 8 ;
+        SDRAM_CHIPBITS        : integer := 2 ;
+        SDRAM_CHIPS           : integer := 3 ;
+        SDRAM_COLBITS         : integer := 10 ;
         SDRAM_DQSIZE          : integer := 16 ;
-        SDRAM_ROWBITS         : integer := 12 ;
+        SDRAM_ROWBITS         : integer := 13 ;
         WR                    : integer := 2 
         );
     -- Port list
@@ -1198,7 +1197,7 @@ component CORESDR_AXI
         BVALID  : out   std_logic;
         CAS_N   : out   std_logic;
         CKE     : out   std_logic;
-        CS_N    : out   std_logic_vector(0 to 0);
+        CS_N    : out   std_logic_vector(2 downto 0);
         DQM     : out   std_logic_vector(1 downto 0);
         OE      : out   std_logic;
         RAS_N   : out   std_logic;
@@ -1390,7 +1389,7 @@ signal COREAXI_0_AXImslave16_WREADY                : std_logic;
 signal COREAXI_0_AXImslave16_WSTRB                 : std_logic_vector(7 downto 0);
 signal COREAXI_0_AXImslave16_WVALID                : std_logic;
 signal CORERESETP_0_RESET_N_F2M                    : std_logic;
-signal CS_N_net_0                                  : std_logic_vector(0 to 0);
+signal CS_N_1                                      : std_logic_vector(2 downto 0);
 signal DQM_net_0                                   : std_logic_vector(1 downto 0);
 signal FAB_CCC_GL2_net_0                           : std_logic;
 signal FAB_CCC_LOCK_net_0                          : std_logic;
@@ -1398,7 +1397,7 @@ signal FABOSC_0_RCOSC_25_50MHZ_O2F                 : std_logic;
 signal INIT_DONE_net_0                             : std_logic;
 signal MMUART_0_TXD_net_0                          : std_logic;
 signal MSS_READY_net_0                             : std_logic;
-signal OE_net_0                                    : std_logic;
+signal OE                                          : std_logic;
 signal OSC_0_XTLOSC_CCC_OUT_XTLOSC_CCC             : std_logic;
 signal POWER_ON_RESET_N_net_0                      : std_logic;
 signal RAS_N_net_0                                 : std_logic;
@@ -1423,7 +1422,6 @@ signal FAB_CCC_GL2_net_1                           : std_logic;
 signal FAB_CCC_LOCK_net_1                          : std_logic;
 signal MSS_READY_net_1                             : std_logic;
 signal SDRCLK_net_1                                : std_logic;
-signal OE_net_1                                    : std_logic;
 signal CKE_net_1                                   : std_logic;
 signal RAS_N_net_1                                 : std_logic;
 signal CAS_N_net_1                                 : std_logic;
@@ -1433,8 +1431,8 @@ signal CAN_TX_net_1                                : std_logic;
 signal CAN_TX_EN_N_net_1                           : std_logic;
 signal SA_net_1                                    : std_logic_vector(13 downto 0);
 signal BA_net_1                                    : std_logic_vector(1 downto 0);
-signal CS_N_net_1                                  : std_logic_vector(0 to 0);
 signal DQM_net_1                                   : std_logic_vector(1 downto 0);
+signal CS_N_1_net_0                                : std_logic_vector(2 downto 0);
 ----------------------------------------------------------------------
 -- TiedOff Signals
 ----------------------------------------------------------------------
@@ -1642,27 +1640,27 @@ signal FIC_2_APB_M_PRDATA_const_net_0              : std_logic_vector(31 downto 
 ----------------------------------------------------------------------
 -- Bus Interface Nets Declarations - Unequal Pin Widths
 ----------------------------------------------------------------------
-signal COREAXI_0_AXImslave16_ARID                  : std_logic_vector(5 downto 0);
 signal COREAXI_0_AXImslave16_ARID_0_3to0           : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_ARID_0                : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_ARID                  : std_logic_vector(5 downto 0);
 
-signal COREAXI_0_AXImslave16_AWID                  : std_logic_vector(5 downto 0);
 signal COREAXI_0_AXImslave16_AWID_0_3to0           : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_AWID_0                : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_AWID                  : std_logic_vector(5 downto 0);
 
+signal COREAXI_0_AXImslave16_BID                   : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_BID_0_5to4            : std_logic_vector(5 downto 4);
 signal COREAXI_0_AXImslave16_BID_0_3to0            : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_BID_0                 : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave16_BID                   : std_logic_vector(3 downto 0);
 
+signal COREAXI_0_AXImslave16_RID                   : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_RID_0_5to4            : std_logic_vector(5 downto 4);
 signal COREAXI_0_AXImslave16_RID_0_3to0            : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_RID_0                 : std_logic_vector(5 downto 0);
-signal COREAXI_0_AXImslave16_RID                   : std_logic_vector(3 downto 0);
 
-signal COREAXI_0_AXImslave16_WID                   : std_logic_vector(5 downto 0);
 signal COREAXI_0_AXImslave16_WID_0_3to0            : std_logic_vector(3 downto 0);
 signal COREAXI_0_AXImslave16_WID_0                 : std_logic_vector(3 downto 0);
+signal COREAXI_0_AXImslave16_WID                   : std_logic_vector(5 downto 0);
 
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP  : std_logic_vector(1 downto 0);
 signal top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0: std_logic_vector(0 to 0);
@@ -1896,8 +1894,6 @@ begin
  MSS_READY              <= MSS_READY_net_1;
  SDRCLK_net_1           <= SDRCLK_net_0;
  SDRCLK                 <= SDRCLK_net_1;
- OE_net_1               <= OE_net_0;
- OE                     <= OE_net_1;
  CKE_net_1              <= CKE_net_0;
  CKE                    <= CKE_net_1;
  RAS_N_net_1            <= RAS_N_net_0;
@@ -1916,10 +1912,10 @@ begin
  SA(13 downto 0)        <= SA_net_1;
  BA_net_1               <= BA_net_0;
  BA(1 downto 0)         <= BA_net_1;
- CS_N_net_1(0)          <= CS_N_net_0(0);
- CS_N(0)                <= CS_N_net_1(0);
  DQM_net_1              <= DQM_net_0;
  DQM(1 downto 0)        <= DQM_net_1;
+ CS_N_1_net_0           <= CS_N_1;
+ CS_N(2 downto 0)       <= CS_N_1_net_0;
 ----------------------------------------------------------------------
 -- Bus Interface Nets Assignments - Unequal Pin Widths
 ----------------------------------------------------------------------
@@ -3360,23 +3356,23 @@ MSS_SMC_0 : CORESDR_AXI
     generic map( 
         AUTO_PCH              => ( 0 ),
         CL                    => ( 2 ),
-        DELAY                 => ( 6800 ),
+        DELAY                 => ( 10000 ),
         FAMILY                => ( 19 ),
         MRD                   => ( 2 ),
-        RAS                   => ( 2 ),
+        RAS                   => ( 5 ),
         RC                    => ( 8 ),
         RCD                   => ( 2 ),
-        REF                   => ( 4096 ),
+        REF                   => ( 8192 ),
         REGDIMM               => ( 0 ),
-        RFC                   => ( 9 ),
-        RP                    => ( 3 ),
+        RFC                   => ( 8 ),
+        RP                    => ( 2 ),
         RRD                   => ( 2 ),
         SDRAM_BANKSTATMODULES => ( 4 ),
-        SDRAM_CHIPBITS        => ( 1 ),
-        SDRAM_CHIPS           => ( 1 ),
-        SDRAM_COLBITS         => ( 8 ),
+        SDRAM_CHIPBITS        => ( 2 ),
+        SDRAM_CHIPS           => ( 3 ),
+        SDRAM_COLBITS         => ( 10 ),
         SDRAM_DQSIZE          => ( 16 ),
-        SDRAM_ROWBITS         => ( 12 ),
+        SDRAM_ROWBITS         => ( 13 ),
         WR                    => ( 2 )
         )
     port map( 
@@ -3412,7 +3408,7 @@ MSS_SMC_0 : CORESDR_AXI
         RLAST   => COREAXI_0_AXImslave16_RLAST,
         RVALID  => COREAXI_0_AXImslave16_RVALID,
         SDRCLK  => SDRCLK_net_0,
-        OE      => OE_net_0,
+        OE      => OE,
         CKE     => CKE_net_0,
         RAS_N   => RAS_N_net_0,
         CAS_N   => CAS_N_net_0,
@@ -3424,7 +3420,7 @@ MSS_SMC_0 : CORESDR_AXI
         RRESP   => COREAXI_0_AXImslave16_RRESP,
         SA      => SA_net_0,
         BA      => BA_net_0,
-        CS_N    => CS_N_net_0,
+        CS_N    => CS_N_1,
         DQM     => DQM_net_0,
         -- Inouts
         DQ      => DQ 

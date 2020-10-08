@@ -1,15 +1,15 @@
 C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\m_generic.exe  -mp  4  -prjfile  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\scratchproject.prs  -implementation  synthesis  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis   -part M2S025  -package VF400  -grade STD    -maxfan 10000 -clock_globalthreshold 2 -async_globalthreshold 12 -globalthreshold 5000 -low_power_ram_decomp 0 -seqshift_to_uram 0 -opcond COMTC -report_path 4000 -RWCheckOnRam 0 -summaryfile C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\report\top_premap.xml  -top_level_module  work.top  -oedif  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn  -conchk_prepass  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top_cck.rpt   -freq 100.000   -tcl  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\synthesis.fdc  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_mult.srs  -flow prepass  -gcc_prepass  -osrd  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd  -qsap  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.sap  -devicelib  C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.v  -ologparam  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\syntmp\top.plg  -osyn  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd  -prjdir  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\  -prjname  top_syn  -log  C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\top_premap.srr 
-rc:1 success:1 runtime:4
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\scratchproject.prs|io:o|time:1601062048|size:10721|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn|io:o|time:1601062211|size:4400762|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top_cck.rpt|io:o|time:1601062412|size:5483|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\synthesis.fdc|io:i|time:1601062403|size:54|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_mult.srs|io:i|time:1601062060|size:6433|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:o|time:1601062411|size:650634|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1601062412|size:10143|exec:0
+rc:1 success:1 runtime:7
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\scratchproject.prs|io:o|time:1602011129|size:10721|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn|io:o|time:1602011165|size:4529708|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top_cck.rpt|io:o|time:1602016165|size:5505|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\synthesis.fdc|io:i|time:1602016141|size:54|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_mult.srs|io:i|time:1602016158|size:6356|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:o|time:1602016164|size:653160|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.sap|io:o|time:1602016166|size:9967|exec:0
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\generic\smartfusion2.v|io:i|time:1487959628|size:16359|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\syntmp\top.plg|io:o|time:1601062408|size:0|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:o|time:1601062411|size:650634|exec:0
-file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\top_premap.srr|io:o|time:1601062412|size:51847|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\syntmp\top.plg|io:o|time:1602016160|size:0|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_prem.srd|io:o|time:1602016164|size:653160|exec:0
+file:C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\top_premap.srr|io:o|time:1602016166|size:51847|exec:0
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin\m_generic.exe|io:i|time:1485326162|size:17958400|exec:1
 file:C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\m_generic.exe|io:i|time:1485327714|size:32495616|exec:1

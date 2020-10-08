@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-049D4HQ
 
-# Fri Sep 25 15:33:24 2020
+# Tue Oct 06 16:29:04 2020
 
 #Implementation: synthesis
 
@@ -76,9 +76,15 @@ File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_
 File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
 File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
 VHDL syntax check successful!
-
-Compiler output is up to date.  No re-compile necessary
-
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\OSC_0\top_sb_OSC_0_OSC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Synthesizing work.top.rtl.
 @N: CD630 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd":22:7:22:12|Synthesizing work.top_sb.rtl.
@@ -9769,7 +9775,7 @@ State machine has 7 reachable states with original encodings of:
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":191:4:191:26|Input SOFT_SDIF0_1_CORE_RESET is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
 @W: CL169 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Pruning unused register psa(10). Make sure that there are no unused intermediate registers.
-@W: CL246 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":37:10:37:14|Input port bits 30 to 29 of raddr(30 downto 0) are unused. Assign logic for all port bits or change the input port size.
+@W: CL247 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":37:10:37:14|Input port bit 30 of raddr(30 downto 0) is unused 
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":56:10:56:16|Input cl_half is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":58:10:58:11|Input ds is unused.
 @N: CL201 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1277:6:1277:7|Trying to extract state machine for register axi_state.
@@ -9794,47 +9800,51 @@ State machine has 10 reachable states with original encodings of:
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":121:6:121:10|Input WLAST is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":133:6:133:11|Input ARLOCK is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 119MB peak: 120MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 186MB peak: 197MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:07s realtime, 0h:00m:07s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:26 2020
+# Tue Oct 06 16:29:12 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
 @N|Running in 64-bit mode
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\layer0.srs changed - recompiling
 
-Linker output is up to date. No re-linking necessary
+At syn_nfilter Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
 
-
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 95MB peak: 96MB)
-
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:27 2020
+# Tue Oct 06 16:29:15 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+Process took 0h:00m:10s realtime, 0h:00m:09s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:27 2020
+# Tue Oct 06 16:29:15 2020
 
 ###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
+@N|Running in 64-bit mode
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_comp.srs changed - recompiling
 
-@A: multi_srs_gen output is up to date. No run necessary.
-To force a re-synthesis, select [Resynthesize All] in menu [Run].
-Click link to view previous log file.
-Multi-srs Generator Report
-@R:"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\top_multi_srs_gen.srr"
+At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 118MB peak: 120MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Oct 06 16:29:18 2020
+
+###########################################################]
 Pre-mapping Report
 
-# Fri Sep 25 15:33:28 2020
+# Tue Oct 06 16:29:20 2020
 
 Synopsys Generic Technology Pre-mapping, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -9848,16 +9858,16 @@ Printing clock  summary report in "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
+Design Input Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5322:4:5322:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_16 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5268:4:5268:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_14. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -9979,14 +9989,14 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_16sto1m.vhd":508:6:508:7|Removing sequential instance RRESP_IM_xhdl2[1:0] (in view: work.axi_rdmatrix_16Sto1M(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN115 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3346:0:3346:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
+@N: BN115 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3342:0:3342:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd":406:6:406:7|Removing sequential instance BID_IM_xhdl1[1:0] (in view: work.axi_wresp_channel(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":2182:6:2182:7|Removing sequential instance WLAST_MI_xhdl24 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @W: BN114 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\fabosc_0\top_sb_fabosc_0_osc.vhd":52:4:52:19|Removing instance I_RCOSC_25_50MHZ (in view: work.top_sb_FABOSC_0_OSC(def_arch)) of black box view:work.RCOSC_25_50MHZ(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1234:6:1234:7|Removing sequential instance WLAST_M_INPFF1 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 syn_allowed_resources : blockrams=31  set on top level netlist top
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 182MB peak: 183MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 182MB peak: 183MB)
 
 
 
@@ -9997,15 +10007,15 @@ Start                                        Requested     Requested     Clock  
 Clock                                        Frequency     Period        Type         Group                   Load 
 -------------------------------------------------------------------------------------------------------------------
 System                                       100.0 MHz     10.000        system       system_clkgroup         0    
-top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2837 
+top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2849 
 ===================================================================================================================
 
-@W: MT530 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd":70:8:70:9|Found inferred clock top_sb_CCC_0_FCCC|GL2_net_inferred_clock which controls 2837 sequential elements including top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.default_slave_sm.defSlaveSMCurrentState. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd":70:8:70:9|Found inferred clock top_sb_CCC_0_FCCC|GL2_net_inferred_clock which controls 2849 sequential elements including top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.default_slave_sm.defSlaveSMCurrentState. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 183MB)
+Starting constraint checker (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 183MB)
 
 Encoding state machine arbRegSMCurrentState[0:15] (in view: coreahblite_lib.COREAHBLITE_SLAVEARBITER_1(coreahblite_slavearbiter_arch))
 original code -> new code
@@ -10137,19 +10147,19 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 188MB)
+Finished constraint checker (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 186MB peak: 188MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 188MB)
+At Mapper Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 188MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:03s cputime
-# Fri Sep 25 15:33:32 2020
+Process took 0h:00m:06s realtime, 0h:00m:03s cputime
+# Tue Oct 06 16:29:26 2020
 
 ###########################################################]
 Map & Optimize Report
 
-# Fri Sep 25 15:33:33 2020
+# Tue Oct 06 16:29:27 2020
 
 Synopsys Generic Technology Mapper, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -10189,16 +10199,16 @@ Available hyper_sources - for debug and ip models
 @N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":1892:6:1892:9|Found ROM .delname. (in view: work.axi_rdmatrix_4Mto1S(translated)) with 16 words by 5 bits.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_3(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_3(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_3(rtl)) with 0 words by 6 bits.
+@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_3(rtl)) with 1 words by 6 bits.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_2(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_2(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_2(rtl)) with 0 words by 6 bits.
+@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_2(rtl)) with 1 words by 6 bits.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_1(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_1(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_1(rtl)) with 0 words by 6 bits.
+@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_1(rtl)) with 1 words by 6 bits.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_0(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
 @W: FA239 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|ROM ras_shift_8[5:0] (in view: coresdr_axi_lib.openbank_0(rtl)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
-@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_0(rtl)) with 0 words by 6 bits.
+@N: MO106 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":394:12:394:15|Found ROM .delname. (in view: coresdr_axi_lib.openbank_0(rtl)) with 1 words by 6 bits.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":307:6:307:7|Removing sequential instance count[1:0] (in view: work.CoreAHBLtoAXI_AHBAccessControlHX(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":1974:6:1974:7|Removing sequential instance SLAVE_SELECT_WADDRCH_M_r[16:12] (in view: work.axi_wrmatrix_4Mto1S(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":472:6:472:7|Removing sequential instance rd_wdcntr_xhdl18[3:0] (in view: work.axi_rdmatrix_4Mto1S(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
@@ -10421,29 +10431,27 @@ original code -> new code
 @W: MO160 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastinit.vhd":246:4:246:5|Register bit p_shift[1] (in view view:coresdr_axi_lib.fastinit(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastinit.vhd":246:4:246:5|Removing instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.p_shift[0] because it is equivalent to instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.m_shift[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastinit.vhd":246:4:246:5|Removing instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.p_req because it is equivalent to instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.m_shift[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: MO129 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":643:4:643:5|Sequential instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.sa[12] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":643:4:643:5|Sequential instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.sa[13] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Sequential instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[4] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Sequential instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[6] is reduced to a combinational gate by constant propagation.
 @W: MO129 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":432:4:432:5|Sequential instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.bcount[3] is reduced to a combinational gate by constant propagation.
-@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 15 by 15 bit equality operator ('==') cmd_p\.3\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
-@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 15 by 15 bit equality operator ('==') cmd_p\.0\.un1_line_i_0 (in view: coresdr_axi_lib.fastsdram(rtl))
-@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 15 by 15 bit equality operator ('==') cmd_p\.1\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
-@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 15 by 15 bit equality operator ('==') cmd_p\.2\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
+@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 16 by 16 bit equality operator ('==') cmd_p\.0\.un1_line_i_0 (in view: coresdr_axi_lib.fastsdram(rtl))
+@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 16 by 16 bit equality operator ('==') cmd_p\.1\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
+@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 16 by 16 bit equality operator ('==') cmd_p\.2\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
+@N: MF179 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":410:16:410:101|Found 16 by 16 bit equality operator ('==') cmd_p\.3\.un1_rowaddr_int (in view: coresdr_axi_lib.fastsdram(rtl))
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Removing instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[5] because it is equivalent to instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Removing instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[1] because it is equivalent to instance top_sb_0.MSS_SMC_0.CoreSDR_0.fastinit_1.fastsdram_1.psa[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":349:4:349:5|Removing sequential instance pcable_shift[2] (in view: coresdr_axi_lib.openbank(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 @W: MO160 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":95:4:95:5|Register bit line[13] (in view view:coresdr_axi_lib.openbank(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\openbank.vhd":95:4:95:5|Register bit line[12] (in view view:coresdr_axi_lib.openbank(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 156MB peak: 160MB)
+Starting factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 156MB peak: 160MB)
 
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1114:6:1114:7|Removing instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[3] because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1114:6:1114:7|Removing instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[2] because it is equivalent to instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.burst_count_r_sync[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":896:6:896:7|Removing sequential instance U_AHBAccCntrl.HSIZE_d_xhdl17[2] (in view: work.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI(translated)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1388:6:1388:7|Removing sequential instance U_AXIAccCntrl.latch_wr_resp[1] (in view: work.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI(translated)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":1114:6:1114:7|Removing sequential instance U_AXIAccCntrl.burst_count_r_sync[1] (in view: work.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI(translated)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr.vhd":256:8:256:9|Removing sequential instance SA[12] (in view: coresdr_axi_lib.CORESDR(rtl)) because it does not drive other instances.
+@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr.vhd":256:8:256:9|Removing sequential instance SA[13] (in view: coresdr_axi_lib.CORESDR(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[0] (in view: work.top_sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWSIZE_IS_xhdl9[2] (in view: work.top_sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[0] (in view: work.top_sb(rtl)) because it does not drive other instances.
@@ -10459,10 +10467,9 @@ Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; M
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[0] (in view: work.top_sb(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance COREAXI_0.L3\.master_stage0.ARSIZE_M_INPFF1[2] (in view: work.top_sb(rtl)) because it does not drive other instances.
 
-Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 168MB peak: 169MB)
+Finished factoring (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 168MB peak: 169MB)
 
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HSIZE_sync[2] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[10] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":291:6:291:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.wr_resp_reg[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1343:6:1343:7|Removing sequential instance top_sb_0.MSS_SMC_0.aburst_reg[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWBURST_S_xhdl16[1] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10471,25 +10478,22 @@ Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; M
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWBURST_S_xhdl16[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWBURST_IS_xhdl10[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWBURST_IS_int[0] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Removing sequential instance top_sb_0.MSS_SMC_0.SA[12] (in view: work.top(rtl)) because it does not drive other instances.
-@A: BN291 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Boundary register top_sb_0.MSS_SMC_0.SA[12] (in view: work.top(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Removing sequential instance top_sb_0.MSS_SMC_0.SA[13] (in view: work.top(rtl)) because it does not drive other instances.
 @A: BN291 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1143:6:1143:7|Boundary register top_sb_0.MSS_SMC_0.SA[13] (in view: work.top(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 167MB peak: 171MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 167MB peak: 171MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 164MB peak: 171MB)
-
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[9] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
-
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 165MB peak: 171MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:05s; Memory used current: 166MB peak: 171MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 165MB peak: 171MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:06s; Memory used current: 167MB peak: 171MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 164MB peak: 171MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:08s; Memory used current: 167MB peak: 171MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:08s; Memory used current: 166MB peak: 171MB)
 
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":588:6:588:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.axi_wstrb[25] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[4] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10497,46 +10501,33 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:07s; CP
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[2] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[1] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_ahbaccesscontrol.vhd":411:6:411:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AHBAccCntrl.burst_num_r[0] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\fastsdram.vhd":880:4:880:5|Removing sequential instance rshift[8] (in view: coresdr_axi_lib.fastsdram(rtl)) because it does not drive other instances.
 
-Finished preparing to map (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 165MB peak: 171MB)
+Finished preparing to map (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:09s; Memory used current: 167MB peak: 171MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:08s; Memory used current: 190MB peak: 194MB)
+Finished technology mapping (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 188MB peak: 190MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:09s		    -3.29ns		2670 /      2435
-   2		0h:00m:09s		    -3.29ns		2515 /      2435
+   1		0h:00m:10s		    -3.29ns		2747 /      2458
+   2		0h:00m:10s		    -3.29ns		2574 /      2458
 
-   3		0h:00m:10s		    -3.29ns		2521 /      2435
+   3		0h:00m:11s		    -3.29ns		2580 /      2458
 
 
-   4		0h:00m:10s		    -3.29ns		2523 /      2435
+   4		0h:00m:12s		    -3.29ns		2582 /      2458
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.AWADDR_M_INPFF1[29] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1063:6:1063:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.ARADDR_M_INPFF1[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[27] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[26] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.AWADDR_S_xhdl13[29] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[27] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[26] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd":503:6:503:7|Removing sequential instance top_sb_0.COREAXI_0.L23\.slave_stage16.ARADDR_S_xhdl28[29] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10545,34 +10536,22 @@ Pass		 CPU time		Worst Slack		Luts / Registers
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[27] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[26] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[24] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coresdr_axi\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1392:6:1392:7|Removing sequential instance top_sb_0.MSS_SMC_0.raddr_reg[23] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":535:6:535:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_xhdl6[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_4mto1s.vhd":621:6:621:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_ra_channel.L1\.inst_rdmatrix_4Mto1S.ARADDR_IS_int_xhdl14[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":479:6:479:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_xhdl6[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[30] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[29] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[28] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[25] (in view: work.top(rtl)) because it does not drive other instances.
-@N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wrmatrix_4mto1s.vhd":538:6:538:7|Removing sequential instance top_sb_0.COREAXI_0.L2\.u_interconnect_ntom.L27\.inst_matrix_S16.inst_wa_channel.L1\.inst_wrmatrix_4Mto1S.AWADDR_IS_int_xhdl7[24] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[28] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[31] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahbltoaxi\2.1.101\rtl\vhdl\core\coreahbltoaxi_axiaccesscontrol.vhd":820:6:820:7|Removing sequential instance top_sb_0.COREAHBLTOAXI_0.U_AXIAccCntrl.HADDR_sync[30] (in view: work.top(rtl)) because it does not drive other instances.
@@ -10588,7 +10567,7 @@ Pass		 CPU time		Worst Slack		Luts / Registers
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":2305:6:2305:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.BRESP_M_xhdl4[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1371:6:1371:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.BRESP_M_INPFF1[0] (in view: work.top(rtl)) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1504:6:1504:7|Removing sequential instance top_sb_0.COREAXI_0.L3\.master_stage0.BRESP_M_pulse[0] (in view: work.top(rtl)) because it does not drive other instances.
-@N: FP130 |Promoting Net N_172 on CLKINT  I_1 
+@N: FP130 |Promoting Net N_161 on CLKINT  I_1 
 @N: FP130 |Promoting Net top_sb_0.MSS_READY on CLKINT  I_629 
 @N: FP130 |Promoting Net top_sb_0.COREAHBLTOAXI_0.ARESET_n on CLKINT  I_630 
 
@@ -10597,10 +10576,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 191MB peak: 195MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:12s; Memory used current: 187MB peak: 192MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 192MB peak: 195MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:13s; Memory used current: 189MB peak: 192MB)
 
 
 
@@ -10611,24 +10590,24 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 2379 clock pin(s) of sequential element(s)
-0 instances converted, 2379 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 2426 clock pin(s) of sequential element(s)
+0 instances converted, 2426 sequential instances remain driven by gated/generated clocks
 
 ======================================================================= Gated/Generated Clocks =======================================================================
 Clock Tree ID     Driving Element             Drive Element Type     Fanout     Sample Instance                Explanation                                            
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2379       top_sb_0.MSS_SMC_0.R_VALID     No gated clock conversion method for cell cell:ACG4.SLE
+@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2426       top_sb_0.MSS_SMC_0.R_VALID     No gated clock conversion method for cell cell:ACG4.SLE
 ======================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 148MB peak: 195MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:13s; Memory used current: 146MB peak: 192MB)
 
 Writing Analyst data base C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 183MB peak: 195MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 181MB peak: 192MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn
@@ -10636,10 +10615,10 @@ Writing EDIF Netlist and constraint files
 @N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
 L-2016.09M-2
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:13s; Memory used current: 184MB peak: 195MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:16s; Memory used current: 182MB peak: 192MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 182MB peak: 195MB)
+Start final timing analysis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:16s; Memory used current: 178MB peak: 192MB)
 
 @W: MT246 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\osc_0\top_sb_osc_0_osc.vhd":36:4:36:11|Blackbox XTLOSC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\ccc_0\top_sb_ccc_0_fccc.vhd":106:4:106:11|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
@@ -10647,7 +10626,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Fri Sep 25 15:33:47 2020
+# Timing Report written on Tue Oct 06 16:29:47 2020
 #
 
 
@@ -11033,10 +11012,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 182MB peak: 195MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:16s; Memory used current: 179MB peak: 192MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 182MB peak: 195MB)
+Finished timing report (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:16s; Memory used current: 179MB peak: 192MB)
 
 ---------------------------------------
 Resource Usage Report for top 
@@ -11048,25 +11027,25 @@ CLKINT          3 uses
 MSS_025         1 use
 SYSRESET        1 use
 XTLOSC          1 use
-CFG1           12 uses
-CFG2           712 uses
-CFG3           554 uses
-CFG4           857 uses
+CFG1           13 uses
+CFG2           738 uses
+CFG3           595 uses
+CFG4           856 uses
 
 Carry cells:
-ARI1            269 uses - used for arithmetic functions
+ARI1            277 uses - used for arithmetic functions
 
 
 Sequential Cells: 
-SLE            2360 uses
+SLE            2407 uses
 
 DSP Blocks:    0 of 34 (0%)
 
-I/O ports: 74
-I/O primitives: 72
+I/O ports: 76
+I/O primitives: 74
 BIBUF          41 uses
 INBUF          3 uses
-OUTBUF         24 uses
+OUTBUF         26 uses
 TRIBUFF        4 uses
 
 
@@ -11076,7 +11055,7 @@ Global Clock Buffers: 3 of 8 (37%)
 RAM/ROM usage summary
 Total Block RAMs (RAM64x18) : 6 of 34 (17%)
 
-Total LUTs:    2404
+Total LUTs:    2479
 
 Extra resources required for RAM and MACC interface logic during P&R:
 
@@ -11084,14 +11063,14 @@ RAM64x18 Interface Logic : SLEs = 216; LUTs = 216;
 RAM1K18  Interface Logic : SLEs = 0; LUTs = 0;
 MACC     Interface Logic : SLEs = 0; LUTs = 0;
 
-Total number of SLEs after P&R:  2360 + 216 + 0 + 0 = 2576;
-Total number of LUTs after P&R:  2404 + 216 + 0 + 0 = 2620;
+Total number of SLEs after P&R:  2407 + 216 + 0 + 0 = 2623;
+Total number of LUTs after P&R:  2479 + 216 + 0 + 0 = 2695;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:14s; Memory used current: 38MB peak: 195MB)
+At Mapper Exit (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:17s; Memory used current: 38MB peak: 192MB)
 
-Process took 0h:00m:15s realtime, 0h:00m:14s cputime
-# Fri Sep 25 15:33:48 2020
+Process took 0h:00m:20s realtime, 0h:00m:17s cputime
+# Tue Oct 06 16:29:47 2020
 
 ###########################################################]

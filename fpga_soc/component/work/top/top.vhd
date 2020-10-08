@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Fri Sep 25 15:27:07 2020
+-- Created by SmartDesign Tue Oct 06 15:52:14 2020
 -- Version: v11.8 11.8.0.26
 ----------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ entity top is
         CAN_TX_EN_N  : out   std_logic;
         CAS_N        : out   std_logic;
         CKE          : out   std_logic;
-        CS_N         : out   std_logic_vector(0 to 0);
+        CS_N         : out   std_logic_vector(2 downto 0);
         DQM          : out   std_logic_vector(1 downto 0);
         MMUART_0_TXD : out   std_logic;
         RAS_N        : out   std_logic;
@@ -90,14 +90,13 @@ component top_sb
         CAN_TX_EN_N      : out   std_logic;
         CAS_N            : out   std_logic;
         CKE              : out   std_logic;
-        CS_N             : out   std_logic_vector(0 to 0);
+        CS_N             : out   std_logic_vector(2 downto 0);
         DQM              : out   std_logic_vector(1 downto 0);
         FAB_CCC_GL2      : out   std_logic;
         FAB_CCC_LOCK     : out   std_logic;
         INIT_DONE        : out   std_logic;
         MMUART_0_TXD     : out   std_logic;
         MSS_READY        : out   std_logic;
-        OE               : out   std_logic;
         POWER_ON_RESET_N : out   std_logic;
         RAS_N            : out   std_logic;
         SA               : out   std_logic_vector(13 downto 0);
@@ -141,7 +140,7 @@ signal CAN_TX_net_0              : std_logic;
 signal CAN_TX_EN_N_net_0         : std_logic;
 signal CAS_N_net_0               : std_logic;
 signal CKE_net_0                 : std_logic;
-signal CS_N_1                    : std_logic_vector(0 to 0);
+signal CS_N_2                    : std_logic_vector(2 downto 0);
 signal DQM_net_0                 : std_logic_vector(1 downto 0);
 signal MMUART_0_TXD_net_0        : std_logic;
 signal RAS_N_net_0               : std_logic;
@@ -161,8 +160,8 @@ signal CAN_TX_net_1              : std_logic;
 signal CAN_TX_EN_N_net_1         : std_logic;
 signal SA_net_1                  : std_logic_vector(13 downto 0);
 signal BA_net_1                  : std_logic_vector(1 downto 0);
-signal CS_N_1_net_0              : std_logic_vector(0 to 0);
 signal DQM_net_1                 : std_logic_vector(1 downto 0);
+signal CS_N_2_net_0              : std_logic_vector(2 downto 0);
 
 begin
 ----------------------------------------------------------------------
@@ -190,10 +189,10 @@ begin
  SA(13 downto 0)    <= SA_net_1;
  BA_net_1           <= BA_net_0;
  BA(1 downto 0)     <= BA_net_1;
- CS_N_1_net_0(0)    <= CS_N_1(0);
- CS_N(0)            <= CS_N_1_net_0(0);
  DQM_net_1          <= DQM_net_0;
  DQM(1 downto 0)    <= DQM_net_1;
+ CS_N_2_net_0       <= CS_N_2;
+ CS_N(2 downto 0)   <= CS_N_2_net_0;
 ----------------------------------------------------------------------
 -- Component instances
 ----------------------------------------------------------------------
@@ -215,7 +214,6 @@ top_sb_0 : top_sb
         FAB_CCC_LOCK     => OPEN,
         MSS_READY        => OPEN,
         SDRCLK           => SDRCLK_net_0,
-        OE               => OPEN,
         CKE              => CKE_net_0,
         RAS_N            => RAS_N_net_0,
         CAS_N            => CAS_N_net_0,
@@ -225,8 +223,8 @@ top_sb_0 : top_sb
         CAN_TX_EN_N      => CAN_TX_EN_N_net_0,
         SA               => SA_net_0,
         BA               => BA_net_0,
-        CS_N             => CS_N_1,
         DQM              => DQM_net_0,
+        CS_N             => CS_N_2,
         -- Inouts
         SPI_0_CLK        => SPI_0_CLK,
         SPI_0_SS0        => SPI_0_SS0,

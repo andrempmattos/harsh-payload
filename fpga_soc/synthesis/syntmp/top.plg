@@ -10,8 +10,8 @@
 @P:  System - Requested Period : 10.000
 @P:  System - Slack : 8.883
 @P: top Part : m2s025vf400std
-@P: top Register bits  : 2360 
+@P: top Register bits  : 2407 
 @P: top DSP Blocks  : 0
-@P: top I/O primitives : 72
+@P: top I/O primitives : 74
 @P: top RAM64x18 :  6
-@P:  CPU Time : 0h:00m:14s
+@P:  CPU Time : 0h:00m:16s

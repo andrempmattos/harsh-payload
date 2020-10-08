@@ -67,9 +67,15 @@ File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_
 File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
 File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
 VHDL syntax check successful!
-
-Compiler output is up to date.  No re-compile necessary
-
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\OSC_0\top_sb_OSC_0_OSC.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd changed - recompiling
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd":17:7:17:9|Synthesizing work.top.rtl.
 @N: CD630 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd":22:7:22:12|Synthesizing work.top_sb.rtl.
@@ -9760,7 +9766,7 @@ State machine has 7 reachable states with original encodings of:
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd":191:4:191:26|Input SOFT_SDIF0_1_CORE_RESET is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd":10:10:10:12|Input XTL is unused.
 @W: CL169 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":606:4:606:5|Pruning unused register psa(10). Make sure that there are no unused intermediate registers.
-@W: CL246 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":37:10:37:14|Input port bits 30 to 29 of raddr(30 downto 0) are unused. Assign logic for all port bits or change the input port size.
+@W: CL247 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":37:10:37:14|Input port bit 30 of raddr(30 downto 0) is unused 
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":56:10:56:16|Input cl_half is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd":58:10:58:11|Input ds is unused.
 @N: CL201 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":1277:6:1277:7|Trying to extract state machine for register axi_state.
@@ -9785,35 +9791,33 @@ State machine has 10 reachable states with original encodings of:
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":121:6:121:10|Input WLAST is unused.
 @N: CL159 :"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd":133:6:133:11|Input ARLOCK is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 119MB peak: 120MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 186MB peak: 197MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:07s realtime, 0h:00m:07s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:26 2020
+# Tue Oct 06 16:29:12 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
 @N|Running in 64-bit mode
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\layer0.srs changed - recompiling
 
-Linker output is up to date. No re-linking necessary
+At syn_nfilter Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 97MB peak: 98MB)
 
-
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 95MB peak: 96MB)
-
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:27 2020
+# Tue Oct 06 16:29:15 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+Process took 0h:00m:10s realtime, 0h:00m:09s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:33:27 2020
+# Tue Oct 06 16:29:15 2020
 
 ###########################################################]

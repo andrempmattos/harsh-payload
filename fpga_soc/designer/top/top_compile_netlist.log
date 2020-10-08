@@ -10,12 +10,12 @@ Info: Global design data:
 Info: List of globals that cannot be demoted: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
-    2379   0      1      'top_sb_0/CCC_0/GL2_INST' 
+    2426   0      1      'top_sb_0/CCC_0/GL2_INST' 
 
 Info: List of globals considered for demotion: 
     CLK    ASYN   DATA   Instance Name 
     ---    ----   ----   ------------- 
-    0      1457   1      'top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI5MMF' 
+    0      1501   1      'top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI5MMF' 
     0      872    0      'top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1_RNIGF7C' 
 
 Info: Demotion information: 

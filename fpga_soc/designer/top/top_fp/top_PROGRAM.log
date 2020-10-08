@@ -4,7 +4,7 @@ programmer '74764' : FlashPro4
 Opened 'C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp\top.pro'
 The 'open_project' command succeeded.
 IPD file 'C:/Users/Andre/Desktop/github/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
-DESIGN : top;  CHECKSUM : 8C1E;  PDB_VERSION : 1.9
+DESIGN : top;  CHECKSUM : 9AEA;  PDB_VERSION : 1.9
 The 'set_programming_file' command succeeded.
 Warning: Programming is already enabled for device 'M2S025'.
 The 'enable_device' command succeeded.
@@ -15,22 +15,22 @@ programmer '74764' : Scan and Check Chain PASSED.
 programmer '74764' : device 'M2S025' : Executing action PROGRAM
 programmer '74764' : device 'M2S025' : Family: SmartFusion2
 programmer '74764' : device 'M2S025' : Product:      M2S025
-programmer '74764' : device 'M2S025' : EXPORT ISC_ENABLE_RESULT[32] = 007a6944
+programmer '74764' : device 'M2S025' : EXPORT ISC_ENABLE_RESULT[32] = 007b6944
 programmer '74764' : device 'M2S025' : EXPORT CRCERR[1] = 0
 programmer '74764' : device 'M2S025' : EXPORT EDCERR[1] = 0
 programmer '74764' : device 'M2S025' : TEMPGRADE: ROOM
 programmer '74764' : device 'M2S025' : EXPORT VPPRANGE[3] = 2
 programmer '74764' : device 'M2S025' : VPPRANGE: HIGH
 programmer '74764' : device 'M2S025' : EXPORT TEMP[8] = 69
-programmer '74764' : device 'M2S025' : EXPORT VPP[8] = 7a
+programmer '74764' : device 'M2S025' : EXPORT VPP[8] = 7b
 programmer '74764' : device 'M2S025' : Programming FPGA Array...
 programmer '74764' : device 'M2S025' : ===================================================================================
 programmer '74764' : device 'M2S025' : EXPORT DSN[128] = 6bb4f5ce8c2f1d6af2705583065f3bea
 programmer '74764' : device 'M2S025' : ===================================================================================
-programmer '74764' : device 'M2S025' : Finished: Fri Sep 25 15:50:49 2020 (Elapsed time 00:00:37)
+programmer '74764' : device 'M2S025' : Finished: Tue Oct 06 16:39:39 2020 (Elapsed time 00:00:36)
 programmer '74764' : device 'M2S025' : Executing action PROGRAM PASSED.
 programmer '74764' : Chain programming PASSED.
-Chain Programming Finished: Fri Sep 25 15:50:49 2020 (Elapsed time 00:00:37)
+Chain Programming Finished: Tue Oct 06 16:39:39 2020 (Elapsed time 00:00:36)
 
                         o - o - o - o - o - o
 

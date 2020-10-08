@@ -9,19 +9,19 @@ Part:			M2S025VF400STD (Microsemi)
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      2360               100 %                
+SLE      2407               100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top:	2360 (47.75 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top:	2407 (47.51 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           2135               100 %                
-ARI1          269                100 %                
-BLACK BOX     379                100 %                
+CFG           2202               100 %                
+ARI1          277                100 %                
+BLACK BOX     350                100 %                
 ======================================================
-Total COMBINATIONAL LOGIC in the block top:	2783 (56.31 % Utilization)
+Total COMBINATIONAL LOGIC in the block top:	2829 (55.84 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -43,9 +43,9 @@ Total GLOBAL BUFFERS in the block top:	3 (0.06 % Utilization)
 IO PADS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-IO       72                 100 %                
+IO       74                 100 %                
 =================================================
-Total IO PADS in the block top:	72 (1.46 % Utilization)
+Total IO PADS in the block top:	74 (1.46 % Utilization)
 
 ------------------------------------------------------------
 ########   Utilization report for  cell:   top_sb   ########
@@ -55,19 +55,19 @@ Instance path:   top.top_sb
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      2360               100 %                
+SLE      2407               100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top.top_sb:	2360 (47.75 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top.top_sb:	2407 (47.51 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           2135               100 %                
-ARI1          269                100 %                
-BLACK BOX     379                100 %                
+CFG           2202               100 %                
+ARI1          277                100 %                
+BLACK BOX     350                100 %                
 ======================================================
-Total COMBINATIONAL LOGIC in the block top.top_sb:	2783 (56.31 % Utilization)
+Total COMBINATIONAL LOGIC in the block top.top_sb:	2829 (55.84 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -89,9 +89,9 @@ Total GLOBAL BUFFERS in the block top.top_sb:	3 (0.06 % Utilization)
 IO PADS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-IO       32                 44.4 %               
+IO       32                 43.2 %               
 =================================================
-Total IO PADS in the block top.top_sb:	32 (0.65 % Utilization)
+Total IO PADS in the block top.top_sb:	32 (0.63 % Utilization)
 
 -----------------------------------------------------------------
 ########   Utilization report for  cell:   CORESDR_AXI   ########
@@ -101,19 +101,19 @@ Instance path:   top_sb.CORESDR_AXI
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      606                25.7 %               
+SLE      633                26.3 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb.CORESDR_AXI:	606 (12.26 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb.CORESDR_AXI:	633 (12.50 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           947                44.4 %               
-ARI1          67                 24.9 %               
-BLACK BOX     28                 7.39 %               
+CFG           1006               45.7 %               
+ARI1          75                 27.1 %               
+BLACK BOX     19                 5.43 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.CORESDR_AXI:	1042 (21.08 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.CORESDR_AXI:	1100 (21.71 % Utilization)
 
 -------------------------------------------------------------
 ########   Utilization report for  cell:   CORESDR   ########
@@ -123,19 +123,19 @@ Instance path:   CORESDR_AXI.CORESDR
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      368                15.6 %               
+SLE      388                16.1 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block CORESDR_AXI.CORESDR:	368 (7.45 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block CORESDR_AXI.CORESDR:	388 (7.66 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           435                20.4 %               
-ARI1          44                 16.4 %               
-BLACK BOX     15                 3.96 %               
+CFG           486                22.1 %               
+ARI1          48                 17.3 %               
+BLACK BOX     11                 3.14 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block CORESDR_AXI.CORESDR:	494 (10.00 % Utilization)
+Total COMBINATIONAL LOGIC in the block CORESDR_AXI.CORESDR:	545 (10.76 % Utilization)
 
 --------------------------------------------------------------
 ########   Utilization report for  cell:   fastinit   ########
@@ -145,19 +145,19 @@ Instance path:   CORESDR.fastinit
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      343                14.5 %               
+SLE      360                15 %                 
 =================================================
-Total SEQUENTIAL ELEMENTS in the block CORESDR.fastinit:	343 (6.94 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block CORESDR.fastinit:	360 (7.11 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           433                20.3 %               
-ARI1          44                 16.4 %               
-BLACK BOX     13                 3.43 %               
+CFG           484                22 %                 
+ARI1          48                 17.3 %               
+BLACK BOX     9                  2.57 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block CORESDR.fastinit:	490 (9.92 % Utilization)
+Total COMBINATIONAL LOGIC in the block CORESDR.fastinit:	541 (10.68 % Utilization)
 
 ---------------------------------------------------------------
 ########   Utilization report for  cell:   fastsdram   ########
@@ -167,19 +167,19 @@ Instance path:   fastinit.fastsdram
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      298                12.6 %               
+SLE      315                13.1 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block fastinit.fastsdram:	298 (6.03 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block fastinit.fastsdram:	315 (6.22 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           404                18.9 %               
-ARI1          28                 10.4 %               
-BLACK BOX     13                 3.43 %               
+CFG           455                20.7 %               
+ARI1          32                 11.6 %               
+BLACK BOX     9                  2.57 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block fastinit.fastsdram:	445 (9.00 % Utilization)
+Total COMBINATIONAL LOGIC in the block fastinit.fastsdram:	496 (9.79 % Utilization)
 
 --------------------------------------------------------------
 ########   Utilization report for  cell:   openbank   ########
@@ -189,18 +189,18 @@ Instance path:   fastsdram.openbank
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      50                 2.12 %               
+SLE      52                 2.16 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank:	50 (1.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank:	52 (1.03 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           148                6.93 %               
-BLACK BOX     1                  0.2640 %             
+CFG           60                 2.72 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block fastsdram.openbank:	149 (3.01 % Utilization)
+Total COMBINATIONAL LOGIC in the block fastsdram.openbank:	61 (1.20 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   openbank_0   ########
@@ -210,18 +210,18 @@ Instance path:   fastsdram.openbank_0
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      50                 2.12 %               
+SLE      52                 2.16 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_0:	50 (1.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_0:	52 (1.03 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           61                 2.86 %               
-BLACK BOX     1                  0.2640 %             
+CFG           74                 3.36 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block fastsdram.openbank_0:	62 (1.25 % Utilization)
+Total COMBINATIONAL LOGIC in the block fastsdram.openbank_0:	75 (1.48 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   openbank_1   ########
@@ -231,18 +231,18 @@ Instance path:   fastsdram.openbank_1
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      50                 2.12 %               
+SLE      53                 2.2 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_1:	50 (1.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_1:	53 (1.05 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           56                 2.62 %               
-BLACK BOX     1                  0.2640 %             
+CFG           63                 2.86 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block fastsdram.openbank_1:	57 (1.15 % Utilization)
+Total COMBINATIONAL LOGIC in the block fastsdram.openbank_1:	64 (1.26 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   openbank_2   ########
@@ -252,18 +252,18 @@ Instance path:   fastsdram.openbank_2
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      50                 2.12 %               
+SLE      52                 2.16 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_2:	50 (1.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block fastsdram.openbank_2:	52 (1.03 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           56                 2.62 %               
-BLACK BOX     1                  0.2640 %             
+CFG           69                 3.13 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block fastsdram.openbank_2:	57 (1.15 % Utilization)
+Total COMBINATIONAL LOGIC in the block fastsdram.openbank_2:	70 (1.38 % Utilization)
 
 -----------------------------------------------------------------
 ########   Utilization report for  cell:   CoreAHBLite   ########
@@ -273,18 +273,18 @@ Instance path:   top_sb.CoreAHBLite
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      72                 3.05 %               
+SLE      72                 2.99 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb.CoreAHBLite:	72 (1.46 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb.CoreAHBLite:	72 (1.42 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           158                7.4 %                
-BLACK BOX     1                  0.2640 %             
+CFG           158                7.18 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.CoreAHBLite:	159 (3.22 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.CoreAHBLite:	159 (3.14 % Utilization)
 
 ----------------------------------------------------------------------------
 ########   Utilization report for  cell:   COREAHBLITE_MATRIX4X16   ########
@@ -294,18 +294,18 @@ Instance path:   CoreAHBLite.COREAHBLITE_MATRIX4X16
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      72                 3.05 %               
+SLE      72                 2.99 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block CoreAHBLite.COREAHBLITE_MATRIX4X16:	72 (1.46 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block CoreAHBLite.COREAHBLITE_MATRIX4X16:	72 (1.42 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           158                7.4 %                
-BLACK BOX     1                  0.2640 %             
+CFG           158                7.18 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block CoreAHBLite.COREAHBLITE_MATRIX4X16:	159 (3.22 % Utilization)
+Total COMBINATIONAL LOGIC in the block CoreAHBLite.COREAHBLITE_MATRIX4X16:	159 (3.14 % Utilization)
 
 ------------------------------------------------------------------------------------------
 ########   Utilization report for  cell:   COREAHBLITE_MASTERSTAGE_1_1_0_1024_0   ########
@@ -315,17 +315,17 @@ Instance path:   COREAHBLITE_MATRIX4X16.COREAHBLITE_MASTERSTAGE_1_1_0_1024_0
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      55                 2.33 %               
+SLE      55                 2.29 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_MASTERSTAGE_1_1_0_1024_0:	55 (1.11 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_MASTERSTAGE_1_1_0_1024_0:	55 (1.09 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      61                 2.86 %               
+CFG      61                 2.77 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_MASTERSTAGE_1_1_0_1024_0:	61 (1.23 % Utilization)
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_MASTERSTAGE_1_1_0_1024_0:	61 (1.20 % Utilization)
 
 ----------------------------------------------------------------------------------
 ########   Utilization report for  cell:   COREAHBLITE_DEFAULTSLAVESM_0   ########
@@ -335,7 +335,7 @@ Instance path:   COREAHBLITE_MASTERSTAGE_1_1_0_1024_0.COREAHBLITE_DEFAULTSLAVESM
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      1                  0.04240 %            
+SLE      1                  0.04150 %            
 =================================================
 Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MASTERSTAGE_1_1_0_1024_0.COREAHBLITE_DEFAULTSLAVESM_0:	1 (0.02 % Utilization)
 
@@ -343,7 +343,7 @@ Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MASTERSTAGE_1_1_0_1024_0.CORE
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      6                  0.2810 %             
+CFG      6                  0.2720 %             
 =================================================
 Total COMBINATIONAL LOGIC in the block COREAHBLITE_MASTERSTAGE_1_1_0_1024_0.COREAHBLITE_DEFAULTSLAVESM_0:	6 (0.12 % Utilization)
 
@@ -355,7 +355,7 @@ Instance path:   COREAHBLITE_MATRIX4X16.COREAHBLITE_SLAVESTAGE_0
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      17                 0.720 %              
+SLE      17                 0.7060 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_SLAVESTAGE_0:	17 (0.34 % Utilization)
 
@@ -363,10 +363,10 @@ Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_SLAVES
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           97                 4.54 %               
-BLACK BOX     1                  0.2640 %             
+CFG           97                 4.41 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_SLAVESTAGE_0:	98 (1.98 % Utilization)
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16.COREAHBLITE_SLAVESTAGE_0:	98 (1.93 % Utilization)
 
 --------------------------------------------------------------------------------
 ########   Utilization report for  cell:   COREAHBLITE_SLAVEARBITER_1   ########
@@ -376,7 +376,7 @@ Instance path:   COREAHBLITE_SLAVESTAGE_0.COREAHBLITE_SLAVEARBITER_1
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      13                 0.5510 %             
+SLE      13                 0.540 %              
 =================================================
 Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_SLAVESTAGE_0.COREAHBLITE_SLAVEARBITER_1:	13 (0.26 % Utilization)
 
@@ -384,10 +384,10 @@ Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_SLAVESTAGE_0.COREAHBLITE_SLAV
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           28                 1.31 %               
-BLACK BOX     1                  0.2640 %             
+CFG           28                 1.27 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block COREAHBLITE_SLAVESTAGE_0.COREAHBLITE_SLAVEARBITER_1:	29 (0.59 % Utilization)
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_SLAVESTAGE_0.COREAHBLITE_SLAVEARBITER_1:	29 (0.57 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   CoreResetP   ########
@@ -397,7 +397,7 @@ Instance path:   top_sb.CoreResetP
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      10                 0.4240 %             
+SLE      10                 0.4150 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block top_sb.CoreResetP:	10 (0.20 % Utilization)
 
@@ -405,10 +405,10 @@ Total SEQUENTIAL ELEMENTS in the block top_sb.CoreResetP:	10 (0.20 % Utilization
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           2                  0.09370 %            
-BLACK BOX     89                 23.5 %               
+CFG           2                  0.09080 %            
+BLACK BOX     89                 25.4 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.CoreResetP:	91 (1.84 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.CoreResetP:	91 (1.80 % Utilization)
 
 
 GLOBAL BUFFERS
@@ -426,7 +426,7 @@ Instance path:   top_sb.top_sb_CCC_0_FCCC
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     2                  0.5280 %             
+BLACK BOX     2                  0.5710 %             
 ======================================================
 Total COMBINATIONAL LOGIC in the block top_sb.top_sb_CCC_0_FCCC:	2 (0.04 % Utilization)
 
@@ -446,19 +446,19 @@ Instance path:   top_sb.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      874                37 %                 
+SLE      874                36.3 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI:	874 (17.69 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI:	874 (17.25 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           630                29.5 %               
-ARI1          202                75.1 %               
-BLACK BOX     108                28.5 %               
+CFG           630                28.6 %               
+ARI1          202                72.9 %               
+BLACK BOX     108                30.9 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI:	940 (19.02 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI:	940 (18.56 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -484,18 +484,18 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AHBAccessCon
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      111                4.7 %                
+SLE      111                4.61 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AHBAccessControlHX:	111 (2.25 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AHBAccessControlHX:	111 (2.19 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           25                 1.17 %               
-BLACK BOX     61                 16.1 %               
+CFG           25                 1.14 %               
+BLACK BOX     61                 17.4 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AHBAccessControlHX:	86 (1.74 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AHBAccessControlHX:	86 (1.70 % Utilization)
 
 --------------------------------------------------------------------------------------
 ########   Utilization report for  cell:   CoreAHBLtoAXI_AXIAccessControlHX   ########
@@ -505,18 +505,18 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AXIAccessCon
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      149                6.31 %               
+SLE      149                6.19 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AXIAccessControlHX:	149 (3.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AXIAccessControlHX:	149 (2.94 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           232                10.9 %               
-BLACK BOX     47                 12.4 %               
+CFG           232                10.5 %               
+BLACK BOX     47                 13.4 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AXIAccessControlHX:	279 (5.65 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_AXIAccessControlHX:	279 (5.51 % Utilization)
 
 -----------------------------------------------------------------------------------
 ########   Utilization report for  cell:   CoreAHBLtoAXI_RDCHANNELFIFOHX   ########
@@ -526,18 +526,18 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_RDCHANNELFIF
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      266                11.3 %               
+SLE      266                11.1 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_RDCHANNELFIFOHX:	266 (5.38 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_RDCHANNELFIFOHX:	266 (5.25 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      151                7.07 %               
-ARI1     101                37.5 %               
+CFG      151                6.86 %               
+ARI1     101                36.5 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_RDCHANNELFIFOHX:	252 (5.10 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_RDCHANNELFIFOHX:	252 (4.97 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -555,7 +555,7 @@ Instance path:   CoreAHBLtoAXI_RDCHANNELFIFOHX.CoreAHBLtoAXI_rdch_ramHX
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      2                  0.09370 %            
+CFG      2                  0.09080 %            
 =================================================
 Total COMBINATIONAL LOGIC in the block CoreAHBLtoAXI_RDCHANNELFIFOHX.CoreAHBLtoAXI_rdch_ramHX:	2 (0.04 % Utilization)
 
@@ -575,18 +575,18 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_WRCHANNELFIF
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      332                14.1 %               
+SLE      332                13.8 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_WRCHANNELFIFOHX:	332 (6.72 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_WRCHANNELFIFOHX:	332 (6.55 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      219                10.3 %               
-ARI1     101                37.5 %               
+CFG      219                9.95 %               
+ARI1     101                36.5 %               
 =================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_WRCHANNELFIFOHX:	320 (6.48 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_WRCHANNELFIFOHX:	320 (6.32 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -604,7 +604,7 @@ Instance path:   CoreAHBLtoAXI_WRCHANNELFIFOHX.CoreAHBLtoAXI_wrch_ramHX
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      4                  0.1870 %             
+CFG      4                  0.1820 %             
 =================================================
 Total COMBINATIONAL LOGIC in the block CoreAHBLtoAXI_WRCHANNELFIFOHX.CoreAHBLtoAXI_wrch_ramHX:	4 (0.08 % Utilization)
 
@@ -624,7 +624,7 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_reset_syncHX
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      2                  0.08470 %            
+SLE      2                  0.08310 %            
 =================================================
 Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.CoreAHBLtoAXI_reset_syncHX_0:	2 (0.04 % Utilization)
 
@@ -644,7 +644,7 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Synchronizer_AHBtoAXIHX
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      6                  0.2540 %             
+SLE      6                  0.2490 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Synchronizer_AHBtoAXIHX:	6 (0.12 % Utilization)
 
@@ -656,7 +656,7 @@ Instance path:   top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Synchronizer_AXItoAHBHX
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      8                  0.3390 %             
+SLE      8                  0.3320 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Synchronizer_AXItoAHBHX:	8 (0.16 % Utilization)
 
@@ -664,7 +664,7 @@ Total SEQUENTIAL ELEMENTS in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Sync
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      3                  0.1410 %             
+CFG      3                  0.1360 %             
 =================================================
 Total COMBINATIONAL LOGIC in the block top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI.Synchronizer_AXItoAHBHX:	3 (0.06 % Utilization)
 
@@ -676,18 +676,18 @@ Instance path:   top_sb.top_sb_COREAXI_0_COREAXI
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      798                33.8 %               
+SLE      818                34 %                 
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb.top_sb_COREAXI_0_COREAXI:	798 (16.15 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb.top_sb_COREAXI_0_COREAXI:	818 (16.15 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           366                17.1 %               
-BLACK BOX     148                39.1 %               
+CFG           374                17 %                 
+BLACK BOX     128                36.6 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.top_sb_COREAXI_0_COREAXI:	514 (10.40 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.top_sb_COREAXI_0_COREAXI:	502 (9.91 % Utilization)
 
 ---------------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_interconnect_ntom   ########
@@ -697,18 +697,18 @@ Instance path:   top_sb_COREAXI_0_COREAXI.axi_interconnect_ntom
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      303                12.8 %               
+SLE      311                12.9 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_interconnect_ntom:	303 (6.13 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_interconnect_ntom:	311 (6.14 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           126                5.9 %                
-BLACK BOX     87                 23 %                 
+CFG           126                5.72 %               
+BLACK BOX     79                 22.6 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_interconnect_ntom:	213 (4.31 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_interconnect_ntom:	205 (4.05 % Utilization)
 
 ------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_matrix_m   ########
@@ -718,16 +718,16 @@ Instance path:   axi_interconnect_ntom.axi_matrix_m
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      70                 2.97 %               
+SLE      70                 2.91 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_interconnect_ntom.axi_matrix_m:	70 (1.42 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_interconnect_ntom.axi_matrix_m:	70 (1.38 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           9                  0.4220 %             
-BLACK BOX     9                  2.37 %               
+CFG           9                  0.4090 %             
+BLACK BOX     9                  2.57 %               
 ======================================================
 Total COMBINATIONAL LOGIC in the block axi_interconnect_ntom.axi_matrix_m:	18 (0.36 % Utilization)
 
@@ -739,16 +739,16 @@ Instance path:   axi_matrix_m.axi_rd_channel
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      69                 2.92 %               
+SLE      69                 2.87 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_matrix_m.axi_rd_channel:	69 (1.40 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_matrix_m.axi_rd_channel:	69 (1.36 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           9                  0.4220 %             
-BLACK BOX     3                  0.7920 %             
+CFG           9                  0.4090 %             
+BLACK BOX     3                  0.8570 %             
 ======================================================
 Total COMBINATIONAL LOGIC in the block axi_matrix_m.axi_rd_channel:	12 (0.24 % Utilization)
 
@@ -760,16 +760,16 @@ Instance path:   axi_rd_channel.axi_rdmatrix_16Sto1M
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      69                 2.92 %               
+SLE      69                 2.87 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_rd_channel.axi_rdmatrix_16Sto1M:	69 (1.40 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_rd_channel.axi_rdmatrix_16Sto1M:	69 (1.36 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           9                  0.4220 %             
-BLACK BOX     3                  0.7920 %             
+CFG           9                  0.4090 %             
+BLACK BOX     3                  0.8570 %             
 ======================================================
 Total COMBINATIONAL LOGIC in the block axi_rd_channel.axi_rdmatrix_16Sto1M:	12 (0.24 % Utilization)
 
@@ -781,7 +781,7 @@ Instance path:   axi_matrix_m.axi_wresp_channel
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      1                  0.04240 %            
+SLE      1                  0.04150 %            
 =================================================
 Total SEQUENTIAL ELEMENTS in the block axi_matrix_m.axi_wresp_channel:	1 (0.02 % Utilization)
 
@@ -789,7 +789,7 @@ Total SEQUENTIAL ELEMENTS in the block axi_matrix_m.axi_wresp_channel:	1 (0.02 %
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     6                  1.58 %               
+BLACK BOX     6                  1.71 %               
 ======================================================
 Total COMBINATIONAL LOGIC in the block axi_matrix_m.axi_wresp_channel:	6 (0.12 % Utilization)
 
@@ -801,18 +801,18 @@ Instance path:   axi_interconnect_ntom.axi_matrix_s
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      226                9.58 %               
+SLE      234                9.72 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_interconnect_ntom.axi_matrix_s:	226 (4.57 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_interconnect_ntom.axi_matrix_s:	234 (4.62 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           114                5.34 %               
-BLACK BOX     76                 20.1 %               
+CFG           114                5.18 %               
+BLACK BOX     68                 19.4 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_interconnect_ntom.axi_matrix_s:	190 (3.84 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_interconnect_ntom.axi_matrix_s:	182 (3.59 % Utilization)
 
 --------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_ra_channel   ########
@@ -822,18 +822,18 @@ Instance path:   axi_matrix_s.axi_ra_channel
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      76                 3.22 %               
+SLE      80                 3.32 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_ra_channel:	76 (1.54 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_ra_channel:	80 (1.58 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           22                 1.03 %               
-BLACK BOX     42                 11.1 %               
+CFG           22                 0.9990 %             
+BLACK BOX     38                 10.9 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_ra_channel:	64 (1.30 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_ra_channel:	60 (1.18 % Utilization)
 
 -------------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_rdmatrix_4Mto1S   ########
@@ -843,18 +843,18 @@ Instance path:   axi_ra_channel.axi_rdmatrix_4Mto1S
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      76                 3.22 %               
+SLE      80                 3.32 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_ra_channel.axi_rdmatrix_4Mto1S:	76 (1.54 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_ra_channel.axi_rdmatrix_4Mto1S:	80 (1.58 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           22                 1.03 %               
-BLACK BOX     42                 11.1 %               
+CFG           22                 0.9990 %             
+BLACK BOX     38                 10.9 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_ra_channel.axi_rdmatrix_4Mto1S:	64 (1.30 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_ra_channel.axi_rdmatrix_4Mto1S:	60 (1.18 % Utilization)
 
 --------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_RA_ARBITER   ########
@@ -864,7 +864,7 @@ Instance path:   axi_rdmatrix_4Mto1S.axi_RA_ARBITER
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      16                 0.6780 %             
+SLE      16                 0.6650 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block axi_rdmatrix_4Mto1S.axi_RA_ARBITER:	16 (0.32 % Utilization)
 
@@ -872,10 +872,10 @@ Total SEQUENTIAL ELEMENTS in the block axi_rdmatrix_4Mto1S.axi_RA_ARBITER:	16 (0
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           16                 0.7490 %             
-BLACK BOX     4                  1.06 %               
+CFG           16                 0.7270 %             
+BLACK BOX     4                  1.14 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_rdmatrix_4Mto1S.axi_RA_ARBITER:	20 (0.40 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_rdmatrix_4Mto1S.axi_RA_ARBITER:	20 (0.39 % Utilization)
 
 --------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_wa_channel   ########
@@ -885,18 +885,18 @@ Instance path:   axi_matrix_s.axi_wa_channel
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      75                 3.18 %               
+SLE      79                 3.28 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_wa_channel:	75 (1.52 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_wa_channel:	79 (1.56 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           18                 0.8430 %             
-BLACK BOX     30                 7.92 %               
+CFG           18                 0.8170 %             
+BLACK BOX     26                 7.43 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_wa_channel:	48 (0.97 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_wa_channel:	44 (0.87 % Utilization)
 
 -------------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_wrmatrix_4Mto1S   ########
@@ -906,18 +906,18 @@ Instance path:   axi_wa_channel.axi_wrmatrix_4Mto1S
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      75                 3.18 %               
+SLE      79                 3.28 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_wa_channel.axi_wrmatrix_4Mto1S:	75 (1.52 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_wa_channel.axi_wrmatrix_4Mto1S:	79 (1.56 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           18                 0.8430 %             
-BLACK BOX     30                 7.92 %               
+CFG           18                 0.8170 %             
+BLACK BOX     26                 7.43 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_wa_channel.axi_wrmatrix_4Mto1S:	48 (0.97 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_wa_channel.axi_wrmatrix_4Mto1S:	44 (0.87 % Utilization)
 
 --------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_WA_ARBITER   ########
@@ -927,7 +927,7 @@ Instance path:   axi_wrmatrix_4Mto1S.axi_WA_ARBITER
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      16                 0.6780 %             
+SLE      16                 0.6650 %             
 =================================================
 Total SEQUENTIAL ELEMENTS in the block axi_wrmatrix_4Mto1S.axi_WA_ARBITER:	16 (0.32 % Utilization)
 
@@ -935,8 +935,8 @@ Total SEQUENTIAL ELEMENTS in the block axi_wrmatrix_4Mto1S.axi_WA_ARBITER:	16 (0
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           13                 0.6090 %             
-BLACK BOX     3                  0.7920 %             
+CFG           13                 0.590 %              
+BLACK BOX     3                  0.8570 %             
 ======================================================
 Total COMBINATIONAL LOGIC in the block axi_wrmatrix_4Mto1S.axi_WA_ARBITER:	16 (0.32 % Utilization)
 
@@ -948,18 +948,18 @@ Instance path:   axi_matrix_s.axi_wd_channel
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      75                 3.18 %               
+SLE      75                 3.12 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_wd_channel:	75 (1.52 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block axi_matrix_s.axi_wd_channel:	75 (1.48 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           74                 3.47 %               
-BLACK BOX     4                  1.06 %               
+CFG           74                 3.36 %               
+BLACK BOX     4                  1.14 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_wd_channel:	78 (1.58 % Utilization)
+Total COMBINATIONAL LOGIC in the block axi_matrix_s.axi_wd_channel:	78 (1.54 % Utilization)
 
 ----------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_master_stage   ########
@@ -969,18 +969,18 @@ Instance path:   top_sb_COREAXI_0_COREAXI.axi_master_stage
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      364                15.4 %               
+SLE      368                15.3 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_master_stage:	364 (7.37 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_master_stage:	368 (7.26 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           183                8.57 %               
-BLACK BOX     33                 8.71 %               
+CFG           183                8.31 %               
+BLACK BOX     29                 8.29 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_master_stage:	216 (4.37 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_master_stage:	212 (4.18 % Utilization)
 
 ---------------------------------------------------------------------
 ########   Utilization report for  cell:   axi_slave_stage   ########
@@ -990,18 +990,18 @@ Instance path:   top_sb_COREAXI_0_COREAXI.axi_slave_stage
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      131                5.55 %               
+SLE      139                5.77 %               
 =================================================
-Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_slave_stage:	131 (2.65 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block top_sb_COREAXI_0_COREAXI.axi_slave_stage:	139 (2.74 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           57                 2.67 %               
-BLACK BOX     28                 7.39 %               
+CFG           65                 2.95 %               
+BLACK BOX     20                 5.71 %               
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_slave_stage:	85 (1.72 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb_COREAXI_0_COREAXI.axi_slave_stage:	85 (1.68 % Utilization)
 
 ----------------------------------------------------------------
 ########   Utilization report for  cell:   top_sb_MSS   ########
@@ -1011,18 +1011,18 @@ Instance path:   top_sb.top_sb_MSS
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           32                 1.5 %                
-BLACK BOX     1                  0.2640 %             
+CFG           32                 1.45 %               
+BLACK BOX     1                  0.2860 %             
 ======================================================
-Total COMBINATIONAL LOGIC in the block top_sb.top_sb_MSS:	33 (0.67 % Utilization)
+Total COMBINATIONAL LOGIC in the block top_sb.top_sb_MSS:	33 (0.65 % Utilization)
 
 
 IO PADS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-IO       32                 44.4 %               
+IO       32                 43.2 %               
 =================================================
-Total IO PADS in the block top_sb.top_sb_MSS:	32 (0.65 % Utilization)
+Total IO PADS in the block top_sb.top_sb_MSS:	32 (0.63 % Utilization)
 
 ----------------------------------------------------------------------
 ########   Utilization report for  cell:   top_sb_OSC_0_OSC   ########
@@ -1032,7 +1032,7 @@ Instance path:   top_sb.top_sb_OSC_0_OSC
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-BLACK BOX     1                  0.2640 %             
+BLACK BOX     1                  0.2860 %             
 ======================================================
 Total COMBINATIONAL LOGIC in the block top_sb.top_sb_OSC_0_OSC:	1 (0.02 % Utilization)
 

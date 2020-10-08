@@ -1,6 +1,6 @@
 Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
 
-Date      :  Fri Sep 25 15:27:08 2020
+Date      :  Tue Oct 06 15:52:15 2020
 Project   :  C:\Users\Andre\Desktop\github\HARSH\fpga_soc
 Component :  top
 Family    :  SmartFusion2

@@ -3,10 +3,10 @@
 <drcreport>
   <header>top_sb</header>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\error.png</status>
-    <StatusMessage>Error</StatusMessage>
-    <message>Out-of-date Instance</message>
-    <detail>Component definition is not consistent for instance top_sb_MSS_0</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/top_sb/instances/top_sb_MSS_0</crossprobe>
+    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Floating Driver</message>
+    <detail>Floating output pin MSS_SMC_0:OE</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/top_sb/pins/MSS_SMC_0:OE</crossprobe>
   </drc>
 </drcreport>

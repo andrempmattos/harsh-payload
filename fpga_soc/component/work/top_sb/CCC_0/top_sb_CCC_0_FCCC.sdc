@@ -1,6 +1,6 @@
 set_component top_sb_CCC_0_FCCC
 # Microsemi Corp.
-# Date: 2020-Sep-25 15:25:31
+# Date: 2020-Oct-06 15:51:16
 #
 
 create_clock -period 83.3333 [ get_pins { CCC_INST/XTLOSC } ]

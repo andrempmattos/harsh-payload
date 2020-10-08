@@ -30,11 +30,4 @@
     <detail>Floating output pin top_sb_0:MSS_READY</detail>
     <crossprobe>liberoaction://cross_probe/smartdesign/top/pins/top_sb_0:MSS_READY</crossprobe>
   </drc>
-  <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
-    <StatusMessage>Warning</StatusMessage>
-    <message>Floating Driver</message>
-    <detail>Floating output pin top_sb_0:OE</detail>
-    <crossprobe>liberoaction://cross_probe/smartdesign/top/pins/top_sb_0:OE</crossprobe>
-  </drc>
 </drcreport>

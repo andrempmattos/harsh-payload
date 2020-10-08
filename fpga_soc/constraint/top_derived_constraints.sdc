@@ -1,5 +1,5 @@
 # Microsemi Corp.
-# Date: 2020-Sep-25 15:32:51
+# Date: 2020-Oct-06 15:04:52
 # This file was generated based on the following SDC source files:
 #   C:/Users/Andre/Desktop/github/HARSH/fpga_soc/component/work/top_sb/CCC_0/top_sb_CCC_0_FCCC.sdc
 #   C:/Microsemi/Libero_SoC_v11.8/Designer/data/aPA4M/cores/constraints/coreresetp.sdc

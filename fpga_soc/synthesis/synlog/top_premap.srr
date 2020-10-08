@@ -1,4 +1,4 @@
-# Fri Sep 25 15:33:28 2020
+# Tue Oct 06 16:29:20 2020
 
 Synopsys Generic Technology Pre-mapping, Version map201609actrcp1, Build 005R, Built Jan 25 2017 01:01:33
 Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -12,16 +12,16 @@ Printing clock  summary report in "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
+Design Input Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 152MB peak: 178MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 153MB peak: 178MB)
 
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5322:4:5322:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_16 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd":5268:4:5268:16|Removing user instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_15 because it is equivalent to instance top_sb_0.CoreAHBLite_0.matrix4x16.slavestage_14. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -143,14 +143,14 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":861:8:861:9|Removing sequential instance sdif0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreresetp\7.1.100\rtl\vhdl\core\coreresetp.vhd":850:8:850:9|Removing sequential instance sm0_areset_n_rcosc_q1 (in view: work.CoreResetP(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_rdmatrix_16sto1m.vhd":508:6:508:7|Removing sequential instance RRESP_IM_xhdl2[1:0] (in view: work.axi_rdmatrix_16Sto1M(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN115 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3346:0:3346:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
+@N: BN115 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\top_sb.vhd":3342:0:3342:7|Removing instance FABOSC_0 (in view: work.top_sb(rtl)) of type view:work.top_sb_FABOSC_0_OSC(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd":406:6:406:7|Removing sequential instance BID_IM_xhdl1[1:0] (in view: work.axi_wresp_channel(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":2182:6:2182:7|Removing sequential instance WLAST_MI_xhdl24 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @W: BN114 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\work\top_sb\fabosc_0\top_sb_fabosc_0_osc.vhd":52:4:52:19|Removing instance I_RCOSC_25_50MHZ (in view: work.top_sb_FABOSC_0_OSC(def_arch)) of black box view:work.RCOSC_25_50MHZ(def_arch) because it does not drive other instances.
 @N: BN362 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreaxi\3.1.100\rtl\vhdl\core\axi_master_stage.vhd":1234:6:1234:7|Removing sequential instance WLAST_M_INPFF1 (in view: work.axi_master_stage(translated)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 syn_allowed_resources : blockrams=31  set on top level netlist top
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 182MB peak: 183MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 182MB peak: 183MB)
 
 
 
@@ -161,15 +161,15 @@ Start                                        Requested     Requested     Clock  
 Clock                                        Frequency     Period        Type         Group                   Load 
 -------------------------------------------------------------------------------------------------------------------
 System                                       100.0 MHz     10.000        system       system_clkgroup         0    
-top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2837 
+top_sb_CCC_0_FCCC|GL2_net_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     2849 
 ===================================================================================================================
 
-@W: MT530 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd":70:8:70:9|Found inferred clock top_sb_CCC_0_FCCC|GL2_net_inferred_clock which controls 2837 sequential elements including top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.default_slave_sm.defSlaveSMCurrentState. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"c:\users\andre\desktop\github\harsh\fpga_soc\component\actel\directcore\coreahblite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd":70:8:70:9|Found inferred clock top_sb_CCC_0_FCCC|GL2_net_inferred_clock which controls 2849 sequential elements including top_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.default_slave_sm.defSlaveSMCurrentState. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 183MB)
+Starting constraint checker (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 183MB)
 
 Encoding state machine arbRegSMCurrentState[0:15] (in view: coreahblite_lib.COREAHBLITE_SLAVEARBITER_1(coreahblite_slavearbiter_arch))
 original code -> new code
@@ -301,13 +301,13 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 185MB peak: 188MB)
+Finished constraint checker (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 186MB peak: 188MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 188MB)
+At Mapper Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:03s; Memory used current: 85MB peak: 188MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:03s cputime
-# Fri Sep 25 15:33:32 2020
+Process took 0h:00m:06s realtime, 0h:00m:03s cputime
+# Tue Oct 06 16:29:26 2020
 
 ###########################################################]

@@ -1,11 +1,12 @@
 Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
 @N|Running in 64-bit mode
+File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_comp.srs changed - recompiling
 
 At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 118MB peak: 120MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Fri Sep 25 15:27:40 2020
+# Tue Oct 06 16:29:18 2020
 
 ###########################################################]

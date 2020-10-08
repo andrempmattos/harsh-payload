@@ -315,16 +315,16 @@ use smartfusion2.all;
 entity axi_slave_stage is
 
     port( AWSIZE_IS16_gated               : in    std_logic_vector(1 downto 0);
-          ARADDR_IS16_gated               : in    std_logic_vector(23 downto 1);
-          AWADDR_IS16_gated               : in    std_logic_vector(23 downto 1);
+          ARADDR_IS16_gated               : in    std_logic_vector(27 downto 1);
+          AWADDR_IS16_gated               : in    std_logic_vector(27 downto 1);
           ARSIZE_IS16_gated               : in    std_logic_vector(1 downto 0);
           COREAXI_0_AXImslave16_ARSIZE    : out   std_logic_vector(1 downto 0);
           WDATA_IS16_gated                : in    std_logic_vector(63 downto 0);
           COREAXI_0_AXImslave16_WDATA     : out   std_logic_vector(63 downto 0);
           WSTRB_IS16_gated                : in    std_logic_vector(7 downto 0);
           COREAXI_0_AXImslave16_WSTRB     : out   std_logic_vector(7 downto 0);
-          COREAXI_0_AXImslave16_AWADDR    : out   std_logic_vector(23 downto 1);
-          COREAXI_0_AXImslave16_ARADDR    : out   std_logic_vector(23 downto 1);
+          COREAXI_0_AXImslave16_AWADDR    : out   std_logic_vector(27 downto 1);
+          COREAXI_0_AXImslave16_ARADDR    : out   std_logic_vector(27 downto 1);
           COREAXI_0_AXImslave16_AWSIZE    : out   std_logic_vector(1 downto 0);
           ARBURST_IS16_gated_0            : in    std_logic;
           COREAXI_0_AXImslave16_ARBURST_0 : out   std_logic;
@@ -404,15 +404,17 @@ architecture DEF_ARCH of axi_slave_stage is
         GND_net_1, N_2743_i, N_2731_i, 
         \ARVALID_S_xhdl35_1_sqmuxa_i\, N_2720_i, N_2709_i, 
         N_2698_i, N_2687_i, N_2676_i, N_2665_i, N_2654_i, 
-        N_2643_i, N_2632_i, N_2621_i, N_2530_i, N_2519_i, 
-        N_2508_i, N_2497_i, N_2486_i, N_2475_i, N_2464_i, 
-        N_2453_i, N_2442_i, N_2431_i, N_2420_i, N_2409_i, 
-        N_2398_i, N_2386_i, N_2374_i, N_2362_i, N_2350_i, 
-        N_2338_i, N_2326_i, N_2314_i, N_2302_i, N_2290_i, 
-        N_2218_i, N_2206_i, N_2194_i, N_2182_i, N_2170_i, 
-        N_2158_i, N_2146_i, N_2134_i, N_2122_i, N_2110_i, 
-        N_2098_i, N_2086_i, N_2074_i, N_3162_i, N_2062_i, 
-        N_2051_i, N_2016_i, \WLAST_S_xhdl24_1_sqmuxa_i_0\, 
+        N_2643_i, N_2632_i, N_2621_i, N_2610_i, N_2599_i, 
+        N_2588_i, N_2577_i, N_2530_i, N_2519_i, N_2508_i, 
+        N_2497_i, N_2486_i, N_2475_i, N_2464_i, N_2453_i, 
+        N_2442_i, N_2431_i, N_2420_i, N_2409_i, N_2398_i, 
+        N_2386_i, N_2374_i, N_2362_i, N_2350_i, N_2338_i, 
+        N_2326_i, N_2314_i, N_2302_i, N_2290_i, N_2278_i, 
+        N_2266_i, N_2254_i, N_2242_i, N_2218_i, N_2206_i, 
+        N_2194_i, N_2182_i, N_2170_i, N_2158_i, N_2146_i, 
+        N_2134_i, N_2122_i, N_2110_i, N_2098_i, N_2086_i, 
+        N_2074_i, N_3162_i, N_2062_i, N_2051_i, N_2016_i, 
+        \WLAST_S_xhdl24_1_sqmuxa_i_0\, 
         \COREAXI_0_AXImslave16_AWVALID\, \AWREADY_SI16\, 
         \COREAXI_0_AXImslave16_ARVALID\, ARREADY_SI16_i, 
         \ARVALID_IS_r\, \AWVALID_IS_r\, \WVALID_IS_r\, 
@@ -496,6 +498,12 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WSTRB(7));
     
+    \AWADDR_S_xhdl13[25]\ : SLE
+      port map(D => N_2266_i, CLK => SDRCLK_c, EN => 
+        \AWVALID_S_xhdl20_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(25));
+    
     \AWADDR_S_xhdl13_RNO[15]\ : CFG2
       generic map(INIT => x"8")
 
@@ -508,6 +516,12 @@ begin
       port map(A => \AWVALID_IS_r1\, B => \AWVALID_IS_r\, C => 
         AWVALID_IS16, D => \AWREADY_SI16\, Y => 
         \AWVALID_S_xhdl20_1_sqmuxa_i\);
+    
+    \AWADDR_S_xhdl13_RNO[26]\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(26), Y
+         => N_2254_i);
     
     \WDATA_S_xhdl22[40]\ : SLE
       port map(D => WDATA_IS16_gated(40), CLK => SDRCLK_c, EN => 
@@ -541,6 +555,12 @@ begin
       port map(A => ARADDR_IS16_gated(10), B => 
         COREAXI_0_AXImslave16_ARREADY, C => 
         \COREAXI_0_AXImslave16_ARVALID\, Y => N_2431_i);
+    
+    \AWADDR_S_xhdl13_RNO[27]\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(27), Y
+         => N_2242_i);
     
     \WDATA_S_xhdl22[50]\ : SLE
       port map(D => WDATA_IS16_gated(50), CLK => SDRCLK_c, EN => 
@@ -728,11 +748,24 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WDATA(52));
     
+    \ARADDR_S_xhdl28_RNO[25]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => ARADDR_IS16_gated(25), B => 
+        COREAXI_0_AXImslave16_ARREADY, C => 
+        \COREAXI_0_AXImslave16_ARVALID\, Y => N_2599_i);
+    
     \AWADDR_S_xhdl13_RNO[16]\ : CFG2
       generic map(INIT => x"8")
 
       port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(16), Y
          => N_2374_i);
+    
+    \AWADDR_S_xhdl13[24]\ : SLE
+      port map(D => N_2278_i, CLK => SDRCLK_c, EN => 
+        \AWVALID_S_xhdl20_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(24));
     
     ARVALID_IS_r : SLE
       port map(D => ARVALID_IS16, CLK => SDRCLK_c, EN => 
@@ -759,6 +792,12 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WDATA(54));
     
+    \AWADDR_S_xhdl13_RNO[24]\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(24), Y
+         => N_2278_i);
+    
     \WDATA_S_xhdl22[26]\ : SLE
       port map(D => WDATA_IS16_gated(26), CLK => SDRCLK_c, EN => 
         N_3162_i, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -780,11 +819,24 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WDATA(7));
     
+    \ARADDR_S_xhdl28_RNO[24]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => ARADDR_IS16_gated(24), B => 
+        COREAXI_0_AXImslave16_ARREADY, C => 
+        \COREAXI_0_AXImslave16_ARVALID\, Y => N_2610_i);
+    
     \AWADDR_S_xhdl13_RNO[4]\ : CFG2
       generic map(INIT => x"8")
 
       port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(4), Y
          => N_2182_i);
+    
+    \AWADDR_S_xhdl13[26]\ : SLE
+      port map(D => N_2254_i, CLK => SDRCLK_c, EN => 
+        \AWVALID_S_xhdl20_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(26));
     
     \AWSIZE_S_xhdl15_RNO[0]\ : CFG2
       generic map(INIT => x"8")
@@ -852,6 +904,12 @@ begin
       port map(D => WVALID_IS16, CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => \WVALID_IS_r\);
+    
+    \ARADDR_S_xhdl28[25]\ : SLE
+      port map(D => N_2599_i, CLK => SDRCLK_c, EN => 
+        \ARVALID_S_xhdl35_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_ARADDR(25));
     
     WLAST_S_xhdl24_1_sqmuxa_i_0 : CFG4
       generic map(INIT => x"FF10")
@@ -1226,6 +1284,12 @@ begin
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => COREAXI_0_AXImslave16_ARSIZE(0));
     
+    \ARADDR_S_xhdl28[24]\ : SLE
+      port map(D => N_2610_i, CLK => SDRCLK_c, EN => 
+        \ARVALID_S_xhdl35_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_ARADDR(24));
+    
     \WSTRB_S_xhdl23[1]\ : SLE
       port map(D => WSTRB_IS16_gated(1), CLK => SDRCLK_c, EN => 
         N_3162_i, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -1299,6 +1363,12 @@ begin
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(14));
     
+    \AWADDR_S_xhdl13[27]\ : SLE
+      port map(D => N_2242_i, CLK => SDRCLK_c, EN => 
+        \AWVALID_S_xhdl20_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(27));
+    
     \WDATA_S_xhdl22[2]\ : SLE
       port map(D => WDATA_IS16_gated(2), CLK => SDRCLK_c, EN => 
         N_3162_i, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -1367,6 +1437,13 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WDATA(13));
     
+    \ARADDR_S_xhdl28_RNO[27]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => ARADDR_IS16_gated(27), B => 
+        COREAXI_0_AXImslave16_ARREADY, C => 
+        \COREAXI_0_AXImslave16_ARVALID\, Y => N_2577_i);
+    
     \ARADDR_S_xhdl28_RNO[14]\ : CFG3
       generic map(INIT => x"2A")
 
@@ -1385,6 +1462,18 @@ begin
         \ARVALID_S_xhdl35_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => COREAXI_0_AXImslave16_ARADDR(7));
+    
+    \ARADDR_S_xhdl28[26]\ : SLE
+      port map(D => N_2588_i, CLK => SDRCLK_c, EN => 
+        \ARVALID_S_xhdl35_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_ARADDR(26));
+    
+    \AWADDR_S_xhdl13_RNO[25]\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \AWREADY_SI16\, B => AWADDR_IS16_gated(25), Y
+         => N_2266_i);
     
     \ARADDR_S_xhdl28[16]\ : SLE
       port map(D => N_2698_i, CLK => SDRCLK_c, EN => 
@@ -1497,11 +1586,24 @@ begin
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => COREAXI_0_AXImslave16_AWADDR(22));
     
+    \ARADDR_S_xhdl28_RNO[26]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => ARADDR_IS16_gated(26), B => 
+        COREAXI_0_AXImslave16_ARREADY, C => 
+        \COREAXI_0_AXImslave16_ARVALID\, Y => N_2588_i);
+    
     \WDATA_S_xhdl22[58]\ : SLE
       port map(D => WDATA_IS16_gated(58), CLK => SDRCLK_c, EN => 
         N_3162_i, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         COREAXI_0_AXImslave16_WDATA(58));
+    
+    \ARADDR_S_xhdl28[27]\ : SLE
+      port map(D => N_2577_i, CLK => SDRCLK_c, EN => 
+        \ARVALID_S_xhdl35_1_sqmuxa_i\, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => COREAXI_0_AXImslave16_ARADDR(27));
     
     \ARADDR_S_xhdl28[4]\ : SLE
       port map(D => N_2497_i, CLK => SDRCLK_c, EN => 
@@ -1601,8 +1703,8 @@ entity axi_master_stage is
 
     port( RDATA_IM0                            : in    std_logic_vector(63 downto 0);
           COREAHBLTOAXI_0_AXIMasterIF_ARSIZE   : in    std_logic_vector(1 downto 0);
-          COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1);
           AWADDR_MI0                           : out   std_logic_vector(27 downto 1);
+          COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1);
           ARADDR_MI0                           : out   std_logic_vector(27 downto 1);
           ARSIZE_MI0                           : out   std_logic_vector(1 downto 0);
           AWSIZE_MI0                           : out   std_logic_vector(1 downto 0);
@@ -2368,6 +2470,12 @@ begin
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => m0_wr_end);
     
+    \ARADDR_M_INPFF1[24]\ : SLE
+      port map(D => COREAHBLTOAXI_0_AXIMasterIF_ARADDR(24), CLK
+         => SDRCLK_c, EN => un2_arvalid_m, ALn => MSS_READY, ADn
+         => VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => ARADDR_MI0(24));
+    
     \RDATA_M_int[46]\ : SLE
       port map(D => \RDATA_M_int_2[46]\, CLK => SDRCLK_c, EN => 
         VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -2627,6 +2735,12 @@ begin
     
     \GND\ : GND
       port map(Y => GND_net_1);
+    
+    \ARADDR_M_INPFF1[25]\ : SLE
+      port map(D => COREAHBLTOAXI_0_AXIMasterIF_ARADDR(25), CLK
+         => SDRCLK_c, EN => un2_arvalid_m, ALn => MSS_READY, ADn
+         => VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => ARADDR_MI0(25));
     
     \WDATA_M_INPFF1[15]\ : SLE
       port map(D => N_203_i, CLK => SDRCLK_c, EN => 
@@ -3884,6 +3998,12 @@ begin
       port map(A => \RREADY_MI0\, B => \RDATA_M_int[15]_net_1\, Y
          => \RDATA_M_xhdl8_3[15]\);
     
+    \AWADDR_M_INPFF1[25]\ : SLE
+      port map(D => COREAHBLTOAXI_0_AXIMasterIF_ARADDR(25), CLK
+         => SDRCLK_c, EN => un2_awvalid_m, ALn => MSS_READY, ADn
+         => VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => AWADDR_MI0(25));
+    
     \WDATA_M_INPFF1[40]\ : SLE
       port map(D => COREAHBLTOAXI_0_AXIMasterIF_WDATA(40), CLK
          => SDRCLK_c, EN => \wready_m_xhdl2\, ALn => MSS_READY, 
@@ -4293,6 +4413,12 @@ begin
 
       port map(A => \RREADY_MI0\, B => RDATA_IM0(42), Y => 
         \RDATA_M_int_2[42]\);
+    
+    \AWADDR_M_INPFF1[24]\ : SLE
+      port map(D => COREAHBLTOAXI_0_AXIMasterIF_ARADDR(24), CLK
+         => SDRCLK_c, EN => un2_awvalid_m, ALn => MSS_READY, ADn
+         => VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => AWADDR_MI0(24));
     
     \L5.RDATA_M_int_2[41]\ : CFG2
       generic map(INIT => x"4")
@@ -5611,6 +5737,8 @@ architecture DEF_ARCH of axi_wrmatrix_4Mto1S is
         \AWADDR_IS_int_xhdl7[21]_net_1\, 
         \AWADDR_IS_int_xhdl7[22]_net_1\, 
         \AWADDR_IS_int_xhdl7[23]_net_1\, 
+        \AWADDR_IS_int_xhdl7[24]_net_1\, 
+        \AWADDR_IS_int_xhdl7[25]_net_1\, 
         \AWADDR_IS_int_xhdl7[26]_net_1\, 
         \AWADDR_IS_int_xhdl7[27]_net_1\, 
         \AWADDR_IS_int_xhdl7[2]_net_1\, 
@@ -5661,6 +5789,12 @@ begin
         awaddr_is_int_xhdl74, ALn => MSS_READY, ADn => VCC_net_1, 
         SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
          => \AWADDR_IS_int_xhdl7[27]_net_1\);
+    
+    \AWADDR_IS_xhdl6[24]\ : SLE
+      port map(D => \AWADDR_IS_int_xhdl7[24]_net_1\, CLK => 
+        SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => AWADDR_IS16_gated(24));
     
     \L1.AWSIZE_IS_int_2[1]\ : CFG2
       generic map(INIT => x"8")
@@ -5870,6 +6004,12 @@ begin
         SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
          => \AWADDR_IS_int_xhdl7[16]_net_1\);
     
+    \AWADDR_IS_int_xhdl7[25]\ : SLE
+      port map(D => AWADDR_MI0(25), CLK => SDRCLK_c, EN => 
+        awaddr_is_int_xhdl74, ALn => MSS_READY, ADn => VCC_net_1, 
+        SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
+         => \AWADDR_IS_int_xhdl7[25]_net_1\);
+    
     AWREADY_IM0_xhdl1 : SLE
       port map(D => AWREADY_IM0_xhdl1_2, CLK => SDRCLK_c, EN => 
         VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -5911,6 +6051,12 @@ begin
         awaddr_is_int_xhdl74, ALn => MSS_READY, ADn => VCC_net_1, 
         SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
          => \AWADDR_IS_int_xhdl7[18]_net_1\);
+    
+    \AWADDR_IS_int_xhdl7[24]\ : SLE
+      port map(D => AWADDR_MI0(24), CLK => SDRCLK_c, EN => 
+        awaddr_is_int_xhdl74, ALn => MSS_READY, ADn => VCC_net_1, 
+        SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
+         => \AWADDR_IS_int_xhdl7[24]_net_1\);
     
     \AWADDR_IS_int_xhdl7[15]\ : SLE
       port map(D => AWADDR_MI0(15), CLK => SDRCLK_c, EN => 
@@ -6032,6 +6178,12 @@ begin
         SLn => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q
          => \AWADDR_IS_int_xhdl7[5]_net_1\);
     
+    \AWADDR_IS_xhdl6[25]\ : SLE
+      port map(D => \AWADDR_IS_int_xhdl7[25]_net_1\, CLK => 
+        SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => AWADDR_IS16_gated(25));
+    
     \AWADDR_IS_int_xhdl7[21]\ : SLE
       port map(D => AWADDR_MI0(21), CLK => SDRCLK_c, EN => 
         awaddr_is_int_xhdl74, ALn => MSS_READY, ADn => VCC_net_1, 
@@ -6099,7 +6251,6 @@ architecture DEF_ARCH of axi_wa_channel is
   end component;
 
     signal GND_net_1, VCC_net_1 : std_logic;
-    signal nc2, nc4, nc3, nc1 : std_logic;
 
     for all : axi_wrmatrix_4Mto1S
 	Use entity work.axi_wrmatrix_4Mto1S(DEF_ARCH);
@@ -6113,8 +6264,9 @@ begin
       port map(AWSIZE_MI0(1) => AWSIZE_MI0(1), AWSIZE_MI0(0) => 
         AWSIZE_MI0(0), AWADDR_IS16_gated(27) => 
         AWADDR_IS16_gated(27), AWADDR_IS16_gated(26) => 
-        AWADDR_IS16_gated(26), AWADDR_IS16_gated(25) => nc2, 
-        AWADDR_IS16_gated(24) => nc4, AWADDR_IS16_gated(23) => 
+        AWADDR_IS16_gated(26), AWADDR_IS16_gated(25) => 
+        AWADDR_IS16_gated(25), AWADDR_IS16_gated(24) => 
+        AWADDR_IS16_gated(24), AWADDR_IS16_gated(23) => 
         AWADDR_IS16_gated(23), AWADDR_IS16_gated(22) => 
         AWADDR_IS16_gated(22), AWADDR_IS16_gated(21) => 
         AWADDR_IS16_gated(21), AWADDR_IS16_gated(20) => 
@@ -6138,23 +6290,24 @@ begin
         AWADDR_IS16_gated(3), AWADDR_IS16_gated(2) => 
         AWADDR_IS16_gated(2), AWADDR_IS16_gated(1) => 
         AWADDR_IS16_gated(1), AWADDR_MI0(27) => AWADDR_MI0(27), 
-        AWADDR_MI0(26) => AWADDR_MI0(26), AWADDR_MI0(25) => nc3, 
-        AWADDR_MI0(24) => nc1, AWADDR_MI0(23) => AWADDR_MI0(23), 
-        AWADDR_MI0(22) => AWADDR_MI0(22), AWADDR_MI0(21) => 
-        AWADDR_MI0(21), AWADDR_MI0(20) => AWADDR_MI0(20), 
-        AWADDR_MI0(19) => AWADDR_MI0(19), AWADDR_MI0(18) => 
-        AWADDR_MI0(18), AWADDR_MI0(17) => AWADDR_MI0(17), 
-        AWADDR_MI0(16) => AWADDR_MI0(16), AWADDR_MI0(15) => 
-        AWADDR_MI0(15), AWADDR_MI0(14) => AWADDR_MI0(14), 
-        AWADDR_MI0(13) => AWADDR_MI0(13), AWADDR_MI0(12) => 
-        AWADDR_MI0(12), AWADDR_MI0(11) => AWADDR_MI0(11), 
-        AWADDR_MI0(10) => AWADDR_MI0(10), AWADDR_MI0(9) => 
-        AWADDR_MI0(9), AWADDR_MI0(8) => AWADDR_MI0(8), 
-        AWADDR_MI0(7) => AWADDR_MI0(7), AWADDR_MI0(6) => 
-        AWADDR_MI0(6), AWADDR_MI0(5) => AWADDR_MI0(5), 
-        AWADDR_MI0(4) => AWADDR_MI0(4), AWADDR_MI0(3) => 
-        AWADDR_MI0(3), AWADDR_MI0(2) => AWADDR_MI0(2), 
-        AWADDR_MI0(1) => AWADDR_MI0(1), AWSIZE_IS16_gated(1) => 
+        AWADDR_MI0(26) => AWADDR_MI0(26), AWADDR_MI0(25) => 
+        AWADDR_MI0(25), AWADDR_MI0(24) => AWADDR_MI0(24), 
+        AWADDR_MI0(23) => AWADDR_MI0(23), AWADDR_MI0(22) => 
+        AWADDR_MI0(22), AWADDR_MI0(21) => AWADDR_MI0(21), 
+        AWADDR_MI0(20) => AWADDR_MI0(20), AWADDR_MI0(19) => 
+        AWADDR_MI0(19), AWADDR_MI0(18) => AWADDR_MI0(18), 
+        AWADDR_MI0(17) => AWADDR_MI0(17), AWADDR_MI0(16) => 
+        AWADDR_MI0(16), AWADDR_MI0(15) => AWADDR_MI0(15), 
+        AWADDR_MI0(14) => AWADDR_MI0(14), AWADDR_MI0(13) => 
+        AWADDR_MI0(13), AWADDR_MI0(12) => AWADDR_MI0(12), 
+        AWADDR_MI0(11) => AWADDR_MI0(11), AWADDR_MI0(10) => 
+        AWADDR_MI0(10), AWADDR_MI0(9) => AWADDR_MI0(9), 
+        AWADDR_MI0(8) => AWADDR_MI0(8), AWADDR_MI0(7) => 
+        AWADDR_MI0(7), AWADDR_MI0(6) => AWADDR_MI0(6), 
+        AWADDR_MI0(5) => AWADDR_MI0(5), AWADDR_MI0(4) => 
+        AWADDR_MI0(4), AWADDR_MI0(3) => AWADDR_MI0(3), 
+        AWADDR_MI0(2) => AWADDR_MI0(2), AWADDR_MI0(1) => 
+        AWADDR_MI0(1), AWSIZE_IS16_gated(1) => 
         AWSIZE_IS16_gated(1), AWSIZE_IS16_gated(0) => 
         AWSIZE_IS16_gated(0), AWLOCK_MI0_i_0 => AWLOCK_MI0_i_0, 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
@@ -6178,17 +6331,19 @@ use smartfusion2.all;
 
 entity axi_wd_channel is
 
-    port( WDATA_MI0         : in    std_logic_vector(63 downto 0);
-          WSTRB_MI0         : in    std_logic_vector(7 downto 0);
-          WDATA_IS16_gated  : out   std_logic_vector(63 downto 0);
-          WSTRB_IS16_gated  : out   std_logic_vector(7 downto 0);
-          MST_WRGNT_NUM_0   : in    std_logic;
-          WREADY_SI16       : in    std_logic;
-          WVALID_MI0        : in    std_logic;
-          WVALID_IS16_gated : out   std_logic;
-          WREADY_IM0        : out   std_logic;
-          SDRCLK_c          : in    std_logic;
-          MSS_READY         : in    std_logic
+    port( WDATA_MI0                    : in    std_logic_vector(63 downto 0);
+          WSTRB_MI0                    : in    std_logic_vector(7 downto 0);
+          WDATA_IS16_gated             : out   std_logic_vector(63 downto 0);
+          WSTRB_IS16_gated             : out   std_logic_vector(7 downto 0);
+          axi_state_0                  : in    std_logic;
+          MST_WRGNT_NUM_0              : in    std_logic;
+          WVALID_MI0                   : in    std_logic;
+          COREAXI_0_AXImslave16_WVALID : in    std_logic;
+          N_389                        : in    std_logic;
+          WVALID_IS16_gated            : out   std_logic;
+          WREADY_IM0                   : out   std_logic;
+          SDRCLK_c                     : in    std_logic;
+          MSS_READY                    : in    std_logic
         );
 
 end axi_wd_channel;
@@ -6224,6 +6379,17 @@ architecture DEF_ARCH of axi_wd_channel is
 
   component VCC
     port( Y : out   std_logic
+        );
+  end component;
+
+  component CFG4
+    generic (INIT:std_logic_vector(15 downto 0) := x"0000");
+
+    port( A : in    std_logic := 'U';
+          B : in    std_logic := 'U';
+          C : in    std_logic := 'U';
+          D : in    std_logic := 'U';
+          Y : out   std_logic
         );
   end component;
 
@@ -6829,11 +6995,13 @@ begin
       port map(A => MST_WRGNT_NUM_0, B => WDATA_MI0(35), Y => 
         \WDATA_IS_xhdl6_3[35]_net_1\);
     
-    \L1.wready_im0_int_xhdl15_1\ : CFG2
-      generic map(INIT => x"8")
+    \L1.wready_im0_int_xhdl15_1\ : CFG4
+      generic map(INIT => x"2000")
 
-      port map(A => WREADY_SI16, B => \MST_GNT_NUM_r[0]_net_1\, Y
-         => wready_im0_int_xhdl15_1);
+      port map(A => axi_state_0, B => N_389, C => 
+        \MST_GNT_NUM_r[0]_net_1\, D => 
+        COREAXI_0_AXImslave16_WVALID, Y => 
+        wready_im0_int_xhdl15_1);
     
     \WDATA_IS_xhdl6[29]\ : SLE
       port map(D => \WDATA_IS_xhdl6_3[29]_net_1\, CLK => SDRCLK_c, 
@@ -7597,6 +7765,8 @@ architecture DEF_ARCH of axi_rdmatrix_4Mto1S is
         \ARSIZE_IS_int[0]_net_1\, \ARSIZE_IS_int[1]_net_1\, 
         \ARADDR_IS_int_xhdl14[22]_net_1\, arready_im0_int4, 
         \ARADDR_IS_int_xhdl14[23]_net_1\, 
+        \ARADDR_IS_int_xhdl14[24]_net_1\, 
+        \ARADDR_IS_int_xhdl14[25]_net_1\, 
         \ARADDR_IS_int_xhdl14[26]_net_1\, 
         \ARADDR_IS_int_xhdl14[27]_net_1\, \ARBURST_IS_int_3[0]\, 
         \ARSIZE_IS_int_3[0]\, \ARSIZE_IS_int_3[1]\, 
@@ -7641,6 +7811,12 @@ begin
         SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => ARADDR_IS16_gated(16));
+    
+    \ARADDR_IS_int_xhdl14[24]\ : SLE
+      port map(D => ARADDR_MI0(24), CLK => SDRCLK_c, EN => 
+        arready_im0_int4, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \ARADDR_IS_int_xhdl14[24]_net_1\);
     
     \ARSIZE_IS_int[0]\ : SLE
       port map(D => \ARSIZE_IS_int_3[0]\, CLK => SDRCLK_c, EN => 
@@ -7989,6 +8165,18 @@ begin
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \ARBURST_IS_int[0]_net_1\);
     
+    \ARADDR_IS_xhdl6[25]\ : SLE
+      port map(D => \ARADDR_IS_int_xhdl14[25]_net_1\, CLK => 
+        SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => ARADDR_IS16_gated(25));
+    
+    \ARADDR_IS_xhdl6[24]\ : SLE
+      port map(D => \ARADDR_IS_int_xhdl14[24]_net_1\, CLK => 
+        SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
+        GND_net_1, Q => ARADDR_IS16_gated(24));
+    
     \ARADDR_IS_xhdl6[22]\ : SLE
       port map(D => \ARADDR_IS_int_xhdl14[22]_net_1\, CLK => 
         SDRCLK_c, EN => VCC_net_1, ALn => MSS_READY, ADn => 
@@ -8013,6 +8201,12 @@ begin
         arready_im0_int4, ALn => MSS_READY, ADn => VCC_net_1, SLn
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \ARADDR_IS_int_xhdl14[1]_net_1\);
+    
+    \ARADDR_IS_int_xhdl14[25]\ : SLE
+      port map(D => ARADDR_MI0(25), CLK => SDRCLK_c, EN => 
+        arready_im0_int4, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \ARADDR_IS_int_xhdl14[25]_net_1\);
     
     \ARADDR_IS_xhdl6[11]\ : SLE
       port map(D => \ARADDR_IS_int_xhdl14[11]_net_1\, CLK => 
@@ -8109,7 +8303,6 @@ architecture DEF_ARCH of axi_ra_channel is
   end component;
 
     signal GND_net_1, VCC_net_1 : std_logic;
-    signal nc2, nc4, nc3, nc1 : std_logic;
 
     for all : axi_rdmatrix_4Mto1S
 	Use entity work.axi_rdmatrix_4Mto1S(DEF_ARCH);
@@ -8123,8 +8316,9 @@ begin
       port map(ARSIZE_MI0(1) => ARSIZE_MI0(1), ARSIZE_MI0(0) => 
         ARSIZE_MI0(0), ARADDR_IS16_gated(27) => 
         ARADDR_IS16_gated(27), ARADDR_IS16_gated(26) => 
-        ARADDR_IS16_gated(26), ARADDR_IS16_gated(25) => nc2, 
-        ARADDR_IS16_gated(24) => nc4, ARADDR_IS16_gated(23) => 
+        ARADDR_IS16_gated(26), ARADDR_IS16_gated(25) => 
+        ARADDR_IS16_gated(25), ARADDR_IS16_gated(24) => 
+        ARADDR_IS16_gated(24), ARADDR_IS16_gated(23) => 
         ARADDR_IS16_gated(23), ARADDR_IS16_gated(22) => 
         ARADDR_IS16_gated(22), ARADDR_IS16_gated(21) => 
         ARADDR_IS16_gated(21), ARADDR_IS16_gated(20) => 
@@ -8148,23 +8342,24 @@ begin
         ARADDR_IS16_gated(3), ARADDR_IS16_gated(2) => 
         ARADDR_IS16_gated(2), ARADDR_IS16_gated(1) => 
         ARADDR_IS16_gated(1), ARADDR_MI0(27) => ARADDR_MI0(27), 
-        ARADDR_MI0(26) => ARADDR_MI0(26), ARADDR_MI0(25) => nc3, 
-        ARADDR_MI0(24) => nc1, ARADDR_MI0(23) => ARADDR_MI0(23), 
-        ARADDR_MI0(22) => ARADDR_MI0(22), ARADDR_MI0(21) => 
-        ARADDR_MI0(21), ARADDR_MI0(20) => ARADDR_MI0(20), 
-        ARADDR_MI0(19) => ARADDR_MI0(19), ARADDR_MI0(18) => 
-        ARADDR_MI0(18), ARADDR_MI0(17) => ARADDR_MI0(17), 
-        ARADDR_MI0(16) => ARADDR_MI0(16), ARADDR_MI0(15) => 
-        ARADDR_MI0(15), ARADDR_MI0(14) => ARADDR_MI0(14), 
-        ARADDR_MI0(13) => ARADDR_MI0(13), ARADDR_MI0(12) => 
-        ARADDR_MI0(12), ARADDR_MI0(11) => ARADDR_MI0(11), 
-        ARADDR_MI0(10) => ARADDR_MI0(10), ARADDR_MI0(9) => 
-        ARADDR_MI0(9), ARADDR_MI0(8) => ARADDR_MI0(8), 
-        ARADDR_MI0(7) => ARADDR_MI0(7), ARADDR_MI0(6) => 
-        ARADDR_MI0(6), ARADDR_MI0(5) => ARADDR_MI0(5), 
-        ARADDR_MI0(4) => ARADDR_MI0(4), ARADDR_MI0(3) => 
-        ARADDR_MI0(3), ARADDR_MI0(2) => ARADDR_MI0(2), 
-        ARADDR_MI0(1) => ARADDR_MI0(1), ARSIZE_IS16_gated(1) => 
+        ARADDR_MI0(26) => ARADDR_MI0(26), ARADDR_MI0(25) => 
+        ARADDR_MI0(25), ARADDR_MI0(24) => ARADDR_MI0(24), 
+        ARADDR_MI0(23) => ARADDR_MI0(23), ARADDR_MI0(22) => 
+        ARADDR_MI0(22), ARADDR_MI0(21) => ARADDR_MI0(21), 
+        ARADDR_MI0(20) => ARADDR_MI0(20), ARADDR_MI0(19) => 
+        ARADDR_MI0(19), ARADDR_MI0(18) => ARADDR_MI0(18), 
+        ARADDR_MI0(17) => ARADDR_MI0(17), ARADDR_MI0(16) => 
+        ARADDR_MI0(16), ARADDR_MI0(15) => ARADDR_MI0(15), 
+        ARADDR_MI0(14) => ARADDR_MI0(14), ARADDR_MI0(13) => 
+        ARADDR_MI0(13), ARADDR_MI0(12) => ARADDR_MI0(12), 
+        ARADDR_MI0(11) => ARADDR_MI0(11), ARADDR_MI0(10) => 
+        ARADDR_MI0(10), ARADDR_MI0(9) => ARADDR_MI0(9), 
+        ARADDR_MI0(8) => ARADDR_MI0(8), ARADDR_MI0(7) => 
+        ARADDR_MI0(7), ARADDR_MI0(6) => ARADDR_MI0(6), 
+        ARADDR_MI0(5) => ARADDR_MI0(5), ARADDR_MI0(4) => 
+        ARADDR_MI0(4), ARADDR_MI0(3) => ARADDR_MI0(3), 
+        ARADDR_MI0(2) => ARADDR_MI0(2), ARADDR_MI0(1) => 
+        ARADDR_MI0(1), ARSIZE_IS16_gated(1) => 
         ARSIZE_IS16_gated(1), ARSIZE_IS16_gated(0) => 
         ARSIZE_IS16_gated(0), ARLOCK_MI0_i_0 => ARLOCK_MI0_i_0, 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
@@ -8208,6 +8403,7 @@ entity axi_matrix_s is
           ARLOCK_MI0_i_0                       : in    std_logic;
           ARBURST_MI0_0                        : in    std_logic;
           ARBURST_IS16_gated_0                 : out   std_logic;
+          axi_state_0                          : in    std_logic;
           AWLOCK_MI0_i_0                       : in    std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic;
           m0_rd_end                            : in    std_logic;
@@ -8219,8 +8415,9 @@ entity axi_matrix_s is
           ARREADY_IM0                          : out   std_logic;
           WREADY_IM0                           : out   std_logic;
           WVALID_IS16_gated                    : out   std_logic;
+          N_389                                : in    std_logic;
+          COREAXI_0_AXImslave16_WVALID         : in    std_logic;
           WVALID_MI0                           : in    std_logic;
-          WREADY_SI16                          : in    std_logic;
           m0_wr_end                            : in    std_logic;
           AWREADY_SI16                         : in    std_logic;
           AWVALID_MI0                          : in    std_logic;
@@ -8265,17 +8462,19 @@ architecture DEF_ARCH of axi_matrix_s is
   end component;
 
   component axi_wd_channel
-    port( WDATA_MI0         : in    std_logic_vector(63 downto 0) := (others => 'U');
-          WSTRB_MI0         : in    std_logic_vector(7 downto 0) := (others => 'U');
-          WDATA_IS16_gated  : out   std_logic_vector(63 downto 0);
-          WSTRB_IS16_gated  : out   std_logic_vector(7 downto 0);
-          MST_WRGNT_NUM_0   : in    std_logic := 'U';
-          WREADY_SI16       : in    std_logic := 'U';
-          WVALID_MI0        : in    std_logic := 'U';
-          WVALID_IS16_gated : out   std_logic;
-          WREADY_IM0        : out   std_logic;
-          SDRCLK_c          : in    std_logic := 'U';
-          MSS_READY         : in    std_logic := 'U'
+    port( WDATA_MI0                    : in    std_logic_vector(63 downto 0) := (others => 'U');
+          WSTRB_MI0                    : in    std_logic_vector(7 downto 0) := (others => 'U');
+          WDATA_IS16_gated             : out   std_logic_vector(63 downto 0);
+          WSTRB_IS16_gated             : out   std_logic_vector(7 downto 0);
+          axi_state_0                  : in    std_logic := 'U';
+          MST_WRGNT_NUM_0              : in    std_logic := 'U';
+          WVALID_MI0                   : in    std_logic := 'U';
+          COREAXI_0_AXImslave16_WVALID : in    std_logic := 'U';
+          N_389                        : in    std_logic := 'U';
+          WVALID_IS16_gated            : out   std_logic;
+          WREADY_IM0                   : out   std_logic;
+          SDRCLK_c                     : in    std_logic := 'U';
+          MSS_READY                    : in    std_logic := 'U'
         );
   end component;
 
@@ -8301,7 +8500,6 @@ architecture DEF_ARCH of axi_matrix_s is
   end component;
 
     signal \MST_WRGNT_NUM[0]\, GND_net_1, VCC_net_1 : std_logic;
-    signal nc8, nc7, nc6, nc2, nc5, nc4, nc3, nc1 : std_logic;
 
     for all : axi_wa_channel
 	Use entity work.axi_wa_channel(DEF_ARCH);
@@ -8322,53 +8520,55 @@ begin
       port map(AWSIZE_IS16_gated(1) => AWSIZE_IS16_gated(1), 
         AWSIZE_IS16_gated(0) => AWSIZE_IS16_gated(0), 
         AWADDR_MI0(27) => AWADDR_MI0(27), AWADDR_MI0(26) => 
-        AWADDR_MI0(26), AWADDR_MI0(25) => nc8, AWADDR_MI0(24) => 
-        nc7, AWADDR_MI0(23) => AWADDR_MI0(23), AWADDR_MI0(22) => 
-        AWADDR_MI0(22), AWADDR_MI0(21) => AWADDR_MI0(21), 
-        AWADDR_MI0(20) => AWADDR_MI0(20), AWADDR_MI0(19) => 
-        AWADDR_MI0(19), AWADDR_MI0(18) => AWADDR_MI0(18), 
-        AWADDR_MI0(17) => AWADDR_MI0(17), AWADDR_MI0(16) => 
-        AWADDR_MI0(16), AWADDR_MI0(15) => AWADDR_MI0(15), 
-        AWADDR_MI0(14) => AWADDR_MI0(14), AWADDR_MI0(13) => 
-        AWADDR_MI0(13), AWADDR_MI0(12) => AWADDR_MI0(12), 
-        AWADDR_MI0(11) => AWADDR_MI0(11), AWADDR_MI0(10) => 
-        AWADDR_MI0(10), AWADDR_MI0(9) => AWADDR_MI0(9), 
-        AWADDR_MI0(8) => AWADDR_MI0(8), AWADDR_MI0(7) => 
-        AWADDR_MI0(7), AWADDR_MI0(6) => AWADDR_MI0(6), 
-        AWADDR_MI0(5) => AWADDR_MI0(5), AWADDR_MI0(4) => 
-        AWADDR_MI0(4), AWADDR_MI0(3) => AWADDR_MI0(3), 
-        AWADDR_MI0(2) => AWADDR_MI0(2), AWADDR_MI0(1) => 
-        AWADDR_MI0(1), AWADDR_IS16_gated(27) => 
-        AWADDR_IS16_gated(27), AWADDR_IS16_gated(26) => 
-        AWADDR_IS16_gated(26), AWADDR_IS16_gated(25) => nc6, 
-        AWADDR_IS16_gated(24) => nc2, AWADDR_IS16_gated(23) => 
-        AWADDR_IS16_gated(23), AWADDR_IS16_gated(22) => 
-        AWADDR_IS16_gated(22), AWADDR_IS16_gated(21) => 
-        AWADDR_IS16_gated(21), AWADDR_IS16_gated(20) => 
-        AWADDR_IS16_gated(20), AWADDR_IS16_gated(19) => 
-        AWADDR_IS16_gated(19), AWADDR_IS16_gated(18) => 
-        AWADDR_IS16_gated(18), AWADDR_IS16_gated(17) => 
-        AWADDR_IS16_gated(17), AWADDR_IS16_gated(16) => 
-        AWADDR_IS16_gated(16), AWADDR_IS16_gated(15) => 
-        AWADDR_IS16_gated(15), AWADDR_IS16_gated(14) => 
-        AWADDR_IS16_gated(14), AWADDR_IS16_gated(13) => 
-        AWADDR_IS16_gated(13), AWADDR_IS16_gated(12) => 
-        AWADDR_IS16_gated(12), AWADDR_IS16_gated(11) => 
-        AWADDR_IS16_gated(11), AWADDR_IS16_gated(10) => 
-        AWADDR_IS16_gated(10), AWADDR_IS16_gated(9) => 
-        AWADDR_IS16_gated(9), AWADDR_IS16_gated(8) => 
-        AWADDR_IS16_gated(8), AWADDR_IS16_gated(7) => 
-        AWADDR_IS16_gated(7), AWADDR_IS16_gated(6) => 
-        AWADDR_IS16_gated(6), AWADDR_IS16_gated(5) => 
-        AWADDR_IS16_gated(5), AWADDR_IS16_gated(4) => 
-        AWADDR_IS16_gated(4), AWADDR_IS16_gated(3) => 
-        AWADDR_IS16_gated(3), AWADDR_IS16_gated(2) => 
-        AWADDR_IS16_gated(2), AWADDR_IS16_gated(1) => 
-        AWADDR_IS16_gated(1), AWSIZE_MI0(1) => AWSIZE_MI0(1), 
-        AWSIZE_MI0(0) => AWSIZE_MI0(0), MST_WRGNT_NUM_0 => 
-        \MST_WRGNT_NUM[0]\, COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0
-         => COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0, AWLOCK_MI0_i_0
-         => AWLOCK_MI0_i_0, MSS_READY => MSS_READY, SDRCLK_c => 
+        AWADDR_MI0(26), AWADDR_MI0(25) => AWADDR_MI0(25), 
+        AWADDR_MI0(24) => AWADDR_MI0(24), AWADDR_MI0(23) => 
+        AWADDR_MI0(23), AWADDR_MI0(22) => AWADDR_MI0(22), 
+        AWADDR_MI0(21) => AWADDR_MI0(21), AWADDR_MI0(20) => 
+        AWADDR_MI0(20), AWADDR_MI0(19) => AWADDR_MI0(19), 
+        AWADDR_MI0(18) => AWADDR_MI0(18), AWADDR_MI0(17) => 
+        AWADDR_MI0(17), AWADDR_MI0(16) => AWADDR_MI0(16), 
+        AWADDR_MI0(15) => AWADDR_MI0(15), AWADDR_MI0(14) => 
+        AWADDR_MI0(14), AWADDR_MI0(13) => AWADDR_MI0(13), 
+        AWADDR_MI0(12) => AWADDR_MI0(12), AWADDR_MI0(11) => 
+        AWADDR_MI0(11), AWADDR_MI0(10) => AWADDR_MI0(10), 
+        AWADDR_MI0(9) => AWADDR_MI0(9), AWADDR_MI0(8) => 
+        AWADDR_MI0(8), AWADDR_MI0(7) => AWADDR_MI0(7), 
+        AWADDR_MI0(6) => AWADDR_MI0(6), AWADDR_MI0(5) => 
+        AWADDR_MI0(5), AWADDR_MI0(4) => AWADDR_MI0(4), 
+        AWADDR_MI0(3) => AWADDR_MI0(3), AWADDR_MI0(2) => 
+        AWADDR_MI0(2), AWADDR_MI0(1) => AWADDR_MI0(1), 
+        AWADDR_IS16_gated(27) => AWADDR_IS16_gated(27), 
+        AWADDR_IS16_gated(26) => AWADDR_IS16_gated(26), 
+        AWADDR_IS16_gated(25) => AWADDR_IS16_gated(25), 
+        AWADDR_IS16_gated(24) => AWADDR_IS16_gated(24), 
+        AWADDR_IS16_gated(23) => AWADDR_IS16_gated(23), 
+        AWADDR_IS16_gated(22) => AWADDR_IS16_gated(22), 
+        AWADDR_IS16_gated(21) => AWADDR_IS16_gated(21), 
+        AWADDR_IS16_gated(20) => AWADDR_IS16_gated(20), 
+        AWADDR_IS16_gated(19) => AWADDR_IS16_gated(19), 
+        AWADDR_IS16_gated(18) => AWADDR_IS16_gated(18), 
+        AWADDR_IS16_gated(17) => AWADDR_IS16_gated(17), 
+        AWADDR_IS16_gated(16) => AWADDR_IS16_gated(16), 
+        AWADDR_IS16_gated(15) => AWADDR_IS16_gated(15), 
+        AWADDR_IS16_gated(14) => AWADDR_IS16_gated(14), 
+        AWADDR_IS16_gated(13) => AWADDR_IS16_gated(13), 
+        AWADDR_IS16_gated(12) => AWADDR_IS16_gated(12), 
+        AWADDR_IS16_gated(11) => AWADDR_IS16_gated(11), 
+        AWADDR_IS16_gated(10) => AWADDR_IS16_gated(10), 
+        AWADDR_IS16_gated(9) => AWADDR_IS16_gated(9), 
+        AWADDR_IS16_gated(8) => AWADDR_IS16_gated(8), 
+        AWADDR_IS16_gated(7) => AWADDR_IS16_gated(7), 
+        AWADDR_IS16_gated(6) => AWADDR_IS16_gated(6), 
+        AWADDR_IS16_gated(5) => AWADDR_IS16_gated(5), 
+        AWADDR_IS16_gated(4) => AWADDR_IS16_gated(4), 
+        AWADDR_IS16_gated(3) => AWADDR_IS16_gated(3), 
+        AWADDR_IS16_gated(2) => AWADDR_IS16_gated(2), 
+        AWADDR_IS16_gated(1) => AWADDR_IS16_gated(1), 
+        AWSIZE_MI0(1) => AWSIZE_MI0(1), AWSIZE_MI0(0) => 
+        AWSIZE_MI0(0), MST_WRGNT_NUM_0 => \MST_WRGNT_NUM[0]\, 
+        COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
+        COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0, AWLOCK_MI0_i_0 => 
+        AWLOCK_MI0_i_0, MSS_READY => MSS_READY, SDRCLK_c => 
         SDRCLK_c, AWREADY_IM0 => AWREADY_IM0, AWVALID_IS16_gated
          => AWVALID_IS16_gated, N_75_i => N_75_i, AWVALID_MI0 => 
         AWVALID_MI0, AWREADY_SI16 => AWREADY_SI16, m0_wr_end => 
@@ -8493,60 +8693,63 @@ begin
         WSTRB_IS16_gated(3) => WSTRB_IS16_gated(3), 
         WSTRB_IS16_gated(2) => WSTRB_IS16_gated(2), 
         WSTRB_IS16_gated(1) => WSTRB_IS16_gated(1), 
-        WSTRB_IS16_gated(0) => WSTRB_IS16_gated(0), 
-        MST_WRGNT_NUM_0 => \MST_WRGNT_NUM[0]\, WREADY_SI16 => 
-        WREADY_SI16, WVALID_MI0 => WVALID_MI0, WVALID_IS16_gated
-         => WVALID_IS16_gated, WREADY_IM0 => WREADY_IM0, SDRCLK_c
-         => SDRCLK_c, MSS_READY => MSS_READY);
+        WSTRB_IS16_gated(0) => WSTRB_IS16_gated(0), axi_state_0
+         => axi_state_0, MST_WRGNT_NUM_0 => \MST_WRGNT_NUM[0]\, 
+        WVALID_MI0 => WVALID_MI0, COREAXI_0_AXImslave16_WVALID
+         => COREAXI_0_AXImslave16_WVALID, N_389 => N_389, 
+        WVALID_IS16_gated => WVALID_IS16_gated, WREADY_IM0 => 
+        WREADY_IM0, SDRCLK_c => SDRCLK_c, MSS_READY => MSS_READY);
     
     inst_ra_channel : axi_ra_channel
       port map(ARSIZE_IS16_gated(1) => ARSIZE_IS16_gated(1), 
         ARSIZE_IS16_gated(0) => ARSIZE_IS16_gated(0), 
         ARADDR_MI0(27) => ARADDR_MI0(27), ARADDR_MI0(26) => 
-        ARADDR_MI0(26), ARADDR_MI0(25) => nc5, ARADDR_MI0(24) => 
-        nc4, ARADDR_MI0(23) => ARADDR_MI0(23), ARADDR_MI0(22) => 
-        ARADDR_MI0(22), ARADDR_MI0(21) => ARADDR_MI0(21), 
-        ARADDR_MI0(20) => ARADDR_MI0(20), ARADDR_MI0(19) => 
-        ARADDR_MI0(19), ARADDR_MI0(18) => ARADDR_MI0(18), 
-        ARADDR_MI0(17) => ARADDR_MI0(17), ARADDR_MI0(16) => 
-        ARADDR_MI0(16), ARADDR_MI0(15) => ARADDR_MI0(15), 
-        ARADDR_MI0(14) => ARADDR_MI0(14), ARADDR_MI0(13) => 
-        ARADDR_MI0(13), ARADDR_MI0(12) => ARADDR_MI0(12), 
-        ARADDR_MI0(11) => ARADDR_MI0(11), ARADDR_MI0(10) => 
-        ARADDR_MI0(10), ARADDR_MI0(9) => ARADDR_MI0(9), 
-        ARADDR_MI0(8) => ARADDR_MI0(8), ARADDR_MI0(7) => 
-        ARADDR_MI0(7), ARADDR_MI0(6) => ARADDR_MI0(6), 
-        ARADDR_MI0(5) => ARADDR_MI0(5), ARADDR_MI0(4) => 
-        ARADDR_MI0(4), ARADDR_MI0(3) => ARADDR_MI0(3), 
-        ARADDR_MI0(2) => ARADDR_MI0(2), ARADDR_MI0(1) => 
-        ARADDR_MI0(1), ARADDR_IS16_gated(27) => 
-        ARADDR_IS16_gated(27), ARADDR_IS16_gated(26) => 
-        ARADDR_IS16_gated(26), ARADDR_IS16_gated(25) => nc3, 
-        ARADDR_IS16_gated(24) => nc1, ARADDR_IS16_gated(23) => 
-        ARADDR_IS16_gated(23), ARADDR_IS16_gated(22) => 
-        ARADDR_IS16_gated(22), ARADDR_IS16_gated(21) => 
-        ARADDR_IS16_gated(21), ARADDR_IS16_gated(20) => 
-        ARADDR_IS16_gated(20), ARADDR_IS16_gated(19) => 
-        ARADDR_IS16_gated(19), ARADDR_IS16_gated(18) => 
-        ARADDR_IS16_gated(18), ARADDR_IS16_gated(17) => 
-        ARADDR_IS16_gated(17), ARADDR_IS16_gated(16) => 
-        ARADDR_IS16_gated(16), ARADDR_IS16_gated(15) => 
-        ARADDR_IS16_gated(15), ARADDR_IS16_gated(14) => 
-        ARADDR_IS16_gated(14), ARADDR_IS16_gated(13) => 
-        ARADDR_IS16_gated(13), ARADDR_IS16_gated(12) => 
-        ARADDR_IS16_gated(12), ARADDR_IS16_gated(11) => 
-        ARADDR_IS16_gated(11), ARADDR_IS16_gated(10) => 
-        ARADDR_IS16_gated(10), ARADDR_IS16_gated(9) => 
-        ARADDR_IS16_gated(9), ARADDR_IS16_gated(8) => 
-        ARADDR_IS16_gated(8), ARADDR_IS16_gated(7) => 
-        ARADDR_IS16_gated(7), ARADDR_IS16_gated(6) => 
-        ARADDR_IS16_gated(6), ARADDR_IS16_gated(5) => 
-        ARADDR_IS16_gated(5), ARADDR_IS16_gated(4) => 
-        ARADDR_IS16_gated(4), ARADDR_IS16_gated(3) => 
-        ARADDR_IS16_gated(3), ARADDR_IS16_gated(2) => 
-        ARADDR_IS16_gated(2), ARADDR_IS16_gated(1) => 
-        ARADDR_IS16_gated(1), ARSIZE_MI0(1) => ARSIZE_MI0(1), 
-        ARSIZE_MI0(0) => ARSIZE_MI0(0), ARBURST_IS16_gated_0 => 
+        ARADDR_MI0(26), ARADDR_MI0(25) => ARADDR_MI0(25), 
+        ARADDR_MI0(24) => ARADDR_MI0(24), ARADDR_MI0(23) => 
+        ARADDR_MI0(23), ARADDR_MI0(22) => ARADDR_MI0(22), 
+        ARADDR_MI0(21) => ARADDR_MI0(21), ARADDR_MI0(20) => 
+        ARADDR_MI0(20), ARADDR_MI0(19) => ARADDR_MI0(19), 
+        ARADDR_MI0(18) => ARADDR_MI0(18), ARADDR_MI0(17) => 
+        ARADDR_MI0(17), ARADDR_MI0(16) => ARADDR_MI0(16), 
+        ARADDR_MI0(15) => ARADDR_MI0(15), ARADDR_MI0(14) => 
+        ARADDR_MI0(14), ARADDR_MI0(13) => ARADDR_MI0(13), 
+        ARADDR_MI0(12) => ARADDR_MI0(12), ARADDR_MI0(11) => 
+        ARADDR_MI0(11), ARADDR_MI0(10) => ARADDR_MI0(10), 
+        ARADDR_MI0(9) => ARADDR_MI0(9), ARADDR_MI0(8) => 
+        ARADDR_MI0(8), ARADDR_MI0(7) => ARADDR_MI0(7), 
+        ARADDR_MI0(6) => ARADDR_MI0(6), ARADDR_MI0(5) => 
+        ARADDR_MI0(5), ARADDR_MI0(4) => ARADDR_MI0(4), 
+        ARADDR_MI0(3) => ARADDR_MI0(3), ARADDR_MI0(2) => 
+        ARADDR_MI0(2), ARADDR_MI0(1) => ARADDR_MI0(1), 
+        ARADDR_IS16_gated(27) => ARADDR_IS16_gated(27), 
+        ARADDR_IS16_gated(26) => ARADDR_IS16_gated(26), 
+        ARADDR_IS16_gated(25) => ARADDR_IS16_gated(25), 
+        ARADDR_IS16_gated(24) => ARADDR_IS16_gated(24), 
+        ARADDR_IS16_gated(23) => ARADDR_IS16_gated(23), 
+        ARADDR_IS16_gated(22) => ARADDR_IS16_gated(22), 
+        ARADDR_IS16_gated(21) => ARADDR_IS16_gated(21), 
+        ARADDR_IS16_gated(20) => ARADDR_IS16_gated(20), 
+        ARADDR_IS16_gated(19) => ARADDR_IS16_gated(19), 
+        ARADDR_IS16_gated(18) => ARADDR_IS16_gated(18), 
+        ARADDR_IS16_gated(17) => ARADDR_IS16_gated(17), 
+        ARADDR_IS16_gated(16) => ARADDR_IS16_gated(16), 
+        ARADDR_IS16_gated(15) => ARADDR_IS16_gated(15), 
+        ARADDR_IS16_gated(14) => ARADDR_IS16_gated(14), 
+        ARADDR_IS16_gated(13) => ARADDR_IS16_gated(13), 
+        ARADDR_IS16_gated(12) => ARADDR_IS16_gated(12), 
+        ARADDR_IS16_gated(11) => ARADDR_IS16_gated(11), 
+        ARADDR_IS16_gated(10) => ARADDR_IS16_gated(10), 
+        ARADDR_IS16_gated(9) => ARADDR_IS16_gated(9), 
+        ARADDR_IS16_gated(8) => ARADDR_IS16_gated(8), 
+        ARADDR_IS16_gated(7) => ARADDR_IS16_gated(7), 
+        ARADDR_IS16_gated(6) => ARADDR_IS16_gated(6), 
+        ARADDR_IS16_gated(5) => ARADDR_IS16_gated(5), 
+        ARADDR_IS16_gated(4) => ARADDR_IS16_gated(4), 
+        ARADDR_IS16_gated(3) => ARADDR_IS16_gated(3), 
+        ARADDR_IS16_gated(2) => ARADDR_IS16_gated(2), 
+        ARADDR_IS16_gated(1) => ARADDR_IS16_gated(1), 
+        ARSIZE_MI0(1) => ARSIZE_MI0(1), ARSIZE_MI0(0) => 
+        ARSIZE_MI0(0), ARBURST_IS16_gated_0 => 
         ARBURST_IS16_gated_0, ARBURST_MI0_0 => ARBURST_MI0_0, 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0, ARLOCK_MI0_i_0 => 
@@ -9914,15 +10117,16 @@ entity axi_interconnect_ntom is
 
     port( AWSIZE_IS16_gated                    : out   std_logic_vector(1 downto 0);
           AWADDR_MI0                           : in    std_logic_vector(27 downto 1);
-          AWADDR_IS16_gated                    : out   std_logic_vector(23 downto 1);
+          AWADDR_IS16_gated                    : out   std_logic_vector(27 downto 1);
           AWSIZE_MI0                           : in    std_logic_vector(1 downto 0);
           WDATA_MI0                            : in    std_logic_vector(63 downto 0);
           WSTRB_MI0                            : in    std_logic_vector(7 downto 0);
+          axi_state                            : in    std_logic_vector(6 downto 5);
           WDATA_IS16_gated                     : out   std_logic_vector(63 downto 0);
           WSTRB_IS16_gated                     : out   std_logic_vector(7 downto 0);
           ARSIZE_IS16_gated                    : out   std_logic_vector(1 downto 0);
           ARADDR_MI0                           : in    std_logic_vector(27 downto 1);
-          ARADDR_IS16_gated                    : out   std_logic_vector(23 downto 1);
+          ARADDR_IS16_gated                    : out   std_logic_vector(27 downto 1);
           ARSIZE_MI0                           : in    std_logic_vector(1 downto 0);
           RDATA_IM0                            : out   std_logic_vector(63 downto 0);
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic;
@@ -9961,14 +10165,13 @@ entity axi_interconnect_ntom is
           COREAXI_0_AXImslave16_RDATA_0        : in    std_logic;
           RDATA_reg_3                          : in    std_logic;
           RDATA_reg_0                          : in    std_logic;
-          axi_state_0                          : in    std_logic;
           AWREADY_IM0                          : out   std_logic;
           N_75_i                               : in    std_logic;
           AWVALID_MI0                          : in    std_logic;
           AWREADY_SI16                         : in    std_logic;
           m0_wr_end                            : in    std_logic;
-          WREADY_SI16                          : in    std_logic;
           WVALID_MI0                           : in    std_logic;
+          COREAXI_0_AXImslave16_WVALID         : in    std_logic;
           WREADY_IM0                           : out   std_logic;
           ARREADY_IM0                          : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARVALID  : in    std_logic;
@@ -10050,6 +10253,7 @@ architecture DEF_ARCH of axi_interconnect_ntom is
           ARLOCK_MI0_i_0                       : in    std_logic := 'U';
           ARBURST_MI0_0                        : in    std_logic := 'U';
           ARBURST_IS16_gated_0                 : out   std_logic;
+          axi_state_0                          : in    std_logic := 'U';
           AWLOCK_MI0_i_0                       : in    std_logic := 'U';
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic := 'U';
           m0_rd_end                            : in    std_logic := 'U';
@@ -10061,8 +10265,9 @@ architecture DEF_ARCH of axi_interconnect_ntom is
           ARREADY_IM0                          : out   std_logic;
           WREADY_IM0                           : out   std_logic;
           WVALID_IS16_gated                    : out   std_logic;
+          N_389                                : in    std_logic := 'U';
+          COREAXI_0_AXImslave16_WVALID         : in    std_logic := 'U';
           WVALID_MI0                           : in    std_logic := 'U';
-          WREADY_SI16                          : in    std_logic := 'U';
           m0_wr_end                            : in    std_logic := 'U';
           AWREADY_SI16                         : in    std_logic := 'U';
           AWVALID_MI0                          : in    std_logic := 'U';
@@ -10202,7 +10407,6 @@ architecture DEF_ARCH of axi_interconnect_ntom is
         \AWVALID_IS16_gated_r\, AWVALID_IS16_gated, 
         \WVALID_IS16_gated_r\, WVALID_IS16_gated, 
         \ARVALID_IS16_gated_r\, ARVALID_IS16_gated : std_logic;
-    signal nc8, nc7, nc6, nc2, nc5, nc4, nc3, nc1 : std_logic;
 
     for all : axi_matrix_s
 	Use entity work.axi_matrix_s(DEF_ARCH);
@@ -10210,13 +10414,18 @@ architecture DEF_ARCH of axi_interconnect_ntom is
 	Use entity work.axi_matrix_m(DEF_ARCH);
 begin 
 
+    AWADDR_IS16_gated(27) <= \AWADDR_IS16_gated[27]\;
+    AWADDR_IS16_gated(26) <= \AWADDR_IS16_gated[26]\;
+    ARADDR_IS16_gated(27) <= \ARADDR_IS16_gated[27]\;
+    ARADDR_IS16_gated(26) <= \ARADDR_IS16_gated[26]\;
 
     \L27.inst_matrix_S16\ : axi_matrix_s
       port map(ARSIZE_MI0(1) => ARSIZE_MI0(1), ARSIZE_MI0(0) => 
         ARSIZE_MI0(0), ARADDR_IS16_gated(27) => 
         \ARADDR_IS16_gated[27]\, ARADDR_IS16_gated(26) => 
-        \ARADDR_IS16_gated[26]\, ARADDR_IS16_gated(25) => nc8, 
-        ARADDR_IS16_gated(24) => nc7, ARADDR_IS16_gated(23) => 
+        \ARADDR_IS16_gated[26]\, ARADDR_IS16_gated(25) => 
+        ARADDR_IS16_gated(25), ARADDR_IS16_gated(24) => 
+        ARADDR_IS16_gated(24), ARADDR_IS16_gated(23) => 
         ARADDR_IS16_gated(23), ARADDR_IS16_gated(22) => 
         ARADDR_IS16_gated(22), ARADDR_IS16_gated(21) => 
         ARADDR_IS16_gated(21), ARADDR_IS16_gated(20) => 
@@ -10240,23 +10449,24 @@ begin
         ARADDR_IS16_gated(3), ARADDR_IS16_gated(2) => 
         ARADDR_IS16_gated(2), ARADDR_IS16_gated(1) => 
         ARADDR_IS16_gated(1), ARADDR_MI0(27) => ARADDR_MI0(27), 
-        ARADDR_MI0(26) => ARADDR_MI0(26), ARADDR_MI0(25) => nc6, 
-        ARADDR_MI0(24) => nc2, ARADDR_MI0(23) => ARADDR_MI0(23), 
-        ARADDR_MI0(22) => ARADDR_MI0(22), ARADDR_MI0(21) => 
-        ARADDR_MI0(21), ARADDR_MI0(20) => ARADDR_MI0(20), 
-        ARADDR_MI0(19) => ARADDR_MI0(19), ARADDR_MI0(18) => 
-        ARADDR_MI0(18), ARADDR_MI0(17) => ARADDR_MI0(17), 
-        ARADDR_MI0(16) => ARADDR_MI0(16), ARADDR_MI0(15) => 
-        ARADDR_MI0(15), ARADDR_MI0(14) => ARADDR_MI0(14), 
-        ARADDR_MI0(13) => ARADDR_MI0(13), ARADDR_MI0(12) => 
-        ARADDR_MI0(12), ARADDR_MI0(11) => ARADDR_MI0(11), 
-        ARADDR_MI0(10) => ARADDR_MI0(10), ARADDR_MI0(9) => 
-        ARADDR_MI0(9), ARADDR_MI0(8) => ARADDR_MI0(8), 
-        ARADDR_MI0(7) => ARADDR_MI0(7), ARADDR_MI0(6) => 
-        ARADDR_MI0(6), ARADDR_MI0(5) => ARADDR_MI0(5), 
-        ARADDR_MI0(4) => ARADDR_MI0(4), ARADDR_MI0(3) => 
-        ARADDR_MI0(3), ARADDR_MI0(2) => ARADDR_MI0(2), 
-        ARADDR_MI0(1) => ARADDR_MI0(1), ARSIZE_IS16_gated(1) => 
+        ARADDR_MI0(26) => ARADDR_MI0(26), ARADDR_MI0(25) => 
+        ARADDR_MI0(25), ARADDR_MI0(24) => ARADDR_MI0(24), 
+        ARADDR_MI0(23) => ARADDR_MI0(23), ARADDR_MI0(22) => 
+        ARADDR_MI0(22), ARADDR_MI0(21) => ARADDR_MI0(21), 
+        ARADDR_MI0(20) => ARADDR_MI0(20), ARADDR_MI0(19) => 
+        ARADDR_MI0(19), ARADDR_MI0(18) => ARADDR_MI0(18), 
+        ARADDR_MI0(17) => ARADDR_MI0(17), ARADDR_MI0(16) => 
+        ARADDR_MI0(16), ARADDR_MI0(15) => ARADDR_MI0(15), 
+        ARADDR_MI0(14) => ARADDR_MI0(14), ARADDR_MI0(13) => 
+        ARADDR_MI0(13), ARADDR_MI0(12) => ARADDR_MI0(12), 
+        ARADDR_MI0(11) => ARADDR_MI0(11), ARADDR_MI0(10) => 
+        ARADDR_MI0(10), ARADDR_MI0(9) => ARADDR_MI0(9), 
+        ARADDR_MI0(8) => ARADDR_MI0(8), ARADDR_MI0(7) => 
+        ARADDR_MI0(7), ARADDR_MI0(6) => ARADDR_MI0(6), 
+        ARADDR_MI0(5) => ARADDR_MI0(5), ARADDR_MI0(4) => 
+        ARADDR_MI0(4), ARADDR_MI0(3) => ARADDR_MI0(3), 
+        ARADDR_MI0(2) => ARADDR_MI0(2), ARADDR_MI0(1) => 
+        ARADDR_MI0(1), ARSIZE_IS16_gated(1) => 
         ARSIZE_IS16_gated(1), ARSIZE_IS16_gated(0) => 
         ARSIZE_IS16_gated(0), WSTRB_IS16_gated(7) => 
         WSTRB_IS16_gated(7), WSTRB_IS16_gated(6) => 
@@ -10380,8 +10590,9 @@ begin
         WDATA_MI0(0), AWSIZE_MI0(1) => AWSIZE_MI0(1), 
         AWSIZE_MI0(0) => AWSIZE_MI0(0), AWADDR_IS16_gated(27) => 
         \AWADDR_IS16_gated[27]\, AWADDR_IS16_gated(26) => 
-        \AWADDR_IS16_gated[26]\, AWADDR_IS16_gated(25) => nc5, 
-        AWADDR_IS16_gated(24) => nc4, AWADDR_IS16_gated(23) => 
+        \AWADDR_IS16_gated[26]\, AWADDR_IS16_gated(25) => 
+        AWADDR_IS16_gated(25), AWADDR_IS16_gated(24) => 
+        AWADDR_IS16_gated(24), AWADDR_IS16_gated(23) => 
         AWADDR_IS16_gated(23), AWADDR_IS16_gated(22) => 
         AWADDR_IS16_gated(22), AWADDR_IS16_gated(21) => 
         AWADDR_IS16_gated(21), AWADDR_IS16_gated(20) => 
@@ -10405,27 +10616,29 @@ begin
         AWADDR_IS16_gated(3), AWADDR_IS16_gated(2) => 
         AWADDR_IS16_gated(2), AWADDR_IS16_gated(1) => 
         AWADDR_IS16_gated(1), AWADDR_MI0(27) => AWADDR_MI0(27), 
-        AWADDR_MI0(26) => AWADDR_MI0(26), AWADDR_MI0(25) => nc3, 
-        AWADDR_MI0(24) => nc1, AWADDR_MI0(23) => AWADDR_MI0(23), 
-        AWADDR_MI0(22) => AWADDR_MI0(22), AWADDR_MI0(21) => 
-        AWADDR_MI0(21), AWADDR_MI0(20) => AWADDR_MI0(20), 
-        AWADDR_MI0(19) => AWADDR_MI0(19), AWADDR_MI0(18) => 
-        AWADDR_MI0(18), AWADDR_MI0(17) => AWADDR_MI0(17), 
-        AWADDR_MI0(16) => AWADDR_MI0(16), AWADDR_MI0(15) => 
-        AWADDR_MI0(15), AWADDR_MI0(14) => AWADDR_MI0(14), 
-        AWADDR_MI0(13) => AWADDR_MI0(13), AWADDR_MI0(12) => 
-        AWADDR_MI0(12), AWADDR_MI0(11) => AWADDR_MI0(11), 
-        AWADDR_MI0(10) => AWADDR_MI0(10), AWADDR_MI0(9) => 
-        AWADDR_MI0(9), AWADDR_MI0(8) => AWADDR_MI0(8), 
-        AWADDR_MI0(7) => AWADDR_MI0(7), AWADDR_MI0(6) => 
-        AWADDR_MI0(6), AWADDR_MI0(5) => AWADDR_MI0(5), 
-        AWADDR_MI0(4) => AWADDR_MI0(4), AWADDR_MI0(3) => 
-        AWADDR_MI0(3), AWADDR_MI0(2) => AWADDR_MI0(2), 
-        AWADDR_MI0(1) => AWADDR_MI0(1), AWSIZE_IS16_gated(1) => 
+        AWADDR_MI0(26) => AWADDR_MI0(26), AWADDR_MI0(25) => 
+        AWADDR_MI0(25), AWADDR_MI0(24) => AWADDR_MI0(24), 
+        AWADDR_MI0(23) => AWADDR_MI0(23), AWADDR_MI0(22) => 
+        AWADDR_MI0(22), AWADDR_MI0(21) => AWADDR_MI0(21), 
+        AWADDR_MI0(20) => AWADDR_MI0(20), AWADDR_MI0(19) => 
+        AWADDR_MI0(19), AWADDR_MI0(18) => AWADDR_MI0(18), 
+        AWADDR_MI0(17) => AWADDR_MI0(17), AWADDR_MI0(16) => 
+        AWADDR_MI0(16), AWADDR_MI0(15) => AWADDR_MI0(15), 
+        AWADDR_MI0(14) => AWADDR_MI0(14), AWADDR_MI0(13) => 
+        AWADDR_MI0(13), AWADDR_MI0(12) => AWADDR_MI0(12), 
+        AWADDR_MI0(11) => AWADDR_MI0(11), AWADDR_MI0(10) => 
+        AWADDR_MI0(10), AWADDR_MI0(9) => AWADDR_MI0(9), 
+        AWADDR_MI0(8) => AWADDR_MI0(8), AWADDR_MI0(7) => 
+        AWADDR_MI0(7), AWADDR_MI0(6) => AWADDR_MI0(6), 
+        AWADDR_MI0(5) => AWADDR_MI0(5), AWADDR_MI0(4) => 
+        AWADDR_MI0(4), AWADDR_MI0(3) => AWADDR_MI0(3), 
+        AWADDR_MI0(2) => AWADDR_MI0(2), AWADDR_MI0(1) => 
+        AWADDR_MI0(1), AWSIZE_IS16_gated(1) => 
         AWSIZE_IS16_gated(1), AWSIZE_IS16_gated(0) => 
         AWSIZE_IS16_gated(0), ARLOCK_MI0_i_0 => ARLOCK_MI0_i_0, 
         ARBURST_MI0_0 => ARBURST_MI0_0, ARBURST_IS16_gated_0 => 
-        ARBURST_IS16_gated_0, AWLOCK_MI0_i_0 => AWLOCK_MI0_i_0, 
+        ARBURST_IS16_gated_0, axi_state_0 => axi_state(5), 
+        AWLOCK_MI0_i_0 => AWLOCK_MI0_i_0, 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0, m0_rd_end => 
         m0_rd_end, ARVALID_MI0 => ARVALID_MI0, 
@@ -10437,12 +10650,13 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_ARVALID, ARVALID_IS16_gated
          => ARVALID_IS16_gated, ARREADY_IM0 => ARREADY_IM0, 
         WREADY_IM0 => WREADY_IM0, WVALID_IS16_gated => 
-        WVALID_IS16_gated, WVALID_MI0 => WVALID_MI0, WREADY_SI16
-         => WREADY_SI16, m0_wr_end => m0_wr_end, AWREADY_SI16 => 
-        AWREADY_SI16, AWVALID_MI0 => AWVALID_MI0, N_75_i => 
-        N_75_i, AWVALID_IS16_gated => AWVALID_IS16_gated, 
-        AWREADY_IM0 => AWREADY_IM0, SDRCLK_c => SDRCLK_c, 
-        MSS_READY => MSS_READY);
+        WVALID_IS16_gated, N_389 => N_389, 
+        COREAXI_0_AXImslave16_WVALID => 
+        COREAXI_0_AXImslave16_WVALID, WVALID_MI0 => WVALID_MI0, 
+        m0_wr_end => m0_wr_end, AWREADY_SI16 => AWREADY_SI16, 
+        AWVALID_MI0 => AWVALID_MI0, N_75_i => N_75_i, 
+        AWVALID_IS16_gated => AWVALID_IS16_gated, AWREADY_IM0 => 
+        AWREADY_IM0, SDRCLK_c => SDRCLK_c, MSS_READY => MSS_READY);
     
     ARVALID_IS16_gated_r : SLE
       port map(D => ARVALID_IS16_gated, CLK => SDRCLK_c, EN => 
@@ -10505,7 +10719,7 @@ begin
         RDATA_IM0(4) => RDATA_IM0(4), RDATA_IM0(3) => 
         RDATA_IM0(3), RDATA_IM0(2) => RDATA_IM0(2), RDATA_IM0(1)
          => RDATA_IM0(1), RDATA_IM0(0) => RDATA_IM0(0), 
-        axi_state_0 => axi_state_0, RDATA_reg_3 => RDATA_reg_3, 
+        axi_state_0 => axi_state(6), RDATA_reg_3 => RDATA_reg_3, 
         RDATA_reg_0 => RDATA_reg_0, COREAXI_0_AXImslave16_RDATA_3
          => COREAXI_0_AXImslave16_RDATA_3, 
         COREAXI_0_AXImslave16_RDATA_0 => 
@@ -10653,8 +10867,8 @@ use smartfusion2.all;
 entity top_sb_COREAXI_0_COREAXI is
 
     port( COREAXI_0_AXImslave16_AWSIZE         : out   std_logic_vector(1 downto 0);
-          COREAXI_0_AXImslave16_ARADDR         : out   std_logic_vector(23 downto 1);
-          COREAXI_0_AXImslave16_AWADDR         : out   std_logic_vector(23 downto 1);
+          COREAXI_0_AXImslave16_ARADDR         : out   std_logic_vector(27 downto 1);
+          COREAXI_0_AXImslave16_AWADDR         : out   std_logic_vector(27 downto 1);
           COREAXI_0_AXImslave16_WSTRB          : out   std_logic_vector(7 downto 0);
           COREAXI_0_AXImslave16_WDATA          : out   std_logic_vector(63 downto 0);
           COREAXI_0_AXImslave16_ARSIZE         : out   std_logic_vector(1 downto 0);
@@ -10662,10 +10876,10 @@ entity top_sb_COREAXI_0_COREAXI is
           COREAHBLTOAXI_0_AXIMasterIF_WDATA    : in    std_logic_vector(63 downto 16);
           COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1);
           COREAHBLTOAXI_0_AXIMasterIF_ARSIZE   : in    std_logic_vector(1 downto 0);
+          axi_state                            : in    std_logic_vector(6 downto 5);
           COREAXI_0_AXImslave16_ARBURST_0      : out   std_logic;
           axi_current_state_0                  : in    std_logic;
           axi_current_state_3                  : in    std_logic;
-          axi_state_0                          : in    std_logic;
           RDATA_reg_3                          : in    std_logic;
           RDATA_reg_0                          : in    std_logic;
           COREAXI_0_AXImslave16_RDATA_3        : in    std_logic;
@@ -10698,10 +10912,10 @@ entity top_sb_COREAXI_0_COREAXI is
           COREAXI_0_AXImslave16_RDATA_m_9      : in    std_logic;
           COREAXI_0_AXImslave16_RDATA_m_10     : in    std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic;
-          COREAXI_0_AXImslave16_WVALID         : out   std_logic;
           WREADY_SI16_i                        : in    std_logic;
           COREAXI_0_AXImslave16_AWVALID        : out   std_logic;
           COREAXI_0_AXImslave16_AWREADY        : in    std_logic;
+          WREADY_SI16                          : in    std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_BVALID   : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_AWREADY  : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARREADY  : out   std_logic;
@@ -10789,7 +11003,7 @@ entity top_sb_COREAXI_0_COREAXI is
           COREAXI_0_AXImslave16_ARREADY        : in    std_logic;
           COREAXI_0_AXImslave16_ARVALID        : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARVALID  : in    std_logic;
-          WREADY_SI16                          : in    std_logic;
+          COREAXI_0_AXImslave16_WVALID         : out   std_logic;
           N_75_i                               : in    std_logic
         );
 
@@ -10804,16 +11018,16 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
 
   component axi_slave_stage
     port( AWSIZE_IS16_gated               : in    std_logic_vector(1 downto 0) := (others => 'U');
-          ARADDR_IS16_gated               : in    std_logic_vector(23 downto 1) := (others => 'U');
-          AWADDR_IS16_gated               : in    std_logic_vector(23 downto 1) := (others => 'U');
+          ARADDR_IS16_gated               : in    std_logic_vector(27 downto 1) := (others => 'U');
+          AWADDR_IS16_gated               : in    std_logic_vector(27 downto 1) := (others => 'U');
           ARSIZE_IS16_gated               : in    std_logic_vector(1 downto 0) := (others => 'U');
           COREAXI_0_AXImslave16_ARSIZE    : out   std_logic_vector(1 downto 0);
           WDATA_IS16_gated                : in    std_logic_vector(63 downto 0) := (others => 'U');
           COREAXI_0_AXImslave16_WDATA     : out   std_logic_vector(63 downto 0);
           WSTRB_IS16_gated                : in    std_logic_vector(7 downto 0) := (others => 'U');
           COREAXI_0_AXImslave16_WSTRB     : out   std_logic_vector(7 downto 0);
-          COREAXI_0_AXImslave16_AWADDR    : out   std_logic_vector(23 downto 1);
-          COREAXI_0_AXImslave16_ARADDR    : out   std_logic_vector(23 downto 1);
+          COREAXI_0_AXImslave16_AWADDR    : out   std_logic_vector(27 downto 1);
+          COREAXI_0_AXImslave16_ARADDR    : out   std_logic_vector(27 downto 1);
           COREAXI_0_AXImslave16_AWSIZE    : out   std_logic_vector(1 downto 0);
           ARBURST_IS16_gated_0            : in    std_logic := 'U';
           COREAXI_0_AXImslave16_ARBURST_0 : out   std_logic;
@@ -10836,8 +11050,8 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
   component axi_master_stage
     port( RDATA_IM0                            : in    std_logic_vector(63 downto 0) := (others => 'U');
           COREAHBLTOAXI_0_AXIMasterIF_ARSIZE   : in    std_logic_vector(1 downto 0) := (others => 'U');
-          COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1) := (others => 'U');
           AWADDR_MI0                           : out   std_logic_vector(27 downto 1);
+          COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1) := (others => 'U');
           ARADDR_MI0                           : out   std_logic_vector(27 downto 1);
           ARSIZE_MI0                           : out   std_logic_vector(1 downto 0);
           AWSIZE_MI0                           : out   std_logic_vector(1 downto 0);
@@ -10914,15 +11128,16 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
   component axi_interconnect_ntom
     port( AWSIZE_IS16_gated                    : out   std_logic_vector(1 downto 0);
           AWADDR_MI0                           : in    std_logic_vector(27 downto 1) := (others => 'U');
-          AWADDR_IS16_gated                    : out   std_logic_vector(23 downto 1);
+          AWADDR_IS16_gated                    : out   std_logic_vector(27 downto 1);
           AWSIZE_MI0                           : in    std_logic_vector(1 downto 0) := (others => 'U');
           WDATA_MI0                            : in    std_logic_vector(63 downto 0) := (others => 'U');
           WSTRB_MI0                            : in    std_logic_vector(7 downto 0) := (others => 'U');
+          axi_state                            : in    std_logic_vector(6 downto 5) := (others => 'U');
           WDATA_IS16_gated                     : out   std_logic_vector(63 downto 0);
           WSTRB_IS16_gated                     : out   std_logic_vector(7 downto 0);
           ARSIZE_IS16_gated                    : out   std_logic_vector(1 downto 0);
           ARADDR_MI0                           : in    std_logic_vector(27 downto 1) := (others => 'U');
-          ARADDR_IS16_gated                    : out   std_logic_vector(23 downto 1);
+          ARADDR_IS16_gated                    : out   std_logic_vector(27 downto 1);
           ARSIZE_MI0                           : in    std_logic_vector(1 downto 0) := (others => 'U');
           RDATA_IM0                            : out   std_logic_vector(63 downto 0);
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic := 'U';
@@ -10961,14 +11176,13 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
           COREAXI_0_AXImslave16_RDATA_0        : in    std_logic := 'U';
           RDATA_reg_3                          : in    std_logic := 'U';
           RDATA_reg_0                          : in    std_logic := 'U';
-          axi_state_0                          : in    std_logic := 'U';
           AWREADY_IM0                          : out   std_logic;
           N_75_i                               : in    std_logic := 'U';
           AWVALID_MI0                          : in    std_logic := 'U';
           AWREADY_SI16                         : in    std_logic := 'U';
           m0_wr_end                            : in    std_logic := 'U';
-          WREADY_SI16                          : in    std_logic := 'U';
           WVALID_MI0                           : in    std_logic := 'U';
+          COREAXI_0_AXImslave16_WVALID         : in    std_logic := 'U';
           WREADY_IM0                           : out   std_logic;
           ARREADY_IM0                          : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARVALID  : in    std_logic := 'U';
@@ -11044,90 +11258,93 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
         \AWADDR_MI0[13]\, \AWADDR_MI0[14]\, \AWADDR_MI0[15]\, 
         \AWADDR_MI0[16]\, \AWADDR_MI0[17]\, \AWADDR_MI0[18]\, 
         \AWADDR_MI0[19]\, \AWADDR_MI0[20]\, \AWADDR_MI0[21]\, 
-        \AWADDR_MI0[22]\, \AWADDR_MI0[23]\, \AWADDR_MI0[26]\, 
-        \AWADDR_MI0[27]\, \AWADDR_IS16_gated[1]\, 
-        \AWADDR_IS16_gated[2]\, \AWADDR_IS16_gated[3]\, 
-        \AWADDR_IS16_gated[4]\, \AWADDR_IS16_gated[5]\, 
-        \AWADDR_IS16_gated[6]\, \AWADDR_IS16_gated[7]\, 
-        \AWADDR_IS16_gated[8]\, \AWADDR_IS16_gated[9]\, 
-        \AWADDR_IS16_gated[10]\, \AWADDR_IS16_gated[11]\, 
-        \AWADDR_IS16_gated[12]\, \AWADDR_IS16_gated[13]\, 
-        \AWADDR_IS16_gated[14]\, \AWADDR_IS16_gated[15]\, 
-        \AWADDR_IS16_gated[16]\, \AWADDR_IS16_gated[17]\, 
-        \AWADDR_IS16_gated[18]\, \AWADDR_IS16_gated[19]\, 
-        \AWADDR_IS16_gated[20]\, \AWADDR_IS16_gated[21]\, 
-        \AWADDR_IS16_gated[22]\, \AWADDR_IS16_gated[23]\, 
-        \AWSIZE_MI0[0]\, \AWSIZE_MI0[1]\, \AWLOCK_MI0_i[1]\, 
-        \WDATA_MI0[0]\, \WDATA_MI0[1]\, \WDATA_MI0[2]\, 
-        \WDATA_MI0[3]\, \WDATA_MI0[4]\, \WDATA_MI0[5]\, 
-        \WDATA_MI0[6]\, \WDATA_MI0[7]\, \WDATA_MI0[8]\, 
-        \WDATA_MI0[9]\, \WDATA_MI0[10]\, \WDATA_MI0[11]\, 
-        \WDATA_MI0[12]\, \WDATA_MI0[13]\, \WDATA_MI0[14]\, 
-        \WDATA_MI0[15]\, \WDATA_MI0[16]\, \WDATA_MI0[17]\, 
-        \WDATA_MI0[18]\, \WDATA_MI0[19]\, \WDATA_MI0[20]\, 
-        \WDATA_MI0[21]\, \WDATA_MI0[22]\, \WDATA_MI0[23]\, 
-        \WDATA_MI0[24]\, \WDATA_MI0[25]\, \WDATA_MI0[26]\, 
-        \WDATA_MI0[27]\, \WDATA_MI0[28]\, \WDATA_MI0[29]\, 
-        \WDATA_MI0[30]\, \WDATA_MI0[31]\, \WDATA_MI0[32]\, 
-        \WDATA_MI0[33]\, \WDATA_MI0[34]\, \WDATA_MI0[35]\, 
-        \WDATA_MI0[36]\, \WDATA_MI0[37]\, \WDATA_MI0[38]\, 
-        \WDATA_MI0[39]\, \WDATA_MI0[40]\, \WDATA_MI0[41]\, 
-        \WDATA_MI0[42]\, \WDATA_MI0[43]\, \WDATA_MI0[44]\, 
-        \WDATA_MI0[45]\, \WDATA_MI0[46]\, \WDATA_MI0[47]\, 
-        \WDATA_MI0[48]\, \WDATA_MI0[49]\, \WDATA_MI0[50]\, 
-        \WDATA_MI0[51]\, \WDATA_MI0[52]\, \WDATA_MI0[53]\, 
-        \WDATA_MI0[54]\, \WDATA_MI0[55]\, \WDATA_MI0[56]\, 
-        \WDATA_MI0[57]\, \WDATA_MI0[58]\, \WDATA_MI0[59]\, 
-        \WDATA_MI0[60]\, \WDATA_MI0[61]\, \WDATA_MI0[62]\, 
-        \WDATA_MI0[63]\, \WSTRB_MI0[0]\, \WSTRB_MI0[1]\, 
-        \WSTRB_MI0[2]\, \WSTRB_MI0[3]\, \WSTRB_MI0[4]\, 
-        \WSTRB_MI0[5]\, \WSTRB_MI0[6]\, \WSTRB_MI0[7]\, 
-        \WDATA_IS16_gated[0]\, \WDATA_IS16_gated[1]\, 
-        \WDATA_IS16_gated[2]\, \WDATA_IS16_gated[3]\, 
-        \WDATA_IS16_gated[4]\, \WDATA_IS16_gated[5]\, 
-        \WDATA_IS16_gated[6]\, \WDATA_IS16_gated[7]\, 
-        \WDATA_IS16_gated[8]\, \WDATA_IS16_gated[9]\, 
-        \WDATA_IS16_gated[10]\, \WDATA_IS16_gated[11]\, 
-        \WDATA_IS16_gated[12]\, \WDATA_IS16_gated[13]\, 
-        \WDATA_IS16_gated[14]\, \WDATA_IS16_gated[15]\, 
-        \WDATA_IS16_gated[16]\, \WDATA_IS16_gated[17]\, 
-        \WDATA_IS16_gated[18]\, \WDATA_IS16_gated[19]\, 
-        \WDATA_IS16_gated[20]\, \WDATA_IS16_gated[21]\, 
-        \WDATA_IS16_gated[22]\, \WDATA_IS16_gated[23]\, 
-        \WDATA_IS16_gated[24]\, \WDATA_IS16_gated[25]\, 
-        \WDATA_IS16_gated[26]\, \WDATA_IS16_gated[27]\, 
-        \WDATA_IS16_gated[28]\, \WDATA_IS16_gated[29]\, 
-        \WDATA_IS16_gated[30]\, \WDATA_IS16_gated[31]\, 
-        \WDATA_IS16_gated[32]\, \WDATA_IS16_gated[33]\, 
-        \WDATA_IS16_gated[34]\, \WDATA_IS16_gated[35]\, 
-        \WDATA_IS16_gated[36]\, \WDATA_IS16_gated[37]\, 
-        \WDATA_IS16_gated[38]\, \WDATA_IS16_gated[39]\, 
-        \WDATA_IS16_gated[40]\, \WDATA_IS16_gated[41]\, 
-        \WDATA_IS16_gated[42]\, \WDATA_IS16_gated[43]\, 
-        \WDATA_IS16_gated[44]\, \WDATA_IS16_gated[45]\, 
-        \WDATA_IS16_gated[46]\, \WDATA_IS16_gated[47]\, 
-        \WDATA_IS16_gated[48]\, \WDATA_IS16_gated[49]\, 
-        \WDATA_IS16_gated[50]\, \WDATA_IS16_gated[51]\, 
-        \WDATA_IS16_gated[52]\, \WDATA_IS16_gated[53]\, 
-        \WDATA_IS16_gated[54]\, \WDATA_IS16_gated[55]\, 
-        \WDATA_IS16_gated[56]\, \WDATA_IS16_gated[57]\, 
-        \WDATA_IS16_gated[58]\, \WDATA_IS16_gated[59]\, 
-        \WDATA_IS16_gated[60]\, \WDATA_IS16_gated[61]\, 
-        \WDATA_IS16_gated[62]\, \WDATA_IS16_gated[63]\, 
-        \WSTRB_IS16_gated[0]\, \WSTRB_IS16_gated[1]\, 
-        \WSTRB_IS16_gated[2]\, \WSTRB_IS16_gated[3]\, 
-        \WSTRB_IS16_gated[4]\, \WSTRB_IS16_gated[5]\, 
-        \WSTRB_IS16_gated[6]\, \WSTRB_IS16_gated[7]\, 
-        \ARBURST_IS16_gated[0]\, \ARSIZE_IS16_gated[0]\, 
-        \ARSIZE_IS16_gated[1]\, \ARADDR_MI0[1]\, \ARADDR_MI0[2]\, 
-        \ARADDR_MI0[3]\, \ARADDR_MI0[4]\, \ARADDR_MI0[5]\, 
-        \ARADDR_MI0[6]\, \ARADDR_MI0[7]\, \ARADDR_MI0[8]\, 
-        \ARADDR_MI0[9]\, \ARADDR_MI0[10]\, \ARADDR_MI0[11]\, 
-        \ARADDR_MI0[12]\, \ARADDR_MI0[13]\, \ARADDR_MI0[14]\, 
-        \ARADDR_MI0[15]\, \ARADDR_MI0[16]\, \ARADDR_MI0[17]\, 
-        \ARADDR_MI0[18]\, \ARADDR_MI0[19]\, \ARADDR_MI0[20]\, 
-        \ARADDR_MI0[21]\, \ARADDR_MI0[22]\, \ARADDR_MI0[23]\, 
-        \ARADDR_MI0[26]\, \ARADDR_MI0[27]\, 
+        \AWADDR_MI0[22]\, \AWADDR_MI0[23]\, \AWADDR_MI0[24]\, 
+        \AWADDR_MI0[25]\, \AWADDR_MI0[26]\, \AWADDR_MI0[27]\, 
+        \AWADDR_IS16_gated[1]\, \AWADDR_IS16_gated[2]\, 
+        \AWADDR_IS16_gated[3]\, \AWADDR_IS16_gated[4]\, 
+        \AWADDR_IS16_gated[5]\, \AWADDR_IS16_gated[6]\, 
+        \AWADDR_IS16_gated[7]\, \AWADDR_IS16_gated[8]\, 
+        \AWADDR_IS16_gated[9]\, \AWADDR_IS16_gated[10]\, 
+        \AWADDR_IS16_gated[11]\, \AWADDR_IS16_gated[12]\, 
+        \AWADDR_IS16_gated[13]\, \AWADDR_IS16_gated[14]\, 
+        \AWADDR_IS16_gated[15]\, \AWADDR_IS16_gated[16]\, 
+        \AWADDR_IS16_gated[17]\, \AWADDR_IS16_gated[18]\, 
+        \AWADDR_IS16_gated[19]\, \AWADDR_IS16_gated[20]\, 
+        \AWADDR_IS16_gated[21]\, \AWADDR_IS16_gated[22]\, 
+        \AWADDR_IS16_gated[23]\, \AWADDR_IS16_gated[24]\, 
+        \AWADDR_IS16_gated[25]\, \AWADDR_IS16_gated[26]\, 
+        \AWADDR_IS16_gated[27]\, \AWSIZE_MI0[0]\, \AWSIZE_MI0[1]\, 
+        \AWLOCK_MI0_i[1]\, \WDATA_MI0[0]\, \WDATA_MI0[1]\, 
+        \WDATA_MI0[2]\, \WDATA_MI0[3]\, \WDATA_MI0[4]\, 
+        \WDATA_MI0[5]\, \WDATA_MI0[6]\, \WDATA_MI0[7]\, 
+        \WDATA_MI0[8]\, \WDATA_MI0[9]\, \WDATA_MI0[10]\, 
+        \WDATA_MI0[11]\, \WDATA_MI0[12]\, \WDATA_MI0[13]\, 
+        \WDATA_MI0[14]\, \WDATA_MI0[15]\, \WDATA_MI0[16]\, 
+        \WDATA_MI0[17]\, \WDATA_MI0[18]\, \WDATA_MI0[19]\, 
+        \WDATA_MI0[20]\, \WDATA_MI0[21]\, \WDATA_MI0[22]\, 
+        \WDATA_MI0[23]\, \WDATA_MI0[24]\, \WDATA_MI0[25]\, 
+        \WDATA_MI0[26]\, \WDATA_MI0[27]\, \WDATA_MI0[28]\, 
+        \WDATA_MI0[29]\, \WDATA_MI0[30]\, \WDATA_MI0[31]\, 
+        \WDATA_MI0[32]\, \WDATA_MI0[33]\, \WDATA_MI0[34]\, 
+        \WDATA_MI0[35]\, \WDATA_MI0[36]\, \WDATA_MI0[37]\, 
+        \WDATA_MI0[38]\, \WDATA_MI0[39]\, \WDATA_MI0[40]\, 
+        \WDATA_MI0[41]\, \WDATA_MI0[42]\, \WDATA_MI0[43]\, 
+        \WDATA_MI0[44]\, \WDATA_MI0[45]\, \WDATA_MI0[46]\, 
+        \WDATA_MI0[47]\, \WDATA_MI0[48]\, \WDATA_MI0[49]\, 
+        \WDATA_MI0[50]\, \WDATA_MI0[51]\, \WDATA_MI0[52]\, 
+        \WDATA_MI0[53]\, \WDATA_MI0[54]\, \WDATA_MI0[55]\, 
+        \WDATA_MI0[56]\, \WDATA_MI0[57]\, \WDATA_MI0[58]\, 
+        \WDATA_MI0[59]\, \WDATA_MI0[60]\, \WDATA_MI0[61]\, 
+        \WDATA_MI0[62]\, \WDATA_MI0[63]\, \WSTRB_MI0[0]\, 
+        \WSTRB_MI0[1]\, \WSTRB_MI0[2]\, \WSTRB_MI0[3]\, 
+        \WSTRB_MI0[4]\, \WSTRB_MI0[5]\, \WSTRB_MI0[6]\, 
+        \WSTRB_MI0[7]\, \WDATA_IS16_gated[0]\, 
+        \WDATA_IS16_gated[1]\, \WDATA_IS16_gated[2]\, 
+        \WDATA_IS16_gated[3]\, \WDATA_IS16_gated[4]\, 
+        \WDATA_IS16_gated[5]\, \WDATA_IS16_gated[6]\, 
+        \WDATA_IS16_gated[7]\, \WDATA_IS16_gated[8]\, 
+        \WDATA_IS16_gated[9]\, \WDATA_IS16_gated[10]\, 
+        \WDATA_IS16_gated[11]\, \WDATA_IS16_gated[12]\, 
+        \WDATA_IS16_gated[13]\, \WDATA_IS16_gated[14]\, 
+        \WDATA_IS16_gated[15]\, \WDATA_IS16_gated[16]\, 
+        \WDATA_IS16_gated[17]\, \WDATA_IS16_gated[18]\, 
+        \WDATA_IS16_gated[19]\, \WDATA_IS16_gated[20]\, 
+        \WDATA_IS16_gated[21]\, \WDATA_IS16_gated[22]\, 
+        \WDATA_IS16_gated[23]\, \WDATA_IS16_gated[24]\, 
+        \WDATA_IS16_gated[25]\, \WDATA_IS16_gated[26]\, 
+        \WDATA_IS16_gated[27]\, \WDATA_IS16_gated[28]\, 
+        \WDATA_IS16_gated[29]\, \WDATA_IS16_gated[30]\, 
+        \WDATA_IS16_gated[31]\, \WDATA_IS16_gated[32]\, 
+        \WDATA_IS16_gated[33]\, \WDATA_IS16_gated[34]\, 
+        \WDATA_IS16_gated[35]\, \WDATA_IS16_gated[36]\, 
+        \WDATA_IS16_gated[37]\, \WDATA_IS16_gated[38]\, 
+        \WDATA_IS16_gated[39]\, \WDATA_IS16_gated[40]\, 
+        \WDATA_IS16_gated[41]\, \WDATA_IS16_gated[42]\, 
+        \WDATA_IS16_gated[43]\, \WDATA_IS16_gated[44]\, 
+        \WDATA_IS16_gated[45]\, \WDATA_IS16_gated[46]\, 
+        \WDATA_IS16_gated[47]\, \WDATA_IS16_gated[48]\, 
+        \WDATA_IS16_gated[49]\, \WDATA_IS16_gated[50]\, 
+        \WDATA_IS16_gated[51]\, \WDATA_IS16_gated[52]\, 
+        \WDATA_IS16_gated[53]\, \WDATA_IS16_gated[54]\, 
+        \WDATA_IS16_gated[55]\, \WDATA_IS16_gated[56]\, 
+        \WDATA_IS16_gated[57]\, \WDATA_IS16_gated[58]\, 
+        \WDATA_IS16_gated[59]\, \WDATA_IS16_gated[60]\, 
+        \WDATA_IS16_gated[61]\, \WDATA_IS16_gated[62]\, 
+        \WDATA_IS16_gated[63]\, \WSTRB_IS16_gated[0]\, 
+        \WSTRB_IS16_gated[1]\, \WSTRB_IS16_gated[2]\, 
+        \WSTRB_IS16_gated[3]\, \WSTRB_IS16_gated[4]\, 
+        \WSTRB_IS16_gated[5]\, \WSTRB_IS16_gated[6]\, 
+        \WSTRB_IS16_gated[7]\, \ARBURST_IS16_gated[0]\, 
+        \ARSIZE_IS16_gated[0]\, \ARSIZE_IS16_gated[1]\, 
+        \ARADDR_MI0[1]\, \ARADDR_MI0[2]\, \ARADDR_MI0[3]\, 
+        \ARADDR_MI0[4]\, \ARADDR_MI0[5]\, \ARADDR_MI0[6]\, 
+        \ARADDR_MI0[7]\, \ARADDR_MI0[8]\, \ARADDR_MI0[9]\, 
+        \ARADDR_MI0[10]\, \ARADDR_MI0[11]\, \ARADDR_MI0[12]\, 
+        \ARADDR_MI0[13]\, \ARADDR_MI0[14]\, \ARADDR_MI0[15]\, 
+        \ARADDR_MI0[16]\, \ARADDR_MI0[17]\, \ARADDR_MI0[18]\, 
+        \ARADDR_MI0[19]\, \ARADDR_MI0[20]\, \ARADDR_MI0[21]\, 
+        \ARADDR_MI0[22]\, \ARADDR_MI0[23]\, \ARADDR_MI0[24]\, 
+        \ARADDR_MI0[25]\, \ARADDR_MI0[26]\, \ARADDR_MI0[27]\, 
         \ARADDR_IS16_gated[1]\, \ARADDR_IS16_gated[2]\, 
         \ARADDR_IS16_gated[3]\, \ARADDR_IS16_gated[4]\, 
         \ARADDR_IS16_gated[5]\, \ARADDR_IS16_gated[6]\, 
@@ -11139,7 +11356,9 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
         \ARADDR_IS16_gated[17]\, \ARADDR_IS16_gated[18]\, 
         \ARADDR_IS16_gated[19]\, \ARADDR_IS16_gated[20]\, 
         \ARADDR_IS16_gated[21]\, \ARADDR_IS16_gated[22]\, 
-        \ARADDR_IS16_gated[23]\, \ARBURST_MI0[0]\, 
+        \ARADDR_IS16_gated[23]\, \ARADDR_IS16_gated[24]\, 
+        \ARADDR_IS16_gated[25]\, \ARADDR_IS16_gated[26]\, 
+        \ARADDR_IS16_gated[27]\, \ARBURST_MI0[0]\, 
         \ARSIZE_MI0[0]\, \ARSIZE_MI0[1]\, \ARLOCK_MI0_i[1]\, 
         \RDATA_IM0[0]\, \RDATA_IM0[1]\, \RDATA_IM0[2]\, 
         \RDATA_IM0[3]\, \RDATA_IM0[4]\, \RDATA_IM0[5]\, 
@@ -11163,14 +11382,13 @@ architecture DEF_ARCH of top_sb_COREAXI_0_COREAXI is
         \RDATA_IM0[57]\, \RDATA_IM0[58]\, \RDATA_IM0[59]\, 
         \RDATA_IM0[60]\, \RDATA_IM0[61]\, \RDATA_IM0[62]\, 
         \RDATA_IM0[63]\, AWREADY_IM0, AWVALID_MI0, AWREADY_SI16, 
-        m0_wr_end, WVALID_MI0, WREADY_IM0, ARREADY_IM0, 
-        \COREAXI_0_AXImslave16_ARVALID\, ARVALID_MI0, m0_rd_end, 
-        RLAST_IM0, RVALID_IM0, 
+        m0_wr_end, WVALID_MI0, \COREAXI_0_AXImslave16_WVALID\, 
+        WREADY_IM0, ARREADY_IM0, \COREAXI_0_AXImslave16_ARVALID\, 
+        ARVALID_MI0, m0_rd_end, RLAST_IM0, RVALID_IM0, 
         \COREAHBLTOAXI_0_AXIMasterIF_RVALID\, RREADY_MI0, 
         BVALID_IM0, ARVALID_IS16, AWVALID_IS16, WVALID_IS16, 
         GND_net_1, VCC_net_1 : std_logic;
-    signal nc7, nc6, nc12, nc5, nc1, nc9, nc13, nc8, nc4, nc11, 
-        nc3, nc10, nc2 : std_logic;
+    signal nc2, nc5, nc4, nc3, nc1 : std_logic;
 
     for all : axi_slave_stage
 	Use entity work.axi_slave_stage(DEF_ARCH);
@@ -11184,6 +11402,8 @@ begin
         \COREAHBLTOAXI_0_AXIMasterIF_RVALID\;
     COREAXI_0_AXImslave16_ARVALID <= 
         \COREAXI_0_AXImslave16_ARVALID\;
+    COREAXI_0_AXImslave16_WVALID <= 
+        \COREAXI_0_AXImslave16_WVALID\;
 
     \VCC\ : VCC
       port map(Y => VCC_net_1);
@@ -11191,6 +11411,10 @@ begin
     \L23.slave_stage16\ : axi_slave_stage
       port map(AWSIZE_IS16_gated(1) => \AWSIZE_IS16_gated[1]\, 
         AWSIZE_IS16_gated(0) => \AWSIZE_IS16_gated[0]\, 
+        ARADDR_IS16_gated(27) => \ARADDR_IS16_gated[27]\, 
+        ARADDR_IS16_gated(26) => \ARADDR_IS16_gated[26]\, 
+        ARADDR_IS16_gated(25) => \ARADDR_IS16_gated[25]\, 
+        ARADDR_IS16_gated(24) => \ARADDR_IS16_gated[24]\, 
         ARADDR_IS16_gated(23) => \ARADDR_IS16_gated[23]\, 
         ARADDR_IS16_gated(22) => \ARADDR_IS16_gated[22]\, 
         ARADDR_IS16_gated(21) => \ARADDR_IS16_gated[21]\, 
@@ -11214,6 +11438,10 @@ begin
         ARADDR_IS16_gated(3) => \ARADDR_IS16_gated[3]\, 
         ARADDR_IS16_gated(2) => \ARADDR_IS16_gated[2]\, 
         ARADDR_IS16_gated(1) => \ARADDR_IS16_gated[1]\, 
+        AWADDR_IS16_gated(27) => \AWADDR_IS16_gated[27]\, 
+        AWADDR_IS16_gated(26) => \AWADDR_IS16_gated[26]\, 
+        AWADDR_IS16_gated(25) => \AWADDR_IS16_gated[25]\, 
+        AWADDR_IS16_gated(24) => \AWADDR_IS16_gated[24]\, 
         AWADDR_IS16_gated(23) => \AWADDR_IS16_gated[23]\, 
         AWADDR_IS16_gated(22) => \AWADDR_IS16_gated[22]\, 
         AWADDR_IS16_gated(21) => \AWADDR_IS16_gated[21]\, 
@@ -11457,6 +11685,14 @@ begin
         COREAXI_0_AXImslave16_WSTRB(1), 
         COREAXI_0_AXImslave16_WSTRB(0) => 
         COREAXI_0_AXImslave16_WSTRB(0), 
+        COREAXI_0_AXImslave16_AWADDR(27) => 
+        COREAXI_0_AXImslave16_AWADDR(27), 
+        COREAXI_0_AXImslave16_AWADDR(26) => 
+        COREAXI_0_AXImslave16_AWADDR(26), 
+        COREAXI_0_AXImslave16_AWADDR(25) => 
+        COREAXI_0_AXImslave16_AWADDR(25), 
+        COREAXI_0_AXImslave16_AWADDR(24) => 
+        COREAXI_0_AXImslave16_AWADDR(24), 
         COREAXI_0_AXImslave16_AWADDR(23) => 
         COREAXI_0_AXImslave16_AWADDR(23), 
         COREAXI_0_AXImslave16_AWADDR(22) => 
@@ -11503,6 +11739,14 @@ begin
         COREAXI_0_AXImslave16_AWADDR(2), 
         COREAXI_0_AXImslave16_AWADDR(1) => 
         COREAXI_0_AXImslave16_AWADDR(1), 
+        COREAXI_0_AXImslave16_ARADDR(27) => 
+        COREAXI_0_AXImslave16_ARADDR(27), 
+        COREAXI_0_AXImslave16_ARADDR(26) => 
+        COREAXI_0_AXImslave16_ARADDR(26), 
+        COREAXI_0_AXImslave16_ARADDR(25) => 
+        COREAXI_0_AXImslave16_ARADDR(25), 
+        COREAXI_0_AXImslave16_ARADDR(24) => 
+        COREAXI_0_AXImslave16_ARADDR(24), 
         COREAXI_0_AXImslave16_ARADDR(23) => 
         COREAXI_0_AXImslave16_ARADDR(23), 
         COREAXI_0_AXImslave16_ARADDR(22) => 
@@ -11565,7 +11809,7 @@ begin
         AWREADY_SI16, COREAXI_0_AXImslave16_AWVALID => 
         COREAXI_0_AXImslave16_AWVALID, WREADY_SI16_i => 
         WREADY_SI16_i, COREAXI_0_AXImslave16_WVALID => 
-        COREAXI_0_AXImslave16_WVALID, SDRCLK_c => SDRCLK_c, 
+        \COREAXI_0_AXImslave16_WVALID\, SDRCLK_c => SDRCLK_c, 
         MSS_READY => MSS_READY);
     
     \L3.master_stage0\ : axi_master_stage
@@ -11615,7 +11859,25 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(1) => 
         COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(1), 
         COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(0) => 
-        COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(0), 
+        COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(0), AWADDR_MI0(27) => 
+        \AWADDR_MI0[27]\, AWADDR_MI0(26) => \AWADDR_MI0[26]\, 
+        AWADDR_MI0(25) => \AWADDR_MI0[25]\, AWADDR_MI0(24) => 
+        \AWADDR_MI0[24]\, AWADDR_MI0(23) => \AWADDR_MI0[23]\, 
+        AWADDR_MI0(22) => \AWADDR_MI0[22]\, AWADDR_MI0(21) => 
+        \AWADDR_MI0[21]\, AWADDR_MI0(20) => \AWADDR_MI0[20]\, 
+        AWADDR_MI0(19) => \AWADDR_MI0[19]\, AWADDR_MI0(18) => 
+        \AWADDR_MI0[18]\, AWADDR_MI0(17) => \AWADDR_MI0[17]\, 
+        AWADDR_MI0(16) => \AWADDR_MI0[16]\, AWADDR_MI0(15) => 
+        \AWADDR_MI0[15]\, AWADDR_MI0(14) => \AWADDR_MI0[14]\, 
+        AWADDR_MI0(13) => \AWADDR_MI0[13]\, AWADDR_MI0(12) => 
+        \AWADDR_MI0[12]\, AWADDR_MI0(11) => \AWADDR_MI0[11]\, 
+        AWADDR_MI0(10) => \AWADDR_MI0[10]\, AWADDR_MI0(9) => 
+        \AWADDR_MI0[9]\, AWADDR_MI0(8) => \AWADDR_MI0[8]\, 
+        AWADDR_MI0(7) => \AWADDR_MI0[7]\, AWADDR_MI0(6) => 
+        \AWADDR_MI0[6]\, AWADDR_MI0(5) => \AWADDR_MI0[5]\, 
+        AWADDR_MI0(4) => \AWADDR_MI0[4]\, AWADDR_MI0(3) => 
+        \AWADDR_MI0[3]\, AWADDR_MI0(2) => \AWADDR_MI0[2]\, 
+        AWADDR_MI0(1) => \AWADDR_MI0[1]\, 
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(27) => 
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(27), 
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(26) => 
@@ -11669,94 +11931,76 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(2) => 
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(2), 
         COREAHBLTOAXI_0_AXIMasterIF_ARADDR(1) => 
-        COREAHBLTOAXI_0_AXIMasterIF_ARADDR(1), AWADDR_MI0(27) => 
-        \AWADDR_MI0[27]\, AWADDR_MI0(26) => \AWADDR_MI0[26]\, 
-        AWADDR_MI0(25) => nc7, AWADDR_MI0(24) => nc6, 
-        AWADDR_MI0(23) => \AWADDR_MI0[23]\, AWADDR_MI0(22) => 
-        \AWADDR_MI0[22]\, AWADDR_MI0(21) => \AWADDR_MI0[21]\, 
-        AWADDR_MI0(20) => \AWADDR_MI0[20]\, AWADDR_MI0(19) => 
-        \AWADDR_MI0[19]\, AWADDR_MI0(18) => \AWADDR_MI0[18]\, 
-        AWADDR_MI0(17) => \AWADDR_MI0[17]\, AWADDR_MI0(16) => 
-        \AWADDR_MI0[16]\, AWADDR_MI0(15) => \AWADDR_MI0[15]\, 
-        AWADDR_MI0(14) => \AWADDR_MI0[14]\, AWADDR_MI0(13) => 
-        \AWADDR_MI0[13]\, AWADDR_MI0(12) => \AWADDR_MI0[12]\, 
-        AWADDR_MI0(11) => \AWADDR_MI0[11]\, AWADDR_MI0(10) => 
-        \AWADDR_MI0[10]\, AWADDR_MI0(9) => \AWADDR_MI0[9]\, 
-        AWADDR_MI0(8) => \AWADDR_MI0[8]\, AWADDR_MI0(7) => 
-        \AWADDR_MI0[7]\, AWADDR_MI0(6) => \AWADDR_MI0[6]\, 
-        AWADDR_MI0(5) => \AWADDR_MI0[5]\, AWADDR_MI0(4) => 
-        \AWADDR_MI0[4]\, AWADDR_MI0(3) => \AWADDR_MI0[3]\, 
-        AWADDR_MI0(2) => \AWADDR_MI0[2]\, AWADDR_MI0(1) => 
-        \AWADDR_MI0[1]\, ARADDR_MI0(27) => \ARADDR_MI0[27]\, 
-        ARADDR_MI0(26) => \ARADDR_MI0[26]\, ARADDR_MI0(25) => 
-        nc12, ARADDR_MI0(24) => nc5, ARADDR_MI0(23) => 
-        \ARADDR_MI0[23]\, ARADDR_MI0(22) => \ARADDR_MI0[22]\, 
-        ARADDR_MI0(21) => \ARADDR_MI0[21]\, ARADDR_MI0(20) => 
-        \ARADDR_MI0[20]\, ARADDR_MI0(19) => \ARADDR_MI0[19]\, 
-        ARADDR_MI0(18) => \ARADDR_MI0[18]\, ARADDR_MI0(17) => 
-        \ARADDR_MI0[17]\, ARADDR_MI0(16) => \ARADDR_MI0[16]\, 
-        ARADDR_MI0(15) => \ARADDR_MI0[15]\, ARADDR_MI0(14) => 
-        \ARADDR_MI0[14]\, ARADDR_MI0(13) => \ARADDR_MI0[13]\, 
-        ARADDR_MI0(12) => \ARADDR_MI0[12]\, ARADDR_MI0(11) => 
-        \ARADDR_MI0[11]\, ARADDR_MI0(10) => \ARADDR_MI0[10]\, 
-        ARADDR_MI0(9) => \ARADDR_MI0[9]\, ARADDR_MI0(8) => 
-        \ARADDR_MI0[8]\, ARADDR_MI0(7) => \ARADDR_MI0[7]\, 
-        ARADDR_MI0(6) => \ARADDR_MI0[6]\, ARADDR_MI0(5) => 
-        \ARADDR_MI0[5]\, ARADDR_MI0(4) => \ARADDR_MI0[4]\, 
-        ARADDR_MI0(3) => \ARADDR_MI0[3]\, ARADDR_MI0(2) => 
-        \ARADDR_MI0[2]\, ARADDR_MI0(1) => \ARADDR_MI0[1]\, 
-        ARSIZE_MI0(1) => \ARSIZE_MI0[1]\, ARSIZE_MI0(0) => 
-        \ARSIZE_MI0[0]\, AWSIZE_MI0(1) => \AWSIZE_MI0[1]\, 
-        AWSIZE_MI0(0) => \AWSIZE_MI0[0]\, WDATA_MI0(63) => 
-        \WDATA_MI0[63]\, WDATA_MI0(62) => \WDATA_MI0[62]\, 
-        WDATA_MI0(61) => \WDATA_MI0[61]\, WDATA_MI0(60) => 
-        \WDATA_MI0[60]\, WDATA_MI0(59) => \WDATA_MI0[59]\, 
-        WDATA_MI0(58) => \WDATA_MI0[58]\, WDATA_MI0(57) => 
-        \WDATA_MI0[57]\, WDATA_MI0(56) => \WDATA_MI0[56]\, 
-        WDATA_MI0(55) => \WDATA_MI0[55]\, WDATA_MI0(54) => 
-        \WDATA_MI0[54]\, WDATA_MI0(53) => \WDATA_MI0[53]\, 
-        WDATA_MI0(52) => \WDATA_MI0[52]\, WDATA_MI0(51) => 
-        \WDATA_MI0[51]\, WDATA_MI0(50) => \WDATA_MI0[50]\, 
-        WDATA_MI0(49) => \WDATA_MI0[49]\, WDATA_MI0(48) => 
-        \WDATA_MI0[48]\, WDATA_MI0(47) => \WDATA_MI0[47]\, 
-        WDATA_MI0(46) => \WDATA_MI0[46]\, WDATA_MI0(45) => 
-        \WDATA_MI0[45]\, WDATA_MI0(44) => \WDATA_MI0[44]\, 
-        WDATA_MI0(43) => \WDATA_MI0[43]\, WDATA_MI0(42) => 
-        \WDATA_MI0[42]\, WDATA_MI0(41) => \WDATA_MI0[41]\, 
-        WDATA_MI0(40) => \WDATA_MI0[40]\, WDATA_MI0(39) => 
-        \WDATA_MI0[39]\, WDATA_MI0(38) => \WDATA_MI0[38]\, 
-        WDATA_MI0(37) => \WDATA_MI0[37]\, WDATA_MI0(36) => 
-        \WDATA_MI0[36]\, WDATA_MI0(35) => \WDATA_MI0[35]\, 
-        WDATA_MI0(34) => \WDATA_MI0[34]\, WDATA_MI0(33) => 
-        \WDATA_MI0[33]\, WDATA_MI0(32) => \WDATA_MI0[32]\, 
-        WDATA_MI0(31) => \WDATA_MI0[31]\, WDATA_MI0(30) => 
-        \WDATA_MI0[30]\, WDATA_MI0(29) => \WDATA_MI0[29]\, 
-        WDATA_MI0(28) => \WDATA_MI0[28]\, WDATA_MI0(27) => 
-        \WDATA_MI0[27]\, WDATA_MI0(26) => \WDATA_MI0[26]\, 
-        WDATA_MI0(25) => \WDATA_MI0[25]\, WDATA_MI0(24) => 
-        \WDATA_MI0[24]\, WDATA_MI0(23) => \WDATA_MI0[23]\, 
-        WDATA_MI0(22) => \WDATA_MI0[22]\, WDATA_MI0(21) => 
-        \WDATA_MI0[21]\, WDATA_MI0(20) => \WDATA_MI0[20]\, 
-        WDATA_MI0(19) => \WDATA_MI0[19]\, WDATA_MI0(18) => 
-        \WDATA_MI0[18]\, WDATA_MI0(17) => \WDATA_MI0[17]\, 
-        WDATA_MI0(16) => \WDATA_MI0[16]\, WDATA_MI0(15) => 
-        \WDATA_MI0[15]\, WDATA_MI0(14) => \WDATA_MI0[14]\, 
-        WDATA_MI0(13) => \WDATA_MI0[13]\, WDATA_MI0(12) => 
-        \WDATA_MI0[12]\, WDATA_MI0(11) => \WDATA_MI0[11]\, 
-        WDATA_MI0(10) => \WDATA_MI0[10]\, WDATA_MI0(9) => 
-        \WDATA_MI0[9]\, WDATA_MI0(8) => \WDATA_MI0[8]\, 
-        WDATA_MI0(7) => \WDATA_MI0[7]\, WDATA_MI0(6) => 
-        \WDATA_MI0[6]\, WDATA_MI0(5) => \WDATA_MI0[5]\, 
-        WDATA_MI0(4) => \WDATA_MI0[4]\, WDATA_MI0(3) => 
-        \WDATA_MI0[3]\, WDATA_MI0(2) => \WDATA_MI0[2]\, 
-        WDATA_MI0(1) => \WDATA_MI0[1]\, WDATA_MI0(0) => 
-        \WDATA_MI0[0]\, WSTRB_MI0(7) => \WSTRB_MI0[7]\, 
-        WSTRB_MI0(6) => \WSTRB_MI0[6]\, WSTRB_MI0(5) => 
-        \WSTRB_MI0[5]\, WSTRB_MI0(4) => \WSTRB_MI0[4]\, 
-        WSTRB_MI0(3) => \WSTRB_MI0[3]\, WSTRB_MI0(2) => 
-        \WSTRB_MI0[2]\, WSTRB_MI0(1) => \WSTRB_MI0[1]\, 
-        WSTRB_MI0(0) => \WSTRB_MI0[0]\, 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(63) => 
+        COREAHBLTOAXI_0_AXIMasterIF_ARADDR(1), ARADDR_MI0(27) => 
+        \ARADDR_MI0[27]\, ARADDR_MI0(26) => \ARADDR_MI0[26]\, 
+        ARADDR_MI0(25) => \ARADDR_MI0[25]\, ARADDR_MI0(24) => 
+        \ARADDR_MI0[24]\, ARADDR_MI0(23) => \ARADDR_MI0[23]\, 
+        ARADDR_MI0(22) => \ARADDR_MI0[22]\, ARADDR_MI0(21) => 
+        \ARADDR_MI0[21]\, ARADDR_MI0(20) => \ARADDR_MI0[20]\, 
+        ARADDR_MI0(19) => \ARADDR_MI0[19]\, ARADDR_MI0(18) => 
+        \ARADDR_MI0[18]\, ARADDR_MI0(17) => \ARADDR_MI0[17]\, 
+        ARADDR_MI0(16) => \ARADDR_MI0[16]\, ARADDR_MI0(15) => 
+        \ARADDR_MI0[15]\, ARADDR_MI0(14) => \ARADDR_MI0[14]\, 
+        ARADDR_MI0(13) => \ARADDR_MI0[13]\, ARADDR_MI0(12) => 
+        \ARADDR_MI0[12]\, ARADDR_MI0(11) => \ARADDR_MI0[11]\, 
+        ARADDR_MI0(10) => \ARADDR_MI0[10]\, ARADDR_MI0(9) => 
+        \ARADDR_MI0[9]\, ARADDR_MI0(8) => \ARADDR_MI0[8]\, 
+        ARADDR_MI0(7) => \ARADDR_MI0[7]\, ARADDR_MI0(6) => 
+        \ARADDR_MI0[6]\, ARADDR_MI0(5) => \ARADDR_MI0[5]\, 
+        ARADDR_MI0(4) => \ARADDR_MI0[4]\, ARADDR_MI0(3) => 
+        \ARADDR_MI0[3]\, ARADDR_MI0(2) => \ARADDR_MI0[2]\, 
+        ARADDR_MI0(1) => \ARADDR_MI0[1]\, ARSIZE_MI0(1) => 
+        \ARSIZE_MI0[1]\, ARSIZE_MI0(0) => \ARSIZE_MI0[0]\, 
+        AWSIZE_MI0(1) => \AWSIZE_MI0[1]\, AWSIZE_MI0(0) => 
+        \AWSIZE_MI0[0]\, WDATA_MI0(63) => \WDATA_MI0[63]\, 
+        WDATA_MI0(62) => \WDATA_MI0[62]\, WDATA_MI0(61) => 
+        \WDATA_MI0[61]\, WDATA_MI0(60) => \WDATA_MI0[60]\, 
+        WDATA_MI0(59) => \WDATA_MI0[59]\, WDATA_MI0(58) => 
+        \WDATA_MI0[58]\, WDATA_MI0(57) => \WDATA_MI0[57]\, 
+        WDATA_MI0(56) => \WDATA_MI0[56]\, WDATA_MI0(55) => 
+        \WDATA_MI0[55]\, WDATA_MI0(54) => \WDATA_MI0[54]\, 
+        WDATA_MI0(53) => \WDATA_MI0[53]\, WDATA_MI0(52) => 
+        \WDATA_MI0[52]\, WDATA_MI0(51) => \WDATA_MI0[51]\, 
+        WDATA_MI0(50) => \WDATA_MI0[50]\, WDATA_MI0(49) => 
+        \WDATA_MI0[49]\, WDATA_MI0(48) => \WDATA_MI0[48]\, 
+        WDATA_MI0(47) => \WDATA_MI0[47]\, WDATA_MI0(46) => 
+        \WDATA_MI0[46]\, WDATA_MI0(45) => \WDATA_MI0[45]\, 
+        WDATA_MI0(44) => \WDATA_MI0[44]\, WDATA_MI0(43) => 
+        \WDATA_MI0[43]\, WDATA_MI0(42) => \WDATA_MI0[42]\, 
+        WDATA_MI0(41) => \WDATA_MI0[41]\, WDATA_MI0(40) => 
+        \WDATA_MI0[40]\, WDATA_MI0(39) => \WDATA_MI0[39]\, 
+        WDATA_MI0(38) => \WDATA_MI0[38]\, WDATA_MI0(37) => 
+        \WDATA_MI0[37]\, WDATA_MI0(36) => \WDATA_MI0[36]\, 
+        WDATA_MI0(35) => \WDATA_MI0[35]\, WDATA_MI0(34) => 
+        \WDATA_MI0[34]\, WDATA_MI0(33) => \WDATA_MI0[33]\, 
+        WDATA_MI0(32) => \WDATA_MI0[32]\, WDATA_MI0(31) => 
+        \WDATA_MI0[31]\, WDATA_MI0(30) => \WDATA_MI0[30]\, 
+        WDATA_MI0(29) => \WDATA_MI0[29]\, WDATA_MI0(28) => 
+        \WDATA_MI0[28]\, WDATA_MI0(27) => \WDATA_MI0[27]\, 
+        WDATA_MI0(26) => \WDATA_MI0[26]\, WDATA_MI0(25) => 
+        \WDATA_MI0[25]\, WDATA_MI0(24) => \WDATA_MI0[24]\, 
+        WDATA_MI0(23) => \WDATA_MI0[23]\, WDATA_MI0(22) => 
+        \WDATA_MI0[22]\, WDATA_MI0(21) => \WDATA_MI0[21]\, 
+        WDATA_MI0(20) => \WDATA_MI0[20]\, WDATA_MI0(19) => 
+        \WDATA_MI0[19]\, WDATA_MI0(18) => \WDATA_MI0[18]\, 
+        WDATA_MI0(17) => \WDATA_MI0[17]\, WDATA_MI0(16) => 
+        \WDATA_MI0[16]\, WDATA_MI0(15) => \WDATA_MI0[15]\, 
+        WDATA_MI0(14) => \WDATA_MI0[14]\, WDATA_MI0(13) => 
+        \WDATA_MI0[13]\, WDATA_MI0(12) => \WDATA_MI0[12]\, 
+        WDATA_MI0(11) => \WDATA_MI0[11]\, WDATA_MI0(10) => 
+        \WDATA_MI0[10]\, WDATA_MI0(9) => \WDATA_MI0[9]\, 
+        WDATA_MI0(8) => \WDATA_MI0[8]\, WDATA_MI0(7) => 
+        \WDATA_MI0[7]\, WDATA_MI0(6) => \WDATA_MI0[6]\, 
+        WDATA_MI0(5) => \WDATA_MI0[5]\, WDATA_MI0(4) => 
+        \WDATA_MI0[4]\, WDATA_MI0(3) => \WDATA_MI0[3]\, 
+        WDATA_MI0(2) => \WDATA_MI0[2]\, WDATA_MI0(1) => 
+        \WDATA_MI0[1]\, WDATA_MI0(0) => \WDATA_MI0[0]\, 
+        WSTRB_MI0(7) => \WSTRB_MI0[7]\, WSTRB_MI0(6) => 
+        \WSTRB_MI0[6]\, WSTRB_MI0(5) => \WSTRB_MI0[5]\, 
+        WSTRB_MI0(4) => \WSTRB_MI0[4]\, WSTRB_MI0(3) => 
+        \WSTRB_MI0[3]\, WSTRB_MI0(2) => \WSTRB_MI0[2]\, 
+        WSTRB_MI0(1) => \WSTRB_MI0[1]\, WSTRB_MI0(0) => 
+        \WSTRB_MI0[0]\, COREAHBLTOAXI_0_AXIMasterIF_WDATA(63) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(63), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(62) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(62), 
@@ -11820,12 +12064,12 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(33), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(32) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(32), 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(31) => nc1, 
+        COREAHBLTOAXI_0_AXIMasterIF_WDATA(31) => nc2, 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(30) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(30), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(29) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(29), 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(28) => nc9, 
+        COREAHBLTOAXI_0_AXIMasterIF_WDATA(28) => nc5, 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(27) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(27), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(26) => 
@@ -11838,9 +12082,9 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(23), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(22) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(22), 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(21) => nc13, 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(20) => nc8, 
-        COREAHBLTOAXI_0_AXIMasterIF_WDATA(19) => nc4, 
+        COREAHBLTOAXI_0_AXIMasterIF_WDATA(21) => nc4, 
+        COREAHBLTOAXI_0_AXIMasterIF_WDATA(20) => nc3, 
+        COREAHBLTOAXI_0_AXIMasterIF_WDATA(19) => nc1, 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(18) => 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(18), 
         COREAHBLTOAXI_0_AXIMasterIF_WDATA(17) => 
@@ -12022,95 +12266,101 @@ begin
       port map(AWSIZE_IS16_gated(1) => \AWSIZE_IS16_gated[1]\, 
         AWSIZE_IS16_gated(0) => \AWSIZE_IS16_gated[0]\, 
         AWADDR_MI0(27) => \AWADDR_MI0[27]\, AWADDR_MI0(26) => 
-        \AWADDR_MI0[26]\, AWADDR_MI0(25) => nc11, AWADDR_MI0(24)
-         => nc3, AWADDR_MI0(23) => \AWADDR_MI0[23]\, 
-        AWADDR_MI0(22) => \AWADDR_MI0[22]\, AWADDR_MI0(21) => 
-        \AWADDR_MI0[21]\, AWADDR_MI0(20) => \AWADDR_MI0[20]\, 
-        AWADDR_MI0(19) => \AWADDR_MI0[19]\, AWADDR_MI0(18) => 
-        \AWADDR_MI0[18]\, AWADDR_MI0(17) => \AWADDR_MI0[17]\, 
-        AWADDR_MI0(16) => \AWADDR_MI0[16]\, AWADDR_MI0(15) => 
-        \AWADDR_MI0[15]\, AWADDR_MI0(14) => \AWADDR_MI0[14]\, 
-        AWADDR_MI0(13) => \AWADDR_MI0[13]\, AWADDR_MI0(12) => 
-        \AWADDR_MI0[12]\, AWADDR_MI0(11) => \AWADDR_MI0[11]\, 
-        AWADDR_MI0(10) => \AWADDR_MI0[10]\, AWADDR_MI0(9) => 
-        \AWADDR_MI0[9]\, AWADDR_MI0(8) => \AWADDR_MI0[8]\, 
-        AWADDR_MI0(7) => \AWADDR_MI0[7]\, AWADDR_MI0(6) => 
-        \AWADDR_MI0[6]\, AWADDR_MI0(5) => \AWADDR_MI0[5]\, 
-        AWADDR_MI0(4) => \AWADDR_MI0[4]\, AWADDR_MI0(3) => 
-        \AWADDR_MI0[3]\, AWADDR_MI0(2) => \AWADDR_MI0[2]\, 
-        AWADDR_MI0(1) => \AWADDR_MI0[1]\, AWADDR_IS16_gated(23)
-         => \AWADDR_IS16_gated[23]\, AWADDR_IS16_gated(22) => 
-        \AWADDR_IS16_gated[22]\, AWADDR_IS16_gated(21) => 
-        \AWADDR_IS16_gated[21]\, AWADDR_IS16_gated(20) => 
-        \AWADDR_IS16_gated[20]\, AWADDR_IS16_gated(19) => 
-        \AWADDR_IS16_gated[19]\, AWADDR_IS16_gated(18) => 
-        \AWADDR_IS16_gated[18]\, AWADDR_IS16_gated(17) => 
-        \AWADDR_IS16_gated[17]\, AWADDR_IS16_gated(16) => 
-        \AWADDR_IS16_gated[16]\, AWADDR_IS16_gated(15) => 
-        \AWADDR_IS16_gated[15]\, AWADDR_IS16_gated(14) => 
-        \AWADDR_IS16_gated[14]\, AWADDR_IS16_gated(13) => 
-        \AWADDR_IS16_gated[13]\, AWADDR_IS16_gated(12) => 
-        \AWADDR_IS16_gated[12]\, AWADDR_IS16_gated(11) => 
-        \AWADDR_IS16_gated[11]\, AWADDR_IS16_gated(10) => 
-        \AWADDR_IS16_gated[10]\, AWADDR_IS16_gated(9) => 
-        \AWADDR_IS16_gated[9]\, AWADDR_IS16_gated(8) => 
-        \AWADDR_IS16_gated[8]\, AWADDR_IS16_gated(7) => 
-        \AWADDR_IS16_gated[7]\, AWADDR_IS16_gated(6) => 
-        \AWADDR_IS16_gated[6]\, AWADDR_IS16_gated(5) => 
-        \AWADDR_IS16_gated[5]\, AWADDR_IS16_gated(4) => 
-        \AWADDR_IS16_gated[4]\, AWADDR_IS16_gated(3) => 
-        \AWADDR_IS16_gated[3]\, AWADDR_IS16_gated(2) => 
-        \AWADDR_IS16_gated[2]\, AWADDR_IS16_gated(1) => 
-        \AWADDR_IS16_gated[1]\, AWSIZE_MI0(1) => \AWSIZE_MI0[1]\, 
-        AWSIZE_MI0(0) => \AWSIZE_MI0[0]\, WDATA_MI0(63) => 
-        \WDATA_MI0[63]\, WDATA_MI0(62) => \WDATA_MI0[62]\, 
-        WDATA_MI0(61) => \WDATA_MI0[61]\, WDATA_MI0(60) => 
-        \WDATA_MI0[60]\, WDATA_MI0(59) => \WDATA_MI0[59]\, 
-        WDATA_MI0(58) => \WDATA_MI0[58]\, WDATA_MI0(57) => 
-        \WDATA_MI0[57]\, WDATA_MI0(56) => \WDATA_MI0[56]\, 
-        WDATA_MI0(55) => \WDATA_MI0[55]\, WDATA_MI0(54) => 
-        \WDATA_MI0[54]\, WDATA_MI0(53) => \WDATA_MI0[53]\, 
-        WDATA_MI0(52) => \WDATA_MI0[52]\, WDATA_MI0(51) => 
-        \WDATA_MI0[51]\, WDATA_MI0(50) => \WDATA_MI0[50]\, 
-        WDATA_MI0(49) => \WDATA_MI0[49]\, WDATA_MI0(48) => 
-        \WDATA_MI0[48]\, WDATA_MI0(47) => \WDATA_MI0[47]\, 
-        WDATA_MI0(46) => \WDATA_MI0[46]\, WDATA_MI0(45) => 
-        \WDATA_MI0[45]\, WDATA_MI0(44) => \WDATA_MI0[44]\, 
-        WDATA_MI0(43) => \WDATA_MI0[43]\, WDATA_MI0(42) => 
-        \WDATA_MI0[42]\, WDATA_MI0(41) => \WDATA_MI0[41]\, 
-        WDATA_MI0(40) => \WDATA_MI0[40]\, WDATA_MI0(39) => 
-        \WDATA_MI0[39]\, WDATA_MI0(38) => \WDATA_MI0[38]\, 
-        WDATA_MI0(37) => \WDATA_MI0[37]\, WDATA_MI0(36) => 
-        \WDATA_MI0[36]\, WDATA_MI0(35) => \WDATA_MI0[35]\, 
-        WDATA_MI0(34) => \WDATA_MI0[34]\, WDATA_MI0(33) => 
-        \WDATA_MI0[33]\, WDATA_MI0(32) => \WDATA_MI0[32]\, 
-        WDATA_MI0(31) => \WDATA_MI0[31]\, WDATA_MI0(30) => 
-        \WDATA_MI0[30]\, WDATA_MI0(29) => \WDATA_MI0[29]\, 
-        WDATA_MI0(28) => \WDATA_MI0[28]\, WDATA_MI0(27) => 
-        \WDATA_MI0[27]\, WDATA_MI0(26) => \WDATA_MI0[26]\, 
-        WDATA_MI0(25) => \WDATA_MI0[25]\, WDATA_MI0(24) => 
-        \WDATA_MI0[24]\, WDATA_MI0(23) => \WDATA_MI0[23]\, 
-        WDATA_MI0(22) => \WDATA_MI0[22]\, WDATA_MI0(21) => 
-        \WDATA_MI0[21]\, WDATA_MI0(20) => \WDATA_MI0[20]\, 
-        WDATA_MI0(19) => \WDATA_MI0[19]\, WDATA_MI0(18) => 
-        \WDATA_MI0[18]\, WDATA_MI0(17) => \WDATA_MI0[17]\, 
-        WDATA_MI0(16) => \WDATA_MI0[16]\, WDATA_MI0(15) => 
-        \WDATA_MI0[15]\, WDATA_MI0(14) => \WDATA_MI0[14]\, 
-        WDATA_MI0(13) => \WDATA_MI0[13]\, WDATA_MI0(12) => 
-        \WDATA_MI0[12]\, WDATA_MI0(11) => \WDATA_MI0[11]\, 
-        WDATA_MI0(10) => \WDATA_MI0[10]\, WDATA_MI0(9) => 
-        \WDATA_MI0[9]\, WDATA_MI0(8) => \WDATA_MI0[8]\, 
-        WDATA_MI0(7) => \WDATA_MI0[7]\, WDATA_MI0(6) => 
-        \WDATA_MI0[6]\, WDATA_MI0(5) => \WDATA_MI0[5]\, 
-        WDATA_MI0(4) => \WDATA_MI0[4]\, WDATA_MI0(3) => 
-        \WDATA_MI0[3]\, WDATA_MI0(2) => \WDATA_MI0[2]\, 
-        WDATA_MI0(1) => \WDATA_MI0[1]\, WDATA_MI0(0) => 
-        \WDATA_MI0[0]\, WSTRB_MI0(7) => \WSTRB_MI0[7]\, 
-        WSTRB_MI0(6) => \WSTRB_MI0[6]\, WSTRB_MI0(5) => 
-        \WSTRB_MI0[5]\, WSTRB_MI0(4) => \WSTRB_MI0[4]\, 
-        WSTRB_MI0(3) => \WSTRB_MI0[3]\, WSTRB_MI0(2) => 
-        \WSTRB_MI0[2]\, WSTRB_MI0(1) => \WSTRB_MI0[1]\, 
-        WSTRB_MI0(0) => \WSTRB_MI0[0]\, WDATA_IS16_gated(63) => 
+        \AWADDR_MI0[26]\, AWADDR_MI0(25) => \AWADDR_MI0[25]\, 
+        AWADDR_MI0(24) => \AWADDR_MI0[24]\, AWADDR_MI0(23) => 
+        \AWADDR_MI0[23]\, AWADDR_MI0(22) => \AWADDR_MI0[22]\, 
+        AWADDR_MI0(21) => \AWADDR_MI0[21]\, AWADDR_MI0(20) => 
+        \AWADDR_MI0[20]\, AWADDR_MI0(19) => \AWADDR_MI0[19]\, 
+        AWADDR_MI0(18) => \AWADDR_MI0[18]\, AWADDR_MI0(17) => 
+        \AWADDR_MI0[17]\, AWADDR_MI0(16) => \AWADDR_MI0[16]\, 
+        AWADDR_MI0(15) => \AWADDR_MI0[15]\, AWADDR_MI0(14) => 
+        \AWADDR_MI0[14]\, AWADDR_MI0(13) => \AWADDR_MI0[13]\, 
+        AWADDR_MI0(12) => \AWADDR_MI0[12]\, AWADDR_MI0(11) => 
+        \AWADDR_MI0[11]\, AWADDR_MI0(10) => \AWADDR_MI0[10]\, 
+        AWADDR_MI0(9) => \AWADDR_MI0[9]\, AWADDR_MI0(8) => 
+        \AWADDR_MI0[8]\, AWADDR_MI0(7) => \AWADDR_MI0[7]\, 
+        AWADDR_MI0(6) => \AWADDR_MI0[6]\, AWADDR_MI0(5) => 
+        \AWADDR_MI0[5]\, AWADDR_MI0(4) => \AWADDR_MI0[4]\, 
+        AWADDR_MI0(3) => \AWADDR_MI0[3]\, AWADDR_MI0(2) => 
+        \AWADDR_MI0[2]\, AWADDR_MI0(1) => \AWADDR_MI0[1]\, 
+        AWADDR_IS16_gated(27) => \AWADDR_IS16_gated[27]\, 
+        AWADDR_IS16_gated(26) => \AWADDR_IS16_gated[26]\, 
+        AWADDR_IS16_gated(25) => \AWADDR_IS16_gated[25]\, 
+        AWADDR_IS16_gated(24) => \AWADDR_IS16_gated[24]\, 
+        AWADDR_IS16_gated(23) => \AWADDR_IS16_gated[23]\, 
+        AWADDR_IS16_gated(22) => \AWADDR_IS16_gated[22]\, 
+        AWADDR_IS16_gated(21) => \AWADDR_IS16_gated[21]\, 
+        AWADDR_IS16_gated(20) => \AWADDR_IS16_gated[20]\, 
+        AWADDR_IS16_gated(19) => \AWADDR_IS16_gated[19]\, 
+        AWADDR_IS16_gated(18) => \AWADDR_IS16_gated[18]\, 
+        AWADDR_IS16_gated(17) => \AWADDR_IS16_gated[17]\, 
+        AWADDR_IS16_gated(16) => \AWADDR_IS16_gated[16]\, 
+        AWADDR_IS16_gated(15) => \AWADDR_IS16_gated[15]\, 
+        AWADDR_IS16_gated(14) => \AWADDR_IS16_gated[14]\, 
+        AWADDR_IS16_gated(13) => \AWADDR_IS16_gated[13]\, 
+        AWADDR_IS16_gated(12) => \AWADDR_IS16_gated[12]\, 
+        AWADDR_IS16_gated(11) => \AWADDR_IS16_gated[11]\, 
+        AWADDR_IS16_gated(10) => \AWADDR_IS16_gated[10]\, 
+        AWADDR_IS16_gated(9) => \AWADDR_IS16_gated[9]\, 
+        AWADDR_IS16_gated(8) => \AWADDR_IS16_gated[8]\, 
+        AWADDR_IS16_gated(7) => \AWADDR_IS16_gated[7]\, 
+        AWADDR_IS16_gated(6) => \AWADDR_IS16_gated[6]\, 
+        AWADDR_IS16_gated(5) => \AWADDR_IS16_gated[5]\, 
+        AWADDR_IS16_gated(4) => \AWADDR_IS16_gated[4]\, 
+        AWADDR_IS16_gated(3) => \AWADDR_IS16_gated[3]\, 
+        AWADDR_IS16_gated(2) => \AWADDR_IS16_gated[2]\, 
+        AWADDR_IS16_gated(1) => \AWADDR_IS16_gated[1]\, 
+        AWSIZE_MI0(1) => \AWSIZE_MI0[1]\, AWSIZE_MI0(0) => 
+        \AWSIZE_MI0[0]\, WDATA_MI0(63) => \WDATA_MI0[63]\, 
+        WDATA_MI0(62) => \WDATA_MI0[62]\, WDATA_MI0(61) => 
+        \WDATA_MI0[61]\, WDATA_MI0(60) => \WDATA_MI0[60]\, 
+        WDATA_MI0(59) => \WDATA_MI0[59]\, WDATA_MI0(58) => 
+        \WDATA_MI0[58]\, WDATA_MI0(57) => \WDATA_MI0[57]\, 
+        WDATA_MI0(56) => \WDATA_MI0[56]\, WDATA_MI0(55) => 
+        \WDATA_MI0[55]\, WDATA_MI0(54) => \WDATA_MI0[54]\, 
+        WDATA_MI0(53) => \WDATA_MI0[53]\, WDATA_MI0(52) => 
+        \WDATA_MI0[52]\, WDATA_MI0(51) => \WDATA_MI0[51]\, 
+        WDATA_MI0(50) => \WDATA_MI0[50]\, WDATA_MI0(49) => 
+        \WDATA_MI0[49]\, WDATA_MI0(48) => \WDATA_MI0[48]\, 
+        WDATA_MI0(47) => \WDATA_MI0[47]\, WDATA_MI0(46) => 
+        \WDATA_MI0[46]\, WDATA_MI0(45) => \WDATA_MI0[45]\, 
+        WDATA_MI0(44) => \WDATA_MI0[44]\, WDATA_MI0(43) => 
+        \WDATA_MI0[43]\, WDATA_MI0(42) => \WDATA_MI0[42]\, 
+        WDATA_MI0(41) => \WDATA_MI0[41]\, WDATA_MI0(40) => 
+        \WDATA_MI0[40]\, WDATA_MI0(39) => \WDATA_MI0[39]\, 
+        WDATA_MI0(38) => \WDATA_MI0[38]\, WDATA_MI0(37) => 
+        \WDATA_MI0[37]\, WDATA_MI0(36) => \WDATA_MI0[36]\, 
+        WDATA_MI0(35) => \WDATA_MI0[35]\, WDATA_MI0(34) => 
+        \WDATA_MI0[34]\, WDATA_MI0(33) => \WDATA_MI0[33]\, 
+        WDATA_MI0(32) => \WDATA_MI0[32]\, WDATA_MI0(31) => 
+        \WDATA_MI0[31]\, WDATA_MI0(30) => \WDATA_MI0[30]\, 
+        WDATA_MI0(29) => \WDATA_MI0[29]\, WDATA_MI0(28) => 
+        \WDATA_MI0[28]\, WDATA_MI0(27) => \WDATA_MI0[27]\, 
+        WDATA_MI0(26) => \WDATA_MI0[26]\, WDATA_MI0(25) => 
+        \WDATA_MI0[25]\, WDATA_MI0(24) => \WDATA_MI0[24]\, 
+        WDATA_MI0(23) => \WDATA_MI0[23]\, WDATA_MI0(22) => 
+        \WDATA_MI0[22]\, WDATA_MI0(21) => \WDATA_MI0[21]\, 
+        WDATA_MI0(20) => \WDATA_MI0[20]\, WDATA_MI0(19) => 
+        \WDATA_MI0[19]\, WDATA_MI0(18) => \WDATA_MI0[18]\, 
+        WDATA_MI0(17) => \WDATA_MI0[17]\, WDATA_MI0(16) => 
+        \WDATA_MI0[16]\, WDATA_MI0(15) => \WDATA_MI0[15]\, 
+        WDATA_MI0(14) => \WDATA_MI0[14]\, WDATA_MI0(13) => 
+        \WDATA_MI0[13]\, WDATA_MI0(12) => \WDATA_MI0[12]\, 
+        WDATA_MI0(11) => \WDATA_MI0[11]\, WDATA_MI0(10) => 
+        \WDATA_MI0[10]\, WDATA_MI0(9) => \WDATA_MI0[9]\, 
+        WDATA_MI0(8) => \WDATA_MI0[8]\, WDATA_MI0(7) => 
+        \WDATA_MI0[7]\, WDATA_MI0(6) => \WDATA_MI0[6]\, 
+        WDATA_MI0(5) => \WDATA_MI0[5]\, WDATA_MI0(4) => 
+        \WDATA_MI0[4]\, WDATA_MI0(3) => \WDATA_MI0[3]\, 
+        WDATA_MI0(2) => \WDATA_MI0[2]\, WDATA_MI0(1) => 
+        \WDATA_MI0[1]\, WDATA_MI0(0) => \WDATA_MI0[0]\, 
+        WSTRB_MI0(7) => \WSTRB_MI0[7]\, WSTRB_MI0(6) => 
+        \WSTRB_MI0[6]\, WSTRB_MI0(5) => \WSTRB_MI0[5]\, 
+        WSTRB_MI0(4) => \WSTRB_MI0[4]\, WSTRB_MI0(3) => 
+        \WSTRB_MI0[3]\, WSTRB_MI0(2) => \WSTRB_MI0[2]\, 
+        WSTRB_MI0(1) => \WSTRB_MI0[1]\, WSTRB_MI0(0) => 
+        \WSTRB_MI0[0]\, axi_state(6) => axi_state(6), 
+        axi_state(5) => axi_state(5), WDATA_IS16_gated(63) => 
         \WDATA_IS16_gated[63]\, WDATA_IS16_gated(62) => 
         \WDATA_IS16_gated[62]\, WDATA_IS16_gated(61) => 
         \WDATA_IS16_gated[61]\, WDATA_IS16_gated(60) => 
@@ -12186,23 +12436,27 @@ begin
         \ARSIZE_IS16_gated[1]\, ARSIZE_IS16_gated(0) => 
         \ARSIZE_IS16_gated[0]\, ARADDR_MI0(27) => 
         \ARADDR_MI0[27]\, ARADDR_MI0(26) => \ARADDR_MI0[26]\, 
-        ARADDR_MI0(25) => nc10, ARADDR_MI0(24) => nc2, 
-        ARADDR_MI0(23) => \ARADDR_MI0[23]\, ARADDR_MI0(22) => 
-        \ARADDR_MI0[22]\, ARADDR_MI0(21) => \ARADDR_MI0[21]\, 
-        ARADDR_MI0(20) => \ARADDR_MI0[20]\, ARADDR_MI0(19) => 
-        \ARADDR_MI0[19]\, ARADDR_MI0(18) => \ARADDR_MI0[18]\, 
-        ARADDR_MI0(17) => \ARADDR_MI0[17]\, ARADDR_MI0(16) => 
-        \ARADDR_MI0[16]\, ARADDR_MI0(15) => \ARADDR_MI0[15]\, 
-        ARADDR_MI0(14) => \ARADDR_MI0[14]\, ARADDR_MI0(13) => 
-        \ARADDR_MI0[13]\, ARADDR_MI0(12) => \ARADDR_MI0[12]\, 
-        ARADDR_MI0(11) => \ARADDR_MI0[11]\, ARADDR_MI0(10) => 
-        \ARADDR_MI0[10]\, ARADDR_MI0(9) => \ARADDR_MI0[9]\, 
-        ARADDR_MI0(8) => \ARADDR_MI0[8]\, ARADDR_MI0(7) => 
-        \ARADDR_MI0[7]\, ARADDR_MI0(6) => \ARADDR_MI0[6]\, 
-        ARADDR_MI0(5) => \ARADDR_MI0[5]\, ARADDR_MI0(4) => 
-        \ARADDR_MI0[4]\, ARADDR_MI0(3) => \ARADDR_MI0[3]\, 
-        ARADDR_MI0(2) => \ARADDR_MI0[2]\, ARADDR_MI0(1) => 
-        \ARADDR_MI0[1]\, ARADDR_IS16_gated(23) => 
+        ARADDR_MI0(25) => \ARADDR_MI0[25]\, ARADDR_MI0(24) => 
+        \ARADDR_MI0[24]\, ARADDR_MI0(23) => \ARADDR_MI0[23]\, 
+        ARADDR_MI0(22) => \ARADDR_MI0[22]\, ARADDR_MI0(21) => 
+        \ARADDR_MI0[21]\, ARADDR_MI0(20) => \ARADDR_MI0[20]\, 
+        ARADDR_MI0(19) => \ARADDR_MI0[19]\, ARADDR_MI0(18) => 
+        \ARADDR_MI0[18]\, ARADDR_MI0(17) => \ARADDR_MI0[17]\, 
+        ARADDR_MI0(16) => \ARADDR_MI0[16]\, ARADDR_MI0(15) => 
+        \ARADDR_MI0[15]\, ARADDR_MI0(14) => \ARADDR_MI0[14]\, 
+        ARADDR_MI0(13) => \ARADDR_MI0[13]\, ARADDR_MI0(12) => 
+        \ARADDR_MI0[12]\, ARADDR_MI0(11) => \ARADDR_MI0[11]\, 
+        ARADDR_MI0(10) => \ARADDR_MI0[10]\, ARADDR_MI0(9) => 
+        \ARADDR_MI0[9]\, ARADDR_MI0(8) => \ARADDR_MI0[8]\, 
+        ARADDR_MI0(7) => \ARADDR_MI0[7]\, ARADDR_MI0(6) => 
+        \ARADDR_MI0[6]\, ARADDR_MI0(5) => \ARADDR_MI0[5]\, 
+        ARADDR_MI0(4) => \ARADDR_MI0[4]\, ARADDR_MI0(3) => 
+        \ARADDR_MI0[3]\, ARADDR_MI0(2) => \ARADDR_MI0[2]\, 
+        ARADDR_MI0(1) => \ARADDR_MI0[1]\, ARADDR_IS16_gated(27)
+         => \ARADDR_IS16_gated[27]\, ARADDR_IS16_gated(26) => 
+        \ARADDR_IS16_gated[26]\, ARADDR_IS16_gated(25) => 
+        \ARADDR_IS16_gated[25]\, ARADDR_IS16_gated(24) => 
+        \ARADDR_IS16_gated[24]\, ARADDR_IS16_gated(23) => 
         \ARADDR_IS16_gated[23]\, ARADDR_IS16_gated(22) => 
         \ARADDR_IS16_gated[22]\, ARADDR_IS16_gated(21) => 
         \ARADDR_IS16_gated[21]\, ARADDR_IS16_gated(20) => 
@@ -12332,12 +12586,13 @@ begin
         COREAXI_0_AXImslave16_RDATA_3, 
         COREAXI_0_AXImslave16_RDATA_0 => 
         COREAXI_0_AXImslave16_RDATA_0, RDATA_reg_3 => RDATA_reg_3, 
-        RDATA_reg_0 => RDATA_reg_0, axi_state_0 => axi_state_0, 
-        AWREADY_IM0 => AWREADY_IM0, N_75_i => N_75_i, AWVALID_MI0
-         => AWVALID_MI0, AWREADY_SI16 => AWREADY_SI16, m0_wr_end
-         => m0_wr_end, WREADY_SI16 => WREADY_SI16, WVALID_MI0 => 
-        WVALID_MI0, WREADY_IM0 => WREADY_IM0, ARREADY_IM0 => 
-        ARREADY_IM0, COREAHBLTOAXI_0_AXIMasterIF_ARVALID => 
+        RDATA_reg_0 => RDATA_reg_0, AWREADY_IM0 => AWREADY_IM0, 
+        N_75_i => N_75_i, AWVALID_MI0 => AWVALID_MI0, 
+        AWREADY_SI16 => AWREADY_SI16, m0_wr_end => m0_wr_end, 
+        WVALID_MI0 => WVALID_MI0, COREAXI_0_AXImslave16_WVALID
+         => \COREAXI_0_AXImslave16_WVALID\, WREADY_IM0 => 
+        WREADY_IM0, ARREADY_IM0 => ARREADY_IM0, 
+        COREAHBLTOAXI_0_AXIMasterIF_ARVALID => 
         COREAHBLTOAXI_0_AXIMasterIF_ARVALID, 
         COREAXI_0_AXImslave16_ARVALID => 
         \COREAXI_0_AXImslave16_ARVALID\, 
@@ -27185,1490 +27440,32 @@ use smartfusion2.all;
 
 entity openbank is
 
-    port( wshift_13               : out   std_logic_vector(6 downto 1);
-          wshift                  : in    std_logic_vector(6 downto 1);
-          raddr                   : in    std_logic_vector(22 downto 0);
-          lnht_cmd                : in    std_logic_vector(3 downto 0);
-          pcable                  : inout std_logic_vector(3 downto 0) := (others => 'Z');
-          active                  : inout std_logic_vector(3 downto 0) := (others => 'Z');
-          bdcnt                   : in    std_logic_vector(3 downto 0);
-          rdwr_cmd                : in    std_logic_vector(3 downto 0);
-          dorw                    : in    std_logic_vector(3 downto 0);
-          rshift                  : in    std_logic_vector(6 downto 5);
-          bcount                  : in    std_logic_vector(2 downto 0);
-          line_i_2                : out   std_logic_vector(11 downto 0);
-          bdcnt_6_iv_i_0          : out   std_logic;
-          rwable_1                : in    std_logic;
-          rwable_0                : in    std_logic;
-          rwable_3                : in    std_logic;
-          bdcnt_6_2               : out   std_logic;
-          bdcnt_6_0               : out   std_logic;
-          bdcnt_6_3               : out   std_logic;
-          actable_2               : out   std_logic;
-          actable_3               : in    std_logic;
-          actable_0               : in    std_logic;
-          cs_n_5_0                : out   std_logic;
-          sa_5_5                  : out   std_logic;
-          sa_5_1                  : out   std_logic;
-          sa_5_0                  : out   std_logic;
-          sa_5_10                 : out   std_logic;
-          sa_5_8                  : out   std_logic;
-          sa_5_2                  : out   std_logic;
-          sa_5_3                  : out   std_logic;
-          sa_5_4                  : out   std_logic;
-          psa_0                   : in    std_logic;
-          psa_8                   : in    std_logic;
-          prch_0                  : in    std_logic;
-          goact_2                 : in    std_logic;
-          goact_0                 : in    std_logic;
-          goact_3                 : in    std_logic;
-          rshift_46_0             : out   std_logic;
-          chip_i_2_0              : out   std_logic;
-          rw_4                    : out   std_logic;
-          N_117_i                 : out   std_logic;
-          N_78_i                  : out   std_logic;
-          un155_rdwr_cmd          : out   std_logic;
-          un197_rdwr_cmd          : out   std_logic;
-          un71_rdwr_cmd           : out   std_logic;
-          un113_rdwr_cmd          : out   std_logic;
-          pchaddr_3_sqmuxa_i_0    : out   std_logic;
-          act_4                   : out   std_logic;
-          un30_rdwr_cmd           : in    std_logic;
-          un42_rdwr_cmd           : in    std_logic;
-          N_783_i                 : out   std_logic;
-          N_77                    : out   std_logic;
-          oe_2                    : out   std_logic;
-          w_valid_i               : in    std_logic;
-          rc_zero_0_sqmuxa        : out   std_logic;
-          wc_zero_0_sqmuxa        : out   std_logic;
-          N_812                   : in    std_logic;
-          un222_rdwr_cmd          : out   std_logic;
-          un180_rdwr_cmd          : out   std_logic;
-          un18_rdwr_cmd           : out   std_logic;
-          un54_rdwr_cmd           : out   std_logic;
-          un138_rdwr_cmd          : out   std_logic;
-          un7_mode_cmd            : out   std_logic;
-          un13_rfsh_cmd           : out   std_logic;
-          N_73                    : in    std_logic;
-          un13_rfsh_cmd_1         : in    std_logic;
-          we_n_2                  : out   std_logic;
-          un16_act_i              : in    std_logic;
-          un1_pch_3_i             : out   std_logic;
-          un96_rdwr_cmd           : out   std_logic;
-          un1_cs_n_0_sqmuxa_i_0   : in    std_logic;
-          bdzero_2                : out   std_logic;
-          bterm_3                 : out   std_logic;
-          w_valid_i_1             : out   std_logic;
-          rcount_2_sqmuxa         : out   std_logic;
-          un217_rdwr_cmd          : out   std_logic;
-          turnaround_hold         : in    std_logic;
-          rc_zero_d               : in    std_logic;
-          un1_mode_cmd            : out   std_logic;
-          mode_cmd                : in    std_logic;
-          refresh                 : in    std_logic;
-          un4_p_req_0_49_a2_0_a2  : out   std_logic;
-          p_req                   : in    std_logic;
-          un1_pch_4_1             : out   std_logic;
-          bterm                   : in    std_logic;
-          pchaddr_9_sn_m2_i_1     : out   std_logic;
-          pchaddr_9_sn_m3_i_1     : out   std_logic;
-          mode                    : in    std_logic;
-          read_cmd                : in    std_logic;
-          un4_rf_req_0_60_a2_0_a2 : out   std_logic;
-          rf_req                  : in    std_logic;
-          precharge               : in    std_logic;
-          doread                  : in    std_logic;
-          un36_rw_i_0             : out   std_logic;
-          un13_prch_cmd           : out   std_logic;
-          rfsh_cmd                : in    std_logic;
-          prch_cmd                : in    std_logic;
-          bdzero                  : in    std_logic;
-          un14_rw                 : in    std_logic;
-          N_125                   : out   std_logic;
-          bterm_cmd               : in    std_logic;
-          ack                     : in    std_logic;
-          lnht_cmd26              : out   std_logic;
-          un1_rowaddr_int_0_N_2   : in    std_logic;
-          lnht_cmd5               : out   std_logic;
-          un1_line_i_0_0_N_2      : in    std_logic;
-          cke                     : in    std_logic;
-          un8_rc_zero             : out   std_logic;
-          rc_zero                 : in    std_logic;
-          un4_wc_zero             : out   std_logic;
-          wc_zero                 : in    std_logic;
-          dowrite                 : in    std_logic;
-          rw                      : in    std_logic;
-          sa_5_sn_N_4_mux         : in    std_logic;
-          N_6                     : in    std_logic;
-          un78_rw                 : in    std_logic;
-          un1_rw_11_i             : out   std_logic;
-          pch                     : in    std_logic;
-          un8_precharge           : in    std_logic;
-          act                     : in    std_logic;
-          clk                     : in    std_logic;
-          reset_n                 : in    std_logic
+    port( bcount      : in    std_logic_vector(2 downto 0);
+          raddr       : in    std_logic_vector(26 downto 12);
+          chip_i_2    : out   std_logic_vector(1 downto 0);
+          line_i_2    : out   std_logic_vector(12 downto 0);
+          prch_0      : in    std_logic;
+          ras_shift_0 : in    std_logic;
+          dorw_0      : in    std_logic;
+          actable_0   : out   std_logic;
+          rwable_0    : out   std_logic;
+          pcable_0    : out   std_logic;
+          active_0    : out   std_logic;
+          goact_0     : in    std_logic;
+          refresh     : in    std_logic;
+          mode        : in    std_logic;
+          act         : in    std_logic;
+          read_cmd    : in    std_logic;
+          cke         : in    std_logic;
+          precharge   : in    std_logic;
+          clk         : in    std_logic;
+          reset_n     : in    std_logic
         );
 
 end openbank;
 
 architecture DEF_ARCH of openbank is 
 
-  component CFG4
-    generic (INIT:std_logic_vector(15 downto 0) := x"0000");
-
-    port( A : in    std_logic := 'U';
-          B : in    std_logic := 'U';
-          C : in    std_logic := 'U';
-          D : in    std_logic := 'U';
-          Y : out   std_logic
-        );
-  end component;
-
-  component SLE
-    port( D   : in    std_logic := 'U';
-          CLK : in    std_logic := 'U';
-          EN  : in    std_logic := 'U';
-          ALn : in    std_logic := 'U';
-          ADn : in    std_logic := 'U';
-          SLn : in    std_logic := 'U';
-          SD  : in    std_logic := 'U';
-          LAT : in    std_logic := 'U';
-          Q   : out   std_logic
-        );
-  end component;
-
-  component CFG3
-    generic (INIT:std_logic_vector(7 downto 0) := x"00");
-
-    port( A : in    std_logic := 'U';
-          B : in    std_logic := 'U';
-          C : in    std_logic := 'U';
-          Y : out   std_logic
-        );
-  end component;
-
-  component CFG2
-    generic (INIT:std_logic_vector(3 downto 0) := x"0");
-
-    port( A : in    std_logic := 'U';
-          B : in    std_logic := 'U';
-          Y : out   std_logic
-        );
-  end component;
-
-  component GND
-    port( Y : out   std_logic
-        );
-  end component;
-
-  component VCC
-    port( Y : out   std_logic
-        );
-  end component;
-
-    signal \actable_shift[8]_net_1\, GND_net_1, 
-        \actable_shift_57[8]_net_1\, VCC_net_1, 
-        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
-        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
-        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
-        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
-        \pcable_shift[3]_net_1\, N_752_i, \pcable_shift[4]_net_1\, 
-        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
-        \pcable_shift_13[5]\, \pcable_shift[6]_net_1\, N_4_i, 
-        \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
-        \pcable_shift[8]_net_1\, \pcable_shift_0_sqmuxa_i\, 
-        \rc_shift[7]_net_1\, \rc_shift_30[7]_net_1\, 
-        \rwable_shift[0]_net_1\, \rwable_shift_7[0]\, 
-        \rwable_shift[1]_net_1\, \rwable_shift_7[1]\, 
-        \rwable_shift[2]_net_1\, \rwable_shift_7[2]\, 
-        \rwable_shift[3]_net_1\, \rwable_shift_7[3]\, 
-        \rwable_shift[4]_net_1\, \rwable_shift_7[4]\, 
-        \actable_shift[0]_net_1\, \actable_shift_57[0]_net_1\, 
-        \actable_shift[1]_net_1\, \actable_shift_57[1]_net_1\, 
-        \actable_shift[2]_net_1\, \actable_shift_57[2]_net_1\, 
-        \actable_shift[3]_net_1\, \actable_shift_57[3]_net_1\, 
-        \actable_shift[4]_net_1\, \actable_shift_57[4]_net_1\, 
-        \actable_shift[5]_net_1\, \actable_shift_57[5]_net_1\, 
-        \actable_shift[6]_net_1\, \actable_shift_57[6]_net_1\, 
-        \actable_shift[7]_net_1\, \actable_shift_57[7]_net_1\, 
-        \rc_shift[0]_net_1\, \rc_shift_30[0]_net_1\, 
-        \rc_shift[1]_net_1\, \rc_shift_30[1]_net_1\, 
-        \rc_shift[2]_net_1\, \rc_shift_30[2]_net_1\, 
-        \rc_shift[3]_net_1\, \rc_shift_30[3]_net_1\, 
-        \rc_shift[4]_net_1\, \rc_shift_30[4]_net_1\, 
-        \rc_shift[5]_net_1\, \rc_shift_30[5]_net_1\, 
-        \rc_shift[6]_net_1\, \rc_shift_30[6]_net_1\, un36_dopch, 
-        \prev_cmd_read\, \prev_cmd_read_1\, N_751_i, \rwable[2]\, 
-        rwable_int_3, actable_6, N_331_i, sa_5_0_0, sa_5, 
-        \rshift_46_1[5]\, \un1_rw_11_i\, \sa_5_1[5]\, \sa_5_1[1]\, 
-        \sa_5_1[0]\, rw_4_0_a2_1, un197_rdwr_cmd_0_a2_1, 
-        un71_rdwr_cmd_0_a2_1, un113_rdwr_cmd_0_a2_1, N_756, 
-        un47_rw, un5_dopch_i, \N_125\, \CO1\, bdzero_0_sqmuxa, 
-        un4_bdzero, \un36_rw_i_0\, doread_m, N_68, 
-        \un1_goactive_4_1\, un96_rdwr_cmd_0_a2_2, 
-        un138_rdwr_cmd_0_a2_1, un180_rdwr_cmd_0_a2_1, 
-        un36_rw_i_0_3, N_126, un9_bdzero, N_122, 
-        \actable_1_sqmuxa_2\, \un217_rdwr_cmd\, un20_rw, un28_rw, 
-        \w_valid_i_1\, bdcnt_2_sqmuxa, \bdcnt_6_iv_0_0[1]\, 
-        \un96_rdwr_cmd\, \un1_pch_3_i\, \un138_rdwr_cmd\, 
-        \un54_rdwr_cmd\, \un18_rdwr_cmd\, un1_goactive_4_i, 
-        \un180_rdwr_cmd\, \un222_rdwr_cmd\, actable_shift_57_sm0, 
-        N_130, \actable_shift_57_ss0\, 
-        \actable_shift_57_m2[12]_net_1\, 
-        \actable_shift_57_m2[11]_net_1\, 
-        \actable_shift_57_m2[10]_net_1\, 
-        \actable_shift_57_m2[9]_net_1\, 
-        \actable_shift_57_m2[8]_net_1\, 
-        \actable_shift_57_m2[7]_net_1\, 
-        \actable_shift_57_m2[6]_net_1\, 
-        \actable_shift_57_m2[5]_net_1\, 
-        \actable_shift_57_m2[4]_net_1\, 
-        \actable_shift_57_m2[3]_net_1\, 
-        \actable_shift_57_m2[2]_net_1\, 
-        \actable_shift_57_m2[1]_net_1\, \un113_rdwr_cmd\, 
-        \un71_rdwr_cmd\, \un197_rdwr_cmd\, \un155_rdwr_cmd\
-         : std_logic;
-
-begin 
-
-    un155_rdwr_cmd <= \un155_rdwr_cmd\;
-    un197_rdwr_cmd <= \un197_rdwr_cmd\;
-    un71_rdwr_cmd <= \un71_rdwr_cmd\;
-    un113_rdwr_cmd <= \un113_rdwr_cmd\;
-    un222_rdwr_cmd <= \un222_rdwr_cmd\;
-    un180_rdwr_cmd <= \un180_rdwr_cmd\;
-    un18_rdwr_cmd <= \un18_rdwr_cmd\;
-    un54_rdwr_cmd <= \un54_rdwr_cmd\;
-    un138_rdwr_cmd <= \un138_rdwr_cmd\;
-    un1_pch_3_i <= \un1_pch_3_i\;
-    un96_rdwr_cmd <= \un96_rdwr_cmd\;
-    w_valid_i_1 <= \w_valid_i_1\;
-    un217_rdwr_cmd <= \un217_rdwr_cmd\;
-    un36_rw_i_0 <= \un36_rw_i_0\;
-    N_125 <= \N_125\;
-    un1_rw_11_i <= \un1_rw_11_i\;
-
-    \sd_ctl_p.sa_5_0\ : CFG4
-      generic map(INIT => x"A080")
-
-      port map(A => act, B => un8_precharge, C => psa_0, D => pch, 
-        Y => sa_5_0_0);
-    
-    \line[4]\ : SLE
-      port map(D => raddr(14), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(4));
-    
-    \rw_p.rwable_shift_7[3]\ : CFG3
-      generic map(INIT => x"BA")
-
-      port map(A => goact_2, B => un5_dopch_i, C => 
-        \rwable_shift[4]_net_1\, Y => \rwable_shift_7[3]\);
-    
-    \actable_shift_57[9]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[9]_net_1\, C => 
-        \actable_shift[10]_net_1\, D => refresh, Y => 
-        \actable_shift_57[9]_net_1\);
-    
-    \line[1]\ : SLE
-      port map(D => raddr(11), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(1));
-    
-    \pcable_shift[5]\ : SLE
-      port map(D => \pcable_shift_13[5]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \pcable_shift[5]_net_1\);
-    
-    \actable_shift[6]\ : SLE
-      port map(D => \actable_shift_57[6]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[6]_net_1\);
-    
-    \rc_shift[6]\ : SLE
-      port map(D => \rc_shift_30[6]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[6]_net_1\);
-    
-    \actable_shift_57_m2[10]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[11]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[10]_net_1\);
-    
-    \act_p.0.un71_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => rwable_0, B => lnht_cmd(0), C => 
-        un71_rdwr_cmd_0_a2_1, D => N_130, Y => \un71_rdwr_cmd\);
-    
-    \sd_ctl_p.we_n_2_iv_RNO\ : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => \un36_rw_i_0\, B => doread, Y => doread_m);
-    
-    \act_p.1.un113_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => rwable_1, B => lnht_cmd(1), C => 
-        un113_rdwr_cmd_0_a2_1, D => N_130, Y => \un113_rdwr_cmd\);
-    
-    \actable_shift_57_m2[1]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[2]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[1]_net_1\);
-    
-    \line[8]\ : SLE
-      port map(D => raddr(18), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(8));
-    
-    \bterm_p.op_eq.un9_bdzero_RNIDJGS\ : CFG4
-      generic map(INIT => x"00E4")
-
-      port map(A => rw, B => un9_bdzero, C => un28_rw, D => N_68, 
-        Y => N_783_i);
-    
-    \sd_ctl_p.sa_5\ : CFG4
-      generic map(INIT => x"5040")
-
-      port map(A => act, B => un8_precharge, C => psa_0, D => pch, 
-        Y => sa_5);
-    
-    \rc_shift[1]\ : SLE
-      port map(D => \rc_shift_30[1]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[1]_net_1\);
-    
-    \pcable_shift_RNO[7]\ : CFG4
-      generic map(INIT => x"2AAA")
-
-      port map(A => \pcable_shift[8]_net_1\, B => dorw(2), C => 
-        bcount(1), D => bcount(2), Y => \pcable_shift_13[7]\);
-    
-    \actable_shift_57_m2[9]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[10]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[9]_net_1\);
-    
-    un5_dopch : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => precharge, B => prch_0, Y => un5_dopch_i);
-    
-    \actable_shift_57[8]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[8]_net_1\, C => 
-        \actable_shift[9]_net_1\, D => refresh, Y => 
-        \actable_shift_57[8]_net_1\);
-    
-    \line[9]\ : SLE
-      port map(D => raddr(19), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(9));
-    
-    \bterm_p.bdcnt_6_iv_i[1]\ : CFG4
-      generic map(INIT => x"3233")
-
-      port map(A => un28_rw, B => \bdcnt_6_iv_0_0[1]\, C => 
-        bcount(1), D => rw, Y => bdcnt_6_iv_i_0);
-    
-    \actable_shift[12]\ : SLE
-      port map(D => \actable_shift_57[12]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[12]_net_1\);
-    
-    un1_goactive_4 : CFG3
-      generic map(INIT => x"10")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \un1_goactive_4_1\, Y => un1_goactive_4_i);
-    
-    \line[3]\ : SLE
-      port map(D => raddr(13), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(3));
-    
-    \sd_ctl_p.sa_5[4]\ : CFG4
-      generic map(INIT => x"C840")
-
-      port map(A => act, B => sa_5_sn_N_4_mux, C => raddr(4), D
-         => raddr(14), Y => sa_5_4);
-    
-    \act_p.rw_4_0_a2_1\ : CFG4
-      generic map(INIT => x"B000")
-
-      port map(A => rc_zero_d, B => turnaround_hold, C => 
-        read_cmd, D => rc_zero, Y => N_122);
-    
-    pcable_int : SLE
-      port map(D => N_751_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => pcable(2));
-    
-    \actable_shift_57[3]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[3]_net_1\, Y => 
-        \actable_shift_57[3]_net_1\);
-    
-    \rc_shift[3]\ : SLE
-      port map(D => \rc_shift_30[3]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[3]_net_1\);
-    
-    \act_p.3.un217_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(3), B => active(3), C => pcable(3), 
-        D => lnht_cmd(3), Y => \un217_rdwr_cmd\);
-    
-    \act_p.1.un138_rdwr_cmd_0_a2\ : CFG3
-      generic map(INIT => x"02")
-
-      port map(A => un138_rdwr_cmd_0_a2_1, B => bterm_cmd, C => 
-        pch, Y => \un138_rdwr_cmd\);
-    
-    \dh_p.un35_mode_cmd_i_a2\ : CFG3
-      generic map(INIT => x"01")
-
-      port map(A => prch_cmd, B => mode_cmd, C => rfsh_cmd, Y => 
-        N_126);
-    
-    \act_p.rw_4_0_a2\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => \rwable[2]\, B => lnht_cmd(2), C => 
-        rw_4_0_a2_1, D => N_130, Y => \un155_rdwr_cmd\);
-    
-    \rc_zero_0_sqmuxa\ : CFG4
-      generic map(INIT => x"F800")
-
-      port map(A => bcount(0), B => bcount(1), C => bcount(2), D
-         => un78_rw, Y => rc_zero_0_sqmuxa);
-    
-    \cmd_p.3.lnht_cmd26\ : CFG2
-      generic map(INIT => x"D")
-
-      port map(A => un1_rowaddr_int_0_N_2, B => goact_3, Y => 
-        lnht_cmd26);
-    
-    un7_dopch : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => un5_dopch_i, B => goact_2, Y => un36_dopch);
-    
-    \cmd_p.0.lnht_cmd5\ : CFG2
-      generic map(INIT => x"D")
-
-      port map(A => un1_line_i_0_0_N_2, B => goact_0, Y => 
-        lnht_cmd5);
-    
-    pcable_int_RNISSEN : CFG4
-      generic map(INIT => x"FF7F")
-
-      port map(A => rdwr_cmd(2), B => active(2), C => pcable(2), 
-        D => lnht_cmd(2), Y => pchaddr_9_sn_m2_i_1);
-    
-    \actable_shift_57[10]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[10]_net_1\, C => 
-        \actable_shift[11]_net_1\, D => refresh, Y => 
-        \actable_shift_57[10]_net_1\);
-    
-    \rc_shift_30[5]\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => goact_2, B => \rc_shift[6]_net_1\, Y => 
-        \rc_shift_30[5]_net_1\);
-    
-    \line[5]\ : SLE
-      port map(D => raddr(15), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(5));
-    
-    pcable_int_RNO : CFG4
-      generic map(INIT => x"0E04")
-
-      port map(A => \prev_cmd_read\, B => \pcable_shift[3]_net_1\, 
-        C => dorw(2), D => \pcable_shift[4]_net_1\, Y => N_751_i);
-    
-    \actable_shift[8]\ : SLE
-      port map(D => \actable_shift_57[8]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[8]_net_1\);
-    
-    \pcable_shift[6]\ : SLE
-      port map(D => N_4_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => \pcable_shift[6]_net_1\);
-    
-    \act_p.rw_4_0_a2_0\ : CFG4
-      generic map(INIT => x"F040")
-
-      port map(A => read_cmd, B => wc_zero, C => \N_125\, D => 
-        N_122, Y => N_130);
-    
-    \GND\ : GND
-      port map(Y => GND_net_1);
-    
-    \act_p.0.un18_rdwr_cmd_0_a2_0\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => ack, B => bterm_cmd, Y => \N_125\);
-    
-    \actable_shift_57_m2[12]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => active(2), B => actable_shift_57_sm0, C => 
-        un1_goactive_4_i, Y => \actable_shift_57_m2[12]_net_1\);
-    
-    \sd_ctl_p.cs_n_5_0_a2[0]\ : CFG4
-      generic map(INIT => x"0001")
-
-      port map(A => mode, B => precharge, C => 
-        un1_cs_n_0_sqmuxa_i_0, D => refresh, Y => cs_n_5_0);
-    
-    \psa_p.un13_prch_cmd\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => prch_cmd, B => rfsh_cmd, Y => un13_prch_cmd);
-    
-    \rc_shift_30[0]\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => goact_2, B => \rc_shift[1]_net_1\, Y => 
-        \rc_shift_30[0]_net_1\);
-    
-    \act_p.pchaddr_9_sn_m3_i_1\ : CFG4
-      generic map(INIT => x"FF7F")
-
-      port map(A => rdwr_cmd(1), B => active(1), C => pcable(1), 
-        D => lnht_cmd(1), Y => pchaddr_9_sn_m3_i_1);
-    
-    actable_1_sqmuxa_2 : CFG4
-      generic map(INIT => x"0008")
-
-      port map(A => \rc_shift[0]_net_1\, B => mode, C => refresh, 
-        D => un5_dopch_i, Y => \actable_1_sqmuxa_2\);
-    
-    \sd_ctl_p.sa_5[0]\ : CFG4
-      generic map(INIT => x"FFAE")
-
-      port map(A => sa_5, B => sa_5_sn_N_4_mux, C => \sa_5_1[0]\, 
-        D => sa_5_0_0, Y => sa_5_0);
-    
-    \act_p.0.un71_rdwr_cmd_0_a2_1\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => dorw(0), B => rdwr_cmd(0), Y => 
-        un71_rdwr_cmd_0_a2_1);
-    
-    \sd_ctl_p.sa_5[10]\ : CFG4
-      generic map(INIT => x"B830")
-
-      port map(A => act, B => sa_5_sn_N_4_mux, C => psa_8, D => 
-        raddr(20), Y => sa_5_10);
-    
-    \line[11]\ : SLE
-      port map(D => raddr(21), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(11));
-    
-    \bterm_p.bdcnt_6_iv_0_0[1]\ : CFG4
-      generic map(INIT => x"CEEC")
-
-      port map(A => un4_bdzero, B => N_68, C => bdcnt(1), D => 
-        bdcnt(0), Y => \bdcnt_6_iv_0_0[1]\);
-    
-    \actable_shift_57_m2[5]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[6]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[5]_net_1\);
-    
-    \line[10]\ : SLE
-      port map(D => raddr(20), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(10));
-    
-    prev_cmd_read : SLE
-      port map(D => \prev_cmd_read_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \prev_cmd_read\);
-    
-    \actable_shift[10]\ : SLE
-      port map(D => \actable_shift_57[10]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[10]_net_1\);
-    
-    \pcable_shift_RNO[6]\ : CFG4
-      generic map(INIT => x"02AA")
-
-      port map(A => \pcable_shift[7]_net_1\, B => bcount(0), C
-         => bcount(1), D => N_756, Y => N_4_i);
-    
-    \act_p.un13_rfsh_cmd_0_a2\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => refresh, B => un13_rfsh_cmd_1, C => N_73, Y
-         => un13_rfsh_cmd);
-    
-    \act_p.act_4_0\ : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => \un54_rdwr_cmd\, B => un42_rdwr_cmd, C => 
-        un30_rdwr_cmd, D => \un18_rdwr_cmd\, Y => act_4);
-    
-    \cmd_p.un4_rf_req_0_60_a2_0_a2\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => ack, B => rf_req, Y => 
-        un4_rf_req_0_60_a2_0_a2);
-    
-    \dh_p.un35_mode_cmd_i_a2_RNIRT47\ : CFG3
-      generic map(INIT => x"01")
-
-      port map(A => ack, B => N_126, C => N_73, Y => N_78_i);
-    
-    \act_p.rw_4_0_a2_1_1\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => dorw(2), B => rdwr_cmd(2), Y => rw_4_0_a2_1);
-    
-    \actable_shift_57[11]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[11]_net_1\, C => 
-        \actable_shift[12]_net_1\, D => refresh, Y => 
-        \actable_shift_57[11]_net_1\);
-    
-    \wshift_13[3]\ : CFG3
-      generic map(INIT => x"E4")
-
-      port map(A => un47_rw, B => wshift(4), C => bcount(2), Y
-         => wshift_13(3));
-    
-    \actable_shift_57[2]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[2]_net_1\, Y => 
-        \actable_shift_57[2]_net_1\);
-    
-    un36_rw : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => un36_rw_i_0_3, B => rw, Y => \un36_rw_i_0\);
-    
-    \VCC\ : VCC
-      port map(Y => VCC_net_1);
-    
-    \rc_shift[4]\ : SLE
-      port map(D => \rc_shift_30[4]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[4]_net_1\);
-    
-    \rc_p.un8_rc_zero_0_a2\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => rw, B => rc_zero, Y => un8_rc_zero);
-    
-    \bterm_p.bdcnt_6_0_iv[2]\ : CFG4
-      generic map(INIT => x"BA30")
-
-      port map(A => bcount(2), B => N_331_i, C => un4_bdzero, D
-         => bdcnt_2_sqmuxa, Y => bdcnt_6_2);
-    
-    \actable_shift[5]\ : SLE
-      port map(D => \actable_shift_57[5]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[5]_net_1\);
-    
-    \rcount_2_sqmuxa\ : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => un47_rw, B => bcount(2), Y => rcount_2_sqmuxa);
-    
-    \actable_shift_57[0]\ : CFG4
-      generic map(INIT => x"00EA")
-
-      port map(A => un5_dopch_i, B => \actable_shift_57_ss0\, C
-         => \actable_shift[1]_net_1\, D => refresh, Y => 
-        \actable_shift_57[0]_net_1\);
-    
-    \pcable_shift[3]\ : SLE
-      port map(D => N_752_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => \pcable_shift[3]_net_1\);
-    
-    \actable_shift_57[6]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[6]_net_1\, C => 
-        \actable_shift[7]_net_1\, D => refresh, Y => 
-        \actable_shift_57[6]_net_1\);
-    
-    prev_cmd_read_1 : CFG3
-      generic map(INIT => x"D8")
-
-      port map(A => dorw(2), B => read_cmd, C => \prev_cmd_read\, 
-        Y => \prev_cmd_read_1\);
-    
-    \pcable_shift_RNO[5]\ : CFG3
-      generic map(INIT => x"2A")
-
-      port map(A => \pcable_shift[6]_net_1\, B => dorw(2), C => 
-        bcount(2), Y => \pcable_shift_13[5]\);
-    
-    \actable_shift_57_m2[11]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[12]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[11]_net_1\);
-    
-    un1_rw_11_RNI72UI1 : CFG4
-      generic map(INIT => x"E255")
-
-      port map(A => \rshift_46_1[5]\, B => \un1_rw_11_i\, C => 
-        rshift(5), D => un78_rw, Y => rshift_46_0);
-    
-    \rwable_shift[2]\ : SLE
-      port map(D => \rwable_shift_7[2]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rwable_shift[2]_net_1\);
-    
-    \actable_shift_57_m2[7]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[8]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[7]_net_1\);
-    
-    \wc_p.un47_rw\ : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => rw, B => dowrite, Y => un47_rw);
-    
-    \act_p.un7_mode_cmd\ : CFG3
-      generic map(INIT => x"02")
-
-      port map(A => mode_cmd, B => mode, C => N_73, Y => 
-        un7_mode_cmd);
-    
-    \sd_ctl_p.sa_5_1[0]\ : CFG3
-      generic map(INIT => x"47")
-
-      port map(A => raddr(10), B => act, C => raddr(0), Y => 
-        \sa_5_1[0]\);
-    
-    \cmd_p.un4_p_req_0_49_a2_0_a2\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => rf_req, B => p_req, C => ack, Y => 
-        un4_p_req_0_49_a2_0_a2);
-    
-    \bterm_p.op_eq.un9_bdzero\ : CFG4
-      generic map(INIT => x"1000")
-
-      port map(A => bdcnt(3), B => bdcnt(2), C => bdcnt(1), D => 
-        bdcnt(0), Y => un9_bdzero);
-    
-    \bterm_p.bterm_3_iv\ : CFG3
-      generic map(INIT => x"EC")
-
-      port map(A => un4_bdzero, B => bdzero_0_sqmuxa, C => 
-        bterm_cmd, Y => bterm_3);
-    
-    un1_goactive_4_1 : CFG4
-      generic map(INIT => x"0031")
-
-      port map(A => act, B => goact_2, C => active(2), D => mode, 
-        Y => \un1_goactive_4_1\);
-    
-    \actable_shift_57_m2[6]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[7]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[6]_net_1\);
-    
-    \rc_shift_30[7]\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => goact_2, B => cke, Y => 
-        \rc_shift_30[7]_net_1\);
-    
-    \actable_shift_57_m2[2]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[3]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[2]_net_1\);
-    
-    \wshift_13[5]\ : CFG4
-      generic map(INIT => x"B830")
-
-      port map(A => bcount(2), B => un47_rw, C => wshift(6), D
-         => bcount(1), Y => wshift_13(5));
-    
-    \act_p.0.un96_rdwr_cmd_0_a2_2\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(0), B => active(0), C => pcable(0), 
-        D => lnht_cmd(0), Y => un96_rdwr_cmd_0_a2_2);
-    
-    \wshift_13[6]\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => bcount(0), B => bcount(1), C => bcount(2), D
-         => un47_rw, Y => wshift_13(6));
-    
-    \wshift_13[1]\ : CFG3
-      generic map(INIT => x"4E")
-
-      port map(A => un47_rw, B => wshift(2), C => un20_rw, Y => 
-        wshift_13(1));
-    
-    \act_p.2.un180_rdwr_cmd_0_a2_1\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(2), B => active(2), C => pcable(2), 
-        D => lnht_cmd(2), Y => un180_rdwr_cmd_0_a2_1);
-    
-    \actable_shift_57_m2[3]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[4]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[3]_net_1\);
-    
-    \rw_p.rwable_shift_7[4]\ : CFG3
-      generic map(INIT => x"CE")
-
-      port map(A => active(2), B => goact_2, C => un5_dopch_i, Y
-         => \rwable_shift_7[4]\);
-    
-    \actable_shift_57[5]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[5]_net_1\, Y => 
-        \actable_shift_57[5]_net_1\);
-    
-    \actable_shift[4]\ : SLE
-      port map(D => \actable_shift_57[4]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[4]_net_1\);
-    
-    \wshift_13[2]\ : CFG4
-      generic map(INIT => x"3074")
-
-      port map(A => un28_rw, B => un47_rw, C => wshift(3), D => 
-        un20_rw, Y => wshift_13(2));
-    
-    \un1_pch_4_1\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => bterm, B => pch, C => rw, Y => un1_pch_4_1);
-    
-    \rc_shift[2]\ : SLE
-      port map(D => \rc_shift_30[2]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[2]_net_1\);
-    
-    \line[0]\ : SLE
-      port map(D => raddr(10), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(0));
-    
-    \rw_p.rwable_shift_7[2]\ : CFG3
-      generic map(INIT => x"BA")
-
-      port map(A => goact_2, B => un5_dopch_i, C => 
-        \rwable_shift[3]_net_1\, Y => \rwable_shift_7[2]\);
-    
-    \pcable_shift[7]\ : SLE
-      port map(D => \pcable_shift_13[7]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \pcable_shift[7]_net_1\);
-    
-    \bterm_p.op_eq.un20_rw\ : CFG3
-      generic map(INIT => x"02")
-
-      port map(A => bcount(0), B => bcount(1), C => bcount(2), Y
-         => un20_rw);
-    
-    \rw_p.rwable_int_3_iv\ : CFG3
-      generic map(INIT => x"BA")
-
-      port map(A => goact_2, B => un5_dopch_i, C => 
-        \rwable_shift[0]_net_1\, Y => rwable_int_3);
-    
-    \act_p.1.un138_rdwr_cmd_0_a2_1\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(1), B => active(1), C => pcable(1), 
-        D => lnht_cmd(1), Y => un138_rdwr_cmd_0_a2_1);
-    
-    \act_p.3.un197_rdwr_cmd_0_a2_1\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => dorw(3), B => rdwr_cmd(3), Y => 
-        un197_rdwr_cmd_0_a2_1);
-    
-    \rc_shift[7]\ : SLE
-      port map(D => \rc_shift_30[7]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[7]_net_1\);
-    
-    \act_p.2.un180_rdwr_cmd_0_a2\ : CFG3
-      generic map(INIT => x"02")
-
-      port map(A => un180_rdwr_cmd_0_a2_1, B => bterm_cmd, C => 
-        pch, Y => \un180_rdwr_cmd\);
-    
-    \act_p.rw_4_0\ : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => \un197_rdwr_cmd\, B => \un155_rdwr_cmd\, C
-         => \un113_rdwr_cmd\, D => \un71_rdwr_cmd\, Y => rw_4);
-    
-    \rc_shift_30[3]\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => goact_2, B => \rc_shift[4]_net_1\, Y => 
-        \rc_shift_30[3]_net_1\);
-    
-    \line[7]\ : SLE
-      port map(D => raddr(17), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(7));
-    
-    rwable_int : SLE
-      port map(D => rwable_int_3, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => GND_net_1, LAT => GND_net_1, Q => \rwable[2]\);
-    
-    \actable_shift[3]\ : SLE
-      port map(D => \actable_shift_57[3]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[3]_net_1\);
-    
-    \act_p.0.un96_rdwr_cmd_0_a2\ : CFG3
-      generic map(INIT => x"02")
-
-      port map(A => un96_rdwr_cmd_0_a2_2, B => bterm_cmd, C => 
-        pch, Y => \un96_rdwr_cmd\);
-    
-    \rc_shift_30[6]\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => goact_2, B => \rc_shift[7]_net_1\, Y => 
-        \rc_shift_30[6]_net_1\);
-    
-    \sd_ctl_p.we_n_2_iv\ : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => un16_act_i, B => refresh, C => doread_m, D
-         => \un1_pch_3_i\, Y => we_n_2);
-    
-    \rc_shift[0]\ : SLE
-      port map(D => \rc_shift_30[0]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[0]_net_1\);
-    
-    \actable_shift[1]\ : SLE
-      port map(D => \actable_shift_57[1]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[1]_net_1\);
-    
-    \bterm_p.un4_bdzero_0_a2\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => rw, B => bdzero, Y => un4_bdzero);
-    
-    pcable_shift_0_sqmuxa_i : CFG4
-      generic map(INIT => x"7FFF")
-
-      port map(A => bcount(1), B => bcount(2), C => dorw(2), D
-         => bcount(0), Y => \pcable_shift_0_sqmuxa_i\);
-    
-    \actable_shift_57[4]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[4]_net_1\, Y => 
-        \actable_shift_57[4]_net_1\);
-    
-    \pcable_shift[4]\ : SLE
-      port map(D => \pcable_shift_13[4]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \pcable_shift[4]_net_1\);
-    
-    \wr_flow_ctrl_p.oe_2\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => \w_valid_i_1\, B => w_valid_i, Y => oe_2);
-    
-    \wc_zero_0_sqmuxa\ : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => un47_rw, B => N_812, Y => wc_zero_0_sqmuxa);
-    
-    \rw_p.rwable_shift_7[0]\ : CFG3
-      generic map(INIT => x"BA")
-
-      port map(A => goact_2, B => un5_dopch_i, C => 
-        \rwable_shift[1]_net_1\, Y => \rwable_shift_7[0]\);
-    
-    active_int : SLE
-      port map(D => goact_2, CLK => clk, EN => un36_dopch, ALn
-         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => active(2));
-    
-    \actable_shift_57[7]\ : CFG4
-      generic map(INIT => x"F0EE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[7]_net_1\, C => 
-        \actable_shift[8]_net_1\, D => refresh, Y => 
-        \actable_shift_57[7]_net_1\);
-    
-    \sd_ctl_p.sa_5[5]\ : CFG4
-      generic map(INIT => x"FFAE")
-
-      port map(A => sa_5, B => sa_5_sn_N_4_mux, C => \sa_5_1[5]\, 
-        D => sa_5_0_0, Y => sa_5_5);
-    
-    bdzero_0_sqmuxa_0_a2 : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => un14_rw, B => rw, Y => bdzero_0_sqmuxa);
-    
-    \act_p.3.un217_rdwr_cmd_0_a2_RNI89HJ_0\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => pch, B => \un217_rdwr_cmd\, C => bterm_cmd, Y
-         => \un222_rdwr_cmd\);
-    
-    \wc_p.un4_wc_zero_0_a2\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => rw, B => wc_zero, Y => un4_wc_zero);
-    
-    \sd_ctl_p.sa_5_1[5]\ : CFG3
-      generic map(INIT => x"47")
-
-      port map(A => raddr(15), B => act, C => raddr(5), Y => 
-        \sa_5_1[5]\);
-    
-    \data_flow_ctrl_p.rshift_46_1[5]\ : CFG3
-      generic map(INIT => x"47")
-
-      port map(A => N_6, B => un78_rw, C => rshift(6), Y => 
-        \rshift_46_1[5]\);
-    
-    \pcable_shift[8]\ : SLE
-      port map(D => \pcable_shift_0_sqmuxa_i\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \pcable_shift[8]_net_1\);
-    
-    \actable_shift_57_m2[8]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[9]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[8]_net_1\);
-    
-    \wr_flow_ctrl_p.w_valid_i_1\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => un47_rw, B => wshift(1), Y => \w_valid_i_1\);
-    
-    \rc_shift_30[2]\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => goact_2, B => \rc_shift[3]_net_1\, Y => 
-        \rc_shift_30[2]_net_1\);
-    
-    \wshift_13[4]\ : CFG3
-      generic map(INIT => x"4E")
-
-      port map(A => un47_rw, B => wshift(5), C => N_6, Y => 
-        wshift_13(4));
-    
-    \bterm_p.bdcnt_6_0_iv_RNO[2]\ : CFG3
-      generic map(INIT => x"56")
-
-      port map(A => bdcnt(2), B => bdcnt(1), C => bdcnt(0), Y => 
-        N_331_i);
-    
-    \sd_ctl_p.sa_5[8]\ : CFG4
-      generic map(INIT => x"B830")
-
-      port map(A => act, B => sa_5_sn_N_4_mux, C => psa_8, D => 
-        raddr(18), Y => sa_5_8);
-    
-    \line[6]\ : SLE
-      port map(D => raddr(16), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(6));
-    
-    \bterm_p.bdzero_2_iv_0\ : CFG3
-      generic map(INIT => x"EC")
-
-      port map(A => un4_bdzero, B => N_68, C => bterm_cmd, Y => 
-        bdzero_2);
-    
-    \rwable_shift[3]\ : SLE
-      port map(D => \rwable_shift_7[3]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rwable_shift[3]_net_1\);
-    
-    \actable_shift[0]\ : SLE
-      port map(D => \actable_shift_57[0]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[0]_net_1\);
-    
-    un36_rw_3 : CFG4
-      generic map(INIT => x"0001")
-
-      port map(A => act, B => refresh, C => precharge, D => mode, 
-        Y => un36_rw_i_0_3);
-    
-    \dh_p.un35_mode_cmd_i_a2_RNI4N87\ : CFG4
-      generic map(INIT => x"AAAB")
-
-      port map(A => rw, B => ack, C => N_73, D => N_126, Y => 
-        N_117_i);
-    
-    actable_shift_57_m2s2 : CFG4
-      generic map(INIT => x"FF02")
-
-      port map(A => act, B => goact_2, C => active(2), D => mode, 
-        Y => actable_shift_57_sm0);
-    
-    \pchaddr_3_sqmuxa_i_0\ : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => \un96_rdwr_cmd\, B => \un180_rdwr_cmd\, C => 
-        \un138_rdwr_cmd\, D => \un222_rdwr_cmd\, Y => 
-        pchaddr_3_sqmuxa_i_0);
-    
-    \actable_shift[9]\ : SLE
-      port map(D => \actable_shift_57[9]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[9]_net_1\);
-    
-    \actable_shift_57[1]\ : CFG3
-      generic map(INIT => x"54")
-
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[1]_net_1\, Y => 
-        \actable_shift_57[1]_net_1\);
-    
-    \bterm_p.bdcnt_6_0_iv[0]\ : CFG4
-      generic map(INIT => x"DC50")
-
-      port map(A => bdcnt(0), B => bcount(0), C => un4_bdzero, D
-         => bdcnt_2_sqmuxa, Y => bdcnt_6_0);
-    
-    \bterm_p.op_eq.un28_rw\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => bcount(0), B => bcount(1), C => bcount(2), Y
-         => un28_rw);
-    
-    bdcnt_2_sqmuxa_0_a2 : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => un28_rw, B => rw, C => un14_rw, Y => 
-        bdcnt_2_sqmuxa);
-    
-    \act_p.3.un54_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(3), B => actable_3, C => \N_125\, D
-         => goact_3, Y => \un54_rdwr_cmd\);
-    
-    un1_pcable_shift_3_sqmuxa_i_a2 : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => bcount(2), B => dorw(2), Y => N_756);
-    
-    \act_p.0.un18_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"0080")
-
-      port map(A => rdwr_cmd(0), B => actable_0, C => \N_125\, D
-         => goact_0, Y => \un18_rdwr_cmd\);
-    
-    \rw_p.rwable_shift_7[1]\ : CFG3
-      generic map(INIT => x"BA")
-
-      port map(A => goact_2, B => un5_dopch_i, C => 
-        \rwable_shift[2]_net_1\, Y => \rwable_shift_7[1]\);
-    
-    \chip[0]\ : SLE
-      port map(D => raddr(22), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => chip_i_2_0);
-    
-    \line[2]\ : SLE
-      port map(D => raddr(12), CLK => clk, EN => goact_2, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_2(2));
-    
-    \sd_ctl_p.sa_5[1]\ : CFG4
-      generic map(INIT => x"FFAE")
-
-      port map(A => sa_5, B => sa_5_sn_N_4_mux, C => \sa_5_1[1]\, 
-        D => sa_5_0_0, Y => sa_5_1);
-    
-    \actable_shift[11]\ : SLE
-      port map(D => \actable_shift_57[11]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[11]_net_1\);
-    
-    \rwable_shift[0]\ : SLE
-      port map(D => \rwable_shift_7[0]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rwable_shift[0]_net_1\);
-    
-    \rc_shift[5]\ : SLE
-      port map(D => \rc_shift_30[5]_net_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rc_shift[5]_net_1\);
-    
-    \rwable_shift[1]\ : SLE
-      port map(D => \rwable_shift_7[1]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rwable_shift[1]_net_1\);
-    
-    \rc_shift_30[4]\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => goact_2, B => \rc_shift[5]_net_1\, Y => 
-        \rc_shift_30[4]_net_1\);
-    
-    \sd_ctl_p.sa_5[2]\ : CFG4
-      generic map(INIT => x"C840")
-
-      port map(A => act, B => sa_5_sn_N_4_mux, C => raddr(2), D
-         => raddr(12), Y => sa_5_2);
-    
-    \pcable_shift_RNO[4]\ : CFG3
-      generic map(INIT => x"2A")
-
-      port map(A => \pcable_shift[5]_net_1\, B => dorw(2), C => 
-        bcount(2), Y => \pcable_shift_13[4]\);
-    
-    \rwable_shift[4]\ : SLE
-      port map(D => \rwable_shift_7[4]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \rwable_shift[4]_net_1\);
-    
-    \rc_shift_30[1]\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => goact_2, B => \rc_shift[2]_net_1\, Y => 
-        \rc_shift_30[1]_net_1\);
-    
-    \actable_shift_57_m2[4]\ : CFG3
-      generic map(INIT => x"A8")
-
-      port map(A => \actable_shift[5]_net_1\, B => 
-        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
-        \actable_shift_57_m2[4]_net_1\);
-    
-    \sd_ctl_p.sa_5_1[1]\ : CFG3
-      generic map(INIT => x"47")
-
-      port map(A => raddr(11), B => act, C => raddr(1), Y => 
-        \sa_5_1[1]\);
-    
-    \bterm_p.un4_bdzero_0_a2_RNI11LK\ : CFG4
-      generic map(INIT => x"C084")
-
-      port map(A => \CO1\, B => un4_bdzero, C => bdcnt(3), D => 
-        bdcnt(2), Y => bdcnt_6_3);
-    
-    \actable_shift_57[12]\ : CFG4
-      generic map(INIT => x"0FEE")
-
-      port map(A => un5_dopch_i, B => 
-        \actable_shift_57_m2[12]_net_1\, C => active(2), D => 
-        refresh, Y => \actable_shift_57[12]_net_1\);
-    
-    \bterm_p.bdcnt_6_iv_0_m2[1]\ : CFG3
-      generic map(INIT => x"AC")
-
-      port map(A => un14_rw, B => bdzero, C => rw, Y => N_68);
-    
-    \actable_shift[2]\ : SLE
-      port map(D => \actable_shift_57[2]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[2]_net_1\);
-    
-    \actable_shift[7]\ : SLE
-      port map(D => \actable_shift_57[7]_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
-        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \actable_shift[7]_net_1\);
-    
-    CO1 : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => bdcnt(0), B => bdcnt(1), Y => \CO1\);
-    
-    \act_p.3.un197_rdwr_cmd_0_a2\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => rwable_3, B => lnht_cmd(3), C => 
-        un197_rdwr_cmd_0_a2_1, D => N_130, Y => \un197_rdwr_cmd\);
-    
-    \un1_mode_cmd\ : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => prch_cmd, B => mode_cmd, C => rfsh_cmd, Y => 
-        un1_mode_cmd);
-    
-    actable : SLE
-      port map(D => actable_6, CLK => clk, EN => VCC_net_1, ALn
-         => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => actable_2);
-    
-    un1_pch_3 : CFG4
-      generic map(INIT => x"0100")
-
-      port map(A => bterm, B => pch, C => rw, D => un36_rw_i_0_3, 
-        Y => \un1_pch_3_i\);
-    
-    \act_p.3.un217_rdwr_cmd_0_a2_RNI89HJ\ : CFG3
-      generic map(INIT => x"FE")
-
-      port map(A => pch, B => \un217_rdwr_cmd\, C => bterm_cmd, Y
-         => N_77);
-    
-    un1_rw_11 : CFG3
-      generic map(INIT => x"01")
-
-      port map(A => bcount(0), B => bcount(2), C => un28_rw, Y
-         => \un1_rw_11_i\);
-    
-    \pcable_shift_RNO[3]\ : CFG3
-      generic map(INIT => x"2A")
-
-      port map(A => \pcable_shift[4]_net_1\, B => dorw(2), C => 
-        bcount(2), Y => N_752_i);
-    
-    actable_shift_57_ss0 : CFG3
-      generic map(INIT => x"B8")
-
-      port map(A => mode, B => actable_shift_57_sm0, C => 
-        un1_goactive_4_i, Y => \actable_shift_57_ss0\);
-    
-    \sd_ctl_p.sa_5[3]\ : CFG4
-      generic map(INIT => x"C840")
-
-      port map(A => act, B => sa_5_sn_N_4_mux, C => raddr(3), D
-         => raddr(13), Y => sa_5_3);
-    
-    actable_6_iv : CFG4
-      generic map(INIT => x"EAAA")
-
-      port map(A => \actable_1_sqmuxa_2\, B => un1_goactive_4_i, 
-        C => \actable_shift[0]_net_1\, D => \rc_shift[0]_net_1\, 
-        Y => actable_6);
-    
-    \act_p.1.un113_rdwr_cmd_0_a2_1\ : CFG2
-      generic map(INIT => x"4")
-
-      port map(A => dorw(1), B => rdwr_cmd(1), Y => 
-        un113_rdwr_cmd_0_a2_1);
-    
-
-end DEF_ARCH; 
-
-library ieee;
-use ieee.std_logic_1164.all;
-library smartfusion2;
-use smartfusion2.all;
-
-entity openbank_2 is
-
-    port( bcount     : in    std_logic_vector(2 downto 0);
-          raddr      : in    std_logic_vector(22 downto 10);
-          line_i_3   : out   std_logic_vector(11 downto 0);
-          prch_0     : in    std_logic;
-          dorw_0     : in    std_logic;
-          actable_0  : out   std_logic;
-          rwable_0   : out   std_logic;
-          pcable_0   : out   std_logic;
-          chip_i_3_0 : out   std_logic;
-          active_0   : out   std_logic;
-          goact_0    : in    std_logic;
-          refresh    : in    std_logic;
-          mode       : in    std_logic;
-          act        : in    std_logic;
-          read_cmd   : in    std_logic;
-          precharge  : in    std_logic;
-          cke        : in    std_logic;
-          clk        : in    std_logic;
-          reset_n    : in    std_logic
-        );
-
-end openbank_2;
-
-architecture DEF_ARCH of openbank_2 is 
-
   component CFG2
     generic (INIT:std_logic_vector(3 downto 0) := x"0");
 
@@ -28722,24 +27519,9 @@ architecture DEF_ARCH of openbank_2 is
         );
   end component;
 
-    signal \actable_shift[8]_net_1\, GND_net_1, 
-        \actable_shift_57[8]_net_1\, VCC_net_1, 
-        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
-        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
-        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
-        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
-        \pcable_shift[3]_net_1\, N_775_i, \pcable_shift[4]_net_1\, 
-        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
-        \pcable_shift_13[5]\, \pcable_shift[6]_net_1\, N_773_i, 
+    signal \pcable_shift[6]_net_1\, GND_net_1, N_4_i, VCC_net_1, 
         \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
         \pcable_shift[8]_net_1\, \pcable_shift_0_sqmuxa_i\, 
-        \rc_shift[7]_net_1\, \rc_shift_30[7]_net_1\, 
-        \rwable_shift[0]_net_1\, \rwable_shift_7[0]\, 
-        \rwable_shift[1]_net_1\, \rwable_shift_7[1]\, 
-        \rwable_shift[2]_net_1\, \rwable_shift_7[2]\, 
-        \rwable_shift[3]_net_1\, \rwable_shift_7[3]\, 
-        \rwable_shift[4]_net_1\, \rwable_shift_7[4]\, 
-        \actable_shift[0]_net_1\, \actable_shift_57[0]_net_1\, 
         \actable_shift[1]_net_1\, \actable_shift_57[1]_net_1\, 
         \actable_shift[2]_net_1\, \actable_shift_57[2]_net_1\, 
         \actable_shift[3]_net_1\, \actable_shift_57[3]_net_1\, 
@@ -28747,19 +27529,36 @@ architecture DEF_ARCH of openbank_2 is
         \actable_shift[5]_net_1\, \actable_shift_57[5]_net_1\, 
         \actable_shift[6]_net_1\, \actable_shift_57[6]_net_1\, 
         \actable_shift[7]_net_1\, \actable_shift_57[7]_net_1\, 
-        \rc_shift[0]_net_1\, \rc_shift_30[0]_net_1\, 
-        \rc_shift[1]_net_1\, \rc_shift_30[1]_net_1\, 
-        \rc_shift[2]_net_1\, \rc_shift_30[2]_net_1\, 
-        \rc_shift[3]_net_1\, \rc_shift_30[3]_net_1\, 
-        \rc_shift[4]_net_1\, \rc_shift_30[4]_net_1\, 
-        \rc_shift[5]_net_1\, \rc_shift_30[5]_net_1\, 
-        \rc_shift[6]_net_1\, \rc_shift_30[6]_net_1\, \active_0\, 
-        un36_dopch, \prev_cmd_read\, prev_cmd_read_1_2, N_774_i, 
-        rwable_int_3, actable_6, un5_dopch_i, N_780, 
-        \un1_goactive_4_1\, \actable_1_sqmuxa_2\, 
-        un1_goactive_4_i, actable_shift_57_sm0, 
-        \actable_shift_57_m2[12]_net_1\, \actable_shift_57_ss0\, 
-        \actable_shift_57_m2[11]_net_1\, 
+        \actable_shift[8]_net_1\, \actable_shift_57[8]_net_1\, 
+        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
+        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
+        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
+        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
+        \pcable_shift[3]_net_1\, N_748_i, \pcable_shift[4]_net_1\, 
+        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
+        \pcable_shift_13[5]\, \rc_shift[0]_net_1\, 
+        \rc_shift_30[0]_net_1\, \rc_shift[1]_net_1\, 
+        \rc_shift_30[1]_net_1\, \rc_shift[2]_net_1\, 
+        \rc_shift_30[2]_net_1\, \rc_shift[3]_net_1\, 
+        \rc_shift_30[3]_net_1\, \rc_shift[4]_net_1\, 
+        \rc_shift_30[4]_net_1\, \rc_shift[5]_net_1\, 
+        \rc_shift_30[5]_net_1\, \rc_shift[6]_net_1\, 
+        \rc_shift_30[6]_net_1\, \rc_shift[7]_net_1\, 
+        \rc_shift_30[7]_net_1\, \rwable_shift[0]_net_1\, 
+        \rwable_shift_7[0]\, \rwable_shift[1]_net_1\, 
+        \rwable_shift_7[1]\, \rwable_shift[2]_net_1\, 
+        \rwable_shift_7[2]\, \rwable_shift[3]_net_1\, 
+        \rwable_shift_7[3]\, \rwable_shift[4]_net_1\, 
+        \rwable_shift_7[4]\, \actable_shift[0]_net_1\, 
+        \actable_shift_57[0]_net_1\, \active_0\, un36_dopch, 
+        \prev_cmd_read\, \prev_cmd_read_2\, pcable_int_6, 
+        rwable_int_3, actable_6, actable_1_m_0, 
+        pcable_int_6_iv_0_a2_0_0, un5_dopch_i, 
+        un1_pcable_shift_3_sqmuxa_i_a2_2, \un1_goactive_4_1\, 
+        \pcable_int_2_sqmuxa\, \actable_1_sqmuxa_2\, 
+        \actable_1_sqmuxa\, un1_goactive_4_i, 
+        actable_shift_57_sm0, \actable_shift_57_m2[12]_net_1\, 
+        \actable_shift_57_ss0\, \actable_shift_57_m2[11]_net_1\, 
         \actable_shift_57_m2[10]_net_1\, 
         \actable_shift_57_m2[9]_net_1\, 
         \actable_shift_57_m2[8]_net_1\, 
@@ -28794,11 +27593,22 @@ begin
         \actable_shift_57_m2[1]_net_1\, Y => 
         \actable_shift_57[1]_net_1\);
     
+    prev_cmd_read_2 : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
+        Y => \prev_cmd_read_2\);
+    
     \pcable_shift[5]\ : SLE
       port map(D => \pcable_shift_13[5]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \pcable_shift[5]_net_1\);
+    
+    \line[12]\ : SLE
+      port map(D => raddr(24), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(12));
     
     \actable_shift_57[8]\ : CFG4
       generic map(INIT => x"F0EE")
@@ -28809,9 +27619,9 @@ begin
         \actable_shift_57[8]_net_1\);
     
     \line[3]\ : SLE
-      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(3));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(3));
     
     \rc_shift[7]\ : SLE
       port map(D => \rc_shift_30[7]_net_1\, CLK => clk, EN => 
@@ -28832,9 +27642,9 @@ begin
         \rc_shift_30[2]_net_1\);
     
     \line[10]\ : SLE
-      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(10));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(10));
     
     \rc_shift_30[7]\ : CFG2
       generic map(INIT => x"E")
@@ -28917,7 +27727,7 @@ begin
         \actable_shift[0]_net_1\);
     
     prev_cmd_read : SLE
-      port map(D => prev_cmd_read_1_2, CLK => clk, EN => 
+      port map(D => \prev_cmd_read_2\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \prev_cmd_read\);
@@ -28927,6 +27737,11 @@ begin
 
       port map(A => mode, B => actable_shift_57_sm0, C => 
         un1_goactive_4_i, Y => \actable_shift_57_ss0\);
+    
+    \chip[1]\ : SLE
+      port map(D => raddr(26), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => chip_i_2(1));
     
     \rw_p.rwable_shift_7[4]\ : CFG3
       generic map(INIT => x"CE")
@@ -28939,12 +27754,6 @@ begin
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[10]_net_1\);
-    
-    prev_cmd_read_1 : CFG3
-      generic map(INIT => x"D8")
-
-      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
-        Y => prev_cmd_read_1_2);
     
     \pcable_shift[4]\ : SLE
       port map(D => \pcable_shift_13[4]\, CLK => clk, EN => 
@@ -28961,11 +27770,23 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[12]_net_1\);
     
+    actable_1_sqmuxa : CFG3
+      generic map(INIT => x"08")
+
+      port map(A => un5_dopch_i, B => \rc_shift[0]_net_1\, C => 
+        refresh, Y => \actable_1_sqmuxa\);
+    
     \actable_shift[7]\ : SLE
       port map(D => \actable_shift_57[7]_net_1\, CLK => clk, EN
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[7]_net_1\);
+    
+    pcable_int_2_sqmuxa : CFG3
+      generic map(INIT => x"40")
+
+      port map(A => \prev_cmd_read\, B => ras_shift_0, C => 
+        \pcable_shift[3]_net_1\, Y => \pcable_int_2_sqmuxa\);
     
     rwable_int : SLE
       port map(D => rwable_int_3, CLK => clk, EN => VCC_net_1, 
@@ -28973,9 +27794,9 @@ begin
          => GND_net_1, LAT => GND_net_1, Q => rwable_0);
     
     pcable_int : SLE
-      port map(D => N_774_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => pcable_0);
+      port map(D => pcable_int_6, CLK => clk, EN => VCC_net_1, 
+        ALn => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => pcable_0);
     
     \rw_p.rwable_int_3_iv\ : CFG3
       generic map(INIT => x"BA")
@@ -29009,6 +27830,13 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rwable_shift[2]_net_1\);
     
+    \pcable_p.pcable_int_6_iv_0\ : CFG4
+      generic map(INIT => x"00EC")
+
+      port map(A => pcable_int_6_iv_0_a2_0_0, B => 
+        \pcable_int_2_sqmuxa\, C => \prev_cmd_read\, D => dorw_0, 
+        Y => pcable_int_6);
+    
     \actable_shift[3]\ : SLE
       port map(D => \actable_shift_57[3]_net_1\, CLK => clk, EN
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
@@ -29016,9 +27844,9 @@ begin
         \actable_shift[3]_net_1\);
     
     \line[5]\ : SLE
-      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(5));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(5));
     
     \rc_shift[4]\ : SLE
       port map(D => \rc_shift_30[4]_net_1\, CLK => clk, EN => 
@@ -29046,7 +27874,7 @@ begin
         \actable_shift_57_m2[7]_net_1\);
     
     \pcable_shift[3]\ : SLE
-      port map(D => N_775_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_748_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[3]_net_1\);
     
@@ -29105,20 +27933,21 @@ begin
       port map(A => precharge, B => prch_0, Y => un5_dopch_i);
     
     \line[2]\ : SLE
-      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(2));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(2));
     
     \chip[0]\ : SLE
-      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(25), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => chip_i_3_0);
+        GND_net_1, LAT => GND_net_1, Q => chip_i_2(0));
     
     \pcable_shift_RNO[6]\ : CFG4
       generic map(INIT => x"02AA")
 
       port map(A => \pcable_shift[7]_net_1\, B => bcount(0), C
-         => bcount(1), D => N_780, Y => N_773_i);
+         => bcount(1), D => un1_pcable_shift_3_sqmuxa_i_a2_2, Y
+         => N_4_i);
     
     \rc_shift[1]\ : SLE
       port map(D => \rc_shift_30[1]_net_1\, CLK => clk, EN => 
@@ -29133,9 +27962,15 @@ begin
         \rc_shift[6]_net_1\);
     
     \line[4]\ : SLE
-      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(4));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(4));
+    
+    actable_6_iv_RNO : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \rc_shift[0]_net_1\, B => 
+        \actable_shift[0]_net_1\, Y => actable_1_m_0);
     
     \rw_p.rwable_shift_7[2]\ : CFG3
       generic map(INIT => x"BA")
@@ -29165,15 +28000,15 @@ begin
         D => un5_dopch_i, Y => \actable_1_sqmuxa_2\);
     
     \line[11]\ : SLE
-      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(23), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(11));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(11));
     
-    pcable_int_RNO : CFG4
-      generic map(INIT => x"0E04")
+    \pcable_p.pcable_int_6_iv_0_a2_0_0\ : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => \prev_cmd_read\, B => \pcable_shift[3]_net_1\, 
-        C => dorw_0, D => \pcable_shift[4]_net_1\, Y => N_774_i);
+      port map(A => ras_shift_0, B => \pcable_shift[4]_net_1\, Y
+         => pcable_int_6_iv_0_a2_0_0);
     
     \rc_shift_30[1]\ : CFG2
       generic map(INIT => x"4")
@@ -29195,14 +28030,14 @@ begin
         \actable_shift_57_m2[3]_net_1\);
     
     \line[9]\ : SLE
-      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(9));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(9));
     
     \line[1]\ : SLE
-      port map(D => raddr(11), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(1));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(1));
     
     \actable_shift_57[6]\ : CFG4
       generic map(INIT => x"F0EE")
@@ -29244,7 +28079,7 @@ begin
         \rc_shift_30[5]_net_1\);
     
     \pcable_shift[6]\ : SLE
-      port map(D => N_773_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_4_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[6]_net_1\);
     
@@ -29255,9 +28090,9 @@ begin
         Y => \un1_goactive_4_1\);
     
     \line[8]\ : SLE
-      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(8));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(8));
     
     active_int : SLE
       port map(D => goact_0, CLK => clk, EN => un36_dopch, ALn
@@ -29278,9 +28113,9 @@ begin
         \rwable_shift[4]_net_1\, Y => \rwable_shift_7[3]\);
     
     \line[0]\ : SLE
-      port map(D => raddr(10), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(0));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(0));
     
     \rwable_shift[1]\ : SLE
       port map(D => \rwable_shift_7[1]\, CLK => clk, EN => 
@@ -29291,14 +28126,15 @@ begin
     un1_pcable_shift_3_sqmuxa_i_a2 : CFG2
       generic map(INIT => x"8")
 
-      port map(A => bcount(2), B => dorw_0, Y => N_780);
+      port map(A => bcount(2), B => dorw_0, Y => 
+        un1_pcable_shift_3_sqmuxa_i_a2_2);
     
     actable_6_iv : CFG4
-      generic map(INIT => x"EAAA")
+      generic map(INIT => x"FEFC")
 
-      port map(A => \actable_1_sqmuxa_2\, B => un1_goactive_4_i, 
-        C => \actable_shift[0]_net_1\, D => \rc_shift[0]_net_1\, 
-        Y => actable_6);
+      port map(A => actable_1_m_0, B => \actable_1_sqmuxa\, C => 
+        \actable_1_sqmuxa_2\, D => un1_goactive_4_i, Y => 
+        actable_6);
     
     \rc_shift[2]\ : SLE
       port map(D => \rc_shift_30[2]_net_1\, CLK => clk, EN => 
@@ -29307,9 +28143,9 @@ begin
         \rc_shift[2]_net_1\);
     
     \line[7]\ : SLE
-      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => line_i_3(7));
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(7));
     
     \actable_shift_57[9]\ : CFG4
       generic map(INIT => x"F0EE")
@@ -29362,7 +28198,7 @@ begin
       generic map(INIT => x"2A")
 
       port map(A => \pcable_shift[4]_net_1\, B => dorw_0, C => 
-        bcount(2), Y => N_775_i);
+        bcount(2), Y => N_748_i);
     
     un1_goactive_4 : CFG3
       generic map(INIT => x"10")
@@ -29414,15 +28250,923 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[2]_net_1\);
     
-    \actable_shift_57[5]\ : CFG3
-      generic map(INIT => x"54")
+    \actable_shift_57[5]\ : CFG4
+      generic map(INIT => x"F0EE")
 
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[5]_net_1\, Y => 
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[5]_net_1\, C => 
+        \actable_shift[6]_net_1\, D => refresh, Y => 
         \actable_shift_57[5]_net_1\);
     
     \line[6]\ : SLE
+      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_2(6));
+    
+
+end DEF_ARCH; 
+
+library ieee;
+use ieee.std_logic_1164.all;
+library smartfusion2;
+use smartfusion2.all;
+
+entity openbank_2 is
+
+    port( raddr                : in    std_logic_vector(26 downto 6);
+          bcount               : in    std_logic_vector(2 downto 0);
+          chip_i_3             : out   std_logic_vector(1 downto 0);
+          line_i_3             : out   std_logic_vector(12 downto 0);
+          rwable_2             : out   std_logic;
+          rwable_0             : in    std_logic;
+          sa_5_1               : out   std_logic;
+          sa_5_0               : out   std_logic;
+          sa_5_4               : out   std_logic;
+          psa_0                : in    std_logic;
+          lnht_cmd_0           : in    std_logic;
+          pcable_2             : out   std_logic;
+          pcable_0             : in    std_logic;
+          active_2             : out   std_logic;
+          active_0             : in    std_logic;
+          prch_0               : in    std_logic;
+          ras_shift_0          : in    std_logic;
+          rdwr_cmd_0           : in    std_logic;
+          dorw_2               : in    std_logic;
+          dorw_0               : in    std_logic;
+          actable_0            : out   std_logic;
+          goact_0              : in    std_logic;
+          pchaddr_3_sqmuxa_i_0 : out   std_logic;
+          un180_rdwr_cmd       : in    std_logic;
+          un222_rdwr_cmd       : in    std_logic;
+          un96_rdwr_cmd        : in    std_logic;
+          un113_rdwr_cmd       : out   std_logic;
+          N_105                : in    std_logic;
+          un138_rdwr_cmd       : out   std_logic;
+          pch                  : in    std_logic;
+          bterm_cmd            : in    std_logic;
+          N_88                 : in    std_logic;
+          refresh              : in    std_logic;
+          mode                 : in    std_logic;
+          act                  : in    std_logic;
+          pchaddr_9_sn_m3_i_1  : out   std_logic;
+          read_cmd             : in    std_logic;
+          cke                  : in    std_logic;
+          precharge            : in    std_logic;
+          clk                  : in    std_logic;
+          reset_n              : in    std_logic
+        );
+
+end openbank_2;
+
+architecture DEF_ARCH of openbank_2 is 
+
+  component CFG2
+    generic (INIT:std_logic_vector(3 downto 0) := x"0");
+
+    port( A : in    std_logic := 'U';
+          B : in    std_logic := 'U';
+          Y : out   std_logic
+        );
+  end component;
+
+  component CFG3
+    generic (INIT:std_logic_vector(7 downto 0) := x"00");
+
+    port( A : in    std_logic := 'U';
+          B : in    std_logic := 'U';
+          C : in    std_logic := 'U';
+          Y : out   std_logic
+        );
+  end component;
+
+  component SLE
+    port( D   : in    std_logic := 'U';
+          CLK : in    std_logic := 'U';
+          EN  : in    std_logic := 'U';
+          ALn : in    std_logic := 'U';
+          ADn : in    std_logic := 'U';
+          SLn : in    std_logic := 'U';
+          SD  : in    std_logic := 'U';
+          LAT : in    std_logic := 'U';
+          Q   : out   std_logic
+        );
+  end component;
+
+  component CFG4
+    generic (INIT:std_logic_vector(15 downto 0) := x"0000");
+
+    port( A : in    std_logic := 'U';
+          B : in    std_logic := 'U';
+          C : in    std_logic := 'U';
+          D : in    std_logic := 'U';
+          Y : out   std_logic
+        );
+  end component;
+
+  component VCC
+    port( Y : out   std_logic
+        );
+  end component;
+
+  component GND
+    port( Y : out   std_logic
+        );
+  end component;
+
+    signal \pcable_shift[6]_net_1\, GND_net_1, N_765_i, 
+        VCC_net_1, \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
+        \pcable_shift[8]_net_1\, \pcable_shift_0_sqmuxa_i\, 
+        \actable_shift[1]_net_1\, \actable_shift_57[1]_net_1\, 
+        \actable_shift[2]_net_1\, \actable_shift_57[2]_net_1\, 
+        \actable_shift[3]_net_1\, \actable_shift_57[3]_net_1\, 
+        \actable_shift[4]_net_1\, \actable_shift_57[4]_net_1\, 
+        \actable_shift[5]_net_1\, \actable_shift_57[5]_net_1\, 
+        \actable_shift[6]_net_1\, \actable_shift_57[6]_net_1\, 
+        \actable_shift[7]_net_1\, \actable_shift_57[7]_net_1\, 
+        \actable_shift[8]_net_1\, N_79_i, 
+        \actable_shift[9]_net_1\, N_77_i, 
+        \actable_shift[10]_net_1\, N_75_i, 
+        \actable_shift[11]_net_1\, N_73_i, 
+        \actable_shift[12]_net_1\, N_71_i, 
+        \pcable_shift[3]_net_1\, N_766_i, \pcable_shift[4]_net_1\, 
+        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
+        \pcable_shift_13[5]\, \rc_shift[0]_net_1\, 
+        \rc_shift_30[0]_net_1\, \rc_shift[1]_net_1\, 
+        \rc_shift_30[1]_net_1\, \rc_shift[2]_net_1\, 
+        \rc_shift_30[2]_net_1\, \rc_shift[3]_net_1\, 
+        \rc_shift_30[3]_net_1\, \rc_shift[4]_net_1\, 
+        \rc_shift_30[4]_net_1\, \rc_shift[5]_net_1\, 
+        \rc_shift_30[5]_net_1\, \rc_shift[6]_net_1\, 
+        \rc_shift_30[6]_net_1\, \rc_shift[7]_net_1\, 
+        \rc_shift_30[7]_net_1\, \rwable_shift[0]_net_1\, 
+        \rwable_shift_7[0]\, \rwable_shift[1]_net_1\, 
+        \rwable_shift_7[1]\, \rwable_shift[2]_net_1\, 
+        \rwable_shift_7[2]\, \rwable_shift[3]_net_1\, 
+        \rwable_shift_7[3]\, \rwable_shift[4]_net_1\, 
+        \rwable_shift_7[4]\, \actable_shift[0]_net_1\, 
+        \actable_shift_57[0]_net_1\, \active_2\, un36_dopch, 
+        \prev_cmd_read\, prev_cmd_read_2_2, pcable_int_6, 
+        rwable_int_3, actable_6, un113_rdwr_cmd_0_a2_1, 
+        actable_1_m_0, pcable_int_6_iv_0_a2_0_0, un5_dopch_i, 
+        \un1_pcable_shift_3_sqmuxa_i_a2\, \un1_goactive_4_1\, 
+        un138_rdwr_cmd_0_a2_1, pcable_int_2_sqmuxa, 
+        \actable_1_sqmuxa_2\, \actable_1_sqmuxa\, 
+        \un138_rdwr_cmd\, un1_goactive_4_i, actable_shift_57_sm0, 
+        \actable_shift_57_m2[1]_net_1\, 
+        \actable_shift_57_m2[8]_net_1\, \actable_shift_57_ss0\, 
+        \actable_shift_57_m2[12]_net_1\, 
+        \actable_shift_57_m2[11]_net_1\, 
+        \actable_shift_57_m2[10]_net_1\, 
+        \actable_shift_57_m2[9]_net_1\, 
+        \actable_shift_57_m2[7]_net_1\, 
+        \actable_shift_57_m2[6]_net_1\, 
+        \actable_shift_57_m2[5]_net_1\, 
+        \actable_shift_57_m2[3]_net_1\, 
+        \actable_shift_57_m2[2]_net_1\, 
+        \actable_shift_57_m2[4]_net_1\ : std_logic;
+
+begin 
+
+    active_2 <= \active_2\;
+    un138_rdwr_cmd <= \un138_rdwr_cmd\;
+
+    \rc_shift_30[4]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => goact_0, B => \rc_shift[5]_net_1\, Y => 
+        \rc_shift_30[4]_net_1\);
+    
+    \rc_shift_30[3]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => goact_0, B => \rc_shift[4]_net_1\, Y => 
+        \rc_shift_30[3]_net_1\);
+    
+    \actable_shift_57[1]\ : CFG3
+      generic map(INIT => x"54")
+
+      port map(A => refresh, B => un5_dopch_i, C => 
+        \actable_shift_57_m2[1]_net_1\, Y => 
+        \actable_shift_57[1]_net_1\);
+    
+    prev_cmd_read_2 : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => dorw_2, B => read_cmd, C => \prev_cmd_read\, 
+        Y => prev_cmd_read_2_2);
+    
+    \pcable_shift[5]\ : SLE
+      port map(D => \pcable_shift_13[5]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \pcable_shift[5]_net_1\);
+    
+    \line[12]\ : SLE
+      port map(D => raddr(24), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(12));
+    
+    \actable_shift_RNO[8]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[8]_net_1\, C => 
+        \actable_shift[9]_net_1\, D => refresh, Y => N_79_i);
+    
+    \line[3]\ : SLE
+      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(3));
+    
+    \actable_shift_RNO[12]\ : CFG4
+      generic map(INIT => x"0FEE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[12]_net_1\, C => \active_2\, D => 
+        refresh, Y => N_71_i);
+    
+    \rc_shift[7]\ : SLE
+      port map(D => \rc_shift_30[7]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[7]_net_1\);
+    
+    \pcable_shift[7]\ : SLE
+      port map(D => \pcable_shift_13[7]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \pcable_shift[7]_net_1\);
+    
+    \rc_shift_30[2]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => goact_0, B => \rc_shift[3]_net_1\, Y => 
+        \rc_shift_30[2]_net_1\);
+    
+    \line[10]\ : SLE
+      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(10));
+    
+    \actable_shift_RNO[9]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[9]_net_1\, C => 
+        \actable_shift[10]_net_1\, D => refresh, Y => N_77_i);
+    
+    \rc_shift_30[7]\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => goact_0, B => cke, Y => 
+        \rc_shift_30[7]_net_1\);
+    
+    \actable_shift_57[4]\ : CFG3
+      generic map(INIT => x"54")
+
+      port map(A => refresh, B => un5_dopch_i, C => 
+        \actable_shift_57_m2[4]_net_1\, Y => 
+        \actable_shift_57[4]_net_1\);
+    
+    \act_p.1.un138_rdwr_cmd_0_a2_1\ : CFG4
+      generic map(INIT => x"0080")
+
+      port map(A => rdwr_cmd_0, B => active_0, C => pcable_0, D
+         => lnht_cmd_0, Y => un138_rdwr_cmd_0_a2_1);
+    
+    \rc_shift_30[0]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => goact_0, B => \rc_shift[1]_net_1\, Y => 
+        \rc_shift_30[0]_net_1\);
+    
+    \rc_shift[3]\ : SLE
+      port map(D => \rc_shift_30[3]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[3]_net_1\);
+    
+    \pcable_shift_RNO[7]\ : CFG4
+      generic map(INIT => x"2AAA")
+
+      port map(A => \pcable_shift[8]_net_1\, B => dorw_2, C => 
+        bcount(1), D => bcount(2), Y => \pcable_shift_13[7]\);
+    
+    \actable_shift_57[0]\ : CFG4
+      generic map(INIT => x"00EA")
+
+      port map(A => un5_dopch_i, B => \actable_shift_57_ss0\, C
+         => \actable_shift[1]_net_1\, D => refresh, Y => 
+        \actable_shift_57[0]_net_1\);
+    
+    \act_p.1.un113_rdwr_cmd_0_a2_1\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => dorw_0, B => rdwr_cmd_0, Y => 
+        un113_rdwr_cmd_0_a2_1);
+    
+    \actable_shift[5]\ : SLE
+      port map(D => \actable_shift_57[5]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[5]_net_1\);
+    
+    actable : SLE
+      port map(D => actable_6, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => actable_0);
+    
+    \rc_shift[0]\ : SLE
+      port map(D => \rc_shift_30[0]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[0]_net_1\);
+    
+    \pcable_shift_RNO[5]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => \pcable_shift[6]_net_1\, B => dorw_2, C => 
+        bcount(2), Y => \pcable_shift_13[5]\);
+    
+    \actable_shift_57_m2[10]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[11]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[10]_net_1\);
+    
+    \actable_shift[8]\ : SLE
+      port map(D => N_79_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[8]_net_1\);
+    
+    \actable_shift[0]\ : SLE
+      port map(D => \actable_shift_57[0]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[0]_net_1\);
+    
+    prev_cmd_read : SLE
+      port map(D => prev_cmd_read_2_2, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \prev_cmd_read\);
+    
+    actable_shift_57_ss0 : CFG3
+      generic map(INIT => x"B8")
+
+      port map(A => mode, B => actable_shift_57_sm0, C => 
+        un1_goactive_4_i, Y => \actable_shift_57_ss0\);
+    
+    \chip[1]\ : SLE
+      port map(D => raddr(26), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => chip_i_3(1));
+    
+    \rw_p.rwable_shift_7[4]\ : CFG3
+      generic map(INIT => x"CE")
+
+      port map(A => \active_2\, B => goact_0, C => un5_dopch_i, Y
+         => \rwable_shift_7[4]\);
+    
+    \actable_shift[10]\ : SLE
+      port map(D => N_75_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[10]_net_1\);
+    
+    \pcable_shift[4]\ : SLE
+      port map(D => \pcable_shift_13[4]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \pcable_shift[4]_net_1\);
+    
+    \VCC\ : VCC
+      port map(Y => VCC_net_1);
+    
+    \actable_shift[12]\ : SLE
+      port map(D => N_71_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[12]_net_1\);
+    
+    actable_1_sqmuxa : CFG3
+      generic map(INIT => x"08")
+
+      port map(A => un5_dopch_i, B => \rc_shift[0]_net_1\, C => 
+        refresh, Y => \actable_1_sqmuxa\);
+    
+    \actable_shift[7]\ : SLE
+      port map(D => \actable_shift_57[7]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[7]_net_1\);
+    
+    rwable_int : SLE
+      port map(D => rwable_int_3, CLK => clk, EN => VCC_net_1, 
+        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => rwable_2);
+    
+    pcable_int : SLE
+      port map(D => pcable_int_6, CLK => clk, EN => VCC_net_1, 
+        ALn => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => pcable_2);
+    
+    \rw_p.rwable_int_3_iv\ : CFG3
+      generic map(INIT => x"BA")
+
+      port map(A => goact_0, B => un5_dopch_i, C => 
+        \rwable_shift[0]_net_1\, Y => rwable_int_3);
+    
+    \actable_shift[9]\ : SLE
+      port map(D => N_77_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[9]_net_1\);
+    
+    \actable_shift_57_m2[8]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[9]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[8]_net_1\);
+    
+    \actable_shift_57[3]\ : CFG3
+      generic map(INIT => x"54")
+
+      port map(A => refresh, B => un5_dopch_i, C => 
+        \actable_shift_57_m2[3]_net_1\, Y => 
+        \actable_shift_57[3]_net_1\);
+    
+    \rwable_shift[2]\ : SLE
+      port map(D => \rwable_shift_7[2]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rwable_shift[2]_net_1\);
+    
+    \pcable_p.pcable_int_6_iv_0\ : CFG4
+      generic map(INIT => x"00EC")
+
+      port map(A => pcable_int_6_iv_0_a2_0_0, B => 
+        pcable_int_2_sqmuxa, C => \prev_cmd_read\, D => dorw_2, Y
+         => pcable_int_6);
+    
+    \actable_shift[3]\ : SLE
+      port map(D => \actable_shift_57[3]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[3]_net_1\);
+    
+    \line[5]\ : SLE
+      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(5));
+    
+    \rc_shift[4]\ : SLE
+      port map(D => \rc_shift_30[4]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[4]_net_1\);
+    
+    \rw_p.rwable_shift_7[1]\ : CFG3
+      generic map(INIT => x"BA")
+
+      port map(A => goact_0, B => un5_dopch_i, C => 
+        \rwable_shift[2]_net_1\, Y => \rwable_shift_7[1]\);
+    
+    \rwable_shift[4]\ : SLE
+      port map(D => \rwable_shift_7[4]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rwable_shift[4]_net_1\);
+    
+    \actable_shift_57_m2[7]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[8]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[7]_net_1\);
+    
+    \pcable_shift[3]\ : SLE
+      port map(D => N_766_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => \pcable_shift[3]_net_1\);
+    
+    \actable_shift[4]\ : SLE
+      port map(D => \actable_shift_57[4]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[4]_net_1\);
+    
+    \sd_ctl_p.sa_5_1_a2[7]\ : CFG4
+      generic map(INIT => x"0A0C")
+
+      port map(A => raddr(19), B => raddr(7), C => N_88, D => act, 
+        Y => sa_5_1);
+    
+    \actable_shift[11]\ : SLE
+      port map(D => N_73_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[11]_net_1\);
+    
+    \actable_shift_57[7]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[7]_net_1\, C => 
+        \actable_shift[8]_net_1\, D => refresh, Y => 
+        \actable_shift_57[7]_net_1\);
+    
+    \actable_shift[1]\ : SLE
+      port map(D => \actable_shift_57[1]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[1]_net_1\);
+    
+    \GND\ : GND
+      port map(Y => GND_net_1);
+    
+    \pcable_shift_RNO[4]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => \pcable_shift[5]_net_1\, B => dorw_2, C => 
+        bcount(2), Y => \pcable_shift_13[4]\);
+    
+    \actable_shift_57_m2[4]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[5]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[4]_net_1\);
+    
+    \actable_shift_57_m2[11]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[12]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[11]_net_1\);
+    
+    un5_dopch : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => precharge, B => prch_0, Y => un5_dopch_i);
+    
+    \line[2]\ : SLE
+      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(2));
+    
+    \actable_shift_RNO[10]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[10]_net_1\, C => 
+        \actable_shift[11]_net_1\, D => refresh, Y => N_75_i);
+    
+    \chip[0]\ : SLE
+      port map(D => raddr(25), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => chip_i_3(0));
+    
+    \pcable_shift_RNO[6]\ : CFG4
+      generic map(INIT => x"02AA")
+
+      port map(A => \pcable_shift[7]_net_1\, B => bcount(0), C
+         => bcount(1), D => \un1_pcable_shift_3_sqmuxa_i_a2\, Y
+         => N_765_i);
+    
+    \actable_shift_RNO[11]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[11]_net_1\, C => 
+        \actable_shift[12]_net_1\, D => refresh, Y => N_73_i);
+    
+    \rc_shift[1]\ : SLE
+      port map(D => \rc_shift_30[1]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[1]_net_1\);
+    
+    \rc_shift[6]\ : SLE
+      port map(D => \rc_shift_30[6]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[6]_net_1\);
+    
+    \line[4]\ : SLE
       port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(4));
+    
+    actable_6_iv_RNO : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \rc_shift[0]_net_1\, B => 
+        \actable_shift[0]_net_1\, Y => actable_1_m_0);
+    
+    \rw_p.rwable_shift_7[2]\ : CFG3
+      generic map(INIT => x"BA")
+
+      port map(A => goact_0, B => un5_dopch_i, C => 
+        \rwable_shift[3]_net_1\, Y => \rwable_shift_7[2]\);
+    
+    \act_p.1.un138_rdwr_cmd_0_a2\ : CFG3
+      generic map(INIT => x"02")
+
+      port map(A => un138_rdwr_cmd_0_a2_1, B => bterm_cmd, C => 
+        pch, Y => \un138_rdwr_cmd\);
+    
+    \actable_shift_57_m2[6]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[7]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[6]_net_1\);
+    
+    actable_1_sqmuxa_2 : CFG4
+      generic map(INIT => x"0008")
+
+      port map(A => \rc_shift[0]_net_1\, B => mode, C => refresh, 
+        D => un5_dopch_i, Y => \actable_1_sqmuxa_2\);
+    
+    pcable_int_2_sqmuxa_0_a2 : CFG3
+      generic map(INIT => x"40")
+
+      port map(A => \prev_cmd_read\, B => ras_shift_0, C => 
+        \pcable_shift[3]_net_1\, Y => pcable_int_2_sqmuxa);
+    
+    \line[11]\ : SLE
+      port map(D => raddr(23), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(11));
+    
+    \act_p.pchaddr_9_sn_m3_i_1\ : CFG4
+      generic map(INIT => x"FF7F")
+
+      port map(A => rdwr_cmd_0, B => active_0, C => pcable_0, D
+         => lnht_cmd_0, Y => pchaddr_9_sn_m3_i_1);
+    
+    \sd_ctl_p.sa_5[6]\ : CFG4
+      generic map(INIT => x"0A0C")
+
+      port map(A => raddr(18), B => raddr(6), C => N_88, D => act, 
+        Y => sa_5_0);
+    
+    \pcable_p.pcable_int_6_iv_0_a2_0_0\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => ras_shift_0, B => \pcable_shift[4]_net_1\, Y
+         => pcable_int_6_iv_0_a2_0_0);
+    
+    \rc_shift_30[1]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => goact_0, B => \rc_shift[2]_net_1\, Y => 
+        \rc_shift_30[1]_net_1\);
+    
+    \actable_shift_57_m2[12]\ : CFG3
+      generic map(INIT => x"54")
+
+      port map(A => \active_2\, B => actable_shift_57_sm0, C => 
+        un1_goactive_4_i, Y => \actable_shift_57_m2[12]_net_1\);
+    
+    \actable_shift_57_m2[3]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[4]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[3]_net_1\);
+    
+    \line[9]\ : SLE
+      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(9));
+    
+    \line[1]\ : SLE
+      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(1));
+    
+    \actable_shift_57[6]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[6]_net_1\, C => 
+        \actable_shift[7]_net_1\, D => refresh, Y => 
+        \actable_shift_57[6]_net_1\);
+    
+    \actable_shift_57_m2[1]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[2]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[1]_net_1\);
+    
+    \pcable_shift[8]\ : SLE
+      port map(D => \pcable_shift_0_sqmuxa_i\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \pcable_shift[8]_net_1\);
+    
+    \rw_p.rwable_shift_7[0]\ : CFG3
+      generic map(INIT => x"BA")
+
+      port map(A => goact_0, B => un5_dopch_i, C => 
+        \rwable_shift[1]_net_1\, Y => \rwable_shift_7[0]\);
+    
+    \rc_shift[5]\ : SLE
+      port map(D => \rc_shift_30[5]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[5]_net_1\);
+    
+    \pchaddr_3_sqmuxa_i_0\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => un96_rdwr_cmd, B => un222_rdwr_cmd, C => 
+        \un138_rdwr_cmd\, D => un180_rdwr_cmd, Y => 
+        pchaddr_3_sqmuxa_i_0);
+    
+    \rc_shift_30[5]\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => goact_0, B => \rc_shift[6]_net_1\, Y => 
+        \rc_shift_30[5]_net_1\);
+    
+    \pcable_shift[6]\ : SLE
+      port map(D => N_765_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => \pcable_shift[6]_net_1\);
+    
+    un1_goactive_4_1 : CFG4
+      generic map(INIT => x"0031")
+
+      port map(A => act, B => goact_0, C => \active_2\, D => mode, 
+        Y => \un1_goactive_4_1\);
+    
+    \line[8]\ : SLE
+      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(8));
+    
+    active_int : SLE
+      port map(D => goact_0, CLK => clk, EN => un36_dopch, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => \active_2\);
+    
+    \actable_shift_57_m2[9]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[10]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[9]_net_1\);
+    
+    \rw_p.rwable_shift_7[3]\ : CFG3
+      generic map(INIT => x"BA")
+
+      port map(A => goact_0, B => un5_dopch_i, C => 
+        \rwable_shift[4]_net_1\, Y => \rwable_shift_7[3]\);
+    
+    \line[0]\ : SLE
+      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(0));
+    
+    \rwable_shift[1]\ : SLE
+      port map(D => \rwable_shift_7[1]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rwable_shift[1]_net_1\);
+    
+    un1_pcable_shift_3_sqmuxa_i_a2 : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => bcount(2), B => dorw_2, Y => 
+        \un1_pcable_shift_3_sqmuxa_i_a2\);
+    
+    actable_6_iv : CFG4
+      generic map(INIT => x"FEFC")
+
+      port map(A => actable_1_m_0, B => \actable_1_sqmuxa\, C => 
+        \actable_1_sqmuxa_2\, D => un1_goactive_4_i, Y => 
+        actable_6);
+    
+    \sd_ctl_p.sa_5[10]\ : CFG4
+      generic map(INIT => x"CAC0")
+
+      port map(A => raddr(22), B => psa_0, C => N_88, D => act, Y
+         => sa_5_4);
+    
+    \rc_shift[2]\ : SLE
+      port map(D => \rc_shift_30[2]_net_1\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rc_shift[2]_net_1\);
+    
+    \line[7]\ : SLE
+      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_3(7));
+    
+    \rc_shift_30[6]\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => goact_0, B => \rc_shift[7]_net_1\, Y => 
+        \rc_shift_30[6]_net_1\);
+    
+    \actable_shift_57[2]\ : CFG3
+      generic map(INIT => x"54")
+
+      port map(A => refresh, B => un5_dopch_i, C => 
+        \actable_shift_57_m2[2]_net_1\, Y => 
+        \actable_shift_57[2]_net_1\);
+    
+    \actable_shift[6]\ : SLE
+      port map(D => \actable_shift_57[6]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[6]_net_1\);
+    
+    un7_dopch : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => un5_dopch_i, B => goact_0, Y => un36_dopch);
+    
+    \pcable_shift_RNO[3]\ : CFG3
+      generic map(INIT => x"2A")
+
+      port map(A => \pcable_shift[4]_net_1\, B => dorw_2, C => 
+        bcount(2), Y => N_766_i);
+    
+    un1_goactive_4 : CFG3
+      generic map(INIT => x"10")
+
+      port map(A => refresh, B => un5_dopch_i, C => 
+        \un1_goactive_4_1\, Y => un1_goactive_4_i);
+    
+    actable_shift_57_m2s2 : CFG4
+      generic map(INIT => x"FF02")
+
+      port map(A => act, B => goact_0, C => \active_2\, D => mode, 
+        Y => actable_shift_57_sm0);
+    
+    \rwable_shift[0]\ : SLE
+      port map(D => \rwable_shift_7[0]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rwable_shift[0]_net_1\);
+    
+    \actable_shift_57_m2[2]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[3]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[2]_net_1\);
+    
+    \rwable_shift[3]\ : SLE
+      port map(D => \rwable_shift_7[3]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \rwable_shift[3]_net_1\);
+    
+    pcable_shift_0_sqmuxa_i : CFG4
+      generic map(INIT => x"7FFF")
+
+      port map(A => bcount(1), B => bcount(2), C => dorw_2, D => 
+        bcount(0), Y => \pcable_shift_0_sqmuxa_i\);
+    
+    \actable_shift_57_m2[5]\ : CFG3
+      generic map(INIT => x"A8")
+
+      port map(A => \actable_shift[6]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[5]_net_1\);
+    
+    \actable_shift[2]\ : SLE
+      port map(D => \actable_shift_57[2]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
+        VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \actable_shift[2]_net_1\);
+    
+    \act_p.1.un113_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"8000")
+
+      port map(A => rwable_0, B => lnht_cmd_0, C => 
+        un113_rdwr_cmd_0_a2_1, D => N_105, Y => un113_rdwr_cmd);
+    
+    \actable_shift_57[5]\ : CFG4
+      generic map(INIT => x"F0EE")
+
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[5]_net_1\, C => 
+        \actable_shift[6]_net_1\, D => refresh, Y => 
+        \actable_shift_57[5]_net_1\);
+    
+    \line[6]\ : SLE
+      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_3(6));
     
@@ -29436,31 +29180,37 @@ use smartfusion2.all;
 
 entity openbank_0 is
 
-    port( bcount              : in    std_logic_vector(2 downto 0);
-          raddr               : in    std_logic_vector(22 downto 10);
-          line_i_1            : out   std_logic_vector(11 downto 0);
-          sa_5_0              : out   std_logic;
-          sa_5_2              : out   std_logic;
+    port( ba_4                : out   std_logic_vector(1 downto 0);
+          raddr               : in    std_logic_vector(26 downto 10);
+          bcount              : in    std_logic_vector(2 downto 0);
+          chip_i_1            : out   std_logic_vector(1 downto 0);
+          line_i_1            : out   std_logic_vector(12 downto 0);
           prch_0              : in    std_logic;
+          ras_shift_0         : in    std_logic;
           dorw_0              : in    std_logic;
           actable_0           : out   std_logic;
           rwable_0            : out   std_logic;
           pcable_0            : out   std_logic;
-          chip_i_1_0          : out   std_logic;
           active_0            : out   std_logic;
           goact_0             : in    std_logic;
-          pch                 : in    std_logic;
-          un8_precharge       : in    std_logic;
-          act                 : in    std_logic;
+          N_118_i             : out   std_logic;
+          we_n_2              : out   std_logic;
+          N_792_i             : out   std_logic;
           read_cmd            : in    std_logic;
-          precharge           : in    std_logic;
-          cas_n_1             : out   std_logic;
-          un1_precharge_5_i_0 : in    std_logic;
-          ras_n_1             : out   std_logic;
-          un1_precharge_3_i_0 : in    std_logic;
           cke                 : in    std_logic;
-          mode                : in    std_logic;
+          un6_precharge       : out   std_logic;
+          un36_rw_i_1         : out   std_logic;
           refresh             : in    std_logic;
+          doread              : in    std_logic;
+          pch                 : in    std_logic;
+          rw                  : in    std_logic;
+          act                 : in    std_logic;
+          un1_precharge_3_i_0 : out   std_logic;
+          un1_pch_2_i         : in    std_logic;
+          N_161_i             : out   std_logic;
+          mode                : in    std_logic;
+          precharge           : in    std_logic;
+          bterm               : in    std_logic;
           clk                 : in    std_logic;
           reset_n             : in    std_logic
         );
@@ -29522,24 +29272,9 @@ architecture DEF_ARCH of openbank_0 is
         );
   end component;
 
-    signal \actable_shift[8]_net_1\, GND_net_1, 
-        \actable_shift_57[8]_net_1\, VCC_net_1, 
-        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
-        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
-        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
-        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
-        \pcable_shift[3]_net_1\, N_759_i, \pcable_shift[4]_net_1\, 
-        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
-        \pcable_shift_13[5]\, \pcable_shift[6]_net_1\, N_757_i, 
-        \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
+    signal \pcable_shift[6]_net_1\, GND_net_1, N_753_i, 
+        VCC_net_1, \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
         \pcable_shift[8]_net_1\, \pcable_shift_0_sqmuxa_i\, 
-        \rc_shift[7]_net_1\, \rc_shift_30[7]_net_1\, 
-        \rwable_shift[0]_net_1\, \rwable_shift_7[0]\, 
-        \rwable_shift[1]_net_1\, \rwable_shift_7[1]\, 
-        \rwable_shift[2]_net_1\, \rwable_shift_7[2]\, 
-        \rwable_shift[3]_net_1\, \rwable_shift_7[3]\, 
-        \rwable_shift[4]_net_1\, \rwable_shift_7[4]\, 
-        \actable_shift[0]_net_1\, \actable_shift_57[0]_net_1\, 
         \actable_shift[1]_net_1\, \actable_shift_57[1]_net_1\, 
         \actable_shift[2]_net_1\, \actable_shift_57[2]_net_1\, 
         \actable_shift[3]_net_1\, \actable_shift_57[3]_net_1\, 
@@ -29547,33 +29282,55 @@ architecture DEF_ARCH of openbank_0 is
         \actable_shift[5]_net_1\, \actable_shift_57[5]_net_1\, 
         \actable_shift[6]_net_1\, \actable_shift_57[6]_net_1\, 
         \actable_shift[7]_net_1\, \actable_shift_57[7]_net_1\, 
-        \rc_shift[0]_net_1\, \rc_shift_30[0]_net_1\, 
-        \rc_shift[1]_net_1\, \rc_shift_30[1]_net_1\, 
-        \rc_shift[2]_net_1\, \rc_shift_30[2]_net_1\, 
-        \rc_shift[3]_net_1\, \rc_shift_30[3]_net_1\, 
-        \rc_shift[4]_net_1\, \rc_shift_30[4]_net_1\, 
-        \rc_shift[5]_net_1\, \rc_shift_30[5]_net_1\, 
-        \rc_shift[6]_net_1\, \rc_shift_30[6]_net_1\, \active_0\, 
-        un36_dopch, \prev_cmd_read\, prev_cmd_read_1_0, N_758_i, 
-        rwable_int_3, actable_6, un5_dopch_i, 
-        \actable_1_sqmuxa_2\, N_764, \un1_goactive_4_1\, 
-        \un2_domode\, un1_goactive_4_i, \actable_shift_5_sqmuxa\, 
-        \actable_shift_57_m2[11]_net_1\, 
-        \actable_shift_57_m2[10]_net_1\, 
-        \actable_shift_57_m2[9]_net_1\, 
-        \actable_shift_57_m2[8]_net_1\, 
-        \actable_shift_57_m2[7]_net_1\, 
-        \actable_shift_57_m2[6]_net_1\, 
-        \actable_shift_57_m2[5]_net_1\, 
-        \actable_shift_57_m2[4]_net_1\, 
-        \actable_shift_57_m2[3]_net_1\, 
+        \actable_shift[8]_net_1\, \actable_shift_57[8]_net_1\, 
+        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
+        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
+        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
+        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
+        \pcable_shift[3]_net_1\, N_754_i, \pcable_shift[4]_net_1\, 
+        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
+        \pcable_shift_13[5]\, \rc_shift[0]_net_1\, 
+        \rc_shift_30[0]_net_1\, \rc_shift[1]_net_1\, 
+        \rc_shift_30[1]_net_1\, \rc_shift[2]_net_1\, 
+        \rc_shift_30[2]_net_1\, \rc_shift[3]_net_1\, 
+        \rc_shift_30[3]_net_1\, \rc_shift[4]_net_1\, 
+        \rc_shift_30[4]_net_1\, \rc_shift[5]_net_1\, 
+        \rc_shift_30[5]_net_1\, \rc_shift[6]_net_1\, 
+        \rc_shift_30[6]_net_1\, \rc_shift[7]_net_1\, 
+        \rc_shift_30[7]_net_1\, \rwable_shift[0]_net_1\, 
+        \rwable_shift_7[0]\, \rwable_shift[1]_net_1\, 
+        \rwable_shift_7[1]\, \rwable_shift[2]_net_1\, 
+        \rwable_shift_7[2]\, \rwable_shift[3]_net_1\, 
+        \rwable_shift_7[3]\, \rwable_shift[4]_net_1\, 
+        \rwable_shift_7[4]\, \actable_shift[0]_net_1\, 
+        \actable_shift_57[0]_net_1\, \active_0\, un36_dopch, 
+        \prev_cmd_read\, prev_cmd_read_2_0, pcable_int_6, 
+        rwable_int_3, actable_6, \un1_precharge_3_0_0_1\, 
+        un1_bterm_1, actable_shift_57_sm0, un1_goactive_4_i, 
+        \actable_shift_57_ss0\, actable_1_m_0, 
+        pcable_int_6_iv_0_a2_0_0, un36_rw_i, N_116, \un36_rw_i_1\, 
+        \un6_precharge\, un5_dopch_i, 
+        un1_pcable_shift_3_sqmuxa_i_a2_1, un1_goactive_4_0, 
+        \pcable_int_2_sqmuxa\, \actable_1_sqmuxa\, 
+        \actable_1_sqmuxa_2\, un16_act_i, 
+        \actable_shift_57_m2[1]_net_1\, 
         \actable_shift_57_m2[2]_net_1\, 
-        \actable_shift_57_m2[1]_net_1\, \actable_shift_57_ss0\, 
+        \actable_shift_57_m2[3]_net_1\, 
+        \actable_shift_57_m2[4]_net_1\, 
+        \actable_shift_57_m2[5]_net_1\, 
+        \actable_shift_57_m2[6]_net_1\, 
+        \actable_shift_57_m2[7]_net_1\, 
+        \actable_shift_57_m2[8]_net_1\, 
+        \actable_shift_57_m2[9]_net_1\, 
+        \actable_shift_57_m2[10]_net_1\, 
+        \actable_shift_57_m2[11]_net_1\, 
         \actable_shift_57_m2[12]_net_1\ : std_logic;
 
 begin 
 
     active_0 <= \active_0\;
+    un6_precharge <= \un6_precharge\;
+    un36_rw_i_1 <= \un36_rw_i_1\;
 
     \rc_shift_30[4]\ : CFG2
       generic map(INIT => x"4")
@@ -29594,11 +29351,28 @@ begin
         \actable_shift_57_m2[1]_net_1\, Y => 
         \actable_shift_57[1]_net_1\);
     
+    un36_rw_0_a2 : CFG3
+      generic map(INIT => x"20")
+
+      port map(A => rw, B => \un6_precharge\, C => \un36_rw_i_1\, 
+        Y => un36_rw_i);
+    
+    prev_cmd_read_2 : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
+        Y => prev_cmd_read_2_0);
+    
     \pcable_shift[5]\ : SLE
       port map(D => \pcable_shift_13[5]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \pcable_shift[5]_net_1\);
+    
+    \line[12]\ : SLE
+      port map(D => raddr(24), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_1(12));
     
     \actable_shift_57[8]\ : CFG4
       generic map(INIT => x"F0EE")
@@ -29609,7 +29383,7 @@ begin
         \actable_shift_57[8]_net_1\);
     
     \line[3]\ : SLE
-      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(3));
     
@@ -29625,6 +29399,12 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \pcable_shift[7]_net_1\);
     
+    \sd_ctl_p.we_n_2_iv_0\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => un16_act_i, B => refresh, C => N_116, D => 
+        un1_pch_2_i, Y => we_n_2);
+    
     \rc_shift_30[2]\ : CFG2
       generic map(INIT => x"4")
 
@@ -29632,7 +29412,7 @@ begin
         \rc_shift_30[2]_net_1\);
     
     \line[10]\ : SLE
-      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(10));
     
@@ -29648,12 +29428,6 @@ begin
       port map(A => refresh, B => un5_dopch_i, C => 
         \actable_shift_57_m2[4]_net_1\, Y => 
         \actable_shift_57[4]_net_1\);
-    
-    \sd_ctl_p.sa_5[9]\ : CFG4
-      generic map(INIT => x"0200")
-
-      port map(A => act, B => un8_precharge, C => pch, D => 
-        raddr(19), Y => sa_5_0);
     
     \rc_shift_30[0]\ : CFG2
       generic map(INIT => x"4")
@@ -29697,18 +29471,23 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rc_shift[0]_net_1\);
     
+    un36_rw_1_0_a2_0_a2 : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => refresh, B => act, Y => \un36_rw_i_1\);
+    
     \pcable_shift_RNO[5]\ : CFG3
       generic map(INIT => x"2A")
 
       port map(A => \pcable_shift[6]_net_1\, B => dorw_0, C => 
         bcount(2), Y => \pcable_shift_13[5]\);
     
-    \actable_shift_57_m2[10]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[10]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[11]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[10]_net_1\);
+      port map(A => \actable_shift[11]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[10]_net_1\);
     
     \actable_shift[8]\ : SLE
       port map(D => \actable_shift_57[8]_net_1\, CLK => clk, EN
@@ -29723,17 +29502,21 @@ begin
         \actable_shift[0]_net_1\);
     
     prev_cmd_read : SLE
-      port map(D => prev_cmd_read_1_0, CLK => clk, EN => 
+      port map(D => prev_cmd_read_2_0, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \prev_cmd_read\);
     
-    actable_shift_57_ss0 : CFG4
-      generic map(INIT => x"F0E4")
+    actable_shift_57_ss0 : CFG3
+      generic map(INIT => x"B8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => mode, D => \un2_domode\, Y => 
-        \actable_shift_57_ss0\);
+      port map(A => mode, B => actable_shift_57_sm0, C => 
+        un1_goactive_4_i, Y => \actable_shift_57_ss0\);
+    
+    \chip[1]\ : SLE
+      port map(D => raddr(26), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => chip_i_1(1));
     
     \rw_p.rwable_shift_7[4]\ : CFG3
       generic map(INIT => x"CE")
@@ -29746,12 +29529,6 @@ begin
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[10]_net_1\);
-    
-    prev_cmd_read_1 : CFG3
-      generic map(INIT => x"D8")
-
-      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
-        Y => prev_cmd_read_1_0);
     
     \pcable_shift[4]\ : SLE
       port map(D => \pcable_shift_13[4]\, CLK => clk, EN => 
@@ -29768,11 +29545,11 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[12]_net_1\);
     
-    \sd_ctl_p.sa_5[11]\ : CFG4
-      generic map(INIT => x"0200")
+    actable_1_sqmuxa : CFG3
+      generic map(INIT => x"08")
 
-      port map(A => act, B => un8_precharge, C => pch, D => 
-        raddr(21), Y => sa_5_2);
+      port map(A => un5_dopch_i, B => \rc_shift[0]_net_1\, C => 
+        refresh, Y => \actable_1_sqmuxa\);
     
     \actable_shift[7]\ : SLE
       port map(D => \actable_shift_57[7]_net_1\, CLK => clk, EN
@@ -29780,21 +29557,26 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[7]_net_1\);
     
+    pcable_int_2_sqmuxa : CFG3
+      generic map(INIT => x"40")
+
+      port map(A => \prev_cmd_read\, B => ras_shift_0, C => 
+        \pcable_shift[3]_net_1\, Y => \pcable_int_2_sqmuxa\);
+    
+    \sd_ctl_p.ba_4[0]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \un6_precharge\, B => raddr(10), Y => ba_4(0));
+    
     rwable_int : SLE
       port map(D => rwable_int_3, CLK => clk, EN => VCC_net_1, 
         ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => rwable_0);
     
     pcable_int : SLE
-      port map(D => N_758_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => pcable_0);
-    
-    un2_domode : CFG3
-      generic map(INIT => x"04")
-
-      port map(A => un5_dopch_i, B => mode, C => refresh, Y => 
-        \un2_domode\);
+      port map(D => pcable_int_6, CLK => clk, EN => VCC_net_1, 
+        ALn => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => pcable_0);
     
     \rw_p.rwable_int_3_iv\ : CFG3
       generic map(INIT => x"BA")
@@ -29808,12 +29590,12 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[9]_net_1\);
     
-    \actable_shift_57_m2[8]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[8]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[9]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[8]_net_1\);
+      port map(A => \actable_shift[9]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[8]_net_1\);
     
     \actable_shift_57[3]\ : CFG3
       generic map(INIT => x"54")
@@ -29828,6 +29610,13 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rwable_shift[2]_net_1\);
     
+    \pcable_p.pcable_int_6_iv_0\ : CFG4
+      generic map(INIT => x"00EC")
+
+      port map(A => pcable_int_6_iv_0_a2_0_0, B => 
+        \pcable_int_2_sqmuxa\, C => \prev_cmd_read\, D => dorw_0, 
+        Y => pcable_int_6);
+    
     \actable_shift[3]\ : SLE
       port map(D => \actable_shift_57[3]_net_1\, CLK => clk, EN
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
@@ -29835,21 +29624,21 @@ begin
         \actable_shift[3]_net_1\);
     
     \line[5]\ : SLE
-      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(5));
-    
-    actable_shift_5_sqmuxa : CFG4
-      generic map(INIT => x"0002")
-
-      port map(A => act, B => \active_0\, C => un5_dopch_i, D => 
-        goact_0, Y => \actable_shift_5_sqmuxa\);
     
     \rc_shift[4]\ : SLE
       port map(D => \rc_shift_30[4]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rc_shift[4]_net_1\);
+    
+    un1_goactive_4_0_0 : CFG4
+      generic map(INIT => x"0031")
+
+      port map(A => act, B => goact_0, C => \active_0\, D => mode, 
+        Y => un1_goactive_4_0);
     
     \rw_p.rwable_shift_7[1]\ : CFG3
       generic map(INIT => x"BA")
@@ -29863,15 +29652,15 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rwable_shift[4]_net_1\);
     
-    \actable_shift_57_m2[7]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[7]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[8]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[7]_net_1\);
+      port map(A => \actable_shift[8]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[7]_net_1\);
     
     \pcable_shift[3]\ : SLE
-      port map(D => N_759_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_754_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[3]_net_1\);
     
@@ -29904,31 +29693,25 @@ begin
     \GND\ : GND
       port map(Y => GND_net_1);
     
-    \sd_ctl_p.cas_n_1_0_a2\ : CFG2
-      generic map(INIT => x"2")
-
-      port map(A => un1_precharge_5_i_0, B => refresh, Y => 
-        cas_n_1);
-    
     \pcable_shift_RNO[4]\ : CFG3
       generic map(INIT => x"2A")
 
       port map(A => \pcable_shift[5]_net_1\, B => dorw_0, C => 
         bcount(2), Y => \pcable_shift_13[4]\);
     
-    \actable_shift_57_m2[4]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[4]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[5]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[4]_net_1\);
+      port map(A => \actable_shift[5]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[4]_net_1\);
     
-    \actable_shift_57_m2[11]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[11]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[12]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[11]_net_1\);
+      port map(A => \actable_shift[12]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[11]_net_1\);
     
     un5_dopch : CFG2
       generic map(INIT => x"E")
@@ -29936,20 +29719,27 @@ begin
       port map(A => precharge, B => prch_0, Y => un5_dopch_i);
     
     \line[2]\ : SLE
-      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(2));
     
     \chip[0]\ : SLE
-      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(25), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => chip_i_1_0);
+        GND_net_1, LAT => GND_net_1, Q => chip_i_1(0));
     
     \pcable_shift_RNO[6]\ : CFG4
       generic map(INIT => x"02AA")
 
       port map(A => \pcable_shift[7]_net_1\, B => bcount(0), C
-         => bcount(1), D => N_764, Y => N_757_i);
+         => bcount(1), D => un1_pcable_shift_3_sqmuxa_i_a2_1, Y
+         => N_753_i);
+    
+    un1_bterm_1_0_a2 : CFG4
+      generic map(INIT => x"0200")
+
+      port map(A => bterm, B => rw, C => \un6_precharge\, D => 
+        \un36_rw_i_1\, Y => un1_bterm_1);
     
     \rc_shift[1]\ : SLE
       port map(D => \rc_shift_30[1]_net_1\, CLK => clk, EN => 
@@ -29963,10 +29753,32 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rc_shift[6]_net_1\);
     
+    \sd_ctl_p.un6_precharge_0_o2\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => mode, B => precharge, Y => \un6_precharge\);
+    
     \line[4]\ : SLE
-      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(4));
+    
+    un16_act_0_a2 : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \un6_precharge\, B => act, Y => un16_act_i);
+    
+    actable_6_iv_RNO : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \rc_shift[0]_net_1\, B => 
+        \actable_shift[0]_net_1\, Y => actable_1_m_0);
+    
+    un1_bterm_1_0_a2_RNI77FH : CFG3
+      generic map(INIT => x"FE")
+
+      port map(A => un1_pch_2_i, B => un36_rw_i, C => un1_bterm_1, 
+        Y => N_118_i);
     
     \rw_p.rwable_shift_7[2]\ : CFG3
       generic map(INIT => x"BA")
@@ -29982,29 +29794,34 @@ begin
         \actable_shift[11]_net_1\, D => refresh, Y => 
         \actable_shift_57[10]_net_1\);
     
-    \actable_shift_57_m2[6]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[6]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[7]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[6]_net_1\);
+      port map(A => \actable_shift[7]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[6]_net_1\);
     
     actable_1_sqmuxa_2 : CFG4
-      generic map(INIT => x"1000")
+      generic map(INIT => x"0008")
 
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \rc_shift[0]_net_1\, D => mode, Y => \actable_1_sqmuxa_2\);
+      port map(A => \rc_shift[0]_net_1\, B => mode, C => refresh, 
+        D => un5_dopch_i, Y => \actable_1_sqmuxa_2\);
     
     \line[11]\ : SLE
-      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(23), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(11));
     
-    pcable_int_RNO : CFG4
-      generic map(INIT => x"0E04")
+    \pcable_p.pcable_int_6_iv_0_a2_0_0\ : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => \prev_cmd_read\, B => \pcable_shift[3]_net_1\, 
-        C => dorw_0, D => \pcable_shift[4]_net_1\, Y => N_758_i);
+      port map(A => ras_shift_0, B => \pcable_shift[4]_net_1\, Y
+         => pcable_int_6_iv_0_a2_0_0);
+    
+    \N_792_i\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => rw, B => doread, Y => N_792_i);
     
     \rc_shift_30[1]\ : CFG2
       generic map(INIT => x"4")
@@ -30012,27 +29829,26 @@ begin
       port map(A => goact_0, B => \rc_shift[2]_net_1\, Y => 
         \rc_shift_30[1]_net_1\);
     
-    \actable_shift_57_m2[12]\ : CFG4
-      generic map(INIT => x"0F0E")
+    \actable_shift_57_m2[12]\ : CFG3
+      generic map(INIT => x"54")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \active_0\, D => \un2_domode\, Y
-         => \actable_shift_57_m2[12]_net_1\);
+      port map(A => \active_0\, B => actable_shift_57_sm0, C => 
+        un1_goactive_4_i, Y => \actable_shift_57_m2[12]_net_1\);
     
-    \actable_shift_57_m2[3]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[3]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[4]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[3]_net_1\);
+      port map(A => \actable_shift[4]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[3]_net_1\);
     
     \line[9]\ : SLE
-      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(9));
     
     \line[1]\ : SLE
-      port map(D => raddr(11), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(1));
     
@@ -30044,18 +29860,36 @@ begin
         \actable_shift[7]_net_1\, D => refresh, Y => 
         \actable_shift_57[6]_net_1\);
     
-    \actable_shift_57_m2[1]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[1]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[2]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[1]_net_1\);
+      port map(A => \actable_shift[2]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[1]_net_1\);
     
     \pcable_shift[8]\ : SLE
       port map(D => \pcable_shift_0_sqmuxa_i\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \pcable_shift[8]_net_1\);
+    
+    \sd_ctl_p.we_n_2_iv_0_a2\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => un36_rw_i, B => doread, Y => N_116);
+    
+    \N_161_i\ : CFG3
+      generic map(INIT => x"FE")
+
+      port map(A => bterm, B => precharge, C => mode, Y => 
+        N_161_i);
+    
+    un1_precharge_3_0_0 : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => \un1_precharge_3_0_0_1\, B => precharge, C
+         => un1_pch_2_i, D => un1_bterm_1, Y => 
+        un1_precharge_3_i_0);
     
     \rw_p.rwable_shift_7[0]\ : CFG3
       generic map(INIT => x"BA")
@@ -30069,31 +29903,30 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rc_shift[5]_net_1\);
     
+    \sd_ctl_p.ba_4[1]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \un6_precharge\, B => raddr(11), Y => ba_4(1));
+    
     \rc_shift_30[5]\ : CFG2
       generic map(INIT => x"E")
 
       port map(A => goact_0, B => \rc_shift[6]_net_1\, Y => 
         \rc_shift_30[5]_net_1\);
     
-    \sd_ctl_p.ras_n_1_0_a2\ : CFG2
-      generic map(INIT => x"1")
+    un1_precharge_3_0_0_1 : CFG4
+      generic map(INIT => x"00BA")
 
-      port map(A => un1_precharge_3_i_0, B => refresh, Y => 
-        ras_n_1);
+      port map(A => act, B => rw, C => pch, D => mode, Y => 
+        \un1_precharge_3_0_0_1\);
     
     \pcable_shift[6]\ : SLE
-      port map(D => N_757_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_753_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[6]_net_1\);
     
-    un1_goactive_4_1 : CFG4
-      generic map(INIT => x"0031")
-
-      port map(A => act, B => goact_0, C => \active_0\, D => mode, 
-        Y => \un1_goactive_4_1\);
-    
     \line[8]\ : SLE
-      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(8));
     
@@ -30102,12 +29935,12 @@ begin
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \active_0\);
     
-    \actable_shift_57_m2[9]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[9]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[10]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[9]_net_1\);
+      port map(A => \actable_shift[10]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[9]_net_1\);
     
     \rw_p.rwable_shift_7[3]\ : CFG3
       generic map(INIT => x"BA")
@@ -30116,7 +29949,7 @@ begin
         \rwable_shift[4]_net_1\, Y => \rwable_shift_7[3]\);
     
     \line[0]\ : SLE
-      port map(D => raddr(10), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(0));
     
@@ -30129,14 +29962,15 @@ begin
     un1_pcable_shift_3_sqmuxa_i_a2 : CFG2
       generic map(INIT => x"8")
 
-      port map(A => bcount(2), B => dorw_0, Y => N_764);
+      port map(A => bcount(2), B => dorw_0, Y => 
+        un1_pcable_shift_3_sqmuxa_i_a2_1);
     
     actable_6_iv : CFG4
-      generic map(INIT => x"EAAA")
+      generic map(INIT => x"FEFC")
 
-      port map(A => \actable_1_sqmuxa_2\, B => un1_goactive_4_i, 
-        C => \actable_shift[0]_net_1\, D => \rc_shift[0]_net_1\, 
-        Y => actable_6);
+      port map(A => actable_1_m_0, B => \actable_1_sqmuxa\, C => 
+        \actable_1_sqmuxa_2\, D => un1_goactive_4_i, Y => 
+        actable_6);
     
     \rc_shift[2]\ : SLE
       port map(D => \rc_shift_30[2]_net_1\, CLK => clk, EN => 
@@ -30145,7 +29979,7 @@ begin
         \rc_shift[2]_net_1\);
     
     \line[7]\ : SLE
-      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(7));
     
@@ -30200,13 +30034,19 @@ begin
       generic map(INIT => x"2A")
 
       port map(A => \pcable_shift[4]_net_1\, B => dorw_0, C => 
-        bcount(2), Y => N_759_i);
+        bcount(2), Y => N_754_i);
     
     un1_goactive_4 : CFG3
       generic map(INIT => x"10")
 
       port map(A => refresh, B => un5_dopch_i, C => 
-        \un1_goactive_4_1\, Y => un1_goactive_4_i);
+        un1_goactive_4_0, Y => un1_goactive_4_i);
+    
+    actable_shift_57_m2s2 : CFG4
+      generic map(INIT => x"FF02")
+
+      port map(A => act, B => goact_0, C => \active_0\, D => mode, 
+        Y => actable_shift_57_sm0);
     
     \rwable_shift[0]\ : SLE
       port map(D => \rwable_shift_7[0]\, CLK => clk, EN => 
@@ -30214,12 +30054,12 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rwable_shift[0]_net_1\);
     
-    \actable_shift_57_m2[2]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[2]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[3]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[2]_net_1\);
+      port map(A => \actable_shift[3]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[2]_net_1\);
     
     \rwable_shift[3]\ : SLE
       port map(D => \rwable_shift_7[3]\, CLK => clk, EN => 
@@ -30233,12 +30073,12 @@ begin
       port map(A => bcount(1), B => bcount(2), C => dorw_0, D => 
         bcount(0), Y => \pcable_shift_0_sqmuxa_i\);
     
-    \actable_shift_57_m2[5]\ : CFG4
-      generic map(INIT => x"F0E0")
+    \actable_shift_57_m2[5]\ : CFG3
+      generic map(INIT => x"A8")
 
-      port map(A => \actable_shift_5_sqmuxa\, B => 
-        un1_goactive_4_i, C => \actable_shift[6]_net_1\, D => 
-        \un2_domode\, Y => \actable_shift_57_m2[5]_net_1\);
+      port map(A => \actable_shift[6]_net_1\, B => 
+        actable_shift_57_sm0, C => un1_goactive_4_i, Y => 
+        \actable_shift_57_m2[5]_net_1\);
     
     \actable_shift[2]\ : SLE
       port map(D => \actable_shift_57[2]_net_1\, CLK => clk, EN
@@ -30246,15 +30086,16 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[2]_net_1\);
     
-    \actable_shift_57[5]\ : CFG3
-      generic map(INIT => x"54")
+    \actable_shift_57[5]\ : CFG4
+      generic map(INIT => x"F0EE")
 
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[5]_net_1\, Y => 
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[5]_net_1\, C => 
+        \actable_shift[6]_net_1\, D => refresh, Y => 
         \actable_shift_57[5]_net_1\);
     
     \line[6]\ : SLE
-      port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_1(6));
     
@@ -30268,25 +30109,31 @@ use smartfusion2.all;
 
 entity openbank_1 is
 
-    port( bcount     : in    std_logic_vector(2 downto 0);
-          raddr      : in    std_logic_vector(22 downto 10);
-          line_i_0   : out   std_logic_vector(11 downto 0);
-          prch_0     : in    std_logic;
-          dorw_0     : in    std_logic;
-          actable_0  : out   std_logic;
-          rwable_0   : out   std_logic;
-          pcable_0   : out   std_logic;
-          chip_i_0_0 : out   std_logic;
-          active_0   : out   std_logic;
-          goact_0    : in    std_logic;
-          refresh    : in    std_logic;
-          mode       : in    std_logic;
-          act        : in    std_logic;
-          read_cmd   : in    std_logic;
-          precharge  : in    std_logic;
-          cke        : in    std_logic;
-          clk        : in    std_logic;
-          reset_n    : in    std_logic
+    port( bcount        : in    std_logic_vector(2 downto 0);
+          raddr         : in    std_logic_vector(26 downto 12);
+          chip_i_0      : out   std_logic_vector(1 downto 0);
+          line_i_0      : out   std_logic_vector(12 downto 0);
+          lnht_cmd_0    : in    std_logic;
+          rdwr_cmd_0    : in    std_logic;
+          prch_0        : in    std_logic;
+          dorw_0        : in    std_logic;
+          actable_0     : out   std_logic;
+          rwable_0      : out   std_logic;
+          pcable_0      : out   std_logic;
+          active_0      : out   std_logic;
+          goact_0       : in    std_logic;
+          ras_shift_0   : out   std_logic;
+          un96_rdwr_cmd : out   std_logic;
+          N_95_1        : in    std_logic;
+          refresh       : in    std_logic;
+          read_cmd      : in    std_logic;
+          cke           : in    std_logic;
+          precharge     : in    std_logic;
+          pch           : in    std_logic;
+          mode          : in    std_logic;
+          clk           : in    std_logic;
+          reset_n       : in    std_logic;
+          act           : in    std_logic
         );
 
 end openbank_1;
@@ -30346,17 +30193,39 @@ architecture DEF_ARCH of openbank_1 is
         );
   end component;
 
-    signal \actable_shift[8]_net_1\, GND_net_1, 
-        \actable_shift_57[8]_net_1\, VCC_net_1, 
-        \actable_shift[9]_net_1\, \actable_shift_57[9]_net_1\, 
-        \actable_shift[10]_net_1\, \actable_shift_57[10]_net_1\, 
-        \actable_shift[11]_net_1\, \actable_shift_57[11]_net_1\, 
-        \actable_shift[12]_net_1\, \actable_shift_57[12]_net_1\, 
-        \pcable_shift[3]_net_1\, N_767_i, \pcable_shift[4]_net_1\, 
-        \pcable_shift_13[4]\, \pcable_shift[5]_net_1\, 
-        \pcable_shift_13[5]\, \pcable_shift[6]_net_1\, N_765_i, 
-        \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
+  component CFG1
+    generic (INIT:std_logic_vector(1 downto 0) := "00");
+
+    port( A : in    std_logic := 'U';
+          Y : out   std_logic
+        );
+  end component;
+
+    signal act_i_0, \pcable_shift[6]_net_1\, GND_net_1, N_759_i, 
+        VCC_net_1, \pcable_shift[7]_net_1\, \pcable_shift_13[7]\, 
         \pcable_shift[8]_net_1\, \pcable_shift_0_sqmuxa_i\, 
+        \ras_shift_0\, \actable_shift[1]_net_1\, 
+        \actable_shift_57[1]_net_1\, \actable_shift[2]_net_1\, 
+        \actable_shift_57[2]_net_1\, \actable_shift[3]_net_1\, 
+        \actable_shift_57[3]_net_1\, \actable_shift[4]_net_1\, 
+        \actable_shift_57[4]_net_1\, \actable_shift[5]_net_1\, 
+        \actable_shift_57[5]_net_1\, \actable_shift[6]_net_1\, 
+        \actable_shift_57[6]_net_1\, \actable_shift[7]_net_1\, 
+        \actable_shift_57[7]_net_1\, \actable_shift[8]_net_1\, 
+        \actable_shift_57[8]_net_1\, \actable_shift[9]_net_1\, 
+        \actable_shift_57[9]_net_1\, \actable_shift[10]_net_1\, 
+        \actable_shift_57[10]_net_1\, \actable_shift[11]_net_1\, 
+        \actable_shift_57[11]_net_1\, \actable_shift[12]_net_1\, 
+        \actable_shift_57[12]_net_1\, \pcable_shift[3]_net_1\, 
+        N_760_i, \pcable_shift[4]_net_1\, \pcable_shift_13[4]\, 
+        \pcable_shift[5]_net_1\, \pcable_shift_13[5]\, 
+        \rc_shift[0]_net_1\, \rc_shift_30[0]_net_1\, 
+        \rc_shift[1]_net_1\, \rc_shift_30[1]_net_1\, 
+        \rc_shift[2]_net_1\, \rc_shift_30[2]_net_1\, 
+        \rc_shift[3]_net_1\, \rc_shift_30[3]_net_1\, 
+        \rc_shift[4]_net_1\, \rc_shift_30[4]_net_1\, 
+        \rc_shift[5]_net_1\, \rc_shift_30[5]_net_1\, 
+        \rc_shift[6]_net_1\, \rc_shift_30[6]_net_1\, 
         \rc_shift[7]_net_1\, \rc_shift_30[7]_net_1\, 
         \rwable_shift[0]_net_1\, \rwable_shift_7[0]\, 
         \rwable_shift[1]_net_1\, \rwable_shift_7[1]\, 
@@ -30364,25 +30233,15 @@ architecture DEF_ARCH of openbank_1 is
         \rwable_shift[3]_net_1\, \rwable_shift_7[3]\, 
         \rwable_shift[4]_net_1\, \rwable_shift_7[4]\, 
         \actable_shift[0]_net_1\, \actable_shift_57[0]_net_1\, 
-        \actable_shift[1]_net_1\, \actable_shift_57[1]_net_1\, 
-        \actable_shift[2]_net_1\, \actable_shift_57[2]_net_1\, 
-        \actable_shift[3]_net_1\, \actable_shift_57[3]_net_1\, 
-        \actable_shift[4]_net_1\, \actable_shift_57[4]_net_1\, 
-        \actable_shift[5]_net_1\, \actable_shift_57[5]_net_1\, 
-        \actable_shift[6]_net_1\, \actable_shift_57[6]_net_1\, 
-        \actable_shift[7]_net_1\, \actable_shift_57[7]_net_1\, 
-        \rc_shift[0]_net_1\, \rc_shift_30[0]_net_1\, 
-        \rc_shift[1]_net_1\, \rc_shift_30[1]_net_1\, 
-        \rc_shift[2]_net_1\, \rc_shift_30[2]_net_1\, 
-        \rc_shift[3]_net_1\, \rc_shift_30[3]_net_1\, 
-        \rc_shift[4]_net_1\, \rc_shift_30[4]_net_1\, 
-        \rc_shift[5]_net_1\, \rc_shift_30[5]_net_1\, 
-        \rc_shift[6]_net_1\, \rc_shift_30[6]_net_1\, \active_0\, 
-        un36_dopch, \prev_cmd_read\, prev_cmd_read_1_1, N_766_i, 
-        rwable_int_3, actable_6, un5_dopch_i, N_772, 
-        \un1_goactive_4_1\, \actable_1_sqmuxa_2\, 
-        un1_goactive_4_i, actable_shift_57_sm0, 
-        \actable_shift_57_ss0\, \actable_shift_57_m2[1]_net_1\, 
+        \active_0\, un36_dopch, \prev_cmd_read\, 
+        prev_cmd_read_2_1, pcable_int_6, rwable_int_3, actable_6, 
+        actable_shift_57_sm0, un1_goactive_4_i, 
+        \actable_shift_57_ss0\, actable_1_m_0, 
+        un96_rdwr_cmd_0_a2_1, pcable_int_6_iv_0_a2_0_0, 
+        un5_dopch_i, un1_pcable_shift_3_sqmuxa_i_a2_0, 
+        un1_goactive_4_0, \pcable_int_2_sqmuxa\, 
+        \actable_1_sqmuxa\, \actable_1_sqmuxa_2\, 
+        \actable_shift_57_m2[1]_net_1\, 
         \actable_shift_57_m2[2]_net_1\, 
         \actable_shift_57_m2[3]_net_1\, 
         \actable_shift_57_m2[4]_net_1\, 
@@ -30398,6 +30257,7 @@ architecture DEF_ARCH of openbank_1 is
 begin 
 
     active_0 <= \active_0\;
+    ras_shift_0 <= \ras_shift_0\;
 
     \rc_shift_30[4]\ : CFG2
       generic map(INIT => x"4")
@@ -30418,11 +30278,22 @@ begin
         \actable_shift_57_m2[1]_net_1\, Y => 
         \actable_shift_57[1]_net_1\);
     
+    prev_cmd_read_2 : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
+        Y => prev_cmd_read_2_1);
+    
     \pcable_shift[5]\ : SLE
       port map(D => \pcable_shift_13[5]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \pcable_shift[5]_net_1\);
+    
+    \line[12]\ : SLE
+      port map(D => raddr(24), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => line_i_0(12));
     
     \actable_shift_57[8]\ : CFG4
       generic map(INIT => x"F0EE")
@@ -30433,7 +30304,7 @@ begin
         \actable_shift_57[8]_net_1\);
     
     \line[3]\ : SLE
-      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(3));
     
@@ -30456,7 +30327,7 @@ begin
         \rc_shift_30[2]_net_1\);
     
     \line[10]\ : SLE
-      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(10));
     
@@ -30541,7 +30412,7 @@ begin
         \actable_shift[0]_net_1\);
     
     prev_cmd_read : SLE
-      port map(D => prev_cmd_read_1_1, CLK => clk, EN => 
+      port map(D => prev_cmd_read_2_1, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \prev_cmd_read\);
@@ -30551,6 +30422,11 @@ begin
 
       port map(A => mode, B => actable_shift_57_sm0, C => 
         un1_goactive_4_i, Y => \actable_shift_57_ss0\);
+    
+    \chip[1]\ : SLE
+      port map(D => raddr(26), CLK => clk, EN => goact_0, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => chip_i_0(1));
     
     \rw_p.rwable_shift_7[4]\ : CFG3
       generic map(INIT => x"CE")
@@ -30563,12 +30439,6 @@ begin
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[10]_net_1\);
-    
-    prev_cmd_read_1 : CFG3
-      generic map(INIT => x"D8")
-
-      port map(A => dorw_0, B => read_cmd, C => \prev_cmd_read\, 
-        Y => prev_cmd_read_1_1);
     
     \pcable_shift[4]\ : SLE
       port map(D => \pcable_shift_13[4]\, CLK => clk, EN => 
@@ -30585,11 +30455,23 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[12]_net_1\);
     
+    actable_1_sqmuxa : CFG3
+      generic map(INIT => x"08")
+
+      port map(A => un5_dopch_i, B => \rc_shift[0]_net_1\, C => 
+        refresh, Y => \actable_1_sqmuxa\);
+    
     \actable_shift[7]\ : SLE
       port map(D => \actable_shift_57[7]_net_1\, CLK => clk, EN
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[7]_net_1\);
+    
+    pcable_int_2_sqmuxa : CFG3
+      generic map(INIT => x"20")
+
+      port map(A => \pcable_shift[3]_net_1\, B => \prev_cmd_read\, 
+        C => \ras_shift_0\, Y => \pcable_int_2_sqmuxa\);
     
     rwable_int : SLE
       port map(D => rwable_int_3, CLK => clk, EN => VCC_net_1, 
@@ -30597,9 +30479,9 @@ begin
          => GND_net_1, LAT => GND_net_1, Q => rwable_0);
     
     pcable_int : SLE
-      port map(D => N_766_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => pcable_0);
+      port map(D => pcable_int_6, CLK => clk, EN => VCC_net_1, 
+        ALn => reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => pcable_0);
     
     \rw_p.rwable_int_3_iv\ : CFG3
       generic map(INIT => x"BA")
@@ -30633,6 +30515,13 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rwable_shift[2]_net_1\);
     
+    \pcable_p.pcable_int_6_iv_0\ : CFG4
+      generic map(INIT => x"00EC")
+
+      port map(A => pcable_int_6_iv_0_a2_0_0, B => 
+        \pcable_int_2_sqmuxa\, C => \prev_cmd_read\, D => dorw_0, 
+        Y => pcable_int_6);
+    
     \actable_shift[3]\ : SLE
       port map(D => \actable_shift_57[3]_net_1\, CLK => clk, EN
          => VCC_net_1, ALn => reset_n, ADn => GND_net_1, SLn => 
@@ -30640,7 +30529,7 @@ begin
         \actable_shift[3]_net_1\);
     
     \line[5]\ : SLE
-      port map(D => raddr(15), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(5));
     
@@ -30649,6 +30538,12 @@ begin
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \rc_shift[4]_net_1\);
+    
+    un1_goactive_4_0_0 : CFG4
+      generic map(INIT => x"0031")
+
+      port map(A => act, B => goact_0, C => \active_0\, D => mode, 
+        Y => un1_goactive_4_0);
     
     \rw_p.rwable_shift_7[1]\ : CFG3
       generic map(INIT => x"BA")
@@ -30670,7 +30565,7 @@ begin
         \actable_shift_57_m2[7]_net_1\);
     
     \pcable_shift[3]\ : SLE
-      port map(D => N_767_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_760_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[3]_net_1\);
     
@@ -30729,20 +30624,21 @@ begin
       port map(A => precharge, B => prch_0, Y => un5_dopch_i);
     
     \line[2]\ : SLE
-      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(2));
     
     \chip[0]\ : SLE
-      port map(D => raddr(22), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(25), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => chip_i_0_0);
+        GND_net_1, LAT => GND_net_1, Q => chip_i_0(0));
     
     \pcable_shift_RNO[6]\ : CFG4
       generic map(INIT => x"02AA")
 
       port map(A => \pcable_shift[7]_net_1\, B => bcount(0), C
-         => bcount(1), D => N_772, Y => N_765_i);
+         => bcount(1), D => un1_pcable_shift_3_sqmuxa_i_a2_0, Y
+         => N_759_i);
     
     \rc_shift[1]\ : SLE
       port map(D => \rc_shift_30[1]_net_1\, CLK => clk, EN => 
@@ -30757,9 +30653,21 @@ begin
         \rc_shift[6]_net_1\);
     
     \line[4]\ : SLE
-      port map(D => raddr(14), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(4));
+    
+    \act_p.0.un96_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"2000")
+
+      port map(A => rdwr_cmd_0, B => lnht_cmd_0, C => N_95_1, D
+         => un96_rdwr_cmd_0_a2_1, Y => un96_rdwr_cmd);
+    
+    actable_6_iv_RNO : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \rc_shift[0]_net_1\, B => 
+        \actable_shift[0]_net_1\, Y => actable_1_m_0);
     
     \rw_p.rwable_shift_7[2]\ : CFG3
       generic map(INIT => x"BA")
@@ -30789,15 +30697,21 @@ begin
         D => un5_dopch_i, Y => \actable_1_sqmuxa_2\);
     
     \line[11]\ : SLE
-      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(23), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(11));
     
-    pcable_int_RNO : CFG4
-      generic map(INIT => x"0E04")
+    \act_p.0.un96_rdwr_cmd_0_a2_1\ : CFG2
+      generic map(INIT => x"4")
 
-      port map(A => \prev_cmd_read\, B => \pcable_shift[3]_net_1\, 
-        C => dorw_0, D => \pcable_shift[4]_net_1\, Y => N_766_i);
+      port map(A => pch, B => \active_0\, Y => 
+        un96_rdwr_cmd_0_a2_1);
+    
+    \pcable_p.pcable_int_6_iv_0_a2_0_0\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \ras_shift_0\, B => \pcable_shift[4]_net_1\, 
+        Y => pcable_int_6_iv_0_a2_0_0);
     
     \rc_shift_30[1]\ : CFG2
       generic map(INIT => x"4")
@@ -30819,12 +30733,12 @@ begin
         \actable_shift_57_m2[3]_net_1\);
     
     \line[9]\ : SLE
-      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(21), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(9));
     
     \line[1]\ : SLE
-      port map(D => raddr(11), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(13), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(1));
     
@@ -30867,19 +30781,23 @@ begin
       port map(A => goact_0, B => \rc_shift[6]_net_1\, Y => 
         \rc_shift_30[5]_net_1\);
     
+    \ras_shift_RNO[0]\ : CFG1
+      generic map(INIT => "01")
+
+      port map(A => act, Y => act_i_0);
+    
+    \ras_shift[0]\ : SLE
+      port map(D => act_i_0, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
+        GND_net_1, LAT => GND_net_1, Q => \ras_shift_0\);
+    
     \pcable_shift[6]\ : SLE
-      port map(D => N_765_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_759_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => GND_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => \pcable_shift[6]_net_1\);
     
-    un1_goactive_4_1 : CFG4
-      generic map(INIT => x"0031")
-
-      port map(A => act, B => goact_0, C => \active_0\, D => mode, 
-        Y => \un1_goactive_4_1\);
-    
     \line[8]\ : SLE
-      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(20), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(8));
     
@@ -30902,7 +30820,7 @@ begin
         \rwable_shift[4]_net_1\, Y => \rwable_shift_7[3]\);
     
     \line[0]\ : SLE
-      port map(D => raddr(10), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(12), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(0));
     
@@ -30915,14 +30833,15 @@ begin
     un1_pcable_shift_3_sqmuxa_i_a2 : CFG2
       generic map(INIT => x"8")
 
-      port map(A => bcount(2), B => dorw_0, Y => N_772);
+      port map(A => bcount(2), B => dorw_0, Y => 
+        un1_pcable_shift_3_sqmuxa_i_a2_0);
     
     actable_6_iv : CFG4
-      generic map(INIT => x"EAAA")
+      generic map(INIT => x"FEFC")
 
-      port map(A => \actable_1_sqmuxa_2\, B => un1_goactive_4_i, 
-        C => \actable_shift[0]_net_1\, D => \rc_shift[0]_net_1\, 
-        Y => actable_6);
+      port map(A => actable_1_m_0, B => \actable_1_sqmuxa\, C => 
+        \actable_1_sqmuxa_2\, D => un1_goactive_4_i, Y => 
+        actable_6);
     
     \rc_shift[2]\ : SLE
       port map(D => \rc_shift_30[2]_net_1\, CLK => clk, EN => 
@@ -30931,7 +30850,7 @@ begin
         \rc_shift[2]_net_1\);
     
     \line[7]\ : SLE
-      port map(D => raddr(17), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(19), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(7));
     
@@ -30986,13 +30905,13 @@ begin
       generic map(INIT => x"2A")
 
       port map(A => \pcable_shift[4]_net_1\, B => dorw_0, C => 
-        bcount(2), Y => N_767_i);
+        bcount(2), Y => N_760_i);
     
     un1_goactive_4 : CFG3
       generic map(INIT => x"10")
 
       port map(A => refresh, B => un5_dopch_i, C => 
-        \un1_goactive_4_1\, Y => un1_goactive_4_i);
+        un1_goactive_4_0, Y => un1_goactive_4_i);
     
     actable_shift_57_m2s2 : CFG4
       generic map(INIT => x"FF02")
@@ -31038,15 +30957,16 @@ begin
         VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \actable_shift[2]_net_1\);
     
-    \actable_shift_57[5]\ : CFG3
-      generic map(INIT => x"54")
+    \actable_shift_57[5]\ : CFG4
+      generic map(INIT => x"F0EE")
 
-      port map(A => refresh, B => un5_dopch_i, C => 
-        \actable_shift_57_m2[5]_net_1\, Y => 
+      port map(A => un5_dopch_i, B => 
+        \actable_shift_57_m2[5]_net_1\, C => 
+        \actable_shift[6]_net_1\, D => refresh, Y => 
         \actable_shift_57[5]_net_1\);
     
     \line[6]\ : SLE
-      port map(D => raddr(16), CLK => clk, EN => goact_0, ALn => 
+      port map(D => raddr(18), CLK => clk, EN => goact_0, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         GND_net_1, LAT => GND_net_1, Q => line_i_0(6));
     
@@ -31077,7 +30997,7 @@ entity fastsdram is
           rowbits         : in    std_logic_vector(1 downto 0);
           sa              : out   std_logic_vector(13 downto 0);
           ba              : out   std_logic_vector(1 downto 0);
-          cs_n            : out   std_logic_vector(0 to 0);
+          cs_n            : out   std_logic_vector(2 downto 0);
           clk             : in    std_logic;
           reset_n         : in    std_logic;
           sd_init         : in    std_logic;
@@ -31128,6 +31048,16 @@ architecture DEF_ARCH of fastsdram is
         );
   end component;
 
+  component CFG3
+    generic (INIT:std_logic_vector(7 downto 0) := x"00");
+
+    port( A : in    std_logic := 'U';
+          B : in    std_logic := 'U';
+          C : in    std_logic := 'U';
+          Y : out   std_logic
+        );
+  end component;
+
   component SLE
     port( D   : in    std_logic := 'U';
           CLK : in    std_logic := 'U';
@@ -31155,144 +31085,32 @@ architecture DEF_ARCH of fastsdram is
         );
   end component;
 
-  component CFG3
-    generic (INIT:std_logic_vector(7 downto 0) := x"00");
-
-    port( A : in    std_logic := 'U';
-          B : in    std_logic := 'U';
-          C : in    std_logic := 'U';
-          Y : out   std_logic
-        );
-  end component;
-
   component GND
     port( Y : out   std_logic
         );
   end component;
 
   component openbank
-    port( wshift_13               : out   std_logic_vector(6 downto 1);
-          wshift                  : in    std_logic_vector(6 downto 1) := (others => 'U');
-          raddr                   : in    std_logic_vector(22 downto 0) := (others => 'U');
-          lnht_cmd                : in    std_logic_vector(3 downto 0) := (others => 'U');
-          pcable                  : inout   std_logic_vector(3 downto 0);
-          active                  : inout   std_logic_vector(3 downto 0);
-          bdcnt                   : in    std_logic_vector(3 downto 0) := (others => 'U');
-          rdwr_cmd                : in    std_logic_vector(3 downto 0) := (others => 'U');
-          dorw                    : in    std_logic_vector(3 downto 0) := (others => 'U');
-          rshift                  : in    std_logic_vector(6 downto 5) := (others => 'U');
-          bcount                  : in    std_logic_vector(2 downto 0) := (others => 'U');
-          line_i_2                : out   std_logic_vector(11 downto 0);
-          bdcnt_6_iv_i_0          : out   std_logic;
-          rwable_1                : in    std_logic := 'U';
-          rwable_0                : in    std_logic := 'U';
-          rwable_3                : in    std_logic := 'U';
-          bdcnt_6_2               : out   std_logic;
-          bdcnt_6_0               : out   std_logic;
-          bdcnt_6_3               : out   std_logic;
-          actable_2               : out   std_logic;
-          actable_3               : in    std_logic := 'U';
-          actable_0               : in    std_logic := 'U';
-          cs_n_5_0                : out   std_logic;
-          sa_5_5                  : out   std_logic;
-          sa_5_1                  : out   std_logic;
-          sa_5_0                  : out   std_logic;
-          sa_5_10                 : out   std_logic;
-          sa_5_8                  : out   std_logic;
-          sa_5_2                  : out   std_logic;
-          sa_5_3                  : out   std_logic;
-          sa_5_4                  : out   std_logic;
-          psa_0                   : in    std_logic := 'U';
-          psa_8                   : in    std_logic := 'U';
-          prch_0                  : in    std_logic := 'U';
-          goact_2                 : in    std_logic := 'U';
-          goact_0                 : in    std_logic := 'U';
-          goact_3                 : in    std_logic := 'U';
-          rshift_46_0             : out   std_logic;
-          chip_i_2_0              : out   std_logic;
-          rw_4                    : out   std_logic;
-          N_117_i                 : out   std_logic;
-          N_78_i                  : out   std_logic;
-          un155_rdwr_cmd          : out   std_logic;
-          un197_rdwr_cmd          : out   std_logic;
-          un71_rdwr_cmd           : out   std_logic;
-          un113_rdwr_cmd          : out   std_logic;
-          pchaddr_3_sqmuxa_i_0    : out   std_logic;
-          act_4                   : out   std_logic;
-          un30_rdwr_cmd           : in    std_logic := 'U';
-          un42_rdwr_cmd           : in    std_logic := 'U';
-          N_783_i                 : out   std_logic;
-          N_77                    : out   std_logic;
-          oe_2                    : out   std_logic;
-          w_valid_i               : in    std_logic := 'U';
-          rc_zero_0_sqmuxa        : out   std_logic;
-          wc_zero_0_sqmuxa        : out   std_logic;
-          N_812                   : in    std_logic := 'U';
-          un222_rdwr_cmd          : out   std_logic;
-          un180_rdwr_cmd          : out   std_logic;
-          un18_rdwr_cmd           : out   std_logic;
-          un54_rdwr_cmd           : out   std_logic;
-          un138_rdwr_cmd          : out   std_logic;
-          un7_mode_cmd            : out   std_logic;
-          un13_rfsh_cmd           : out   std_logic;
-          N_73                    : in    std_logic := 'U';
-          un13_rfsh_cmd_1         : in    std_logic := 'U';
-          we_n_2                  : out   std_logic;
-          un16_act_i              : in    std_logic := 'U';
-          un1_pch_3_i             : out   std_logic;
-          un96_rdwr_cmd           : out   std_logic;
-          un1_cs_n_0_sqmuxa_i_0   : in    std_logic := 'U';
-          bdzero_2                : out   std_logic;
-          bterm_3                 : out   std_logic;
-          w_valid_i_1             : out   std_logic;
-          rcount_2_sqmuxa         : out   std_logic;
-          un217_rdwr_cmd          : out   std_logic;
-          turnaround_hold         : in    std_logic := 'U';
-          rc_zero_d               : in    std_logic := 'U';
-          un1_mode_cmd            : out   std_logic;
-          mode_cmd                : in    std_logic := 'U';
-          refresh                 : in    std_logic := 'U';
-          un4_p_req_0_49_a2_0_a2  : out   std_logic;
-          p_req                   : in    std_logic := 'U';
-          un1_pch_4_1             : out   std_logic;
-          bterm                   : in    std_logic := 'U';
-          pchaddr_9_sn_m2_i_1     : out   std_logic;
-          pchaddr_9_sn_m3_i_1     : out   std_logic;
-          mode                    : in    std_logic := 'U';
-          read_cmd                : in    std_logic := 'U';
-          un4_rf_req_0_60_a2_0_a2 : out   std_logic;
-          rf_req                  : in    std_logic := 'U';
-          precharge               : in    std_logic := 'U';
-          doread                  : in    std_logic := 'U';
-          un36_rw_i_0             : out   std_logic;
-          un13_prch_cmd           : out   std_logic;
-          rfsh_cmd                : in    std_logic := 'U';
-          prch_cmd                : in    std_logic := 'U';
-          bdzero                  : in    std_logic := 'U';
-          un14_rw                 : in    std_logic := 'U';
-          N_125                   : out   std_logic;
-          bterm_cmd               : in    std_logic := 'U';
-          ack                     : in    std_logic := 'U';
-          lnht_cmd26              : out   std_logic;
-          un1_rowaddr_int_0_N_2   : in    std_logic := 'U';
-          lnht_cmd5               : out   std_logic;
-          un1_line_i_0_0_N_2      : in    std_logic := 'U';
-          cke                     : in    std_logic := 'U';
-          un8_rc_zero             : out   std_logic;
-          rc_zero                 : in    std_logic := 'U';
-          un4_wc_zero             : out   std_logic;
-          wc_zero                 : in    std_logic := 'U';
-          dowrite                 : in    std_logic := 'U';
-          rw                      : in    std_logic := 'U';
-          sa_5_sn_N_4_mux         : in    std_logic := 'U';
-          N_6                     : in    std_logic := 'U';
-          un78_rw                 : in    std_logic := 'U';
-          un1_rw_11_i             : out   std_logic;
-          pch                     : in    std_logic := 'U';
-          un8_precharge           : in    std_logic := 'U';
-          act                     : in    std_logic := 'U';
-          clk                     : in    std_logic := 'U';
-          reset_n                 : in    std_logic := 'U'
+    port( bcount      : in    std_logic_vector(2 downto 0) := (others => 'U');
+          raddr       : in    std_logic_vector(26 downto 12) := (others => 'U');
+          chip_i_2    : out   std_logic_vector(1 downto 0);
+          line_i_2    : out   std_logic_vector(12 downto 0);
+          prch_0      : in    std_logic := 'U';
+          ras_shift_0 : in    std_logic := 'U';
+          dorw_0      : in    std_logic := 'U';
+          actable_0   : out   std_logic;
+          rwable_0    : out   std_logic;
+          pcable_0    : out   std_logic;
+          active_0    : out   std_logic;
+          goact_0     : in    std_logic := 'U';
+          refresh     : in    std_logic := 'U';
+          mode        : in    std_logic := 'U';
+          act         : in    std_logic := 'U';
+          read_cmd    : in    std_logic := 'U';
+          cke         : in    std_logic := 'U';
+          precharge   : in    std_logic := 'U';
+          clk         : in    std_logic := 'U';
+          reset_n     : in    std_logic := 'U'
         );
   end component;
 
@@ -31302,79 +31120,113 @@ architecture DEF_ARCH of fastsdram is
   end component;
 
   component openbank_2
-    port( bcount     : in    std_logic_vector(2 downto 0) := (others => 'U');
-          raddr      : in    std_logic_vector(22 downto 10) := (others => 'U');
-          line_i_3   : out   std_logic_vector(11 downto 0);
-          prch_0     : in    std_logic := 'U';
-          dorw_0     : in    std_logic := 'U';
-          actable_0  : out   std_logic;
-          rwable_0   : out   std_logic;
-          pcable_0   : out   std_logic;
-          chip_i_3_0 : out   std_logic;
-          active_0   : out   std_logic;
-          goact_0    : in    std_logic := 'U';
-          refresh    : in    std_logic := 'U';
-          mode       : in    std_logic := 'U';
-          act        : in    std_logic := 'U';
-          read_cmd   : in    std_logic := 'U';
-          precharge  : in    std_logic := 'U';
-          cke        : in    std_logic := 'U';
-          clk        : in    std_logic := 'U';
-          reset_n    : in    std_logic := 'U'
+    port( raddr                : in    std_logic_vector(26 downto 6) := (others => 'U');
+          bcount               : in    std_logic_vector(2 downto 0) := (others => 'U');
+          chip_i_3             : out   std_logic_vector(1 downto 0);
+          line_i_3             : out   std_logic_vector(12 downto 0);
+          rwable_2             : out   std_logic;
+          rwable_0             : in    std_logic := 'U';
+          sa_5_1               : out   std_logic;
+          sa_5_0               : out   std_logic;
+          sa_5_4               : out   std_logic;
+          psa_0                : in    std_logic := 'U';
+          lnht_cmd_0           : in    std_logic := 'U';
+          pcable_2             : out   std_logic;
+          pcable_0             : in    std_logic := 'U';
+          active_2             : out   std_logic;
+          active_0             : in    std_logic := 'U';
+          prch_0               : in    std_logic := 'U';
+          ras_shift_0          : in    std_logic := 'U';
+          rdwr_cmd_0           : in    std_logic := 'U';
+          dorw_2               : in    std_logic := 'U';
+          dorw_0               : in    std_logic := 'U';
+          actable_0            : out   std_logic;
+          goact_0              : in    std_logic := 'U';
+          pchaddr_3_sqmuxa_i_0 : out   std_logic;
+          un180_rdwr_cmd       : in    std_logic := 'U';
+          un222_rdwr_cmd       : in    std_logic := 'U';
+          un96_rdwr_cmd        : in    std_logic := 'U';
+          un113_rdwr_cmd       : out   std_logic;
+          N_105                : in    std_logic := 'U';
+          un138_rdwr_cmd       : out   std_logic;
+          pch                  : in    std_logic := 'U';
+          bterm_cmd            : in    std_logic := 'U';
+          N_88                 : in    std_logic := 'U';
+          refresh              : in    std_logic := 'U';
+          mode                 : in    std_logic := 'U';
+          act                  : in    std_logic := 'U';
+          pchaddr_9_sn_m3_i_1  : out   std_logic;
+          read_cmd             : in    std_logic := 'U';
+          cke                  : in    std_logic := 'U';
+          precharge            : in    std_logic := 'U';
+          clk                  : in    std_logic := 'U';
+          reset_n              : in    std_logic := 'U'
         );
   end component;
 
   component openbank_0
-    port( bcount              : in    std_logic_vector(2 downto 0) := (others => 'U');
-          raddr               : in    std_logic_vector(22 downto 10) := (others => 'U');
-          line_i_1            : out   std_logic_vector(11 downto 0);
-          sa_5_0              : out   std_logic;
-          sa_5_2              : out   std_logic;
+    port( ba_4                : out   std_logic_vector(1 downto 0);
+          raddr               : in    std_logic_vector(26 downto 10) := (others => 'U');
+          bcount              : in    std_logic_vector(2 downto 0) := (others => 'U');
+          chip_i_1            : out   std_logic_vector(1 downto 0);
+          line_i_1            : out   std_logic_vector(12 downto 0);
           prch_0              : in    std_logic := 'U';
+          ras_shift_0         : in    std_logic := 'U';
           dorw_0              : in    std_logic := 'U';
           actable_0           : out   std_logic;
           rwable_0            : out   std_logic;
           pcable_0            : out   std_logic;
-          chip_i_1_0          : out   std_logic;
           active_0            : out   std_logic;
           goact_0             : in    std_logic := 'U';
-          pch                 : in    std_logic := 'U';
-          un8_precharge       : in    std_logic := 'U';
-          act                 : in    std_logic := 'U';
+          N_118_i             : out   std_logic;
+          we_n_2              : out   std_logic;
+          N_792_i             : out   std_logic;
           read_cmd            : in    std_logic := 'U';
-          precharge           : in    std_logic := 'U';
-          cas_n_1             : out   std_logic;
-          un1_precharge_5_i_0 : in    std_logic := 'U';
-          ras_n_1             : out   std_logic;
-          un1_precharge_3_i_0 : in    std_logic := 'U';
           cke                 : in    std_logic := 'U';
-          mode                : in    std_logic := 'U';
+          un6_precharge       : out   std_logic;
+          un36_rw_i_1         : out   std_logic;
           refresh             : in    std_logic := 'U';
+          doread              : in    std_logic := 'U';
+          pch                 : in    std_logic := 'U';
+          rw                  : in    std_logic := 'U';
+          act                 : in    std_logic := 'U';
+          un1_precharge_3_i_0 : out   std_logic;
+          un1_pch_2_i         : in    std_logic := 'U';
+          N_161_i             : out   std_logic;
+          mode                : in    std_logic := 'U';
+          precharge           : in    std_logic := 'U';
+          bterm               : in    std_logic := 'U';
           clk                 : in    std_logic := 'U';
           reset_n             : in    std_logic := 'U'
         );
   end component;
 
   component openbank_1
-    port( bcount     : in    std_logic_vector(2 downto 0) := (others => 'U');
-          raddr      : in    std_logic_vector(22 downto 10) := (others => 'U');
-          line_i_0   : out   std_logic_vector(11 downto 0);
-          prch_0     : in    std_logic := 'U';
-          dorw_0     : in    std_logic := 'U';
-          actable_0  : out   std_logic;
-          rwable_0   : out   std_logic;
-          pcable_0   : out   std_logic;
-          chip_i_0_0 : out   std_logic;
-          active_0   : out   std_logic;
-          goact_0    : in    std_logic := 'U';
-          refresh    : in    std_logic := 'U';
-          mode       : in    std_logic := 'U';
-          act        : in    std_logic := 'U';
-          read_cmd   : in    std_logic := 'U';
-          precharge  : in    std_logic := 'U';
-          cke        : in    std_logic := 'U';
-          clk        : in    std_logic := 'U';
-          reset_n    : in    std_logic := 'U'
+    port( bcount        : in    std_logic_vector(2 downto 0) := (others => 'U');
+          raddr         : in    std_logic_vector(26 downto 12) := (others => 'U');
+          chip_i_0      : out   std_logic_vector(1 downto 0);
+          line_i_0      : out   std_logic_vector(12 downto 0);
+          lnht_cmd_0    : in    std_logic := 'U';
+          rdwr_cmd_0    : in    std_logic := 'U';
+          prch_0        : in    std_logic := 'U';
+          dorw_0        : in    std_logic := 'U';
+          actable_0     : out   std_logic;
+          rwable_0      : out   std_logic;
+          pcable_0      : out   std_logic;
+          active_0      : out   std_logic;
+          goact_0       : in    std_logic := 'U';
+          ras_shift_0   : out   std_logic;
+          un96_rdwr_cmd : out   std_logic;
+          N_95_1        : in    std_logic := 'U';
+          refresh       : in    std_logic := 'U';
+          read_cmd      : in    std_logic := 'U';
+          cke           : in    std_logic := 'U';
+          precharge     : in    std_logic := 'U';
+          pch           : in    std_logic := 'U';
+          mode          : in    std_logic := 'U';
+          clk           : in    std_logic := 'U';
+          reset_n       : in    std_logic := 'U';
+          act           : in    std_logic := 'U'
         );
   end component;
 
@@ -31386,41 +31238,46 @@ architecture DEF_ARCH of fastsdram is
         );
   end component;
 
-    signal cke_net_1, un1_mode_cmd, \goact[2]_net_1\, 
-        \dorw[2]_net_1\, \read_cmd\, \prch[2]_net_1\, 
-        \actable[2]\, \pcable[2]\, \active[2]\, \line_i_2[0]\, 
-        \line_i_2[1]\, \line_i_2[2]\, \line_i_2[3]\, 
-        \line_i_2[4]\, \line_i_2[5]\, \line_i_2[6]\, 
-        \line_i_2[7]\, \line_i_2[8]\, \line_i_2[9]\, 
-        \line_i_2[10]\, \line_i_2[11]\, \chip_i_2[0]\, 
+    signal cke_net_1, \un1_mode_cmd_0_a2\, \goact[2]_net_1\, 
+        \dorw[2]_net_1\, \read_cmd\, \prch[2]_net_1\, \precharge\, 
+        \mode\, \actable[2]\, \rwable[2]\, \pcable[2]\, 
+        \active[2]\, \line_i_2[0]\, \line_i_2[1]\, \line_i_2[2]\, 
+        \line_i_2[3]\, \line_i_2[4]\, \line_i_2[5]\, 
+        \line_i_2[6]\, \line_i_2[7]\, \line_i_2[8]\, 
+        \line_i_2[9]\, \line_i_2[10]\, \line_i_2[11]\, 
+        \line_i_2[12]\, \chip_i_2[0]\, \chip_i_2[1]\, 
         \goact[1]_net_1\, \dorw[1]_net_1\, \prch[1]_net_1\, 
         \actable[1]\, \rwable[1]\, \pcable[1]\, \active[1]\, 
         \line_i_1[0]\, \line_i_1[1]\, \line_i_1[2]\, 
         \line_i_1[3]\, \line_i_1[4]\, \line_i_1[5]\, 
         \line_i_1[6]\, \line_i_1[7]\, \line_i_1[8]\, 
         \line_i_1[9]\, \line_i_1[10]\, \line_i_1[11]\, 
-        \chip_i_1[0]\, \goact[0]_net_1\, \dorw[0]_net_1\, 
-        \prch[0]_net_1\, \actable[0]\, \rwable[0]\, \pcable[0]\, 
-        \active[0]\, \line_i_0[0]\, \line_i_0[1]\, \line_i_0[2]\, 
+        \line_i_1[12]\, \chip_i_1[0]\, \chip_i_1[1]\, 
+        \goact[0]_net_1\, \dorw[0]_net_1\, \prch[0]_net_1\, 
+        \actable[0]\, \rwable[0]\, \pcable[0]\, \active[0]\, 
+        \line_i_0[0]\, \line_i_0[1]\, \line_i_0[2]\, 
         \line_i_0[3]\, \line_i_0[4]\, \line_i_0[5]\, 
         \line_i_0[6]\, \line_i_0[7]\, \line_i_0[8]\, 
         \line_i_0[9]\, \line_i_0[10]\, \line_i_0[11]\, 
-        \chip_i_0[0]\, \goact[3]_net_1\, \dorw[3]_net_1\, 
-        \prch[3]_net_1\, \actable[3]\, \rwable[3]\, \pcable[3]\, 
-        \active[3]\, \line_i_3[0]\, \line_i_3[1]\, \line_i_3[2]\, 
+        \line_i_0[12]\, \chip_i_0[0]\, \chip_i_0[1]\, 
+        \goact[3]_net_1\, \dorw[3]_net_1\, \prch[3]_net_1\, 
+        \actable[3]\, \rwable[3]\, \pcable[3]\, \active[3]\, 
+        \line_i_3[0]\, \line_i_3[1]\, \line_i_3[2]\, 
         \line_i_3[3]\, \line_i_3[4]\, \line_i_3[5]\, 
         \line_i_3[6]\, \line_i_3[7]\, \line_i_3[8]\, 
         \line_i_3[9]\, \line_i_3[10]\, \line_i_3[11]\, 
-        \chip_i_3[0]\, \wcount[1]_net_1\, \wcount[2]_net_1\, 
-        \wcount[3]_net_1\, \rcount[1]_net_1\, \rcount[2]_net_1\, 
-        \rcount[3]_net_1\, \bdcnt[2]_net_1\, \bdcnt[3]_net_1\, 
-        \oldchip[0]_net_1\, \pchaddr[0]_net_1\, \wc_zero\, 
-        \rc_zero\, \lnht_cmd[0]_net_1\, \lnht_cmd[1]_net_1\, 
+        \line_i_3[12]\, \chip_i_3[0]\, \chip_i_3[1]\, 
+        \rcount[1]_net_1\, \rcount[2]_net_1\, \rcount[3]_net_1\, 
+        \bdcnt[2]_net_1\, \bdcnt[3]_net_1\, \wcount[1]_net_1\, 
+        \wcount[2]_net_1\, \wcount[3]_net_1\, \oldchip[0]_net_1\, 
+        \oldchip[1]_net_1\, \pchaddr[0]_net_1\, 
+        \pchaddr[1]_net_1\, \wc_zero\, \rc_zero\, 
+        \lnht_cmd[0]_net_1\, \lnht_cmd[1]_net_1\, 
         \lnht_cmd[2]_net_1\, \lnht_cmd[3]_net_1\, \bterm_cmd\, 
-        \ack\, \turnaround_hold\, \bterm\, \prch_cmd\, \rfsh_cmd\, 
+        \ack\, \turnaround_hold\, \prch_cmd\, \bterm\, \rfsh_cmd\, 
         VCC_net_1, \sa[13]\, \dowrite\, \w_valid\, \new_cmd\, 
-        \psa_p.un13_prch_cmd\, \dqm_bterm_p.un23_bterm_net_1\, 
-        \doread\, \rshift[0]_net_1\, \rc_zero_d\, \mode_cmd\, 
+        \dqm_bterm_p.un33_bterm_net_1\, \doread\, 
+        \rshift[0]_net_1\, \rc_zero_d\, \mode_cmd\, 
         \psa[8]_net_1\, \bdcnt[0]_net_1\, \bdcnt[1]_net_1\, 
         \act_p.0.un18_rdwr_cmd\, \rdwr_cmd[0]_net_1\, 
         \act_p.1.un30_rdwr_cmd\, \rdwr_cmd[1]_net_1\, 
@@ -31428,111 +31285,144 @@ architecture DEF_ARCH of fastsdram is
         \act_p.3.un54_rdwr_cmd\, \rdwr_cmd[3]_net_1\, 
         \act_p.0.un96_rdwr_cmd\, \act_p.1.un138_rdwr_cmd\, 
         \act_p.2.un180_rdwr_cmd\, \act_p.3.un217_rdwr_cmd\, 
-        \wr_flow_ctrl_p.w_valid_i_1\, \wshift[1]_net_1\, 
+        \wr_flow_ctrl_p.w_valid_i_1_net_1\, \wshift[1]_net_1\, 
         \wcount[0]_net_1\, \act_p.3.un222_rdwr_cmd\, 
-        \psa[0]_net_1\, \wr_flow_ctrl_p.oe_2\, 
-        \act_p.un13_rfsh_cmd\, \act_p.un7_mode_cmd\, 
-        \act_p.act_4\, \act_p.0.un71_rdwr_cmd\, 
-        \act_p.1.un113_rdwr_cmd\, \act_p.2.un155_rdwr_cmd\, 
-        \act_p.3.un197_rdwr_cmd\, \sd_ctl_p.ba_5[0]_net_1\, 
-        \sd_ctl_p.ba_5[1]_net_1\, \cmd_p.un5_r_req\, 
-        \act_p.un9_prch_cmd_net_1\, \bterm_p.bterm_3\, 
+        \psa[0]_net_1\, \wr_flow_ctrl_p.oe_2_net_1\, 
+        \act_p.un13_rfsh_cmd\, \act_p.act_4\, 
+        \act_p.0.un71_rdwr_cmd\, \act_p.1.un113_rdwr_cmd\, 
+        \act_p.2.un155_rdwr_cmd\, \act_p.3.un197_rdwr_cmd\, 
+        \sd_ctl_p.ba_4[0]\, \sd_ctl_p.ba_4[1]\, 
+        \act_p.un9_prch_cmd\, \bterm_p.bterm_3\, 
         \rshift[1]_net_1\, \rshift[2]_net_1\, \rshift[3]_net_1\, 
         \rshift[4]_net_1\, \rshift[5]_net_1\, \rshift[6]_net_1\, 
-        \rshift[7]_net_1\, \wshift_13[1]\, \wshift_13[2]\, 
-        \wshift_13[3]\, \wshift_13[4]\, \wshift_13[5]\, 
-        \wshift_13[6]\, \wshift[2]_net_1\, \wshift[3]_net_1\, 
-        \wshift[4]_net_1\, \wshift[5]_net_1\, \wshift[6]_net_1\, 
-        \sd_ctl_p.we_n_2\, \act_p.rw_4\, \sd_ctl_p.sa_5[9]\, 
-        \sd_ctl_p.sa_5[11]\, \bterm_p.bdzero_2\, 
-        \dqs_contention_p.un11_r_req_net_1\, 
+        \rshift[7]_net_1\, \rshift[8]_net_1\, \rshift[9]_net_1\, 
+        \rshift[10]_net_1\, \wshift_13[2]\, \wshift_13[6]\, 
+        \wshift[2]_net_1\, \wshift[3]_net_1\, \wshift[4]_net_1\, 
+        \wshift[5]_net_1\, \wshift[6]_net_1\, \sd_ctl_p.we_n_2\, 
+        \act_p.rw_4\, \sd_ctl_p.sa_5[11]\, \sd_ctl_p.sa_5[12]\, 
+        \dqs_contention_p.un11_r_req\, 
+        \data_flow_ctrl_p.rshift_46[1]\, 
+        \data_flow_ctrl_p.rshift_46[2]\, 
         \data_flow_ctrl_p.rshift_46[3]\, 
+        \data_flow_ctrl_p.rshift_46[4]\, 
         \data_flow_ctrl_p.rshift_46[5]\, 
         \data_flow_ctrl_p.rshift_46[6]\, 
-        \data_flow_ctrl_p.rshift_46[7]\, \bterm_p.bdcnt_6[0]\, 
-        \bterm_p.bdcnt_6[2]\, \bterm_p.bdcnt_6[3]\, 
-        \dqs_contention_p.un40_rw_net_1\, \cmd_p.0.lnht_cmd5\, 
-        \cmd_p.1.lnht_cmd12_net_1\, \cmd_p.2.lnht_cmd19_net_1\, 
-        \cmd_p.3.lnht_cmd26\, \rcount[0]_net_1\, 
+        \data_flow_ctrl_p.rshift_46[7]\, 
+        \data_flow_ctrl_p.rshift_46[8]\, 
+        \data_flow_ctrl_p.rshift_46[9]\, 
+        \data_flow_ctrl_p.rshift_46[10]\, 
+        \dqs_contention_p.un40_rw\, \rcount[0]_net_1\, 
+        \cmd_p.0.lnht_cmd5_net_1\, \cmd_p.1.lnht_cmd12_net_1\, 
+        \cmd_p.2.lnht_cmd19_net_1\, \cmd_p.3.lnht_cmd26_net_1\, 
+        \wc_p.wcount_5[0]\, \wc_p.wcount_5[1]\, 
+        \wc_p.wcount_5[2]\, \wc_p.wcount_5[3]\, 
         \rc_p.rcount_8[0]\, \rc_p.rcount_8[1]\, 
-        \rc_p.rcount_8[2]\, \rc_p.rcount_8[3]\, \mode\, 
-        \precharge\, \refresh\, un1_cs_n_0_sqmuxa_i_0, 
-        \sd_ctl_p.cs_n_5[0]\, \rw_ack\, \bdzero\, rcount_2_sqmuxa, 
-        rc_zero_0_sqmuxa, \rc_p.un8_rc_zero\, un1_precharge_5_i_0, 
-        \sd_ctl_p.cas_n_1\, \rc_p.un78_rw_net_1\, 
-        wc_zero_0_sqmuxa, \wc_p.un4_wc_zero\, un1_precharge_3_i_0, 
-        \sd_ctl_p.ras_n_1\, \bcount[0]_net_1\, \bcount[2]_net_1\, 
-        \bcount[1]_net_1\, \bterm_p.op_eq.un14_rw\, un1_rw_11_i, 
-        un1_pch_3_i, un16_act_i, un36_rw_i_0, \pch\, 
-        \sd_ctl_p.un8_precharge_net_1\, \act\, \sd_ctl_p.sa_5[0]\, 
-        \sd_ctl_p.sa_5[1]\, \sd_ctl_p.sa_5[2]\, 
-        \sd_ctl_p.sa_5[3]\, \sd_ctl_p.sa_5[4]\, 
-        \sd_ctl_p.sa_5[5]\, \sd_ctl_p.sa_5[6]_net_1\, 
-        \sd_ctl_p.sa_5[7]_net_1\, \sd_ctl_p.sa_5[8]\, 
-        \sd_ctl_p.sa_5[10]\, \mode_cmd_RNO\, 
-        \cmd_p.un4_p_req_0_49_a2_0_a2\, 
-        \cmd_p.un4_rf_req_0_60_a2_0_a2\, 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_net_1\, 
-        \cmd_p.rdwr_cmd_3_1_87_a2_0_a2_net_1\, 
-        \cmd_p.rdwr_cmd_3_0_104_a2_0_a2_net_1\, 
-        \cmd_p.rdwr_cmd_3_121_a2_0_a2_net_1\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[0]\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[1]\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[2]\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[4]\, 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[5]\, 
-        \cmd_p.2.un1_rowaddr_int_0_N_2\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[0]\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[1]\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[2]\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[4]\, 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[5]\, 
-        \cmd_p.1.un1_rowaddr_int_0_N_2\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[0]\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[1]\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[2]\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[3]\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[4]\, 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[5]\, 
-        \cmd_p.0.un1_line_i_0_0_N_2\, 
+        \rc_p.rcount_8[2]\, \rc_p.rcount_8[3]\, 
+        \sd_ctl_p.cs_n_35[0]_net_1\, \sd_ctl_p.cs_n_35[1]_net_1\, 
+        \sd_ctl_p.cs_n_35[2]_net_1\, \rw_ack\, 
+        \bterm_p.op_eq.un28_rw\, \bterm_p.op_eq.un9_bdzero\, 
+        \bdzero\, \bterm_p.bterm_cmd_3\, rcount_2_sqmuxa, 
+        \rc_zero_0_sqmuxa\, \rc_p.un8_rc_zero_net_1\, 
+        wc_zero_0_sqmuxa, \wc_p.un4_wc_zero\, \refresh\, 
+        un1_precharge_3_i_0, \sd_ctl_p.cas_n_1\, 
+        \bcount[0]_net_1\, \bcount[2]_net_1\, \bcount[1]_net_1\, 
+        bterm_cmd_m, bdzero_0_sqmuxa, \bterm_p.un4_bdzero\, 
+        un1_rw_11_i, un1_pch_2_i, \pch\, \act\, 
+        \sd_ctl_p.sa_5[0]_net_1\, \sd_ctl_p.sa_5[1]_net_1\, 
+        \sd_ctl_p.sa_5[2]_net_1\, \sd_ctl_p.sa_5[3]_net_1\, 
+        \sd_ctl_p.sa_5[4]_net_1\, \sd_ctl_p.sa_5[5]_net_1\, 
+        \sd_ctl_p.sa_5[6]\, \sd_ctl_p.sa_5[7]\, 
+        \sd_ctl_p.sa_5[9]\, \sd_ctl_p.sa_5[10]\, \mode_cmd_RNO\, 
+        \prch_cmd_RNO\, \rfsh_cmd_RNO\, 
+        \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_net_1\, 
+        \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_net_1\, 
+        \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_net_1\, 
+        \cmd_p.rdwr_cmd_3_115_a2_0_a2_net_1\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[0]\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[1]\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[2]\, 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[6]\, 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[7]\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[3]\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[4]\, 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[5]\, 
-        \cmd_p.3.un1_rowaddr_int_0_N_2\, pchaddr_3_sqmuxa_i_0, 
-        \act_p.un19_rfsh_cmd_net_1\, un1_wc_zero_1_sqmuxa_i, N_74, 
-        N_125, \act_p.un13_rfsh_cmd_1\, 
-        \act_p.un23_rfsh_cmd_net_1\, \cmd_p.un1_r_req\, 
-        \sd_ctl_p.sa_5_sn_N_4_mux\, un1_rcount21, 
-        \un16_1.CO1_net_1\, N_73, N_77, N_421, N_422, 
-        \rc_p.op_eq.un18_rc_zero\, N_423, N_424, N_812, N_808, 
-        \rshift_cnst_7_2_.N_6\, N_56, N_802, N_813, N_798, N_40_i, 
-        \act_p.pchaddr_9[0]\, 
-        \rc_p.un83_rw_1.un1_wc_zero_1_sqmuxa_i_a3_0_1_net_1\, 
-        \openbank_gen.2.openbank_r1_i.un1_pch_4_1\, 
-        un1_cs_n_0_sqmuxa_0, \act_p.un23_rfsh_cmd_4_net_1\, 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m2_i_1\, 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
-        \rc_p.un72_rw_1.un1_rcount21_0_0_net_1\, \un1_bterm_4_1\, 
-        \un1_precharge_5_1\, 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_a3_1_0[7]_net_1\, 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_2[3]_net_1\, 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_0[3]_net_1\, 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_i_0[4]_net_1\, 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\, read_cmd_i, 
-        N_117_i, N_78_i, N_783_i, un1_rc_zero_1_sqmuxa_i, N_116_i, 
-        N_795_i, N_796_i, N_797_i, \bterm_p.bdcnt_6_iv_i[1]\, 
-        N_791_i, N_792_i, N_793_i, N_794_i, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[0]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[1]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[2]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[6]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[7]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[4]\, 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[5]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[0]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[1]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[2]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[6]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[7]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[4]\, 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[5]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[0]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[1]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[2]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[6]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[7]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[3]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[4]\, 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[5]\, 
+        \openbank_gen.0.openbank_r1_i.ras_shift[0]\, N_83, 
+        pchaddr_3_sqmuxa_i_0, \sd_ctl_p.sa_5_i_m2[8]_net_1\, 
+        N_14_0, N_19_0, N_26_0, N_28_0, N_30_0, N_111, N_27_0, 
+        \un1_rcount21\, N_81, N_88, N_59, N_95_1, N_99, N_105, 
+        N_801, N_109, N_824, N_102, N_97, N_780, 
+        \dqs_contention_p.un13_r_req\, \wc_p.op_eq.un14_wc_zero\, 
+        \un1_bcount_1_1.CO1\, \un1_bcount[1]\, \un1_bcount[2]\, 
+        N_3_0, \wshift_11[5]\, un1_wcount17, un36_rw_i_1, 
+        \sd_ctl_p.un6_precharge\, N_95, N_54, N_125, N_89, N_123, 
+        N_122, N_121, N_439, N_442, \un16_1.CO1\, N_441, N_440, 
+        \rc_p.op_eq.un18_rc_zero\, \act_p.pchaddr_9_sm0\, 
+        \act_p.pchaddr_9[0]\, \act_p.pchaddr_9[1]\, 
+        \act_p.2.un180_rdwr_cmd_0_a2_1_net_1\, 
+        \act_p.un9_prch_cmd_0_a2_4_net_1\, m38_e_1, 
+        \un1_pch_2_0_a2_0\, \act_p.pchaddr_9_sn_m2_i_1\, 
+        \openbank_gen.3.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
+        \un1_rcount21_0\, \act_p.0.un71_rdwr_cmd_0_a2_1_net_1\, 
+        \act_p.rw_4_0_a2_0_1_net_1\, \act_p.rw_4_0_a2_1_net_1\, 
+        \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_0_net_1\, 
+        \cmd_p.rdwr_cmd_3_115_a2_0_a2_0\, 
+        \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_0_net_1\, 
+        \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_0_net_1\, 
+        \sd_ctl_p.0.op_eq.cs_n35_i\, \sd_ctl_p.1.op_eq.cs_n42_i\, 
+        \sd_ctl_p.2.op_eq.cs_n49_i\, N_810_i, read_cmd_i, N_106_i, 
+        N_63_i, N_772_i, N_118_i, un1_rc_zero_1_sqmuxa_i, 
+        N_94_i_0, un1_wc_zero_1_sqmuxa_i, N_60_i, N_771_i, 
+        N_100_mux_i, N_103_mux_i, N_826_i, N_104_mux_i, N_823_i, 
+        N_111_mux_i, N_108_mux_i, N_161_i, N_792_i, 
+        \sd_ctl_p.cs_n_35_net_1\, \sd_ctl_p.cs_n_35_1_net_1\, 
+        \sd_ctl_p.cs_n_35_2_net_1\, \sd_ctl_p.cs_n_35_3_net_1\, 
+        \sd_ctl_p.cs_n_35_5_net_1\, \sd_ctl_p.cs_n_35_6_net_1\, 
+        \sd_ctl_p.sa_5_1_net_1\, \sd_ctl_p.sa_5_2\, 
+        \sd_ctl_p.cs_n_35_7_net_1\, \sd_ctl_p.cs_n_35_9_net_1\, 
+        \sd_ctl_p.cs_n_35_10_net_1\, 
         \act_p.pchaddr_9_am[0]_net_1\, 
-        \act_p.pchaddr_9_ns_1[0]_net_1\, 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns_1[2]_net_1\, 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_1[6]_net_1\, 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_2_1_0[3]_net_1\, 
-        \rc_p.un83_rw_1.N_796_i_1_net_1\ : std_logic;
+        \act_p.pchaddr_9_bm[0]_net_1\, 
+        \act_p.pchaddr_9_am[1]_net_1\, 
+        \act_p.pchaddr_9_bm[1]_net_1\, 
+        \cmd_p.0.un1_line_i_0_0_I_21_RNO_net_1\, 
+        \cmd_p.3.un1_rowaddr_int_0_I_21_RNO_net_1\, 
+        \cmd_p.1.un1_rowaddr_int_0_I_21_RNO_net_1\, 
+        \cmd_p.2.un1_rowaddr_int_0_I_21_RNO_net_1\, m18_ns_1, 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[4]_net_1\, 
+        \sd_ctl_p.sa_5_1[0]_net_1\, 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[6]_net_1\, 
+        \sd_ctl_p.sa_5_i_m2_1_1[8]_net_1\, 
+        \sd_ctl_p.sa_5_1[1]_net_1\, \sd_ctl_p.sa_5_1[5]_net_1\, 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[7]_net_1\, 
+        \data_flow_ctrl_p.rshift_46_1[2]\, 
+        \data_flow_ctrl_p.rshift_46_1[3]\, 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[5]_net_1\, 
+        N_823_i_1_1, \un1_bcount_1_1.wc_p.wcount_5_1[3]_net_1\
+         : std_logic;
     signal nc2, nc4, nc3, nc1 : std_logic;
 
     for all : openbank
@@ -31546,28 +31436,53 @@ architecture DEF_ARCH of fastsdram is
 begin 
 
     sa(13) <= \sa[13]\;
-    sa(12) <= \sa[13]\;
     rw_ack <= \rw_ack\;
     w_valid <= \w_valid\;
     d_req <= \sa[13]\;
     cke <= cke_net_1;
 
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[6]\ : CFG4
+      generic map(INIT => x"80BF")
+
+      port map(A => \rshift[6]_net_1\, B => N_792_i, C => 
+        un1_rw_11_i, D => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[6]_net_1\, Y
+         => \data_flow_ctrl_p.rshift_46[6]\);
+    
+    \dqs_contention_p.un40_rw_0\ : CFG4
+      generic map(INIT => x"ECCC")
+
+      port map(A => \new_cmd\, B => \rw_ack\, C => 
+        \dqs_contention_p.un13_r_req\, D => r_req, Y => 
+        \dqs_contention_p.un40_rw\);
+    
     mode_cmd_RNO : CFG4
       generic map(INIT => x"0004")
 
       port map(A => rf_req, B => m_req, C => \ack\, D => p_req, Y
          => \mode_cmd_RNO\);
     
-    \act_p.un23_rfsh_cmd_4\ : CFG2
-      generic map(INIT => x"4")
+    \cmd_p.un5_r_req_i_a2\ : CFG2
+      generic map(INIT => x"E")
 
-      port map(A => \bterm_cmd\, B => \rfsh_cmd\, Y => 
-        \act_p.un13_rfsh_cmd_1\);
+      port map(A => \ack\, B => \new_cmd\, Y => N_83);
+    
+    \un16_1.un1_mode_cmd_1_RNISQE21[2]\ : CFG3
+      generic map(INIT => x"F2")
+
+      port map(A => N_439, B => \rc_zero_0_sqmuxa\, C => N_440, Y
+         => \un16_1.CO1\);
     
     \wshift[3]\ : SLE
-      port map(D => \wshift_13[3]\, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \wshift[3]_net_1\);
+      port map(D => N_826_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \wshift[3]_net_1\);
+    
+    \un1_bcount_1_1.N_100_mux_i\ : CFG3
+      generic map(INIT => x"B8")
+
+      port map(A => \wshift_11[5]\, B => N_109, C => 
+        \wshift[6]_net_1\, Y => N_100_mux_i);
     
     \rshift[3]\ : SLE
       port map(D => \data_flow_ctrl_p.rshift_46[3]\, CLK => clk, 
@@ -31576,7 +31491,7 @@ begin
         \rshift[3]_net_1\);
     
     \ba[0]\ : SLE
-      port map(D => \sd_ctl_p.ba_5[0]_net_1\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.ba_4[0]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => ba(0));
     
@@ -31595,17 +31510,55 @@ begin
     \cmd_p.2.un1_rowaddr_int_0_I_9\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(13), B => \line_i_2[2]\, C => 
-        \line_i_2[3]\, D => raddr(12), FCI => 
+      port map(A => raddr(15), B => \line_i_2[2]\, C => 
+        \line_i_2[3]\, D => raddr(14), FCI => 
         \cmd_p.2.un1_rowaddr_int_0_data_tmp[0]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[1]\);
     
-    \dqs_contention_p.un11_r_req\ : CFG4
-      generic map(INIT => x"4800")
+    \act_p.un9_prch_cmd_0\ : CFG4
+      generic map(INIT => x"FF02")
 
-      port map(A => \oldchip[0]_net_1\, B => \new_cmd\, C => 
-        raddr(22), D => r_req, Y => 
-        \dqs_contention_p.un11_r_req_net_1\);
+      port map(A => \prch_cmd\, B => \precharge\, C => N_59, D
+         => N_95, Y => \act_p.un9_prch_cmd\);
+    
+    \bdcnt_RNO_0[1]\ : CFG3
+      generic map(INIT => x"48")
+
+      port map(A => \bdcnt[0]_net_1\, B => \bterm_p.un4_bdzero\, 
+        C => \bdcnt[1]_net_1\, Y => N_14_0);
+    
+    \bdcnt_RNIMV2M_0[1]\ : CFG3
+      generic map(INIT => x"04")
+
+      port map(A => \bdcnt[0]_net_1\, B => \bterm_p.un4_bdzero\, 
+        C => \bdcnt[1]_net_1\, Y => N_28_0);
+    
+    \act_p.0.un71_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"8000")
+
+      port map(A => \rwable[0]\, B => \lnht_cmd[0]_net_1\, C => 
+        \act_p.0.un71_rdwr_cmd_0_a2_1_net_1\, D => N_105, Y => 
+        \act_p.0.un71_rdwr_cmd\);
+    
+    bdzero_RNO : CFG4
+      generic map(INIT => x"EEFC")
+
+      port map(A => N_26_0, B => bterm_cmd_m, C => \bdzero\, D
+         => \rw_ack\, Y => N_60_i);
+    
+    \bcount_RNISR0P[0]\ : CFG3
+      generic map(INIT => x"07")
+
+      port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
+         => \bcount[2]_net_1\, Y => N_27_0);
+    
+    \cmd_p.3.un1_rowaddr_int_0_I_21_RNO\ : CFG4
+      generic map(INIT => x"B9A8")
+
+      port map(A => \chip_i_3[1]\, B => \chip_i_3[0]\, C => 
+        \sd_ctl_p.2.op_eq.cs_n49_i\, D => 
+        \sd_ctl_p.0.op_eq.cs_n35_i\, Y => 
+        \cmd_p.3.un1_rowaddr_int_0_I_21_RNO_net_1\);
     
     \rcount[1]\ : SLE
       port map(D => \rc_p.rcount_8[1]\, CLK => clk, EN => 
@@ -31613,27 +31566,60 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rcount[1]_net_1\);
     
+    bterm_cmd_RNO_1 : CFG4
+      generic map(INIT => x"1000")
+
+      port map(A => \bdcnt[3]_net_1\, B => \bdcnt[2]_net_1\, C
+         => \bdcnt[1]_net_1\, D => \bdcnt[0]_net_1\, Y => 
+        \bterm_p.op_eq.un9_bdzero\);
+    
     \act_p.1.un30_rdwr_cmd_0_a2\ : CFG4
       generic map(INIT => x"0080")
 
       port map(A => \rdwr_cmd[1]_net_1\, B => \actable[1]\, C => 
-        N_125, D => \goact[1]_net_1\, Y => 
-        \act_p.1.un30_rdwr_cmd\);
+        N_99, D => \goact[1]_net_1\, Y => \act_p.1.un30_rdwr_cmd\);
     
     ack : SLE
-      port map(D => N_117_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+      port map(D => N_94_i_0, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \ack\);
+    
+    \sd_ctl_p.cs_n_35_6\ : CFG4
+      generic map(INIT => x"D000")
+
+      port map(A => \pchaddr[0]_net_1\, B => \pchaddr[1]_net_1\, 
+        C => N_125, D => N_89, Y => \sd_ctl_p.cs_n_35_6_net_1\);
     
     pch : SLE
       port map(D => pchaddr_3_sqmuxa_i_0, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => \pch\);
     
+    \cmd_p.1.un1_rowaddr_int_0_I_39\ : ARI1
+      generic map(INIT => x"69900")
+
+      port map(A => VCC_net_1, B => \line_i_1[12]\, C => 
+        raddr(24), D => \sa[13]\, FCI => 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[6]\);
+    
     bterm : SLE
       port map(D => \bterm_p.bterm_3\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => \bterm\);
+    
+    \act_p.pchaddr_9s2\ : CFG3
+      generic map(INIT => x"CD")
+
+      port map(A => \act_p.pchaddr_9_sn_m2_i_1\, B => 
+        \act_p.3.un217_rdwr_cmd\, C => N_801, Y => 
+        \act_p.pchaddr_9_sm0\);
+    
+    \un1_bcount_1_1.N_103_mux_i\ : CFG3
+      generic map(INIT => x"4E")
+
+      port map(A => N_109, B => \wshift[5]_net_1\, C => N_3_0, Y
+         => N_103_mux_i);
     
     \lnht_cmd[2]\ : SLE
       port map(D => \cmd_p.2.lnht_cmd19_net_1\, CLK => clk, EN
@@ -31642,119 +31628,246 @@ begin
         \lnht_cmd[2]_net_1\);
     
     \sa[5]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[5]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[5]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(5));
+    
+    \dqm_bterm_p.un33_bterm\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \w_valid\, B => \bterm\, Y => 
+        \dqm_bterm_p.un33_bterm_net_1\);
+    
+    \cmd_p.rdwr_cmd_3_2_66_a2_0_a2\ : CFG4
+      generic map(INIT => x"8880")
+
+      port map(A => \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_0_net_1\, B
+         => N_780, C => w_req, D => r_req, Y => 
+        \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_net_1\);
+    
+    \sd_ctl_p.sa_5_1_a2[9]\ : CFG4
+      generic map(INIT => x"0A0C")
+
+      port map(A => raddr(21), B => raddr(9), C => N_88, D => 
+        \act\, Y => \sd_ctl_p.sa_5[9]\);
+    
+    \bdcnt_RNO_0[2]\ : CFG4
+      generic map(INIT => x"1000")
+
+      port map(A => N_26_0, B => \bterm_p.op_eq.un28_rw\, C => 
+        \bcount[2]_net_1\, D => \rw_ack\, Y => N_111);
     
     rw : SLE
       port map(D => \act_p.rw_4\, CLK => clk, EN => VCC_net_1, 
         ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => \sa[13]\, LAT => \sa[13]\, Q => \rw_ack\);
     
+    \act_p.un7_mode_cmd_i_o2\ : CFG4
+      generic map(INIT => x"7FFF")
+
+      port map(A => \actable[3]\, B => \actable[2]\, C => 
+        \actable[1]\, D => \actable[0]\, Y => N_59);
+    
     doread : SLE
       port map(D => \read_cmd\, CLK => clk, EN => VCC_net_1, ALn
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \doread\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns_1[2]\ : CFG4
-      generic map(INIT => x"4774")
+    \bcount_RNISR0P_1[0]\ : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => N_798, B => \wc_p.un4_wc_zero\, C => 
-        \bcount[1]_net_1\, D => \bcount[2]_net_1\, Y => 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns_1[2]_net_1\);
+      port map(A => N_26_0, B => \bcount[0]_net_1\, Y => N_81);
+    
+    \sd_ctl_p.sa_5[4]\ : CFG4
+      generic map(INIT => x"0A0C")
+
+      port map(A => raddr(16), B => raddr(4), C => N_88, D => 
+        \act\, Y => \sd_ctl_p.sa_5[4]_net_1\);
+    
+    \act_p.3.un217_rdwr_cmd_0_a2_RNID0EF\ : CFG3
+      generic map(INIT => x"FE")
+
+      port map(A => \pch\, B => \act_p.3.un217_rdwr_cmd\, C => 
+        \bterm_cmd\, Y => N_801);
     
     \bcount[1]\ : SLE
       port map(D => b_size(1), CLK => clk, EN => VCC_net_1, ALn
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \bcount[1]_net_1\);
     
-    \wcount[2]\ : SLE
-      port map(D => N_792_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \wcount[2]_net_1\);
-    
-    \un16_1.CO1\ : CFG3
-      generic map(INIT => x"F2")
+    \cmd_p.un5_r_req_i_a2_1\ : CFG4
+      generic map(INIT => x"0001")
 
-      port map(A => N_421, B => rc_zero_0_sqmuxa, C => N_422, Y
-         => \un16_1.CO1_net_1\);
+      port map(A => rf_req, B => m_req, C => \ack\, D => p_req, Y
+         => N_780);
+    
+    \wcount[2]\ : SLE
+      port map(D => \wc_p.wcount_5[2]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \wcount[2]_net_1\);
+    
+    \raddr_RNIPT05_0[25]\ : CFG2
+      generic map(INIT => x"D")
+
+      port map(A => raddr(25), B => raddr(26), Y => 
+        \sd_ctl_p.1.op_eq.cs_n42_i\);
+    
+    \act_p.rw_4_0_a2_1\ : CFG4
+      generic map(INIT => x"F040")
+
+      port map(A => \read_cmd\, B => \wc_zero\, C => N_99, D => 
+        N_97, Y => N_105);
+    
+    \bdcnt_RNO[2]\ : CFG4
+      generic map(INIT => x"DFCE")
+
+      port map(A => \bdcnt[2]_net_1\, B => N_111, C => N_30_0, D
+         => N_28_0, Y => N_111_mux_i);
+    
+    pch_RNIBAK41 : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => N_161_i, B => \pch\, Y => N_88);
     
     \cmd_p.0.un1_line_i_0_0_I_9\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(13), B => \line_i_0[2]\, C => 
-        \line_i_0[3]\, D => raddr(12), FCI => 
+      port map(A => raddr(15), B => \line_i_0[2]\, C => 
+        \line_i_0[3]\, D => raddr(14), FCI => 
         \cmd_p.0.un1_line_i_0_0_data_tmp[0]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[1]\);
     
     mode_cmd : SLE
-      port map(D => \mode_cmd_RNO\, CLK => clk, EN => N_116_i, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \mode_cmd\);
+      port map(D => \mode_cmd_RNO\, CLK => clk, EN => N_83, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \mode_cmd\);
+    
+    \rshift_RNO[3]\ : CFG4
+      generic map(INIT => x"E255")
+
+      port map(A => \data_flow_ctrl_p.rshift_46_1[3]\, B => 
+        un1_rw_11_i, C => \rshift[3]_net_1\, D => N_792_i, Y => 
+        \data_flow_ctrl_p.rshift_46[3]\);
     
     \bdcnt[3]\ : SLE
-      port map(D => \bterm_p.bdcnt_6[3]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \bdcnt[3]_net_1\);
+      port map(D => N_823_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \bdcnt[3]_net_1\);
+    
+    \act_p.3.un217_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"0080")
+
+      port map(A => \rdwr_cmd[3]_net_1\, B => \active[3]\, C => 
+        \pcable[3]\, D => \lnht_cmd[3]_net_1\, Y => 
+        \act_p.3.un217_rdwr_cmd\);
     
     \rdwr_cmd[3]\ : SLE
-      port map(D => \cmd_p.rdwr_cmd_3_121_a2_0_a2_net_1\, CLK => 
-        clk, EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, SLn
-         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+      port map(D => \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_net_1\, CLK
+         => clk, EN => N_83, ALn => reset_n, ADn => VCC_net_1, 
+        SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rdwr_cmd[3]_net_1\);
     
+    \bcount_RNI4PM91[0]\ : CFG3
+      generic map(INIT => x"01")
+
+      port map(A => \bcount[0]_net_1\, B => \bcount[2]_net_1\, C
+         => \bterm_p.op_eq.un28_rw\, Y => un1_rw_11_i);
+    
+    \wshift_RNO[1]\ : CFG3
+      generic map(INIT => x"2E")
+
+      port map(A => \wshift[2]_net_1\, B => N_109, C => N_81, Y
+         => N_104_mux_i);
+    
     \dqm_wr_bterm\ : SLE
-      port map(D => \dqm_bterm_p.un23_bterm_net_1\, CLK => clk, 
+      port map(D => \dqm_bterm_p.un33_bterm_net_1\, CLK => clk, 
         EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
          => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         dqm_wr_bterm);
+    
+    \dh_p.un35_mode_cmd_i_a2\ : CFG3
+      generic map(INIT => x"01")
+
+      port map(A => \mode_cmd\, B => \prch_cmd\, C => \rfsh_cmd\, 
+        Y => N_102);
+    
+    \act_p.rw_4_0_a2\ : CFG4
+      generic map(INIT => x"8000")
+
+      port map(A => \rwable[3]\, B => \lnht_cmd[3]_net_1\, C => 
+        \act_p.rw_4_0_a2_1_net_1\, D => N_105, Y => 
+        \act_p.3.un197_rdwr_cmd\);
+    
+    rc_zero_0_sqmuxa : CFG4
+      generic map(INIT => x"F800")
+
+      port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
+         => \bcount[2]_net_1\, D => N_792_i, Y => 
+        \rc_zero_0_sqmuxa\);
+    
+    \cmd_p.3.lnht_cmd26\ : CFG2
+      generic map(INIT => x"D")
+
+      port map(A => \cmd_p.3.un1_rowaddr_int_0_data_tmp[7]\, B
+         => \goact[3]_net_1\, Y => \cmd_p.3.lnht_cmd26_net_1\);
     
     \we_n\ : SLE
       port map(D => \sd_ctl_p.we_n_2\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => we_n);
     
-    \rshift_cnst_7_2_.m1_0_a2\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => \bcount[2]_net_1\, B => \bcount[1]_net_1\, Y
-         => \bterm_p.op_eq.un14_rw\);
-    
     \cmd_p.3.un1_rowaddr_int_0_I_15\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(15), B => \line_i_3[4]\, C => 
-        \line_i_3[5]\, D => raddr(14), FCI => 
+      port map(A => raddr(17), B => \line_i_3[4]\, C => 
+        \line_i_3[5]\, D => raddr(16), FCI => 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[1]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[2]\);
     
-    \rc_p.un72_rw_1.un1_mode_cmd_1[1]\ : CFG3
-      generic map(INIT => x"D8")
+    \cmd_p.0.lnht_cmd5\ : CFG2
+      generic map(INIT => x"D")
 
-      port map(A => \rc_p.un8_rc_zero\, B => \rcount[2]_net_1\, C
-         => \bcount[2]_net_1\, Y => N_423);
+      port map(A => \cmd_p.0.un1_line_i_0_0_data_tmp[7]\, B => 
+        \goact[0]_net_1\, Y => \cmd_p.0.lnht_cmd5_net_1\);
+    
+    \un1_bcount_1_1.un1_wcount17\ : CFG4
+      generic map(INIT => x"CA0A")
+
+      port map(A => \wc_zero\, B => \dowrite\, C => \rw_ack\, D
+         => N_27_0, Y => un1_wcount17);
+    
+    mode_RNO : CFG3
+      generic map(INIT => x"02")
+
+      port map(A => \mode_cmd\, B => \mode\, C => N_59, Y => 
+        N_772_i);
     
     \bdcnt[0]\ : SLE
-      port map(D => \bterm_p.bdcnt_6[0]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \bdcnt[0]_net_1\);
+      port map(D => N_108_mux_i, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \bdcnt[0]_net_1\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[1]\ : CFG4
+      generic map(INIT => x"FA72")
+
+      port map(A => N_792_i, B => un1_rw_11_i, C => 
+        \rshift[2]_net_1\, D => \rshift[1]_net_1\, Y => 
+        \data_flow_ctrl_p.rshift_46[1]\);
     
     \bdcnt[1]\ : SLE
-      port map(D => \bterm_p.bdcnt_6_iv_i[1]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \bdcnt[1]_net_1\);
+      port map(D => N_19_0, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \bdcnt[1]_net_1\);
     
     \ba[1]\ : SLE
-      port map(D => \sd_ctl_p.ba_5[1]_net_1\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.ba_4[1]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => ba(1));
     
     \rdwr_cmd[1]\ : SLE
-      port map(D => \cmd_p.rdwr_cmd_3_1_87_a2_0_a2_net_1\, CLK
-         => clk, EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, 
+      port map(D => \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_net_1\, CLK
+         => clk, EN => N_83, ALn => reset_n, ADn => VCC_net_1, 
         SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rdwr_cmd[1]_net_1\);
     
@@ -31764,41 +31877,45 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \goact[2]_net_1\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0[3]\ : CFG4
-      generic map(INIT => x"FF80")
+    \raddr_RNIPT05[25]\ : CFG2
+      generic map(INIT => x"E")
 
-      port map(A => \rshift[3]_net_1\, B => \rc_p.un78_rw_net_1\, 
-        C => un1_rw_11_i, D => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_0[3]_net_1\, 
-        Y => \data_flow_ctrl_p.rshift_46[3]\);
+      port map(A => raddr(25), B => raddr(26), Y => 
+        \sd_ctl_p.0.op_eq.cs_n35_i\);
     
     \cmd_p.2.un1_rowaddr_int_0_I_33\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(21), B => \line_i_2[10]\, C => 
-        \line_i_2[11]\, D => raddr(20), FCI => 
+      port map(A => raddr(23), B => \line_i_2[10]\, C => 
+        \line_i_2[11]\, D => raddr(22), FCI => 
         \cmd_p.2.un1_rowaddr_int_0_data_tmp[4]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[5]\);
     
-    \cmd_p.rdwr_cmd_3_1_87_a2_0_a2\ : CFG4
-      generic map(INIT => x"2000")
+    \cmd_p.0.un1_line_i_0_0_I_39\ : ARI1
+      generic map(INIT => x"69900")
 
-      port map(A => raddr(8), B => raddr(9), C => 
-        \cmd_p.un1_r_req\, D => 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\, Y => 
-        \cmd_p.rdwr_cmd_3_1_87_a2_0_a2_net_1\);
+      port map(A => VCC_net_1, B => \line_i_0[12]\, C => 
+        raddr(24), D => \sa[13]\, FCI => 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[5]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[6]\);
+    
+    un1_rcount21 : CFG3
+      generic map(INIT => x"F8")
+
+      port map(A => N_792_i, B => N_27_0, C => \un1_rcount21_0\, 
+        Y => \un1_rcount21\);
     
     \cmd_p.1.un1_rowaddr_int_0_I_9\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(13), B => \line_i_1[2]\, C => 
-        \line_i_1[3]\, D => raddr(12), FCI => 
+      port map(A => raddr(15), B => \line_i_1[2]\, C => 
+        \line_i_1[3]\, D => raddr(14), FCI => 
         \cmd_p.1.un1_rowaddr_int_0_data_tmp[0]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[1]\);
     
     \oe\ : SLE
-      port map(D => \wr_flow_ctrl_p.oe_2\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+      port map(D => \wr_flow_ctrl_p.oe_2_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => oe);
     
     \dorw[1]\ : SLE
@@ -31807,27 +31924,70 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \dorw[1]_net_1\);
     
-    un1_precharge_5 : CFG4
-      generic map(INIT => x"EEFE")
+    bterm_cmd_RNIS6LF : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => un1_pch_3_i, B => \un1_precharge_5_1\, C => 
-        \un1_bterm_4_1\, D => un36_rw_i_0, Y => 
-        un1_precharge_5_i_0);
+      port map(A => \bterm_p.un4_bdzero\, B => \bterm_cmd\, Y => 
+        bterm_cmd_m);
+    
+    un1_mode_cmd_0_a2 : CFG3
+      generic map(INIT => x"02")
+
+      port map(A => \mode_cmd\, B => \prch_cmd\, C => \rfsh_cmd\, 
+        Y => \un1_mode_cmd_0_a2\);
+    
+    \act_p.rw_4_0_a2_0\ : CFG4
+      generic map(INIT => x"8000")
+
+      port map(A => \rwable[2]\, B => \lnht_cmd[2]_net_1\, C => 
+        \act_p.rw_4_0_a2_0_1_net_1\, D => N_105, Y => 
+        \act_p.2.un155_rdwr_cmd\);
+    
+    \un16_1.rc_p.op_eq.un18_rc_zero_RNIO2D21\ : CFG4
+      generic map(INIT => x"000D")
+
+      port map(A => \rc_p.un8_rc_zero_net_1\, B => 
+        \rc_p.op_eq.un18_rc_zero\, C => \rc_zero_0_sqmuxa\, D => 
+        rcount_2_sqmuxa, Y => un1_rc_zero_1_sqmuxa_i);
     
     \GND\ : GND
       port map(Y => \sa[13]\);
     
+    \sd_ctl_p.cs_n_35s2_i_a2\ : CFG3
+      generic map(INIT => x"01")
+
+      port map(A => \bterm\, B => \refresh\, C => 
+        \sd_ctl_p.un6_precharge\, Y => N_125);
+    
+    \cs_n[1]\ : SLE
+      port map(D => \sd_ctl_p.cs_n_35[1]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => cs_n(1));
+    
+    \wshift_RNO[2]\ : CFG4
+      generic map(INIT => x"0A3A")
+
+      port map(A => \wshift[3]_net_1\, B => 
+        \bterm_p.op_eq.un28_rw\, C => N_109, D => N_81, Y => 
+        \wshift_13[2]\);
+    
     \rdwr_cmd[0]\ : SLE
-      port map(D => \cmd_p.rdwr_cmd_3_0_104_a2_0_a2_net_1\, CLK
-         => clk, EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, 
+      port map(D => \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_net_1\, CLK
+         => clk, EN => N_83, ALn => reset_n, ADn => VCC_net_1, 
         SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rdwr_cmd[0]_net_1\);
     
-    \rc_p.un72_rw_1.rc_p.op_eq.un18_rc_zero\ : CFG3
-      generic map(INIT => x"01")
+    \rshift[10]\ : SLE
+      port map(D => \data_flow_ctrl_p.rshift_46[10]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[10]_net_1\);
+    
+    \sd_ctl_p.cs_n_35\ : CFG4
+      generic map(INIT => x"0001")
 
-      port map(A => \rcount[3]_net_1\, B => \rcount[2]_net_1\, C
-         => \rcount[1]_net_1\, Y => \rc_p.op_eq.un18_rc_zero\);
+      port map(A => N_123, B => \sd_ctl_p.un6_precharge\, C => 
+        N_89, D => N_125, Y => \sd_ctl_p.cs_n_35_net_1\);
     
     \prch[3]\ : SLE
       port map(D => \act_p.3.un222_rdwr_cmd\, CLK => clk, EN => 
@@ -31838,273 +31998,236 @@ begin
     \cmd_p.0.un1_line_i_0_0_I_15\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(15), B => \line_i_0[4]\, C => 
-        \line_i_0[5]\, D => raddr(14), FCI => 
+      port map(A => raddr(17), B => \line_i_0[4]\, C => 
+        \line_i_0[5]\, D => raddr(16), FCI => 
         \cmd_p.0.un1_line_i_0_0_data_tmp[1]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[2]\);
     
-    \act_p.un9_prch_cmd\ : CFG4
-      generic map(INIT => x"FF02")
-
-      port map(A => \prch_cmd\, B => \precharge\, C => N_73, D
-         => \act_p.un23_rfsh_cmd_net_1\, Y => 
-        \act_p.un9_prch_cmd_net_1\);
-    
     w_valid_i : SLE
-      port map(D => \wr_flow_ctrl_p.w_valid_i_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+      port map(D => \wr_flow_ctrl_p.w_valid_i_1_net_1\, CLK => 
+        clk, EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, 
+        SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \w_valid\);
     
     \openbank_gen.2.openbank_r1_i\ : openbank
-      port map(wshift_13(6) => \wshift_13[6]\, wshift_13(5) => 
-        \wshift_13[5]\, wshift_13(4) => \wshift_13[4]\, 
-        wshift_13(3) => \wshift_13[3]\, wshift_13(2) => 
-        \wshift_13[2]\, wshift_13(1) => \wshift_13[1]\, wshift(6)
-         => \wshift[6]_net_1\, wshift(5) => \wshift[5]_net_1\, 
-        wshift(4) => \wshift[4]_net_1\, wshift(3) => 
-        \wshift[3]_net_1\, wshift(2) => \wshift[2]_net_1\, 
-        wshift(1) => \wshift[1]_net_1\, raddr(22) => raddr(22), 
-        raddr(21) => raddr(21), raddr(20) => raddr(20), raddr(19)
-         => raddr(19), raddr(18) => raddr(18), raddr(17) => 
-        raddr(17), raddr(16) => raddr(16), raddr(15) => raddr(15), 
-        raddr(14) => raddr(14), raddr(13) => raddr(13), raddr(12)
-         => raddr(12), raddr(11) => raddr(11), raddr(10) => 
-        raddr(10), raddr(9) => nc2, raddr(8) => nc4, raddr(7) => 
-        nc3, raddr(6) => nc1, raddr(5) => raddr(5), raddr(4) => 
-        raddr(4), raddr(3) => raddr(3), raddr(2) => raddr(2), 
-        raddr(1) => raddr(1), raddr(0) => raddr(0), lnht_cmd(3)
-         => \lnht_cmd[3]_net_1\, lnht_cmd(2) => 
-        \lnht_cmd[2]_net_1\, lnht_cmd(1) => \lnht_cmd[1]_net_1\, 
-        lnht_cmd(0) => \lnht_cmd[0]_net_1\, pcable(3) => 
-        \pcable[3]\, pcable(2) => \pcable[2]\, pcable(1) => 
-        \pcable[1]\, pcable(0) => \pcable[0]\, active(3) => 
-        \active[3]\, active(2) => \active[2]\, active(1) => 
-        \active[1]\, active(0) => \active[0]\, bdcnt(3) => 
-        \bdcnt[3]_net_1\, bdcnt(2) => \bdcnt[2]_net_1\, bdcnt(1)
-         => \bdcnt[1]_net_1\, bdcnt(0) => \bdcnt[0]_net_1\, 
-        rdwr_cmd(3) => \rdwr_cmd[3]_net_1\, rdwr_cmd(2) => 
-        \rdwr_cmd[2]_net_1\, rdwr_cmd(1) => \rdwr_cmd[1]_net_1\, 
-        rdwr_cmd(0) => \rdwr_cmd[0]_net_1\, dorw(3) => 
-        \dorw[3]_net_1\, dorw(2) => \dorw[2]_net_1\, dorw(1) => 
-        \dorw[1]_net_1\, dorw(0) => \dorw[0]_net_1\, rshift(6)
-         => \rshift[6]_net_1\, rshift(5) => \rshift[5]_net_1\, 
-        bcount(2) => \bcount[2]_net_1\, bcount(1) => 
+      port map(bcount(2) => \bcount[2]_net_1\, bcount(1) => 
         \bcount[1]_net_1\, bcount(0) => \bcount[0]_net_1\, 
-        line_i_2(11) => \line_i_2[11]\, line_i_2(10) => 
-        \line_i_2[10]\, line_i_2(9) => \line_i_2[9]\, line_i_2(8)
-         => \line_i_2[8]\, line_i_2(7) => \line_i_2[7]\, 
-        line_i_2(6) => \line_i_2[6]\, line_i_2(5) => 
-        \line_i_2[5]\, line_i_2(4) => \line_i_2[4]\, line_i_2(3)
-         => \line_i_2[3]\, line_i_2(2) => \line_i_2[2]\, 
-        line_i_2(1) => \line_i_2[1]\, line_i_2(0) => 
-        \line_i_2[0]\, bdcnt_6_iv_i_0 => 
-        \bterm_p.bdcnt_6_iv_i[1]\, rwable_1 => \rwable[1]\, 
-        rwable_0 => \rwable[0]\, rwable_3 => \rwable[3]\, 
-        bdcnt_6_2 => \bterm_p.bdcnt_6[2]\, bdcnt_6_0 => 
-        \bterm_p.bdcnt_6[0]\, bdcnt_6_3 => \bterm_p.bdcnt_6[3]\, 
-        actable_2 => \actable[2]\, actable_3 => \actable[3]\, 
-        actable_0 => \actable[0]\, cs_n_5_0 => 
-        \sd_ctl_p.cs_n_5[0]\, sa_5_5 => \sd_ctl_p.sa_5[5]\, 
-        sa_5_1 => \sd_ctl_p.sa_5[1]\, sa_5_0 => 
-        \sd_ctl_p.sa_5[0]\, sa_5_10 => \sd_ctl_p.sa_5[10]\, 
-        sa_5_8 => \sd_ctl_p.sa_5[8]\, sa_5_2 => 
-        \sd_ctl_p.sa_5[2]\, sa_5_3 => \sd_ctl_p.sa_5[3]\, sa_5_4
-         => \sd_ctl_p.sa_5[4]\, psa_0 => \psa[0]_net_1\, psa_8
-         => \psa[8]_net_1\, prch_0 => \prch[2]_net_1\, goact_2
-         => \goact[2]_net_1\, goact_0 => \goact[0]_net_1\, 
-        goact_3 => \goact[3]_net_1\, rshift_46_0 => 
-        \data_flow_ctrl_p.rshift_46[5]\, chip_i_2_0 => 
-        \chip_i_2[0]\, rw_4 => \act_p.rw_4\, N_117_i => N_117_i, 
-        N_78_i => N_78_i, un155_rdwr_cmd => 
-        \act_p.2.un155_rdwr_cmd\, un197_rdwr_cmd => 
-        \act_p.3.un197_rdwr_cmd\, un71_rdwr_cmd => 
-        \act_p.0.un71_rdwr_cmd\, un113_rdwr_cmd => 
-        \act_p.1.un113_rdwr_cmd\, pchaddr_3_sqmuxa_i_0 => 
-        pchaddr_3_sqmuxa_i_0, act_4 => \act_p.act_4\, 
-        un30_rdwr_cmd => \act_p.1.un30_rdwr_cmd\, un42_rdwr_cmd
-         => \act_p.2.un42_rdwr_cmd\, N_783_i => N_783_i, N_77 => 
-        N_77, oe_2 => \wr_flow_ctrl_p.oe_2\, w_valid_i => 
-        \w_valid\, rc_zero_0_sqmuxa => rc_zero_0_sqmuxa, 
-        wc_zero_0_sqmuxa => wc_zero_0_sqmuxa, N_812 => N_812, 
-        un222_rdwr_cmd => \act_p.3.un222_rdwr_cmd\, 
-        un180_rdwr_cmd => \act_p.2.un180_rdwr_cmd\, un18_rdwr_cmd
-         => \act_p.0.un18_rdwr_cmd\, un54_rdwr_cmd => 
-        \act_p.3.un54_rdwr_cmd\, un138_rdwr_cmd => 
-        \act_p.1.un138_rdwr_cmd\, un7_mode_cmd => 
-        \act_p.un7_mode_cmd\, un13_rfsh_cmd => 
-        \act_p.un13_rfsh_cmd\, N_73 => N_73, un13_rfsh_cmd_1 => 
-        \act_p.un13_rfsh_cmd_1\, we_n_2 => \sd_ctl_p.we_n_2\, 
-        un16_act_i => un16_act_i, un1_pch_3_i => un1_pch_3_i, 
-        un96_rdwr_cmd => \act_p.0.un96_rdwr_cmd\, 
-        un1_cs_n_0_sqmuxa_i_0 => un1_cs_n_0_sqmuxa_i_0, bdzero_2
-         => \bterm_p.bdzero_2\, bterm_3 => \bterm_p.bterm_3\, 
-        w_valid_i_1 => \wr_flow_ctrl_p.w_valid_i_1\, 
-        rcount_2_sqmuxa => rcount_2_sqmuxa, un217_rdwr_cmd => 
-        \act_p.3.un217_rdwr_cmd\, turnaround_hold => 
-        \turnaround_hold\, rc_zero_d => \rc_zero_d\, un1_mode_cmd
-         => un1_mode_cmd, mode_cmd => \mode_cmd\, refresh => 
-        \refresh\, un4_p_req_0_49_a2_0_a2 => 
-        \cmd_p.un4_p_req_0_49_a2_0_a2\, p_req => p_req, 
-        un1_pch_4_1 => \openbank_gen.2.openbank_r1_i.un1_pch_4_1\, 
-        bterm => \bterm\, pchaddr_9_sn_m2_i_1 => 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m2_i_1\, 
-        pchaddr_9_sn_m3_i_1 => 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
-        mode => \mode\, read_cmd => \read_cmd\, 
-        un4_rf_req_0_60_a2_0_a2 => 
-        \cmd_p.un4_rf_req_0_60_a2_0_a2\, rf_req => rf_req, 
-        precharge => \precharge\, doread => \doread\, un36_rw_i_0
-         => un36_rw_i_0, un13_prch_cmd => \psa_p.un13_prch_cmd\, 
-        rfsh_cmd => \rfsh_cmd\, prch_cmd => \prch_cmd\, bdzero
-         => \bdzero\, un14_rw => \bterm_p.op_eq.un14_rw\, N_125
-         => N_125, bterm_cmd => \bterm_cmd\, ack => \ack\, 
-        lnht_cmd26 => \cmd_p.3.lnht_cmd26\, un1_rowaddr_int_0_N_2
-         => \cmd_p.3.un1_rowaddr_int_0_N_2\, lnht_cmd5 => 
-        \cmd_p.0.lnht_cmd5\, un1_line_i_0_0_N_2 => 
-        \cmd_p.0.un1_line_i_0_0_N_2\, cke => cke_net_1, 
-        un8_rc_zero => \rc_p.un8_rc_zero\, rc_zero => \rc_zero\, 
-        un4_wc_zero => \wc_p.un4_wc_zero\, wc_zero => \wc_zero\, 
-        dowrite => \dowrite\, rw => \rw_ack\, sa_5_sn_N_4_mux => 
-        \sd_ctl_p.sa_5_sn_N_4_mux\, N_6 => \rshift_cnst_7_2_.N_6\, 
-        un78_rw => \rc_p.un78_rw_net_1\, un1_rw_11_i => 
-        un1_rw_11_i, pch => \pch\, un8_precharge => 
-        \sd_ctl_p.un8_precharge_net_1\, act => \act\, clk => clk, 
-        reset_n => reset_n);
+        raddr(26) => raddr(26), raddr(25) => raddr(25), raddr(24)
+         => raddr(24), raddr(23) => raddr(23), raddr(22) => 
+        raddr(22), raddr(21) => raddr(21), raddr(20) => raddr(20), 
+        raddr(19) => raddr(19), raddr(18) => raddr(18), raddr(17)
+         => raddr(17), raddr(16) => raddr(16), raddr(15) => 
+        raddr(15), raddr(14) => raddr(14), raddr(13) => raddr(13), 
+        raddr(12) => raddr(12), chip_i_2(1) => \chip_i_2[1]\, 
+        chip_i_2(0) => \chip_i_2[0]\, line_i_2(12) => 
+        \line_i_2[12]\, line_i_2(11) => \line_i_2[11]\, 
+        line_i_2(10) => \line_i_2[10]\, line_i_2(9) => 
+        \line_i_2[9]\, line_i_2(8) => \line_i_2[8]\, line_i_2(7)
+         => \line_i_2[7]\, line_i_2(6) => \line_i_2[6]\, 
+        line_i_2(5) => \line_i_2[5]\, line_i_2(4) => 
+        \line_i_2[4]\, line_i_2(3) => \line_i_2[3]\, line_i_2(2)
+         => \line_i_2[2]\, line_i_2(1) => \line_i_2[1]\, 
+        line_i_2(0) => \line_i_2[0]\, prch_0 => \prch[2]_net_1\, 
+        ras_shift_0 => 
+        \openbank_gen.0.openbank_r1_i.ras_shift[0]\, dorw_0 => 
+        \dorw[2]_net_1\, actable_0 => \actable[2]\, rwable_0 => 
+        \rwable[2]\, pcable_0 => \pcable[2]\, active_0 => 
+        \active[2]\, goact_0 => \goact[2]_net_1\, refresh => 
+        \refresh\, mode => \mode\, act => \act\, read_cmd => 
+        \read_cmd\, cke => cke_net_1, precharge => \precharge\, 
+        clk => clk, reset_n => reset_n);
+    
+    \sd_ctl_p.sa_5[0]\ : CFG4
+      generic map(INIT => x"FFAB")
+
+      port map(A => \sd_ctl_p.sa_5_2\, B => 
+        \sd_ctl_p.sa_5_1[0]_net_1\, C => N_88, D => 
+        \sd_ctl_p.sa_5_1_net_1\, Y => \sd_ctl_p.sa_5[0]_net_1\);
     
     \cmd_p.2.un1_rowaddr_int_0_I_1\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(11), B => \line_i_2[0]\, C => 
-        \line_i_2[1]\, D => raddr(10), FCI => \sa[13]\, S => OPEN, 
+      port map(A => raddr(13), B => \line_i_2[0]\, C => 
+        \line_i_2[1]\, D => raddr(12), FCI => \sa[13]\, S => OPEN, 
         Y => OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[0]\);
     
     \lnht_cmd[0]\ : SLE
-      port map(D => \cmd_p.0.lnht_cmd5\, CLK => clk, EN => 
+      port map(D => \cmd_p.0.lnht_cmd5_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \lnht_cmd[0]_net_1\);
     
-    \cmd_p.rdwr_cmd_3_0_104_a2_0_a2\ : CFG4
-      generic map(INIT => x"1000")
-
-      port map(A => raddr(8), B => raddr(9), C => 
-        \cmd_p.un1_r_req\, D => 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\, Y => 
-        \cmd_p.rdwr_cmd_3_0_104_a2_0_a2_net_1\);
-    
     \cmd_p.2.lnht_cmd19\ : CFG2
       generic map(INIT => x"D")
 
-      port map(A => \cmd_p.2.un1_rowaddr_int_0_N_2\, B => 
-        \goact[2]_net_1\, Y => \cmd_p.2.lnht_cmd19_net_1\);
-    
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_o3[3]\ : CFG4
-      generic map(INIT => x"0ACA")
-
-      port map(A => \wc_zero\, B => \dowrite\, C => \rw_ack\, D
-         => N_812, Y => N_802);
+      port map(A => \cmd_p.2.un1_rowaddr_int_0_data_tmp[7]\, B
+         => \goact[2]_net_1\, Y => \cmd_p.2.lnht_cmd19_net_1\);
     
     \cmd_p.0.un1_line_i_0_0_I_27\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(19), B => \line_i_0[8]\, C => 
-        \line_i_0[9]\, D => raddr(18), FCI => 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[3]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[4]\);
+      port map(A => raddr(19), B => \line_i_0[6]\, C => 
+        \line_i_0[7]\, D => raddr(18), FCI => 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[2]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[3]\);
+    
+    \un1_bcount_1_1.wc_p.un4_wc_zero_RNIN9CI\ : CFG4
+      generic map(INIT => x"EFE0")
+
+      port map(A => \wcount[0]_net_1\, B => \wcount[1]_net_1\, C
+         => \wc_p.un4_wc_zero\, D => \bcount[1]_net_1\, Y => 
+        \un1_bcount_1_1.CO1\);
+    
+    \act_p.0.un71_rdwr_cmd_0_a2_1\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \dorw[0]_net_1\, B => \rdwr_cmd[0]_net_1\, Y
+         => \act_p.0.un71_rdwr_cmd_0_a2_1_net_1\);
+    
+    \un1_bcount_1_1.wc_p.wcount_5[3]\ : CFG4
+      generic map(INIT => x"0807")
+
+      port map(A => \wcount[3]_net_1\, B => \wc_p.un4_wc_zero\, C
+         => un1_wcount17, D => 
+        \un1_bcount_1_1.wc_p.wcount_5_1[3]_net_1\, Y => 
+        \wc_p.wcount_5[3]\);
     
     \cmd_p.3.un1_rowaddr_int_0_I_21\ : ARI1
-      generic map(INIT => x"68421")
+      generic map(INIT => x"64373")
 
-      port map(A => raddr(17), B => \line_i_3[6]\, C => 
-        \line_i_3[7]\, D => raddr(16), FCI => 
-        \cmd_p.3.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[3]\);
+      port map(A => \sd_ctl_p.1.op_eq.cs_n42_i\, B => N_810_i, C
+         => \cmd_p.3.un1_rowaddr_int_0_I_21_RNO_net_1\, D => 
+        \chip_i_3[0]\, FCI => 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[6]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[7]\);
+    
+    \un16_1.un1_mode_cmd_1[2]\ : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => \rc_p.un8_rc_zero_net_1\, B => 
+        \rcount[1]_net_1\, C => \bcount[1]_net_1\, Y => N_440);
+    
+    \rshift[8]\ : SLE
+      port map(D => \data_flow_ctrl_p.rshift_46[8]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[8]_net_1\);
     
     \sa[7]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[7]_net_1\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[7]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(7));
     
-    \rc_p.un83_rw_1.un1_wc_zero_1_sqmuxa_i_a3_0_1\ : CFG4
-      generic map(INIT => x"0001")
+    \bdcnt_RNO[3]\ : CFG4
+      generic map(INIT => x"6723")
 
-      port map(A => \wcount[3]_net_1\, B => \wcount[1]_net_1\, C
-         => \wcount[2]_net_1\, D => \rc_p.un78_rw_net_1\, Y => 
-        \rc_p.un83_rw_1.un1_wc_zero_1_sqmuxa_i_a3_0_1_net_1\);
+      port map(A => \bdcnt[2]_net_1\, B => N_823_i_1_1, C => 
+        N_30_0, D => N_28_0, Y => N_823_i);
     
-    \cmd_p.rdwr_cmd_3_121_a2_0_a2\ : CFG4
-      generic map(INIT => x"8000")
+    \oldchip[1]\ : SLE
+      port map(D => raddr(26), CLK => clk, EN => \rw_ack\, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \oldchip[1]_net_1\);
+    
+    \act_p.un13_rfsh_cmd_0_a2\ : CFG4
+      generic map(INIT => x"0002")
 
-      port map(A => raddr(8), B => raddr(9), C => 
-        \cmd_p.un1_r_req\, D => 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\, Y => 
-        \cmd_p.rdwr_cmd_3_121_a2_0_a2_net_1\);
+      port map(A => \rfsh_cmd\, B => \bterm_cmd\, C => \refresh\, 
+        D => N_59, Y => \act_p.un13_rfsh_cmd\);
+    
+    \un16_1.rc_p.rcount_8[3]\ : CFG4
+      generic map(INIT => x"00C9")
+
+      port map(A => N_441, B => N_442, C => \un16_1.CO1\, D => 
+        \un1_rcount21\, Y => \rc_p.rcount_8[3]\);
+    
+    \cmd_p.2.un1_rowaddr_int_0_I_39\ : ARI1
+      generic map(INIT => x"69900")
+
+      port map(A => VCC_net_1, B => \line_i_2[12]\, C => 
+        raddr(24), D => \sa[13]\, FCI => 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[6]\);
+    
+    \act_p.pchaddr_9_bm[0]\ : CFG3
+      generic map(INIT => x"AC")
+
+      port map(A => \chip_i_3[0]\, B => \chip_i_2[0]\, C => 
+        \act_p.3.un217_rdwr_cmd\, Y => 
+        \act_p.pchaddr_9_bm[0]_net_1\);
     
     \cmd_p.3.un1_rowaddr_int_0_I_33\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(21), B => \line_i_3[10]\, C => 
-        \line_i_3[11]\, D => raddr(20), FCI => 
+      port map(A => raddr(23), B => \line_i_3[10]\, C => 
+        \line_i_3[11]\, D => raddr(22), FCI => 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[4]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[5]\);
+    
+    \act_p.act_4_0\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => \act_p.3.un54_rdwr_cmd\, B => 
+        \act_p.2.un42_rdwr_cmd\, C => \act_p.1.un30_rdwr_cmd\, D
+         => \act_p.0.un18_rdwr_cmd\, Y => \act_p.act_4\);
     
     \act_p.pchaddr_9_am[0]\ : CFG4
       generic map(INIT => x"FE10")
 
       port map(A => 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
-        B => N_77, C => \chip_i_1[0]\, D => \chip_i_0[0]\, Y => 
+        \openbank_gen.3.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
+        B => N_801, C => \chip_i_1[0]\, D => \chip_i_0[0]\, Y => 
         \act_p.pchaddr_9_am[0]_net_1\);
     
-    \sd_ctl_p.un8_precharge\ : CFG3
-      generic map(INIT => x"FE")
-
-      port map(A => \mode\, B => \bterm\, C => \precharge\, Y => 
-        \sd_ctl_p.un8_precharge_net_1\);
-    
     bterm_cmd : SLE
-      port map(D => N_783_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \bterm_cmd\);
-    
-    \act_p.un23_rfsh_cmd\ : CFG4
-      generic map(INIT => x"8000")
-
-      port map(A => \pcable[2]\, B => \pcable[3]\, C => 
-        \act_p.un23_rfsh_cmd_4_net_1\, D => 
-        \act_p.un13_rfsh_cmd_1\, Y => \act_p.un23_rfsh_cmd_net_1\);
+      port map(D => \bterm_p.bterm_cmd_3\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \bterm_cmd\);
     
     \cmd_p.3.un1_rowaddr_int_0_I_9\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(13), B => \line_i_3[2]\, C => 
-        \line_i_3[3]\, D => raddr(12), FCI => 
+      port map(A => raddr(15), B => \line_i_3[2]\, C => 
+        \line_i_3[3]\, D => raddr(14), FCI => 
         \cmd_p.3.un1_rowaddr_int_0_data_tmp[0]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[1]\);
     
-    un1_cs_n_0_sqmuxa : CFG4
-      generic map(INIT => x"FF01")
+    \sd_ctl_p.cs_n_35_ss0_0_o2_0\ : CFG3
+      generic map(INIT => x"F4")
 
-      port map(A => \bterm\, B => \pch\, C => raddr(22), D => 
-        un1_cs_n_0_sqmuxa_0, Y => un1_cs_n_0_sqmuxa_i_0);
+      port map(A => \bterm\, B => \pch\, C => \refresh\, Y => 
+        N_89);
+    
+    \rshift_RNO_0[3]\ : CFG3
+      generic map(INIT => x"1B")
+
+      port map(A => N_792_i, B => \rshift[4]_net_1\, C => N_27_0, 
+        Y => \data_flow_ctrl_p.rshift_46_1[3]\);
+    
+    \un1_bcount_1_1.wc_p.wcount_5[1]\ : CFG4
+      generic map(INIT => x"0807")
+
+      port map(A => \wc_p.un4_wc_zero\, B => \wcount[0]_net_1\, C
+         => un1_wcount17, D => \un1_bcount[2]\, Y => 
+        \wc_p.wcount_5[1]\);
+    
+    \act_p.un9_prch_cmd_0_a2\ : CFG4
+      generic map(INIT => x"8000")
+
+      port map(A => \pcable[1]\, B => \rfsh_cmd\, C => N_95_1, D
+         => \act_p.un9_prch_cmd_0_a2_4_net_1\, Y => N_95);
     
     \wshift[4]\ : SLE
-      port map(D => \wshift_13[4]\, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \wshift[4]_net_1\);
+      port map(D => N_103_mux_i, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \wshift[4]_net_1\);
     
     \rshift[4]\ : SLE
-      port map(D => N_795_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \rshift[4]_net_1\);
-    
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_i_0[4]\ : CFG4
-      generic map(INIT => x"0533")
-
-      port map(A => \bcount[2]_net_1\, B => \rshift[5]_net_1\, C
-         => un1_rw_11_i, D => \rc_p.un78_rw_net_1\, Y => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_i_0[4]_net_1\);
+      port map(D => \data_flow_ctrl_p.rshift_46[4]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[4]_net_1\);
     
     \pchaddr[0]\ : SLE
       port map(D => \act_p.pchaddr_9[0]\, CLK => clk, EN => 
@@ -32113,32 +32236,43 @@ begin
         \pchaddr[0]_net_1\);
     
     new_cmd : SLE
-      port map(D => \ack\, CLK => clk, EN => \cmd_p.un5_r_req\, 
-        ALn => reset_n, ADn => \sa[13]\, SLn => VCC_net_1, SD => 
+      port map(D => \ack\, CLK => clk, EN => N_771_i, ALn => 
+        reset_n, ADn => \sa[13]\, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \new_cmd\);
     
     \VCC\ : VCC
       port map(Y => VCC_net_1);
     
+    \sd_ctl_p.cs_n_35_5\ : CFG4
+      generic map(INIT => x"00D0")
+
+      port map(A => raddr(25), B => raddr(26), C => N_125, D => 
+        N_89, Y => \sd_ctl_p.cs_n_35_5_net_1\);
+    
     rfsh_cmd : SLE
-      port map(D => \cmd_p.un4_rf_req_0_60_a2_0_a2\, CLK => clk, 
-        EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \rfsh_cmd\);
+      port map(D => \rfsh_cmd_RNO\, CLK => clk, EN => N_83, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \rfsh_cmd\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_a3_1_0[7]\ : 
-        CFG3
-      generic map(INIT => x"80")
+    \cmd_p.1.un1_rowaddr_int_0_I_21_RNO\ : CFG4
+      generic map(INIT => x"B9A8")
 
-      port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
-         => \bcount[2]_net_1\, Y => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_a3_1_0[7]_net_1\);
+      port map(A => \chip_i_1[1]\, B => \chip_i_1[0]\, C => 
+        \sd_ctl_p.2.op_eq.cs_n49_i\, D => 
+        \sd_ctl_p.0.op_eq.cs_n35_i\, Y => 
+        \cmd_p.1.un1_rowaddr_int_0_I_21_RNO_net_1\);
     
-    un1_bterm_4_1 : CFG3
-      generic map(INIT => x"02")
+    \un16_1.rc_p.op_eq.un18_rc_zero\ : CFG3
+      generic map(INIT => x"01")
 
-      port map(A => \bterm\, B => \mode\, C => \rw_ack\, Y => 
-        \un1_bterm_4_1\);
+      port map(A => \rcount[3]_net_1\, B => \rcount[2]_net_1\, C
+         => \rcount[1]_net_1\, Y => \rc_p.op_eq.un18_rc_zero\);
+    
+    \sd_ctl_p.cs_n_35_7\ : CFG4
+      generic map(INIT => x"0001")
+
+      port map(A => N_121, B => \sd_ctl_p.un6_precharge\, C => 
+        N_89, D => N_125, Y => \sd_ctl_p.cs_n_35_7_net_1\);
     
     dowrite : SLE
       port map(D => read_cmd_i, CLK => clk, EN => VCC_net_1, ALn
@@ -32146,58 +32280,94 @@ begin
         \sa[13]\, LAT => \sa[13]\, Q => \dowrite\);
     
     \wcount[0]\ : SLE
-      port map(D => N_794_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \wcount[0]_net_1\);
+      port map(D => \wc_p.wcount_5[0]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \wcount[0]_net_1\);
     
-    \rc_p.un72_rw_1.rc_p.op_eq.un18_rc_zero_RNIK8KR\ : CFG4
-      generic map(INIT => x"000D")
+    s_ack_RNO : CFG3
+      generic map(INIT => x"01")
 
-      port map(A => \rc_p.un8_rc_zero\, B => 
-        \rc_p.op_eq.un18_rc_zero\, C => rc_zero_0_sqmuxa, D => 
-        rcount_2_sqmuxa, Y => un1_rc_zero_1_sqmuxa_i);
+      port map(A => \ack\, B => N_102, C => N_59, Y => N_63_i);
     
     rc_zero_d : SLE
       port map(D => \rc_zero\, CLK => clk, EN => VCC_net_1, ALn
          => reset_n, ADn => \sa[13]\, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \rc_zero_d\);
     
-    \cmd_p.un5_r_req_0_o2_0\ : CFG3
-      generic map(INIT => x"FE")
+    \act_p.rw_4_0_a2_0_1\ : CFG2
+      generic map(INIT => x"4")
 
-      port map(A => p_req, B => m_req, C => rf_req, Y => N_74);
+      port map(A => \dorw[2]_net_1\, B => \rdwr_cmd[2]_net_1\, Y
+         => \act_p.rw_4_0_a2_0_1_net_1\);
     
     \sa[6]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[6]_net_1\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[6]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(6));
     
-    \sd_ctl_p.ba_5[0]\ : CFG3
-      generic map(INIT => x"02")
+    \act_p.rw_4_0_a2_2\ : CFG4
+      generic map(INIT => x"B000")
 
-      port map(A => raddr(8), B => \precharge\, C => \mode\, Y
-         => \sd_ctl_p.ba_5[0]_net_1\);
+      port map(A => \rc_zero_d\, B => \turnaround_hold\, C => 
+        \read_cmd\, D => \rc_zero\, Y => N_97);
     
-    \rshift_cnst_7_2_.m5\ : CFG3
-      generic map(INIT => x"1F")
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[5]\ : CFG4
+      generic map(INIT => x"8AD5")
 
-      port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
-         => \bcount[2]_net_1\, Y => \rshift_cnst_7_2_.N_6\);
+      port map(A => N_792_i, B => \rshift[5]_net_1\, C => 
+        un1_rw_11_i, D => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[5]_net_1\, Y
+         => \data_flow_ctrl_p.rshift_46[5]\);
+    
+    \psa_RNO[8]\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => \rfsh_cmd\, B => \prch_cmd\, Y => N_106_i);
+    
+    \un1_bcount_1_1.wc_p.op_eq.un14_wc_zero_RNIISEK1\ : CFG4
+      generic map(INIT => x"1011")
+
+      port map(A => N_792_i, B => wc_zero_0_sqmuxa, C => 
+        \wc_p.op_eq.un14_wc_zero\, D => \wc_p.un4_wc_zero\, Y => 
+        un1_wc_zero_1_sqmuxa_i);
+    
+    \sd_ctl_p.cs_n_35[0]\ : CFG3
+      generic map(INIT => x"FE")
+
+      port map(A => \sd_ctl_p.cs_n_35_2_net_1\, B => 
+        \sd_ctl_p.cs_n_35_1_net_1\, C => \sd_ctl_p.cs_n_35_net_1\, 
+        Y => \sd_ctl_p.cs_n_35[0]_net_1\);
+    
+    \bcount_RNI38851[0]\ : CFG2
+      generic map(INIT => x"2")
+
+      port map(A => N_109, B => N_27_0, Y => wc_zero_0_sqmuxa);
+    
+    un1_pch_2_0_a2_0 : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \rw_ack\, B => \pch\, Y => \un1_pch_2_0_a2_0\);
     
     \cmd_p.3.un1_rowaddr_int_0_I_27\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(19), B => \line_i_3[8]\, C => 
-        \line_i_3[9]\, D => raddr(18), FCI => 
-        \cmd_p.3.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[4]\);
+      port map(A => raddr(19), B => \line_i_3[6]\, C => 
+        \line_i_3[7]\, D => raddr(18), FCI => 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[3]\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_1[6]\ : CFG4
-      generic map(INIT => x"47CF")
+    \un1_bcount_1_1.m21\ : CFG4
+      generic map(INIT => x"8000")
 
-      port map(A => \bcount[2]_net_1\, B => \rc_p.un78_rw_net_1\, 
-        C => \rshift[7]_net_1\, D => \bcount[1]_net_1\, Y => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_1[6]_net_1\);
+      port map(A => \bcount[0]_net_1\, B => \dowrite\, C => 
+        \wshift_11[5]\, D => \rw_ack\, Y => \wshift_13[6]\);
+    
+    \wshift_RNO[3]\ : CFG3
+      generic map(INIT => x"CA")
+
+      port map(A => \wshift[4]_net_1\, B => \bcount[2]_net_1\, C
+         => N_109, Y => N_826_i);
     
     \rcount[2]\ : SLE
       port map(D => \rc_p.rcount_8[2]\, CLK => clk, EN => 
@@ -32205,23 +32375,68 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rcount[2]_net_1\);
     
-    \rc_p.un78_rw\ : CFG2
+    \cmd_p.3.un1_rowaddr_int_0_I_39\ : ARI1
+      generic map(INIT => x"69900")
+
+      port map(A => VCC_net_1, B => \line_i_3[12]\, C => 
+        raddr(24), D => \sa[13]\, FCI => 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[6]\);
+    
+    \sd_ctl_p.sa_5_i_m2[8]\ : CFG3
+      generic map(INIT => x"D1")
+
+      port map(A => \sd_ctl_p.sa_5_i_m2_1_1[8]_net_1\, B => N_88, 
+        C => \psa[8]_net_1\, Y => \sd_ctl_p.sa_5_i_m2[8]_net_1\);
+    
+    \sd_ctl_p.sa_5_1[0]\ : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => raddr(12), B => \act\, C => raddr(0), Y => 
+        \sd_ctl_p.sa_5_1[0]_net_1\);
+    
+    \un1_bcount_1_1.m2\ : CFG3
+      generic map(INIT => x"1F")
+
+      port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
+         => \bcount[2]_net_1\, Y => N_3_0);
+    
+    \pchaddr[1]\ : SLE
+      port map(D => \act_p.pchaddr_9[1]\, CLK => clk, EN => 
+        pchaddr_3_sqmuxa_i_0, ALn => reset_n, ADn => VCC_net_1, 
+        SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \pchaddr[1]_net_1\);
+    
+    \un16_1.un1_mode_cmd_1[0]\ : CFG2
       generic map(INIT => x"8")
 
-      port map(A => \rw_ack\, B => \doread\, Y => 
-        \rc_p.un78_rw_net_1\);
+      port map(A => \rc_p.un8_rc_zero_net_1\, B => 
+        \rcount[3]_net_1\, Y => N_442);
     
-    \rc_p.un72_rw_1.rc_p.rcount_8[0]\ : CFG3
-      generic map(INIT => x"09")
+    \sd_ctl_p.cs_n_35_9\ : CFG4
+      generic map(INIT => x"00B0")
 
-      port map(A => rc_zero_0_sqmuxa, B => N_421, C => 
-        un1_rcount21, Y => \rc_p.rcount_8[0]\);
+      port map(A => raddr(25), B => raddr(26), C => N_125, D => 
+        N_89, Y => \sd_ctl_p.cs_n_35_9_net_1\);
     
-    \rc_p.un72_rw_1.un1_mode_cmd_1[0]\ : CFG2
-      generic map(INIT => x"8")
+    \bterm_p.bterm_3_iv\ : CFG2
+      generic map(INIT => x"E")
 
-      port map(A => \rc_p.un8_rc_zero\, B => \rcount[3]_net_1\, Y
-         => N_424);
+      port map(A => bterm_cmd_m, B => bdzero_0_sqmuxa, Y => 
+        \bterm_p.bterm_3\);
+    
+    \act_p.pchaddr_9s2_RNO\ : CFG4
+      generic map(INIT => x"FF7F")
+
+      port map(A => \rdwr_cmd[2]_net_1\, B => \active[2]\, C => 
+        \pcable[2]\, D => \lnht_cmd[2]_net_1\, Y => 
+        \act_p.pchaddr_9_sn_m2_i_1\);
+    
+    \dqs_contention_p.un11_r_req_0_a2\ : CFG3
+      generic map(INIT => x"80")
+
+      port map(A => \dqs_contention_p.un13_r_req\, B => r_req, C
+         => \new_cmd\, Y => \dqs_contention_p.un11_r_req\);
     
     \prch[0]\ : SLE
       port map(D => \act_p.0.un96_rdwr_cmd\, CLK => clk, EN => 
@@ -32239,6 +32454,25 @@ begin
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(9));
     
+    \act_p.2.un180_rdwr_cmd_0_a2_1\ : CFG4
+      generic map(INIT => x"0080")
+
+      port map(A => \rdwr_cmd[2]_net_1\, B => \active[2]\, C => 
+        \pcable[2]\, D => \lnht_cmd[2]_net_1\, Y => 
+        \act_p.2.un180_rdwr_cmd_0_a2_1_net_1\);
+    
+    \bdcnt_RNO_1[1]\ : CFG3
+      generic map(INIT => x"32")
+
+      port map(A => \bcount[1]_net_1\, B => N_26_0, C => 
+        \bterm_p.op_eq.un28_rw\, Y => m18_ns_1);
+    
+    \act_p.un9_prch_cmd_0_o2\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => \active[2]\, B => \active[1]\, C => 
+        \active[3]\, D => \active[0]\, Y => N_54);
+    
     \cke\ : SLE
       port map(D => VCC_net_1, CLK => clk, EN => VCC_net_1, ALn
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
@@ -32249,73 +32483,52 @@ begin
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(11));
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_x2_RNI6O0L[1]\ : CFG4
-      generic map(INIT => x"0035")
-
-      port map(A => \bcount[1]_net_1\, B => N_40_i, C => 
-        \wc_p.un4_wc_zero\, D => N_802, Y => N_793_i);
-    
     mode : SLE
-      port map(D => \act_p.un7_mode_cmd\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => \mode\);
+      port map(D => N_772_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \mode\);
     
     \bdcnt[2]\ : SLE
-      port map(D => \bterm_p.bdcnt_6[2]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \bdcnt[2]_net_1\);
+      port map(D => N_111_mux_i, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \bdcnt[2]_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_o2_0_RNIL8RO[3]\ : CFG4
-      generic map(INIT => x"0D0F")
+    \act_p.3.un217_rdwr_cmd_0_a2_RNID0EF_0\ : CFG3
+      generic map(INIT => x"04")
 
-      port map(A => \wc_p.un4_wc_zero\, B => \wcount[3]_net_1\, C
-         => \rc_p.un83_rw_1.wc_p.wcount_5_i_2[3]_net_1\, D => 
-        N_808, Y => N_791_i);
+      port map(A => \pch\, B => \act_p.3.un217_rdwr_cmd\, C => 
+        \bterm_cmd\, Y => \act_p.3.un222_rdwr_cmd\);
     
     \s_ack\ : SLE
-      port map(D => N_78_i, CLK => clk, EN => VCC_net_1, ALn => 
+      port map(D => N_63_i, CLK => clk, EN => VCC_net_1, ALn => 
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => s_ack);
     
+    \sd_ctl_p.cs_n_35_m1_i_a2[2]\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \oldchip[0]_net_1\, B => \oldchip[1]_net_1\, 
+        Y => N_121);
+    
+    \sd_ctl_p.cs_n_35_10\ : CFG4
+      generic map(INIT => x"B000")
+
+      port map(A => \pchaddr[0]_net_1\, B => \pchaddr[1]_net_1\, 
+        C => N_125, D => N_89, Y => \sd_ctl_p.cs_n_35_10_net_1\);
+    
     \cmd_p.0.un1_line_i_0_0_I_21\ : ARI1
-      generic map(INIT => x"68421")
+      generic map(INIT => x"64373")
 
-      port map(A => raddr(17), B => \line_i_0[6]\, C => 
-        \line_i_0[7]\, D => raddr(16), FCI => 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[2]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[3]\);
-    
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_2_1_0[3]\ : CFG4
-      generic map(INIT => x"7FFD")
-
-      port map(A => \wc_p.un4_wc_zero\, B => \rc_p.un78_rw_net_1\, 
-        C => \wcount[2]_net_1\, D => N_798, Y => 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_2_1_0[3]_net_1\);
-    
-    \cmd_p.un5_r_req_0\ : CFG4
-      generic map(INIT => x"EEEA")
-
-      port map(A => \ack\, B => \new_cmd\, C => \cmd_p.un1_r_req\, 
-        D => N_74, Y => \cmd_p.un5_r_req\);
-    
-    un1_precharge_3 : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => \mode\, B => \precharge\, C => 
-        \openbank_gen.2.openbank_r1_i.un1_pch_4_1\, D => \act\, Y
-         => un1_precharge_3_i_0);
+      port map(A => \sd_ctl_p.1.op_eq.cs_n42_i\, B => N_810_i, C
+         => \cmd_p.0.un1_line_i_0_0_I_21_RNO_net_1\, D => 
+        \chip_i_0[0]\, FCI => 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[6]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[7]\);
     
     \sa[2]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[2]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[2]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(2));
-    
-    \rc_p.un72_rw_1.un1_mode_cmd_1[2]\ : CFG3
-      generic map(INIT => x"D8")
-
-      port map(A => \rc_p.un8_rc_zero\, B => \rcount[1]_net_1\, C
-         => \bcount[1]_net_1\, Y => N_422);
     
     act : SLE
       port map(D => \act_p.act_4\, CLK => clk, EN => VCC_net_1, 
@@ -32327,50 +32540,86 @@ begin
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(10));
     
-    \rc_p.un72_rw_1.un1_rcount21_0\ : CFG3
-      generic map(INIT => x"DC")
-
-      port map(A => N_812, B => 
-        \rc_p.un72_rw_1.un1_rcount21_0_0_net_1\, C => 
-        \rc_p.un78_rw_net_1\, Y => un1_rcount21);
-    
     \goact[0]\ : SLE
       port map(D => \act_p.0.un18_rdwr_cmd\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \goact[0]_net_1\);
     
+    \un16_1.un1_mode_cmd_1[3]\ : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => \rc_p.un8_rc_zero_net_1\, B => 
+        \rcount[0]_net_1\, C => \bcount[0]_net_1\, Y => N_439);
+    
+    un1_rcount21_0 : CFG4
+      generic map(INIT => x"7340")
+
+      port map(A => \bcount[2]_net_1\, B => \rw_ack\, C => 
+        \dowrite\, D => \rc_zero\, Y => \un1_rcount21_0\);
+    
     \cmd_p.3.un1_rowaddr_int_0_I_1\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(11), B => \line_i_3[0]\, C => 
-        \line_i_3[1]\, D => raddr(10), FCI => \sa[13]\, S => OPEN, 
+      port map(A => raddr(13), B => \line_i_3[0]\, C => 
+        \line_i_3[1]\, D => raddr(12), FCI => \sa[13]\, S => OPEN, 
         Y => OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[0]\);
     
     \wcount[3]\ : SLE
-      port map(D => N_791_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \wcount[3]_net_1\);
+      port map(D => \wc_p.wcount_5[3]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \wcount[3]_net_1\);
+    
+    \un16_1.rc_p.rcount_8[2]\ : CFG3
+      generic map(INIT => x"21")
+
+      port map(A => N_441, B => \un1_rcount21\, C => \un16_1.CO1\, 
+        Y => \rc_p.rcount_8[2]\);
+    
+    \un1_bcount_1_1.un1_bcount[1]\ : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => \wc_p.un4_wc_zero\, B => \wcount[2]_net_1\, C
+         => \bcount[2]_net_1\, Y => \un1_bcount[1]\);
     
     \cmd_p.1.un1_rowaddr_int_0_I_15\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(15), B => \line_i_1[4]\, C => 
-        \line_i_1[5]\, D => raddr(14), FCI => 
+      port map(A => raddr(17), B => \line_i_1[4]\, C => 
+        \line_i_1[5]\, D => raddr(16), FCI => 
         \cmd_p.1.un1_rowaddr_int_0_data_tmp[1]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[2]\);
     
-    \sd_ctl_p.sa_5[7]\ : CFG4
-      generic map(INIT => x"C840")
+    \cs_n[2]\ : SLE
+      port map(D => \sd_ctl_p.cs_n_35[2]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => cs_n(2));
+    
+    \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_0\ : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => \act\, B => \sd_ctl_p.sa_5_sn_N_4_mux\, C => 
-        raddr(7), D => raddr(17), Y => \sd_ctl_p.sa_5[7]_net_1\);
+      port map(A => raddr(10), B => raddr(11), Y => 
+        \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_0_net_1\);
+    
+    \act_p.2.un180_rdwr_cmd_0_a2\ : CFG3
+      generic map(INIT => x"04")
+
+      port map(A => \pch\, B => 
+        \act_p.2.un180_rdwr_cmd_0_a2_1_net_1\, C => \bterm_cmd\, 
+        Y => \act_p.2.un180_rdwr_cmd\);
     
     \psa[8]\ : SLE
-      port map(D => \psa_p.un13_prch_cmd\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \psa[8]_net_1\);
+      port map(D => N_106_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \psa[8]_net_1\);
+    
+    \act_p.rw_4_0\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => \act_p.3.un197_rdwr_cmd\, B => 
+        \act_p.2.un155_rdwr_cmd\, C => \act_p.1.un113_rdwr_cmd\, 
+        D => \act_p.0.un71_rdwr_cmd\, Y => \act_p.rw_4\);
     
     \dorw[0]\ : SLE
       port map(D => \act_p.0.un71_rdwr_cmd\, CLK => clk, EN => 
@@ -32378,42 +32627,67 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \dorw[0]_net_1\);
     
+    \act_p.3.un54_rdwr_cmd_0_a2_0\ : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \ack\, B => \bterm_cmd\, Y => N_99);
+    
     \openbank_gen.3.openbank_r1_i\ : openbank_2
-      port map(bcount(2) => \bcount[2]_net_1\, bcount(1) => 
-        \bcount[1]_net_1\, bcount(0) => \bcount[0]_net_1\, 
-        raddr(22) => raddr(22), raddr(21) => raddr(21), raddr(20)
-         => raddr(20), raddr(19) => raddr(19), raddr(18) => 
-        raddr(18), raddr(17) => raddr(17), raddr(16) => raddr(16), 
-        raddr(15) => raddr(15), raddr(14) => raddr(14), raddr(13)
-         => raddr(13), raddr(12) => raddr(12), raddr(11) => 
-        raddr(11), raddr(10) => raddr(10), line_i_3(11) => 
-        \line_i_3[11]\, line_i_3(10) => \line_i_3[10]\, 
-        line_i_3(9) => \line_i_3[9]\, line_i_3(8) => 
-        \line_i_3[8]\, line_i_3(7) => \line_i_3[7]\, line_i_3(6)
-         => \line_i_3[6]\, line_i_3(5) => \line_i_3[5]\, 
-        line_i_3(4) => \line_i_3[4]\, line_i_3(3) => 
-        \line_i_3[3]\, line_i_3(2) => \line_i_3[2]\, line_i_3(1)
-         => \line_i_3[1]\, line_i_3(0) => \line_i_3[0]\, prch_0
-         => \prch[3]_net_1\, dorw_0 => \dorw[3]_net_1\, actable_0
-         => \actable[3]\, rwable_0 => \rwable[3]\, pcable_0 => 
-        \pcable[3]\, chip_i_3_0 => \chip_i_3[0]\, active_0 => 
-        \active[3]\, goact_0 => \goact[3]_net_1\, refresh => 
-        \refresh\, mode => \mode\, act => \act\, read_cmd => 
-        \read_cmd\, precharge => \precharge\, cke => cke_net_1, 
-        clk => clk, reset_n => reset_n);
+      port map(raddr(26) => raddr(26), raddr(25) => raddr(25), 
+        raddr(24) => raddr(24), raddr(23) => raddr(23), raddr(22)
+         => raddr(22), raddr(21) => raddr(21), raddr(20) => 
+        raddr(20), raddr(19) => raddr(19), raddr(18) => raddr(18), 
+        raddr(17) => raddr(17), raddr(16) => raddr(16), raddr(15)
+         => raddr(15), raddr(14) => raddr(14), raddr(13) => 
+        raddr(13), raddr(12) => raddr(12), raddr(11) => nc2, 
+        raddr(10) => nc4, raddr(9) => nc3, raddr(8) => nc1, 
+        raddr(7) => raddr(7), raddr(6) => raddr(6), bcount(2) => 
+        \bcount[2]_net_1\, bcount(1) => \bcount[1]_net_1\, 
+        bcount(0) => \bcount[0]_net_1\, chip_i_3(1) => 
+        \chip_i_3[1]\, chip_i_3(0) => \chip_i_3[0]\, line_i_3(12)
+         => \line_i_3[12]\, line_i_3(11) => \line_i_3[11]\, 
+        line_i_3(10) => \line_i_3[10]\, line_i_3(9) => 
+        \line_i_3[9]\, line_i_3(8) => \line_i_3[8]\, line_i_3(7)
+         => \line_i_3[7]\, line_i_3(6) => \line_i_3[6]\, 
+        line_i_3(5) => \line_i_3[5]\, line_i_3(4) => 
+        \line_i_3[4]\, line_i_3(3) => \line_i_3[3]\, line_i_3(2)
+         => \line_i_3[2]\, line_i_3(1) => \line_i_3[1]\, 
+        line_i_3(0) => \line_i_3[0]\, rwable_2 => \rwable[3]\, 
+        rwable_0 => \rwable[1]\, sa_5_1 => \sd_ctl_p.sa_5[7]\, 
+        sa_5_0 => \sd_ctl_p.sa_5[6]\, sa_5_4 => 
+        \sd_ctl_p.sa_5[10]\, psa_0 => \psa[8]_net_1\, lnht_cmd_0
+         => \lnht_cmd[1]_net_1\, pcable_2 => \pcable[3]\, 
+        pcable_0 => \pcable[1]\, active_2 => \active[3]\, 
+        active_0 => \active[1]\, prch_0 => \prch[3]_net_1\, 
+        ras_shift_0 => 
+        \openbank_gen.0.openbank_r1_i.ras_shift[0]\, rdwr_cmd_0
+         => \rdwr_cmd[1]_net_1\, dorw_2 => \dorw[3]_net_1\, 
+        dorw_0 => \dorw[1]_net_1\, actable_0 => \actable[3]\, 
+        goact_0 => \goact[3]_net_1\, pchaddr_3_sqmuxa_i_0 => 
+        pchaddr_3_sqmuxa_i_0, un180_rdwr_cmd => 
+        \act_p.2.un180_rdwr_cmd\, un222_rdwr_cmd => 
+        \act_p.3.un222_rdwr_cmd\, un96_rdwr_cmd => 
+        \act_p.0.un96_rdwr_cmd\, un113_rdwr_cmd => 
+        \act_p.1.un113_rdwr_cmd\, N_105 => N_105, un138_rdwr_cmd
+         => \act_p.1.un138_rdwr_cmd\, pch => \pch\, bterm_cmd => 
+        \bterm_cmd\, N_88 => N_88, refresh => \refresh\, mode => 
+        \mode\, act => \act\, pchaddr_9_sn_m3_i_1 => 
+        \openbank_gen.3.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
+        read_cmd => \read_cmd\, cke => cke_net_1, precharge => 
+        \precharge\, clk => clk, reset_n => reset_n);
     
     \lnht_cmd[3]\ : SLE
-      port map(D => \cmd_p.3.lnht_cmd26\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+      port map(D => \cmd_p.3.lnht_cmd26_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \lnht_cmd[3]_net_1\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_0[3]\ : CFG4
-      generic map(INIT => x"0ACC")
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[6]\ : CFG3
+      generic map(INIT => x"47")
 
-      port map(A => N_812, B => \rshift[4]_net_1\, C => 
-        un1_rw_11_i, D => \rc_p.un78_rw_net_1\, Y => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_0[3]_net_1\);
+      port map(A => \wshift_11[5]\, B => N_792_i, C => 
+        \rshift[7]_net_1\, Y => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[6]_net_1\);
     
     \lnht_cmd[1]\ : SLE
       port map(D => \cmd_p.1.lnht_cmd12_net_1\, CLK => clk, EN
@@ -32421,78 +32695,114 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \lnht_cmd[1]_net_1\);
     
-    \cmd_p.0.un1_line_i_0_0_I_45\ : ARI1
-      generic map(INIT => x"69900")
-
-      port map(A => VCC_net_1, B => \chip_i_0[0]\, C => raddr(22), 
-        D => \sa[13]\, FCI => 
-        \cmd_p.0.un1_line_i_0_0_data_tmp[5]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_N_2\);
+    \rshift[9]\ : SLE
+      port map(D => \data_flow_ctrl_p.rshift_46[9]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[9]_net_1\);
     
-    \rc_p.un72_rw_1.un1_mode_cmd_1[3]\ : CFG3
-      generic map(INIT => x"D8")
+    \cmd_p.0.un1_line_i_0_0_I_45\ : ARI1
+      generic map(INIT => x"68421")
 
-      port map(A => \rc_p.un8_rc_zero\, B => \rcount[0]_net_1\, C
-         => \bcount[0]_net_1\, Y => N_421);
+      port map(A => raddr(21), B => \line_i_0[8]\, C => 
+        \line_i_0[9]\, D => raddr(20), FCI => 
+        \cmd_p.0.un1_line_i_0_0_data_tmp[3]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[4]\);
+    
+    \sd_ctl_p.sa_5_1\ : CFG4
+      generic map(INIT => x"5040")
+
+      port map(A => \act\, B => N_161_i, C => \psa[0]_net_1\, D
+         => \pch\, Y => \sd_ctl_p.sa_5_1_net_1\);
     
     \cmd_p.1.lnht_cmd12\ : CFG2
       generic map(INIT => x"D")
 
-      port map(A => \cmd_p.1.un1_rowaddr_int_0_N_2\, B => 
-        \goact[1]_net_1\, Y => \cmd_p.1.lnht_cmd12_net_1\);
+      port map(A => \cmd_p.1.un1_rowaddr_int_0_data_tmp[7]\, B
+         => \goact[1]_net_1\, Y => \cmd_p.1.lnht_cmd12_net_1\);
+    
+    \act_p.rw_4_0_a2_1_0\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \dorw[3]_net_1\, B => \rdwr_cmd[3]_net_1\, Y
+         => \act_p.rw_4_0_a2_1_net_1\);
+    
+    \rshift_RNO_0[2]\ : CFG3
+      generic map(INIT => x"35")
+
+      port map(A => \rshift[3]_net_1\, B => \rshift[2]_net_1\, C
+         => N_792_i, Y => \data_flow_ctrl_p.rshift_46_1[2]\);
     
     \sa[0]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[0]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[0]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(0));
     
     \cs_n[0]\ : SLE
-      port map(D => \sd_ctl_p.cs_n_5[0]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
+      port map(D => \sd_ctl_p.cs_n_35[0]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => cs_n(0));
     
-    \act_p.pchaddr_9_ns[0]\ : CFG4
-      generic map(INIT => x"4F4A")
+    \act_p.pchaddr_9_ns[0]\ : CFG3
+      generic map(INIT => x"E2")
 
-      port map(A => \act_p.3.un217_rdwr_cmd\, B => \chip_i_2[0]\, 
-        C => \act_p.pchaddr_9_ns_1[0]_net_1\, D => 
-        \act_p.pchaddr_9_am[0]_net_1\, Y => \act_p.pchaddr_9[0]\);
-    
-    \rc_p.un72_rw_1.un1_rcount21_0_0\ : CFG4
-      generic map(INIT => x"7340")
-
-      port map(A => \bcount[2]_net_1\, B => \rw_ack\, C => 
-        \dowrite\, D => \rc_zero\, Y => 
-        \rc_p.un72_rw_1.un1_rcount21_0_0_net_1\);
+      port map(A => \act_p.pchaddr_9_am[0]_net_1\, B => 
+        \act_p.pchaddr_9_sm0\, C => \act_p.pchaddr_9_bm[0]_net_1\, 
+        Y => \act_p.pchaddr_9[0]\);
     
     \cmd_p.0.un1_line_i_0_0_I_33\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(21), B => \line_i_0[10]\, C => 
-        \line_i_0[11]\, D => raddr(20), FCI => 
+      port map(A => raddr(23), B => \line_i_0[10]\, C => 
+        \line_i_0[11]\, D => raddr(22), FCI => 
         \cmd_p.0.un1_line_i_0_0_data_tmp[4]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[5]\);
     
-    \act_p.un5_mode_cmd_i_o2\ : CFG4
-      generic map(INIT => x"7FFF")
+    bterm_cmd_RNO : CFG4
+      generic map(INIT => x"7520")
 
-      port map(A => \actable[3]\, B => \actable[2]\, C => 
-        \actable[1]\, D => \actable[0]\, Y => N_73);
+      port map(A => \rw_ack\, B => N_26_0, C => 
+        \bterm_p.op_eq.un28_rw\, D => N_824, Y => 
+        \bterm_p.bterm_cmd_3\);
     
-    \act_p.un23_rfsh_cmd_4_0\ : CFG4
+    \wr_flow_ctrl_p.oe_2\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => \wr_flow_ctrl_p.w_valid_i_1_net_1\, B => 
+        \w_valid\, Y => \wr_flow_ctrl_p.oe_2_net_1\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[5]\ : CFG3
+      generic map(INIT => x"1B")
+
+      port map(A => N_792_i, B => \rshift[6]_net_1\, C => N_3_0, 
+        Y => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[5]_net_1\);
+    
+    \sa_RNO[11]\ : CFG3
+      generic map(INIT => x"08")
+
+      port map(A => raddr(23), B => \act\, C => N_88, Y => 
+        \sd_ctl_p.sa_5[11]\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[9]\ : CFG4
+      generic map(INIT => x"D850")
+
+      port map(A => N_792_i, B => un1_rw_11_i, C => 
+        \rshift[10]_net_1\, D => \rshift[9]_net_1\, Y => 
+        \data_flow_ctrl_p.rshift_46[9]\);
+    
+    un1_pch_2_0_a2 : CFG4
       generic map(INIT => x"1000")
 
-      port map(A => \precharge\, B => \act_p.un19_rfsh_cmd_net_1\, 
-        C => \pcable[0]\, D => \pcable[1]\, Y => 
-        \act_p.un23_rfsh_cmd_4_net_1\);
+      port map(A => \sd_ctl_p.un6_precharge\, B => \bterm\, C => 
+        \un1_pch_2_0_a2_0\, D => un36_rw_i_1, Y => un1_pch_2_i);
     
-    \cmd_p.rdwr_cmd_3_2_71_a2_0_a2\ : CFG4
-      generic map(INIT => x"4000")
+    \sd_ctl_p.sa_5[5]\ : CFG4
+      generic map(INIT => x"FFAB")
 
-      port map(A => raddr(8), B => raddr(9), C => 
-        \cmd_p.un1_r_req\, D => 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\, Y => 
-        \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_net_1\);
+      port map(A => \sd_ctl_p.sa_5_2\, B => 
+        \sd_ctl_p.sa_5_1[5]_net_1\, C => N_88, D => 
+        \sd_ctl_p.sa_5_1_net_1\, Y => \sd_ctl_p.sa_5[5]_net_1\);
     
     \rshift[7]\ : SLE
       port map(D => \data_flow_ctrl_p.rshift_46[7]\, CLK => clk, 
@@ -32500,14 +32810,39 @@ begin
          => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rshift[7]_net_1\);
     
+    \un1_bcount_1_1.wc_p.wcount_5[0]\ : CFG4
+      generic map(INIT => x"1302")
+
+      port map(A => \wc_p.un4_wc_zero\, B => un1_wcount17, C => 
+        \wcount[0]_net_1\, D => \bcount[0]_net_1\, Y => 
+        \wc_p.wcount_5[0]\);
+    
     \prch[2]\ : SLE
       port map(D => \act_p.2.un180_rdwr_cmd\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \prch[2]_net_1\);
     
+    \bterm_p.bterm_3_iv_RNO\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => N_26_0, B => \rw_ack\, Y => bdzero_0_sqmuxa);
+    
+    \sd_ctl_p.sa_5_10\ : CFG4
+      generic map(INIT => x"A080")
+
+      port map(A => \act\, B => N_161_i, C => \psa[0]_net_1\, D
+         => \pch\, Y => \sd_ctl_p.sa_5_2\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[8]\ : CFG4
+      generic map(INIT => x"D850")
+
+      port map(A => N_792_i, B => un1_rw_11_i, C => 
+        \rshift[9]_net_1\, D => \rshift[8]_net_1\, Y => 
+        \data_flow_ctrl_p.rshift_46[8]\);
+    
     \oldchip[0]\ : SLE
-      port map(D => raddr(22), CLK => clk, EN => \rw_ack\, ALn
+      port map(D => raddr(25), CLK => clk, EN => \rw_ack\, ALn
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \oldchip[0]_net_1\);
     
@@ -32517,54 +32852,75 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rcount[0]_net_1\);
     
-    \act_p.pchaddr_9_ns_1[0]\ : CFG4
-      generic map(INIT => x"3305")
+    \bdcnt_RNO[1]\ : CFG4
+      generic map(INIT => x"0B01")
 
-      port map(A => 
-        \openbank_gen.2.openbank_r1_i.act_p.pchaddr_9_sn_m2_i_1\, 
-        B => \chip_i_3[0]\, C => N_77, D => 
-        \act_p.3.un217_rdwr_cmd\, Y => 
-        \act_p.pchaddr_9_ns_1[0]_net_1\);
+      port map(A => \rw_ack\, B => \bdzero\, C => N_14_0, D => 
+        m18_ns_1, Y => N_19_0);
     
     \cas_n\ : SLE
       port map(D => \sd_ctl_p.cas_n_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => cas_n);
     
-    \rc_p.un83_rw_1.N_797_i\ : CFG4
-      generic map(INIT => x"FA72")
+    prch_cmd_RNO : CFG3
+      generic map(INIT => x"04")
 
-      port map(A => \rc_p.un78_rw_net_1\, B => un1_rw_11_i, C => 
-        \rshift[2]_net_1\, D => \rshift[1]_net_1\, Y => N_797_i);
+      port map(A => rf_req, B => p_req, C => \ack\, Y => 
+        \prch_cmd_RNO\);
     
-    un1_precharge_5_1 : CFG4
-      generic map(INIT => x"DDDC")
+    \un1_bcount_1_1.wc_p.un4_wc_zero\ : CFG2
+      generic map(INIT => x"1")
 
-      port map(A => \mode\, B => \precharge\, C => 
-        \openbank_gen.2.openbank_r1_i.un1_pch_4_1\, D => \act\, Y
-         => \un1_precharge_5_1\);
+      port map(A => \rw_ack\, B => \wc_zero\, Y => 
+        \wc_p.un4_wc_zero\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_o3_RNI22QN[3]\ : CFG4
-      generic map(INIT => x"005C")
+    \sd_ctl_p.cs_n_35_3\ : CFG4
+      generic map(INIT => x"0001")
 
-      port map(A => \wcount[0]_net_1\, B => \bcount[0]_net_1\, C
-         => \wc_p.un4_wc_zero\, D => N_802, Y => N_794_i);
+      port map(A => N_122, B => \sd_ctl_p.un6_precharge\, C => 
+        N_89, D => N_125, Y => \sd_ctl_p.cs_n_35_3_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_o2[3]\ : CFG2
-      generic map(INIT => x"E")
+    \bdcnt_RNO[0]\ : CFG4
+      generic map(INIT => x"7350")
 
-      port map(A => \wcount[0]_net_1\, B => \wcount[1]_net_1\, Y
-         => N_798);
+      port map(A => \bdcnt[0]_net_1\, B => 
+        \bterm_p.op_eq.un28_rw\, C => \bterm_p.un4_bdzero\, D => 
+        m38_e_1, Y => N_108_mux_i);
     
     \bcount[0]\ : SLE
       port map(D => b_size(0), CLK => clk, EN => VCC_net_1, ALn
          => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \bcount[0]_net_1\);
     
-    new_cmd_RNICUUF : CFG2
-      generic map(INIT => x"E")
+    \sa[12]\ : SLE
+      port map(D => \sd_ctl_p.sa_5[12]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(12));
+    
+    \sd_ctl_p.sa_5_1[5]\ : CFG3
+      generic map(INIT => x"47")
 
-      port map(A => \ack\, B => \new_cmd\, Y => N_116_i);
+      port map(A => raddr(17), B => \act\, C => raddr(5), Y => 
+        \sd_ctl_p.sa_5_1[5]_net_1\);
+    
+    \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_0\ : CFG2
+      generic map(INIT => x"2")
+
+      port map(A => raddr(10), B => raddr(11), Y => 
+        \cmd_p.rdwr_cmd_3_2_66_a2_0_a2_0_net_1\);
+    
+    \bdcnt_RNO_0[3]\ : CFG3
+      generic map(INIT => x"2F")
+
+      port map(A => \bdcnt[2]_net_1\, B => \bterm_p.un4_bdzero\, 
+        C => \bdcnt[3]_net_1\, Y => N_823_i_1_1);
+    
+    \un16_1.rc_p.rcount_8[1]\ : CFG4
+      generic map(INIT => x"0509")
+
+      port map(A => N_440, B => N_439, C => \un1_rcount21\, D => 
+        \rc_zero_0_sqmuxa\, Y => \rc_p.rcount_8[1]\);
     
     \prch[1]\ : SLE
       port map(D => \act_p.1.un138_rdwr_cmd\, CLK => clk, EN => 
@@ -32573,35 +32929,22 @@ begin
         \prch[1]_net_1\);
     
     \rdwr_cmd[2]\ : SLE
-      port map(D => \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_net_1\, CLK
-         => clk, EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, 
-        SLn => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+      port map(D => \cmd_p.rdwr_cmd_3_115_a2_0_a2_net_1\, CLK => 
+        clk, EN => N_83, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rdwr_cmd[2]_net_1\);
     
-    \rc_p.un83_rw_1.N_796_i_1\ : CFG4
-      generic map(INIT => x"47CF")
-
-      port map(A => \bterm_p.op_eq.un14_rw\, B => 
-        \rc_p.un78_rw_net_1\, C => \rshift[3]_net_1\, D => 
-        \bcount[0]_net_1\, Y => \rc_p.un83_rw_1.N_796_i_1_net_1\);
-    
-    \rc_p.un72_rw_1.rc_p.rcount_8[3]\ : CFG4
-      generic map(INIT => x"00C9")
-
-      port map(A => N_423, B => N_424, C => \un16_1.CO1_net_1\, D
-         => un1_rcount21, Y => \rc_p.rcount_8[3]\);
-    
-    \cmd_p.rdwr_cmd_3_121_o2\ : CFG2
+    \wr_flow_ctrl_p.w_valid_i_1\ : CFG2
       generic map(INIT => x"E")
 
-      port map(A => r_req, B => w_req, Y => \cmd_p.un1_r_req\);
+      port map(A => N_109, B => \wshift[1]_net_1\, Y => 
+        \wr_flow_ctrl_p.w_valid_i_1_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_2[3]\ : CFG4
-      generic map(INIT => x"FFCE")
+    \sd_ctl_p.cs_n_35_m1_i_a2[1]\ : CFG2
+      generic map(INIT => x"2")
 
-      port map(A => \wcount[3]_net_1\, B => N_802, C => 
-        \rc_p.un83_rw_1.wc_p.wcount_5_i_2_1_0[3]_net_1\, D => 
-        N_56, Y => \rc_p.un83_rw_1.wc_p.wcount_5_i_2[3]_net_1\);
+      port map(A => \oldchip[0]_net_1\, B => \oldchip[1]_net_1\, 
+        Y => N_122);
     
     \wshift[6]\ : SLE
       port map(D => \wshift_13[6]\, CLK => clk, EN => VCC_net_1, 
@@ -32615,62 +32958,84 @@ begin
         \rshift[6]_net_1\);
     
     \sa[1]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[1]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[1]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(1));
     
     \cmd_p.2.un1_rowaddr_int_0_I_21\ : ARI1
-      generic map(INIT => x"68421")
+      generic map(INIT => x"64373")
 
-      port map(A => raddr(17), B => \line_i_2[6]\, C => 
-        \line_i_2[7]\, D => raddr(16), FCI => 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\);
+      port map(A => \sd_ctl_p.1.op_eq.cs_n42_i\, B => N_810_i, C
+         => \cmd_p.2.un1_rowaddr_int_0_I_21_RNO_net_1\, D => 
+        \chip_i_2[0]\, FCI => 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[6]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[7]\);
+    
+    \act_p.pchaddr_9_ns[1]\ : CFG3
+      generic map(INIT => x"E2")
+
+      port map(A => \act_p.pchaddr_9_am[1]_net_1\, B => 
+        \act_p.pchaddr_9_sm0\, C => \act_p.pchaddr_9_bm[1]_net_1\, 
+        Y => \act_p.pchaddr_9[1]\);
+    
+    \rc_p.un8_rc_zero\ : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \rw_ack\, B => \rc_zero\, Y => 
+        \rc_p.un8_rc_zero_net_1\);
     
     \psa[0]\ : SLE
-      port map(D => un1_mode_cmd, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \psa[0]_net_1\);
-    
-    \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0\ : CFG4
-      generic map(INIT => x"0001")
-
-      port map(A => m_req, B => rf_req, C => p_req, D => \ack\, Y
-         => \cmd_p.rdwr_cmd_3_2_71_a2_0_a2_0_0_net_1\);
+      port map(D => \un1_mode_cmd_0_a2\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \psa[0]_net_1\);
     
     \cmd_p.1.un1_rowaddr_int_0_I_21\ : ARI1
-      generic map(INIT => x"68421")
+      generic map(INIT => x"64373")
 
-      port map(A => raddr(17), B => \line_i_1[6]\, C => 
-        \line_i_1[7]\, D => raddr(16), FCI => 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\);
+      port map(A => \sd_ctl_p.1.op_eq.cs_n42_i\, B => N_810_i, C
+         => \cmd_p.1.un1_rowaddr_int_0_I_21_RNO_net_1\, D => 
+        \chip_i_1[0]\, FCI => 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[6]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[7]\);
+    
+    \sa_RNO[12]\ : CFG3
+      generic map(INIT => x"08")
+
+      port map(A => raddr(24), B => \act\, C => N_88, Y => 
+        \sd_ctl_p.sa_5[12]\);
     
     \cmd_p.2.un1_rowaddr_int_0_I_45\ : ARI1
-      generic map(INIT => x"69900")
+      generic map(INIT => x"68421")
 
-      port map(A => VCC_net_1, B => \chip_i_2[0]\, C => raddr(22), 
-        D => \sa[13]\, FCI => 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_N_2\);
+      port map(A => raddr(21), B => \line_i_2[8]\, C => 
+        \line_i_2[9]\, D => raddr(20), FCI => 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[4]\);
     
-    \act_p.un19_rfsh_cmd\ : CFG4
-      generic map(INIT => x"0001")
+    bterm_cmd_RNO_0 : CFG2
+      generic map(INIT => x"2")
 
-      port map(A => \active[2]\, B => \active[1]\, C => 
-        \active[3]\, D => \active[0]\, Y => 
-        \act_p.un19_rfsh_cmd_net_1\);
+      port map(A => \bterm_p.op_eq.un9_bdzero\, B => \bdzero\, Y
+         => N_824);
+    
+    \raddr_RNIPT05_2[25]\ : CFG2
+      generic map(INIT => x"7")
+
+      port map(A => raddr(25), B => raddr(26), Y => N_810_i);
     
     \wcount[1]\ : SLE
-      port map(D => N_793_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \wcount[1]_net_1\);
+      port map(D => \wc_p.wcount_5[1]\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \wcount[1]_net_1\);
     
-    un16_act : CFG3
-      generic map(INIT => x"10")
+    \cmd_p.rdwr_cmd_3_0_100_a2_0_a2\ : CFG4
+      generic map(INIT => x"8880")
 
-      port map(A => \precharge\, B => \mode\, C => \act\, Y => 
-        un16_act_i);
+      port map(A => \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_0_net_1\, B
+         => N_780, C => w_req, D => r_req, Y => 
+        \cmd_p.rdwr_cmd_3_0_100_a2_0_a2_net_1\);
     
     \wshift[2]\ : SLE
       port map(D => \wshift_13[2]\, CLK => clk, EN => VCC_net_1, 
@@ -32678,23 +33043,81 @@ begin
          => \sa[13]\, LAT => \sa[13]\, Q => \wshift[2]_net_1\);
     
     \rshift[2]\ : SLE
-      port map(D => N_796_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \rshift[2]_net_1\);
+      port map(D => \data_flow_ctrl_p.rshift_46[2]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[2]_net_1\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0[7]\ : CFG4
-      generic map(INIT => x"A280")
+    \dqs_contention_p.un12_r_req_NE\ : CFG4
+      generic map(INIT => x"7BDE")
 
-      port map(A => \rc_p.un78_rw_net_1\, B => un1_rw_11_i, C => 
-        \rshift[7]_net_1\, D => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_a3_1_0[7]_net_1\, 
-        Y => \data_flow_ctrl_p.rshift_46[7]\);
+      port map(A => \oldchip[1]_net_1\, B => \oldchip[0]_net_1\, 
+        C => raddr(26), D => raddr(25), Y => 
+        \dqs_contention_p.un13_r_req\);
     
-    \sd_ctl_p.un8_precharge_RNIS0T6\ : CFG2
-      generic map(INIT => x"1")
+    \un1_bcount_1_1.wc_p.op_eq.un14_wc_zero\ : CFG3
+      generic map(INIT => x"01")
 
-      port map(A => \sd_ctl_p.un8_precharge_net_1\, B => \pch\, Y
-         => \sd_ctl_p.sa_5_sn_N_4_mux\);
+      port map(A => \wcount[3]_net_1\, B => \wcount[2]_net_1\, C
+         => \wcount[1]_net_1\, Y => \wc_p.op_eq.un14_wc_zero\);
+    
+    \un1_bcount_1_1.un1_bcount[2]\ : CFG3
+      generic map(INIT => x"D8")
+
+      port map(A => \wc_p.un4_wc_zero\, B => \wcount[1]_net_1\, C
+         => \bcount[1]_net_1\, Y => \un1_bcount[2]\);
+    
+    \cmd_p.rdwr_cmd_3_115_a2_0_a2_0_0\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => raddr(10), B => raddr(11), Y => 
+        \cmd_p.rdwr_cmd_3_115_a2_0_a2_0\);
+    
+    \un1_bcount_1_1.m1\ : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => \bcount[2]_net_1\, B => \bcount[1]_net_1\, Y
+         => \wshift_11[5]\);
+    
+    \act_p.pchaddr_9_bm[1]\ : CFG3
+      generic map(INIT => x"AC")
+
+      port map(A => \chip_i_3[1]\, B => \chip_i_2[1]\, C => 
+        \act_p.3.un217_rdwr_cmd\, Y => 
+        \act_p.pchaddr_9_bm[1]_net_1\);
+    
+    \act_p.3.un54_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"0080")
+
+      port map(A => \rdwr_cmd[3]_net_1\, B => \actable[3]\, C => 
+        N_99, D => \goact[3]_net_1\, Y => \act_p.3.un54_rdwr_cmd\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[7]\ : CFG4
+      generic map(INIT => x"3F55")
+
+      port map(A => \rshift[8]_net_1\, B => \bcount[0]_net_1\, C
+         => \wshift_11[5]\, D => N_792_i, Y => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[7]_net_1\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[10]\ : CFG3
+      generic map(INIT => x"80")
+
+      port map(A => N_792_i, B => un1_rw_11_i, C => 
+        \rshift[10]_net_1\, Y => \data_flow_ctrl_p.rshift_46[10]\);
+    
+    \act_p.0.un18_rdwr_cmd_0_a2\ : CFG4
+      generic map(INIT => x"0080")
+
+      port map(A => \rdwr_cmd[0]_net_1\, B => \actable[0]\, C => 
+        N_99, D => \goact[0]_net_1\, Y => \act_p.0.un18_rdwr_cmd\);
+    
+    \act_p.pchaddr_9_am[1]\ : CFG4
+      generic map(INIT => x"FE10")
+
+      port map(A => 
+        \openbank_gen.3.openbank_r1_i.act_p.pchaddr_9_sn_m3_i_1\, 
+        B => N_801, C => \chip_i_1[1]\, D => \chip_i_0[1]\, Y => 
+        \act_p.pchaddr_9_am[1]_net_1\);
     
     \goact[3]\ : SLE
       port map(D => \act_p.3.un54_rdwr_cmd\, CLK => clk, EN => 
@@ -32702,96 +33125,173 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \goact[3]_net_1\);
     
+    \bdcnt_RNIMV2M[1]\ : CFG3
+      generic map(INIT => x"37")
+
+      port map(A => \bdcnt[0]_net_1\, B => \bterm_p.un4_bdzero\, 
+        C => \bdcnt[1]_net_1\, Y => N_30_0);
+    
+    \un16_1.rc_p.rcount_8[0]\ : CFG3
+      generic map(INIT => x"09")
+
+      port map(A => \rc_zero_0_sqmuxa\, B => N_439, C => 
+        \un1_rcount21\, Y => \rc_p.rcount_8[0]\);
+    
+    \sd_ctl_p.sa_5[1]\ : CFG4
+      generic map(INIT => x"FFAB")
+
+      port map(A => \sd_ctl_p.sa_5_2\, B => 
+        \sd_ctl_p.sa_5_1[1]_net_1\, C => N_88, D => 
+        \sd_ctl_p.sa_5_1_net_1\, Y => \sd_ctl_p.sa_5[1]_net_1\);
+    
     \rcount[3]\ : SLE
       port map(D => \rc_p.rcount_8[3]\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rcount[3]_net_1\);
     
+    \sd_ctl_p.cs_n_35[1]\ : CFG3
+      generic map(INIT => x"FE")
+
+      port map(A => \sd_ctl_p.cs_n_35_6_net_1\, B => 
+        \sd_ctl_p.cs_n_35_5_net_1\, C => 
+        \sd_ctl_p.cs_n_35_3_net_1\, Y => 
+        \sd_ctl_p.cs_n_35[1]_net_1\);
+    
     \sa[4]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[4]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[4]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(4));
     
     \cmd_p.3.un1_rowaddr_int_0_I_45\ : ARI1
-      generic map(INIT => x"69900")
+      generic map(INIT => x"68421")
 
-      port map(A => VCC_net_1, B => \chip_i_3[0]\, C => raddr(22), 
-        D => \sa[13]\, FCI => 
-        \cmd_p.3.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_N_2\);
+      port map(A => raddr(21), B => \line_i_3[8]\, C => 
+        \line_i_3[9]\, D => raddr(20), FCI => 
+        \cmd_p.3.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.3.un1_rowaddr_int_0_data_tmp[4]\);
     
     \r_valid\ : SLE
       port map(D => \rshift[0]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => r_valid);
     
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[7]\ : CFG4
+      generic map(INIT => x"80BF")
+
+      port map(A => \rshift[7]_net_1\, B => N_792_i, C => 
+        un1_rw_11_i, D => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[7]_net_1\, Y
+         => \data_flow_ctrl_p.rshift_46[7]\);
+    
+    \sd_ctl_p.sa_5_i_m2_1_1[8]\ : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => raddr(20), B => \act\, C => raddr(8), Y => 
+        \sd_ctl_p.sa_5_i_m2_1_1[8]_net_1\);
+    
+    bdzero_RNIFHKF : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \rw_ack\, B => \bdzero\, Y => 
+        \bterm_p.un4_bdzero\);
+    
     turnaround_hold : SLE
-      port map(D => \dqs_contention_p.un11_r_req_net_1\, CLK => 
-        clk, EN => \dqs_contention_p.un40_rw_net_1\, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \turnaround_hold\);
+      port map(D => \dqs_contention_p.un11_r_req\, CLK => clk, EN
+         => \dqs_contention_p.un40_rw\, ALn => reset_n, ADn => 
+        VCC_net_1, SLn => VCC_net_1, SD => \sa[13]\, LAT => 
+        \sa[13]\, Q => \turnaround_hold\);
+    
+    \bdcnt_RNO_0[0]\ : CFG3
+      generic map(INIT => x"40")
+
+      port map(A => N_26_0, B => \bcount[0]_net_1\, C => \rw_ack\, 
+        Y => m38_e_1);
     
     \openbank_gen.1.openbank_r1_i\ : openbank_0
-      port map(bcount(2) => \bcount[2]_net_1\, bcount(1) => 
-        \bcount[1]_net_1\, bcount(0) => \bcount[0]_net_1\, 
+      port map(ba_4(1) => \sd_ctl_p.ba_4[1]\, ba_4(0) => 
+        \sd_ctl_p.ba_4[0]\, raddr(26) => raddr(26), raddr(25) => 
+        raddr(25), raddr(24) => raddr(24), raddr(23) => raddr(23), 
         raddr(22) => raddr(22), raddr(21) => raddr(21), raddr(20)
          => raddr(20), raddr(19) => raddr(19), raddr(18) => 
         raddr(18), raddr(17) => raddr(17), raddr(16) => raddr(16), 
         raddr(15) => raddr(15), raddr(14) => raddr(14), raddr(13)
          => raddr(13), raddr(12) => raddr(12), raddr(11) => 
-        raddr(11), raddr(10) => raddr(10), line_i_1(11) => 
-        \line_i_1[11]\, line_i_1(10) => \line_i_1[10]\, 
-        line_i_1(9) => \line_i_1[9]\, line_i_1(8) => 
-        \line_i_1[8]\, line_i_1(7) => \line_i_1[7]\, line_i_1(6)
-         => \line_i_1[6]\, line_i_1(5) => \line_i_1[5]\, 
-        line_i_1(4) => \line_i_1[4]\, line_i_1(3) => 
-        \line_i_1[3]\, line_i_1(2) => \line_i_1[2]\, line_i_1(1)
-         => \line_i_1[1]\, line_i_1(0) => \line_i_1[0]\, sa_5_0
-         => \sd_ctl_p.sa_5[9]\, sa_5_2 => \sd_ctl_p.sa_5[11]\, 
-        prch_0 => \prch[1]_net_1\, dorw_0 => \dorw[1]_net_1\, 
-        actable_0 => \actable[1]\, rwable_0 => \rwable[1]\, 
-        pcable_0 => \pcable[1]\, chip_i_1_0 => \chip_i_1[0]\, 
-        active_0 => \active[1]\, goact_0 => \goact[1]_net_1\, pch
-         => \pch\, un8_precharge => 
-        \sd_ctl_p.un8_precharge_net_1\, act => \act\, read_cmd
-         => \read_cmd\, precharge => \precharge\, cas_n_1 => 
-        \sd_ctl_p.cas_n_1\, un1_precharge_5_i_0 => 
-        un1_precharge_5_i_0, ras_n_1 => \sd_ctl_p.ras_n_1\, 
-        un1_precharge_3_i_0 => un1_precharge_3_i_0, cke => 
-        cke_net_1, mode => \mode\, refresh => \refresh\, clk => 
-        clk, reset_n => reset_n);
+        raddr(11), raddr(10) => raddr(10), bcount(2) => 
+        \bcount[2]_net_1\, bcount(1) => \bcount[1]_net_1\, 
+        bcount(0) => \bcount[0]_net_1\, chip_i_1(1) => 
+        \chip_i_1[1]\, chip_i_1(0) => \chip_i_1[0]\, line_i_1(12)
+         => \line_i_1[12]\, line_i_1(11) => \line_i_1[11]\, 
+        line_i_1(10) => \line_i_1[10]\, line_i_1(9) => 
+        \line_i_1[9]\, line_i_1(8) => \line_i_1[8]\, line_i_1(7)
+         => \line_i_1[7]\, line_i_1(6) => \line_i_1[6]\, 
+        line_i_1(5) => \line_i_1[5]\, line_i_1(4) => 
+        \line_i_1[4]\, line_i_1(3) => \line_i_1[3]\, line_i_1(2)
+         => \line_i_1[2]\, line_i_1(1) => \line_i_1[1]\, 
+        line_i_1(0) => \line_i_1[0]\, prch_0 => \prch[1]_net_1\, 
+        ras_shift_0 => 
+        \openbank_gen.0.openbank_r1_i.ras_shift[0]\, dorw_0 => 
+        \dorw[1]_net_1\, actable_0 => \actable[1]\, rwable_0 => 
+        \rwable[1]\, pcable_0 => \pcable[1]\, active_0 => 
+        \active[1]\, goact_0 => \goact[1]_net_1\, N_118_i => 
+        N_118_i, we_n_2 => \sd_ctl_p.we_n_2\, N_792_i => N_792_i, 
+        read_cmd => \read_cmd\, cke => cke_net_1, un6_precharge
+         => \sd_ctl_p.un6_precharge\, un36_rw_i_1 => un36_rw_i_1, 
+        refresh => \refresh\, doread => \doread\, pch => \pch\, 
+        rw => \rw_ack\, act => \act\, un1_precharge_3_i_0 => 
+        un1_precharge_3_i_0, un1_pch_2_i => un1_pch_2_i, N_161_i
+         => N_161_i, mode => \mode\, precharge => \precharge\, 
+        bterm => \bterm\, clk => clk, reset_n => reset_n);
+    
+    \sd_ctl_p.cs_n_35_m1_i_a2[0]\ : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \oldchip[0]_net_1\, B => \oldchip[1]_net_1\, 
+        Y => N_123);
     
     \cmd_p.2.un1_rowaddr_int_0_I_15\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(15), B => \line_i_2[4]\, C => 
-        \line_i_2[5]\, D => raddr(14), FCI => 
+      port map(A => raddr(17), B => \line_i_2[4]\, C => 
+        \line_i_2[5]\, D => raddr(16), FCI => 
         \cmd_p.2.un1_rowaddr_int_0_data_tmp[1]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[2]\);
     
-    \rc_p.un72_rw_1.rc_p.rcount_8[1]\ : CFG4
-      generic map(INIT => x"0509")
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46[4]\ : CFG4
+      generic map(INIT => x"80DF")
 
-      port map(A => N_422, B => N_421, C => un1_rcount21, D => 
-        rc_zero_0_sqmuxa, Y => \rc_p.rcount_8[1]\);
+      port map(A => N_792_i, B => \rshift[4]_net_1\, C => 
+        un1_rw_11_i, D => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[4]_net_1\, Y
+         => \data_flow_ctrl_p.rshift_46[4]\);
     
-    \rc_p.un83_rw_1.un1_wc_zero_1_sqmuxa_i\ : CFG4
-      generic map(INIT => x"0F01")
+    \sd_ctl_p.cs_n_35_1\ : CFG4
+      generic map(INIT => x"00E0")
 
-      port map(A => \wc_p.un4_wc_zero\, B => \rc_p.un78_rw_net_1\, 
-        C => wc_zero_0_sqmuxa, D => 
-        \rc_p.un83_rw_1.un1_wc_zero_1_sqmuxa_i_a3_0_1_net_1\, Y
-         => un1_wc_zero_1_sqmuxa_i);
+      port map(A => raddr(25), B => raddr(26), C => N_125, D => 
+        N_89, Y => \sd_ctl_p.cs_n_35_1_net_1\);
     
-    \dqs_contention_p.un40_rw\ : CFG2
-      generic map(INIT => x"E")
+    \sd_ctl_p.sa_5[2]\ : CFG4
+      generic map(INIT => x"0A0C")
 
-      port map(A => \dqs_contention_p.un11_r_req_net_1\, B => 
-        \rw_ack\, Y => \dqs_contention_p.un40_rw_net_1\);
+      port map(A => raddr(14), B => raddr(2), C => N_88, D => 
+        \act\, Y => \sd_ctl_p.sa_5[2]_net_1\);
+    
+    new_cmd_RNO : CFG4
+      generic map(INIT => x"CCC4")
+
+      port map(A => N_780, B => N_83, C => w_req, D => r_req, Y
+         => N_771_i);
+    
+    \un1_bcount_1_1.wc_p.wcount_5[2]\ : CFG4
+      generic map(INIT => x"0069")
+
+      port map(A => \un1_bcount[1]\, B => N_792_i, C => 
+        \un1_bcount_1_1.CO1\, D => un1_wcount17, Y => 
+        \wc_p.wcount_5[2]\);
     
     \sa[3]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[3]\, CLK => clk, EN => 
+      port map(D => \sd_ctl_p.sa_5[3]_net_1\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(3));
     
@@ -32802,32 +33302,32 @@ begin
         \wc_zero\);
     
     precharge : SLE
-      port map(D => \act_p.un9_prch_cmd_net_1\, CLK => clk, EN
-         => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+      port map(D => \act_p.un9_prch_cmd\, CLK => clk, EN => 
+        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \precharge\);
-    
-    \rc_p.un72_rw_1.rc_p.rcount_8[2]\ : CFG3
-      generic map(INIT => x"21")
-
-      port map(A => N_423, B => un1_rcount21, C => 
-        \un16_1.CO1_net_1\, Y => \rc_p.rcount_8[2]\);
     
     \cmd_p.2.un1_rowaddr_int_0_I_27\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(19), B => \line_i_2[8]\, C => 
-        \line_i_2[9]\, D => raddr(18), FCI => 
-        \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[4]\);
+      port map(A => raddr(19), B => \line_i_2[6]\, C => 
+        \line_i_2[7]\, D => raddr(18), FCI => 
+        \cmd_p.2.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.2.un1_rowaddr_int_0_data_tmp[3]\);
+    
+    \raddr_RNIPT05_1[25]\ : CFG2
+      generic map(INIT => x"B")
+
+      port map(A => raddr(25), B => raddr(26), Y => 
+        \sd_ctl_p.2.op_eq.cs_n49_i\);
     
     \cmd_p.1.un1_rowaddr_int_0_I_27\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(19), B => \line_i_1[8]\, C => 
-        \line_i_1[9]\, D => raddr(18), FCI => 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[4]\);
+      port map(A => raddr(19), B => \line_i_1[6]\, C => 
+        \line_i_1[7]\, D => raddr(18), FCI => 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[2]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\);
     
     \dorw[2]\ : SLE
       port map(D => \act_p.2.un155_rdwr_cmd\, CLK => clk, EN => 
@@ -32835,79 +33335,95 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \dorw[2]_net_1\);
     
-    \sd_ctl_p.sa_5[6]\ : CFG4
-      generic map(INIT => x"C840")
+    \sd_ctl_p.cs_n_35[2]\ : CFG3
+      generic map(INIT => x"FE")
 
-      port map(A => \act\, B => \sd_ctl_p.sa_5_sn_N_4_mux\, C => 
-        raddr(6), D => raddr(16), Y => \sd_ctl_p.sa_5[6]_net_1\);
+      port map(A => \sd_ctl_p.cs_n_35_10_net_1\, B => 
+        \sd_ctl_p.cs_n_35_9_net_1\, C => 
+        \sd_ctl_p.cs_n_35_7_net_1\, Y => 
+        \sd_ctl_p.cs_n_35[2]_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns_RNI7DFH[2]\ : CFG2
-      generic map(INIT => x"1")
-
-      port map(A => N_813, B => N_802, Y => N_792_i);
-    
-    \ras_n\ : SLE
-      port map(D => \sd_ctl_p.ras_n_1\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => ras_n);
-    
-    \dqm_bterm_p.un23_bterm\ : CFG2
+    dowrite_RNI7C7C : CFG2
       generic map(INIT => x"8")
 
-      port map(A => \bterm\, B => \w_valid\, Y => 
-        \dqm_bterm_p.un23_bterm_net_1\);
+      port map(A => \rw_ack\, B => \dowrite\, Y => N_109);
+    
+    \un1_bcount_1_1.wc_p.wcount_5_1[3]\ : CFG3
+      generic map(INIT => x"7E")
+
+      port map(A => N_792_i, B => \un1_bcount[1]\, C => 
+        \un1_bcount_1_1.CO1\, Y => 
+        \un1_bcount_1_1.wc_p.wcount_5_1[3]_net_1\);
+    
+    \sd_ctl_p.sa_5_1[1]\ : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => raddr(13), B => \act\, C => raddr(1), Y => 
+        \sd_ctl_p.sa_5_1[1]_net_1\);
+    
+    \sd_ctl_p.cas_n_1_0_a2\ : CFG2
+      generic map(INIT => x"2")
+
+      port map(A => un1_precharge_3_i_0, B => \refresh\, Y => 
+        \sd_ctl_p.cas_n_1\);
+    
+    \ras_n\ : SLE
+      port map(D => N_118_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => \sa[13]\, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => ras_n);
     
     \openbank_gen.0.openbank_r1_i\ : openbank_1
       port map(bcount(2) => \bcount[2]_net_1\, bcount(1) => 
         \bcount[1]_net_1\, bcount(0) => \bcount[0]_net_1\, 
-        raddr(22) => raddr(22), raddr(21) => raddr(21), raddr(20)
-         => raddr(20), raddr(19) => raddr(19), raddr(18) => 
-        raddr(18), raddr(17) => raddr(17), raddr(16) => raddr(16), 
-        raddr(15) => raddr(15), raddr(14) => raddr(14), raddr(13)
-         => raddr(13), raddr(12) => raddr(12), raddr(11) => 
-        raddr(11), raddr(10) => raddr(10), line_i_0(11) => 
-        \line_i_0[11]\, line_i_0(10) => \line_i_0[10]\, 
-        line_i_0(9) => \line_i_0[9]\, line_i_0(8) => 
-        \line_i_0[8]\, line_i_0(7) => \line_i_0[7]\, line_i_0(6)
-         => \line_i_0[6]\, line_i_0(5) => \line_i_0[5]\, 
-        line_i_0(4) => \line_i_0[4]\, line_i_0(3) => 
-        \line_i_0[3]\, line_i_0(2) => \line_i_0[2]\, line_i_0(1)
-         => \line_i_0[1]\, line_i_0(0) => \line_i_0[0]\, prch_0
-         => \prch[0]_net_1\, dorw_0 => \dorw[0]_net_1\, actable_0
-         => \actable[0]\, rwable_0 => \rwable[0]\, pcable_0 => 
-        \pcable[0]\, chip_i_0_0 => \chip_i_0[0]\, active_0 => 
-        \active[0]\, goact_0 => \goact[0]_net_1\, refresh => 
-        \refresh\, mode => \mode\, act => \act\, read_cmd => 
-        \read_cmd\, precharge => \precharge\, cke => cke_net_1, 
-        clk => clk, reset_n => reset_n);
+        raddr(26) => raddr(26), raddr(25) => raddr(25), raddr(24)
+         => raddr(24), raddr(23) => raddr(23), raddr(22) => 
+        raddr(22), raddr(21) => raddr(21), raddr(20) => raddr(20), 
+        raddr(19) => raddr(19), raddr(18) => raddr(18), raddr(17)
+         => raddr(17), raddr(16) => raddr(16), raddr(15) => 
+        raddr(15), raddr(14) => raddr(14), raddr(13) => raddr(13), 
+        raddr(12) => raddr(12), chip_i_0(1) => \chip_i_0[1]\, 
+        chip_i_0(0) => \chip_i_0[0]\, line_i_0(12) => 
+        \line_i_0[12]\, line_i_0(11) => \line_i_0[11]\, 
+        line_i_0(10) => \line_i_0[10]\, line_i_0(9) => 
+        \line_i_0[9]\, line_i_0(8) => \line_i_0[8]\, line_i_0(7)
+         => \line_i_0[7]\, line_i_0(6) => \line_i_0[6]\, 
+        line_i_0(5) => \line_i_0[5]\, line_i_0(4) => 
+        \line_i_0[4]\, line_i_0(3) => \line_i_0[3]\, line_i_0(2)
+         => \line_i_0[2]\, line_i_0(1) => \line_i_0[1]\, 
+        line_i_0(0) => \line_i_0[0]\, lnht_cmd_0 => 
+        \lnht_cmd[0]_net_1\, rdwr_cmd_0 => \rdwr_cmd[0]_net_1\, 
+        prch_0 => \prch[0]_net_1\, dorw_0 => \dorw[0]_net_1\, 
+        actable_0 => \actable[0]\, rwable_0 => \rwable[0]\, 
+        pcable_0 => \pcable[0]\, active_0 => \active[0]\, goact_0
+         => \goact[0]_net_1\, ras_shift_0 => 
+        \openbank_gen.0.openbank_r1_i.ras_shift[0]\, 
+        un96_rdwr_cmd => \act_p.0.un96_rdwr_cmd\, N_95_1 => 
+        N_95_1, refresh => \refresh\, read_cmd => \read_cmd\, cke
+         => cke_net_1, precharge => \precharge\, pch => \pch\, 
+        mode => \mode\, clk => clk, reset_n => reset_n, act => 
+        \act\);
     
     bdzero : SLE
-      port map(D => \bterm_p.bdzero_2\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => \sa[13]\, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => \bdzero\);
-    
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_a3[3]\ : CFG4
-      generic map(INIT => x"007E")
-
-      port map(A => \bcount[2]_net_1\, B => \bcount[1]_net_1\, C
-         => \rc_p.un78_rw_net_1\, D => \wc_p.un4_wc_zero\, Y => 
-        N_56);
+      port map(D => N_60_i, CLK => clk, EN => VCC_net_1, ALn => 
+        reset_n, ADn => \sa[13]\, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \bdzero\);
     
     \wshift[1]\ : SLE
-      port map(D => \wshift_13[1]\, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \wshift[1]_net_1\);
+      port map(D => N_104_mux_i, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \wshift[1]_net_1\);
     
     \rshift[1]\ : SLE
-      port map(D => N_797_i, CLK => clk, EN => VCC_net_1, ALn => 
-        reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \sa[13]\, LAT => \sa[13]\, Q => \rshift[1]_net_1\);
+      port map(D => \data_flow_ctrl_p.rshift_46[1]\, CLK => clk, 
+        EN => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
+        \rshift[1]_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_x2[1]\ : CFG2
-      generic map(INIT => x"6")
+    \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_0\ : CFG2
+      generic map(INIT => x"1")
 
-      port map(A => \wcount[0]_net_1\, B => \wcount[1]_net_1\, Y
-         => N_40_i);
+      port map(A => raddr(10), B => raddr(11), Y => 
+        \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_0_net_1\);
     
     \dorw[3]\ : SLE
       port map(D => \act_p.3.un197_rdwr_cmd\, CLK => clk, EN => 
@@ -32918,14 +33434,21 @@ begin
     \cmd_p.1.un1_rowaddr_int_0_I_1\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(11), B => \line_i_1[0]\, C => 
-        \line_i_1[1]\, D => raddr(10), FCI => \sa[13]\, S => OPEN, 
+      port map(A => raddr(13), B => \line_i_1[0]\, C => 
+        \line_i_1[1]\, D => raddr(12), FCI => \sa[13]\, S => OPEN, 
         Y => OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[0]\);
     
     \wshift[5]\ : SLE
-      port map(D => \wshift_13[5]\, CLK => clk, EN => VCC_net_1, 
-        ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => \sa[13]\, LAT => \sa[13]\, Q => \wshift[5]_net_1\);
+      port map(D => N_100_mux_i, CLK => clk, EN => VCC_net_1, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \wshift[5]_net_1\);
+    
+    \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[4]\ : CFG3
+      generic map(INIT => x"1B")
+
+      port map(A => N_792_i, B => \rshift[5]_net_1\, C => 
+        \bcount[2]_net_1\, Y => 
+        \un1_bcount_1_1.data_flow_ctrl_p.rshift_46_1[4]_net_1\);
     
     \rshift[5]\ : SLE
       port map(D => \data_flow_ctrl_p.rshift_46[5]\, CLK => clk, 
@@ -32933,9 +33456,24 @@ begin
          => VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \rshift[5]_net_1\);
     
+    \cmd_p.0.un1_line_i_0_0_I_21_RNO\ : CFG4
+      generic map(INIT => x"B9A8")
+
+      port map(A => \chip_i_0[1]\, B => \chip_i_0[0]\, C => 
+        \sd_ctl_p.2.op_eq.cs_n49_i\, D => 
+        \sd_ctl_p.0.op_eq.cs_n35_i\, Y => 
+        \cmd_p.0.un1_line_i_0_0_I_21_RNO_net_1\);
+    
+    \rshift_RNO[2]\ : CFG4
+      generic map(INIT => x"02F7")
+
+      port map(A => N_792_i, B => N_81, C => un1_rw_11_i, D => 
+        \data_flow_ctrl_p.rshift_46_1[2]\, Y => 
+        \data_flow_ctrl_p.rshift_46[2]\);
+    
     \sa[8]\ : SLE
-      port map(D => \sd_ctl_p.sa_5[8]\, CLK => clk, EN => 
-        VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
+      port map(D => \sd_ctl_p.sa_5_i_m2[8]_net_1\, CLK => clk, EN
+         => VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => sa(8));
     
     read_cmd : SLE
@@ -32943,27 +33481,17 @@ begin
         reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \sa[13]\, LAT => \sa[13]\, Q => \read_cmd\);
     
-    \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0[6]\ : CFG4
-      generic map(INIT => x"80DF")
+    \un16_1.un1_mode_cmd_1[1]\ : CFG3
+      generic map(INIT => x"D8")
 
-      port map(A => \rc_p.un78_rw_net_1\, B => \rshift[6]_net_1\, 
-        C => un1_rw_11_i, D => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_0_1[6]_net_1\, 
-        Y => \data_flow_ctrl_p.rshift_46[6]\);
+      port map(A => \rc_p.un8_rc_zero_net_1\, B => 
+        \rcount[2]_net_1\, C => \bcount[2]_net_1\, Y => N_441);
     
-    \rc_p.un83_rw_1.N_796_i\ : CFG4
-      generic map(INIT => x"8AD5")
+    \sd_ctl_p.cs_n_35_2\ : CFG4
+      generic map(INIT => x"E000")
 
-      port map(A => \rc_p.un78_rw_net_1\, B => \rshift[2]_net_1\, 
-        C => un1_rw_11_i, D => \rc_p.un83_rw_1.N_796_i_1_net_1\, 
-        Y => N_796_i);
-    
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns[2]\ : CFG4
-      generic map(INIT => x"2DD2")
-
-      port map(A => \wc_p.un4_wc_zero\, B => \wcount[2]_net_1\, C
-         => \rc_p.un83_rw_1.wc_p.wcount_5_i_m3_ns_1[2]_net_1\, D
-         => \rc_p.un78_rw_net_1\, Y => N_813);
+      port map(A => \pchaddr[0]_net_1\, B => \pchaddr[1]_net_1\, 
+        C => N_125, D => N_89, Y => \sd_ctl_p.cs_n_35_2_net_1\);
     
     dowrite_RNO : CFG1
       generic map(INIT => "01")
@@ -32974,8 +33502,7 @@ begin
       generic map(INIT => x"0080")
 
       port map(A => \rdwr_cmd[2]_net_1\, B => \actable[2]\, C => 
-        N_125, D => \goact[2]_net_1\, Y => 
-        \act_p.2.un42_rdwr_cmd\);
+        N_99, D => \goact[2]_net_1\, Y => \act_p.2.un42_rdwr_cmd\);
     
     refresh : SLE
       port map(D => \act_p.un13_rfsh_cmd\, CLK => clk, EN => 
@@ -32983,72 +33510,107 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \refresh\);
     
+    ack_RNO : CFG4
+      generic map(INIT => x"AAAB")
+
+      port map(A => \rw_ack\, B => \ack\, C => N_59, D => N_102, 
+        Y => N_94_i_0);
+    
     \goact[1]\ : SLE
       port map(D => \act_p.1.un30_rdwr_cmd\, CLK => clk, EN => 
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \goact[1]_net_1\);
     
+    \cmd_p.rdwr_cmd_3_115_a2_0_a2\ : CFG4
+      generic map(INIT => x"8880")
+
+      port map(A => \cmd_p.rdwr_cmd_3_115_a2_0_a2_0\, B => N_780, 
+        C => w_req, D => r_req, Y => 
+        \cmd_p.rdwr_cmd_3_115_a2_0_a2_net_1\);
+    
     \cmd_p.1.un1_rowaddr_int_0_I_33\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(21), B => \line_i_1[10]\, C => 
-        \line_i_1[11]\, D => raddr(20), FCI => 
+      port map(A => raddr(23), B => \line_i_1[10]\, C => 
+        \line_i_1[11]\, D => raddr(22), FCI => 
         \cmd_p.1.un1_rowaddr_int_0_data_tmp[4]\, S => OPEN, Y => 
         OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[5]\);
     
     \cmd_p.0.un1_line_i_0_0_I_1\ : ARI1
       generic map(INIT => x"68421")
 
-      port map(A => raddr(11), B => \line_i_0[0]\, C => 
-        \line_i_0[1]\, D => raddr(10), FCI => \sa[13]\, S => OPEN, 
+      port map(A => raddr(13), B => \line_i_0[0]\, C => 
+        \line_i_0[1]\, D => raddr(12), FCI => \sa[13]\, S => OPEN, 
         Y => OPEN, FCO => \cmd_p.0.un1_line_i_0_0_data_tmp[0]\);
     
-    \rc_p.un83_rw_1.N_795_i\ : CFG4
-      generic map(INIT => x"00BF")
+    \bcount_RNISBIK[2]\ : CFG2
+      generic map(INIT => x"8")
 
-      port map(A => \rshift[4]_net_1\, B => \rc_p.un78_rw_net_1\, 
-        C => un1_rw_11_i, D => 
-        \rc_p.un83_rw_1.data_flow_ctrl_p.rshift_46_i_0[4]_net_1\, 
-        Y => N_795_i);
+      port map(A => N_109, B => \bcount[2]_net_1\, Y => 
+        rcount_2_sqmuxa);
     
-    \cmd_p.1.un1_rowaddr_int_0_I_45\ : ARI1
-      generic map(INIT => x"69900")
-
-      port map(A => VCC_net_1, B => \chip_i_1[0]\, C => raddr(22), 
-        D => \sa[13]\, FCI => 
-        \cmd_p.1.un1_rowaddr_int_0_data_tmp[5]\, S => OPEN, Y => 
-        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_N_2\);
-    
-    un1_cs_n_0_sqmuxa_0_0 : CFG4
-      generic map(INIT => x"5530")
-
-      port map(A => \oldchip[0]_net_1\, B => \pchaddr[0]_net_1\, 
-        C => \pch\, D => \bterm\, Y => un1_cs_n_0_sqmuxa_0);
-    
-    \rc_p.un83_rw_1.CO2_i_a2_i_o3\ : CFG3
-      generic map(INIT => x"F8")
+    \bcount_RNISR0P_0[0]\ : CFG3
+      generic map(INIT => x"04")
 
       port map(A => \bcount[0]_net_1\, B => \bcount[1]_net_1\, C
-         => \bcount[2]_net_1\, Y => N_812);
+         => \bcount[2]_net_1\, Y => \bterm_p.op_eq.un28_rw\);
     
-    \sd_ctl_p.ba_5[1]\ : CFG3
-      generic map(INIT => x"02")
+    \cmd_p.2.un1_rowaddr_int_0_I_21_RNO\ : CFG4
+      generic map(INIT => x"B9A8")
 
-      port map(A => raddr(9), B => \precharge\, C => \mode\, Y
-         => \sd_ctl_p.ba_5[1]_net_1\);
+      port map(A => \chip_i_2[1]\, B => \chip_i_2[0]\, C => 
+        \sd_ctl_p.2.op_eq.cs_n49_i\, D => 
+        \sd_ctl_p.0.op_eq.cs_n35_i\, Y => 
+        \cmd_p.2.un1_rowaddr_int_0_I_21_RNO_net_1\);
     
-    \rc_p.un83_rw_1.wc_p.wcount_5_i_o2_0[3]\ : CFG3
-      generic map(INIT => x"7E")
+    \cmd_p.1.un1_rowaddr_int_0_I_45\ : ARI1
+      generic map(INIT => x"68421")
 
-      port map(A => \rc_p.un78_rw_net_1\, B => \wcount[2]_net_1\, 
-        C => N_798, Y => N_808);
+      port map(A => raddr(21), B => \line_i_1[8]\, C => 
+        \line_i_1[9]\, D => raddr(20), FCI => 
+        \cmd_p.1.un1_rowaddr_int_0_data_tmp[3]\, S => OPEN, Y => 
+        OPEN, FCO => \cmd_p.1.un1_rowaddr_int_0_data_tmp[4]\);
+    
+    rfsh_cmd_RNO : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \ack\, B => rf_req, Y => \rfsh_cmd_RNO\);
+    
+    \sd_ctl_p.sa_5[3]\ : CFG4
+      generic map(INIT => x"0A0C")
+
+      port map(A => raddr(15), B => raddr(3), C => N_88, D => 
+        \act\, Y => \sd_ctl_p.sa_5[3]_net_1\);
+    
+    \act_p.0.un96_rdwr_cmd_0_a2_1\ : CFG2
+      generic map(INIT => x"4")
+
+      port map(A => \bterm_cmd\, B => \pcable[0]\, Y => N_95_1);
+    
+    \bcount_RNI9ULG[1]\ : CFG2
+      generic map(INIT => x"1")
+
+      port map(A => \bcount[2]_net_1\, B => \bcount[1]_net_1\, Y
+         => N_26_0);
+    
+    \act_p.un9_prch_cmd_0_a2_4\ : CFG4
+      generic map(INIT => x"4000")
+
+      port map(A => \precharge\, B => N_54, C => \pcable[3]\, D
+         => \pcable[2]\, Y => \act_p.un9_prch_cmd_0_a2_4_net_1\);
+    
+    \cmd_p.rdwr_cmd_3_1_83_a2_0_a2\ : CFG4
+      generic map(INIT => x"8880")
+
+      port map(A => \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_0_net_1\, B
+         => N_780, C => w_req, D => r_req, Y => 
+        \cmd_p.rdwr_cmd_3_1_83_a2_0_a2_net_1\);
     
     prch_cmd : SLE
-      port map(D => \cmd_p.un4_p_req_0_49_a2_0_a2\, CLK => clk, 
-        EN => N_116_i, ALn => reset_n, ADn => VCC_net_1, SLn => 
-        VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
-        \prch_cmd\);
+      port map(D => \prch_cmd_RNO\, CLK => clk, EN => N_83, ALn
+         => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \sa[13]\, LAT => \sa[13]\, Q => \prch_cmd\);
     
 
 end DEF_ARCH; 
@@ -33079,7 +33641,7 @@ entity fastinit is
           rowbits  : in    std_logic_vector(1 downto 0);
           sa       : out   std_logic_vector(13 downto 0);
           ba       : out   std_logic_vector(1 downto 0);
-          cs_n     : out   std_logic_vector(0 to 0);
+          cs_n     : out   std_logic_vector(2 downto 0);
           clk      : in    std_logic;
           reset_n  : in    std_logic;
           r_req    : in    std_logic;
@@ -33189,7 +33751,7 @@ architecture DEF_ARCH of fastinit is
           rowbits         : in    std_logic_vector(1 downto 0) := (others => 'U');
           sa              : out   std_logic_vector(13 downto 0);
           ba              : out   std_logic_vector(1 downto 0);
-          cs_n            : out   std_logic_vector(0 to 0);
+          cs_n            : out   std_logic_vector(2 downto 0);
           clk             : in    std_logic := 'U';
           reset_n         : in    std_logic := 'U';
           sd_init         : in    std_logic := 'U';
@@ -33263,14 +33825,13 @@ architecture DEF_ARCH of fastinit is
         \timer_p.timer_reset_2_11_net_1\, 
         \timer_p.timer_reset_2_12_net_1\, un1_dll_holdoff_en2_i
          : std_logic;
-    signal nc2, nc1 : std_logic;
+    signal nc1 : std_logic;
 
     for all : fastsdram
 	Use entity work.fastsdram(DEF_ARCH);
 begin 
 
     sa(13) <= \sa[13]\;
-    sa(12) <= \sa[13]\;
     d_req <= \sa[13]\;
 
     \timer[6]\ : SLE
@@ -33280,7 +33841,7 @@ begin
         \timer[6]_net_1\);
     
     \timer_RNO[12]\ : CFG3
-      generic map(INIT => x"FE")
+      generic map(INIT => x"10")
 
       port map(A => \load\, B => \timer_reset\, C => 
         un4_timer_cry_12_S, Y => \timer_p.timer_6[12]\);
@@ -33290,6 +33851,12 @@ begin
 
       port map(A => \timer[1]_net_1\, B => \timer[15]_net_1\, Y
          => \timer_p.timer_reset_2_0_net_1\);
+    
+    \timer_RNO[7]\ : CFG3
+      generic map(INIT => x"10")
+
+      port map(A => \load\, B => \timer_reset\, C => 
+        un4_timer_cry_7_S, Y => \timer_p.timer_6[7]\);
     
     \timer[11]\ : SLE
       port map(D => \timer_p.timer_6[11]\, CLK => clk, EN => 
@@ -33365,12 +33932,6 @@ begin
         ALn => reset_n, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => \sa[13]\, LAT => \sa[13]\, Q => \dqm_init_d1\);
     
-    \timer_p.timer_6_f0[11]\ : CFG3
-      generic map(INIT => x"32")
-
-      port map(A => \load\, B => \timer_reset\, C => 
-        un4_timer_cry_11_S, Y => \timer_p.timer_6[11]\);
-    
     un4_timer_cry_14 : ARI1
       generic map(INIT => x"65500")
 
@@ -33411,6 +33972,12 @@ begin
       port map(A => VCC_net_1, B => \timer[13]_net_1\, C => 
         \sa[13]\, D => \sa[13]\, FCI => \un4_timer_cry_12\, S => 
         un4_timer_cry_13_S, Y => OPEN, FCO => \un4_timer_cry_13\);
+    
+    \timer_RNO[11]\ : CFG3
+      generic map(INIT => x"10")
+
+      port map(A => \load\, B => \timer_reset\, C => 
+        un4_timer_cry_11_S, Y => \timer_p.timer_6[11]\);
     
     timer_reset : SLE
       port map(D => \timer_p.timer_reset_2_net_1\, CLK => clk, EN
@@ -33461,7 +34028,7 @@ begin
         \sa[13]\, Q => \m_req\);
     
     \timer_RNO[13]\ : CFG3
-      generic map(INIT => x"10")
+      generic map(INIT => x"FE")
 
       port map(A => \load\, B => \timer_reset\, C => 
         un4_timer_cry_13_S, Y => \timer_p.timer_6[13]\);
@@ -33484,17 +34051,17 @@ begin
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \r_shift[9]_net_1\);
     
-    \timer_RNO[10]\ : CFG3
-      generic map(INIT => x"10")
-
-      port map(A => \load\, B => \timer_reset\, C => 
-        un4_timer_cry_10_S, Y => \timer_p.timer_6[10]\);
-    
     \dqm_init_p.un6_m_req\ : CFG2
       generic map(INIT => x"8")
 
       port map(A => \m_req\, B => s_ack, Y => 
         \dqm_init_p.un6_m_req_net_1\);
+    
+    \timer_p.timer_6_f0[10]\ : CFG3
+      generic map(INIT => x"32")
+
+      port map(A => \load\, B => \timer_reset\, C => 
+        un4_timer_cry_10_S, Y => \timer_p.timer_6[10]\);
     
     load : SLE
       port map(D => \sa[13]\, CLK => clk, EN => VCC_net_1, ALn
@@ -33572,6 +34139,12 @@ begin
         \sa[13]\, D => \sa[13]\, FCI => \un4_timer_cry_4\, S => 
         un4_timer_cry_5_S, Y => OPEN, FCO => \un4_timer_cry_5\);
     
+    \timer_p.timer_6_f0[8]\ : CFG3
+      generic map(INIT => x"32")
+
+      port map(A => \load\, B => \timer_reset\, C => 
+        un4_timer_cry_8_S, Y => \timer_p.timer_6[8]\);
+    
     un4_timer_cry_1 : ARI1
       generic map(INIT => x"65500")
 
@@ -33596,8 +34169,8 @@ begin
     fastsdram_1 : fastsdram
       port map(raddr(30) => \sa[13]\, raddr(29) => \sa[13]\, 
         raddr(28) => \sa[13]\, raddr(27) => \sa[13]\, raddr(26)
-         => \sa[13]\, raddr(25) => \sa[13]\, raddr(24) => 
-        \sa[13]\, raddr(23) => \sa[13]\, raddr(22) => raddr(22), 
+         => raddr(26), raddr(25) => raddr(25), raddr(24) => 
+        raddr(24), raddr(23) => raddr(23), raddr(22) => raddr(22), 
         raddr(21) => raddr(21), raddr(20) => raddr(20), raddr(19)
          => raddr(19), raddr(18) => raddr(18), raddr(17) => 
         raddr(17), raddr(16) => raddr(16), raddr(15) => raddr(15), 
@@ -33609,33 +34182,34 @@ begin
         raddr(2) => raddr(2), raddr(1) => raddr(1), raddr(0) => 
         raddr(0), b_size(3) => \sa[13]\, b_size(2) => b_size(2), 
         b_size(1) => b_size(1), b_size(0) => b_size(0), ras(3)
-         => \sa[13]\, ras(2) => \sa[13]\, ras(1) => VCC_net_1, 
-        ras(0) => \sa[13]\, rcd(2) => \sa[13]\, rcd(1) => 
+         => \sa[13]\, ras(2) => VCC_net_1, ras(1) => \sa[13]\, 
+        ras(0) => VCC_net_1, rcd(2) => \sa[13]\, rcd(1) => 
         VCC_net_1, rcd(0) => \sa[13]\, rrd(1) => VCC_net_1, 
         rrd(0) => \sa[13]\, rp(2) => \sa[13]\, rp(1) => VCC_net_1, 
-        rp(0) => VCC_net_1, rc(3) => VCC_net_1, rc(2) => \sa[13]\, 
+        rp(0) => \sa[13]\, rc(3) => VCC_net_1, rc(2) => \sa[13]\, 
         rc(1) => \sa[13]\, rc(0) => \sa[13]\, rfc(3) => VCC_net_1, 
         rfc(2) => \sa[13]\, rfc(1) => \sa[13]\, rfc(0) => 
-        VCC_net_1, wr(1) => VCC_net_1, wr(0) => \sa[13]\, mrd(2)
+        \sa[13]\, wr(1) => VCC_net_1, wr(0) => \sa[13]\, mrd(2)
          => \sa[13]\, mrd(1) => VCC_net_1, mrd(0) => \sa[13]\, 
         cl(2) => \sa[13]\, cl(1) => VCC_net_1, cl(0) => \sa[13]\, 
         bl(1) => VCC_net_1, bl(0) => VCC_net_1, ds(1) => \sa[13]\, 
-        ds(0) => \sa[13]\, colbits(2) => \sa[13]\, colbits(1) => 
-        VCC_net_1, colbits(0) => VCC_net_1, rowbits(1) => 
-        \sa[13]\, rowbits(0) => VCC_net_1, sa(13) => nc2, sa(12)
-         => nc1, sa(11) => sa(11), sa(10) => sa(10), sa(9) => 
+        ds(0) => \sa[13]\, colbits(2) => VCC_net_1, colbits(1)
+         => \sa[13]\, colbits(0) => VCC_net_1, rowbits(1) => 
+        VCC_net_1, rowbits(0) => \sa[13]\, sa(13) => nc1, sa(12)
+         => sa(12), sa(11) => sa(11), sa(10) => sa(10), sa(9) => 
         sa(9), sa(8) => sa(8), sa(7) => sa(7), sa(6) => sa(6), 
         sa(5) => sa(5), sa(4) => sa(4), sa(3) => sa(3), sa(2) => 
         sa(2), sa(1) => sa(1), sa(0) => sa(0), ba(1) => ba(1), 
-        ba(0) => ba(0), cs_n(0) => cs_n(0), clk => clk, reset_n
-         => reset_n, sd_init => \sa[13]\, r_req => \r_req_i\, 
-        w_req => \w_req_i\, auto_pch => \sa[13]\, rf_req => 
-        \rf_req\, p_req => p_req, m_req => \m_req\, 
-        m_req_dll_reset => \sa[13]\, em_req => \sa[13]\, cl_half
-         => \sa[13]\, regdimm => \sa[13]\, dqm_wr_bterm => 
-        dqm_wr_bterm, rw_ack => rw_ack, s_ack => s_ack, r_valid
-         => r_valid, w_valid => w_valid, d_req => OPEN, oe => oe, 
-        cke => cke, ras_n => ras_n, cas_n => cas_n, we_n => we_n);
+        ba(0) => ba(0), cs_n(2) => cs_n(2), cs_n(1) => cs_n(1), 
+        cs_n(0) => cs_n(0), clk => clk, reset_n => reset_n, 
+        sd_init => \sa[13]\, r_req => \r_req_i\, w_req => 
+        \w_req_i\, auto_pch => \sa[13]\, rf_req => \rf_req\, 
+        p_req => p_req, m_req => \m_req\, m_req_dll_reset => 
+        \sa[13]\, em_req => \sa[13]\, cl_half => \sa[13]\, 
+        regdimm => \sa[13]\, dqm_wr_bterm => dqm_wr_bterm, rw_ack
+         => rw_ack, s_ack => s_ack, r_valid => r_valid, w_valid
+         => w_valid, d_req => OPEN, oe => oe, cke => cke, ras_n
+         => ras_n, cas_n => cas_n, we_n => we_n);
     
     \m_shift[8]\ : SLE
       port map(D => \m_shift[9]_net_1\, CLK => clk, EN => 
@@ -33706,12 +34280,6 @@ begin
         VCC_net_1, ALn => reset_n, ADn => VCC_net_1, SLn => 
         VCC_net_1, SD => \sa[13]\, LAT => \sa[13]\, Q => 
         \timer[5]_net_1\);
-    
-    \timer_RNO[8]\ : CFG3
-      generic map(INIT => x"10")
-
-      port map(A => \load\, B => \timer_reset\, C => 
-        un4_timer_cry_8_S, Y => \timer_p.timer_6[8]\);
     
     rf_req : SLE
       port map(D => \r_shift[0]_net_1\, CLK => clk, EN => 
@@ -33850,12 +34418,6 @@ begin
         \sa[13]\, D => \sa[13]\, FCI => \un4_timer_cry_11\, S => 
         un4_timer_cry_12_S, Y => OPEN, FCO => \un4_timer_cry_12\);
     
-    \timer_p.timer_6_f0[7]\ : CFG3
-      generic map(INIT => x"32")
-
-      port map(A => \load\, B => \timer_reset\, C => 
-        un4_timer_cry_7_S, Y => \timer_p.timer_6[7]\);
-    
     un4_timer_cry_11 : ARI1
       generic map(INIT => x"65500")
 
@@ -33908,7 +34470,7 @@ entity CORESDR is
           ROWBITS  : in    std_logic_vector(1 downto 0);
           SA       : out   std_logic_vector(13 downto 0);
           BA       : out   std_logic_vector(1 downto 0);
-          CS_N     : out   std_logic_vector(0 to 0);
+          CS_N     : out   std_logic_vector(2 downto 0);
           CLK      : in    std_logic;
           RESET_N  : in    std_logic;
           R_REQ    : in    std_logic;
@@ -33942,6 +34504,11 @@ architecture DEF_ARCH of CORESDR is
           SD  : in    std_logic := 'U';
           LAT : in    std_logic := 'U';
           Q   : out   std_logic
+        );
+  end component;
+
+  component VCC
+    port( Y : out   std_logic
         );
   end component;
 
@@ -33979,7 +34546,7 @@ architecture DEF_ARCH of CORESDR is
           rowbits  : in    std_logic_vector(1 downto 0) := (others => 'U');
           sa       : out   std_logic_vector(13 downto 0);
           ba       : out   std_logic_vector(1 downto 0);
-          cs_n     : out   std_logic_vector(0 to 0);
+          cs_n     : out   std_logic_vector(2 downto 0);
           clk      : in    std_logic := 'U';
           reset_n  : in    std_logic := 'U';
           r_req    : in    std_logic := 'U';
@@ -34001,175 +34568,36 @@ architecture DEF_ARCH of CORESDR is
         );
   end component;
 
-  component VCC
-    port( Y : out   std_logic
-        );
-  end component;
-
     signal \r_req_in\, \w_req_in\, \SA[13]\, rw_ack_i, r_valid_i, 
         w_valid_i, \sa_i[0]\, \sa_i[1]\, \sa_i[2]\, \sa_i[3]\, 
         \sa_i[4]\, \sa_i[5]\, \sa_i[6]\, \sa_i[7]\, \sa_i[8]\, 
-        \sa_i[9]\, \sa_i[10]\, \sa_i[11]\, \ba_i[0]\, \ba_i[1]\, 
-        \cs_n_i[0]\, dqm_i, cke_i, ras_n_i, cas_n_i, we_n_i, 
-        VCC_net_1, \r_req_i\, \w_req_i\ : std_logic;
-    signal nc2, nc1 : std_logic;
+        \sa_i[9]\, \sa_i[10]\, \sa_i[11]\, \sa_i[12]\, \ba_i[0]\, 
+        \ba_i[1]\, \cs_n_i[0]\, \cs_n_i[1]\, \cs_n_i[2]\, dqm_i, 
+        cke_i, ras_n_i, cas_n_i, we_n_i, VCC_net_1, \r_req_i\, 
+        \w_req_i\ : std_logic;
+    signal nc1 : std_logic;
 
     for all : fastinit
 	Use entity work.fastinit(DEF_ARCH);
 begin 
 
     SA(13) <= \SA[13]\;
-    SA(12) <= \SA[13]\;
     D_REQ <= \SA[13]\;
 
-    \BA[1]\ : SLE
-      port map(D => \ba_i[1]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => BA(1));
-    
     \WE_N\ : SLE
       port map(D => we_n_i, CLK => CLK, EN => VCC_net_1, ALn => 
         VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => WE_N);
-    
-    \SA[7]\ : SLE
-      port map(D => \sa_i[7]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(7));
-    
-    \CS_N[0]\ : SLE
-      port map(D => \cs_n_i[0]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => CS_N(0));
     
     \RW_ACK\ : SLE
       port map(D => rw_ack_i, CLK => CLK, EN => VCC_net_1, ALn
          => RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => RW_ACK);
     
-    w_req_in : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => W_REQ, B => \w_req_i\, Y => \w_req_in\);
-    
-    \GND\ : GND
-      port map(Y => \SA[13]\);
-    
-    \SA[2]\ : SLE
-      port map(D => \sa_i[2]\, CLK => CLK, EN => VCC_net_1, ALn
+    \CS_N[0]\ : SLE
+      port map(D => \cs_n_i[0]\, CLK => CLK, EN => VCC_net_1, ALn
          => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(2));
-    
-    fastinit_1 : fastinit
-      port map(raddr(30) => \SA[13]\, raddr(29) => \SA[13]\, 
-        raddr(28) => \SA[13]\, raddr(27) => \SA[13]\, raddr(26)
-         => \SA[13]\, raddr(25) => \SA[13]\, raddr(24) => 
-        \SA[13]\, raddr(23) => \SA[13]\, raddr(22) => RADDR(22), 
-        raddr(21) => RADDR(21), raddr(20) => RADDR(20), raddr(19)
-         => RADDR(19), raddr(18) => RADDR(18), raddr(17) => 
-        RADDR(17), raddr(16) => RADDR(16), raddr(15) => RADDR(15), 
-        raddr(14) => RADDR(14), raddr(13) => RADDR(13), raddr(12)
-         => RADDR(12), raddr(11) => RADDR(11), raddr(10) => 
-        RADDR(10), raddr(9) => RADDR(9), raddr(8) => RADDR(8), 
-        raddr(7) => RADDR(7), raddr(6) => RADDR(6), raddr(5) => 
-        RADDR(5), raddr(4) => RADDR(4), raddr(3) => RADDR(3), 
-        raddr(2) => RADDR(2), raddr(1) => RADDR(1), raddr(0) => 
-        RADDR(0), b_size(3) => \SA[13]\, b_size(2) => B_SIZE(2), 
-        b_size(1) => B_SIZE(1), b_size(0) => B_SIZE(0), ras(3)
-         => \SA[13]\, ras(2) => \SA[13]\, ras(1) => VCC_net_1, 
-        ras(0) => \SA[13]\, rcd(2) => \SA[13]\, rcd(1) => 
-        VCC_net_1, rcd(0) => \SA[13]\, rrd(1) => VCC_net_1, 
-        rrd(0) => \SA[13]\, rp(2) => \SA[13]\, rp(1) => VCC_net_1, 
-        rp(0) => VCC_net_1, rc(3) => VCC_net_1, rc(2) => \SA[13]\, 
-        rc(1) => \SA[13]\, rc(0) => \SA[13]\, rfc(3) => VCC_net_1, 
-        rfc(2) => \SA[13]\, rfc(1) => \SA[13]\, rfc(0) => 
-        VCC_net_1, wr(1) => VCC_net_1, wr(0) => \SA[13]\, mrd(2)
-         => \SA[13]\, mrd(1) => VCC_net_1, mrd(0) => \SA[13]\, 
-        cl(2) => \SA[13]\, cl(1) => VCC_net_1, cl(0) => \SA[13]\, 
-        bl(1) => VCC_net_1, bl(0) => VCC_net_1, ds(1) => \SA[13]\, 
-        ds(0) => \SA[13]\, delay(15) => \SA[13]\, delay(14) => 
-        \SA[13]\, delay(13) => \SA[13]\, delay(12) => VCC_net_1, 
-        delay(11) => VCC_net_1, delay(10) => \SA[13]\, delay(9)
-         => VCC_net_1, delay(8) => \SA[13]\, delay(7) => 
-        VCC_net_1, delay(6) => \SA[13]\, delay(5) => \SA[13]\, 
-        delay(4) => VCC_net_1, delay(3) => \SA[13]\, delay(2) => 
-        \SA[13]\, delay(1) => \SA[13]\, delay(0) => \SA[13]\, 
-        ref(15) => \SA[13]\, ref(14) => \SA[13]\, ref(13) => 
-        \SA[13]\, ref(12) => VCC_net_1, ref(11) => \SA[13]\, 
-        ref(10) => \SA[13]\, ref(9) => \SA[13]\, ref(8) => 
-        \SA[13]\, ref(7) => \SA[13]\, ref(6) => \SA[13]\, ref(5)
-         => \SA[13]\, ref(4) => \SA[13]\, ref(3) => \SA[13]\, 
-        ref(2) => \SA[13]\, ref(1) => \SA[13]\, ref(0) => 
-        \SA[13]\, colbits(2) => \SA[13]\, colbits(1) => VCC_net_1, 
-        colbits(0) => VCC_net_1, rowbits(1) => \SA[13]\, 
-        rowbits(0) => VCC_net_1, sa(13) => nc2, sa(12) => nc1, 
-        sa(11) => \sa_i[11]\, sa(10) => \sa_i[10]\, sa(9) => 
-        \sa_i[9]\, sa(8) => \sa_i[8]\, sa(7) => \sa_i[7]\, sa(6)
-         => \sa_i[6]\, sa(5) => \sa_i[5]\, sa(4) => \sa_i[4]\, 
-        sa(3) => \sa_i[3]\, sa(2) => \sa_i[2]\, sa(1) => 
-        \sa_i[1]\, sa(0) => \sa_i[0]\, ba(1) => \ba_i[1]\, ba(0)
-         => \ba_i[0]\, cs_n(0) => \cs_n_i[0]\, clk => CLK, 
-        reset_n => RESET_N, r_req => \r_req_in\, w_req => 
-        \w_req_in\, auto_pch => \SA[13]\, sd_init => \SA[13]\, 
-        cl_half => \SA[13]\, regdimm => \SA[13]\, rw_ack => 
-        rw_ack_i, r_valid => r_valid_i, d_req => OPEN, w_valid
-         => w_valid_i, oe => OE, dqm => dqm_i, cke => cke_i, 
-        ras_n => ras_n_i, cas_n => cas_n_i, we_n => we_n_i);
-    
-    \CAS_N\ : SLE
-      port map(D => cas_n_i, CLK => CLK, EN => VCC_net_1, ALn => 
-        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => CAS_N);
-    
-    w_req_i : SLE
-      port map(D => W_REQ, CLK => CLK, EN => VCC_net_1, ALn => 
-        RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => \w_req_i\);
-    
-    \SA[0]\ : SLE
-      port map(D => \sa_i[0]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(0));
-    
-    \W_VALID\ : SLE
-      port map(D => w_valid_i, CLK => CLK, EN => VCC_net_1, ALn
-         => RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => W_VALID);
-    
-    \SA[3]\ : SLE
-      port map(D => \sa_i[3]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(3));
-    
-    \SA[6]\ : SLE
-      port map(D => \sa_i[6]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(6));
-    
-    \R_VALID\ : SLE
-      port map(D => r_valid_i, CLK => CLK, EN => VCC_net_1, ALn
-         => RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => R_VALID);
-    
-    \RAS_N\ : SLE
-      port map(D => ras_n_i, CLK => CLK, EN => VCC_net_1, ALn => 
-        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => RAS_N);
-    
-    \SA[10]\ : SLE
-      port map(D => \sa_i[10]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(10));
-    
-    \DQM\ : SLE
-      port map(D => dqm_i, CLK => CLK, EN => VCC_net_1, ALn => 
-        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => DQM);
-    
-    \SA[4]\ : SLE
-      port map(D => \sa_i[4]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(4));
+        \SA[13]\, LAT => \SA[13]\, Q => CS_N(0));
     
     \BA[0]\ : SLE
       port map(D => \ba_i[0]\, CLK => CLK, EN => VCC_net_1, ALn
@@ -34181,43 +34609,193 @@ begin
          => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => SA(5));
     
-    \SA[1]\ : SLE
-      port map(D => \sa_i[1]\, CLK => CLK, EN => VCC_net_1, ALn
-         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => SA(1));
-    
-    r_req_in : CFG2
-      generic map(INIT => x"8")
-
-      port map(A => R_REQ, B => \r_req_i\, Y => \r_req_in\);
-    
     \VCC\ : VCC
       port map(Y => VCC_net_1);
     
-    \CKE\ : SLE
-      port map(D => cke_i, CLK => CLK, EN => VCC_net_1, ALn => 
+    \DQM\ : SLE
+      port map(D => dqm_i, CLK => CLK, EN => VCC_net_1, ALn => 
         VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => CKE);
+        \SA[13]\, LAT => \SA[13]\, Q => DQM);
     
     \SA[11]\ : SLE
       port map(D => \sa_i[11]\, CLK => CLK, EN => VCC_net_1, ALn
          => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => SA(11));
     
-    r_req_i : SLE
-      port map(D => R_REQ, CLK => CLK, EN => VCC_net_1, ALn => 
-        RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        \SA[13]\, LAT => \SA[13]\, Q => \r_req_i\);
+    \SA[7]\ : SLE
+      port map(D => \sa_i[7]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(7));
+    
+    \SA[2]\ : SLE
+      port map(D => \sa_i[2]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(2));
+    
+    \W_VALID\ : SLE
+      port map(D => w_valid_i, CLK => CLK, EN => VCC_net_1, ALn
+         => RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => W_VALID);
+    
+    \SA[10]\ : SLE
+      port map(D => \sa_i[10]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(10));
+    
+    r_req_in : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => R_REQ, B => \r_req_i\, Y => \r_req_in\);
+    
+    \GND\ : GND
+      port map(Y => \SA[13]\);
     
     \SA[8]\ : SLE
       port map(D => \sa_i[8]\, CLK => CLK, EN => VCC_net_1, ALn
          => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => SA(8));
     
+    \CS_N[1]\ : SLE
+      port map(D => \cs_n_i[1]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => CS_N(1));
+    
+    \SA[1]\ : SLE
+      port map(D => \sa_i[1]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(1));
+    
+    \R_VALID\ : SLE
+      port map(D => r_valid_i, CLK => CLK, EN => VCC_net_1, ALn
+         => RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => R_VALID);
+    
+    \RAS_N\ : SLE
+      port map(D => ras_n_i, CLK => CLK, EN => VCC_net_1, ALn => 
+        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => RAS_N);
+    
     \SA[9]\ : SLE
       port map(D => \sa_i[9]\, CLK => CLK, EN => VCC_net_1, ALn
          => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
         \SA[13]\, LAT => \SA[13]\, Q => SA(9));
+    
+    \SA[12]\ : SLE
+      port map(D => \sa_i[12]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(12));
+    
+    \CS_N[2]\ : SLE
+      port map(D => \cs_n_i[2]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => CS_N(2));
+    
+    w_req_in : CFG2
+      generic map(INIT => x"8")
+
+      port map(A => W_REQ, B => \w_req_i\, Y => \w_req_in\);
+    
+    \SA[4]\ : SLE
+      port map(D => \sa_i[4]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(4));
+    
+    \BA[1]\ : SLE
+      port map(D => \ba_i[1]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => BA(1));
+    
+    r_req_i : SLE
+      port map(D => R_REQ, CLK => CLK, EN => VCC_net_1, ALn => 
+        RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => \r_req_i\);
+    
+    \CAS_N\ : SLE
+      port map(D => cas_n_i, CLK => CLK, EN => VCC_net_1, ALn => 
+        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => CAS_N);
+    
+    fastinit_1 : fastinit
+      port map(raddr(30) => \SA[13]\, raddr(29) => \SA[13]\, 
+        raddr(28) => \SA[13]\, raddr(27) => \SA[13]\, raddr(26)
+         => RADDR(26), raddr(25) => RADDR(25), raddr(24) => 
+        RADDR(24), raddr(23) => RADDR(23), raddr(22) => RADDR(22), 
+        raddr(21) => RADDR(21), raddr(20) => RADDR(20), raddr(19)
+         => RADDR(19), raddr(18) => RADDR(18), raddr(17) => 
+        RADDR(17), raddr(16) => RADDR(16), raddr(15) => RADDR(15), 
+        raddr(14) => RADDR(14), raddr(13) => RADDR(13), raddr(12)
+         => RADDR(12), raddr(11) => RADDR(11), raddr(10) => 
+        RADDR(10), raddr(9) => RADDR(9), raddr(8) => RADDR(8), 
+        raddr(7) => RADDR(7), raddr(6) => RADDR(6), raddr(5) => 
+        RADDR(5), raddr(4) => RADDR(4), raddr(3) => RADDR(3), 
+        raddr(2) => RADDR(2), raddr(1) => RADDR(1), raddr(0) => 
+        RADDR(0), b_size(3) => \SA[13]\, b_size(2) => B_SIZE(2), 
+        b_size(1) => B_SIZE(1), b_size(0) => B_SIZE(0), ras(3)
+         => \SA[13]\, ras(2) => VCC_net_1, ras(1) => \SA[13]\, 
+        ras(0) => VCC_net_1, rcd(2) => \SA[13]\, rcd(1) => 
+        VCC_net_1, rcd(0) => \SA[13]\, rrd(1) => VCC_net_1, 
+        rrd(0) => \SA[13]\, rp(2) => \SA[13]\, rp(1) => VCC_net_1, 
+        rp(0) => \SA[13]\, rc(3) => VCC_net_1, rc(2) => \SA[13]\, 
+        rc(1) => \SA[13]\, rc(0) => \SA[13]\, rfc(3) => VCC_net_1, 
+        rfc(2) => \SA[13]\, rfc(1) => \SA[13]\, rfc(0) => 
+        \SA[13]\, wr(1) => VCC_net_1, wr(0) => \SA[13]\, mrd(2)
+         => \SA[13]\, mrd(1) => VCC_net_1, mrd(0) => \SA[13]\, 
+        cl(2) => \SA[13]\, cl(1) => VCC_net_1, cl(0) => \SA[13]\, 
+        bl(1) => VCC_net_1, bl(0) => VCC_net_1, ds(1) => \SA[13]\, 
+        ds(0) => \SA[13]\, delay(15) => \SA[13]\, delay(14) => 
+        \SA[13]\, delay(13) => VCC_net_1, delay(12) => \SA[13]\, 
+        delay(11) => \SA[13]\, delay(10) => VCC_net_1, delay(9)
+         => VCC_net_1, delay(8) => VCC_net_1, delay(7) => 
+        \SA[13]\, delay(6) => \SA[13]\, delay(5) => \SA[13]\, 
+        delay(4) => VCC_net_1, delay(3) => \SA[13]\, delay(2) => 
+        \SA[13]\, delay(1) => \SA[13]\, delay(0) => \SA[13]\, 
+        ref(15) => \SA[13]\, ref(14) => \SA[13]\, ref(13) => 
+        VCC_net_1, ref(12) => \SA[13]\, ref(11) => \SA[13]\, 
+        ref(10) => \SA[13]\, ref(9) => \SA[13]\, ref(8) => 
+        \SA[13]\, ref(7) => \SA[13]\, ref(6) => \SA[13]\, ref(5)
+         => \SA[13]\, ref(4) => \SA[13]\, ref(3) => \SA[13]\, 
+        ref(2) => \SA[13]\, ref(1) => \SA[13]\, ref(0) => 
+        \SA[13]\, colbits(2) => VCC_net_1, colbits(1) => \SA[13]\, 
+        colbits(0) => VCC_net_1, rowbits(1) => VCC_net_1, 
+        rowbits(0) => \SA[13]\, sa(13) => nc1, sa(12) => 
+        \sa_i[12]\, sa(11) => \sa_i[11]\, sa(10) => \sa_i[10]\, 
+        sa(9) => \sa_i[9]\, sa(8) => \sa_i[8]\, sa(7) => 
+        \sa_i[7]\, sa(6) => \sa_i[6]\, sa(5) => \sa_i[5]\, sa(4)
+         => \sa_i[4]\, sa(3) => \sa_i[3]\, sa(2) => \sa_i[2]\, 
+        sa(1) => \sa_i[1]\, sa(0) => \sa_i[0]\, ba(1) => 
+        \ba_i[1]\, ba(0) => \ba_i[0]\, cs_n(2) => \cs_n_i[2]\, 
+        cs_n(1) => \cs_n_i[1]\, cs_n(0) => \cs_n_i[0]\, clk => 
+        CLK, reset_n => RESET_N, r_req => \r_req_in\, w_req => 
+        \w_req_in\, auto_pch => \SA[13]\, sd_init => \SA[13]\, 
+        cl_half => \SA[13]\, regdimm => \SA[13]\, rw_ack => 
+        rw_ack_i, r_valid => r_valid_i, d_req => OPEN, w_valid
+         => w_valid_i, oe => OE, dqm => dqm_i, cke => cke_i, 
+        ras_n => ras_n_i, cas_n => cas_n_i, we_n => we_n_i);
+    
+    \SA[0]\ : SLE
+      port map(D => \sa_i[0]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(0));
+    
+    \CKE\ : SLE
+      port map(D => cke_i, CLK => CLK, EN => VCC_net_1, ALn => 
+        VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => CKE);
+    
+    \SA[3]\ : SLE
+      port map(D => \sa_i[3]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(3));
+    
+    \SA[6]\ : SLE
+      port map(D => \sa_i[6]\, CLK => CLK, EN => VCC_net_1, ALn
+         => VCC_net_1, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => SA(6));
+    
+    w_req_i : SLE
+      port map(D => W_REQ, CLK => CLK, EN => VCC_net_1, ALn => 
+        RESET_N, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
+        \SA[13]\, LAT => \SA[13]\, Q => \w_req_i\);
     
 
 end DEF_ARCH; 
@@ -34232,14 +34810,16 @@ entity CORESDR_AXI is
     port( COREAXI_0_AXImslave16_AWSIZE       : in    std_logic_vector(1 downto 0);
           COREAXI_0_AXImslave16_ARSIZE       : in    std_logic_vector(1 downto 0);
           COREAXI_0_AXImslave16_WDATA        : in    std_logic_vector(63 downto 0);
-          COREAXI_0_AXImslave16_AWADDR       : in    std_logic_vector(23 downto 1);
-          COREAXI_0_AXImslave16_ARADDR       : in    std_logic_vector(23 downto 1);
+          COREAXI_0_AXImslave16_AWADDR       : in    std_logic_vector(27 downto 1);
+          COREAXI_0_AXImslave16_ARADDR       : in    std_logic_vector(27 downto 1);
+          axi_state                          : out   std_logic_vector(6 downto 5);
           COREAXI_0_AXImslave16_WSTRB        : in    std_logic_vector(7 downto 0);
           DQM_c                              : out   std_logic_vector(1 downto 0);
           sdr_datain_reg                     : out   std_logic_vector(15 downto 0);
-          SA_c                               : out   std_logic_vector(11 downto 0);
-          BA_c                               : out   std_logic_vector(1 downto 0);
+          SA_c                               : out   std_logic_vector(12 downto 0);
+          CS_N_c                             : out   std_logic_vector(2 downto 0);
           DQ_in                              : in    std_logic_vector(15 downto 0);
+          BA_c                               : out   std_logic_vector(1 downto 0);
           COREAXI_0_AXImslave16_RDATA_m_8    : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_11   : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_12   : out   std_logic;
@@ -34268,8 +34848,6 @@ entity CORESDR_AXI is
           COREAXI_0_AXImslave16_RDATA_m_57   : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_58   : out   std_logic;
           COREAXI_0_AXImslave16_ARBURST_0    : in    std_logic;
-          CS_N_c_0                           : out   std_logic;
-          axi_state_0                        : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_0      : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_3      : out   std_logic;
           RDATA_reg_0                        : out   std_logic;
@@ -34321,7 +34899,7 @@ entity CORESDR_AXI is
           N_3167_i                           : in    std_logic;
           WE_N_c                             : out   std_logic;
           RAS_N_c                            : out   std_logic;
-          un1_top_sb_0_3_i_i                 : out   std_logic;
+          OE                                 : out   std_logic;
           CKE_c                              : out   std_logic;
           CAS_N_c                            : out   std_logic;
           COREAXI_0_AXImslave16_BVALID       : out   std_logic;
@@ -34417,7 +34995,7 @@ architecture DEF_ARCH of CORESDR_AXI is
           ROWBITS  : in    std_logic_vector(1 downto 0) := (others => 'U');
           SA       : out   std_logic_vector(13 downto 0);
           BA       : out   std_logic_vector(1 downto 0);
-          CS_N     : out   std_logic_vector(0 to 0);
+          CS_N     : out   std_logic_vector(2 downto 0);
           CLK      : in    std_logic := 'U';
           RESET_N  : in    std_logic := 'U';
           R_REQ    : in    std_logic := 'U';
@@ -34444,34 +35022,37 @@ architecture DEF_ARCH of CORESDR_AXI is
   end component;
 
     signal \sdr_dataout_reg[14]_net_1\, VCC_net_1, GND_net_1, 
-        \sdr_dataout_reg[15]_net_1\, \sdr_dataout_reg[0]_net_1\, 
-        \sdr_dataout_reg[1]_net_1\, \sdr_dataout_reg[2]_net_1\, 
-        \sdr_dataout_reg[3]_net_1\, \sdr_dataout_reg[4]_net_1\, 
-        \sdr_dataout_reg[5]_net_1\, \sdr_dataout_reg[6]_net_1\, 
-        \sdr_dataout_reg[7]_net_1\, \sdr_dataout_reg[8]_net_1\, 
-        \sdr_dataout_reg[9]_net_1\, \sdr_dataout_reg[10]_net_1\, 
-        \sdr_dataout_reg[11]_net_1\, \sdr_dataout_reg[12]_net_1\, 
-        \sdr_dataout_reg[13]_net_1\, \SA_i[2]\, \SA_i[3]\, 
-        \SA_i[4]\, \SA_i[5]\, \SA_i[6]\, \SA_i[7]\, \SA_i[8]\, 
-        \SA_i[9]\, \SA_i[10]\, \SA_i[11]\, \sdr_datain[5]\, 
-        \sdr_datain[6]\, \sdr_datain[7]\, \sdr_datain[8]\, 
-        \sdr_datain[9]\, \sdr_datain[10]\, \sdr_datain[11]\, 
-        \sdr_datain[12]\, \sdr_datain[13]\, \sdr_datain[14]\, 
-        \sdr_datain[15]\, \BA_i[0]\, \BA_i[1]\, \SA_i[0]\, 
-        \SA_i[1]\, \sdr_count[2]_net_1\, N_3278_i, 
+        \sdr_dataout_reg[15]_net_1\, \BA_i[0]\, \BA_i[1]\, 
+        \sdr_dataout_reg[0]_net_1\, \sdr_dataout_reg[1]_net_1\, 
+        \sdr_dataout_reg[2]_net_1\, \sdr_dataout_reg[3]_net_1\, 
+        \sdr_dataout_reg[4]_net_1\, \sdr_dataout_reg[5]_net_1\, 
+        \sdr_dataout_reg[6]_net_1\, \sdr_dataout_reg[7]_net_1\, 
+        \sdr_dataout_reg[8]_net_1\, \sdr_dataout_reg[9]_net_1\, 
+        \sdr_dataout_reg[10]_net_1\, \sdr_dataout_reg[11]_net_1\, 
+        \sdr_dataout_reg[12]_net_1\, \sdr_dataout_reg[13]_net_1\, 
+        \SA_i[2]\, \SA_i[3]\, \SA_i[4]\, \SA_i[5]\, \SA_i[6]\, 
+        \SA_i[7]\, \SA_i[8]\, \SA_i[9]\, \SA_i[10]\, \SA_i[11]\, 
+        \SA_i[12]\, \sdr_datain[6]\, \sdr_datain[7]\, 
+        \sdr_datain[8]\, \sdr_datain[9]\, \sdr_datain[10]\, 
+        \sdr_datain[11]\, \sdr_datain[12]\, \sdr_datain[13]\, 
+        \sdr_datain[14]\, \sdr_datain[15]\, \CS_N_i[0]\, 
+        \CS_N_i[1]\, \CS_N_i[2]\, \SA_i[0]\, \SA_i[1]\, 
         \sdr_count[3]_net_1\, N_3277_i, \axi_count[0]_net_1\, 
         N_3276_i, \axi_count[1]_net_1\, N_3273_i, 
         \axi_count[2]_net_1\, N_3272_i, \axi_count[3]_net_1\, 
         N_3271_i, \sdr_datain[0]\, \sdr_datain[1]\, 
         \sdr_datain[2]\, \sdr_datain[3]\, \sdr_datain[4]\, 
-        \raddr_reg[18]_net_1\, \raddr_reg_9[18]_net_1\, 
-        \raddr_reg[19]_net_1\, \raddr_reg_9[19]_net_1\, 
-        \raddr_reg[20]_net_1\, \raddr_reg_9[20]_net_1\, 
-        \raddr_reg[21]_net_1\, \raddr_reg_9[21]_net_1\, 
-        \raddr_reg[22]_net_1\, \raddr_reg_9[22]_net_1\, 
-        \sdr_count[0]_net_1\, N_3280_i, \sdr_count[1]_net_1\, 
-        N_3279_i, \raddr_reg[3]_net_1\, \raddr_reg_9[3]_net_1\, 
-        \raddr_reg[4]_net_1\, \raddr_reg_9[4]_net_1\, 
+        \sdr_datain[5]\, \raddr_reg[19]_net_1\, 
+        \raddr_reg_9[19]_net_1\, \raddr_reg[20]_net_1\, 
+        \raddr_reg_9[20]_net_1\, \raddr_reg[21]_net_1\, 
+        \raddr_reg_9[21]_net_1\, \raddr_reg[22]_net_1\, 
+        \raddr_reg_9[22]_net_1\, \raddr_reg[23]_net_1\, 
+        \raddr_reg_9[23]_net_1\, \raddr_reg[24]_net_1\, 
+        \raddr_reg_9[24]_net_1\, \raddr_reg[25]_net_1\, 
+        \raddr_reg_9[25]_net_1\, \raddr_reg[26]_net_1\, 
+        \raddr_reg_9[26]_net_1\, \sdr_count[0]_net_1\, N_3280_i, 
+        \sdr_count[1]_net_1\, N_3279_i, \sdr_count[2]_net_1\, 
+        N_3278_i, \raddr_reg[4]_net_1\, \raddr_reg_9[4]_net_1\, 
         \raddr_reg[5]_net_1\, \raddr_reg_9[5]_net_1\, 
         \raddr_reg[6]_net_1\, \raddr_reg_9[6]_net_1\, 
         \raddr_reg[7]_net_1\, \raddr_reg_9[7]_net_1\, 
@@ -34485,45 +35066,46 @@ architecture DEF_ARCH of CORESDR_AXI is
         \raddr_reg[15]_net_1\, \raddr_reg_9[15]_net_1\, 
         \raddr_reg[16]_net_1\, \raddr_reg_9[16]_net_1\, 
         \raddr_reg[17]_net_1\, \raddr_reg_9[17]_net_1\, 
-        \WSTRB_reg[3]_net_1\, \WREADY_SI16\, \WSTRB_reg[4]_net_1\, 
-        \WSTRB_reg[5]_net_1\, \WSTRB_reg[6]_net_1\, 
-        \WSTRB_reg[7]_net_1\, \B_SIZE_reg[0]_net_1\, 
-        \asize[1]_net_1\, N_295_i, \B_SIZE_reg[1]_net_1\, b_size3, 
-        \B_SIZE_reg[2]_net_1\, b_size4, \DQM_i_1[0]_net_1\, 
-        \DQM_i_3[1]_net_1\, \raddr_reg[0]_net_1\, 
-        \raddr_reg_9[0]_net_1\, \raddr_reg[1]_net_1\, 
-        \raddr_reg_9[1]_net_1\, \raddr_reg[2]_net_1\, 
-        \raddr_reg_9[2]_net_1\, \RDATA_reg[52]_net_1\, 
-        N_190_mux_i, \R_VALID\, \RDATA_reg[53]_net_1\, 
-        N_191_mux_i, \RDATA_reg[54]_net_1\, N_192_mux_i, 
-        \RDATA_reg[55]_net_1\, N_193_mux_i, \RDATA_reg[56]_net_1\, 
-        N_194_mux_i, \RDATA_reg[57]_net_1\, N_195_mux_i, 
-        \RDATA_reg[58]_net_1\, N_196_mux_i, \RDATA_reg[59]_net_1\, 
-        N_197_mux_i, \RDATA_reg[60]_net_1\, N_198_mux_i, 
-        \RDATA_reg[61]_net_1\, N_199_mux_i, \RDATA_reg[62]_net_1\, 
-        N_200_mux_i, \RDATA_reg[63]_net_1\, N_201_mux_i, 
-        \WSTRB_reg[0]_net_1\, \WSTRB_reg[1]_net_1\, 
-        \WSTRB_reg[2]_net_1\, \RDATA_reg[37]_net_1\, 
-        \RDATA_regce[32]_net_1\, \RDATA_reg[38]_net_1\, 
-        \RDATA_reg[39]_net_1\, \RDATA_reg[40]_net_1\, 
-        \RDATA_reg[41]_net_1\, \RDATA_reg[42]_net_1\, 
-        \RDATA_reg[44]_net_1\, \RDATA_reg[45]_net_1\, 
-        \RDATA_reg[47]_net_1\, \RDATA_reg[48]_net_1\, N_186_mux_i, 
-        \RDATA_reg[49]_net_1\, N_187_mux_i, \RDATA_reg[50]_net_1\, 
-        N_188_mux_i, \RDATA_reg[51]_net_1\, N_189_mux_i, 
-        \RDATA_reg[22]_net_1\, \RDATA_regce[19]_net_1\, 
-        \RDATA_reg[23]_net_1\, \RDATA_reg[24]_net_1\, 
+        \raddr_reg[18]_net_1\, \raddr_reg_9[18]_net_1\, 
+        \WSTRB_reg[4]_net_1\, \WREADY_SI16\, \WSTRB_reg[5]_net_1\, 
+        \WSTRB_reg[6]_net_1\, \WSTRB_reg[7]_net_1\, 
+        \B_SIZE_reg[0]_net_1\, \asize[1]_net_1\, N_295_i, 
+        \B_SIZE_reg[1]_net_1\, b_size3, \B_SIZE_reg[2]_net_1\, 
+        b_size4, \DQM_i_1[0]_net_1\, \DQM_i_3[1]_net_1\, 
+        \raddr_reg[0]_net_1\, \raddr_reg_9[0]_net_1\, 
+        \raddr_reg[1]_net_1\, \raddr_reg_9[1]_net_1\, 
+        \raddr_reg[2]_net_1\, \raddr_reg_9[2]_net_1\, 
+        \raddr_reg[3]_net_1\, \raddr_reg_9[3]_net_1\, 
+        \RDATA_reg[53]_net_1\, N_191_mux_i, \R_VALID\, 
+        \RDATA_reg[54]_net_1\, N_192_mux_i, \RDATA_reg[55]_net_1\, 
+        N_193_mux_i, \RDATA_reg[56]_net_1\, N_194_mux_i, 
+        \RDATA_reg[57]_net_1\, N_195_mux_i, \RDATA_reg[58]_net_1\, 
+        N_196_mux_i, \RDATA_reg[59]_net_1\, N_197_mux_i, 
+        \RDATA_reg[60]_net_1\, N_198_mux_i, \RDATA_reg[61]_net_1\, 
+        N_199_mux_i, \RDATA_reg[62]_net_1\, N_200_mux_i, 
+        \RDATA_reg[63]_net_1\, N_201_mux_i, \WSTRB_reg[0]_net_1\, 
+        \WSTRB_reg[1]_net_1\, \WSTRB_reg[2]_net_1\, 
+        \WSTRB_reg[3]_net_1\, \RDATA_reg[38]_net_1\, 
+        \RDATA_regce[32]_net_1\, \RDATA_reg[39]_net_1\, 
+        \RDATA_reg[40]_net_1\, \RDATA_reg[41]_net_1\, 
+        \RDATA_reg[42]_net_1\, \RDATA_reg[44]_net_1\, 
+        \RDATA_reg[45]_net_1\, \RDATA_reg[47]_net_1\, 
+        \RDATA_reg[48]_net_1\, N_186_mux_i, \RDATA_reg[49]_net_1\, 
+        N_187_mux_i, \RDATA_reg[50]_net_1\, N_188_mux_i, 
+        \RDATA_reg[51]_net_1\, N_189_mux_i, \RDATA_reg[52]_net_1\, 
+        N_190_mux_i, \RDATA_reg[23]_net_1\, 
+        \RDATA_regce[19]_net_1\, \RDATA_reg[24]_net_1\, 
         \RDATA_reg[25]_net_1\, \RDATA_reg[26]_net_1\, 
         \RDATA_reg[27]_net_1\, \RDATA_reg[28]_net_1\, 
         \RDATA_reg[29]_net_1\, N_3072_i, \RDATA_reg[30]_net_1\, 
         N_3073_i, \RDATA_reg[31]_net_1\, N_3074_i, 
         \RDATA_reg[32]_net_1\, \RDATA_reg[33]_net_1\, 
         \RDATA_reg[34]_net_1\, \RDATA_reg[35]_net_1\, 
-        \RDATA_reg[36]_net_1\, \COREAXI_0_AXImslave16_RDATA[7]\, 
-        N_177_mux_i, \COREAXI_0_AXImslave16_RDATA[8]\, 
-        N_178_mux_i, \COREAXI_0_AXImslave16_RDATA[9]\, 
-        N_179_mux_i, \COREAXI_0_AXImslave16_RDATA[10]\, 
-        N_180_mux_i, \COREAXI_0_AXImslave16_RDATA_0\, N_181_mux_i, 
+        \RDATA_reg[36]_net_1\, \RDATA_reg[37]_net_1\, 
+        \COREAXI_0_AXImslave16_RDATA[8]\, N_178_mux_i, 
+        \COREAXI_0_AXImslave16_RDATA[9]\, N_179_mux_i, 
+        \COREAXI_0_AXImslave16_RDATA[10]\, N_180_mux_i, 
+        \COREAXI_0_AXImslave16_RDATA_0\, N_181_mux_i, 
         \COREAXI_0_AXImslave16_RDATA[12]\, N_182_mux_i, 
         \COREAXI_0_AXImslave16_RDATA[13]\, N_183_mux_i, 
         \COREAXI_0_AXImslave16_RDATA_3\, N_184_mux_i, 
@@ -34531,8 +35113,8 @@ architecture DEF_ARCH of CORESDR_AXI is
         \RDATA_reg[16]_net_1\, N_3069_i, \RDATA_reg[17]_net_1\, 
         N_3070_i, \RDATA_reg[18]_net_1\, N_3071_i, 
         \RDATA_reg[19]_net_1\, \RDATA_reg[20]_net_1\, 
-        \RDATA_reg[21]_net_1\, \WDATA_reg[56]_net_1\, 
-        \WDATA_mux[56]\, \WDATA_reg[57]_net_1\, \WDATA_mux[57]\, 
+        \RDATA_reg[21]_net_1\, \RDATA_reg[22]_net_1\, 
+        \WDATA_reg[57]_net_1\, \WDATA_mux[57]\, 
         \WDATA_reg[58]_net_1\, \WDATA_mux[58]\, 
         \WDATA_reg[59]_net_1\, \WDATA_mux[59]\, 
         \WDATA_reg[60]_net_1\, \WDATA_mux[60]\, 
@@ -34546,7 +35128,7 @@ architecture DEF_ARCH of CORESDR_AXI is
         \COREAXI_0_AXImslave16_RDATA[4]\, N_174_mux_i, 
         \COREAXI_0_AXImslave16_RDATA[5]\, N_175_mux_i, 
         \COREAXI_0_AXImslave16_RDATA[6]\, N_176_mux_i, 
-        \WDATA_reg[41]_net_1\, \WDATA_mux[41]\, 
+        \COREAXI_0_AXImslave16_RDATA[7]\, N_177_mux_i, 
         \WDATA_reg[42]_net_1\, \WDATA_mux[42]\, 
         \WDATA_reg[43]_net_1\, \WDATA_mux[43]\, 
         \WDATA_reg[44]_net_1\, \WDATA_mux[44]\, 
@@ -34561,7 +35143,7 @@ architecture DEF_ARCH of CORESDR_AXI is
         \WDATA_reg[53]_net_1\, \WDATA_mux[53]\, 
         \WDATA_reg[54]_net_1\, \WDATA_mux[54]\, 
         \WDATA_reg[55]_net_1\, \WDATA_mux[55]\, 
-        \WDATA_reg[26]_net_1\, \WDATA_mux[26]\, 
+        \WDATA_reg[56]_net_1\, \WDATA_mux[56]\, 
         \WDATA_reg[27]_net_1\, \WDATA_mux[27]\, 
         \WDATA_reg[28]_net_1\, \WDATA_mux[28]\, 
         \WDATA_reg[29]_net_1\, \WDATA_mux[29]\, 
@@ -34576,7 +35158,7 @@ architecture DEF_ARCH of CORESDR_AXI is
         \WDATA_reg[38]_net_1\, \WDATA_mux[38]\, 
         \WDATA_reg[39]_net_1\, \WDATA_mux[39]\, 
         \WDATA_reg[40]_net_1\, \WDATA_mux[40]\, 
-        \WDATA_reg[11]_net_1\, \WDATA_mux[11]\, 
+        \WDATA_reg[41]_net_1\, \WDATA_mux[41]\, 
         \WDATA_reg[12]_net_1\, \WDATA_mux[12]\, 
         \WDATA_reg[13]_net_1\, \WDATA_mux[13]\, 
         \WDATA_reg[14]_net_1\, \WDATA_mux[14]\, 
@@ -34591,6 +35173,7 @@ architecture DEF_ARCH of CORESDR_AXI is
         \WDATA_reg[23]_net_1\, \WDATA_mux[23]\, 
         \WDATA_reg[24]_net_1\, \WDATA_mux[24]\, 
         \WDATA_reg[25]_net_1\, \WDATA_mux[25]\, 
+        \WDATA_reg[26]_net_1\, \WDATA_mux[26]\, 
         \asize_reg[0]_net_1\, \asize_reg_134\, 
         \asize_reg[1]_net_1\, \asize_reg_135\, 
         \WDATA_reg[0]_net_1\, \WDATA_mux[0]\, 
@@ -34603,18 +35186,19 @@ architecture DEF_ARCH of CORESDR_AXI is
         \WDATA_reg[7]_net_1\, \WDATA_mux[7]\, 
         \WDATA_reg[8]_net_1\, \WDATA_mux[8]\, 
         \WDATA_reg[9]_net_1\, \WDATA_mux[9]\, 
-        \WDATA_reg[10]_net_1\, \WDATA_mux[10]\, \R_VALID_reg\, 
-        R_VALID_i, \axi_state[0]_net_1\, \axi_state_ns[9]_net_1\, 
-        \axi_state[9]_net_1\, \axi_state_ns[0]\, 
+        \WDATA_reg[10]_net_1\, \WDATA_mux[10]\, 
+        \WDATA_reg[11]_net_1\, \WDATA_mux[11]\, \R_VALID_reg\, 
+        R_VALID_i, \axi_state[9]_net_1\, \axi_state_ns[0]\, 
         \COREAXI_0_AXImslave16_ARREADY\, \axi_state_ns[1]_net_1\, 
         \COREAXI_0_AXImslave16_AWREADY\, \axi_state_ns[2]_net_1\, 
-        \axi_state_0\, \axi_state_ns[3]_net_1\, 
+        \axi_state[6]_net_1\, \axi_state_ns[3]_net_1\, 
         \axi_state[5]_net_1\, N_308_i, 
         \COREAXI_0_AXImslave16_BVALID\, \axi_state_ns[5]\, 
         \axi_state[3]_net_1\, N_311_i, \axi_state[2]_net_1\, 
         \axi_state_ns[7]\, \axi_state[1]_net_1\, 
-        \axi_state_ns[8]_net_1\, CAS_N_i, CKE_i, \CS_N_i[0]\, 
-        OE_i, RAS_N_i, WE_N_i, raddr_reg_9_2_cry_0, 
+        \axi_state_ns[8]_net_1\, \axi_state[0]_net_1\, 
+        \axi_state_ns[9]_net_1\, CAS_N_i, CKE_i, OE_i, RAS_N_i, 
+        WE_N_i, raddr_reg_9_2_cry_0, 
         \un1_B_SIZE_reg_0_a2_RNISOQQ1_Y[2]\, 
         \un1_B_SIZE_reg_0_a2[2]_net_1\, N_335_i, 
         \raddr_reg_RNIOTA71[0]_net_1\, raddr_reg_9_2_cry_1, N_750, 
@@ -34640,8 +35224,12 @@ architecture DEF_ARCH of CORESDR_AXI is
         raddr_reg_9_2_cry_18, N_767, \raddr_reg_9_2_axb_18_1\, 
         raddr_reg_9_2_cry_19, N_768, \raddr_reg_9_2_axb_19_1\, 
         raddr_reg_9_2_cry_20, N_769, \raddr_reg_9_2_axb_20_1\, 
-        N_771, raddr_reg_9_2_axb_22_1, raddr_reg_9_2_cry_21, 
-        N_770, \raddr_reg_9_2_axb_21_1\, N_3281, 
+        raddr_reg_9_2_cry_21, N_770, \raddr_reg_9_2_axb_21_1\, 
+        raddr_reg_9_2_cry_22, N_771, \raddr_reg_9_2_axb_22_1\, 
+        raddr_reg_9_2_cry_23, N_772, \raddr_reg_9_2_axb_23_1\, 
+        raddr_reg_9_2_cry_24, N_773, \raddr_reg_9_2_axb_24_1\, 
+        N_775, raddr_reg_9_2_axb_26_1, raddr_reg_9_2_cry_25, 
+        N_774, \raddr_reg_9_2_axb_25_1\, N_3281, 
         un1_sdr_count_0_sqmuxa, N_3293, N_3288, WDATA_mux_8_sm0, 
         \WDATA_mux_8_3[7]_net_1\, \WDATA_mux_8_3[6]_net_1\, 
         \WDATA_mux_8_3[5]_net_1\, \WDATA_mux_8_3[4]_net_1\, 
@@ -34749,22 +35337,24 @@ architecture DEF_ARCH of CORESDR_AXI is
         \COREAXI_0_AXImslave16_RDATA_m_i_0[51]\, 
         \WDATA_mux_3_0_0[16]_net_1\, un2_sdr_count_NE_0, N_3202, 
         N_71_i, \N_3297\, N_355_i, N_26, 
-        \WDATA_mux_3_0_0[2]_net_1\, \WDATA_mux_3_0_0[5]_net_1\, 
-        \WDATA_mux_3_0_0[4]_net_1\, \WDATA_mux_3_0_0[7]_net_1\, 
-        \WDATA_mux_3_0_0[6]_net_1\, \WDATA_mux_3_0_0[3]_net_1\, 
-        \WDATA_mux_3_0_0[0]_net_1\, \WDATA_mux_3_0_0[1]_net_1\, 
-        \WDATA_mux_3_0_0[10]_net_1\, \WDATA_mux_3_0_0[9]_net_1\, 
-        \WDATA_mux_3_0_0[15]_net_1\, \WDATA_mux_3_0_0[11]_net_1\, 
-        \WDATA_mux_3_0_0[8]_net_1\, \WDATA_mux_3_0_0[13]_net_1\, 
-        \WDATA_mux_3_0_0[12]_net_1\, \WDATA_mux_3_0_1[14]_net_1\, 
+        \WDATA_mux_3_0_0[5]_net_1\, \WDATA_mux_3_0_0[4]_net_1\, 
+        \WDATA_mux_3_0_0[6]_net_1\, \WDATA_mux_3_0_0[0]_net_1\, 
+        \WDATA_mux_3_0_0[2]_net_1\, \WDATA_mux_3_0_0[3]_net_1\, 
+        \WDATA_mux_3_0_0[1]_net_1\, \WDATA_mux_3_0_0[7]_net_1\, 
+        \WDATA_mux_3_0_0[10]_net_1\, \WDATA_mux_3_0_0[11]_net_1\, 
+        \WDATA_mux_3_0_0[15]_net_1\, \WDATA_mux_3_0_0[13]_net_1\, 
+        \WDATA_mux_3_0_0[9]_net_1\, \WDATA_mux_3_0_0[12]_net_1\, 
+        \WDATA_mux_3_0_0[8]_net_1\, \WDATA_mux_3_0_1[14]_net_1\, 
         \un3_r_req_0_0\, N_3299, N_3289, N_338, N_349, N_368, 
         N_3309, dqm_sdr : std_logic;
-    signal nc2, nc1 : std_logic;
+    signal nc1 : std_logic;
 
     for all : CORESDR
 	Use entity work.CORESDR(DEF_ARCH);
 begin 
 
+    axi_state(6) <= \axi_state[6]_net_1\;
+    axi_state(5) <= \axi_state[5]_net_1\;
     COREAXI_0_AXImslave16_RDATA_m_8 <= 
         \COREAXI_0_AXImslave16_RDATA_m_8\;
     COREAXI_0_AXImslave16_RDATA_m_11 <= 
@@ -34787,7 +35377,6 @@ begin
         \COREAXI_0_AXImslave16_RDATA_m_6\;
     COREAXI_0_AXImslave16_RDATA_m_7 <= 
         \COREAXI_0_AXImslave16_RDATA_m_7\;
-    axi_state_0 <= \axi_state_0\;
     COREAXI_0_AXImslave16_RDATA_0 <= 
         \COREAXI_0_AXImslave16_RDATA_0\;
     COREAXI_0_AXImslave16_RDATA_3 <= 
@@ -34814,8 +35403,8 @@ begin
       generic map(INIT => x"ECA0")
 
       port map(A => COREAXI_0_AXImslave16_WVALID, B => 
-        \axi_state_0\, C => \axi_state[5]_net_1\, D => N_23, Y
-         => N_3281);
+        \axi_state[6]_net_1\, C => \axi_state[5]_net_1\, D => 
+        N_23, Y => N_3281);
     
     \WDATA_reg[34]\ : SLE
       port map(D => \WDATA_mux[34]\, CLK => SDRCLK_c, EN => 
@@ -34877,6 +35466,14 @@ begin
         \sdr_count[0]_net_1\, C => \sdr_count[1]_net_1\, Y => 
         \sdr_datain_2[8]_net_1\);
     
+    raddr_reg_9_2_axb_22_1 : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => COREAXI_0_AXImslave16_ARADDR(23), B => 
+        COREAXI_0_AXImslave16_ARVALID, C => 
+        COREAXI_0_AXImslave16_AWADDR(23), Y => 
+        \raddr_reg_9_2_axb_22_1\);
+    
     \SA[3]\ : SLE
       port map(D => \SA_i[3]\, CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
@@ -34887,6 +35484,11 @@ begin
 
       port map(A => \axi_state[0]_net_1\, B => 
         \axi_state[1]_net_1\, Y => N_335_i);
+    
+    \SA[12]\ : SLE
+      port map(D => \SA_i[12]\, CLK => SDRCLK_c, EN => VCC_net_1, 
+        ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => SA_c(12));
     
     \WDATA_mux_8_0[2]\ : CFG4
       generic map(INIT => x"FF08")
@@ -34902,6 +35504,13 @@ begin
 
       port map(A => N_71_i, B => N_3326_i, C => 
         un2_sdr_count_NE_0, D => N_388, Y => N_343_i);
+    
+    \raddr_reg_9[24]\ : CFG4
+      generic map(INIT => x"FB00")
+
+      port map(A => COREAXI_0_AXImslave16_AWVALID, B => 
+        \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
+        D => N_773, Y => \raddr_reg_9[24]_net_1\);
     
     \WDATA_reg[19]\ : SLE
       port map(D => \WDATA_mux[19]\, CLK => SDRCLK_c, EN => 
@@ -34921,6 +35530,14 @@ begin
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => 
         \sdr_dataout_reg[11]_net_1\);
+    
+    \raddr_reg_9_RNO_0[26]\ : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => COREAXI_0_AXImslave16_ARADDR(27), B => 
+        COREAXI_0_AXImslave16_ARVALID, C => 
+        COREAXI_0_AXImslave16_AWADDR(27), Y => 
+        raddr_reg_9_2_axb_26_1);
     
     \RDATA_reg[4]\ : SLE
       port map(D => N_174_mux_i, CLK => SDRCLK_c, EN => \R_VALID\, 
@@ -34975,12 +35592,6 @@ begin
       port map(A => \COREAXI_0_AXImslave16_RDATA[13]\, B => 
         \RDATA_reg[45]_net_1\, C => N_3167_i, D => \N_74\, Y => 
         N_3064_i);
-    
-    \un7_1.N_3271_i\ : CFG4
-      generic map(INIT => x"00C9")
-
-      port map(A => N_3286, B => \axi_count[3]_net_1\, C => 
-        N_3289, D => N_3293, Y => N_3271_i);
     
     \RDATA_reg[63]\ : SLE
       port map(D => N_201_mux_i, CLK => SDRCLK_c, EN => \R_VALID\, 
@@ -35085,7 +35696,7 @@ begin
     OE_xhdl0 : SLE
       port map(D => OE_i, CLK => SDRCLK_c, EN => VCC_net_1, ALn
          => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD => 
-        GND_net_1, LAT => GND_net_1, Q => un1_top_sb_0_3_i_i);
+        GND_net_1, LAT => GND_net_1, Q => OE);
     
     \RDATA_reg_RNI1POR[58]\ : CFG4
       generic map(INIT => x"7D41")
@@ -35154,18 +35765,10 @@ begin
         COREAXI_0_AXImslave16_WDATA(42), C => N_3210, D => N_3236, 
         Y => \WDATA_mux_3_0_0[10]_net_1\);
     
-    \raddr_reg_9_RNO[22]\ : ARI1
-      generic map(INIT => x"4A300")
-
-      port map(A => VCC_net_1, B => \raddr_reg[22]_net_1\, C => 
-        raddr_reg_9_2_axb_22_1, D => raddr_reg_9_sn_N_3_i, FCI
-         => raddr_reg_9_2_cry_21, S => N_771, Y => OPEN, FCO => 
-        OPEN);
-    
     \axi_state_ns_0[0]\ : CFG4
       generic map(INIT => x"F0F8")
 
-      port map(A => N_23, B => \axi_state_0\, C => 
+      port map(A => N_23, B => \axi_state[6]_net_1\, C => 
         \axi_state_ns_0_0[0]_net_1\, D => \N_3297\, Y => 
         \axi_state_ns[0]\);
     
@@ -35257,6 +35860,14 @@ begin
       port map(A => \sdr_count[1]_net_1\, B => 
         \sdr_datain_2[9]_net_1\, C => \WDATA_reg[9]_net_1\, Y => 
         \sdr_datain_3[9]_net_1\);
+    
+    \un8_1.SUM_i_o2[3]\ : CFG4
+      generic map(INIT => x"FFFE")
+
+      port map(A => \COREAXI_0_AXImslave16_ARREADY\, B => 
+        \axi_state[9]_net_1\, C => 
+        \COREAXI_0_AXImslave16_AWREADY\, D => 
+        \COREAXI_0_AXImslave16_BVALID\, Y => N_3293);
     
     \WDATA_mux_3_0_RNO[6]\ : CFG3
       generic map(INIT => x"D8")
@@ -35511,6 +36122,14 @@ begin
          => raddr_reg_9_2_cry_11, S => N_761, Y => OPEN, FCO => 
         raddr_reg_9_2_cry_12);
     
+    raddr_reg_9_2_axb_25_1 : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => COREAXI_0_AXImslave16_ARADDR(26), B => 
+        COREAXI_0_AXImslave16_ARVALID, C => 
+        COREAXI_0_AXImslave16_AWADDR(26), Y => 
+        \raddr_reg_9_2_axb_25_1\);
+    
     \sdr_dataout_reg[1]\ : SLE
       port map(D => DQ_in(1), CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
@@ -35572,14 +36191,6 @@ begin
         COREAXI_0_AXImslave16_WSTRB(2), Y => 
         \WDATA_mux_8_0[6]_net_1\);
     
-    \un7_1.SUM_i_o2[3]\ : CFG4
-      generic map(INIT => x"FFFE")
-
-      port map(A => \COREAXI_0_AXImslave16_ARREADY\, B => 
-        \axi_state[9]_net_1\, C => 
-        \COREAXI_0_AXImslave16_AWREADY\, D => 
-        \COREAXI_0_AXImslave16_BVALID\, Y => N_3293);
-    
     \raddr_reg_9_2_1_1[1]\ : CFG3
       generic map(INIT => x"47")
 
@@ -35587,6 +36198,12 @@ begin
         COREAXI_0_AXImslave16_ARVALID, C => 
         COREAXI_0_AXImslave16_AWADDR(2), Y => 
         \raddr_reg_9_2_1_1[1]_net_1\);
+    
+    \raddr_reg[24]\ : SLE
+      port map(D => \raddr_reg_9[24]_net_1\, CLK => SDRCLK_c, EN
+         => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \raddr_reg[24]_net_1\);
     
     \DQM_mux_ns_1_1[0]\ : CFG3
       generic map(INIT => x"1D")
@@ -35992,6 +36609,14 @@ begin
         \RDATA_reg[32]_net_1\, C => N_3167_i, D => \N_74\, Y => 
         N_3066_i);
     
+    raddr_reg_9_2_axb_23_1 : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => COREAXI_0_AXImslave16_ARADDR(24), B => 
+        COREAXI_0_AXImslave16_ARVALID, C => 
+        COREAXI_0_AXImslave16_AWADDR(24), Y => 
+        \raddr_reg_9_2_axb_23_1\);
+    
     \raddr_reg[10]\ : SLE
       port map(D => \raddr_reg_9[10]_net_1\, CLK => SDRCLK_c, EN
          => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
@@ -36055,7 +36680,7 @@ begin
     \CS_N[0]\ : SLE
       port map(D => \CS_N_i[0]\, CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
-         => GND_net_1, LAT => GND_net_1, Q => CS_N_c_0);
+         => GND_net_1, LAT => GND_net_1, Q => CS_N_c(0));
     
     \RDATA_reg[62]\ : SLE
       port map(D => N_200_mux_i, CLK => SDRCLK_c, EN => \R_VALID\, 
@@ -36101,6 +36726,12 @@ begin
         WDATA_mux_8_sm0, C => COREAXI_0_AXImslave16_WDATA(6), D
          => COREAXI_0_AXImslave16_WSTRB(4), Y => 
         \WDATA_mux_8_3[6]_net_1\);
+    
+    \un8_1.N_3271_i\ : CFG4
+      generic map(INIT => x"00C9")
+
+      port map(A => N_3286, B => \axi_count[3]_net_1\, C => 
+        N_3289, D => N_3293, Y => N_3271_i);
     
     \WDATA_reg[11]\ : SLE
       port map(D => \WDATA_mux[11]\, CLK => SDRCLK_c, EN => 
@@ -36581,7 +37212,7 @@ begin
       port map(D => \axi_state_ns[3]_net_1\, CLK => SDRCLK_c, EN
          => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
-        \axi_state_0\);
+        \axi_state[6]_net_1\);
     
     \raddr_reg[9]\ : SLE
       port map(D => \raddr_reg_9[9]_net_1\, CLK => SDRCLK_c, EN
@@ -36670,8 +37301,9 @@ begin
     CoreSDR_0 : CORESDR
       port map(RADDR(30) => GND_net_1, RADDR(29) => GND_net_1, 
         RADDR(28) => GND_net_1, RADDR(27) => GND_net_1, RADDR(26)
-         => GND_net_1, RADDR(25) => GND_net_1, RADDR(24) => 
-        GND_net_1, RADDR(23) => GND_net_1, RADDR(22) => 
+         => \raddr_reg[26]_net_1\, RADDR(25) => 
+        \raddr_reg[25]_net_1\, RADDR(24) => \raddr_reg[24]_net_1\, 
+        RADDR(23) => \raddr_reg[23]_net_1\, RADDR(22) => 
         \raddr_reg[22]_net_1\, RADDR(21) => \raddr_reg[21]_net_1\, 
         RADDR(20) => \raddr_reg[20]_net_1\, RADDR(19) => 
         \raddr_reg[19]_net_1\, RADDR(18) => \raddr_reg[18]_net_1\, 
@@ -36690,45 +37322,46 @@ begin
         B_SIZE(3) => GND_net_1, B_SIZE(2) => 
         \B_SIZE_reg[2]_net_1\, B_SIZE(1) => \B_SIZE_reg[1]_net_1\, 
         B_SIZE(0) => \B_SIZE_reg[0]_net_1\, RAS(3) => GND_net_1, 
-        RAS(2) => GND_net_1, RAS(1) => VCC_net_1, RAS(0) => 
-        GND_net_1, RCD(2) => GND_net_1, RCD(1) => VCC_net_1, 
+        RAS(2) => VCC_net_1, RAS(1) => GND_net_1, RAS(0) => 
+        VCC_net_1, RCD(2) => GND_net_1, RCD(1) => VCC_net_1, 
         RCD(0) => GND_net_1, RRD(1) => VCC_net_1, RRD(0) => 
         GND_net_1, RP(2) => GND_net_1, RP(1) => VCC_net_1, RP(0)
-         => VCC_net_1, RC(3) => VCC_net_1, RC(2) => GND_net_1, 
+         => GND_net_1, RC(3) => VCC_net_1, RC(2) => GND_net_1, 
         RC(1) => GND_net_1, RC(0) => GND_net_1, RFC(3) => 
         VCC_net_1, RFC(2) => GND_net_1, RFC(1) => GND_net_1, 
-        RFC(0) => VCC_net_1, WR(1) => VCC_net_1, WR(0) => 
+        RFC(0) => GND_net_1, WR(1) => VCC_net_1, WR(0) => 
         GND_net_1, MRD(2) => GND_net_1, MRD(1) => VCC_net_1, 
         MRD(0) => GND_net_1, CL(2) => GND_net_1, CL(1) => 
         VCC_net_1, CL(0) => GND_net_1, BL(1) => VCC_net_1, BL(0)
          => VCC_net_1, DELAY(15) => GND_net_1, DELAY(14) => 
-        GND_net_1, DELAY(13) => GND_net_1, DELAY(12) => VCC_net_1, 
-        DELAY(11) => VCC_net_1, DELAY(10) => GND_net_1, DELAY(9)
-         => VCC_net_1, DELAY(8) => GND_net_1, DELAY(7) => 
-        VCC_net_1, DELAY(6) => GND_net_1, DELAY(5) => GND_net_1, 
+        GND_net_1, DELAY(13) => VCC_net_1, DELAY(12) => GND_net_1, 
+        DELAY(11) => GND_net_1, DELAY(10) => VCC_net_1, DELAY(9)
+         => VCC_net_1, DELAY(8) => VCC_net_1, DELAY(7) => 
+        GND_net_1, DELAY(6) => GND_net_1, DELAY(5) => GND_net_1, 
         DELAY(4) => VCC_net_1, DELAY(3) => GND_net_1, DELAY(2)
          => GND_net_1, DELAY(1) => GND_net_1, DELAY(0) => 
         GND_net_1, REF(15) => GND_net_1, REF(14) => GND_net_1, 
-        REF(13) => GND_net_1, REF(12) => VCC_net_1, REF(11) => 
+        REF(13) => VCC_net_1, REF(12) => GND_net_1, REF(11) => 
         GND_net_1, REF(10) => GND_net_1, REF(9) => GND_net_1, 
         REF(8) => GND_net_1, REF(7) => GND_net_1, REF(6) => 
         GND_net_1, REF(5) => GND_net_1, REF(4) => GND_net_1, 
         REF(3) => GND_net_1, REF(2) => GND_net_1, REF(1) => 
-        GND_net_1, REF(0) => GND_net_1, COLBITS(2) => GND_net_1, 
-        COLBITS(1) => VCC_net_1, COLBITS(0) => VCC_net_1, 
-        ROWBITS(1) => GND_net_1, ROWBITS(0) => VCC_net_1, SA(13)
-         => nc2, SA(12) => nc1, SA(11) => \SA_i[11]\, SA(10) => 
-        \SA_i[10]\, SA(9) => \SA_i[9]\, SA(8) => \SA_i[8]\, SA(7)
-         => \SA_i[7]\, SA(6) => \SA_i[6]\, SA(5) => \SA_i[5]\, 
-        SA(4) => \SA_i[4]\, SA(3) => \SA_i[3]\, SA(2) => 
-        \SA_i[2]\, SA(1) => \SA_i[1]\, SA(0) => \SA_i[0]\, BA(1)
-         => \BA_i[1]\, BA(0) => \BA_i[0]\, CS_N(0) => \CS_N_i[0]\, 
-        CLK => SDRCLK_c, RESET_N => MSS_READY, R_REQ => 
-        \un3_r_req_0_0\, W_REQ => N_355_i, AUTO_PCH => GND_net_1, 
-        SD_INIT => GND_net_1, REGDIMM => GND_net_1, RW_ACK => 
-        RW_ACK, R_VALID => R_VALID_i, D_REQ => OPEN, W_VALID => 
-        W_VALID, OE => OE_i, DQM => dqm_sdr, CKE => CKE_i, RAS_N
-         => RAS_N_i, CAS_N => CAS_N_i, WE_N => WE_N_i);
+        GND_net_1, REF(0) => GND_net_1, COLBITS(2) => VCC_net_1, 
+        COLBITS(1) => GND_net_1, COLBITS(0) => VCC_net_1, 
+        ROWBITS(1) => VCC_net_1, ROWBITS(0) => GND_net_1, SA(13)
+         => nc1, SA(12) => \SA_i[12]\, SA(11) => \SA_i[11]\, 
+        SA(10) => \SA_i[10]\, SA(9) => \SA_i[9]\, SA(8) => 
+        \SA_i[8]\, SA(7) => \SA_i[7]\, SA(6) => \SA_i[6]\, SA(5)
+         => \SA_i[5]\, SA(4) => \SA_i[4]\, SA(3) => \SA_i[3]\, 
+        SA(2) => \SA_i[2]\, SA(1) => \SA_i[1]\, SA(0) => 
+        \SA_i[0]\, BA(1) => \BA_i[1]\, BA(0) => \BA_i[0]\, 
+        CS_N(2) => \CS_N_i[2]\, CS_N(1) => \CS_N_i[1]\, CS_N(0)
+         => \CS_N_i[0]\, CLK => SDRCLK_c, RESET_N => MSS_READY, 
+        R_REQ => \un3_r_req_0_0\, W_REQ => N_355_i, AUTO_PCH => 
+        GND_net_1, SD_INIT => GND_net_1, REGDIMM => GND_net_1, 
+        RW_ACK => RW_ACK, R_VALID => R_VALID_i, D_REQ => OPEN, 
+        W_VALID => W_VALID, OE => OE_i, DQM => dqm_sdr, CKE => 
+        CKE_i, RAS_N => RAS_N_i, CAS_N => CAS_N_i, WE_N => WE_N_i);
     
     \RDATA_reg_RNO[17]\ : CFG4
       generic map(INIT => x"F2D0")
@@ -36736,13 +37369,6 @@ begin
       port map(A => \sdr_count[0]_net_1\, B => 
         \sdr_count[1]_net_1\, C => \RDATA_reg[17]_net_1\, D => 
         \sdr_dataout_reg[1]_net_1\, Y => N_3070_i);
-    
-    \un7_1.N_3273_i\ : CFG4
-      generic map(INIT => x"090A")
-
-      port map(A => \axi_count[1]_net_1\, B => 
-        \axi_count[0]_net_1\, C => N_3293, D => N_3281, Y => 
-        N_3273_i);
     
     \RDATA_reg_RNO[48]\ : CFG4
       generic map(INIT => x"F870")
@@ -36758,6 +37384,13 @@ begin
         WDATA_mux_8_sm0, C => COREAXI_0_AXImslave16_WDATA(7), D
          => COREAXI_0_AXImslave16_WSTRB(4), Y => 
         \WDATA_mux_8_3[7]_net_1\);
+    
+    \raddr_reg_9[25]\ : CFG4
+      generic map(INIT => x"FB00")
+
+      port map(A => COREAXI_0_AXImslave16_AWVALID, B => 
+        \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
+        D => N_774, Y => \raddr_reg_9[25]_net_1\);
     
     \WDATA_mux_31[19]\ : CFG4
       generic map(INIT => x"CCA0")
@@ -36947,6 +37580,12 @@ begin
         \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
         D => N_756, Y => \raddr_reg_9[7]_net_1\);
     
+    \un8_1.SUM_i_o2_2[3]\ : CFG2
+      generic map(INIT => x"E")
+
+      port map(A => \axi_count[1]_net_1\, B => 
+        \axi_count[2]_net_1\, Y => N_3286);
+    
     \WDATA_mux_15_3[14]\ : CFG4
       generic map(INIT => x"CACE")
 
@@ -37016,6 +37655,12 @@ begin
         \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
         D => N_771, Y => \raddr_reg_9[22]_net_1\);
     
+    \raddr_reg[25]\ : SLE
+      port map(D => \raddr_reg_9[25]_net_1\, CLK => SDRCLK_c, EN
+         => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \raddr_reg[25]_net_1\);
+    
     \WDATA_reg[48]\ : SLE
       port map(D => \WDATA_mux[48]\, CLK => SDRCLK_c, EN => 
         \WREADY_SI16\, ALn => MSS_READY, ADn => VCC_net_1, SLn
@@ -37079,6 +37724,11 @@ begin
       port map(A => \COREAXI_0_AXImslave16_RDATA[1]\, B => 
         \asize_reg[0]_net_1\, C => \RDATA_reg[17]_net_1\, Y => 
         m30_1_1_2);
+    
+    \CS_N[2]\ : SLE
+      port map(D => \CS_N_i[2]\, CLK => SDRCLK_c, EN => VCC_net_1, 
+        ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => CS_N_c(2));
     
     \WDATA_reg[0]\ : SLE
       port map(D => \WDATA_mux[0]\, CLK => SDRCLK_c, EN => 
@@ -37193,6 +37843,13 @@ begin
         \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
         D => N_764, Y => \raddr_reg_9[15]_net_1\);
     
+    \raddr_reg_9[26]\ : CFG4
+      generic map(INIT => x"FB00")
+
+      port map(A => COREAXI_0_AXImslave16_AWVALID, B => 
+        \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
+        D => N_775, Y => \raddr_reg_9[26]_net_1\);
+    
     \sdr_datain_reg[2]\ : SLE
       port map(D => \sdr_datain[2]\, CLK => SDRCLK_c, EN => 
         VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn => 
@@ -37210,6 +37867,14 @@ begin
          => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \raddr_reg[0]_net_1\);
+    
+    \raddr_reg_RNILFAG21[24]\ : ARI1
+      generic map(INIT => x"4A300")
+
+      port map(A => VCC_net_1, B => \raddr_reg[24]_net_1\, C => 
+        \raddr_reg_9_2_axb_24_1\, D => raddr_reg_9_sn_N_3_i, FCI
+         => raddr_reg_9_2_cry_23, S => N_773, Y => OPEN, FCO => 
+        raddr_reg_9_2_cry_24);
     
     \sdr_datain_reg_RNO[3]\ : CFG3
       generic map(INIT => x"D8")
@@ -37341,6 +38006,13 @@ begin
         EN => \RDATA_regce[32]_net_1\, ALn => MSS_READY, ADn => 
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => RDATA_reg_0);
+    
+    \raddr_reg_9[23]\ : CFG4
+      generic map(INIT => x"FB00")
+
+      port map(A => COREAXI_0_AXImslave16_AWVALID, B => 
+        \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
+        D => N_772, Y => \raddr_reg_9[23]_net_1\);
     
     \WDATA_mux_15_1[9]\ : CFG4
       generic map(INIT => x"E6A2")
@@ -37812,7 +38484,7 @@ begin
     \axi_state_ns_0[7]\ : CFG4
       generic map(INIT => x"F8F0")
 
-      port map(A => \axi_state_0\, B => N_23, C => 
+      port map(A => \axi_state[6]_net_1\, B => N_23, C => 
         \axi_state_ns_0_0[7]_net_1\, D => \N_3297\, Y => 
         \axi_state_ns[7]\);
     
@@ -37847,6 +38519,14 @@ begin
         \WREADY_SI16\, ALn => MSS_READY, ADn => VCC_net_1, SLn
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \WDATA_reg[54]_net_1\);
+    
+    \raddr_reg_RNIIB3S31[25]\ : ARI1
+      generic map(INIT => x"4A300")
+
+      port map(A => VCC_net_1, B => \raddr_reg[25]_net_1\, C => 
+        \raddr_reg_9_2_axb_25_1\, D => raddr_reg_9_sn_N_3_i, FCI
+         => raddr_reg_9_2_cry_24, S => N_774, Y => OPEN, FCO => 
+        raddr_reg_9_2_cry_25);
     
     \SA[4]\ : SLE
       port map(D => \SA_i[4]\, CLK => SDRCLK_c, EN => VCC_net_1, 
@@ -37916,6 +38596,13 @@ begin
          => COREAXI_0_AXImslave16_WDATA(45), Y => 
         \WDATA_mux_15_1[13]_net_1\);
     
+    \un8_1.N_3273_i\ : CFG4
+      generic map(INIT => x"090A")
+
+      port map(A => \axi_count[1]_net_1\, B => 
+        \axi_count[0]_net_1\, C => N_3293, D => N_3281, Y => 
+        N_3273_i);
+    
     \RDATA_reg[14]\ : SLE
       port map(D => N_184_mux_i, CLK => SDRCLK_c, EN => \R_VALID\, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
@@ -37978,13 +38665,6 @@ begin
         \WDATA_mux_31[22]_net_1\, D => \asize_reg[1]_net_1\, Y
          => \WDATA_mux[22]\);
     
-    \un7_1.N_3272_i\ : CFG4
-      generic map(INIT => x"0A09")
-
-      port map(A => \axi_count[2]_net_1\, B => 
-        \axi_count[1]_net_1\, C => N_3293, D => N_3289, Y => 
-        N_3272_i);
-    
     \WDATA_reg_RNO[33]\ : CFG2
       generic map(INIT => x"4")
 
@@ -38035,6 +38715,11 @@ begin
       port map(A => \sdr_count[1]_net_1\, B => 
         \sdr_datain_0[1]_net_1\, C => \WDATA_reg[49]_net_1\, D
          => \WDATA_reg[33]_net_1\, Y => \sdr_datain_1[1]_net_1\);
+    
+    \CS_N[1]\ : SLE
+      port map(D => \CS_N_i[1]\, CLK => SDRCLK_c, EN => VCC_net_1, 
+        ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
+         => GND_net_1, LAT => GND_net_1, Q => CS_N_c(1));
     
     \WDATA_mux_3[23]\ : CFG4
       generic map(INIT => x"D844")
@@ -38106,11 +38791,12 @@ begin
         COREAXI_0_AXImslave16_AWVALID, Y => N_295_i);
     
     \axi_state_ns[1]\ : CFG4
-      generic map(INIT => x"02CE")
+      generic map(INIT => x"C00A")
 
       port map(A => \COREAXI_0_AXImslave16_ARREADY\, B => 
-        \axi_state[9]_net_1\, C => COREAXI_0_AXImslave16_ARVALID, 
-        D => un5_axi_rvalid_i_0, Y => \axi_state_ns[1]_net_1\);
+        COREAXI_0_AXImslave16_ARBURST_0, C => 
+        COREAXI_0_AXImslave16_ARVALID, D => \axi_state[9]_net_1\, 
+        Y => \axi_state_ns[1]_net_1\);
     
     \sdr_datain_2[5]\ : CFG3
       generic map(INIT => x"CA")
@@ -38132,6 +38818,14 @@ begin
       port map(A => COREAXI_0_AXImslave16_WDATA(8), B => 
         COREAXI_0_AXImslave16_WDATA(40), C => N_3210, D => N_3236, 
         Y => \WDATA_mux_3_0_0[8]_net_1\);
+    
+    \raddr_reg_9_RNO[26]\ : ARI1
+      generic map(INIT => x"4A300")
+
+      port map(A => VCC_net_1, B => \raddr_reg[26]_net_1\, C => 
+        raddr_reg_9_2_axb_26_1, D => raddr_reg_9_sn_N_3_i, FCI
+         => raddr_reg_9_2_cry_25, S => N_775, Y => OPEN, FCO => 
+        OPEN);
     
     \sdr_dataout_reg[10]\ : SLE
       port map(D => DQ_in(10), CLK => SDRCLK_c, EN => VCC_net_1, 
@@ -38169,6 +38863,12 @@ begin
       port map(D => \SA_i[8]\, CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => SA_c(8));
+    
+    \raddr_reg[26]\ : SLE
+      port map(D => \raddr_reg_9[26]_net_1\, CLK => SDRCLK_c, EN
+         => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \raddr_reg[26]_net_1\);
     
     \WDATA_mux_8_0[7]\ : CFG4
       generic map(INIT => x"FF08")
@@ -38386,8 +39086,8 @@ begin
     un3_r_req_0_0 : CFG3
       generic map(INIT => x"EA")
 
-      port map(A => \axi_state[2]_net_1\, B => \axi_state_0\, C
-         => N_23, Y => \un3_r_req_0_0\);
+      port map(A => \axi_state[2]_net_1\, B => 
+        \axi_state[6]_net_1\, C => N_23, Y => \un3_r_req_0_0\);
     
     \sdr_datain_reg_RNO[7]\ : CFG3
       generic map(INIT => x"D8")
@@ -38423,6 +39123,14 @@ begin
       port map(A => \WDATA_mux_15_3[11]_net_1\, B => 
         COREAXI_0_AXImslave16_WSTRB(1), C => 
         \WDATA_mux_15_1[11]_net_1\, Y => \WDATA_mux_15[11]\);
+    
+    \raddr_reg_RNI41POV[22]\ : ARI1
+      generic map(INIT => x"4A300")
+
+      port map(A => VCC_net_1, B => \raddr_reg[22]_net_1\, C => 
+        \raddr_reg_9_2_axb_22_1\, D => raddr_reg_9_sn_N_3_i, FCI
+         => raddr_reg_9_2_cry_21, S => N_771, Y => OPEN, FCO => 
+        raddr_reg_9_2_cry_22);
     
     \RDATA_reg[57]\ : SLE
       port map(D => N_195_mux_i, CLK => SDRCLK_c, EN => \R_VALID\, 
@@ -38840,12 +39548,6 @@ begin
         \asize_reg[0]_net_1\, C => \RDATA_reg[26]_net_1\, Y => 
         m9_1_1_2);
     
-    \un7_1.SUM_i_o2_2[3]\ : CFG2
-      generic map(INIT => x"E")
-
-      port map(A => \axi_count[1]_net_1\, B => 
-        \axi_count[2]_net_1\, Y => N_3286);
-    
     \RDATA_reg_RNI7NGQ1[40]\ : CFG4
       generic map(INIT => x"0A0C")
 
@@ -39095,6 +39797,13 @@ begin
          => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
         \WDATA_reg[40]_net_1\);
     
+    \un8_1.N_3272_i\ : CFG4
+      generic map(INIT => x"0A09")
+
+      port map(A => \axi_count[2]_net_1\, B => 
+        \axi_count[1]_net_1\, C => N_3293, D => N_3289, Y => 
+        N_3272_i);
+    
     \WDATA_reg_RNO[35]\ : CFG2
       generic map(INIT => x"4")
 
@@ -39133,7 +39842,7 @@ begin
       generic map(INIT => x"7530")
 
       port map(A => N_23, B => N_349, C => \axi_state[1]_net_1\, 
-        D => \axi_state_0\, Y => \axi_state_ns[3]_net_1\);
+        D => \axi_state[6]_net_1\, Y => \axi_state_ns[3]_net_1\);
     
     \WDATA_reg[9]\ : SLE
       port map(D => \WDATA_mux[9]\, CLK => SDRCLK_c, EN => 
@@ -39468,6 +40177,14 @@ begin
       port map(A => \B_SIZE_reg[0]_net_1\, B => N_335_i, C => 
         N_343_i, Y => \un1_B_SIZE_reg_0_a2[2]_net_1\);
     
+    \raddr_reg_RNIRMH411[23]\ : ARI1
+      generic map(INIT => x"4A300")
+
+      port map(A => VCC_net_1, B => \raddr_reg[23]_net_1\, C => 
+        \raddr_reg_9_2_axb_23_1\, D => raddr_reg_9_sn_N_3_i, FCI
+         => raddr_reg_9_2_cry_22, S => N_772, Y => OPEN, FCO => 
+        raddr_reg_9_2_cry_23);
+    
     \WDATA_mux_3_0_RNO[9]\ : CFG3
       generic map(INIT => x"B8")
 
@@ -39620,6 +40337,14 @@ begin
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => 
         \RDATA_reg[55]_net_1\);
+    
+    raddr_reg_9_2_axb_24_1 : CFG3
+      generic map(INIT => x"47")
+
+      port map(A => COREAXI_0_AXImslave16_ARADDR(25), B => 
+        COREAXI_0_AXImslave16_ARVALID, C => 
+        COREAXI_0_AXImslave16_AWADDR(25), Y => 
+        \raddr_reg_9_2_axb_24_1\);
     
     CAS_N : SLE
       port map(D => CAS_N_i, CLK => SDRCLK_c, EN => VCC_net_1, 
@@ -39783,6 +40508,12 @@ begin
         VCC_net_1, SLn => VCC_net_1, SD => GND_net_1, LAT => 
         GND_net_1, Q => \RDATA_reg[36]_net_1\);
     
+    \un8_1.SUM_i_o2[1]\ : CFG2
+      generic map(INIT => x"D")
+
+      port map(A => N_3281, B => \axi_count[0]_net_1\, Y => 
+        N_3289);
+    
     \sdr_dataout_reg[14]\ : SLE
       port map(D => DQ_in(14), CLK => SDRCLK_c, EN => VCC_net_1, 
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
@@ -39940,14 +40671,6 @@ begin
          => GND_net_1, LAT => GND_net_1, Q => 
         \sdr_count[3]_net_1\);
     
-    \raddr_reg_9_RNO_0[22]\ : CFG3
-      generic map(INIT => x"47")
-
-      port map(A => COREAXI_0_AXImslave16_ARADDR(23), B => 
-        COREAXI_0_AXImslave16_ARVALID, C => 
-        COREAXI_0_AXImslave16_AWADDR(23), Y => 
-        raddr_reg_9_2_axb_22_1);
-    
     \WDATA_mux_3_0_0[15]\ : CFG4
       generic map(INIT => x"ECA0")
 
@@ -39960,6 +40683,12 @@ begin
         ALn => MSS_READY, ADn => VCC_net_1, SLn => VCC_net_1, SD
          => GND_net_1, LAT => GND_net_1, Q => 
         \sdr_dataout_reg[9]_net_1\);
+    
+    \raddr_reg[23]\ : SLE
+      port map(D => \raddr_reg_9[23]_net_1\, CLK => SDRCLK_c, EN
+         => VCC_net_1, ALn => MSS_READY, ADn => VCC_net_1, SLn
+         => VCC_net_1, SD => GND_net_1, LAT => GND_net_1, Q => 
+        \raddr_reg[23]_net_1\);
     
     \RDATA_reg_RNO[50]\ : CFG4
       generic map(INIT => x"F870")
@@ -39987,12 +40716,6 @@ begin
       port map(A => \WSTRB_reg[5]_net_1\, B => 
         \sdr_count[0]_net_1\, C => \WSTRB_reg[7]_net_1\, Y => 
         \DQM_mux_ns_1_1[1]_net_1\);
-    
-    \un7_1.SUM_i_o2[1]\ : CFG2
-      generic map(INIT => x"D")
-
-      port map(A => N_3281, B => \axi_count[0]_net_1\, Y => 
-        N_3289);
     
     \WDATA_reg[37]\ : SLE
       port map(D => \WDATA_mux[37]\, CLK => SDRCLK_c, EN => 
@@ -45313,52 +46036,52 @@ use smartfusion2.all;
 
 entity top_sb is
 
-    port( DQ_in              : in    std_logic_vector(15 downto 0);
-          BA_c               : out   std_logic_vector(1 downto 0);
-          SA_c               : out   std_logic_vector(11 downto 0);
-          sdr_datain_reg     : out   std_logic_vector(15 downto 0);
-          DQM_c              : out   std_logic_vector(1 downto 0);
-          CS_N_c_0           : out   std_logic;
-          CAS_N_c            : out   std_logic;
-          CKE_c              : out   std_logic;
-          un1_top_sb_0_3_i_i : out   std_logic;
-          RAS_N_c            : out   std_logic;
-          WE_N_c             : out   std_logic;
-          SPI_0_SS0          : inout std_logic := 'Z';
-          SPI_0_DO           : out   std_logic;
-          SPI_0_DI           : in    std_logic;
-          SPI_0_CLK          : inout std_logic := 'Z';
-          MMUART_0_TXD       : out   std_logic;
-          MMUART_0_RXD       : in    std_logic;
-          I2C_0_SDA          : inout std_logic := 'Z';
-          I2C_0_SCL          : inout std_logic := 'Z';
-          GPIO_29_BI         : inout std_logic := 'Z';
-          GPIO_26_BI         : inout std_logic := 'Z';
-          GPIO_25_BI         : inout std_logic := 'Z';
-          GPIO_24_BI         : inout std_logic := 'Z';
-          GPIO_23_BI         : inout std_logic := 'Z';
-          GPIO_22_BI         : inout std_logic := 'Z';
-          GPIO_21_BI         : inout std_logic := 'Z';
-          GPIO_20_BI         : inout std_logic := 'Z';
-          GPIO_19_BI         : inout std_logic := 'Z';
-          GPIO_18_BI         : inout std_logic := 'Z';
-          GPIO_17_BI         : inout std_logic := 'Z';
-          GPIO_16_BI         : inout std_logic := 'Z';
-          GPIO_15_BI         : inout std_logic := 'Z';
-          GPIO_14_BI         : inout std_logic := 'Z';
-          GPIO_13_BI         : inout std_logic := 'Z';
-          GPIO_12_BI         : inout std_logic := 'Z';
-          GPIO_11_BI         : inout std_logic := 'Z';
-          GPIO_10_BI         : inout std_logic := 'Z';
-          GPIO_9_BI          : inout std_logic := 'Z';
-          GPIO_8_BI          : inout std_logic := 'Z';
-          GPIO_1_BI          : inout std_logic := 'Z';
-          CAN_TX             : out   std_logic;
-          CAN_TX_EN_N        : out   std_logic;
-          CAN_RX             : in    std_logic;
-          XTL                : in    std_logic;
-          SDRCLK_c           : out   std_logic;
-          DEVRST_N           : in    std_logic
+    port( BA_c           : out   std_logic_vector(1 downto 0);
+          DQ_in          : in    std_logic_vector(15 downto 0);
+          CS_N_c         : out   std_logic_vector(2 downto 0);
+          SA_c           : out   std_logic_vector(12 downto 0);
+          sdr_datain_reg : out   std_logic_vector(15 downto 0);
+          DQM_c          : out   std_logic_vector(1 downto 0);
+          CAS_N_c        : out   std_logic;
+          CKE_c          : out   std_logic;
+          OE             : out   std_logic;
+          RAS_N_c        : out   std_logic;
+          WE_N_c         : out   std_logic;
+          SPI_0_SS0      : inout std_logic := 'Z';
+          SPI_0_DO       : out   std_logic;
+          SPI_0_DI       : in    std_logic;
+          SPI_0_CLK      : inout std_logic := 'Z';
+          MMUART_0_TXD   : out   std_logic;
+          MMUART_0_RXD   : in    std_logic;
+          I2C_0_SDA      : inout std_logic := 'Z';
+          I2C_0_SCL      : inout std_logic := 'Z';
+          GPIO_29_BI     : inout std_logic := 'Z';
+          GPIO_26_BI     : inout std_logic := 'Z';
+          GPIO_25_BI     : inout std_logic := 'Z';
+          GPIO_24_BI     : inout std_logic := 'Z';
+          GPIO_23_BI     : inout std_logic := 'Z';
+          GPIO_22_BI     : inout std_logic := 'Z';
+          GPIO_21_BI     : inout std_logic := 'Z';
+          GPIO_20_BI     : inout std_logic := 'Z';
+          GPIO_19_BI     : inout std_logic := 'Z';
+          GPIO_18_BI     : inout std_logic := 'Z';
+          GPIO_17_BI     : inout std_logic := 'Z';
+          GPIO_16_BI     : inout std_logic := 'Z';
+          GPIO_15_BI     : inout std_logic := 'Z';
+          GPIO_14_BI     : inout std_logic := 'Z';
+          GPIO_13_BI     : inout std_logic := 'Z';
+          GPIO_12_BI     : inout std_logic := 'Z';
+          GPIO_11_BI     : inout std_logic := 'Z';
+          GPIO_10_BI     : inout std_logic := 'Z';
+          GPIO_9_BI      : inout std_logic := 'Z';
+          GPIO_8_BI      : inout std_logic := 'Z';
+          GPIO_1_BI      : inout std_logic := 'Z';
+          CAN_TX         : out   std_logic;
+          CAN_TX_EN_N    : out   std_logic;
+          CAN_RX         : in    std_logic;
+          XTL            : in    std_logic;
+          SDRCLK_c       : out   std_logic;
+          DEVRST_N       : in    std_logic
         );
 
 end top_sb;
@@ -45384,8 +46107,8 @@ architecture DEF_ARCH of top_sb is
 
   component top_sb_COREAXI_0_COREAXI
     port( COREAXI_0_AXImslave16_AWSIZE         : out   std_logic_vector(1 downto 0);
-          COREAXI_0_AXImslave16_ARADDR         : out   std_logic_vector(23 downto 1);
-          COREAXI_0_AXImslave16_AWADDR         : out   std_logic_vector(23 downto 1);
+          COREAXI_0_AXImslave16_ARADDR         : out   std_logic_vector(27 downto 1);
+          COREAXI_0_AXImslave16_AWADDR         : out   std_logic_vector(27 downto 1);
           COREAXI_0_AXImslave16_WSTRB          : out   std_logic_vector(7 downto 0);
           COREAXI_0_AXImslave16_WDATA          : out   std_logic_vector(63 downto 0);
           COREAXI_0_AXImslave16_ARSIZE         : out   std_logic_vector(1 downto 0);
@@ -45393,10 +46116,10 @@ architecture DEF_ARCH of top_sb is
           COREAHBLTOAXI_0_AXIMasterIF_WDATA    : in    std_logic_vector(63 downto 16) := (others => 'U');
           COREAHBLTOAXI_0_AXIMasterIF_ARADDR   : in    std_logic_vector(27 downto 1) := (others => 'U');
           COREAHBLTOAXI_0_AXIMasterIF_ARSIZE   : in    std_logic_vector(1 downto 0) := (others => 'U');
+          axi_state                            : in    std_logic_vector(6 downto 5) := (others => 'U');
           COREAXI_0_AXImslave16_ARBURST_0      : out   std_logic;
           axi_current_state_0                  : in    std_logic := 'U';
           axi_current_state_3                  : in    std_logic := 'U';
-          axi_state_0                          : in    std_logic := 'U';
           RDATA_reg_3                          : in    std_logic := 'U';
           RDATA_reg_0                          : in    std_logic := 'U';
           COREAXI_0_AXImslave16_RDATA_3        : in    std_logic := 'U';
@@ -45429,10 +46152,10 @@ architecture DEF_ARCH of top_sb is
           COREAXI_0_AXImslave16_RDATA_m_9      : in    std_logic := 'U';
           COREAXI_0_AXImslave16_RDATA_m_10     : in    std_logic := 'U';
           COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 : in    std_logic := 'U';
-          COREAXI_0_AXImslave16_WVALID         : out   std_logic;
           WREADY_SI16_i                        : in    std_logic := 'U';
           COREAXI_0_AXImslave16_AWVALID        : out   std_logic;
           COREAXI_0_AXImslave16_AWREADY        : in    std_logic := 'U';
+          WREADY_SI16                          : in    std_logic := 'U';
           COREAHBLTOAXI_0_AXIMasterIF_BVALID   : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_AWREADY  : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARREADY  : out   std_logic;
@@ -45520,7 +46243,7 @@ architecture DEF_ARCH of top_sb is
           COREAXI_0_AXImslave16_ARREADY        : in    std_logic := 'U';
           COREAXI_0_AXImslave16_ARVALID        : out   std_logic;
           COREAHBLTOAXI_0_AXIMasterIF_ARVALID  : in    std_logic := 'U';
-          WREADY_SI16                          : in    std_logic := 'U';
+          COREAXI_0_AXImslave16_WVALID         : out   std_logic;
           N_75_i                               : in    std_logic := 'U'
         );
   end component;
@@ -45619,14 +46342,16 @@ architecture DEF_ARCH of top_sb is
     port( COREAXI_0_AXImslave16_AWSIZE       : in    std_logic_vector(1 downto 0) := (others => 'U');
           COREAXI_0_AXImslave16_ARSIZE       : in    std_logic_vector(1 downto 0) := (others => 'U');
           COREAXI_0_AXImslave16_WDATA        : in    std_logic_vector(63 downto 0) := (others => 'U');
-          COREAXI_0_AXImslave16_AWADDR       : in    std_logic_vector(23 downto 1) := (others => 'U');
-          COREAXI_0_AXImslave16_ARADDR       : in    std_logic_vector(23 downto 1) := (others => 'U');
+          COREAXI_0_AXImslave16_AWADDR       : in    std_logic_vector(27 downto 1) := (others => 'U');
+          COREAXI_0_AXImslave16_ARADDR       : in    std_logic_vector(27 downto 1) := (others => 'U');
+          axi_state                          : out   std_logic_vector(6 downto 5);
           COREAXI_0_AXImslave16_WSTRB        : in    std_logic_vector(7 downto 0) := (others => 'U');
           DQM_c                              : out   std_logic_vector(1 downto 0);
           sdr_datain_reg                     : out   std_logic_vector(15 downto 0);
-          SA_c                               : out   std_logic_vector(11 downto 0);
-          BA_c                               : out   std_logic_vector(1 downto 0);
+          SA_c                               : out   std_logic_vector(12 downto 0);
+          CS_N_c                             : out   std_logic_vector(2 downto 0);
           DQ_in                              : in    std_logic_vector(15 downto 0) := (others => 'U');
+          BA_c                               : out   std_logic_vector(1 downto 0);
           COREAXI_0_AXImslave16_RDATA_m_8    : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_11   : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_12   : out   std_logic;
@@ -45655,8 +46380,6 @@ architecture DEF_ARCH of top_sb is
           COREAXI_0_AXImslave16_RDATA_m_57   : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_m_58   : out   std_logic;
           COREAXI_0_AXImslave16_ARBURST_0    : in    std_logic := 'U';
-          CS_N_c_0                           : out   std_logic;
-          axi_state_0                        : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_0      : out   std_logic;
           COREAXI_0_AXImslave16_RDATA_3      : out   std_logic;
           RDATA_reg_0                        : out   std_logic;
@@ -45708,7 +46431,7 @@ architecture DEF_ARCH of top_sb is
           N_3167_i                           : in    std_logic := 'U';
           WE_N_c                             : out   std_logic;
           RAS_N_c                            : out   std_logic;
-          un1_top_sb_0_3_i_i                 : out   std_logic;
+          OE                                 : out   std_logic;
           CKE_c                              : out   std_logic;
           CAS_N_c                            : out   std_logic;
           COREAXI_0_AXImslave16_BVALID       : out   std_logic;
@@ -46158,6 +46881,10 @@ architecture DEF_ARCH of top_sb is
         \COREAXI_0_AXImslave16_ARADDR[21]\, 
         \COREAXI_0_AXImslave16_ARADDR[22]\, 
         \COREAXI_0_AXImslave16_ARADDR[23]\, 
+        \COREAXI_0_AXImslave16_ARADDR[24]\, 
+        \COREAXI_0_AXImslave16_ARADDR[25]\, 
+        \COREAXI_0_AXImslave16_ARADDR[26]\, 
+        \COREAXI_0_AXImslave16_ARADDR[27]\, 
         \COREAXI_0_AXImslave16_AWADDR[1]\, 
         \COREAXI_0_AXImslave16_AWADDR[2]\, 
         \COREAXI_0_AXImslave16_AWADDR[3]\, 
@@ -46181,6 +46908,10 @@ architecture DEF_ARCH of top_sb is
         \COREAXI_0_AXImslave16_AWADDR[21]\, 
         \COREAXI_0_AXImslave16_AWADDR[22]\, 
         \COREAXI_0_AXImslave16_AWADDR[23]\, 
+        \COREAXI_0_AXImslave16_AWADDR[24]\, 
+        \COREAXI_0_AXImslave16_AWADDR[25]\, 
+        \COREAXI_0_AXImslave16_AWADDR[26]\, 
+        \COREAXI_0_AXImslave16_AWADDR[27]\, 
         \COREAXI_0_AXImslave16_WSTRB[0]\, 
         \COREAXI_0_AXImslave16_WSTRB[1]\, 
         \COREAXI_0_AXImslave16_WSTRB[2]\, 
@@ -46255,9 +46986,8 @@ architecture DEF_ARCH of top_sb is
         \COREAXI_0_AXImslave16_WDATA[63]\, 
         \COREAXI_0_AXImslave16_ARSIZE[0]\, 
         \COREAXI_0_AXImslave16_ARSIZE[1]\, 
-        \COREAXI_0_AXImslave16_ARBURST[0]\, \axi_state[6]\, 
-        \RDATA_reg[46]\, \RDATA_reg[43]\, 
-        \COREAXI_0_AXImslave16_RDATA[14]\, 
+        \COREAXI_0_AXImslave16_ARBURST[0]\, \RDATA_reg[46]\, 
+        \RDATA_reg[43]\, \COREAXI_0_AXImslave16_RDATA[14]\, 
         \COREAXI_0_AXImslave16_RDATA[11]\, 
         \COREAXI_0_AXImslave16_RDATA_m[57]\, 
         \COREAXI_0_AXImslave16_RDATA_m[58]\, 
@@ -46285,10 +47015,10 @@ architecture DEF_ARCH of top_sb is
         \COREAXI_0_AXImslave16_RDATA_m[7]\, 
         \COREAXI_0_AXImslave16_RDATA_m[8]\, 
         \COREAXI_0_AXImslave16_RDATA_m[9]\, 
-        \COREAXI_0_AXImslave16_RDATA_m[10]\, 
-        COREAXI_0_AXImslave16_WVALID, WREADY_SI16_i, 
+        \COREAXI_0_AXImslave16_RDATA_m[10]\, \axi_state[5]\, 
+        \axi_state[6]\, WREADY_SI16_i, 
         COREAXI_0_AXImslave16_AWVALID, 
-        COREAXI_0_AXImslave16_AWREADY, 
+        COREAXI_0_AXImslave16_AWREADY, WREADY_SI16, 
         COREAXI_0_AXImslave16_BVALID, N_3297, N_389, N_74, 
         N_3167_i, N_23, N_3170_i, N_39, N_78_mux_i, N_79_mux_i, 
         N_80_mux_i, N_70_mux_i, N_71_mux_i, N_72_mux_i, N_3094_i, 
@@ -46298,7 +47028,8 @@ architecture DEF_ARCH of top_sb is
         i22_mux_4_i, i22_mux_5_i, N_8_i, i17_mux_2_i, N_3064_i, 
         N_3092_i, i17_mux_i, i17_mux_0_i, i17_mux_1_i, i22_mux_i, 
         i22_mux_0_i, i22_mux_1_i, COREAXI_0_AXImslave16_ARREADY, 
-        COREAXI_0_AXImslave16_ARVALID, WREADY_SI16, 
+        COREAXI_0_AXImslave16_ARVALID, 
+        COREAXI_0_AXImslave16_WVALID, 
         top_sb_MSS_TMP_0_FIC_2_APB_M_PRESET_N, 
         top_sb_MSS_TMP_0_MSS_RESET_N_M2F, 
         CORERESETP_0_RESET_N_F2M, GND_net_1, VCC_net_1
@@ -46345,6 +47076,14 @@ begin
         \COREAXI_0_AXImslave16_AWSIZE[1]\, 
         COREAXI_0_AXImslave16_AWSIZE(0) => 
         \COREAXI_0_AXImslave16_AWSIZE[0]\, 
+        COREAXI_0_AXImslave16_ARADDR(27) => 
+        \COREAXI_0_AXImslave16_ARADDR[27]\, 
+        COREAXI_0_AXImslave16_ARADDR(26) => 
+        \COREAXI_0_AXImslave16_ARADDR[26]\, 
+        COREAXI_0_AXImslave16_ARADDR(25) => 
+        \COREAXI_0_AXImslave16_ARADDR[25]\, 
+        COREAXI_0_AXImslave16_ARADDR(24) => 
+        \COREAXI_0_AXImslave16_ARADDR[24]\, 
         COREAXI_0_AXImslave16_ARADDR(23) => 
         \COREAXI_0_AXImslave16_ARADDR[23]\, 
         COREAXI_0_AXImslave16_ARADDR(22) => 
@@ -46391,6 +47130,14 @@ begin
         \COREAXI_0_AXImslave16_ARADDR[2]\, 
         COREAXI_0_AXImslave16_ARADDR(1) => 
         \COREAXI_0_AXImslave16_ARADDR[1]\, 
+        COREAXI_0_AXImslave16_AWADDR(27) => 
+        \COREAXI_0_AXImslave16_AWADDR[27]\, 
+        COREAXI_0_AXImslave16_AWADDR(26) => 
+        \COREAXI_0_AXImslave16_AWADDR[26]\, 
+        COREAXI_0_AXImslave16_AWADDR(25) => 
+        \COREAXI_0_AXImslave16_AWADDR[25]\, 
+        COREAXI_0_AXImslave16_AWADDR(24) => 
+        \COREAXI_0_AXImslave16_AWADDR[24]\, 
         COREAXI_0_AXImslave16_AWADDR(23) => 
         \COREAXI_0_AXImslave16_AWADDR[23]\, 
         COREAXI_0_AXImslave16_AWADDR(22) => 
@@ -46861,13 +47608,14 @@ begin
         COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(1) => 
         \COREAHBLTOAXI_0_AXIMasterIF_ARSIZE[1]\, 
         COREAHBLTOAXI_0_AXIMasterIF_ARSIZE(0) => 
-        \COREAHBLTOAXI_0_AXIMasterIF_ARSIZE[0]\, 
+        \COREAHBLTOAXI_0_AXIMasterIF_ARSIZE[0]\, axi_state(6) => 
+        \axi_state[6]\, axi_state(5) => \axi_state[5]\, 
         COREAXI_0_AXImslave16_ARBURST_0 => 
         \COREAXI_0_AXImslave16_ARBURST[0]\, axi_current_state_0
          => \axi_current_state[1]\, axi_current_state_3 => 
-        \axi_current_state[4]\, axi_state_0 => \axi_state[6]\, 
-        RDATA_reg_3 => \RDATA_reg[46]\, RDATA_reg_0 => 
-        \RDATA_reg[43]\, COREAXI_0_AXImslave16_RDATA_3 => 
+        \axi_current_state[4]\, RDATA_reg_3 => \RDATA_reg[46]\, 
+        RDATA_reg_0 => \RDATA_reg[43]\, 
+        COREAXI_0_AXImslave16_RDATA_3 => 
         \COREAXI_0_AXImslave16_RDATA[14]\, 
         COREAXI_0_AXImslave16_RDATA_0 => 
         \COREAXI_0_AXImslave16_RDATA[11]\, 
@@ -46926,13 +47674,11 @@ begin
         COREAXI_0_AXImslave16_RDATA_m_10 => 
         \COREAXI_0_AXImslave16_RDATA_m[10]\, 
         COREAHBLTOAXI_0_AXIMasterIF_ARLOCK_0 => 
-        \COREAHBLTOAXI_0_AXIMasterIF_ARLOCK[1]\, 
-        COREAXI_0_AXImslave16_WVALID => 
-        COREAXI_0_AXImslave16_WVALID, WREADY_SI16_i => 
-        WREADY_SI16_i, COREAXI_0_AXImslave16_AWVALID => 
+        \COREAHBLTOAXI_0_AXIMasterIF_ARLOCK[1]\, WREADY_SI16_i
+         => WREADY_SI16_i, COREAXI_0_AXImslave16_AWVALID => 
         COREAXI_0_AXImslave16_AWVALID, 
         COREAXI_0_AXImslave16_AWREADY => 
-        COREAXI_0_AXImslave16_AWREADY, 
+        COREAXI_0_AXImslave16_AWREADY, WREADY_SI16 => WREADY_SI16, 
         COREAHBLTOAXI_0_AXIMasterIF_BVALID => 
         COREAHBLTOAXI_0_AXIMasterIF_BVALID, 
         COREAHBLTOAXI_0_AXIMasterIF_AWREADY => 
@@ -46986,8 +47732,9 @@ begin
         COREAXI_0_AXImslave16_ARVALID => 
         COREAXI_0_AXImslave16_ARVALID, 
         COREAHBLTOAXI_0_AXIMasterIF_ARVALID => 
-        COREAHBLTOAXI_0_AXIMasterIF_ARVALID, WREADY_SI16 => 
-        WREADY_SI16, N_75_i => N_75_i);
+        COREAHBLTOAXI_0_AXIMasterIF_ARVALID, 
+        COREAXI_0_AXImslave16_WVALID => 
+        COREAXI_0_AXImslave16_WVALID, N_75_i => N_75_i);
     
     SYSRESET_POR : SYSRESET
       port map(POWER_ON_RESET_N => top_sb_0_POWER_ON_RESET_N, 
@@ -47651,6 +48398,14 @@ begin
         \COREAXI_0_AXImslave16_WDATA[1]\, 
         COREAXI_0_AXImslave16_WDATA(0) => 
         \COREAXI_0_AXImslave16_WDATA[0]\, 
+        COREAXI_0_AXImslave16_AWADDR(27) => 
+        \COREAXI_0_AXImslave16_AWADDR[27]\, 
+        COREAXI_0_AXImslave16_AWADDR(26) => 
+        \COREAXI_0_AXImslave16_AWADDR[26]\, 
+        COREAXI_0_AXImslave16_AWADDR(25) => 
+        \COREAXI_0_AXImslave16_AWADDR[25]\, 
+        COREAXI_0_AXImslave16_AWADDR(24) => 
+        \COREAXI_0_AXImslave16_AWADDR[24]\, 
         COREAXI_0_AXImslave16_AWADDR(23) => 
         \COREAXI_0_AXImslave16_AWADDR[23]\, 
         COREAXI_0_AXImslave16_AWADDR(22) => 
@@ -47697,6 +48452,14 @@ begin
         \COREAXI_0_AXImslave16_AWADDR[2]\, 
         COREAXI_0_AXImslave16_AWADDR(1) => 
         \COREAXI_0_AXImslave16_AWADDR[1]\, 
+        COREAXI_0_AXImslave16_ARADDR(27) => 
+        \COREAXI_0_AXImslave16_ARADDR[27]\, 
+        COREAXI_0_AXImslave16_ARADDR(26) => 
+        \COREAXI_0_AXImslave16_ARADDR[26]\, 
+        COREAXI_0_AXImslave16_ARADDR(25) => 
+        \COREAXI_0_AXImslave16_ARADDR[25]\, 
+        COREAXI_0_AXImslave16_ARADDR(24) => 
+        \COREAXI_0_AXImslave16_ARADDR[24]\, 
         COREAXI_0_AXImslave16_ARADDR(23) => 
         \COREAXI_0_AXImslave16_ARADDR[23]\, 
         COREAXI_0_AXImslave16_ARADDR(22) => 
@@ -47742,7 +48505,8 @@ begin
         COREAXI_0_AXImslave16_ARADDR(2) => 
         \COREAXI_0_AXImslave16_ARADDR[2]\, 
         COREAXI_0_AXImslave16_ARADDR(1) => 
-        \COREAXI_0_AXImslave16_ARADDR[1]\, 
+        \COREAXI_0_AXImslave16_ARADDR[1]\, axi_state(6) => 
+        \axi_state[6]\, axi_state(5) => \axi_state[5]\, 
         COREAXI_0_AXImslave16_WSTRB(7) => 
         \COREAXI_0_AXImslave16_WSTRB[7]\, 
         COREAXI_0_AXImslave16_WSTRB(6) => 
@@ -47773,18 +48537,20 @@ begin
         sdr_datain_reg(3) => sdr_datain_reg(3), sdr_datain_reg(2)
          => sdr_datain_reg(2), sdr_datain_reg(1) => 
         sdr_datain_reg(1), sdr_datain_reg(0) => sdr_datain_reg(0), 
-        SA_c(11) => SA_c(11), SA_c(10) => SA_c(10), SA_c(9) => 
-        SA_c(9), SA_c(8) => SA_c(8), SA_c(7) => SA_c(7), SA_c(6)
-         => SA_c(6), SA_c(5) => SA_c(5), SA_c(4) => SA_c(4), 
-        SA_c(3) => SA_c(3), SA_c(2) => SA_c(2), SA_c(1) => 
-        SA_c(1), SA_c(0) => SA_c(0), BA_c(1) => BA_c(1), BA_c(0)
-         => BA_c(0), DQ_in(15) => DQ_in(15), DQ_in(14) => 
+        SA_c(12) => SA_c(12), SA_c(11) => SA_c(11), SA_c(10) => 
+        SA_c(10), SA_c(9) => SA_c(9), SA_c(8) => SA_c(8), SA_c(7)
+         => SA_c(7), SA_c(6) => SA_c(6), SA_c(5) => SA_c(5), 
+        SA_c(4) => SA_c(4), SA_c(3) => SA_c(3), SA_c(2) => 
+        SA_c(2), SA_c(1) => SA_c(1), SA_c(0) => SA_c(0), 
+        CS_N_c(2) => CS_N_c(2), CS_N_c(1) => CS_N_c(1), CS_N_c(0)
+         => CS_N_c(0), DQ_in(15) => DQ_in(15), DQ_in(14) => 
         DQ_in(14), DQ_in(13) => DQ_in(13), DQ_in(12) => DQ_in(12), 
         DQ_in(11) => DQ_in(11), DQ_in(10) => DQ_in(10), DQ_in(9)
          => DQ_in(9), DQ_in(8) => DQ_in(8), DQ_in(7) => DQ_in(7), 
         DQ_in(6) => DQ_in(6), DQ_in(5) => DQ_in(5), DQ_in(4) => 
         DQ_in(4), DQ_in(3) => DQ_in(3), DQ_in(2) => DQ_in(2), 
-        DQ_in(1) => DQ_in(1), DQ_in(0) => DQ_in(0), 
+        DQ_in(1) => DQ_in(1), DQ_in(0) => DQ_in(0), BA_c(1) => 
+        BA_c(1), BA_c(0) => BA_c(0), 
         COREAXI_0_AXImslave16_RDATA_m_8 => 
         \COREAXI_0_AXImslave16_RDATA_m[8]\, 
         COREAXI_0_AXImslave16_RDATA_m_11 => 
@@ -47840,8 +48606,7 @@ begin
         COREAXI_0_AXImslave16_RDATA_m_58 => 
         \COREAXI_0_AXImslave16_RDATA_m[58]\, 
         COREAXI_0_AXImslave16_ARBURST_0 => 
-        \COREAXI_0_AXImslave16_ARBURST[0]\, CS_N_c_0 => CS_N_c_0, 
-        axi_state_0 => \axi_state[6]\, 
+        \COREAXI_0_AXImslave16_ARBURST[0]\, 
         COREAXI_0_AXImslave16_RDATA_0 => 
         \COREAXI_0_AXImslave16_RDATA[11]\, 
         COREAXI_0_AXImslave16_RDATA_3 => 
@@ -47872,9 +48637,9 @@ begin
         N_3066_i, N_3092_i => N_3092_i, N_3094_i => N_3094_i, 
         N_3096_i => N_3096_i, N_3098_i => N_3098_i, N_3100_i => 
         N_3100_i, N_3102_i => N_3102_i, N_74 => N_74, N_3167_i
-         => N_3167_i, WE_N_c => WE_N_c, RAS_N_c => RAS_N_c, 
-        un1_top_sb_0_3_i_i => un1_top_sb_0_3_i_i, CKE_c => CKE_c, 
-        CAS_N_c => CAS_N_c, COREAXI_0_AXImslave16_BVALID => 
+         => N_3167_i, WE_N_c => WE_N_c, RAS_N_c => RAS_N_c, OE
+         => OE, CKE_c => CKE_c, CAS_N_c => CAS_N_c, 
+        COREAXI_0_AXImslave16_BVALID => 
         COREAXI_0_AXImslave16_BVALID, 
         COREAXI_0_AXImslave16_AWREADY => 
         COREAXI_0_AXImslave16_AWREADY, 
@@ -48409,7 +49174,7 @@ use smartfusion2.all;
 entity top is
 
     port( BA           : out   std_logic_vector(1 downto 0);
-          CS_N         : out   std_logic_vector(0 to 0);
+          CS_N         : out   std_logic_vector(2 downto 0);
           DQM          : out   std_logic_vector(1 downto 0);
           SA           : out   std_logic_vector(13 downto 0);
           DQ           : inout std_logic_vector(15 downto 0) := (others => 'Z');
@@ -48487,52 +49252,52 @@ architecture DEF_ARCH of top is
   end component;
 
   component top_sb
-    port( DQ_in              : in    std_logic_vector(15 downto 0) := (others => 'U');
-          BA_c               : out   std_logic_vector(1 downto 0);
-          SA_c               : out   std_logic_vector(11 downto 0);
-          sdr_datain_reg     : out   std_logic_vector(15 downto 0);
-          DQM_c              : out   std_logic_vector(1 downto 0);
-          CS_N_c_0           : out   std_logic;
-          CAS_N_c            : out   std_logic;
-          CKE_c              : out   std_logic;
-          un1_top_sb_0_3_i_i : out   std_logic;
-          RAS_N_c            : out   std_logic;
-          WE_N_c             : out   std_logic;
-          SPI_0_SS0          : inout   std_logic;
-          SPI_0_DO           : out   std_logic;
-          SPI_0_DI           : in    std_logic := 'U';
-          SPI_0_CLK          : inout   std_logic;
-          MMUART_0_TXD       : out   std_logic;
-          MMUART_0_RXD       : in    std_logic := 'U';
-          I2C_0_SDA          : inout   std_logic;
-          I2C_0_SCL          : inout   std_logic;
-          GPIO_29_BI         : inout   std_logic;
-          GPIO_26_BI         : inout   std_logic;
-          GPIO_25_BI         : inout   std_logic;
-          GPIO_24_BI         : inout   std_logic;
-          GPIO_23_BI         : inout   std_logic;
-          GPIO_22_BI         : inout   std_logic;
-          GPIO_21_BI         : inout   std_logic;
-          GPIO_20_BI         : inout   std_logic;
-          GPIO_19_BI         : inout   std_logic;
-          GPIO_18_BI         : inout   std_logic;
-          GPIO_17_BI         : inout   std_logic;
-          GPIO_16_BI         : inout   std_logic;
-          GPIO_15_BI         : inout   std_logic;
-          GPIO_14_BI         : inout   std_logic;
-          GPIO_13_BI         : inout   std_logic;
-          GPIO_12_BI         : inout   std_logic;
-          GPIO_11_BI         : inout   std_logic;
-          GPIO_10_BI         : inout   std_logic;
-          GPIO_9_BI          : inout   std_logic;
-          GPIO_8_BI          : inout   std_logic;
-          GPIO_1_BI          : inout   std_logic;
-          CAN_TX             : out   std_logic;
-          CAN_TX_EN_N        : out   std_logic;
-          CAN_RX             : in    std_logic := 'U';
-          XTL                : in    std_logic := 'U';
-          SDRCLK_c           : out   std_logic;
-          DEVRST_N           : in    std_logic := 'U'
+    port( BA_c           : out   std_logic_vector(1 downto 0);
+          DQ_in          : in    std_logic_vector(15 downto 0) := (others => 'U');
+          CS_N_c         : out   std_logic_vector(2 downto 0);
+          SA_c           : out   std_logic_vector(12 downto 0);
+          sdr_datain_reg : out   std_logic_vector(15 downto 0);
+          DQM_c          : out   std_logic_vector(1 downto 0);
+          CAS_N_c        : out   std_logic;
+          CKE_c          : out   std_logic;
+          OE             : out   std_logic;
+          RAS_N_c        : out   std_logic;
+          WE_N_c         : out   std_logic;
+          SPI_0_SS0      : inout   std_logic;
+          SPI_0_DO       : out   std_logic;
+          SPI_0_DI       : in    std_logic := 'U';
+          SPI_0_CLK      : inout   std_logic;
+          MMUART_0_TXD   : out   std_logic;
+          MMUART_0_RXD   : in    std_logic := 'U';
+          I2C_0_SDA      : inout   std_logic;
+          I2C_0_SCL      : inout   std_logic;
+          GPIO_29_BI     : inout   std_logic;
+          GPIO_26_BI     : inout   std_logic;
+          GPIO_25_BI     : inout   std_logic;
+          GPIO_24_BI     : inout   std_logic;
+          GPIO_23_BI     : inout   std_logic;
+          GPIO_22_BI     : inout   std_logic;
+          GPIO_21_BI     : inout   std_logic;
+          GPIO_20_BI     : inout   std_logic;
+          GPIO_19_BI     : inout   std_logic;
+          GPIO_18_BI     : inout   std_logic;
+          GPIO_17_BI     : inout   std_logic;
+          GPIO_16_BI     : inout   std_logic;
+          GPIO_15_BI     : inout   std_logic;
+          GPIO_14_BI     : inout   std_logic;
+          GPIO_13_BI     : inout   std_logic;
+          GPIO_12_BI     : inout   std_logic;
+          GPIO_11_BI     : inout   std_logic;
+          GPIO_10_BI     : inout   std_logic;
+          GPIO_9_BI      : inout   std_logic;
+          GPIO_8_BI      : inout   std_logic;
+          GPIO_1_BI      : inout   std_logic;
+          CAN_TX         : out   std_logic;
+          CAN_TX_EN_N    : out   std_logic;
+          CAN_RX         : in    std_logic := 'U';
+          XTL            : in    std_logic := 'U';
+          SDRCLK_c       : out   std_logic;
+          DEVRST_N       : in    std_logic := 'U'
         );
   end component;
 
@@ -48549,10 +49314,11 @@ architecture DEF_ARCH of top is
         \DQ_in[8]\, \DQ_in[9]\, \DQ_in[10]\, \DQ_in[11]\, 
         \DQ_in[12]\, \DQ_in[13]\, \DQ_in[14]\, \DQ_in[15]\, 
         \BA_c[0]\, \BA_c[1]\, CAS_N_c, CKE_c, \CS_N_c[0]\, 
-        \DQM_c[0]\, \DQM_c[1]\, RAS_N_c, \SA_c[0]\, \SA_c[1]\, 
-        \SA_c[2]\, \SA_c[3]\, \SA_c[4]\, \SA_c[5]\, \SA_c[6]\, 
-        \SA_c[7]\, \SA_c[8]\, \SA_c[9]\, \SA_c[10]\, \SA_c[11]\, 
-        SDRCLK_c, WE_N_c, un1_top_sb_0_3_i_i : std_logic;
+        \CS_N_c[1]\, \CS_N_c[2]\, \DQM_c[0]\, \DQM_c[1]\, RAS_N_c, 
+        \SA_c[0]\, \SA_c[1]\, \SA_c[2]\, \SA_c[3]\, \SA_c[4]\, 
+        \SA_c[5]\, \SA_c[6]\, \SA_c[7]\, \SA_c[8]\, \SA_c[9]\, 
+        \SA_c[10]\, \SA_c[11]\, \SA_c[12]\, SDRCLK_c, WE_N_c, OE
+         : std_logic;
 
     for all : top_sb
 	Use entity work.top_sb(DEF_ARCH);
@@ -48572,26 +49338,29 @@ begin
       port map(D => \DQM_c[0]\, PAD => DQM(0));
     
     \DQ_iobuf[5]\ : BIBUF
-      port map(PAD => DQ(5), D => \sdr_datain_reg[5]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[5]\);
+      port map(PAD => DQ(5), D => \sdr_datain_reg[5]\, E => OE, Y
+         => \DQ_in[5]\);
+    
+    \CS_N_obuf[1]\ : OUTBUF
+      port map(D => \CS_N_c[1]\, PAD => CS_N(1));
     
     \SA_obuf[7]\ : OUTBUF
       port map(D => \SA_c[7]\, PAD => SA(7));
     
     \DQ_iobuf[10]\ : BIBUF
-      port map(PAD => DQ(10), D => \sdr_datain_reg[10]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[10]\);
+      port map(PAD => DQ(10), D => \sdr_datain_reg[10]\, E => OE, 
+        Y => \DQ_in[10]\);
     
     \DQ_iobuf[11]\ : BIBUF
-      port map(PAD => DQ(11), D => \sdr_datain_reg[11]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[11]\);
+      port map(PAD => DQ(11), D => \sdr_datain_reg[11]\, E => OE, 
+        Y => \DQ_in[11]\);
     
     \VCC\ : VCC
       port map(Y => VCC_net_1);
     
     \DQ_iobuf[0]\ : BIBUF
-      port map(PAD => DQ(0), D => \sdr_datain_reg[0]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[0]\);
+      port map(PAD => DQ(0), D => \sdr_datain_reg[0]\, E => OE, Y
+         => \DQ_in[0]\);
     
     \SA_obuf[4]\ : OUTBUF
       port map(D => \SA_c[4]\, PAD => SA(4));
@@ -48603,8 +49372,8 @@ begin
       port map(D => \SA_c[3]\, PAD => SA(3));
     
     \DQ_iobuf[1]\ : BIBUF
-      port map(PAD => DQ(1), D => \sdr_datain_reg[1]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[1]\);
+      port map(PAD => DQ(1), D => \sdr_datain_reg[1]\, E => OE, Y
+         => \DQ_in[1]\);
     
     CKE_obuf : OUTBUF
       port map(D => CKE_c, PAD => CKE);
@@ -48616,8 +49385,8 @@ begin
       port map(D => SDRCLK_c, PAD => SDRCLK);
     
     \DQ_iobuf[14]\ : BIBUF
-      port map(PAD => DQ(14), D => \sdr_datain_reg[14]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[14]\);
+      port map(PAD => DQ(14), D => \sdr_datain_reg[14]\, E => OE, 
+        Y => \DQ_in[14]\);
     
     \SA_obuf[2]\ : OUTBUF
       port map(D => \SA_c[2]\, PAD => SA(2));
@@ -48635,28 +49404,33 @@ begin
       port map(D => \DQM_c[1]\, PAD => DQM(1));
     
     \DQ_iobuf[8]\ : BIBUF
-      port map(PAD => DQ(8), D => \sdr_datain_reg[8]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[8]\);
+      port map(PAD => DQ(8), D => \sdr_datain_reg[8]\, E => OE, Y
+         => \DQ_in[8]\);
     
     \DQ_iobuf[13]\ : BIBUF
-      port map(PAD => DQ(13), D => \sdr_datain_reg[13]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[13]\);
+      port map(PAD => DQ(13), D => \sdr_datain_reg[13]\, E => OE, 
+        Y => \DQ_in[13]\);
+    
+    \CS_N_obuf[2]\ : OUTBUF
+      port map(D => \CS_N_c[2]\, PAD => CS_N(2));
     
     top_sb_0 : top_sb
-      port map(DQ_in(15) => \DQ_in[15]\, DQ_in(14) => \DQ_in[14]\, 
+      port map(BA_c(1) => \BA_c[1]\, BA_c(0) => \BA_c[0]\, 
+        DQ_in(15) => \DQ_in[15]\, DQ_in(14) => \DQ_in[14]\, 
         DQ_in(13) => \DQ_in[13]\, DQ_in(12) => \DQ_in[12]\, 
         DQ_in(11) => \DQ_in[11]\, DQ_in(10) => \DQ_in[10]\, 
         DQ_in(9) => \DQ_in[9]\, DQ_in(8) => \DQ_in[8]\, DQ_in(7)
          => \DQ_in[7]\, DQ_in(6) => \DQ_in[6]\, DQ_in(5) => 
         \DQ_in[5]\, DQ_in(4) => \DQ_in[4]\, DQ_in(3) => 
         \DQ_in[3]\, DQ_in(2) => \DQ_in[2]\, DQ_in(1) => 
-        \DQ_in[1]\, DQ_in(0) => \DQ_in[0]\, BA_c(1) => \BA_c[1]\, 
-        BA_c(0) => \BA_c[0]\, SA_c(11) => \SA_c[11]\, SA_c(10)
-         => \SA_c[10]\, SA_c(9) => \SA_c[9]\, SA_c(8) => 
-        \SA_c[8]\, SA_c(7) => \SA_c[7]\, SA_c(6) => \SA_c[6]\, 
-        SA_c(5) => \SA_c[5]\, SA_c(4) => \SA_c[4]\, SA_c(3) => 
-        \SA_c[3]\, SA_c(2) => \SA_c[2]\, SA_c(1) => \SA_c[1]\, 
-        SA_c(0) => \SA_c[0]\, sdr_datain_reg(15) => 
+        \DQ_in[1]\, DQ_in(0) => \DQ_in[0]\, CS_N_c(2) => 
+        \CS_N_c[2]\, CS_N_c(1) => \CS_N_c[1]\, CS_N_c(0) => 
+        \CS_N_c[0]\, SA_c(12) => \SA_c[12]\, SA_c(11) => 
+        \SA_c[11]\, SA_c(10) => \SA_c[10]\, SA_c(9) => \SA_c[9]\, 
+        SA_c(8) => \SA_c[8]\, SA_c(7) => \SA_c[7]\, SA_c(6) => 
+        \SA_c[6]\, SA_c(5) => \SA_c[5]\, SA_c(4) => \SA_c[4]\, 
+        SA_c(3) => \SA_c[3]\, SA_c(2) => \SA_c[2]\, SA_c(1) => 
+        \SA_c[1]\, SA_c(0) => \SA_c[0]\, sdr_datain_reg(15) => 
         \sdr_datain_reg[15]\, sdr_datain_reg(14) => 
         \sdr_datain_reg[14]\, sdr_datain_reg(13) => 
         \sdr_datain_reg[13]\, sdr_datain_reg(12) => 
@@ -48673,8 +49447,7 @@ begin
         \sdr_datain_reg[2]\, sdr_datain_reg(1) => 
         \sdr_datain_reg[1]\, sdr_datain_reg(0) => 
         \sdr_datain_reg[0]\, DQM_c(1) => \DQM_c[1]\, DQM_c(0) => 
-        \DQM_c[0]\, CS_N_c_0 => \CS_N_c[0]\, CAS_N_c => CAS_N_c, 
-        CKE_c => CKE_c, un1_top_sb_0_3_i_i => un1_top_sb_0_3_i_i, 
+        \DQM_c[0]\, CAS_N_c => CAS_N_c, CKE_c => CKE_c, OE => OE, 
         RAS_N_c => RAS_N_c, WE_N_c => WE_N_c, SPI_0_SS0 => 
         SPI_0_SS0, SPI_0_DO => SPI_0_DO, SPI_0_DI => SPI_0_DI, 
         SPI_0_CLK => SPI_0_CLK, MMUART_0_TXD => MMUART_0_TXD, 
@@ -48697,12 +49470,12 @@ begin
       port map(D => \SA_c[5]\, PAD => SA(5));
     
     \DQ_iobuf[9]\ : BIBUF
-      port map(PAD => DQ(9), D => \sdr_datain_reg[9]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[9]\);
+      port map(PAD => DQ(9), D => \sdr_datain_reg[9]\, E => OE, Y
+         => \DQ_in[9]\);
     
     \DQ_iobuf[3]\ : BIBUF
-      port map(PAD => DQ(3), D => \sdr_datain_reg[3]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[3]\);
+      port map(PAD => DQ(3), D => \sdr_datain_reg[3]\, E => OE, Y
+         => \DQ_in[3]\);
     
     RAS_N_obuf : OUTBUF
       port map(D => RAS_N_c, PAD => RAS_N);
@@ -48720,12 +49493,12 @@ begin
       port map(D => \BA_c[0]\, PAD => BA(0));
     
     \DQ_iobuf[6]\ : BIBUF
-      port map(PAD => DQ(6), D => \sdr_datain_reg[6]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[6]\);
+      port map(PAD => DQ(6), D => \sdr_datain_reg[6]\, E => OE, Y
+         => \DQ_in[6]\);
     
     \DQ_iobuf[4]\ : BIBUF
-      port map(PAD => DQ(4), D => \sdr_datain_reg[4]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[4]\);
+      port map(PAD => DQ(4), D => \sdr_datain_reg[4]\, E => OE, Y
+         => \DQ_in[4]\);
     
     \SA_obuf[9]\ : OUTBUF
       port map(D => \SA_c[9]\, PAD => SA(9));
@@ -48734,23 +49507,23 @@ begin
       port map(D => \SA_c[6]\, PAD => SA(6));
     
     \DQ_iobuf[15]\ : BIBUF
-      port map(PAD => DQ(15), D => \sdr_datain_reg[15]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[15]\);
+      port map(PAD => DQ(15), D => \sdr_datain_reg[15]\, E => OE, 
+        Y => \DQ_in[15]\);
     
     \DQ_iobuf[7]\ : BIBUF
-      port map(PAD => DQ(7), D => \sdr_datain_reg[7]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[7]\);
+      port map(PAD => DQ(7), D => \sdr_datain_reg[7]\, E => OE, Y
+         => \DQ_in[7]\);
     
     \DQ_iobuf[2]\ : BIBUF
-      port map(PAD => DQ(2), D => \sdr_datain_reg[2]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[2]\);
+      port map(PAD => DQ(2), D => \sdr_datain_reg[2]\, E => OE, Y
+         => \DQ_in[2]\);
     
     \DQ_iobuf[12]\ : BIBUF
-      port map(PAD => DQ(12), D => \sdr_datain_reg[12]\, E => 
-        un1_top_sb_0_3_i_i, Y => \DQ_in[12]\);
+      port map(PAD => DQ(12), D => \sdr_datain_reg[12]\, E => OE, 
+        Y => \DQ_in[12]\);
     
     \SA_obuf[12]\ : OUTBUF
-      port map(D => GND_net_1, PAD => SA(12));
+      port map(D => \SA_c[12]\, PAD => SA(12));
     
 
 end DEF_ARCH; 

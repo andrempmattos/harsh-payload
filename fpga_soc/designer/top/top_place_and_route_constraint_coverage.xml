@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 11.8.0.26</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Fri Sep 25 15:46:36 2020 </text>
+Date: Tue Oct 06 16:34:39 2020 </text>
 <table>
 <header>
 </header>
@@ -50,52 +50,52 @@ Date: Fri Sep 25 15:46:36 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3449</cell>
+ <cell>         3522</cell>
  <cell>           20</cell>
- <cell>         3469</cell>
+ <cell>         3542</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2334</cell>
+ <cell>         2378</cell>
  <cell>            6</cell>
- <cell>         2340</cell>
+ <cell>         2384</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>           65</cell>
- <cell>           65</cell>
+ <cell>           68</cell>
+ <cell>           68</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5783</cell>
- <cell>           91</cell>
- <cell>         5874</cell>
+ <cell>         5900</cell>
+ <cell>           94</cell>
+ <cell>         5994</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3449</cell>
+ <cell>         3522</cell>
  <cell>           20</cell>
- <cell>         3469</cell>
+ <cell>         3542</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2334</cell>
+ <cell>         2378</cell>
  <cell>            6</cell>
- <cell>         2340</cell>
+ <cell>         2384</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>           65</cell>
- <cell>           65</cell>
+ <cell>           68</cell>
+ <cell>           68</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5783</cell>
- <cell>           91</cell>
- <cell>         5874</cell>
+ <cell>         5900</cell>
+ <cell>           94</cell>
+ <cell>         5994</cell>
 </row>
 </table>
 <section>
@@ -111,52 +111,52 @@ Date: Fri Sep 25 15:46:36 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3449</cell>
+ <cell>         3522</cell>
  <cell>           20</cell>
- <cell>         3469</cell>
+ <cell>         3542</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2334</cell>
+ <cell>         2378</cell>
  <cell>            6</cell>
- <cell>         2340</cell>
+ <cell>         2384</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>           64</cell>
- <cell>           64</cell>
+ <cell>           67</cell>
+ <cell>           67</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5783</cell>
- <cell>           90</cell>
- <cell>         5873</cell>
+ <cell>         5900</cell>
+ <cell>           93</cell>
+ <cell>         5993</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3449</cell>
+ <cell>         3522</cell>
  <cell>           20</cell>
- <cell>         3469</cell>
+ <cell>         3542</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2334</cell>
+ <cell>         2378</cell>
  <cell>            6</cell>
- <cell>         2340</cell>
+ <cell>         2384</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>           64</cell>
- <cell>           64</cell>
+ <cell>           67</cell>
+ <cell>           67</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5783</cell>
- <cell>           90</cell>
- <cell>         5873</cell>
+ <cell>         5900</cell>
+ <cell>           93</cell>
+ <cell>         5993</cell>
 </row>
 </table>
 <section>
@@ -215,6 +215,8 @@ Date: Fri Sep 25 15:46:36 2020 </text>
  <item>CAS_N</item>
  <item>CKE</item>
  <item>CS_N[0]</item>
+ <item>CS_N[1]</item>
+ <item>CS_N[2]</item>
  <item>DQM[0]</item>
  <item>DQM[1]</item>
  <item>DQ[0]</item>
@@ -261,6 +263,7 @@ Date: Fri Sep 25 15:46:36 2020 </text>
  <item>SA[0]</item>
  <item>SA[10]</item>
  <item>SA[11]</item>
+ <item>SA[12]</item>
  <item>SA[1]</item>
  <item>SA[2]</item>
  <item>SA[3]</item>
@@ -284,6 +287,8 @@ Date: Fri Sep 25 15:46:36 2020 </text>
  <item>CAS_N</item>
  <item>CKE</item>
  <item>CS_N[0]</item>
+ <item>CS_N[1]</item>
+ <item>CS_N[2]</item>
  <item>DQM[0]</item>
  <item>DQM[1]</item>
  <item>DQ[0]</item>
@@ -330,6 +335,7 @@ Date: Fri Sep 25 15:46:36 2020 </text>
  <item>SA[0]</item>
  <item>SA[10]</item>
  <item>SA[11]</item>
+ <item>SA[12]</item>
  <item>SA[1]</item>
  <item>SA[2]</item>
  <item>SA[3]</item>
