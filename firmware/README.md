@@ -53,6 +53,34 @@
 
 The HARSH Payload firmware is embedded in the SoC FPGA processor (ARM Cortex-M3) and structured above the FreeRTOS operating system. It was designed to run the radiation experiments in the SDRAM memory devices. In order to allow a simple debug session, the code perform logs that are sent through a UART port. The firmware is divided in 6 folders: hal (CMSIS and ARM port), system (some system configurations, such as clocks), freertos (operating system sources), drivers (Microsemi original drivers and the developed SDRAM driver), devices (sources to handle devices, external peripherals and interfaces), and app (application files and libraries). There are 5 available test algorithms: WriteStatic/ReadStatic, MarchC, DynamicStress, DynamicEClassic, and DynamicF. These algorithms are executed due to a scheduler controlled by the OBC and follows a default routine depending on the experiments requirements/constraints/objectives.
 
+#### System execution flow
+The following diagram presents a simplefied view of the system execution flow. It is simplified to focus only in a top perspective.
+
+<p align="center">
+	<img width="40%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/diagrams/system_flow.png">
+</p> 
+
+#### Abstraction Layers
+As herein mentioned, the firmware is divided in different abstraction layers to improve the code quality, readability, development and reliability.
+
+<p align="center">
+	<img width="50%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/diagrams/abstraction_layers.png">
+</p> 
+
+#### System architecture
+This diagram presents the operating system abstractions and structures: tasks, queues, semaphores and interruptions. Also, it is provided related info, such as: task priority and queue depth. 
+
+<p align="center">
+	<img width="70%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/diagrams/system_architecture.png">
+</p> 
+
+#### Experiment architecture
+This diagram presents the experiment execution scheme, which is composed of different system tasks and queues. For more information refer to the documentation.
+<p align="center">
+	<img width="60%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/diagrams/experiment_architecture.png">
+</p> 
+
+
 ## License
 The developed firmware is under MIT license. 
 
@@ -106,6 +134,8 @@ The developed firmware is under MIT license.
 			--command "set DEVICE M2S010" --file board/microsemi-cortex-m3.cfg
 		> Startup tab > Run/Restart Commands, disable the "Pre-run/Restart reset" tick-box
 	- Apply and debug
+
+> Alternatively, it is possible to use the UART port for debugging, refer to the documentation.
 
 ## Notes
 Under Development!
