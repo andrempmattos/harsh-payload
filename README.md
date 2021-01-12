@@ -1,8 +1,12 @@
+<p align="center">
+  <img width="15%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/ufsc_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/um_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/lirmm_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/spacelab_logo.png">
+</p>
+<br>
 <h1 align="center">
-	<img width="15%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/ufsc_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/um_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/lirmm_logo.png">
-	<img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/spacelab_logo.png">
+  Harsh Environment CubeSat Payload
 </h1>
 
 <h4 align="center">A brief of the project description, objectives, version, organization and acknowledgements.</h4>
@@ -81,8 +85,8 @@ In order to manufacture, assembly, test, integrate, and run the payload HARSH, i
 
 ```
 documentation: Project detailed info and main document files, diagrams, images and reports.
-firmware: Payload firmware sources, including third-part libraries and frameworks and developed proprietary files.
-fpga_soc: System-On-a-Chip FPGA sources, including the HDL sources, synthesis outputs, reports and IDE framework files.
+firmware: Payload firmware sources, including developed and third-part libraries and frameworks.
+fpga_soc: System-On-a-Chip FPGA sources, including the HDL sources, synthesis, reports and IDE files.
 hardware: Payload hardware files, including CAD sources, fabrication outputs and auxiliary report. 
 harshlib: The library for interfacing the Harsh Payload as the OBC.
 ```
