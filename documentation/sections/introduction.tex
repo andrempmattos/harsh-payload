@@ -1,0 +1,80 @@
+%
+% introduction.tex
+%
+% Copyright (C) 2018 by Andre Martins Pio de Mattos <andrempmattos@gmail.com>.
+%
+% Internship Report
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Title page.
+%
+% \author Andre Martins Pio de Mattos <andrempmattos@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 11/16/2019
+%
+%================================================================================
+\newpage
+
+\section{Introduction} \label{sec:introduction}
+
+The increasingly market of small spacecrafts \cite{small_spacecraft_state_of_art} is leading a rapid evolution of the technology and standards employed in these missions and pushing the limits of size, power consumption, reliability and capabilities of the embedded systems. The CubeSat, a satellite standard, and its variants are emerging as promising models for several applications in remote sensing, telecommunications, earth observation and even space exploration. 
+
+Comparing with the other standards and bulky satellites, which use high-end and tailored components and require considerable effort in development and launch, the CubeSats have a advantage due to the use of Commercial Of-The-Shelf (COTS) components and the reduced logistics involved that impacts directly in the mission cost. 
+
+Despite this advantage, the CubeSat missions do not reach all the space sector applications, due to the size scope or even a technological impracticability, reinforcing that the bulky missions still have relevance and importance in the subject. Therefore, this scenario brings a new horizon for technological advances and facilitate the widespread usage of satellites to solve challenging problems and enhance the understanding of the space.
+
+The environment faced in these space missions is harsh due to the high temperature, pressure, radiation doses and mechanical stress conditions. These parameters achieve a critically value when considering long-term missions or high orbits. The majority of CubeSat missions follow low orbits profiles, where the conditions are less demanding, nevertheless as dangerous and onerous for development. Also, the utilization of COTS components without caution and previous analysis could lead to catastrophic failures as consequence of the creation of bottlenecks and unpredictability in the system. For this reason, several studies are being carried out to identify and quantify the vulnerabilities of these components in the space environment.
+
+The most challenging condition to overcome is the significant amount of radiation in which these systems are exposed outside the protection of the earth magnetic field. Since the deployment from the launcher, the satellite is exposed to a wide spectrum of random radiation interactions with diverse magnitudes and consequences \cite{space_mission_analysis_rad_cap}. In order to minimize these effects, different approaches are adopted in various layers, since the hardware architecture itself to complex software correction error techniques and redundancies. Then, evaluate the vulnerability of those components due to the radiation exposure and characterize the failure threshold for these parameters are essential to determine the effort that should be made during the development.  
+The Integrated Chip (IC) memories, in a wide variety of technologies and manufacturing nodes, are one of the most critical components affected by the high doses of radiation \cite{viyas_gupta_thesis}. The high capacity of these devices, the crucial information stored and the strict requirements imposed make unfeasible, in several applications, the high-level efforts to minimize this damage due to the high performance trade-offs or even the substantial amounts of data. For this reason, other approaches are investigated, which generally leads for high-cost custom hardened devices for specific niches. Therefore, it is essential to evaluate the real venerability of these components and determine when radiation mitigation techniques are required in each application.
+
+In this context, two types of memory could be enumerated: non-volatile and volatile. The first group offers technologies with significant robustness within radiation exposure conditions without technological enhancements, such as Flash based chips. Also, due to less performance intensive requirements, some software management techniques are feasible. However, in the volatile memories, with the pressure to attend the performance objectives of demanding applications and the current available technologies, this group is under analysis of many studies due to its vulnerability. The most performance capable model are the Synchronous Dynamic Random-Access Memory (SDRAM) chips, which are being improved and tailored for decades in the personal computers, workstations and servers industry. 
+
+% Motivation
+
+Therefore, the efforts of this work will focus on the creation of a payload capable of evaluate the radiation effects on three SDRAM memories with different manufacturing nodes. This payload will test these chips in the real harsh space environment by participating of the GOLDS-UFSC CubeSat mission. These particular SDRAM memories were previous characterized on laboratory experiments, then by exposing them to the real environments and executing the same tests routines will not only generate more results for analysis, but also provide an opportunity to assess the test methodologies themselves. Also, after collecting sufficient data to be analysed, this payload could be used to provide a meaningful health status, concerning the radiation doses which the satellite were exposed, to the entire satellite subsystems and further missions.
+
+% Objectives
+
+In order to accomplish these objectives, the payload is designed to follow the GOLDS-UFSC OBDH DaughterBoard standard \cite{golds_ufsc} \cite{fsatobdh}, which defines the connectors, shape and size of the board. This standard allows the utilization of the module throughout future FloripaSat \cite{floripasat} core\footnote{The GOLDS-UFSC mission reuses the FloripaSat-I core modules.} missions in reason of its low space occupation inside the CubeSat, being considered further as an expansion module instead of a payload experiment. Also, due to the mission limited power budget, the developed board should consider reduce power consumption and define clever power management strategies. In addition, methods for anti latch-up, a type of short circuit which can occur inside an IC, are considered in the design. Therefore, combining all these requirements, the payload architecture consists of the following modules: a control and management subsystem, operated by a System-On-a-Chip (SoC) solution Field-Programmable Gate Array (FPGA) \cite{what_is_soc_fpga}; power converters for properly voltage level supply; anti latch-up circuitry; communication and interface buses; debug module; and the SDRAM memory chips.
+
+\clearpage
+
+
+
+
+
+%\\Overview
+%\\1. Cubesat
+%\\2. Radiation
+%\\1 e 2. GOLDS-UFSC
+%\\3. 
+%\\4. Payloads
+%\\4.1 SDRAMs
+%\\    - Caracteristicas principais
+%\\    - Falar da uso e importancia dessas memorias
+%\\    - Vulnerabilidade
+%\\    - Aplicacoes/missoes planejadas com essas memorias (Marte)
+%\\4.2 FPGAs
+%\\    - Caracteristicas principais (low power)
+%\\    - Falar da uso e importancia desses dispositivos
+%\\    - Vulnerabilidades/protecoes/estrategias (flash based)
+%\\    - Aplicacoes/missoes usando essas memorias
+%\\    
+%\\Motivation
+%\\1. SDRAMs interest of usage in other missions
+%\\2. Evaluate the vunerability in harsh environment
+%\\3. Validate ground tests
+%\\
+%\\Objectives
+%\\1. Evaluate SDRAMs venerability due to radiation
+%\\2. Analyse/compare the ground tests vs space tests
+%\\3. Act as radiation sensor for the satellite health measures
+%\\4. Compact design for further FloripaSat Core missions

@@ -1,0 +1,62 @@
+%
+% main.tex
+%
+% Copyright (C) 2018 by Andre Martins Pio de Mattos <andrempmattos@gmail.com>.
+%
+% Internship Report
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Title page.
+%
+% \author Andre Martins Pio de Mattos <andrempmattos@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 08/09/2019
+%
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{thesis}
+
+\title{DEVELOPMENT OF A RADIATION EXPERIMENT PAYLOAD FOR EVALUATING SDRAM MEMORIES TECHNOLOGIES IN HARSH ENVIRONMENTS}
+%\title{RADIATION EXPERIMENT PAYLOAD: DEVELOPMENT OF A PAYLOAD FOR TESTING SDRAM MEMORIES TECHNOLOGIES IN REAL ENVIRONMENT}
+
+\author{Andre Martins Pio de Mattos}
+\date{\today}
+
+% File metadata
+\hypersetup
+{
+    pdfauthor	= {\theauthor},
+    pdfsubject	= {Internship Report},
+    pdftitle	= {\thetitle},
+    pdfkeywords	= {Embedded systems, satellites, radiation experiment, CubeSat, FPGA, SDRAM}
+}
+
+\begin{document}
+    \pagenumbering{arabic}
+
+    \input{header/titlepage}
+    \input{header/subtitlepage}
+    %\cleardoublepage
+
+    \tableofcontents
+    %\cleardoublepage
+
+    \newpage
+
+    \input{sections/introduction}
+    \input{sections/background}
+    \input{sections/development}
+    \input{sections/results}
+    \input{sections/conclusion}
+    \input{references/references}
+    \input{annexes/annex_schematics}
+    
+\end{document}
