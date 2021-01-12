@@ -7,19 +7,25 @@
 <h4 align="center">Harsh Environment CubeSat Payload firmware embedded in the SoC FPGA processor (ARM Cortex-M3).</h4>
 
 <p align="center">
-    <a href="">
-		<img src="https://img.shields.io/badge/latest%20version-0.1.0-lightgreen?style=for-the-badge">
+    <a href="https://github.com/spacelab-ufsc/spacelab#versioning">
+        <img src="https://img.shields.io/badge/status-under%20testing-yellow?style=for-the-badge">
+    </a>
+    <a href="https://github.com/andrempmattos/harsh-payload/releases">
+        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/andrempmattos/harsh-payload?style=for-the-badge">
+    </a>
+    <a href="https://github.com/andrempmattos/harsh-payload/releases">
+		<img alt="GitHub commits since latest release (by date)" src="https://img.shields.io/github/commits-since/andrempmattos/harsh-payload/latest?style=for-the-badge">
+	</a>
+	<a href="https://github.com/andrempmattos/harsh-payload/commits/master">
+		<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/andrempmattos/harsh-payload?style=for-the-badge">
 	</a>
     <a href="">
-		<img src="https://img.shields.io/badge/stable%20version-0.1.0-blue?style=for-the-badge">
+    	<img alt="GitHub issues by-label" src="https://img.shields.io/github/issues/andrempmattos/harsh-payload/firmware?style=for-the-badge">
 	</a>
-	<a href="">
-		<img src="https://img.shields.io/badge/model-engineering-9cf?style=for-the-badge">
-	</a>
-	<a href="">
-		<img src="https://img.shields.io/badge/language-c-blueviolet?style=for-the-badge">
-	</a>
-	<a href="">
+    <a href="https://github.com/andrempmattos/harsh-payload/blob/master/firmware/main.c">
+        <img src="https://img.shields.io/badge/language-C-green?style=for-the-badge">
+    </a>
+    <a href="">
 		<img src="https://img.shields.io/badge/IDE%20tool-SoftConsole%20v6.0-yellow?style=for-the-badge">
 	</a>
 	<a href="">
@@ -28,7 +34,7 @@
 	<a href="">
 		<img src="https://img.shields.io/badge/license-MIT-red?style=for-the-badge">
 	</a>
-	<a href="https://github.com/andrempmattos/HARSH/tree/master/documentation">
+	<a href="https://github.com/andrempmattos/harsh-payload/tree/master/documentation">
 		<img src="https://img.shields.io/badge/for%20more-here-lightgray?style=for-the-badge">
 	</a>
 </p>
@@ -44,7 +50,8 @@
 </p>
 
 ## Overview
-The HARSH Payload firmware is embedded in the SoC FPGA processor (ARM Cortex-M3) and structured above the FreeRTOS operating system. More information soon... 
+
+The HARSH Payload firmware is embedded in the SoC FPGA processor (ARM Cortex-M3) and structured above the FreeRTOS operating system. It was designed to run the radiation experiments in the SDRAM memory devices. In order to allow a simple debug session, the code perform logs that are sent through a UART port. The firmware is divided in 6 folders: hal (CMSIS and ARM port), system (some system configurations, such as clocks), freertos (operating system sources), drivers (Microsemi original drivers and the developed SDRAM driver), devices (sources to handle devices, external peripherals and interfaces), and app (application files and libraries). There are 5 available test algorithms: WriteStatic/ReadStatic, MarchC, DynamicStress, DynamicEClassic, and DynamicF. These algorithms are executed due to a scheduler controlled by the OBC and follows a default routine depending on the experiments requirements/constraints/objectives.
 
 ## License
 The developed firmware is under MIT license. 
@@ -65,8 +72,8 @@ The developed firmware is under MIT license.
 
 ## Development
 #### Toolchain setup:
-	- [Optional] Install Libero v11.7 (tip: use Windows OS)
-	- Install SoftConsole v6.0 (tip: use Windows OS)
+	- [Optional] Install Libero v11.7
+	- Install SoftConsole v6.0
 	- Install PuTTY or any similar serial monitor
 
 #### Compiling and building: [[Tutorial]](https://github.com/tstana/M2S010-MKR-KIT_FirstProj/wiki)
@@ -101,5 +108,7 @@ The developed firmware is under MIT license.
 	- Apply and debug
 
 ## Notes
-Under Development! More information soon.
+Under Development!
+
+
 
