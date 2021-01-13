@@ -1,12 +1,12 @@
 <p align="center">
-  <img width="15%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/ufsc_logo.png">
-  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/um_logo.png">
-  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/lirmm_logo.png">
-  <img width="19%" src="https://github.com/andrempmattos/HARSH/blob/master/documentation/figures/spacelab_logo.png">
+  <img width="15%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/figures/ufsc_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/figures/um_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/figures/lirmm_logo.png">
+  <img width="19%" src="https://github.com/andrempmattos/harsh-payload/blob/master/documentation/figures/spacelab_logo.png">
 </p>
 <br>
 <h1 align="center">
-  Harsh Environment CubeSat Payload
+  HARSH ENVIRONMENT CUBESAT PAYLOAD
 </h1>
 
 <h4 align="center">A brief of the project description, objectives, version, organization and acknowledgements.</h4>
@@ -36,7 +36,7 @@
   <a href="http://www.lirmm.fr/">
     <img src="https://img.shields.io/badge/sourced%20by-LIRMM-red?style=for-the-badge">
   </a>
-  <a href="https://github.com/andrempmattos/HARSH/tree/master/documentation">
+  <a href="https://github.com/andrempmattos/harsh-payload/tree/master/documentation">
     <img src="https://img.shields.io/badge/for%20more-here-lightgray?style=for-the-badge">
   </a>
 </p>

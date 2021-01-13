@@ -52,10 +52,6 @@
 
 ## Overview
 
-<p align="center">
-	<img width="100%" src="https://github.com/andrempmattos/harsh-payload/blob/master/hardware/Diagrams/Architecture_HARSH_Payload.png">
-</p>
-
 The board features:
 - SmartFusion2 SoC FPGA: M2S010-VFG400 (or M2S025-VFG400). It includes ARM Cortex-M3 and several peripherals.
 - ISSI SDRAM Memories: IS42S16320B-6TLI, IS42S16320D-7TLI, and IS42S16320F-7TLI.
@@ -70,6 +66,10 @@ The board features:
 - Latch-up monitors: 3 for each memory (controled by the FPGA) and 1 for the entire board (controled by a external source). Note: the default states are all turned on and there are bypass jumpers if necessary.
 
 The power consumption depends on the application and mainly the instantiated blocks, which includes softcore IPs and hardcore peripherals enabled. Some test results running application in the ARM processor with constant access to the SDRAM controller/memories (memory test algorithms) presented consumption of approximately 150mA at 3.3V supply (500mW).
+
+<p align="center">
+	<img width="85%" src="https://github.com/andrempmattos/harsh-payload/blob/master/hardware/Diagrams/Architecture_HARSH_Payload.png">
+</p>
 
 ## License
 The developed hardware is under MIT license. 
