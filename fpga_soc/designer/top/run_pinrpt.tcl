@@ -1,6 +1,6 @@
 DESIGN=top
-DESDIR=C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top
-TARGET_DIR=C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top
+DESDIR=C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top
+TARGET_DIR=C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top
 FAM=SmartFusion2
 DIE=PA4M2500_N
 PACKAGE=vf400

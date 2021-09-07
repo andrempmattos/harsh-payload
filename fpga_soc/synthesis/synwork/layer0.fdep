@@ -1,373 +1,247 @@
 #defaultlanguage:vhdl
-#OPTIONS:"|-layerid|0|-orig_srs|C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\synthesis\\synwork\\top_comp.srs|-top|work.top|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|work|-lib|work|-lib|COREAHBLITE_LIB|-lib|work|-lib|work"
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\bin64\\c_vhdl.exe":1480000292
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\location.map":1478825988
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\std.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd\\snps_haps_pkg.vhd":1487959654
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\std1164.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\std_textio.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\numeric.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd\\umr_capim.vhd":1487959654
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\arith.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\unsigned.vhd":1487959786
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1487959654
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vhdl\\core\\coreresetp_pcie_hotreset.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\CCC_0\\top_sb_CCC_0_FCCC.vhd":1602013876
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\generic\\smartfusion2.vhd":1487959628
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_AHBAccessControl.vhd":1597174023
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\misc.vhd":1487959786
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_AXIAccessControl.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_rdch_ram.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_wrch_ram.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_reset_sync.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\Synchronizer_AHBtoAXI.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\Synchronizer_AXItoAHB.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_pkg.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\XHDL_misc.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\XHDL_std_logic.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\SgCore\\OSC\\2.0.101\\osc_comps.vhd":1597174737
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_addrdec.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_defaultslavesm.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_slavearbiter.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_pkg.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\openbank.vhd":1597174025
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb_MSS\\top_sb_MSS_syn.vhd":1602013925
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\components.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vhdl\\core\\coreresetp.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_RDCHANNELFIFO.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_WRCHANNELFIFO.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\COREAHBLTOAXI_0\\rtl\\vhdl\\core\\CoreAHBLtoAXI.vhd":1602013879
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_feedthrough.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_rdmatrix_16Sto1M.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_rd_channel.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wresp_channel.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_matrix_m.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_ra_arbiter.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_rdmatrix_4Mto1S.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_rdmatrix_4Mto1S_hgs_high.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_rdmatrix_4Mto1S_hgs_low.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_ra_channel.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wa_arbiter.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wrmatrix_4Mto1S.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wrmatrix_4Mto1S_hgs_high.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wrmatrix_4Mto1S_hgs_low.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wa_channel.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_wd_channel.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_matrix_s.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_interconnect_ntom.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_master_stage.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\COREAXI\\3.1.100\\rtl\\vhdl\\core\\axi_slave_stage.vhd":1597174024
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\COREAXI_0\\rtl\\vhdl\\core\\coreaxi.vhd":1602013879
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\FABOSC_0\\top_sb_FABOSC_0_OSC.vhd":1602013883
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\OSC_0\\top_sb_OSC_0_OSC.vhd":1602013886
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_masterstage.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_slavestage.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite_matrix4x16.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vhdl\\core\\coreahblite.vhd":1597174023
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\fastsdram.vhd":1597174025
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\fastinit.vhd":1597174025
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\coresdr.vhd":1597174025
-#CUR:"C:\\Microsemi\\Libero_SoC_v11.8\\SynplifyPro\\lib\\vhd2008\\signed.vhd":1487959786
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\coresdr_axi.vhd":1597174025
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb_MSS\\top_sb_MSS.vhd":1602013927
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top_sb\\top_sb.vhd":1602013887
-#CUR:"C:\\Users\\Andre\\Desktop\\github\\HARSH\\fpga_soc\\component\\work\\top\\top.vhd":1602013934
-0 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd" vhdl
-1 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd" vhdl
-2 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd" vhdl
-3 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AHBAccessControl.vhd" vhdl
-4 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AXIAccessControl.vhd" vhdl
-5 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_rdch_ram.vhd" vhdl
-6 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_RDCHANNELFIFO.vhd" vhdl
-7 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_wrch_ram.vhd" vhdl
-8 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_WRCHANNELFIFO.vhd" vhdl
-9 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_reset_sync.vhd" vhdl
-10 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AHBtoAXI.vhd" vhdl
-11 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AXItoAHB.vhd" vhdl
-12 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd" vhdl
-13 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_pkg.vhd" vhdl
-14 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_misc.vhd" vhdl
-15 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\XHDL_std_logic.vhd" vhdl
-16 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_feedthrough.vhd" vhdl
-17 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_16Sto1M.vhd" vhdl
-18 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rd_channel.vhd" vhdl
-19 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wresp_channel.vhd" vhdl
-20 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_m.vhd" vhdl
-21 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_arbiter.vhd" vhdl
-22 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S.vhd" vhdl
-23 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_high.vhd" vhdl
-24 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_rdmatrix_4Mto1S_hgs_low.vhd" vhdl
-25 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_ra_channel.vhd" vhdl
-26 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_arbiter.vhd" vhdl
-27 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S.vhd" vhdl
-28 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_high.vhd" vhdl
-29 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wrmatrix_4Mto1S_hgs_low.vhd" vhdl
-30 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wa_channel.vhd" vhdl
-31 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_wd_channel.vhd" vhdl
-32 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_matrix_s.vhd" vhdl
-33 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_interconnect_ntom.vhd" vhdl
-34 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_master_stage.vhd" vhdl
-35 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\core\axi_slave_stage.vhd" vhdl
-36 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\COREAXI_0\rtl\vhdl\core\coreaxi.vhd" vhdl
-37 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd" vhdl
-38 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd" vhdl
-39 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\OSC_0\top_sb_OSC_0_OSC.vhd" vhdl
-40 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_addrdec.vhd" vhdl
-41 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_defaultslavesm.vhd" vhdl
-42 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_masterstage.vhd" vhdl
-43 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavearbiter.vhd" vhdl
-44 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_slavestage.vhd" vhdl
-45 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_matrix4x16.vhd" vhdl
-46 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite_pkg.vhd" vhdl
-47 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\coreahblite.vhd" vhdl
-48 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\openbank.vhd" vhdl
-49 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd" vhdl
-50 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastinit.vhd" vhdl
-51 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr.vhd" vhdl
-52 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd" vhdl
-53 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd" vhdl
-54 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd" vhdl
-55 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vhdl\core\components.vhd" vhdl
-56 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top_sb\top_sb.vhd" vhdl
-57 "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\component\work\top\top.vhd" vhdl
+#OPTIONS:"|-mixedhdl|-top|work.top|-layerid|0|-orig_srs|C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\synthesis\\synwork\\top_comp.srs|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|CORESDR_AXI_LIB|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|COREAHBLITE_LIB|-lib|work|-lib|work"
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\bin64\\c_vhdl.exe":1604390270
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\location.map":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\std.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd\\snps_haps_pkg.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\std1164.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\std_textio.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\numeric.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd\\umr_capim.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\arith.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\unsigned.vhd":1604390293
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1604390293
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\openbank.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vhdl\\core\\coreresetp_pcie_hotreset.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\CCC_0\\top_sb_CCC_0_FCCC.vhd":1631028358
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\generic\\smartfusion2.vhd":1604390290
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_reset_sync.vhd":1631028359
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\misc.vhd":1604390293
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\Synchronizer_AHBtoAXI.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\Synchronizer_AXItoAHB.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_AHBAccessControl.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_AXIAccessControl.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_rdch_ram.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_wrch_ram.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_slavearbiter.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_defaultslavesm.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_addrdec.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_pkg.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\SgCore\\OSC\\2.0.101\\osc_comps.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb_MSS\\top_sb_MSS_syn.vhd":1631028338
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\CoreAHBLite_0\\rtl\\vhdl\\core\\components.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\fastsdram.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\fastinit.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\coresdr.vhd":1631028365
+#CUR:"C:\\Microsemi\\Libero_SoC_v12.6\\SynplifyPro\\lib\\vhd2008\\signed.vhd":1604390293
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CORESDR_AXI\\2.0.116\\rtl\\vhdl\\core\\coresdr_axi.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vhdl\\core\\coreresetp.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_RDCHANNELFIFO.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\COREAHBLTOAXI\\2.1.101\\rtl\\vhdl\\core\\CoreAHBLtoAXI_WRCHANNELFIFO.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\COREAHBLTOAXI_0\\rtl\\vhdl\\core\\CoreAHBLtoAXI.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_slavestage.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_masterstage.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\Actel\\DirectCore\\CoreAHBLite\\5.5.101\\rtl\\vhdl\\core\\coreahblite_matrix4x16.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\CoreAHBLite_0\\rtl\\vhdl\\core\\coreahblite.vhd":1631028359
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\FABOSC_0\\top_sb_FABOSC_0_OSC.vhd":1631028365
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb_MSS\\top_sb_MSS.vhd":1631028339
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\OSC_0\\top_sb_OSC_0_OSC.vhd":1631028366
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top_sb\\top_sb.vhd":1631028367
+#CUR:"C:\\Users\\Sidney&Viviane\\Documents\\Andre\\GitHub\\harsh-payload\\fpga_soc\\component\\work\\top\\top.vhd":1631028379
+0 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\openbank.vhd" vhdl
+1 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastsdram.vhd" vhdl
+2 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\fastinit.vhd" vhdl
+3 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr.vhd" vhdl
+4 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CORESDR_AXI\2.0.116\rtl\vhdl\core\coresdr_axi.vhd" vhdl
+5 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp_pcie_hotreset.vhd" vhdl
+6 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vhdl\core\coreresetp.vhd" vhdl
+7 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\CCC_0\top_sb_CCC_0_FCCC.vhd" vhdl
+8 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_reset_sync.vhd" vhdl
+9 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AHBtoAXI.vhd" vhdl
+10 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\Synchronizer_AXItoAHB.vhd" vhdl
+11 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AHBAccessControl.vhd" vhdl
+12 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_AXIAccessControl.vhd" vhdl
+13 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_rdch_ram.vhd" vhdl
+14 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_RDCHANNELFIFO.vhd" vhdl
+15 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_wrch_ram.vhd" vhdl
+16 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\core\CoreAHBLtoAXI_WRCHANNELFIFO.vhd" vhdl
+17 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\COREAHBLTOAXI_0\rtl\vhdl\core\CoreAHBLtoAXI.vhd" vhdl
+18 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_slavearbiter.vhd" vhdl
+19 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_slavestage.vhd" vhdl
+20 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_defaultslavesm.vhd" vhdl
+21 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_addrdec.vhd" vhdl
+22 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_masterstage.vhd" vhdl
+23 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_matrix4x16.vhd" vhdl
+24 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\DirectCore\CoreAHBLite\5.5.101\rtl\vhdl\core\coreahblite_pkg.vhd" vhdl
+25 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\CoreAHBLite_0\rtl\vhdl\core\coreahblite.vhd" vhdl
+26 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\Actel\SgCore\OSC\2.0.101\osc_comps.vhd" vhdl
+27 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\FABOSC_0\top_sb_FABOSC_0_OSC.vhd" vhdl
+28 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb_MSS\top_sb_MSS_syn.vhd" vhdl
+29 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb_MSS\top_sb_MSS.vhd" vhdl
+30 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\OSC_0\top_sb_OSC_0_OSC.vhd" vhdl
+31 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\CoreAHBLite_0\rtl\vhdl\core\components.vhd" vhdl
+32 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top_sb\top_sb.vhd" vhdl
+33 "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\component\work\top\top.vhd" vhdl
 
 # Dependency Lists (Uses list)
 0 -1
 1 0 
-2 -1
-3 -1
-4 -1
+2 1 
+3 2 
+4 3 
 5 -1
 6 5 
 7 -1
-8 7 
+8 -1
 9 -1
 10 -1
 11 -1
-12 3 8 10 11 4 6 9 
+12 -1
 13 -1
-14 -1
+14 13 
 15 -1
-16 15 14 13 
-17 15 14 13 
-18 17 15 14 13 
-19 15 14 13 
-20 18 19 15 14 13 
-21 15 14 13 
-22 21 15 14 13 
-23 21 15 14 13 
-24 21 15 14 13 
-25 22 24 23 13 
-26 15 14 13 
-27 26 15 14 13 
-28 26 15 14 13 
-29 26 15 14 13 
-30 27 29 28 13 
-31 15 14 13 
-32 30 31 25 15 14 13 
-33 20 32 15 14 13 
-34 15 14 13 
-35 15 14 13 
-36 33 34 35 16 15 14 13 
-37 -1
-38 37 
-39 37 
-40 -1
-41 -1
-42 40 41 
-43 -1
-44 43 
-45 42 44 
-46 -1
-47 45 46 
-48 -1
-49 48 
-50 49 
-51 50 
-52 51 
-53 -1
-54 53 
-55 -1
-56 2 47 12 36 1 38 52 39 54 55 
-57 56 
+16 15 
+17 11 16 9 10 12 14 8 
+18 -1
+19 18 
+20 -1
+21 -1
+22 21 20 
+23 22 19 
+24 -1
+25 23 24 
+26 -1
+27 26 
+28 -1
+29 28 
+30 26 
+31 -1
+32 7 25 17 6 27 4 30 29 31 
+33 32 
 
 # Dependency Lists (Users Of)
 0 1 
-1 56 
-2 56 
-3 12 
-4 12 
+1 2 
+2 3 
+3 4 
+4 32 
 5 6 
-6 12 
-7 8 
-8 12 
-9 12 
-10 12 
-11 12 
-12 56 
-13 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 
-14 36 35 34 33 32 31 29 28 27 26 24 23 22 21 20 19 18 17 16 
-15 36 35 34 33 32 31 29 28 27 26 24 23 22 21 20 19 18 17 16 
-16 36 
-17 18 
-18 20 
-19 20 
-20 33 
-21 22 24 23 
-22 25 
+6 32 
+7 32 
+8 17 
+9 17 
+10 17 
+11 17 
+12 17 
+13 14 
+14 17 
+15 16 
+16 17 
+17 32 
+18 19 
+19 23 
+20 22 
+21 22 
+22 23 
 23 25 
 24 25 
 25 32 
-26 27 29 28 
-27 30 
-28 30 
-29 30 
+26 30 27 
+27 32 
+28 29 
+29 32 
 30 32 
 31 32 
 32 33 
-33 36 
-34 36 
-35 36 
-36 56 
-37 39 38 
-38 56 
-39 56 
-40 42 
-41 42 
-42 45 
-43 44 
-44 45 
-45 47 
-46 47 
-47 56 
-48 49 
-49 50 
-50 51 
-51 52 
-52 56 
-53 54 
-54 56 
-55 56 
-56 57 
-57 -1
+33 -1
 
 # Design Unit to File Association
-arch work coreresetp_pcie_hotreset rtl 0
-module work coreresetp_pcie_hotreset 0
-arch work coreresetp rtl 1
-module work coreresetp 1
-arch work top_sb_ccc_0_fccc def_arch 2
-module work top_sb_ccc_0_fccc 2
-arch work coreahbltoaxi_ahbaccesscontrolhx translated 3
-module work coreahbltoaxi_ahbaccesscontrolhx 3
-arch work coreahbltoaxi_axiaccesscontrolhx translated 4
-module work coreahbltoaxi_axiaccesscontrolhx 4
-arch work coreahbltoaxi_rdch_ramhx translated 5
-module work coreahbltoaxi_rdch_ramhx 5
-arch work coreahbltoaxi_rdchannelfifohx translated 6
-module work coreahbltoaxi_rdchannelfifohx 6
-arch work coreahbltoaxi_wrch_ramhx translated 7
-module work coreahbltoaxi_wrch_ramhx 7
-arch work coreahbltoaxi_wrchannelfifohx translated 8
-module work coreahbltoaxi_wrchannelfifohx 8
-arch work coreahbltoaxi_reset_synchx translated 9
-module work coreahbltoaxi_reset_synchx 9
-arch work synchronizer_ahbtoaxihx translated 10
-module work synchronizer_ahbtoaxihx 10
-arch work synchronizer_axitoahbhx translated 11
-module work synchronizer_axitoahbhx 11
-arch work top_sb_coreahbltoaxi_0_coreahbltoaxi translated 12
-module work top_sb_coreahbltoaxi_0_coreahbltoaxi 12
-arch work axi_feedthrough translated 16
-module work axi_feedthrough 16
-arch work axi_rdmatrix_16sto1m translated 17
-module work axi_rdmatrix_16sto1m 17
-arch work axi_rd_channel translated 18
-module work axi_rd_channel 18
-arch work axi_wresp_channel translated 19
-module work axi_wresp_channel 19
-arch work axi_matrix_m translated 20
-module work axi_matrix_m 20
-arch work axi_ra_arbiter translated 21
-module work axi_ra_arbiter 21
-arch work axi_rdmatrix_4mto1s translated 22
-module work axi_rdmatrix_4mto1s 22
-arch work axi_rdmatrix_4mto1s_hgs_high translated 23
-module work axi_rdmatrix_4mto1s_hgs_high 23
-arch work axi_rdmatrix_4mto1s_hgs_low translated 24
-module work axi_rdmatrix_4mto1s_hgs_low 24
-arch work axi_ra_channel translated 25
-module work axi_ra_channel 25
-arch work axi_wa_arbiter translated 26
-module work axi_wa_arbiter 26
-arch work axi_wrmatrix_4mto1s translated 27
-module work axi_wrmatrix_4mto1s 27
-arch work axi_wrmatrix_4mto1s_hgs_high translated 28
-module work axi_wrmatrix_4mto1s_hgs_high 28
-arch work axi_wrmatrix_4mto1s_hgs_low translated 29
-module work axi_wrmatrix_4mto1s_hgs_low 29
-arch work axi_wa_channel translated 30
-module work axi_wa_channel 30
-arch work axi_wd_channel translated 31
-module work axi_wd_channel 31
-arch work axi_matrix_s translated 32
-module work axi_matrix_s 32
-arch work axi_interconnect_ntom translated 33
-module work axi_interconnect_ntom 33
-arch work axi_master_stage translated 34
-module work axi_master_stage 34
-arch work axi_slave_stage translated 35
-module work axi_slave_stage 35
-arch work top_sb_coreaxi_0_coreaxi translated 36
-module work top_sb_coreaxi_0_coreaxi 36
-arch work xtlosc_fab def_arch 37
-module work xtlosc_fab 37
-arch work rcosc_25_50mhz_fab def_arch 37
-module work rcosc_25_50mhz_fab 37
-arch work rcosc_1mhz_fab def_arch 37
-module work rcosc_1mhz_fab 37
-arch work xtlosc def_arch 37
-module work xtlosc 37
-arch work rcosc_25_50mhz def_arch 37
-module work rcosc_25_50mhz 37
-arch work rcosc_1mhz def_arch 37
-module work rcosc_1mhz 37
-arch work top_sb_fabosc_0_osc def_arch 38
-module work top_sb_fabosc_0_osc 38
-arch work top_sb_osc_0_osc def_arch 39
-module work top_sb_osc_0_osc 39
-arch coreahblite_lib coreahblite_addrdec coreahblite_addrdec_arch 40
-module coreahblite_lib coreahblite_addrdec 40
-arch coreahblite_lib coreahblite_defaultslavesm coreahblite_defaultslavesm_arch 41
-module coreahblite_lib coreahblite_defaultslavesm 41
-arch coreahblite_lib coreahblite_masterstage coreahblite_masterstage_arch 42
-module coreahblite_lib coreahblite_masterstage 42
-arch coreahblite_lib coreahblite_slavearbiter coreahblite_slavearbiter_arch 43
-module coreahblite_lib coreahblite_slavearbiter 43
-arch coreahblite_lib coreahblite_slavestage trans 44
-module coreahblite_lib coreahblite_slavestage 44
-arch coreahblite_lib coreahblite_matrix4x16 coreahblite_matrix4x16_arch 45
-module coreahblite_lib coreahblite_matrix4x16 45
-arch coreahblite_lib coreahblite coreahblite_arch 47
-module coreahblite_lib coreahblite 47
-arch coresdr_axi_lib openbank rtl 48
-module coresdr_axi_lib openbank 48
-arch coresdr_axi_lib fastsdram rtl 49
-module coresdr_axi_lib fastsdram 49
-arch coresdr_axi_lib fastinit rtl 50
-module coresdr_axi_lib fastinit 50
-arch coresdr_axi_lib coresdr rtl 51
-module coresdr_axi_lib coresdr 51
-arch coresdr_axi_lib coresdr_axi trans 52
-module coresdr_axi_lib coresdr_axi 52
-arch work mss_025 def_arch 53
-module work mss_025 53
-arch work top_sb_mss rtl 54
-module work top_sb_mss 54
-arch work top_sb rtl 56
-module work top_sb 56
-arch work top rtl 57
-module work top 57
+arch coresdr_axi_lib openbank rtl 0
+module coresdr_axi_lib openbank 0
+arch coresdr_axi_lib fastsdram rtl 1
+module coresdr_axi_lib fastsdram 1
+arch coresdr_axi_lib fastinit rtl 2
+module coresdr_axi_lib fastinit 2
+arch coresdr_axi_lib coresdr rtl 3
+module coresdr_axi_lib coresdr 3
+arch coresdr_axi_lib coresdr_axi trans 4
+module coresdr_axi_lib coresdr_axi 4
+arch work coreresetp_pcie_hotreset rtl 5
+module work coreresetp_pcie_hotreset 5
+arch work coreresetp rtl 6
+module work coreresetp 6
+arch work top_sb_ccc_0_fccc def_arch 7
+module work top_sb_ccc_0_fccc 7
+arch work coreahbltoaxi_reset_synchx translated 8
+module work coreahbltoaxi_reset_synchx 8
+arch work synchronizer_ahbtoaxihx translated 9
+module work synchronizer_ahbtoaxihx 9
+arch work synchronizer_axitoahbhx translated 10
+module work synchronizer_axitoahbhx 10
+arch work coreahbltoaxi_ahbaccesscontrolhx translated 11
+module work coreahbltoaxi_ahbaccesscontrolhx 11
+arch work coreahbltoaxi_axiaccesscontrolhx translated 12
+module work coreahbltoaxi_axiaccesscontrolhx 12
+arch work coreahbltoaxi_rdch_ramhx translated 13
+module work coreahbltoaxi_rdch_ramhx 13
+arch work coreahbltoaxi_rdchannelfifohx translated 14
+module work coreahbltoaxi_rdchannelfifohx 14
+arch work coreahbltoaxi_wrch_ramhx translated 15
+module work coreahbltoaxi_wrch_ramhx 15
+arch work coreahbltoaxi_wrchannelfifohx translated 16
+module work coreahbltoaxi_wrchannelfifohx 16
+arch work top_sb_coreahbltoaxi_0_coreahbltoaxi translated 17
+module work top_sb_coreahbltoaxi_0_coreahbltoaxi 17
+arch coreahblite_lib coreahblite_slavearbiter coreahblite_slavearbiter_arch 18
+module coreahblite_lib coreahblite_slavearbiter 18
+arch coreahblite_lib coreahblite_slavestage trans 19
+module coreahblite_lib coreahblite_slavestage 19
+arch coreahblite_lib coreahblite_defaultslavesm coreahblite_defaultslavesm_arch 20
+module coreahblite_lib coreahblite_defaultslavesm 20
+arch coreahblite_lib coreahblite_addrdec coreahblite_addrdec_arch 21
+module coreahblite_lib coreahblite_addrdec 21
+arch coreahblite_lib coreahblite_masterstage coreahblite_masterstage_arch 22
+module coreahblite_lib coreahblite_masterstage 22
+arch coreahblite_lib coreahblite_matrix4x16 coreahblite_matrix4x16_arch 23
+module coreahblite_lib coreahblite_matrix4x16 23
+arch coreahblite_lib top_sb_coreahblite_0_coreahblite coreahblite_arch 25
+module coreahblite_lib top_sb_coreahblite_0_coreahblite 25
+arch work xtlosc_fab def_arch 26
+module work xtlosc_fab 26
+arch work rcosc_25_50mhz_fab def_arch 26
+module work rcosc_25_50mhz_fab 26
+arch work rcosc_1mhz_fab def_arch 26
+module work rcosc_1mhz_fab 26
+arch work xtlosc def_arch 26
+module work xtlosc 26
+arch work rcosc_25_50mhz def_arch 26
+module work rcosc_25_50mhz 26
+arch work rcosc_1mhz def_arch 26
+module work rcosc_1mhz 26
+arch work top_sb_fabosc_0_osc def_arch 27
+module work top_sb_fabosc_0_osc 27
+arch work mss_025 def_arch 28
+module work mss_025 28
+arch work top_sb_mss rtl 29
+module work top_sb_mss 29
+arch work top_sb_osc_0_osc def_arch 30
+module work top_sb_osc_0_osc 30
+arch work top_sb rtl 32
+module work top_sb 32
+arch work top rtl 33
+module work top 33
+
+# Unbound Instances to File Association
+inst work top_sb_ccc_0_fccc ccc 7
+inst work top_sb_ccc_0_fccc clkint 7
+inst work top_sb_ccc_0_fccc gnd 7
+inst work top_sb_ccc_0_fccc vcc 7
+inst work top_sb_fabosc_0_osc clkint 27
+inst work top_sb_mss bibuf 29
+inst work top_sb_mss tribuff 29
+inst work top_sb_mss inbuf 29
+inst work top_sb sysreset 32
+inst work top_sb top_sb_coreaxi_0_coreaxi 32
 
 
 # Configuration files used

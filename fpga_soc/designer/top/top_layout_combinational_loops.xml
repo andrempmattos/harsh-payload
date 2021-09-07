@@ -2,9 +2,9 @@
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
 <title>Combinational Loop Report</title>
-<text>SmartTime Version 11.8.0.26</text>
-<text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)</text>
-<text>Date: Tue Oct 06 16:31:15 2020
+<text>SmartTime Version 12.900.20.24</text>
+<text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</text>
+<text>Date: Tue Sep  7 12:45:55 2021
 </text>
 <table>
 <header>
@@ -42,14 +42,6 @@
  <cell>Pre-Layout</cell>
 </row>
 <row>
- <cell>Analysis Min Case</cell>
- <cell>BEST - 1.26 V - -40 C</cell>
-</row>
-<row>
- <cell>Analysis Max Case</cell>
- <cell>WORST - 1.14 V - 100 C</cell>
-</row>
-<row>
  <cell>Scenario for Timing Analysis</cell>
  <cell>place_and_route</cell>
 </row>
@@ -57,5 +49,25 @@
 <text></text>
 <text></text>
 <text></text>
-<text>No combinational loops were detected in the design.</text>
+<text>1 combinational loop cluster(s) have been detected in the design.
+</text>
+<text>A combinational loop has been detected between pins:</text>
+<text>   </text>
+<list>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv:Y</item>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_RNI0KKCU:B</item>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_RNI0KKCU:Y</item>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_1:D</item>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_1:Y</item>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv:B</item>
+</list>
+<text></text>
+<text>It has been broken between pins </text>
+<text>   </text>
+<list>
+ <item>top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv:Y and top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_RNI0KKCU:B</item>
+</list>
+<text></text>
+<text></text>
+<text>You may use the set_disable_timing constraint to manually change the location where the loop is broken within a cell.</text>
 </doc>

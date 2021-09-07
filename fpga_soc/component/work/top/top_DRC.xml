@@ -3,28 +3,28 @@
 <drcreport>
   <header>top</header>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microsemi\Libero_SoC_v12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin top_sb_0:INIT_DONE</detail>
     <crossprobe>liberoaction://cross_probe/smartdesign/top/pins/top_sb_0:INIT_DONE</crossprobe>
   </drc>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microsemi\Libero_SoC_v12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin top_sb_0:FAB_CCC_GL2</detail>
     <crossprobe>liberoaction://cross_probe/smartdesign/top/pins/top_sb_0:FAB_CCC_GL2</crossprobe>
   </drc>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microsemi\Libero_SoC_v12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin top_sb_0:FAB_CCC_LOCK</detail>
     <crossprobe>liberoaction://cross_probe/smartdesign/top/pins/top_sb_0:FAB_CCC_LOCK</crossprobe>
   </drc>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microsemi\Libero_SoC_v12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin top_sb_0:MSS_READY</detail>

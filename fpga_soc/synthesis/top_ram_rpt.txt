@@ -1,0 +1,25 @@
+
+#####  START OF RAM REPORT  #####
+
+#####  LSRAM REPORT  #####
+
+INSTANTIATED     RTL_INSTANCE     PRIMITIVE_TYPE     USER_ATTRIBUTE     MAPPED_INSTANCE     DEPTH_X_WIDTH(A/B)     LOW-POWER_MODE     ECC     A_DOUT_PIPE_REG(EN/ARST/SRST)     B_DOUT_PIPE_REG(EN/ARST/SRST)     WRITE_MODE(A/B)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+=================================================================================================================================================================================================================================
+
+#####  URAM REPORT  #####
+
+INSTANTIATED     RTL_INSTANCE                                                        PRIMITIVE_TYPE     USER_ATTRIBUTE     MAPPED_INSTANCE                                                       DEPTH_X_WIDTH     LOW-POWER_MODE     ECC     A_ADDR_REG(EN/ARST/SRST)     B_ADDR_REG(EN/ARST/SRST)     A_DATA_PIPE_REG(EN/ARST/SRST)     B_DATA_PIPE_REG(EN/ARST/SRST)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NO               top_sb_0.COREAHBLTOAXI_0.U_RdChannelFifo.U_RDCH_RAM.mem1[31:0]      RAM                DEFAULT            top_sb_0.COREAHBLTOAXI_0.U_RdChannelFifo.U_RDCH_RAM.mem1_mem1_0_0     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/1)                          1(0/0/1)                     
+                                                                                                                           top_sb_0.COREAHBLTOAXI_0.U_RdChannelFifo.U_RDCH_RAM.mem1_mem1_0_1     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/1)                          1(0/0/1)                     
+                                                                                                                                                                                                                                                                                                                                                                       
+NO               top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem1[31:0]      RAM                DEFAULT            top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem1_mem1_0_0     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/0)                          1(0/0/0)                     
+                                                                                                                           top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem1_mem1_0_1     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/0)                          1(0/0/0)                     
+                                                                                                                                                                                                                                                                                                                                                                       
+NO               top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem2[63:32]     RAM                DEFAULT            top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem2_mem2_0_0     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/0)                          1(0/0/0)                     
+                                                                                                                           top_sb_0.COREAHBLTOAXI_0.U_WrChannelFifo.U_WRCH_RAM.mem2_mem2_0_1     64X18             0                  0       0(0/0/0)                     0(0/0/0)                     1(0/0/0)                          1(0/0/0)                     
+=======================================================================================================================================================================================================================================================================================================================================================================
+
+#####  END OF RAM REPORT  #####
+

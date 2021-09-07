@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
-<text>SmartTime Version 11.8.0.26</text>
-<text>Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Tue Oct 06 16:34:39 2020 </text>
+<text>SmartTime Version 12.900.20.24</text>
+<text>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
+Date: Tue Sep  7 12:45:55 2021 </text>
 <table>
 <header>
 </header>
@@ -50,15 +50,15 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3522</cell>
- <cell>           20</cell>
- <cell>         3542</cell>
+ <cell>         4238</cell>
+ <cell>           16</cell>
+ <cell>         4254</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2378</cell>
- <cell>            6</cell>
- <cell>         2384</cell>
+ <cell>         2557</cell>
+ <cell>            2</cell>
+ <cell>         2559</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -68,22 +68,22 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5900</cell>
- <cell>           94</cell>
- <cell>         5994</cell>
+ <cell>         6795</cell>
+ <cell>           86</cell>
+ <cell>         6881</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3522</cell>
- <cell>           20</cell>
- <cell>         3542</cell>
+ <cell>         4238</cell>
+ <cell>           16</cell>
+ <cell>         4254</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2378</cell>
- <cell>            6</cell>
- <cell>         2384</cell>
+ <cell>         2557</cell>
+ <cell>            2</cell>
+ <cell>         2559</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -93,9 +93,9 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5900</cell>
- <cell>           94</cell>
- <cell>         5994</cell>
+ <cell>         6795</cell>
+ <cell>           86</cell>
+ <cell>         6881</cell>
 </row>
 </table>
 <section>
@@ -111,15 +111,15 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         3522</cell>
- <cell>           20</cell>
- <cell>         3542</cell>
+ <cell>         4238</cell>
+ <cell>           16</cell>
+ <cell>         4254</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         2378</cell>
- <cell>            6</cell>
- <cell>         2384</cell>
+ <cell>         2557</cell>
+ <cell>            2</cell>
+ <cell>         2559</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -129,22 +129,22 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         5900</cell>
- <cell>           93</cell>
- <cell>         5993</cell>
+ <cell>         6795</cell>
+ <cell>           85</cell>
+ <cell>         6880</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         3522</cell>
- <cell>           20</cell>
- <cell>         3542</cell>
+ <cell>         4238</cell>
+ <cell>           16</cell>
+ <cell>         4254</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         2378</cell>
- <cell>            6</cell>
- <cell>         2384</cell>
+ <cell>         2557</cell>
+ <cell>            2</cell>
+ <cell>         2559</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -154,15 +154,15 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         5900</cell>
- <cell>           93</cell>
- <cell>         5993</cell>
+ <cell>         6795</cell>
+ <cell>           85</cell>
+ <cell>         6880</cell>
 </row>
 </table>
 <section>
 <name>Enhancement Suggestions</name>
 <text></text>
-<text> - Max input delay constraint missing on  ports:</text>
+<text> - Max input delay constraint missing on ports:</text>
 <text>   </text>
 <list>
  <item>DQ[0]</item>
@@ -183,7 +183,7 @@ Date: Tue Oct 06 16:34:39 2020 </text>
  <item>DQ[9]</item>
 </list>
 <text></text>
-<text> - Min input delay constraint missing on  ports:</text>
+<text> - Min input delay constraint missing on ports:</text>
 <text>   </text>
 <list>
  <item>DQ[0]</item>
@@ -205,7 +205,7 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 </list>
 <text></text>
 <text></text>
-<text> - Max output delay constraint missing on  ports:</text>
+<text> - Max output delay constraint missing on ports:</text>
 <text>   </text>
 <list>
  <item>BA[0]</item>
@@ -228,56 +228,9 @@ Date: Tue Oct 06 16:34:39 2020 </text>
  <item>DQ[15]</item>
  <item>DQ[1]</item>
  <item>DQ[2]</item>
- <item>DQ[3]</item>
- <item>DQ[4]</item>
- <item>DQ[5]</item>
- <item>DQ[6]</item>
- <item>DQ[7]</item>
- <item>DQ[8]</item>
- <item>DQ[9]</item>
- <item>GPIO_10_BI</item>
- <item>GPIO_11_BI</item>
- <item>GPIO_12_BI</item>
- <item>GPIO_13_BI</item>
- <item>GPIO_14_BI</item>
- <item>GPIO_15_BI</item>
- <item>GPIO_16_BI</item>
- <item>GPIO_17_BI</item>
- <item>GPIO_18_BI</item>
- <item>GPIO_19_BI</item>
- <item>GPIO_1_BI</item>
- <item>GPIO_20_BI</item>
- <item>GPIO_21_BI</item>
- <item>GPIO_22_BI</item>
- <item>GPIO_23_BI</item>
- <item>GPIO_24_BI</item>
- <item>GPIO_25_BI</item>
- <item>GPIO_26_BI</item>
- <item>GPIO_29_BI</item>
- <item>GPIO_8_BI</item>
- <item>GPIO_9_BI</item>
- <item>I2C_0_SCL</item>
- <item>I2C_0_SDA</item>
- <item>MMUART_0_TXD</item>
- <item>RAS_N</item>
- <item>SA[0]</item>
- <item>SA[10]</item>
- <item>SA[11]</item>
- <item>SA[12]</item>
- <item>SA[1]</item>
- <item>SA[2]</item>
- <item>SA[3]</item>
- <item>SA[4]</item>
- <item>SA[5]</item>
- <item>SA[6]</item>
- <item>SA[7]</item>
- <item>SA[8]</item>
- <item>SA[9]</item>
- <item>SPI_0_DO</item>
- <item>WE_N</item>
 </list>
 <text></text>
-<text> - Min output delay constraint missing on  ports:</text>
+<text> - Min output delay constraint missing on ports:</text>
 <text>   </text>
 <list>
  <item>BA[0]</item>
@@ -300,63 +253,12 @@ Date: Tue Oct 06 16:34:39 2020 </text>
  <item>DQ[15]</item>
  <item>DQ[1]</item>
  <item>DQ[2]</item>
- <item>DQ[3]</item>
- <item>DQ[4]</item>
- <item>DQ[5]</item>
- <item>DQ[6]</item>
- <item>DQ[7]</item>
- <item>DQ[8]</item>
- <item>DQ[9]</item>
- <item>GPIO_10_BI</item>
- <item>GPIO_11_BI</item>
- <item>GPIO_12_BI</item>
- <item>GPIO_13_BI</item>
- <item>GPIO_14_BI</item>
- <item>GPIO_15_BI</item>
- <item>GPIO_16_BI</item>
- <item>GPIO_17_BI</item>
- <item>GPIO_18_BI</item>
- <item>GPIO_19_BI</item>
- <item>GPIO_1_BI</item>
- <item>GPIO_20_BI</item>
- <item>GPIO_21_BI</item>
- <item>GPIO_22_BI</item>
- <item>GPIO_23_BI</item>
- <item>GPIO_24_BI</item>
- <item>GPIO_25_BI</item>
- <item>GPIO_26_BI</item>
- <item>GPIO_29_BI</item>
- <item>GPIO_8_BI</item>
- <item>GPIO_9_BI</item>
- <item>I2C_0_SCL</item>
- <item>I2C_0_SDA</item>
- <item>MMUART_0_TXD</item>
- <item>RAS_N</item>
- <item>SA[0]</item>
- <item>SA[10]</item>
- <item>SA[11]</item>
- <item>SA[12]</item>
- <item>SA[1]</item>
- <item>SA[2]</item>
- <item>SA[3]</item>
- <item>SA[4]</item>
- <item>SA[5]</item>
- <item>SA[6]</item>
- <item>SA[7]</item>
- <item>SA[8]</item>
- <item>SA[9]</item>
- <item>SPI_0_DO</item>
- <item>WE_N</item>
 </list>
 <text></text>
 <text></text>
-<text> - Setup uncconstrained for the following pins:</text>
+<text> - Setup unconstrained for the following pins:</text>
 <text>   </text>
 <list>
- <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[0]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[10]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[11]:D</item>
@@ -375,24 +277,16 @@ Date: Tue Oct 06 16:34:39 2020 </text>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[9]:D</item>
 </list>
 <text></text>
-<text> - Recovery uncconstrained for the following pins:</text>
+<text> - Recovery unconstrained for the following pins:</text>
 <text>   </text>
 <list>
- <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
- <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
 </list>
 <text></text>
-<text> - Hold uncconstrained for the following pins:</text>
+<text> - Hold unconstrained for the following pins:</text>
 <text>   </text>
 <list>
- <item>top_sb_0/COREAXI_0/L2.u_interconnect_ntom/L27.inst_matrix_S16/inst_wa_channel/L1.inst_wrmatrix_4Mto1S/UWA_ARBITER/wr_curr_state[12]:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/dqm_init:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/load:D</item>
- <item>top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/m_shift[9]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[0]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[10]:D</item>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[11]:D</item>
@@ -411,15 +305,11 @@ Date: Tue Oct 06 16:34:39 2020 </text>
  <item>top_sb_0/MSS_SMC_0/sdr_dataout_reg[9]:D</item>
 </list>
 <text></text>
-<text> - Removal uncconstrained for the following pins:</text>
+<text> - Removal unconstrained for the following pins:</text>
 <text>   </text>
 <list>
- <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_clk_base:ALn</item>
- <item>top_sb_0/CORERESETP_0/FIC_2_APB_M_PRESET_N_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/POWER_ON_RESET_N_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
  <item>top_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
- <item>top_sb_0/CORERESETP_0/sm1_areset_n_q1:ALn</item>
 </list>
 <text></text>
 </section>
@@ -489,13 +379,13 @@ Date: Tue Oct 06 16:34:39 2020 </text>
 <name>Enhancement Suggestions</name>
 <text></text>
 <text></text>
-<text> - Max output delay constraint missing on  port:</text>
+<text> - Max output delay constraint missing on port:</text>
 <text>   </text>
 <list>
  <item>SDRCLK</item>
 </list>
 <text></text>
-<text> - Min output delay constraint missing on  port:</text>
+<text> - Min output delay constraint missing on port:</text>
 <text>   </text>
 <list>
  <item>SDRCLK</item>

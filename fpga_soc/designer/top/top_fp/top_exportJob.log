@@ -1,0 +1,10 @@
+Software Version: 12.900.20.24
+Opened 'C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_fp\top.pro'
+PDB file 'C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top.pdb' has been loaded successfully.
+DESIGN : top;  CHECKSUM : 2E6C;  PDB_VERSION : 1.9
+Successfully exported PPD file for currently secured device: 'D:\andre_tcc\job\tempExport\top.ppd'; file programs Fabric.
+Fabric component bitstream digest: bd6223ce8cd3c4f72a4ab389a9ecda2675d9e5c2bffca4a383c43733710226fa
+Finished: Tue Sep 07 13:06:25 2021 (Elapsed time 00:00:22)
+
+Project saved.
+Project closed.

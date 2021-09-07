@@ -15,6 +15,6 @@ set_def {RTG4_MITIGATION_ON} {0}
 set_def USE_CONSTRAINTS_FLOW 1
 set_def NETLIST_TYPE EDIF
 set_name top
-set_workdir {C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top}
-set_log     {C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_sdc.log}
+set_workdir {C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top}
+set_log     {C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_sdc.log}
 set_design_state pre_layout

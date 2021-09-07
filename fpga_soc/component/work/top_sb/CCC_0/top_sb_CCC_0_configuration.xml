@@ -8,7 +8,7 @@
 </header>
 <row>
  <cell>Date:</cell>
- <cell>Tue Oct 06 15:51:14 2020</cell>
+ <cell>Tue Sep  7 12:25:57 2021</cell>
 </row>
 <separator/>
 <row>
@@ -49,9 +49,9 @@
  <cell>GL2</cell>
  <cell>primary clock</cell>
  <cell>PLL (0)</cell>
- <cell>100 MHz</cell>
- <cell>100 MHz</cell>
- <cell>100 MHz</cell>
+ <cell>50 MHz</cell>
+ <cell>50 MHz</cell>
+ <cell>50 MHz</cell>
  <cell>--</cell>
 </row>
 <separator/>
@@ -72,7 +72,7 @@
 </row>
 <row>
  <cell>Output frequency</cell>
- <cell>100 MHz</cell>
+ <cell>50 MHz</cell>
 </row>
 <row>
  <cell>VCO frequency</cell>
@@ -85,7 +85,7 @@
 </row>
 <row>
  <cell>CCC reference clock divider</cell>
- <cell>3</cell>
+ <cell>6</cell>
 </row>
 <separator/>
 <row>
@@ -107,7 +107,7 @@
 <separator/>
 <row>
  <cell>PLL VCO divider</cell>
- <cell>8</cell>
+ <cell>16</cell>
 </row>
 <separator/>
 <row>
@@ -161,7 +161,7 @@
 <row>
  <cell>FCCC_RFDIV_CR</cell>
  <cell>0x02</cell>
- <cell>0x02</cell>
+ <cell>0x05</cell>
  <cell>RFDIV configuration register</cell>
 </row>
 <row>
@@ -329,7 +329,7 @@
 <row>
  <cell>FCCC_PLL_CR7</cell>
  <cell>0x1e</cell>
- <cell>0x03</cell>
+ <cell>0x04</cell>
  <cell>PLL&apos;s internal output divider configuration register</cell>
 </row>
 <row>
@@ -347,7 +347,7 @@
 <row>
  <cell>FCCC_PLL_CR10</cell>
  <cell>0x21</cell>
- <cell>0x03</cell>
+ <cell>0x02</cell>
  <cell>PLL loop filter range configuration register</cell>
 </row>
 <row>

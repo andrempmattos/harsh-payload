@@ -1,41 +1,43 @@
-Software Version: 11.8.0.26
+Software Version: 12.900.20.24
+Programmer: '74764' : JTAG TCK frequency = 1 MHz
 Driver : 3.0.0 build 1
 programmer '74764' : FlashPro4
-Opened 'C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp\top.pro'
+Opened 'C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_fp\top.pro'
 The 'open_project' command succeeded.
-IPD file 'C:/Users/Andre/Desktop/github/HARSH/fpga_soc/designer/top/top.ipd' has been loaded successfully.
-DESIGN : top;  CHECKSUM : 9AEA;  PDB_VERSION : 1.9
-The 'set_programming_file' command succeeded.
 Warning: Programming is already enabled for device 'M2S025'.
 The 'enable_device' command succeeded.
+PPD file 'C:/Users/Sidney&Viviane/Documents/Andre/GitHub/harsh-payload/fpga_soc/designer/top/top.ppd' has been loaded successfully.
+DESIGN : top;  CHECKSUM : 2E6C;  PDB_VERSION : 1.0
+The 'set_programming_file' command succeeded.
 The 'set_programming_action' command succeeded.
 programmer '74764' : Scan Chain...
+Programmer: '74764' : JTAG TCK frequency = 1 MHz
 programmer '74764' : Check Chain...
 programmer '74764' : Scan and Check Chain PASSED.
 programmer '74764' : device 'M2S025' : Executing action PROGRAM
+Programmer: '74764' : JTAG TCK frequency = 4 MHz
 programmer '74764' : device 'M2S025' : Family: SmartFusion2
 programmer '74764' : device 'M2S025' : Product:      M2S025
-programmer '74764' : device 'M2S025' : EXPORT ISC_ENABLE_RESULT[32] = 007b6944
+programmer '74764' : device 'M2S025' : Cortex-M3 Enabled (M3_ALLOWED = 1)
+programmer '74764' : device 'M2S025' : EXPORT ISC_ENABLE_RESULT[32] = 00796a44
 programmer '74764' : device 'M2S025' : EXPORT CRCERR[1] = 0
 programmer '74764' : device 'M2S025' : EXPORT EDCERR[1] = 0
-programmer '74764' : device 'M2S025' : TEMPGRADE: ROOM
-programmer '74764' : device 'M2S025' : EXPORT VPPRANGE[3] = 2
-programmer '74764' : device 'M2S025' : VPPRANGE: HIGH
-programmer '74764' : device 'M2S025' : EXPORT TEMP[8] = 69
-programmer '74764' : device 'M2S025' : EXPORT VPP[8] = 7b
 programmer '74764' : device 'M2S025' : Programming FPGA Array...
+programmer '74764' : device 'M2S025' : EXPORT Fabric component digest[256] = bd6223ce8cd3c4f72a4ab389a9ecda2675d9e5c2bffca4a383c43733710226fa
 programmer '74764' : device 'M2S025' : ===================================================================================
 programmer '74764' : device 'M2S025' : EXPORT DSN[128] = 6bb4f5ce8c2f1d6af2705583065f3bea
 programmer '74764' : device 'M2S025' : ===================================================================================
-programmer '74764' : device 'M2S025' : Finished: Tue Oct 06 16:39:39 2020 (Elapsed time 00:00:36)
+programmer '74764' : device 'M2S025' : Finished: Tue Sep  7 12:58:43 2021 (Elapsed time 00:00:41)
 programmer '74764' : device 'M2S025' : Executing action PROGRAM PASSED.
 programmer '74764' : Chain programming PASSED.
-Chain Programming Finished: Tue Oct 06 16:39:39 2020 (Elapsed time 00:00:36)
+Chain Programming Finished: Tue Sep  7 12:58:43 2021 (Elapsed time 00:00:41)
 
                         o - o - o - o - o - o
 
 The 'run_selected_actions' command succeeded.
-The 'set_programming_file' command succeeded.
 Project saved.
 The 'save_project' command succeeded.
 Project closed.
+Exported log file C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_fp\top.log.
+The 'close_project' command succeeded.
+The Execute Script command succeeded.

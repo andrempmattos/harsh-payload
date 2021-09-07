@@ -7,7 +7,7 @@ The file contains the optimization information from mapper to be displayed as pa
 <parameter tooltip="Non-gated/non-generated clock trees / Gated/generated clock trees" name="Combined Clock Conversion">
 <data>0 / 1</data>
 <report_link name="more">
-<data>C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synlog\report\top_fpga_mapper_combined_clk.rpt</data>
+<data>C:\Users\Sidney&amp;Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\synlog\report\top_fpga_mapper_combined_clk.rpt</data>
 <title>START OF CLOCK OPTIMIZATION REPORT</title>
 </report_link>
 </parameter>

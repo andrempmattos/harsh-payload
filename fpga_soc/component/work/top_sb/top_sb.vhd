@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------
--- Created by SmartDesign Tue Oct 06 15:51:26 2020
--- Version: v11.8 11.8.0.26
+-- Created by SmartDesign Tue Sep  7 12:26:06 2021
+-- Version: v12.6 12.900.20.24
 ----------------------------------------------------------------------
 
 ----------------------------------------------------------------------
@@ -13,7 +13,9 @@ library smartfusion2;
 use smartfusion2.all;
 library COREAHBLITE_LIB;
 use COREAHBLITE_LIB.all;
-use COREAHBLITE_LIB.components.all;
+use COREAHBLITE_LIB.top_sb_CoreAHBLite_0_components.all;
+library COREAXI_LIB;
+use COREAXI_LIB.all;
 library CORESDR_AXI_LIB;
 use CORESDR_AXI_LIB.all;
 ----------------------------------------------------------------------
@@ -95,8 +97,392 @@ component top_sb_CCC_0_FCCC
         LOCK   : out std_logic
         );
 end component;
--- CoreAHBLite   -   Actel:DirectCore:CoreAHBLite:5.2.100
--- using entity instantiation for component CoreAHBLite
+-- top_sb_CoreAHBLite_0_CoreAHBLite   -   Actel:DirectCore:CoreAHBLite:5.5.101
+component top_sb_CoreAHBLite_0_CoreAHBLite
+    generic( 
+        FAMILY             : integer := 19 ;
+        HADDR_SHG_CFG      : integer := 1 ;
+        M0_AHBSLOT0ENABLE  : integer := 0 ;
+        M0_AHBSLOT1ENABLE  : integer := 0 ;
+        M0_AHBSLOT2ENABLE  : integer := 0 ;
+        M0_AHBSLOT3ENABLE  : integer := 0 ;
+        M0_AHBSLOT4ENABLE  : integer := 0 ;
+        M0_AHBSLOT5ENABLE  : integer := 0 ;
+        M0_AHBSLOT6ENABLE  : integer := 0 ;
+        M0_AHBSLOT7ENABLE  : integer := 0 ;
+        M0_AHBSLOT8ENABLE  : integer := 0 ;
+        M0_AHBSLOT9ENABLE  : integer := 0 ;
+        M0_AHBSLOT10ENABLE : integer := 1 ;
+        M0_AHBSLOT11ENABLE : integer := 0 ;
+        M0_AHBSLOT12ENABLE : integer := 0 ;
+        M0_AHBSLOT13ENABLE : integer := 0 ;
+        M0_AHBSLOT14ENABLE : integer := 0 ;
+        M0_AHBSLOT15ENABLE : integer := 0 ;
+        M0_AHBSLOT16ENABLE : integer := 0 ;
+        M1_AHBSLOT0ENABLE  : integer := 0 ;
+        M1_AHBSLOT1ENABLE  : integer := 0 ;
+        M1_AHBSLOT2ENABLE  : integer := 0 ;
+        M1_AHBSLOT3ENABLE  : integer := 0 ;
+        M1_AHBSLOT4ENABLE  : integer := 0 ;
+        M1_AHBSLOT5ENABLE  : integer := 0 ;
+        M1_AHBSLOT6ENABLE  : integer := 0 ;
+        M1_AHBSLOT7ENABLE  : integer := 0 ;
+        M1_AHBSLOT8ENABLE  : integer := 0 ;
+        M1_AHBSLOT9ENABLE  : integer := 0 ;
+        M1_AHBSLOT10ENABLE : integer := 0 ;
+        M1_AHBSLOT11ENABLE : integer := 0 ;
+        M1_AHBSLOT12ENABLE : integer := 0 ;
+        M1_AHBSLOT13ENABLE : integer := 0 ;
+        M1_AHBSLOT14ENABLE : integer := 0 ;
+        M1_AHBSLOT15ENABLE : integer := 0 ;
+        M1_AHBSLOT16ENABLE : integer := 0 ;
+        M2_AHBSLOT0ENABLE  : integer := 0 ;
+        M2_AHBSLOT1ENABLE  : integer := 0 ;
+        M2_AHBSLOT2ENABLE  : integer := 0 ;
+        M2_AHBSLOT3ENABLE  : integer := 0 ;
+        M2_AHBSLOT4ENABLE  : integer := 0 ;
+        M2_AHBSLOT5ENABLE  : integer := 0 ;
+        M2_AHBSLOT6ENABLE  : integer := 0 ;
+        M2_AHBSLOT7ENABLE  : integer := 0 ;
+        M2_AHBSLOT8ENABLE  : integer := 0 ;
+        M2_AHBSLOT9ENABLE  : integer := 0 ;
+        M2_AHBSLOT10ENABLE : integer := 0 ;
+        M2_AHBSLOT11ENABLE : integer := 0 ;
+        M2_AHBSLOT12ENABLE : integer := 0 ;
+        M2_AHBSLOT13ENABLE : integer := 0 ;
+        M2_AHBSLOT14ENABLE : integer := 0 ;
+        M2_AHBSLOT15ENABLE : integer := 0 ;
+        M2_AHBSLOT16ENABLE : integer := 0 ;
+        M3_AHBSLOT0ENABLE  : integer := 0 ;
+        M3_AHBSLOT1ENABLE  : integer := 0 ;
+        M3_AHBSLOT2ENABLE  : integer := 0 ;
+        M3_AHBSLOT3ENABLE  : integer := 0 ;
+        M3_AHBSLOT4ENABLE  : integer := 0 ;
+        M3_AHBSLOT5ENABLE  : integer := 0 ;
+        M3_AHBSLOT6ENABLE  : integer := 0 ;
+        M3_AHBSLOT7ENABLE  : integer := 0 ;
+        M3_AHBSLOT8ENABLE  : integer := 0 ;
+        M3_AHBSLOT9ENABLE  : integer := 0 ;
+        M3_AHBSLOT10ENABLE : integer := 0 ;
+        M3_AHBSLOT11ENABLE : integer := 0 ;
+        M3_AHBSLOT12ENABLE : integer := 0 ;
+        M3_AHBSLOT13ENABLE : integer := 0 ;
+        M3_AHBSLOT14ENABLE : integer := 0 ;
+        M3_AHBSLOT15ENABLE : integer := 0 ;
+        M3_AHBSLOT16ENABLE : integer := 0 ;
+        MASTER0_INTERFACE  : integer := 1 ;
+        MASTER1_INTERFACE  : integer := 1 ;
+        MASTER2_INTERFACE  : integer := 1 ;
+        MASTER3_INTERFACE  : integer := 1 ;
+        MEMSPACE           : integer := 1 ;
+        SC_0               : integer := 0 ;
+        SC_1               : integer := 0 ;
+        SC_2               : integer := 0 ;
+        SC_3               : integer := 0 ;
+        SC_4               : integer := 0 ;
+        SC_5               : integer := 0 ;
+        SC_6               : integer := 0 ;
+        SC_7               : integer := 0 ;
+        SC_8               : integer := 0 ;
+        SC_9               : integer := 0 ;
+        SC_10              : integer := 0 ;
+        SC_11              : integer := 0 ;
+        SC_12              : integer := 0 ;
+        SC_13              : integer := 0 ;
+        SC_14              : integer := 0 ;
+        SC_15              : integer := 0 ;
+        SLAVE0_INTERFACE   : integer := 1 ;
+        SLAVE1_INTERFACE   : integer := 1 ;
+        SLAVE2_INTERFACE   : integer := 1 ;
+        SLAVE3_INTERFACE   : integer := 1 ;
+        SLAVE4_INTERFACE   : integer := 1 ;
+        SLAVE5_INTERFACE   : integer := 1 ;
+        SLAVE6_INTERFACE   : integer := 1 ;
+        SLAVE7_INTERFACE   : integer := 1 ;
+        SLAVE8_INTERFACE   : integer := 1 ;
+        SLAVE9_INTERFACE   : integer := 1 ;
+        SLAVE10_INTERFACE  : integer := 1 ;
+        SLAVE11_INTERFACE  : integer := 1 ;
+        SLAVE12_INTERFACE  : integer := 1 ;
+        SLAVE13_INTERFACE  : integer := 1 ;
+        SLAVE14_INTERFACE  : integer := 1 ;
+        SLAVE15_INTERFACE  : integer := 1 ;
+        SLAVE16_INTERFACE  : integer := 1 
+        );
+    -- Port list
+    port(
+        -- Inputs
+        HADDR_M0      : in  std_logic_vector(31 downto 0);
+        HADDR_M1      : in  std_logic_vector(31 downto 0);
+        HADDR_M2      : in  std_logic_vector(31 downto 0);
+        HADDR_M3      : in  std_logic_vector(31 downto 0);
+        HBURST_M0     : in  std_logic_vector(2 downto 0);
+        HBURST_M1     : in  std_logic_vector(2 downto 0);
+        HBURST_M2     : in  std_logic_vector(2 downto 0);
+        HBURST_M3     : in  std_logic_vector(2 downto 0);
+        HCLK          : in  std_logic;
+        HMASTLOCK_M0  : in  std_logic;
+        HMASTLOCK_M1  : in  std_logic;
+        HMASTLOCK_M2  : in  std_logic;
+        HMASTLOCK_M3  : in  std_logic;
+        HPROT_M0      : in  std_logic_vector(3 downto 0);
+        HPROT_M1      : in  std_logic_vector(3 downto 0);
+        HPROT_M2      : in  std_logic_vector(3 downto 0);
+        HPROT_M3      : in  std_logic_vector(3 downto 0);
+        HRDATA_S0     : in  std_logic_vector(31 downto 0);
+        HRDATA_S1     : in  std_logic_vector(31 downto 0);
+        HRDATA_S10    : in  std_logic_vector(31 downto 0);
+        HRDATA_S11    : in  std_logic_vector(31 downto 0);
+        HRDATA_S12    : in  std_logic_vector(31 downto 0);
+        HRDATA_S13    : in  std_logic_vector(31 downto 0);
+        HRDATA_S14    : in  std_logic_vector(31 downto 0);
+        HRDATA_S15    : in  std_logic_vector(31 downto 0);
+        HRDATA_S16    : in  std_logic_vector(31 downto 0);
+        HRDATA_S2     : in  std_logic_vector(31 downto 0);
+        HRDATA_S3     : in  std_logic_vector(31 downto 0);
+        HRDATA_S4     : in  std_logic_vector(31 downto 0);
+        HRDATA_S5     : in  std_logic_vector(31 downto 0);
+        HRDATA_S6     : in  std_logic_vector(31 downto 0);
+        HRDATA_S7     : in  std_logic_vector(31 downto 0);
+        HRDATA_S8     : in  std_logic_vector(31 downto 0);
+        HRDATA_S9     : in  std_logic_vector(31 downto 0);
+        HREADYOUT_S0  : in  std_logic;
+        HREADYOUT_S1  : in  std_logic;
+        HREADYOUT_S10 : in  std_logic;
+        HREADYOUT_S11 : in  std_logic;
+        HREADYOUT_S12 : in  std_logic;
+        HREADYOUT_S13 : in  std_logic;
+        HREADYOUT_S14 : in  std_logic;
+        HREADYOUT_S15 : in  std_logic;
+        HREADYOUT_S16 : in  std_logic;
+        HREADYOUT_S2  : in  std_logic;
+        HREADYOUT_S3  : in  std_logic;
+        HREADYOUT_S4  : in  std_logic;
+        HREADYOUT_S5  : in  std_logic;
+        HREADYOUT_S6  : in  std_logic;
+        HREADYOUT_S7  : in  std_logic;
+        HREADYOUT_S8  : in  std_logic;
+        HREADYOUT_S9  : in  std_logic;
+        HRESETN       : in  std_logic;
+        HRESP_S0      : in  std_logic_vector(1 downto 0);
+        HRESP_S1      : in  std_logic_vector(1 downto 0);
+        HRESP_S10     : in  std_logic_vector(1 downto 0);
+        HRESP_S11     : in  std_logic_vector(1 downto 0);
+        HRESP_S12     : in  std_logic_vector(1 downto 0);
+        HRESP_S13     : in  std_logic_vector(1 downto 0);
+        HRESP_S14     : in  std_logic_vector(1 downto 0);
+        HRESP_S15     : in  std_logic_vector(1 downto 0);
+        HRESP_S16     : in  std_logic_vector(1 downto 0);
+        HRESP_S2      : in  std_logic_vector(1 downto 0);
+        HRESP_S3      : in  std_logic_vector(1 downto 0);
+        HRESP_S4      : in  std_logic_vector(1 downto 0);
+        HRESP_S5      : in  std_logic_vector(1 downto 0);
+        HRESP_S6      : in  std_logic_vector(1 downto 0);
+        HRESP_S7      : in  std_logic_vector(1 downto 0);
+        HRESP_S8      : in  std_logic_vector(1 downto 0);
+        HRESP_S9      : in  std_logic_vector(1 downto 0);
+        HSIZE_M0      : in  std_logic_vector(2 downto 0);
+        HSIZE_M1      : in  std_logic_vector(2 downto 0);
+        HSIZE_M2      : in  std_logic_vector(2 downto 0);
+        HSIZE_M3      : in  std_logic_vector(2 downto 0);
+        HTRANS_M0     : in  std_logic_vector(1 downto 0);
+        HTRANS_M1     : in  std_logic_vector(1 downto 0);
+        HTRANS_M2     : in  std_logic_vector(1 downto 0);
+        HTRANS_M3     : in  std_logic_vector(1 downto 0);
+        HWDATA_M0     : in  std_logic_vector(31 downto 0);
+        HWDATA_M1     : in  std_logic_vector(31 downto 0);
+        HWDATA_M2     : in  std_logic_vector(31 downto 0);
+        HWDATA_M3     : in  std_logic_vector(31 downto 0);
+        HWRITE_M0     : in  std_logic;
+        HWRITE_M1     : in  std_logic;
+        HWRITE_M2     : in  std_logic;
+        HWRITE_M3     : in  std_logic;
+        REMAP_M0      : in  std_logic;
+        -- Outputs
+        HADDR_S0      : out std_logic_vector(31 downto 0);
+        HADDR_S1      : out std_logic_vector(31 downto 0);
+        HADDR_S10     : out std_logic_vector(31 downto 0);
+        HADDR_S11     : out std_logic_vector(31 downto 0);
+        HADDR_S12     : out std_logic_vector(31 downto 0);
+        HADDR_S13     : out std_logic_vector(31 downto 0);
+        HADDR_S14     : out std_logic_vector(31 downto 0);
+        HADDR_S15     : out std_logic_vector(31 downto 0);
+        HADDR_S16     : out std_logic_vector(31 downto 0);
+        HADDR_S2      : out std_logic_vector(31 downto 0);
+        HADDR_S3      : out std_logic_vector(31 downto 0);
+        HADDR_S4      : out std_logic_vector(31 downto 0);
+        HADDR_S5      : out std_logic_vector(31 downto 0);
+        HADDR_S6      : out std_logic_vector(31 downto 0);
+        HADDR_S7      : out std_logic_vector(31 downto 0);
+        HADDR_S8      : out std_logic_vector(31 downto 0);
+        HADDR_S9      : out std_logic_vector(31 downto 0);
+        HBURST_S0     : out std_logic_vector(2 downto 0);
+        HBURST_S1     : out std_logic_vector(2 downto 0);
+        HBURST_S10    : out std_logic_vector(2 downto 0);
+        HBURST_S11    : out std_logic_vector(2 downto 0);
+        HBURST_S12    : out std_logic_vector(2 downto 0);
+        HBURST_S13    : out std_logic_vector(2 downto 0);
+        HBURST_S14    : out std_logic_vector(2 downto 0);
+        HBURST_S15    : out std_logic_vector(2 downto 0);
+        HBURST_S16    : out std_logic_vector(2 downto 0);
+        HBURST_S2     : out std_logic_vector(2 downto 0);
+        HBURST_S3     : out std_logic_vector(2 downto 0);
+        HBURST_S4     : out std_logic_vector(2 downto 0);
+        HBURST_S5     : out std_logic_vector(2 downto 0);
+        HBURST_S6     : out std_logic_vector(2 downto 0);
+        HBURST_S7     : out std_logic_vector(2 downto 0);
+        HBURST_S8     : out std_logic_vector(2 downto 0);
+        HBURST_S9     : out std_logic_vector(2 downto 0);
+        HMASTLOCK_S0  : out std_logic;
+        HMASTLOCK_S1  : out std_logic;
+        HMASTLOCK_S10 : out std_logic;
+        HMASTLOCK_S11 : out std_logic;
+        HMASTLOCK_S12 : out std_logic;
+        HMASTLOCK_S13 : out std_logic;
+        HMASTLOCK_S14 : out std_logic;
+        HMASTLOCK_S15 : out std_logic;
+        HMASTLOCK_S16 : out std_logic;
+        HMASTLOCK_S2  : out std_logic;
+        HMASTLOCK_S3  : out std_logic;
+        HMASTLOCK_S4  : out std_logic;
+        HMASTLOCK_S5  : out std_logic;
+        HMASTLOCK_S6  : out std_logic;
+        HMASTLOCK_S7  : out std_logic;
+        HMASTLOCK_S8  : out std_logic;
+        HMASTLOCK_S9  : out std_logic;
+        HPROT_S0      : out std_logic_vector(3 downto 0);
+        HPROT_S1      : out std_logic_vector(3 downto 0);
+        HPROT_S10     : out std_logic_vector(3 downto 0);
+        HPROT_S11     : out std_logic_vector(3 downto 0);
+        HPROT_S12     : out std_logic_vector(3 downto 0);
+        HPROT_S13     : out std_logic_vector(3 downto 0);
+        HPROT_S14     : out std_logic_vector(3 downto 0);
+        HPROT_S15     : out std_logic_vector(3 downto 0);
+        HPROT_S16     : out std_logic_vector(3 downto 0);
+        HPROT_S2      : out std_logic_vector(3 downto 0);
+        HPROT_S3      : out std_logic_vector(3 downto 0);
+        HPROT_S4      : out std_logic_vector(3 downto 0);
+        HPROT_S5      : out std_logic_vector(3 downto 0);
+        HPROT_S6      : out std_logic_vector(3 downto 0);
+        HPROT_S7      : out std_logic_vector(3 downto 0);
+        HPROT_S8      : out std_logic_vector(3 downto 0);
+        HPROT_S9      : out std_logic_vector(3 downto 0);
+        HRDATA_M0     : out std_logic_vector(31 downto 0);
+        HRDATA_M1     : out std_logic_vector(31 downto 0);
+        HRDATA_M2     : out std_logic_vector(31 downto 0);
+        HRDATA_M3     : out std_logic_vector(31 downto 0);
+        HREADY_M0     : out std_logic;
+        HREADY_M1     : out std_logic;
+        HREADY_M2     : out std_logic;
+        HREADY_M3     : out std_logic;
+        HREADY_S0     : out std_logic;
+        HREADY_S1     : out std_logic;
+        HREADY_S10    : out std_logic;
+        HREADY_S11    : out std_logic;
+        HREADY_S12    : out std_logic;
+        HREADY_S13    : out std_logic;
+        HREADY_S14    : out std_logic;
+        HREADY_S15    : out std_logic;
+        HREADY_S16    : out std_logic;
+        HREADY_S2     : out std_logic;
+        HREADY_S3     : out std_logic;
+        HREADY_S4     : out std_logic;
+        HREADY_S5     : out std_logic;
+        HREADY_S6     : out std_logic;
+        HREADY_S7     : out std_logic;
+        HREADY_S8     : out std_logic;
+        HREADY_S9     : out std_logic;
+        HRESP_M0      : out std_logic_vector(1 downto 0);
+        HRESP_M1      : out std_logic_vector(1 downto 0);
+        HRESP_M2      : out std_logic_vector(1 downto 0);
+        HRESP_M3      : out std_logic_vector(1 downto 0);
+        HSEL_S0       : out std_logic;
+        HSEL_S1       : out std_logic;
+        HSEL_S10      : out std_logic;
+        HSEL_S11      : out std_logic;
+        HSEL_S12      : out std_logic;
+        HSEL_S13      : out std_logic;
+        HSEL_S14      : out std_logic;
+        HSEL_S15      : out std_logic;
+        HSEL_S16      : out std_logic;
+        HSEL_S2       : out std_logic;
+        HSEL_S3       : out std_logic;
+        HSEL_S4       : out std_logic;
+        HSEL_S5       : out std_logic;
+        HSEL_S6       : out std_logic;
+        HSEL_S7       : out std_logic;
+        HSEL_S8       : out std_logic;
+        HSEL_S9       : out std_logic;
+        HSIZE_S0      : out std_logic_vector(2 downto 0);
+        HSIZE_S1      : out std_logic_vector(2 downto 0);
+        HSIZE_S10     : out std_logic_vector(2 downto 0);
+        HSIZE_S11     : out std_logic_vector(2 downto 0);
+        HSIZE_S12     : out std_logic_vector(2 downto 0);
+        HSIZE_S13     : out std_logic_vector(2 downto 0);
+        HSIZE_S14     : out std_logic_vector(2 downto 0);
+        HSIZE_S15     : out std_logic_vector(2 downto 0);
+        HSIZE_S16     : out std_logic_vector(2 downto 0);
+        HSIZE_S2      : out std_logic_vector(2 downto 0);
+        HSIZE_S3      : out std_logic_vector(2 downto 0);
+        HSIZE_S4      : out std_logic_vector(2 downto 0);
+        HSIZE_S5      : out std_logic_vector(2 downto 0);
+        HSIZE_S6      : out std_logic_vector(2 downto 0);
+        HSIZE_S7      : out std_logic_vector(2 downto 0);
+        HSIZE_S8      : out std_logic_vector(2 downto 0);
+        HSIZE_S9      : out std_logic_vector(2 downto 0);
+        HTRANS_S0     : out std_logic_vector(1 downto 0);
+        HTRANS_S1     : out std_logic_vector(1 downto 0);
+        HTRANS_S10    : out std_logic_vector(1 downto 0);
+        HTRANS_S11    : out std_logic_vector(1 downto 0);
+        HTRANS_S12    : out std_logic_vector(1 downto 0);
+        HTRANS_S13    : out std_logic_vector(1 downto 0);
+        HTRANS_S14    : out std_logic_vector(1 downto 0);
+        HTRANS_S15    : out std_logic_vector(1 downto 0);
+        HTRANS_S16    : out std_logic_vector(1 downto 0);
+        HTRANS_S2     : out std_logic_vector(1 downto 0);
+        HTRANS_S3     : out std_logic_vector(1 downto 0);
+        HTRANS_S4     : out std_logic_vector(1 downto 0);
+        HTRANS_S5     : out std_logic_vector(1 downto 0);
+        HTRANS_S6     : out std_logic_vector(1 downto 0);
+        HTRANS_S7     : out std_logic_vector(1 downto 0);
+        HTRANS_S8     : out std_logic_vector(1 downto 0);
+        HTRANS_S9     : out std_logic_vector(1 downto 0);
+        HWDATA_S0     : out std_logic_vector(31 downto 0);
+        HWDATA_S1     : out std_logic_vector(31 downto 0);
+        HWDATA_S10    : out std_logic_vector(31 downto 0);
+        HWDATA_S11    : out std_logic_vector(31 downto 0);
+        HWDATA_S12    : out std_logic_vector(31 downto 0);
+        HWDATA_S13    : out std_logic_vector(31 downto 0);
+        HWDATA_S14    : out std_logic_vector(31 downto 0);
+        HWDATA_S15    : out std_logic_vector(31 downto 0);
+        HWDATA_S16    : out std_logic_vector(31 downto 0);
+        HWDATA_S2     : out std_logic_vector(31 downto 0);
+        HWDATA_S3     : out std_logic_vector(31 downto 0);
+        HWDATA_S4     : out std_logic_vector(31 downto 0);
+        HWDATA_S5     : out std_logic_vector(31 downto 0);
+        HWDATA_S6     : out std_logic_vector(31 downto 0);
+        HWDATA_S7     : out std_logic_vector(31 downto 0);
+        HWDATA_S8     : out std_logic_vector(31 downto 0);
+        HWDATA_S9     : out std_logic_vector(31 downto 0);
+        HWRITE_S0     : out std_logic;
+        HWRITE_S1     : out std_logic;
+        HWRITE_S10    : out std_logic;
+        HWRITE_S11    : out std_logic;
+        HWRITE_S12    : out std_logic;
+        HWRITE_S13    : out std_logic;
+        HWRITE_S14    : out std_logic;
+        HWRITE_S15    : out std_logic;
+        HWRITE_S16    : out std_logic;
+        HWRITE_S2     : out std_logic;
+        HWRITE_S3     : out std_logic;
+        HWRITE_S4     : out std_logic;
+        HWRITE_S5     : out std_logic;
+        HWRITE_S6     : out std_logic;
+        HWRITE_S7     : out std_logic;
+        HWRITE_S8     : out std_logic;
+        HWRITE_S9     : out std_logic
+        );
+end component;
 -- top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI   -   Actel:DirectCore:COREAHBLTOAXI:2.1.101
 component top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI
     generic( 
@@ -162,7 +548,7 @@ component top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI
         WVALID    : out std_logic
         );
 end component;
--- top_sb_COREAXI_0_COREAXI   -   Actel:DirectCore:COREAXI:3.1.100
+-- top_sb_COREAXI_0_COREAXI   -   Actel:DirectCore:COREAXI:3.2.101
 component top_sb_COREAXI_0_COREAXI
     generic( 
         ADDR_HGS_CFG     : integer := 1 ;
@@ -259,7 +645,8 @@ component top_sb_COREAXI_0_COREAXI
         SC_12            : integer := 0 ;
         SC_13            : integer := 0 ;
         SC_14            : integer := 0 ;
-        SC_15            : integer := 0 
+        SC_15            : integer := 0 ;
+        WR_ACCEPTANCE    : integer := 4 
         );
     -- Port list
     port(
@@ -1149,7 +1536,7 @@ component CORESDR_AXI
         RAS                   : integer := 5 ;
         RC                    : integer := 8 ;
         RCD                   : integer := 2 ;
-        REF                   : integer := 8192 ;
+        REF                   : integer := 390 ;
         REGDIMM               : integer := 0 ;
         RFC                   : integer := 8 ;
         RP                    : integer := 2 ;
@@ -1920,28 +2307,28 @@ begin
 -- Bus Interface Nets Assignments - Unequal Pin Widths
 ----------------------------------------------------------------------
  COREAXI_0_AXImslave16_ARID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_ARID(3 downto 0);
- COREAXI_0_AXImslave16_ARID_0 <= ( COREAXI_0_AXImslave16_ARID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_ARID_0(3 downto 0) <= ( COREAXI_0_AXImslave16_ARID_0_3to0(3 downto 0) );
 
  COREAXI_0_AXImslave16_AWID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_AWID(3 downto 0);
- COREAXI_0_AXImslave16_AWID_0 <= ( COREAXI_0_AXImslave16_AWID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_AWID_0(3 downto 0) <= ( COREAXI_0_AXImslave16_AWID_0_3to0(3 downto 0) );
 
  COREAXI_0_AXImslave16_BID_0_5to4(5 downto 4) <= B"00";
  COREAXI_0_AXImslave16_BID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_BID(3 downto 0);
- COREAXI_0_AXImslave16_BID_0 <= ( COREAXI_0_AXImslave16_BID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_BID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_BID_0(5 downto 0) <= ( COREAXI_0_AXImslave16_BID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_BID_0_3to0(3 downto 0) );
 
  COREAXI_0_AXImslave16_RID_0_5to4(5 downto 4) <= B"00";
  COREAXI_0_AXImslave16_RID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_RID(3 downto 0);
- COREAXI_0_AXImslave16_RID_0 <= ( COREAXI_0_AXImslave16_RID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_RID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_RID_0(5 downto 0) <= ( COREAXI_0_AXImslave16_RID_0_5to4(5 downto 4) & COREAXI_0_AXImslave16_RID_0_3to0(3 downto 0) );
 
  COREAXI_0_AXImslave16_WID_0_3to0(3 downto 0) <= COREAXI_0_AXImslave16_WID(3 downto 0);
- COREAXI_0_AXImslave16_WID_0 <= ( COREAXI_0_AXImslave16_WID_0_3to0(3 downto 0) );
+ COREAXI_0_AXImslave16_WID_0(3 downto 0) <= ( COREAXI_0_AXImslave16_WID_0_3to0(3 downto 0) );
 
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0(0) <= top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP(0);
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0 <= ( top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HRESP_0_0to0(0) );
 
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_2to2(2) <= '0';
  top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_1to0(1 downto 0) <= top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE(1 downto 0);
- top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0 <= ( top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_2to2(2) & top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_1to0(1 downto 0) );
+ top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0(2 downto 0) <= ( top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_2to2(2) & top_sb_MSS_TMP_0_MDDR_SMC_AHB_MASTER_HSIZE_0_1to0(1 downto 0) );
 
 ----------------------------------------------------------------------
 -- Component instances
@@ -1955,8 +2342,8 @@ CCC_0 : top_sb_CCC_0_FCCC
         GL2    => FAB_CCC_GL2_net_0,
         LOCK   => FAB_CCC_LOCK_net_0 
         );
--- CoreAHBLite_0   -   Actel:DirectCore:CoreAHBLite:5.2.100
-CoreAHBLite_0 : entity COREAHBLITE_LIB.CoreAHBLite
+-- CoreAHBLite_0   -   Actel:DirectCore:CoreAHBLite:5.5.101
+CoreAHBLite_0 : top_sb_CoreAHBLite_0_CoreAHBLite
     generic map( 
         FAMILY             => ( 19 ),
         HADDR_SHG_CFG      => ( 1 ),
@@ -2028,6 +2415,10 @@ CoreAHBLite_0 : entity COREAHBLITE_LIB.CoreAHBLite
         M3_AHBSLOT14ENABLE => ( 0 ),
         M3_AHBSLOT15ENABLE => ( 0 ),
         M3_AHBSLOT16ENABLE => ( 0 ),
+        MASTER0_INTERFACE  => ( 1 ),
+        MASTER1_INTERFACE  => ( 1 ),
+        MASTER2_INTERFACE  => ( 1 ),
+        MASTER3_INTERFACE  => ( 1 ),
         MEMSPACE           => ( 1 ),
         SC_0               => ( 0 ),
         SC_1               => ( 0 ),
@@ -2044,7 +2435,24 @@ CoreAHBLite_0 : entity COREAHBLITE_LIB.CoreAHBLite
         SC_12              => ( 0 ),
         SC_13              => ( 0 ),
         SC_14              => ( 0 ),
-        SC_15              => ( 0 )
+        SC_15              => ( 0 ),
+        SLAVE0_INTERFACE   => ( 1 ),
+        SLAVE1_INTERFACE   => ( 1 ),
+        SLAVE2_INTERFACE   => ( 1 ),
+        SLAVE3_INTERFACE   => ( 1 ),
+        SLAVE4_INTERFACE   => ( 1 ),
+        SLAVE5_INTERFACE   => ( 1 ),
+        SLAVE6_INTERFACE   => ( 1 ),
+        SLAVE7_INTERFACE   => ( 1 ),
+        SLAVE8_INTERFACE   => ( 1 ),
+        SLAVE9_INTERFACE   => ( 1 ),
+        SLAVE10_INTERFACE  => ( 1 ),
+        SLAVE11_INTERFACE  => ( 1 ),
+        SLAVE12_INTERFACE  => ( 1 ),
+        SLAVE13_INTERFACE  => ( 1 ),
+        SLAVE14_INTERFACE  => ( 1 ),
+        SLAVE15_INTERFACE  => ( 1 ),
+        SLAVE16_INTERFACE  => ( 1 )
         )
     port map( 
         -- Inputs
@@ -2381,7 +2789,7 @@ COREAHBLTOAXI_0 : top_sb_COREAHBLTOAXI_0_COREAHBLTOAXI
         ARLOCK    => COREAHBLTOAXI_0_AXIMasterIF_ARLOCK,
         WSTRB     => COREAHBLTOAXI_0_AXIMasterIF_WSTRB 
         );
--- COREAXI_0   -   Actel:DirectCore:COREAXI:3.1.100
+-- COREAXI_0   -   Actel:DirectCore:COREAXI:3.2.101
 COREAXI_0 : top_sb_COREAXI_0_COREAXI
     generic map( 
         ADDR_HGS_CFG     => ( 1 ),
@@ -2478,7 +2886,8 @@ COREAXI_0 : top_sb_COREAXI_0_COREAXI
         SC_12            => ( 0 ),
         SC_13            => ( 0 ),
         SC_14            => ( 0 ),
-        SC_15            => ( 0 )
+        SC_15            => ( 0 ),
+        WR_ACCEPTANCE    => ( 4 )
         )
     port map( 
         -- Inputs
@@ -3362,7 +3771,7 @@ MSS_SMC_0 : CORESDR_AXI
         RAS                   => ( 5 ),
         RC                    => ( 8 ),
         RCD                   => ( 2 ),
-        REF                   => ( 8192 ),
+        REF                   => ( 390 ),
         REGDIMM               => ( 0 ),
         RFC                   => ( 8 ),
         RP                    => ( 2 ),

@@ -1,12 +1,29 @@
-Synopsys Netlist Linker, version comp2016q3p1, Build 117R, built Nov 17 2016
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03M-SP1
+Install: C:\Microsemi\Libero_SoC_v12.6\SynplifyPro
+OS: Windows 6.1
+
+Hostname: SVMM
+
+Implementation : synthesis
+Synopsys Synopsys Netlist Linker, Version comp202003synp2, Build 166R, Built Oct 19 2020 10:50:56, @
+
 @N|Running in 64-bit mode
+File C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\syn_nfilter.exe changed - recompiling
 File C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_comp.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 118MB peak: 120MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 148MB peak: 148MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Oct 06 16:29:18 2020
+# Tue Sep  7 12:44:46 2021
 
 ###########################################################]

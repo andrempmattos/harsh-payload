@@ -1,0 +1,404 @@
+<html>
+    <head>
+        <style>
+      body { font-family:arial; font-size:10pt; text-align:left; }
+      h1, h2 {
+          padding-top: 30px;
+      }
+      h3 {
+          padding-top: 20px;
+      }
+      h4, h5, h6 {
+          padding-top: 10px;
+          font-size:12pt;
+      }
+      table {
+          font-family:arial; font-size:10pt; text-align:left;
+          border-color:#B0B0B0;
+          border-style:solid;
+          border-width:1px;
+          border-collapse:collapse;
+      }
+      table th, table td {
+          font-family:arial; font-size:10pt; text-align:left;
+          border-color:#B0B0B0;
+          border-style:solid;
+          border-width:1px;
+          padding: 4px;
+      }
+     </style>
+    </head>
+    <body>
+        <h1 align="center">Global Net Report</h1>
+        <p>Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)</p>
+        <p>Date: Tue Sep  7 12:46:50 2021
+</p>
+        <h2>Global Nets Information</h2>
+        <table cellpadding="4">
+            <tr>
+                <th/>
+                <th> From </th>
+                <th> GB Location </th>
+                <th> Net Name </th>
+                <th> Fanout </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>GB[12] </td>
+                <td>(306, 72)</td>
+                <td>top_sb_0/CCC_0/GL2_INST/U0_YWn</td>
+                <td>2604</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>GB[3] </td>
+                <td>(293, 72)</td>
+                <td>top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_rep_RNIBTFF/U0_YWn</td>
+                <td>1580</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>GB[7] </td>
+                <td>(297, 72)</td>
+                <td>top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1_RNIGF7C/U0_YWn_GEast</td>
+                <td>967</td>
+            </tr>
+        </table>
+        <p/>
+        <h2>I/O to GB Connections</h2>
+        <p>(none)</p>
+        <h2>Fabric to GB Connections</h2>
+        <table cellpadding="4">
+            <tr>
+                <th/>
+                <th> From </th>
+                <th> From Location </th>
+                <th> To </th>
+                <th> Net Name </th>
+                <th> Net Type </th>
+                <th> Fanout </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_rep:Q</td>
+                <td>(614, 109)</td>
+                <td>GB[3] </td>
+                <td>top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_rep</td>
+                <td>ROUTED</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1:Q</td>
+                <td>(422, 112)</td>
+                <td>GB[7] </td>
+                <td>top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1</td>
+                <td>ROUTED</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <p/>
+        <h2>CCC to GB Connections</h2>
+        <table cellpadding="4">
+            <tr>
+                <th/>
+                <th> From </th>
+                <th> From Location </th>
+                <th>Pin Swapped for Back Annotation Only</th>
+                <th> To </th>
+                <th> Net Name </th>
+                <th> Net Type </th>
+                <th> Fanout </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>top_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL2</td>
+                <td>CCC-NE1 (618, 134)</td>
+                <td>GL2 =&gt; GL0</td>
+                <td>GB[12] </td>
+                <td>top_sb_0/CCC_0/GL2_net</td>
+                <td>HARDWIRED</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <p/>
+        <h2>CCC Input Connections</h2>
+        <p>(none)</p>
+        <h2>Local Nets to RGB Connections</h2>
+        <p>(none)</p>
+        <h2>Global Nets to RGB Connections</h2>
+        <table cellpadding="4">
+            <tr>
+                <th/>
+                <th> From </th>
+                <th> From Location </th>
+                <th> Net Name </th>
+                <th> Fanout </th>
+                <th/>
+                <th> RGB Location </th>
+                <th> Local Fanout </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>GB[12] </td>
+                <td>(306, 72)</td>
+                <td>top_sb_0/CCC_0/GL2_INST/U0_YWn</td>
+                <td>2604</td>
+                <td>1</td>
+                <td>(146, 111)</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>2</td>
+                <td>(146, 114)</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>3</td>
+                <td>(146, 117)</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>4</td>
+                <td>(146, 120)</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>5</td>
+                <td>(146, 123)</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>GB[3] </td>
+                <td>(293, 72)</td>
+                <td>top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_rep_RNIBTFF/U0_YWn</td>
+                <td>1580</td>
+                <td>1</td>
+                <td>(147, 111)</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>2</td>
+                <td>(147, 114)</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>3</td>
+                <td>(147, 117)</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>4</td>
+                <td>(147, 120)</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>5</td>
+                <td>(147, 123)</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>GB[7] </td>
+                <td>(297, 72)</td>
+                <td>top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1_RNIGF7C/U0_YWn_GEast</td>
+                <td>967</td>
+                <td>1</td>
+                <td>(447, 99)</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>2</td>
+                <td>(447, 102)</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>3</td>
+                <td>(447, 105)</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>4</td>
+                <td>(447, 108)</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>5</td>
+                <td>(447, 111)</td>
+                <td>56</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>6</td>
+                <td>(447, 114)</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>7</td>
+                <td>(447, 117)</td>
+                <td>83</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>8</td>
+                <td>(447, 120)</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>9</td>
+                <td>(447, 123)</td>
+                <td>61</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>10</td>
+                <td>(447, 126)</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>11</td>
+                <td>(447, 129)</td>
+                <td>73</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>12</td>
+                <td>(447, 132)</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>13</td>
+                <td>(447, 135)</td>
+                <td>129</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>14</td>
+                <td>(447, 138)</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>15</td>
+                <td>(447, 141)</td>
+                <td>116</td>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td>16</td>
+                <td>(447, 144)</td>
+                <td>34</td>
+            </tr>
+        </table>
+        <p/>
+    </body>
+</html>

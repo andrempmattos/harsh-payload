@@ -1,13 +1,13 @@
-*****************************************************************
-Pin Report - Date: Tue Oct 06 16:34:17 2020 Pinchecksum: NOT-AVAILABLE
-Product: Designer
-Release: v11.8
-Version: 11.8.0.26
-Design Name: top
-Family: SmartFusion2
-Die: M2S025
-Package: 400 VF
-*****************************************************************
+----------------------------------------------------------------
+-Pin Report - Date: Tue Sep  7 12:47:36 2021 Pinchecksum: NOT-AVAILABLE
+-Product: Designer
+-Release: v12.6
+-Version: 12.900.20.24
+-Design Name: top
+-Family: SmartFusion2
+-Die: M2S025
+-Package: 400 VF
+-----------------------------------------------------------------
 
 Port         |Pin |Fixed |Function                                                        |Bank     |I/O Std   |Direction                      |I/O state in Flash*Freeze mode |Resistor Pull                      |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static    |Odt Imp (Ohm)  |Low Power Exit |Input Delay |Slew         |Pre-Emphasis      |Output Drive (mA) |Output Load (pF) |
 -------------|----|------|----------------------------------------------------------------|---------|----------|-------------------------------|-------------------------------|-----------------------------------|-----------------------------------|----------------|--------------|---------------|---------------|------------|-------------|------------------|------------------|-----------------|
@@ -79,7 +79,7 @@ SA[9]         V12  Yes    MSIO130PB4/VCCC_SE0_CLKI                              
 SA[10]        W13  Yes    MSIO131PB4/GB11/VCCC_SE0_CLKI                                    Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 SA[11]        Y12  Yes    MSIO129PB4/CCC_SW1_CLKI3                                         Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 SA[12]        U12  Yes    MSIO130NB4                                                       Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
-SA[13]        E1   No     MSIO86PB7                                                        Bank7     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+SA[13]        J19  No     MSIO20PB2/GB9/VCCC_SE0_CLKI/GPIO_25_A                            Bank2     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 SDRCLK        T14  Yes    MSIO144PB4                                                       Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
 SPI_0_CLK     P15  Yes    MSIO12PB2/SPI_0_CLK/USB_XCLK_A                                   Bank2     LVCMOS33   Inout                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                4                  5                 
 SPI_0_DI      N15  Yes    MSIO12NB2/SPI_0_SDI/GPIO_5_A/USB_DIR_A                           Bank2     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               

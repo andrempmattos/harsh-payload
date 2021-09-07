@@ -7,13 +7,13 @@
 
 Clock optimization not enabled
 0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
-1 gated/generated clock tree(s) driving 2426 clock pin(s) of sequential element(s)
-0 instances converted, 2426 sequential instances remain driven by gated/generated clocks
+1 gated/generated clock tree(s) driving 2603 clock pin(s) of sequential element(s)
+0 instances converted, 2603 sequential instances remain driven by gated/generated clocks
 
 ======================================================================= Gated/Generated Clocks =======================================================================
 Clock Tree ID     Driving Element             Drive Element Type     Fanout     Sample Instance                Explanation                                            
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2426       top_sb_0.MSS_SMC_0.R_VALID     No gated clock conversion method for cell cell:ACG4.SLE
+@K:CKID0001       top_sb_0.CCC_0.CCC_INST     CCC                    2603       top_sb_0.MSS_SMC_0.R_VALID     No gated clock conversion method for cell cell:ACG4.SLE
 ======================================================================================================================================================================
 
 

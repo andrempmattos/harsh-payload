@@ -3,7 +3,7 @@
 <drcreport>
   <header>top_sb</header>
   <drc>
-    <status>C:\Microsemi\Libero_SoC_v11.8\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microsemi\Libero_SoC_v12.6\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin MSS_SMC_0:OE</detail>

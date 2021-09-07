@@ -1,6 +1,6 @@
-<project name="top" version="1.1">
+<project name="top" version="1.2">
     <ProjectDirectory>
-        C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp
+        C:\Users\Sidney&amp;Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,12 +9,15 @@
         M2S025
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top\top_fp\top.log
+        C:\Users\Sidney&amp;Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top\top_fp\top.log
     </LogFile>
     <SerializationOption>
         Skip
     </SerializationOption>
-    <programmer status="enable" type="FlashPro4" revision="UndefRev" connection="usb2.0">
+    <ProgrammingInterface>
+        JTAGMode
+    </ProgrammingInterface>
+    <programmer status="enable" type="FlashPro4" revision="UndefRev" connection="UndefConn">
         <name>
             74764
         </name>
@@ -22,6 +25,14 @@
             74764
         </id>
     </programmer>
+    <Server>
+        <name>
+            localhost
+        </name>
+        <port>
+            80
+        </port>
+    </Server>
     <configuration>
         <Hardware>
             <FlashPro>
@@ -67,10 +78,18 @@
                 <ClkMode>
                     FreeRunningClk
                 </ClkMode>
-                <ProgrammingMode>
-                    JTAGMode
-                </ProgrammingMode>
             </FlashPro5>
+            <FlashPro6>
+                <TCK>
+                    4000000
+                </TCK>
+                <SCK>
+                    20000000
+                </SCK>
+                <ClkMode>
+                    FreeRunningClk
+                </ClkMode>
+            </FlashPro6>
         </Hardware>
         <Device type="ACTEL">
             <Name>
@@ -79,6 +98,12 @@
             <Custom>
                 M2S025
             </Custom>
+            <SpiFlashFile>
+                
+            </SpiFlashFile>
+            <SpiFlashSelectedAction>
+                
+            </SpiFlashSelectedAction>
             <Algo type="unknown">
                 <irlength>
                     8

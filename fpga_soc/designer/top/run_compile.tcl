@@ -82,7 +82,7 @@ set_compile_info \
 set_compile_info \
     -category {"Source Files"} \
     -name {"Source"} \
-    -value {"C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn"}
+    -value {"C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.edn"}
 set_compile_info \
     -category {"Options"} \
     -name {"Enable Single Event Transient mitigation"} \
@@ -96,7 +96,7 @@ set_compile_info \
     -name {"Limit the number of high fanout nets to display to"} \
     -value {"10"}
 compile \
-    -desdir {C:\Users\Andre\Desktop\github\HARSH\fpga_soc\designer\top} \
+    -desdir {C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\designer\top} \
     -design top \
     -fam SmartFusion2 \
     -die PA4M2500_N \

@@ -93,4 +93,12 @@
     <td> <xsl:apply-templates/> </td>
 </xsl:template>
 
+<xsl:template match="list">
+    <ul> <xsl:apply-templates/> </ul>
+</xsl:template>
+
+<xsl:template match="item">
+    <li> <xsl:apply-templates/> </li>
+</xsl:template>
+
 </xsl:stylesheet>

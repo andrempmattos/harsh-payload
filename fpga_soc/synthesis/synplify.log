@@ -1,9 +1,9 @@
 
-Starting:    C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin64\mbin\synbatch.exe
-Install:     C:\Microsemi\Libero_SoC_v11.8\SynplifyPro
-Hostname:    DESKTOP-049D4HQ
-Date:        Tue Oct 06 16:29:04 2020
-Version:     L-2016.09M-2
+Starting:    C:\Microsemi\Libero_SoC_v12.6\SynplifyPro\bin64\mbin\synbatch.exe
+Install:     C:\Microsemi\Libero_SoC_v12.6\SynplifyPro
+Hostname:    SVMM
+Date:        Tue Sep  7 12:44:23 2021
+Version:     Q-2020.03M-SP1
 
 Arguments:   -product synplify_pro -licensetype synplifypro_actel -batch -log synplify.log top_syn.tcl
 ProductType: synplify_pro
@@ -15,94 +15,65 @@ License Option: actel_oem
 
 Running in Vendor Mode
 
-
 auto_infer_blackbox is not supported in current product.
-
-log file: "C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.srr"
-
+log file: "C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.srr"
 Running: synthesis in foreground
-
-
 
 Running top_syn|synthesis
 
+Running Flow: compile (Compile) on top_syn|synthesis
+# Tue Sep  7 12:44:25 2021
 
-Running: compile (Compile) on top_syn|synthesis
-# Tue Oct 06 16:29:04 2020
-
-
-Running: compile_flow (Compile Process) on top_syn|synthesis
-# Tue Oct 06 16:29:04 2020
-
+Running Flow: compile_flow (Compile Process) on top_syn|synthesis
+# Tue Sep  7 12:44:25 2021
 
 Running: compiler (Compile Input) on top_syn|synthesis
-# Tue Oct 06 16:29:04 2020
-
-Copied C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_comp.srs to C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.srs
-
+# Tue Sep  7 12:44:25 2021
+Copied C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\synwork\top_comp.srs to C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.srs
 
 compiler completed
-# Tue Oct 06 16:29:17 2020
+# Tue Sep  7 12:44:45 2021
 
 Return Code: 0
-Run Time:00h:00m:13s
-
+Run Time:00h:00m:20s
 
 Running: multi_srs_gen (Multi-srs Generator) on top_syn|synthesis
-# Tue Oct 06 16:29:17 2020
-
+# Tue Sep  7 12:44:45 2021
 
 multi_srs_gen completed
-# Tue Oct 06 16:29:19 2020
+# Tue Sep  7 12:44:46 2021
 
 Return Code: 0
-Run Time:00h:00m:02s
-
-Copied C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_mult.srs to C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.srs
-
+Run Time:00h:00m:01s
+Copied C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\synwork\top_mult.srs to C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.srs
 Complete: Compile Process on top_syn|synthesis
 
-
-Running: premap (Pre-mapping) on top_syn|synthesis
-# Tue Oct 06 16:29:19 2020
-
+Running: premap (Premap) on top_syn|synthesis
+# Tue Sep  7 12:44:46 2021
 
 premap completed with warnings
-# Tue Oct 06 16:29:26 2020
+# Tue Sep  7 12:44:53 2021
 
 Return Code: 1
 Run Time:00h:00m:07s
-
 Complete: Compile on top_syn|synthesis
 
-
-Running: map (Map) on top_syn|synthesis
-# Tue Oct 06 16:29:26 2020
-
+Running Flow: map (Map) on top_syn|synthesis
+# Tue Sep  7 12:44:53 2021
 License granted for 4 parallel jobs
 
-
 Running: fpga_mapper (Map & Optimize) on top_syn|synthesis
-# Tue Oct 06 16:29:26 2020
-
-Copied C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\synwork\top_m.srm to C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.srm
-
+# Tue Sep  7 12:44:53 2021
+Copied C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\synwork\top_m.srm to C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.srm
 
 fpga_mapper completed with warnings
-# Tue Oct 06 16:29:48 2020
+# Tue Sep  7 12:45:26 2021
 
 Return Code: 1
-Run Time:00h:00m:22s
-
+Run Time:00h:00m:33s
 Complete: Map on top_syn|synthesis
-
 Complete: Logic Synthesis on top_syn|synthesis
-
 TCL script complete: "top_syn.tcl"
-
 exit status=0
-
 exit status=0
-
 License checkin: synplifypro_actel
-

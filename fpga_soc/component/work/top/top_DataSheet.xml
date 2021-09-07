@@ -4,16 +4,16 @@
   <header>top</header>
   <project-settings>
     <fam>SmartFusion2</fam>
-    <die>M2S010</die>
+    <die>M2S025</die>
     <package>400 VF</package>
-    <speed-grade>-1</speed-grade>
+    <speed-grade>STD</speed-grade>
     <voltage>1.2</voltage>
     <hdl-type>VHDL</hdl-type>
     <project-description>
     </project-description>
-    <location>C:/Users/lirmm2/Desktop/GitHub/HARSH/fpga_soc/component/work/top</location>
-    <state>GENERATED ( Tue Apr 07 19:27:17 2020 )</state>
-    <swide-toolchain>SoftConsole workspace generated to C:\Users\lirmm2\Desktop\GitHub\HARSH\fpga_soc\SoftConsole</swide-toolchain>
+    <location>C:/Users/Sidney&Viviane/Documents/Andre/GitHub/harsh-payload/fpga_soc/component/work/top</location>
+    <state>GENERATED ( Tue Sep  7 12:26:29 2021 )</state>
+    <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
   </project-settings>
   <site-map>
   </site-map>
@@ -33,81 +33,81 @@
           <name>DDR_0_SPACE_3</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0xD0000000</remapAddress>
-          <fullAddressSpace>0xD0000000 - 0xDFFFFFFF</fullAddressSpace>
-          <range>0x10000000</range>
+          <remapAddress>0xD000_0000</remapAddress>
+          <fullAddressSpace>0xD000_0000 - 0xDFFF_FFFF</fullAddressSpace>
+          <range>0x1000_0000</range>
         </slave>
         <slave>
           <name>DDR_0_SPACE_2</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0xC0000000</remapAddress>
-          <fullAddressSpace>0xC0000000 - 0xCFFFFFFF</fullAddressSpace>
-          <range>0x10000000</range>
+          <remapAddress>0xC000_0000</remapAddress>
+          <fullAddressSpace>0xC000_0000 - 0xCFFF_FFFF</fullAddressSpace>
+          <range>0x1000_0000</range>
         </slave>
         <slave>
           <name>DDR_0_SPACE_1</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0xB0000000</remapAddress>
-          <fullAddressSpace>0xB0000000 - 0xBFFFFFFF</fullAddressSpace>
-          <range>0x10000000</range>
+          <remapAddress>0xB000_0000</remapAddress>
+          <fullAddressSpace>0xB000_0000 - 0xBFFF_FFFF</fullAddressSpace>
+          <range>0x1000_0000</range>
         </slave>
         <slave>
           <name>DDR_0_SPACE_0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0xA0000000</remapAddress>
-          <fullAddressSpace>0xA0000000 - 0xAFFFFFFF</fullAddressSpace>
-          <range>0x10000000</range>
+          <remapAddress>0xA000_0000</remapAddress>
+          <fullAddressSpace>0xA000_0000 - 0xAFFF_FFFF</fullAddressSpace>
+          <range>0x1000_0000</range>
         </slave>
         <slave>
           <name>AHB2ENVM1_REGISTERS</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x600C0000</remapAddress>
-          <fullAddressSpace>0x600C0000 - 0x600FFFFF</fullAddressSpace>
-          <range>0x00040000</range>
+          <remapAddress>0x600C_0000</remapAddress>
+          <fullAddressSpace>0x600C_0000 - 0x600F_FFFF</fullAddressSpace>
+          <range>0x0004_0000</range>
         </slave>
         <slave>
           <name>AHB2ENVM0_REGISTERS</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x60080000</remapAddress>
-          <fullAddressSpace>0x60080000 - 0x600BFFFF</fullAddressSpace>
-          <range>0x00040000</range>
+          <remapAddress>0x6008_0000</remapAddress>
+          <fullAddressSpace>0x6008_0000 - 0x600B_FFFF</fullAddressSpace>
+          <range>0x0004_0000</range>
         </slave>
         <slave>
           <name>ENTIRE_ENVM</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x60000000</remapAddress>
-          <fullAddressSpace>0x60000000 - 0x6003FFFF</fullAddressSpace>
-          <range>0x00040000</range>
+          <remapAddress>0x6000_0000</remapAddress>
+          <fullAddressSpace>0x6000_0000 - 0x6003_FFFF</fullAddressSpace>
+          <range>0x0004_0000</range>
         </slave>
         <slave>
           <name>ENVM-boot</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x60000000</remapAddress>
-          <fullAddressSpace>0x60000000 - 0x6000117F</fullAddressSpace>
+          <remapAddress>0x6000_0000</remapAddress>
+          <fullAddressSpace>0x6000_0000 - 0x6000_117F</fullAddressSpace>
           <range>0x1180</range>
         </slave>
         <slave>
           <name>CACHE_BACKDOOR</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40400000</remapAddress>
-          <fullAddressSpace>0x40400000 - 0x4040FFFF</fullAddressSpace>
-          <range>0x00010000</range>
+          <remapAddress>0x4040_0000</remapAddress>
+          <fullAddressSpace>0x4040_0000 - 0x4040_FFFF</fullAddressSpace>
+          <range>0x0001_0000</range>
         </slave>
         <slave>
           <name>SYSREG</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40038000</remapAddress>
-          <fullAddressSpace>0x40038000 - 0x40038FFF</fullAddressSpace>
-          <range>0x00001000</range>
+          <remapAddress>0x4003_8000</remapAddress>
+          <fullAddressSpace>0x4003_8000 - 0x4003_8FFF</fullAddressSpace>
+          <range>0x0000_1000</range>
           <memoryMap>
             <name>RegisterMap</name>
             <addressBlock>
@@ -117,7 +117,7 @@
               <register>
                 <name>ESRAM_CR</name>
                 <addressOffset>0x0</addressOffset>
-                <absoluteAddress>0x40038000</absoluteAddress>
+                <absoluteAddress>0x400308000</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -139,7 +139,7 @@
               <register>
                 <name>ESRAM_MAX_LAT</name>
                 <addressOffset>0x4</addressOffset>
-                <absoluteAddress>0x40038004</absoluteAddress>
+                <absoluteAddress>0x400308004</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -161,7 +161,7 @@
               <register>
                 <name>DDR_CR</name>
                 <addressOffset>0x8</addressOffset>
-                <absoluteAddress>0x40038008</absoluteAddress>
+                <absoluteAddress>0x400308008</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -176,7 +176,7 @@
               <register>
                 <name>ENVM_CR</name>
                 <addressOffset>0xC</addressOffset>
-                <absoluteAddress>0x4003800C</absoluteAddress>
+                <absoluteAddress>0x40030800C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -226,7 +226,7 @@
               <register>
                 <name>ENVM_REMAP_BASE_CR</name>
                 <addressOffset>0x10</addressOffset>
-                <absoluteAddress>0x40038010</absoluteAddress>
+                <absoluteAddress>0x400308010</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -248,7 +248,7 @@
               <register>
                 <name>ENVM_REMAP_FAB_CR</name>
                 <addressOffset>0x14</addressOffset>
-                <absoluteAddress>0x40038014</absoluteAddress>
+                <absoluteAddress>0x400308014</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -270,7 +270,7 @@
               <register>
                 <name>CC_CR</name>
                 <addressOffset>0x18</addressOffset>
-                <absoluteAddress>0x40038018</absoluteAddress>
+                <absoluteAddress>0x400308018</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -299,7 +299,7 @@
               <register>
                 <name>CC_REGION_CR</name>
                 <addressOffset>0x1C</addressOffset>
-                <absoluteAddress>0x4003801C</absoluteAddress>
+                <absoluteAddress>0x40030801C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -314,7 +314,7 @@
               <register>
                 <name>CC_LOCK_BASE_ADDR_CR</name>
                 <addressOffset>0x20</addressOffset>
-                <absoluteAddress>0x40038020</absoluteAddress>
+                <absoluteAddress>0x400308020</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -329,7 +329,7 @@
               <register>
                 <name>CC_FLUSH_INDX_CR</name>
                 <addressOffset>0x24</addressOffset>
-                <absoluteAddress>0x40038024</absoluteAddress>
+                <absoluteAddress>0x400308024</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -344,7 +344,7 @@
               <register>
                 <name>DDRB_BUF_TIMER_CR</name>
                 <addressOffset>0x28</addressOffset>
-                <absoluteAddress>0x40038028</absoluteAddress>
+                <absoluteAddress>0x400308028</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -359,7 +359,7 @@
               <register>
                 <name>DDRB_NB_ADDR_CR</name>
                 <addressOffset>0x2C</addressOffset>
-                <absoluteAddress>0x4003802C</absoluteAddress>
+                <absoluteAddress>0x40030802C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -374,7 +374,7 @@
               <register>
                 <name>DDRB_NB_SIZE_CR</name>
                 <addressOffset>0x30</addressOffset>
-                <absoluteAddress>0x40038030</absoluteAddress>
+                <absoluteAddress>0x400308030</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -389,7 +389,7 @@
               <register>
                 <name>DDRB_CR</name>
                 <addressOffset>0x34</addressOffset>
-                <absoluteAddress>0x40038034</absoluteAddress>
+                <absoluteAddress>0x400308034</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -481,7 +481,7 @@
               <register>
                 <name>EDAC_CR</name>
                 <addressOffset>0x38</addressOffset>
-                <absoluteAddress>0x40038038</absoluteAddress>
+                <absoluteAddress>0x400308038</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -531,7 +531,7 @@
               <register>
                 <name>MASTER_WEIGHT0_CR</name>
                 <addressOffset>0x3C</addressOffset>
-                <absoluteAddress>0x4003803C</absoluteAddress>
+                <absoluteAddress>0x40030803C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -581,7 +581,7 @@
               <register>
                 <name>MASTER_WEIGHT1_CR</name>
                 <addressOffset>0x40</addressOffset>
-                <absoluteAddress>0x40038040</absoluteAddress>
+                <absoluteAddress>0x400308040</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -610,7 +610,7 @@
               <register>
                 <name>SOFT_IRQ_CR</name>
                 <addressOffset>0x44</addressOffset>
-                <absoluteAddress>0x40038044</absoluteAddress>
+                <absoluteAddress>0x400308044</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -625,7 +625,7 @@
               <register>
                 <name>SOFT_RESET_CR</name>
                 <addressOffset>0x48</addressOffset>
-                <absoluteAddress>0x40038048</absoluteAddress>
+                <absoluteAddress>0x400308048</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -822,7 +822,7 @@
               <register>
                 <name>M3_CR</name>
                 <addressOffset>0x4C</addressOffset>
-                <absoluteAddress>0x4003804C</absoluteAddress>
+                <absoluteAddress>0x40030804C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -851,7 +851,7 @@
               <register>
                 <name>FAB_IF_CR</name>
                 <addressOffset>0x50</addressOffset>
-                <absoluteAddress>0x40038050</absoluteAddress>
+                <absoluteAddress>0x400308050</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -894,7 +894,7 @@
               <register>
                 <name>LOOPBACK_CR</name>
                 <addressOffset>0x54</addressOffset>
-                <absoluteAddress>0x40038054</absoluteAddress>
+                <absoluteAddress>0x400308054</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -930,7 +930,7 @@
               <register>
                 <name>GPIO_SYSRESET_SEL_CR</name>
                 <addressOffset>0x58</addressOffset>
-                <absoluteAddress>0x40038058</absoluteAddress>
+                <absoluteAddress>0x400308058</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -966,7 +966,7 @@
               <register>
                 <name>GPIN_SRC_SEL_CR</name>
                 <addressOffset>0x5C</addressOffset>
-                <absoluteAddress>0x4003805C</absoluteAddress>
+                <absoluteAddress>0x40030805C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -981,7 +981,7 @@
               <register>
                 <name>MDDR_CR</name>
                 <addressOffset>0x60</addressOffset>
-                <absoluteAddress>0x40038060</absoluteAddress>
+                <absoluteAddress>0x400308060</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1017,7 +1017,7 @@
               <register>
                 <name>USB_IO_INPUT_SEL_CR</name>
                 <addressOffset>0x64</addressOffset>
-                <absoluteAddress>0x40038064</absoluteAddress>
+                <absoluteAddress>0x400308064</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1032,7 +1032,7 @@
               <register>
                 <name>PERIPH_CLK_MUX_SEL_CR</name>
                 <addressOffset>0x68</addressOffset>
-                <absoluteAddress>0x40038068</absoluteAddress>
+                <absoluteAddress>0x400308068</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1061,7 +1061,7 @@
               <register>
                 <name>WDOG_CR</name>
                 <addressOffset>0x6C</addressOffset>
-                <absoluteAddress>0x4003806C</absoluteAddress>
+                <absoluteAddress>0x40030806C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1083,7 +1083,7 @@
               <register>
                 <name>MDDR_IO_CALIB_CR</name>
                 <addressOffset>0x70</addressOffset>
-                <absoluteAddress>0x40038070</absoluteAddress>
+                <absoluteAddress>0x400308070</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1126,7 +1126,7 @@
               <register>
                 <name>RESERVED</name>
                 <addressOffset>0x74</addressOffset>
-                <absoluteAddress>0x40038074</absoluteAddress>
+                <absoluteAddress>0x400308074</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1134,7 +1134,7 @@
               <register>
                 <name>EDAC_IRQ_ENABLE_CR</name>
                 <addressOffset>0x78</addressOffset>
-                <absoluteAddress>0x40038078</absoluteAddress>
+                <absoluteAddress>0x400308078</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1233,7 +1233,7 @@
               <register>
                 <name>USB_CR</name>
                 <addressOffset>0x7C</addressOffset>
-                <absoluteAddress>0x4003807C</absoluteAddress>
+                <absoluteAddress>0x40030807C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1255,7 +1255,7 @@
               <register>
                 <name>ESRAM_PIPELINE_CR</name>
                 <addressOffset>0x80</addressOffset>
-                <absoluteAddress>0x40038080</absoluteAddress>
+                <absoluteAddress>0x400308080</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1270,7 +1270,7 @@
               <register>
                 <name>MSS_IRQ_ENABLE_CR</name>
                 <addressOffset>0x84</addressOffset>
-                <absoluteAddress>0x40038084</absoluteAddress>
+                <absoluteAddress>0x400308084</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1299,7 +1299,7 @@
               <register>
                 <name>RTC_WAKEUP_CR</name>
                 <addressOffset>0x88</addressOffset>
-                <absoluteAddress>0x40038088</absoluteAddress>
+                <absoluteAddress>0x400308088</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1328,7 +1328,7 @@
               <register>
                 <name>MAC_CR</name>
                 <addressOffset>0x8C</addressOffset>
-                <absoluteAddress>0x4003808C</absoluteAddress>
+                <absoluteAddress>0x40030808C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1357,7 +1357,7 @@
               <register>
                 <name>MSSDDR_PLL_STATUS_LOW_CR</name>
                 <addressOffset>0x90</addressOffset>
-                <absoluteAddress>0x40038090</absoluteAddress>
+                <absoluteAddress>0x400308090</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1407,7 +1407,7 @@
               <register>
                 <name>MSSDDR_PLL_STATUS_HIGH_CR</name>
                 <addressOffset>0x94</addressOffset>
-                <absoluteAddress>0x40038094</absoluteAddress>
+                <absoluteAddress>0x400308094</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1471,7 +1471,7 @@
               <register>
                 <name>MSSDDR_FACC1_CR</name>
                 <addressOffset>0x98</addressOffset>
-                <absoluteAddress>0x40038098</absoluteAddress>
+                <absoluteAddress>0x400308098</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1570,7 +1570,7 @@
               <register>
                 <name>MSSDDR_FACC2_CR</name>
                 <addressOffset>0x9C</addressOffset>
-                <absoluteAddress>0x4003809C</absoluteAddress>
+                <absoluteAddress>0x40030809C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1641,7 +1641,7 @@
               <register>
                 <name>PLL_LOCK_EN_CR</name>
                 <addressOffset>0xA0</addressOffset>
-                <absoluteAddress>0x400380A0</absoluteAddress>
+                <absoluteAddress>0x4003080A0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1677,7 +1677,7 @@
               <register>
                 <name>MSSDDR_CLK_CALIB_CR</name>
                 <addressOffset>0xA4</addressOffset>
-                <absoluteAddress>0x400380A4</absoluteAddress>
+                <absoluteAddress>0x4003080A4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1692,7 +1692,7 @@
               <register>
                 <name>PLL_DELAY_LINE_SEL_CR</name>
                 <addressOffset>0xA8</addressOffset>
-                <absoluteAddress>0x400380A8</absoluteAddress>
+                <absoluteAddress>0x4003080A8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1707,7 +1707,7 @@
               <register>
                 <name>MAC_STAT_CLRONRD_CR</name>
                 <addressOffset>0xAC</addressOffset>
-                <absoluteAddress>0x400380AC</absoluteAddress>
+                <absoluteAddress>0x4003080AC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1722,7 +1722,7 @@
               <register>
                 <name>RESET_SOURCE_CR</name>
                 <addressOffset>0xB0</addressOffset>
-                <absoluteAddress>0x400380B0</absoluteAddress>
+                <absoluteAddress>0x4003080B0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1786,7 +1786,7 @@
               <register>
                 <name>CC_DC_ERR_ADDR_SR</name>
                 <addressOffset>0xB4</addressOffset>
-                <absoluteAddress>0x400380B4</absoluteAddress>
+                <absoluteAddress>0x4003080B4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1801,7 +1801,7 @@
               <register>
                 <name>CC_IC_ERR_ADDR_SR</name>
                 <addressOffset>0xB8</addressOffset>
-                <absoluteAddress>0x400380B8</absoluteAddress>
+                <absoluteAddress>0x4003080B8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1816,7 +1816,7 @@
               <register>
                 <name>CC_SB_ERR_ADDR_SR</name>
                 <addressOffset>0xBC</addressOffset>
-                <absoluteAddress>0x400380BC</absoluteAddress>
+                <absoluteAddress>0x4003080BC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1831,7 +1831,7 @@
               <register>
                 <name>RESERVED</name>
                 <addressOffset>0xC0</addressOffset>
-                <absoluteAddress>0x400380C0</absoluteAddress>
+                <absoluteAddress>0x4003080C0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1839,7 +1839,7 @@
               <register>
                 <name>CC_IC_MISS_CNTR_SR</name>
                 <addressOffset>0xC4</addressOffset>
-                <absoluteAddress>0x400380C4</absoluteAddress>
+                <absoluteAddress>0x4003080C4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1854,7 +1854,7 @@
               <register>
                 <name>CC_IC_HIT_CNTR_SR</name>
                 <addressOffset>0xC8</addressOffset>
-                <absoluteAddress>0x400380C8</absoluteAddress>
+                <absoluteAddress>0x4003080C8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1869,7 +1869,7 @@
               <register>
                 <name>CC_DC_MISS_CNTR_SR</name>
                 <addressOffset>0xCC</addressOffset>
-                <absoluteAddress>0x400380CC</absoluteAddress>
+                <absoluteAddress>0x4003080CC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1884,7 +1884,7 @@
               <register>
                 <name>CC_DC_HIT_CNTR_SR</name>
                 <addressOffset>0xD0</addressOffset>
-                <absoluteAddress>0x400380D0</absoluteAddress>
+                <absoluteAddress>0x4003080D0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1899,7 +1899,7 @@
               <register>
                 <name>CC_IC_TRANS_CNTR_SR</name>
                 <addressOffset>0xD4</addressOffset>
-                <absoluteAddress>0x400380D4</absoluteAddress>
+                <absoluteAddress>0x4003080D4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1914,7 +1914,7 @@
               <register>
                 <name>CC_DC_TRANS_CNTR_SR</name>
                 <addressOffset>0xD8</addressOffset>
-                <absoluteAddress>0x400380D8</absoluteAddress>
+                <absoluteAddress>0x4003080D8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1929,7 +1929,7 @@
               <register>
                 <name>DDRB_DS_ERR_ADR_SR</name>
                 <addressOffset>0xDC</addressOffset>
-                <absoluteAddress>0x400380DC</absoluteAddress>
+                <absoluteAddress>0x4003080DC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1944,7 +1944,7 @@
               <register>
                 <name>DDRB_HPD_ERR_ADR_SR</name>
                 <addressOffset>0xE0</addressOffset>
-                <absoluteAddress>0x400380E0</absoluteAddress>
+                <absoluteAddress>0x4003080E0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1959,7 +1959,7 @@
               <register>
                 <name>DDRB_SW_ERR_ADDR_SR</name>
                 <addressOffset>0xE4</addressOffset>
-                <absoluteAddress>0x400380E4</absoluteAddress>
+                <absoluteAddress>0x4003080E4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -1974,7 +1974,7 @@
               <register>
                 <name>DDRB_BUF_EMPTY_SR</name>
                 <addressOffset>0xE8</addressOffset>
-                <absoluteAddress>0x400380E8</absoluteAddress>
+                <absoluteAddress>0x4003080E8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2031,7 +2031,7 @@
               <register>
                 <name>DDRB_DSBL_DN_SR</name>
                 <addressOffset>0xEC</addressOffset>
-                <absoluteAddress>0x400380EC</absoluteAddress>
+                <absoluteAddress>0x4003080EC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2088,7 +2088,7 @@
               <register>
                 <name>ESRAM0_EDAC_CNT</name>
                 <addressOffset>0xF0</addressOffset>
-                <absoluteAddress>0x400380F0</absoluteAddress>
+                <absoluteAddress>0x4003080F0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2110,7 +2110,7 @@
               <register>
                 <name>ERAM1_EDDAC_CNT</name>
                 <addressOffset>0xF4</addressOffset>
-                <absoluteAddress>0x400380F4</absoluteAddress>
+                <absoluteAddress>0x4003080F4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2132,7 +2132,7 @@
               <register>
                 <name>CC_EDAC_CNT</name>
                 <addressOffset>0xF8</addressOffset>
-                <absoluteAddress>0x400380F8</absoluteAddress>
+                <absoluteAddress>0x4003080F8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2154,7 +2154,7 @@
               <register>
                 <name>MAC_EDAC_TX_CNT</name>
                 <addressOffset>0xFC</addressOffset>
-                <absoluteAddress>0x400380FC</absoluteAddress>
+                <absoluteAddress>0x4003080FC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2176,7 +2176,7 @@
               <register>
                 <name>MAC_EDAC_RX_CNT</name>
                 <addressOffset>0x100</addressOffset>
-                <absoluteAddress>0x40038100</absoluteAddress>
+                <absoluteAddress>0x400308100</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2198,7 +2198,7 @@
               <register>
                 <name>USB_EDAC_CNT</name>
                 <addressOffset>0x104</addressOffset>
-                <absoluteAddress>0x40038104</absoluteAddress>
+                <absoluteAddress>0x400308104</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2220,7 +2220,7 @@
               <register>
                 <name>CAN_EDAC_CNT</name>
                 <addressOffset>0x108</addressOffset>
-                <absoluteAddress>0x40038108</absoluteAddress>
+                <absoluteAddress>0x400308108</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2242,7 +2242,7 @@
               <register>
                 <name>ESRAM0_EDAC_ADR</name>
                 <addressOffset>0x10C</addressOffset>
-                <absoluteAddress>0x4003810C</absoluteAddress>
+                <absoluteAddress>0x40030810C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2264,7 +2264,7 @@
               <register>
                 <name>ERSAM1_EDAC_ADR</name>
                 <addressOffset>0x110</addressOffset>
-                <absoluteAddress>0x40038110</absoluteAddress>
+                <absoluteAddress>0x400308110</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2286,7 +2286,7 @@
               <register>
                 <name>MAC_EDAC_RX_ADR</name>
                 <addressOffset>0x114</addressOffset>
-                <absoluteAddress>0x40038114</absoluteAddress>
+                <absoluteAddress>0x400308114</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2308,7 +2308,7 @@
               <register>
                 <name>MAC_EDAC_TX_ADR</name>
                 <addressOffset>0x118</addressOffset>
-                <absoluteAddress>0x40038118</absoluteAddress>
+                <absoluteAddress>0x400308118</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2330,7 +2330,7 @@
               <register>
                 <name>CAN_EDAC_ADR</name>
                 <addressOffset>0x11C</addressOffset>
-                <absoluteAddress>0x4003811C</absoluteAddress>
+                <absoluteAddress>0x40030811C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2352,7 +2352,7 @@
               <register>
                 <name>USB_EDAC_ADR</name>
                 <addressOffset>0x120</addressOffset>
-                <absoluteAddress>0x40038120</absoluteAddress>
+                <absoluteAddress>0x400308120</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2374,7 +2374,7 @@
               <register>
                 <name>MM0_1_2_SECURITY</name>
                 <addressOffset>0x124</addressOffset>
-                <absoluteAddress>0x40038124</absoluteAddress>
+                <absoluteAddress>0x400308124</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2452,7 +2452,7 @@
               <register>
                 <name>MM4_5_DDR_FIC_SECURITY/MM_4_5_FIC64_SECURITY</name>
                 <addressOffset>0x128</addressOffset>
-                <absoluteAddress>0x40038128</absoluteAddress>
+                <absoluteAddress>0x400308128</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2530,7 +2530,7 @@
               <register>
                 <name>MM3_6_7_8_SECURITY</name>
                 <addressOffset>0x12C</addressOffset>
-                <absoluteAddress>0x4003812C</absoluteAddress>
+                <absoluteAddress>0x40030812C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2608,7 +2608,7 @@
               <register>
                 <name>MM9_SECURITY</name>
                 <addressOffset>0x130</addressOffset>
-                <absoluteAddress>0x40038130</absoluteAddress>
+                <absoluteAddress>0x400308130</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2686,7 +2686,7 @@
               <register>
                 <name>M3_SR</name>
                 <addressOffset>0x134</addressOffset>
-                <absoluteAddress>0x40038134</absoluteAddress>
+                <absoluteAddress>0x400308134</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2701,7 +2701,7 @@
               <register>
                 <name>ETM_COUNT_LOW</name>
                 <addressOffset>0x138</addressOffset>
-                <absoluteAddress>0x40038138</absoluteAddress>
+                <absoluteAddress>0x400308138</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2716,7 +2716,7 @@
               <register>
                 <name>ETM_COUNT_HIGH</name>
                 <addressOffset>0x13C</addressOffset>
-                <absoluteAddress>0x4003813C</absoluteAddress>
+                <absoluteAddress>0x40030813C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2745,7 +2745,7 @@
               <register>
                 <name>DEVICE_SR</name>
                 <addressOffset>0x140</addressOffset>
-                <absoluteAddress>0x40038140</absoluteAddress>
+                <absoluteAddress>0x400308140</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2802,7 +2802,7 @@
               <register>
                 <name>ENVM_PROTECT_USER</name>
                 <addressOffset>0x144</addressOffset>
-                <absoluteAddress>0x40038144</absoluteAddress>
+                <absoluteAddress>0x400308144</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2922,7 +2922,7 @@
               <register>
                 <name>ENVM_STATUS</name>
                 <addressOffset>0x148</addressOffset>
-                <absoluteAddress>0x40038148</absoluteAddress>
+                <absoluteAddress>0x400308148</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2937,7 +2937,7 @@
               <register>
                 <name>DEVICE_VERSION</name>
                 <addressOffset>0x14C</addressOffset>
-                <absoluteAddress>0x4003814C</absoluteAddress>
+                <absoluteAddress>0x40030814C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2959,7 +2959,7 @@
               <register>
                 <name>MSSDDR_PLL_STATUS</name>
                 <addressOffset>0x150</addressOffset>
-                <absoluteAddress>0x40038150</absoluteAddress>
+                <absoluteAddress>0x400308150</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -2988,7 +2988,7 @@
               <register>
                 <name>USB_SR</name>
                 <addressOffset>0x154</addressOffset>
-                <absoluteAddress>0x40038154</absoluteAddress>
+                <absoluteAddress>0x400308154</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3010,7 +3010,7 @@
               <register>
                 <name>ENVM_SR</name>
                 <addressOffset>0x158</addressOffset>
-                <absoluteAddress>0x40038158</absoluteAddress>
+                <absoluteAddress>0x400308158</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3025,7 +3025,7 @@
               <register>
                 <name>RESERVED</name>
                 <addressOffset>0x15C</addressOffset>
-                <absoluteAddress>0x4003815C</absoluteAddress>
+                <absoluteAddress>0x40030815C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3033,7 +3033,7 @@
               <register>
                 <name>DDRB_STATUS</name>
                 <addressOffset>0x160</addressOffset>
-                <absoluteAddress>0x40038160</absoluteAddress>
+                <absoluteAddress>0x400308160</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3048,7 +3048,7 @@
               <register>
                 <name>MDDR_IO_CALIB_STATUS</name>
                 <addressOffset>0x164</addressOffset>
-                <absoluteAddress>0x40038164</absoluteAddress>
+                <absoluteAddress>0x400308164</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3091,7 +3091,7 @@
               <register>
                 <name>MSSDDR_CLK_CALIB_STATUS</name>
                 <addressOffset>0x168</addressOffset>
-                <absoluteAddress>0x40038168</absoluteAddress>
+                <absoluteAddress>0x400308168</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3106,7 +3106,7 @@
               <register>
                 <name>WDOGLOAD</name>
                 <addressOffset>0x16C</addressOffset>
-                <absoluteAddress>0x4003816C</absoluteAddress>
+                <absoluteAddress>0x40030816C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3121,7 +3121,7 @@
               <register>
                 <name>WDOGMVRP</name>
                 <addressOffset>0x170</addressOffset>
-                <absoluteAddress>0x40038170</absoluteAddress>
+                <absoluteAddress>0x400308170</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3136,7 +3136,7 @@
               <register>
                 <name>USERCONFIG0</name>
                 <addressOffset>0x174</addressOffset>
-                <absoluteAddress>0x40038174</absoluteAddress>
+                <absoluteAddress>0x400308174</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3151,7 +3151,7 @@
               <register>
                 <name>USERCONFIG1</name>
                 <addressOffset>0x178</addressOffset>
-                <absoluteAddress>0x40038178</absoluteAddress>
+                <absoluteAddress>0x400308178</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3166,7 +3166,7 @@
               <register>
                 <name>USERCONFIG2</name>
                 <addressOffset>0x17C</addressOffset>
-                <absoluteAddress>0x4003817C</absoluteAddress>
+                <absoluteAddress>0x40030817C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3181,7 +3181,7 @@
               <register>
                 <name>USERCONFIG3</name>
                 <addressOffset>0x180</addressOffset>
-                <absoluteAddress>0x40038180</absoluteAddress>
+                <absoluteAddress>0x400308180</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3196,7 +3196,7 @@
               <register>
                 <name>FAB_PROT_SIZE</name>
                 <addressOffset>0x184</addressOffset>
-                <absoluteAddress>0x40038184</absoluteAddress>
+                <absoluteAddress>0x400308184</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3211,7 +3211,7 @@
               <register>
                 <name>FAB_PROT_BASE</name>
                 <addressOffset>0x188</addressOffset>
-                <absoluteAddress>0x40038188</absoluteAddress>
+                <absoluteAddress>0x400308188</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3226,7 +3226,7 @@
               <register>
                 <name>MSS_GPIO_DEF</name>
                 <addressOffset>0x18C</addressOffset>
-                <absoluteAddress>0x4003818C</absoluteAddress>
+                <absoluteAddress>0x40030818C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3262,7 +3262,7 @@
               <register>
                 <name>EDAC_SR</name>
                 <addressOffset>0x190</addressOffset>
-                <absoluteAddress>0x40038190</absoluteAddress>
+                <absoluteAddress>0x400308190</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3354,7 +3354,7 @@
               <register>
                 <name>MSS_INTERNAL_SR</name>
                 <addressOffset>0x194</addressOffset>
-                <absoluteAddress>0x40038194</absoluteAddress>
+                <absoluteAddress>0x400308194</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3411,7 +3411,7 @@
               <register>
                 <name>MSS_EXTERNAL_SR</name>
                 <addressOffset>0x198</addressOffset>
-                <absoluteAddress>0x40038198</absoluteAddress>
+                <absoluteAddress>0x400308198</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3475,7 +3475,7 @@
               <register>
                 <name>WDOGTIMEOUTEVENT</name>
                 <addressOffset>0x19C</addressOffset>
-                <absoluteAddress>0x4003819C</absoluteAddress>
+                <absoluteAddress>0x40030819C</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3490,7 +3490,7 @@
               <register>
                 <name>CLR_MSS_COUNTERS</name>
                 <addressOffset>0x1A0</addressOffset>
-                <absoluteAddress>0x400381A0</absoluteAddress>
+                <absoluteAddress>0x4003081A0</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3540,7 +3540,7 @@
               <register>
                 <name>CLR_EDAC_COUNTERS</name>
                 <addressOffset>0x1A4</addressOffset>
-                <absoluteAddress>0x400381A4</absoluteAddress>
+                <absoluteAddress>0x4003081A4</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3632,7 +3632,7 @@
               <register>
                 <name>FLUSH_CR</name>
                 <addressOffset>0x1A8</addressOffset>
-                <absoluteAddress>0x400381A8</absoluteAddress>
+                <absoluteAddress>0x4003081A8</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3703,7 +3703,7 @@
               <register>
                 <name>MAC_STAT_CLR_CR</name>
                 <addressOffset>0x1AC</addressOffset>
-                <absoluteAddress>0x400381AC</absoluteAddress>
+                <absoluteAddress>0x4003081AC</absoluteAddress>
                 <size>32</size>
                 <access>R/W</access>
                 <resetValue>0x0</resetValue>
@@ -3722,121 +3722,121 @@
           <name>MSSFIC2TOFABRIC</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40020000</remapAddress>
-          <fullAddressSpace>0x40020000 - 0x4002FFFF</fullAddressSpace>
-          <range>0x00010000</range>
+          <remapAddress>0x4002_0000</remapAddress>
+          <fullAddressSpace>0x4002_0000 - 0x4003_7FFF</fullAddressSpace>
+          <range>0x0001_8000</range>
         </slave>
         <slave>
           <name>COMBLK</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40016000</remapAddress>
-          <fullAddressSpace>0x40016000 - 0x40016FFF</fullAddressSpace>
+          <remapAddress>0x4001_6000</remapAddress>
+          <fullAddressSpace>0x4001_6000 - 0x4001_6FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>CAN</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40015000</remapAddress>
-          <fullAddressSpace>0x40015000 - 0x40015FFF</fullAddressSpace>
+          <remapAddress>0x4001_5000</remapAddress>
+          <fullAddressSpace>0x4001_5000 - 0x4001_5FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>HDMA</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40014000</remapAddress>
-          <fullAddressSpace>0x40014000 - 0x40014FFF</fullAddressSpace>
+          <remapAddress>0x4001_4000</remapAddress>
+          <fullAddressSpace>0x4001_4000 - 0x4001_4FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>GPIO</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40013000</remapAddress>
-          <fullAddressSpace>0x40013000 - 0x40013FFF</fullAddressSpace>
+          <remapAddress>0x4001_3000</remapAddress>
+          <fullAddressSpace>0x4001_3000 - 0x4001_3FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>H2FINTERRUPT</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40006000</remapAddress>
-          <fullAddressSpace>0x40006000 - 0x40006FFF</fullAddressSpace>
+          <remapAddress>0x4000_6000</remapAddress>
+          <fullAddressSpace>0x4000_6000 - 0x4000_6FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>WATCHDOG</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40005000</remapAddress>
-          <fullAddressSpace>0x40005000 - 0x40005FFF</fullAddressSpace>
+          <remapAddress>0x4000_5000</remapAddress>
+          <fullAddressSpace>0x4000_5000 - 0x4000_5FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>TIMER</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40004000</remapAddress>
-          <fullAddressSpace>0x40004000 - 0x40004FFF</fullAddressSpace>
+          <remapAddress>0x4000_4000</remapAddress>
+          <fullAddressSpace>0x4000_4000 - 0x4000_4FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>I2C_0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40002000</remapAddress>
-          <fullAddressSpace>0x40002000 - 0x40002FFF</fullAddressSpace>
+          <remapAddress>0x4000_2000</remapAddress>
+          <fullAddressSpace>0x4000_2000 - 0x4000_2FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>SPI_0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40001000</remapAddress>
-          <fullAddressSpace>0x40001000 - 0x40001FFF</fullAddressSpace>
+          <remapAddress>0x4000_1000</remapAddress>
+          <fullAddressSpace>0x4000_1000 - 0x4000_1FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>MMUART_0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x40000000</remapAddress>
-          <fullAddressSpace>0x40000000 - 0x40000FFF</fullAddressSpace>
+          <remapAddress>0x4000_0000</remapAddress>
+          <fullAddressSpace>0x4000_0000 - 0x4000_0FFF</fullAddressSpace>
           <range>0x1000</range>
         </slave>
         <slave>
           <name>RECYCLED_ESRAM1</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x20012000</remapAddress>
-          <fullAddressSpace>0x20012000 - 0x20013FFF</fullAddressSpace>
-          <range>0x00002000</range>
+          <remapAddress>0x2001_2000</remapAddress>
+          <fullAddressSpace>0x2001_2000 - 0x2001_3FFF</fullAddressSpace>
+          <range>0x0000_2000</range>
         </slave>
         <slave>
           <name>RECYCLED_ESRAM0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x20010000</remapAddress>
-          <fullAddressSpace>0x20010000 - 0x20011FFF</fullAddressSpace>
-          <range>0x00002000</range>
+          <remapAddress>0x2001_0000</remapAddress>
+          <fullAddressSpace>0x2001_0000 - 0x2001_1FFF</fullAddressSpace>
+          <range>0x0000_2000</range>
         </slave>
         <slave>
           <name>ESRAM1</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x20008000</remapAddress>
-          <fullAddressSpace>0x20008000 - 0x2000FFFF</fullAddressSpace>
-          <range>0x00008000</range>
+          <remapAddress>0x2000_8000</remapAddress>
+          <fullAddressSpace>0x2000_8000 - 0x2000_FFFF</fullAddressSpace>
+          <range>0x0000_8000</range>
         </slave>
         <slave>
           <name>ESRAM0</name>
           <fullPinName>
           </fullPinName>
-          <remapAddress>0x20000000</remapAddress>
-          <fullAddressSpace>0x20000000 - 0x20007FFF</fullAddressSpace>
-          <range>0x00008000</range>
+          <remapAddress>0x2000_0000</remapAddress>
+          <fullAddressSpace>0x2000_0000 - 0x2000_7FFF</fullAddressSpace>
+          <range>0x0000_8000</range>
         </slave>
       </subsystem>
     </subsystems>

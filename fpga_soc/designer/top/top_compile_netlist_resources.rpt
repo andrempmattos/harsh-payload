@@ -1,6 +1,6 @@
 Resource Report
-Microsemi Corporation - Microsemi Libero Software Release v11.8 (Version 11.8.0.26)
-Date: Tue Oct 06 16:30:08 2020
+Microsemi Corporation - Microsemi Libero Software Release v12.6 (Version 12.900.20.24)
+Date: Tue Sep  7 12:45:38 2021
 
 Device Selection
 +--------------------------------+----------------+
@@ -20,11 +20,11 @@ Device Selection
 +--------------------------------+----------------+
 
 Source Files
-+---------+----------------------------------------------------------------+
-| Topcell | top                                                            |
-| Format  | EDIF                                                           |
-| Source  | C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\top.edn |
-+---------+----------------------------------------------------------------+
++---------+-----------------------------------------------------------------------------------------+
+| Topcell | top                                                                                     |
+| Format  | EDIF                                                                                    |
+| Source  | C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\top.edn |
++---------+-----------------------------------------------------------------------------------------+
 
 Options
 +----------------------------------------------------+-------+
@@ -37,8 +37,8 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 2701 | 27696 | 9.75       |
-| DFF                       | 2623 | 27696 | 9.47       |
+| 4LUT                      | 3044 | 27696 | 10.99      |
+| DFF                       | 2800 | 27696 | 10.11      |
 | I/O Register              | 0    | 621   | 0.00       |
 | User I/O                  | 74   | 207   | 35.75      |
 | -- Single-ended I/O       | 74   | 207   | 35.75      |
@@ -58,11 +58,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 2485 | 2407 |
+| Fabric Logic             | 2828 | 2584 |
 | RAM64x18 Interface Logic | 216  | 216  |
 | RAM1K18 Interface Logic  | 0    | 0    |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 2701 | 2623 |
+| Total Used               | 3044 | 2800 |
 +--------------------------+------+------+
 
 MSS Resource Usage
@@ -93,9 +93,10 @@ Detailed Carry Chains Resource Usage
 | 16     | 1    |
 | 17     | 2    |
 | 18     | 2    |
-| 27     | 1    |
+| 27     | 2    |
+| 33     | 1    |
 | 34     | 4    |
-| Total  | 14   |
+| Total  | 16   |
 +--------+------+
 
 I/O Function
@@ -116,26 +117,17 @@ I/O Technology
 | LVCMOS33     |  3.30v |  N/A |  3    |  30    |  41           |
 +--------------+--------+------+-------+--------+---------------+
 
-I/O Placement
-+----------+-------+------------+
-| Type     | Count | Percentage |
-+----------+-------+------------+
-| Locked   |  32   | 43.24%     |
-| Placed   |  0    | 0.00%      |
-| UnPlaced |  42   | 56.76%     |
-+----------+-------+------------+
-
 Nets assigned to chip global resources
 +--------+---------+-----------------------------------------------------------------------+
 | Fanout | Type    | Name                                                                  |
 +--------+---------+-----------------------------------------------------------------------+
-| 2427   | INT_NET | Net   : SDRCLK_c                                                      |
+| 2604   | INT_NET | Net   : SDRCLK_c                                                      |
 |        |         | Driver: top_sb_0/CCC_0/GL2_INST/U0_RGB1                               |
 |        |         | Source: NETLIST                                                       |
-| 1501   | INT_NET | Net   : top_sb_0/MSS_READY                                            |
-|        |         | Driver: top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNI5MMF/U0_RGB1      |
+| 1580   | INT_NET | Net   : top_sb_0/MSS_HPMS_READY_int_arst                              |
+|        |         | Driver: top_sb_0/CORERESETP_0/MSS_HPMS_READY_int_rep_RNIBTFF/U0_RGB1  |
 |        |         | Source: NETLIST                                                       |
-| 872    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/ARESET_n                             |
+| 967    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/reset_sync_1_arst_0                  |
 |        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_RST_A/reset_sync_1_RNIGF7C/U0_RGB1 |
 |        |         | Source: NETLIST                                                       |
 +--------+---------+-----------------------------------------------------------------------+
@@ -147,54 +139,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
-| Fanout | Type    | Name                                                                                                                        |
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
-| 148    | INT_NET | Net   : top_sb_0/wready_m_xhdl2                                                                                             |
-|        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/L1.wready_m_xhdl2                                                               |
-| 140    | INT_NET | Net   : top_sb_0/masterAddrInProg[0]                                                                                        |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNILR3D1[12]                     |
-| 137    | INT_NET | Net   : top_sb_0/hsel2_0_a2_1                                                                                               |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/hsel2_0_a2_1                                                        |
-| 136    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
-|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1                                                          |
-| 134    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
-|        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI                                                                       |
-| 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
-|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
-| 110    | INT_NET | Net   : top_sb_0/MSS_SMC_0/sdr_count[1]                                                                                     |
-|        |         | Driver: top_sb_0/MSS_SMC_0/sdr_count[1]                                                                                     |
-| 93     | INT_NET | Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID                                                                              |
-|        |         | Driver: top_sb_0/COREAXI_0/L23.slave_stage16/ARVALID_S_xhdl35                                                               |
-| 79     | INT_NET | Net   : top_sb_0/MSS_SMC_0/sdr_count[0]                                                                                     |
-|        |         | Driver: top_sb_0/MSS_SMC_0/sdr_count[0]                                                                                     |
-| 78     | INT_NET | Net   : top_sb_0/N_3167_i                                                                                                   |
-|        |         | Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/inst_matrix_m0/inst_rd_channel/inst_rdmatrix_16Sto1M/RVALID_IM_r_RNIEGS81 |
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                                                                              |
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| 145    | INT_NET | Net   : top_sb_0/un49_hburst_sync_i_i                                                                                                             |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AXIAccCntrl/WVALID_xhdl11_RNIOICI                                                                              |
+| 136    | INT_NET | Net   : top_sb_0/RREADY_MI                                                                                                                        |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk3.master_stage0/RREADY_MI                                                                                        |
+| 134    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/HREADYOUT_iv_RNIALFDC                                                                                            |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_RNIALFDC                                                                              |
+| 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                                          |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                                          |
+| 79     | INT_NET | Net   : top_sb_0/CoreAHBLite_0_AHBmslave10_HSELx                                                                                                  |
+|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/MASTERADDRINPROG_i_0_0_RNI9BVG3[0]                                          |
+| 77     | INT_NET | Net   : top_sb_0/N_160                                                                                                                            |
+|        |         | Driver: top_sb_0/MSS_SMC_0/axi_nextstate_1_sqmuxa_i_o3_i_a2                                                                                       |
+| 74     | INT_NET | Net   : top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/fastsdram_1/refresh                                                                               |
+|        |         | Driver: top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/fastsdram_1/refresh                                                                               |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/N_142_i                                                                                                                |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/N_142_i  |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/WLAST_S6                                                                                                               |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/m54_0_a2 |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/N_1734_i                                                          |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/N_1734_i |
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
-| Fanout | Type    | Name                                                                                                                        |
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
-| 148    | INT_NET | Net   : top_sb_0/wready_m_xhdl2                                                                                             |
-|        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/L1.wready_m_xhdl2                                                               |
-| 140    | INT_NET | Net   : top_sb_0/masterAddrInProg[0]                                                                                        |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/arbRegSMCurrentState_RNILR3D1[12]                     |
-| 137    | INT_NET | Net   : top_sb_0/hsel2_0_a2_1                                                                                               |
-|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/hsel2_0_a2_1                                                        |
-| 136    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/valid_ahbcmd_i_o3_1                                                                        |
-|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/valid_ahbcmd_i_o3_1                                                          |
-| 134    | INT_NET | Net   : top_sb_0/COREAXI_0/RREADY_MI0                                                                                       |
-|        |         | Driver: top_sb_0/COREAXI_0/L3.master_stage0/RREADY_MI                                                                       |
-| 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
-|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                    |
-| 110    | INT_NET | Net   : top_sb_0/MSS_SMC_0/sdr_count[1]                                                                                     |
-|        |         | Driver: top_sb_0/MSS_SMC_0/sdr_count[1]                                                                                     |
-| 93     | INT_NET | Net   : top_sb_0/COREAXI_0_AXImslave16_ARVALID                                                                              |
-|        |         | Driver: top_sb_0/COREAXI_0/L23.slave_stage16/ARVALID_S_xhdl35                                                               |
-| 79     | INT_NET | Net   : top_sb_0/MSS_SMC_0/sdr_count[0]                                                                                     |
-|        |         | Driver: top_sb_0/MSS_SMC_0/sdr_count[0]                                                                                     |
-| 78     | INT_NET | Net   : top_sb_0/N_3167_i                                                                                                   |
-|        |         | Driver: top_sb_0/COREAXI_0/L2.u_interconnect_ntom/inst_matrix_m0/inst_rd_channel/inst_rdmatrix_16Sto1M/RVALID_IM_r_RNIEGS81 |
-+--------+---------+-----------------------------------------------------------------------------------------------------------------------------+
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                                                                              |
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| 145    | INT_NET | Net   : top_sb_0/un49_hburst_sync_i_i                                                                                                             |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AXIAccCntrl/WVALID_xhdl11_RNIOICI                                                                              |
+| 136    | INT_NET | Net   : top_sb_0/RREADY_MI                                                                                                                        |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk3.master_stage0/RREADY_MI                                                                                        |
+| 134    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/HREADYOUT_iv_RNIALFDC                                                                                            |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_AHBAccCntrl/HREADYOUT_iv_RNIALFDC                                                                              |
+| 128    | INT_NET | Net   : top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                                          |
+|        |         | Driver: top_sb_0/COREAHBLTOAXI_0/U_WrChannelFifo/rdinr_d                                                                                          |
+| 79     | INT_NET | Net   : top_sb_0/CoreAHBLite_0_AHBmslave10_HSELx                                                                                                  |
+|        |         | Driver: top_sb_0/CoreAHBLite_0/matrix4x16/slavestage_10/slave_arbiter/MASTERADDRINPROG_i_0_0_RNI9BVG3[0]                                          |
+| 77     | INT_NET | Net   : top_sb_0/N_160                                                                                                                            |
+|        |         | Driver: top_sb_0/MSS_SMC_0/axi_nextstate_1_sqmuxa_i_o3_i_a2                                                                                       |
+| 74     | INT_NET | Net   : top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/fastsdram_1/refresh                                                                               |
+|        |         | Driver: top_sb_0/MSS_SMC_0/CoreSDR_0/fastinit_1/fastsdram_1/refresh                                                                               |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/N_142_i                                                                                                                |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/N_142_i  |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/WLAST_S6                                                                                                               |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/m54_0_a2 |
+| 72     | INT_NET | Net   : top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/N_1734_i                                                          |
+|        |         | Driver: top_sb_0/COREAXI_0/genblk2.u_interconnect_ntom/genblk20.inst_matrix_S16/inst_wa_channel/genblk1.inst_wrmatrix_4Mto1S/UWA_ARBITER/N_1734_i |
++--------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 

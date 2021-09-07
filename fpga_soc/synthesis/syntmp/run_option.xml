@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <!-- 
   Synopsys, Inc.
-  Version L-2016.09M-2
-  Project file C:\Users\Andre\Desktop\github\HARSH\fpga_soc\synthesis\syntmp\run_option.xml
-  Written on Tue Oct 06 16:29:04 2020
+  Version Q-2020.03M-SP1
+  Project file C:\Users\Sidney&Viviane\Documents\Andre\GitHub\harsh-payload\fpga_soc\synthesis\syntmp\run_option.xml
+  Written on Tue Sep  7 12:44:25 2021
 
 
 --> 
 <project_attribute_list name="Project Settings"> 
      <option name="project_name" display_name="Project Name">top_syn</option>
+     <option name="device_name" display_name="Device Name">synthesis: Microchip SmartFusion2 : M2S025</option>
      <option name="impl_name" display_name="Implementation Name">synthesis</option>
      <option name="top_module" display_name="Top Module">work.top</option>
      <option name="retiming" display_name="Retiming">0</option>

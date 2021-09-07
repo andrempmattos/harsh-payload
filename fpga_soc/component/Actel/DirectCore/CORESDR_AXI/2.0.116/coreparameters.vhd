@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- Created by Microsemi SmartDesign Tue Oct 06 15:51:23 2020
+-- Created by Microsemi SmartDesign Tue Sep  7 12:26:05 2021
 -- Parameters for CORESDR_AXI
 ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ package coreparameters is
     constant RAS : integer := 5;
     constant RC : integer := 8;
     constant RCD : integer := 2;
-    constant REF : integer := 8192;
+    constant REF : integer := 390;
     constant REGDIMM : integer := 0;
     constant RFC : integer := 8;
     constant RP : integer := 2;
