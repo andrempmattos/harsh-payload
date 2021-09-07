@@ -1,0 +1,521 @@
+KEY LIBERO "11.8"
+KEY CAPTURE "11.8.0.26"
+KEY DEFAULT_IMPORT_LOC "E:\Naveen\Projects\G4_i\G4i_AnalogPairs\trunk\HW\VL_33V_18V\proj01\hdl"
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VHDL"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "TRUE"
+KEY VendorTechnology_Family "SmartFusion2"
+KEY VendorTechnology_Die "PA4M2500_N"
+KEY VendorTechnology_Package "vf400"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.2"
+KEY VendorTechnology_PART_RANGE "IND"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE "100_MS"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY "PLL_SUPPLY_25"
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "PA4M2500_N"
+KEY VendorTechnology_TEMPR "IND"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.2_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "IND"
+KEY ProjectLocation "C:\Users\Andre\Desktop\github\HARSH\fpga_soc"
+KEY ProjectDescription ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VHDL"
+KEY Vendor "Actel"
+KEY ActiveRoot "top::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+CURREV=1
+ENDLIST
+LIST LIBRARIES
+COREAHBLITE_LIB
+CORESDR_AXI_LIB
+ENDLIST
+LIST LIBRARY_COREAHBLITE_LIB
+ALIAS=..\component\Actel\DirectCore\CoreAHBLite\5.2.100\mti\user_vhdl\COREAHBLITE_LIB
+COMPILE_OPTION=REFRESH_AND_COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST LIBRARY_CORESDR_AXI_LIB
+ALIAS=CORESDR_AXI_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST FileManager
+VALUE "<project>\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\axi_slave.vhd,tb_hdl"
+STATE="utd"
+TIME="1597174023"
+SIZE="6076"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\XHDL_misc.vhd,tb_hdl"
+STATE="utd"
+TIME="1597174023"
+SIZE="3586"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\XHDL_std_logic.vhd,tb_hdl"
+STATE="utd"
+TIME="1597174023"
+SIZE="14493"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\COREAXI\3.1.100\coreparameters.vhd,tb_hdl"
+STATE="utd"
+TIME="1602009519"
+SIZE="4687"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\axi_master.vhd,tb_hdl"
+STATE="utd"
+TIME="1597174024"
+SIZE="24639"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\axi_slave.vhd,tb_hdl"
+STATE="utd"
+TIME="1597174024"
+SIZE="12887"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
+STATE="utd"
+TIME="1597331767"
+SIZE="2688"
+ENDFILE
+VALUE "<project>\component\work\top\top.cxf,actgen_cxf"
+STATE="utd"
+TIME="1602006774"
+SIZE="15148"
+ENDFILE
+VALUE "<project>\component\work\top\top.vhd,hdl"
+STATE="utd"
+TIME="1602006768"
+SIZE="10627"
+PARENT="<project>\component\work\top\top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\top_sb\top_sb.cxf,actgen_cxf"
+STATE="utd"
+TIME="1602010939"
+SIZE="18282"
+ENDFILE
+VALUE "<project>\component\work\top_sb_MSS\top_sb_MSS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1602010934"
+SIZE="23427"
+ENDFILE
+VALUE "<project>\component\work\top_sb_MSS\top_sb_MSS_pre.vhd,hdl"
+STATE="utd"
+TIME="1601061963"
+SIZE="103915"
+PARENT="<project>\component\work\top_sb_MSS\top_sb_MSS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="PRECISION_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\constraint\io\user.pdc,io_pdc"
+STATE="utd"
+TIME="1601412430"
+SIZE="4964"
+IS_TARGET="TRUE"
+ENDFILE
+VALUE "<project>\constraint\top_derived_constraints.sdc,sdc"
+STATE="utd"
+TIME="1602009920"
+SIZE="2377"
+ENDFILE
+VALUE "<project>\designer\impl1\top.ide_des,ide_des"
+STATE="utd"
+TIME="1597331770"
+SIZE="477"
+ENDFILE
+VALUE "<project>\simulation\CM3_compile_bfm.tcl,sim"
+STATE="utd"
+TIME="1601061963"
+SIZE="500"
+PARENT="<project>\component\work\top_sb_MSS\top_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>\simulation\subsystem.bfm,sim"
+STATE="utd"
+TIME="1601410567"
+SIZE="759"
+PARENT="<project>\component\work\top\top.cxf"
+PARENT="<project>\component\work\top_sb\top_sb.cxf"
+ENDFILE
+VALUE "<project>\simulation\test.bfm,sim"
+STATE="utd"
+TIME="1601061963"
+SIZE="734"
+PARENT="<project>\component\work\top_sb_MSS\top_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>\simulation\user.bfm,sim"
+STATE="utd"
+TIME="1597331775"
+SIZE="555"
+PARENT="<project>\component\work\top_sb_MSS\top_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>\synthesis\top.edn,syn_edn"
+STATE="utd"
+TIME="1601410632"
+SIZE="4529711"
+ENDFILE
+VALUE "<project>\synthesis\top.so,so"
+STATE="utd"
+TIME="1601410633"
+SIZE="220"
+ENDFILE
+VALUE "<project>\synthesis\top.vhd,syn_hdl"
+STATE="utd"
+TIME="1601410643"
+SIZE="2123412"
+ENDFILE
+VALUE "<project>\synthesis\top_sdc.sdc,syn_sdc"
+STATE="utd"
+TIME="1601410632"
+SIZE="951"
+ENDFILE
+VALUE "<project>\synthesis\top_syn.prj,prj"
+STATE="utd"
+TIME="1601410634"
+SIZE="10660"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "top::work"
+FILE "<project>\component\work\top\top.vhd,hdl"
+LIST Other_Association
+VALUE "<project>\simulation\subsystem.bfm,sim"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+LiberoState=Post_Synthesis
+ideSYNTHESIS(<project>\synthesis\top.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+ENDLIST
+LIST Other_Association
+LIST top
+VALUE "<project>\simulation\subsystem.bfm,sim"
+ENDLIST
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1fs
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\SynplifyPro\bin\synplify_pro.exe"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Modelsim\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="C:\Microsemi\Libero_SoC_v11.8\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "top::work"
+LIST Impl1
+LiberoState=Post_Synthesis
+ideSYNTHESIS(<project>\synthesis\top.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Run PROGRAM Action:top_PROGRAM.log
+SmartDesign;top;0
+SmartDesign;top_sb;0
+ACTIVEVIEW;top_sb
+ENDLIST
+LIST ModuleSubBlockList
+LIST "CoreAHBLite::work","","FALSE","FALSE"
+ENDLIST
+LIST "COREAHBLTOAXI::work","","FALSE","FALSE"
+ENDLIST
+LIST "COREAXI::work","","FALSE","FALSE"
+ENDLIST
+LIST "CoreResetP::work","","FALSE","FALSE"
+ENDLIST
+LIST "CORESDR_AXI::work","","FALSE","FALSE"
+ENDLIST
+LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_CAN_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_GPIO_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_I2C_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_Watchdog_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "FCCC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_CAN::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_CC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_CCC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_CFGM::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_CM3::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_DDRB::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_DMA::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_EDAC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_ENVM::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_FIC32::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_GPIO::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_I2C::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_INTR::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_MAC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_MDDR::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_MMUART::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_RESET::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_RTC::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_SECURITY::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_SPI::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_SWITCH::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_USB::work","","FALSE","FALSE"
+ENDLIST
+LIST "MSS_WATCHDOG::work","","FALSE","FALSE"
+ENDLIST
+LIST "OSC::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_CAN_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_GPIO_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_I2C_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_Watchdog_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "top::work","component\work\top\top.vhd","TRUE","FALSE"
+SUBBLOCK "top_sb::work","component\work\top_sb\top_sb.cxf","TRUE","FALSE"
+ENDLIST
+LIST "top_sb::work","component\work\top_sb\top_sb.cxf","TRUE","FALSE"
+SUBBLOCK "CoreAHBLite::work","","FALSE","FALSE"
+SUBBLOCK "COREAHBLTOAXI::work","","FALSE","FALSE"
+SUBBLOCK "COREAXI::work","","FALSE","FALSE"
+SUBBLOCK "CoreResetP::work","","FALSE","FALSE"
+SUBBLOCK "CORESDR_AXI::work","","FALSE","FALSE"
+SUBBLOCK "FCCC::work","","FALSE","FALSE"
+SUBBLOCK "OSC::work","","FALSE","FALSE"
+SUBBLOCK "top_sb_MSS::work","component\work\top_sb_MSS\top_sb_MSS.cxf","TRUE","FALSE"
+ENDLIST
+LIST "top_sb_MSS::work","component\work\top_sb_MSS\top_sb_MSS.cxf","TRUE","FALSE"
+SUBBLOCK "MSS_CAN::work","","FALSE","FALSE"
+SUBBLOCK "MSS_CCC::work","","FALSE","FALSE"
+SUBBLOCK "MSS_CC::work","","FALSE","FALSE"
+SUBBLOCK "MSS_CFGM::work","","FALSE","FALSE"
+SUBBLOCK "MSS_CM3::work","","FALSE","FALSE"
+SUBBLOCK "MSS_DDRB::work","","FALSE","FALSE"
+SUBBLOCK "MSS_DMA::work","","FALSE","FALSE"
+SUBBLOCK "MSS_EDAC::work","","FALSE","FALSE"
+SUBBLOCK "MSS_ENVM::work","","FALSE","FALSE"
+SUBBLOCK "MSS_FIC32::work","","FALSE","FALSE"
+SUBBLOCK "MSS_GPIO::work","","FALSE","FALSE"
+SUBBLOCK "MSS_I2C::work","","FALSE","FALSE"
+SUBBLOCK "MSS_INTR::work","","FALSE","FALSE"
+SUBBLOCK "MSS_MAC::work","","FALSE","FALSE"
+SUBBLOCK "MSS_MDDR::work","","FALSE","FALSE"
+SUBBLOCK "MSS_MMUART::work","","FALSE","FALSE"
+SUBBLOCK "MSS_RESET::work","","FALSE","FALSE"
+SUBBLOCK "MSS_RTC::work","","FALSE","FALSE"
+SUBBLOCK "MSS_SECURITY::work","","FALSE","FALSE"
+SUBBLOCK "MSS_SPI::work","","FALSE","FALSE"
+SUBBLOCK "MSS_SWITCH::work","","FALSE","FALSE"
+SUBBLOCK "MSS_USB::work","","FALSE","FALSE"
+SUBBLOCK "MSS_WATCHDOG::work","","FALSE","FALSE"
+ENDLIST
+LIST "axi_master::work","component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\axi_master.vhd","FALSE","TRUE"
+ENDLIST
+LIST "axi_slave::work","component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\axi_slave.vhd","FALSE","TRUE"
+ENDLIST
+LIST "axi_slave::work","component\Actel\DirectCore\COREAXI\3.1.100\rtl\vhdl\test\user\axi_slave.vhd","FALSE","TRUE"
+ENDLIST
+LIST "coreparameters::work","component\Actel\DirectCore\COREAXI\3.1.100\coreparameters.vhd","FALSE","TRUE"
+ENDLIST
+LIST "xhdl_misc::work","component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\XHDL_misc.vhd","FALSE","TRUE"
+ENDLIST
+LIST "xhdl_std_logic::work","component\Actel\DirectCore\COREAHBLTOAXI\2.1.101\rtl\vhdl\test\user\XHDL_std_logic.vhd","FALSE","TRUE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+VALUE "constraint\io\user.pdc"
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+VALUE "constraint\Top_Level_Instance_derived_constraints.sdc"
+VALUE "constraint\top_derived_constraints.sdc"
+ENDLIST
+LIST FDCTabList
+ENDLIST

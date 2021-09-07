@@ -1,7 +1,7 @@
 [Library]
 others = $MODEL_TECH/../modelsim.ini
-SmartFusion2 = C:/Microsemi/Libero_SoC_v11.8/Designer/lib/modelsim/precompiled/vlog/SmartFusion2
-syncad_vhdl_lib = C:\Microsemi\Libero_SoC_v11.8\Designer/lib/actel/syncad_vhdl_lib
+SmartFusion2 = C:MicrosemiLibero_SoC_v12.6Designer/lib/modelsimpro/precompiled/vlog/SmartFusion2
+syncad_vhdl_lib = C:\Microsemi\Libero_SoC_v12.6\Designer/lib/actel/syncad_vhdl_lib
 
 [vcom]
 VHDL93 = 1
